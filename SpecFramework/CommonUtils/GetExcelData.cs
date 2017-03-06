@@ -8,13 +8,13 @@ namespace TRID.CommonUtils
 {
     public class GetExcelData : TridVariable
     {
-        static string _filePath = @"D:\TRID Project\TRIDTestData\TestData.xlsx";
-       
+        private const string FilePath = @"D:\Projects\TRID\Project\SpecFramework\FeatureFiles\DataResources\TridTestData.xlsx";
+
         public string GetExcelCellValues(string sheetName, int row, int col)
         {
-            Excel.Application _xApplication = new Excel.Application();
-            Excel.Workbook _xWorkbook = _xApplication.Workbooks.Open(_filePath);
-            Excel.Worksheet xWorksheet = _xWorkbook.Sheets[sheetName];
+            Excel.Application xApplication = new Excel.Application();
+            Excel.Workbook xWorkbook = xApplication.Workbooks.Open(FilePath);
+            Excel.Worksheet xWorksheet = xWorkbook.Sheets[sheetName];
             Excel.Range xRange = xWorksheet.UsedRange;
             var data = xRange.Cells[row, col].Value2.ToString();
             
@@ -27,12 +27,12 @@ namespace TRID.CommonUtils
             Marshal.ReleaseComObject(xWorksheet);
 
             //close and release
-            _xWorkbook.Close();
-            Marshal.ReleaseComObject(_xWorkbook);
+            xWorkbook.Close();
+            Marshal.ReleaseComObject(xWorkbook);
 
             //quit and release
-            _xApplication.Quit();
-            Marshal.ReleaseComObject(_xApplication);
+            xApplication.Quit();
+            Marshal.ReleaseComObject(xApplication);
 
             return data;
         }
@@ -40,10 +40,9 @@ namespace TRID.CommonUtils
         public string GetExcelValues(string sheetName)
         {
             var xApplication = new Excel.Application();
-            var xWorkbook = xApplication.Workbooks.Open(_filePath);
+            var xWorkbook = xApplication.Workbooks.Open(FilePath);
             Excel.Worksheet xWorksheet = xWorkbook.Sheets[sheetName];
             var xRange = xWorksheet.UsedRange;
-            //var data = xRange.Cells[row, col].Value.ToString();
             var data = "";
             var rowCount = xRange.Rows.Count;
             var colCount = xRange.Columns.Count;

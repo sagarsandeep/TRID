@@ -1,14 +1,17 @@
 ﻿using System;
+using System.Linq;
 using System.Text.RegularExpressions;
 using System.Threading;
+using NUnit.Framework;
+using OpenQA.Selenium;
 using TRID.ActionClasses;
+using TRID.GlobalParam;
 using TRID.ProjectLibs.UI;
 
 namespace TRID.ProjectLibs.Common
 {
     class ProjActions : UIElements
     {
-
 
         public static void AddPrepaidChargesDefaultValues()
         {
@@ -152,6 +155,49 @@ namespace TRID.ProjectLibs.Common
             Thread.Sleep(5000);
         }
 
-       
+        public static void PaymentScheduleValidation(int newInputValue)
+        {
+            var paymentScheduleGridRowCount = UIActions.Count(MiPaymtScheduleGridRowsCount);
+            var numberOfPaymentArray = new[] {"35", "313"};
+            var totalNumberOfpayments = 0;
+
+
+            if (newInputValue == 131189 || newInputValue == 164860)
+                Assert.AreEqual(3, paymentScheduleGridRowCount, "Payment Schedule Grid entries are not as expected");
+
+            if (newInputValue == 131188)
+                Assert.AreEqual(4, paymentScheduleGridRowCount, "Payment Schedule Grid entries are not as expected");
+
+            if (newInputValue == 164861)
+                Assert.AreEqual(2, paymentScheduleGridRowCount, "Payment Schedule Grid entries are not as expected");
+
+            for (var row = 1; row <= paymentScheduleGridRowCount; row++)
+            {
+                var numberOfPaymentGridValues =
+                    UIActions.GetText(
+                        By.XPath("//section[@id='PaymentScheduleOutput']//tbody/tr[" + row + "]/td[2]//span"));
+                Assert.False(numberOfPaymentArray.Contains(numberOfPaymentGridValues), "Number of Payment value does not recalculated");
+
+                totalNumberOfpayments += Convert.ToInt32(numberOfPaymentGridValues);
+            }
+            Assert.AreEqual(360, totalNumberOfpayments, "Total number of payments value is not as expected");
+        }
+
+        public static void PmiRatesGridValidation()
+        {
+            var paymentScheduleGridRowCount = UIActions.Count(MiPmiRatesGridRowsCount);
+            var numberOfPaymentArray = new[] { "1", "13", "121" };
+
+            Assert.AreEqual(3, paymentScheduleGridRowCount, "PMI Rates Grid entries are not as expected");
+            
+
+            for (var row = 1; row <= paymentScheduleGridRowCount; row++)
+            {
+                var pmiRatesBeginPeriod =
+                    UIActions.GetText(
+                        By.XPath("//section[@id='MortgageGrid']//tbody/tr[" + row + "]/td[2]//span"));
+                Assert.True(numberOfPaymentArray.Contains(pmiRatesBeginPeriod), "PMI Rates Begin Period values are not as expected");
+            }
+        }
     }
 }

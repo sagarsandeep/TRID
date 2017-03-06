@@ -38,6 +38,11 @@ namespace TRID.ActionClasses
             return ObjectRepo.Driver.FindElement(element).Text;
         }
 
+        public static int Count(By element)
+        {
+            return ObjectRepo.Driver.FindElements(element).Count;
+        }
+
         public static string GetTitle()
         {
             return ObjectRepo.Driver.Title;

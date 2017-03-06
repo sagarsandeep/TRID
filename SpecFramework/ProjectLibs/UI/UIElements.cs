@@ -12,10 +12,11 @@ namespace TRID.ProjectLibs.UI
         public static By LoanEstimateLink = By.LinkText("Loan Estimate");
         public static By ClosingDisclosureLink = By.LinkText("Closing Disclosure");
         public static By MortgageInsuranceLink = By.LinkText("Mortgage Insurance");
-        public static By EscrowLink = By.LinkText("EscrowLink");
-        public static By ExportLink = By.LinkText("ExportLink");
+        public static By EscrowLink = By.LinkText("Escrow");
+        public static By ExportLink = By.LinkText("Export");
 
         #endregion
+
 
         #region Closing DisclosurePage
 
@@ -206,10 +207,29 @@ namespace TRID.ProjectLibs.UI
 
         public static By MiAddButton = By.XPath("//div[@id='MortgageInput']//button");
 
-        public static By MiPmiRatesGridBlankRow = By.XPath("//section[@id='MortgageGrid']//tbody/tr");
+        public static By MiPmiRatesGridRowsCount = By.XPath("//section[@id='MortgageGrid']//tbody/tr");
 
         public static By MiNumberOfPeriodsofAdvanceInsCollected = By.Id("input_33");
         public static By MiLowerOfCostOrAppraisal = By.Id("input_34");
+
+        public static By MiTestButton = By.XPath("//div[@id='PrivateMortgageInsuranceInput']//button");
+
+        //PMI
+        //public static By MiPmi =
+
+        //Drop off years for PMI
+    
+        public static By MiDoyfpComputedValue = By.XPath("//div[@id='viewCompositionContainer']//div[2]/div[1]//div[1]/p[1]");
+        
+        //public static By MiTppComputedValue =
+        //public static By MiTopComputedValue =
+        //public static By MiAfComputedValue=
+        //public static By MiAprComputedValue =
+
+
+        public static By MiPaymtScheduleGridRowsCount = By.XPath("//section[@id='PaymentScheduleOutput']//tbody/tr");
+        public static By Mi = By.XPath("//section[@id='PaymentScheduleOutput']//tbody/tr[1]/td[2]");
+
 
         #endregion
 
@@ -244,6 +264,23 @@ namespace TRID.ProjectLibs.UI
 
 
 
+
+        #endregion
+
+
+        #region Export
+
+        public static By ExLoanInformationText = By.XPath("//div[@id='LoanAccountInformationInput']/md-toolbar/div");
+        public static By ExTestButton = By.XPath("//div[@id='LoanAccountInformationInput']//div[1]/div/wipfli-button/button");
+
+        public static By ExLoanIdNumber = By.Id("input_27");
+        public static By ExBorrowersNames = By.Id("input_28");
+        public static By ExPreparedBy = By.Id("input_29");
+        public static By ExNameOfLender = By.Id("input_30");
+        public static By ExOriginalCreditor = By.Id("input_31");
+        public static By ExLoanSecuredBy = By.Id("radio_32");
+
+        public static By ExExportToPdfButton = By.XPath("//div[@id='LoanAccountInformationInput']//div[8]//button");
 
         #endregion
     }

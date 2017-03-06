@@ -183,6 +183,46 @@ testRunner.Then("calculation Method should have default value", ((string)(null))
 #line hidden
         }
         
+        public virtual void LaunchTRIDAppAndVerifyDefaultValuesForExportPage(string url, string sheetName, string downloadedFileName, string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "TestDefaultValues"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Launch TRID App and verify default values for Export Page", @__tags);
+#line 50
+this.ScenarioSetup(scenarioInfo);
+#line 51
+testRunner.Given(string.Format("user enters Trid Application {0} in browser", url), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 52
+ testRunner.And(string.Format("user gets default values from Excel sheet {0}", sheetName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 53
+testRunner.When("user navigate to Export Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 54
+testRunner.Then("all the input values should have default values", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 55
+ testRunner.And("click on Test button on Export Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 56
+ testRunner.And("click on Export to pdf button on Export Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 57
+ testRunner.And(string.Format("file gets downloaded with {0}", downloadedFileName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Launch TRID App and verify default values for Export Page, httP://thrive-app.azur" +
+            "ewebsites.net/Index_Dev.html?tKey=EB535076-2140-4106-8CAE-B230F6E2D082&aKey=TRID" +
+            "", new string[] {
+                "TestDefaultValues"}, SourceLine=59)]
+        public virtual void LaunchTRIDAppAndVerifyDefaultValuesForExportPage_HttPThrive_App_Azurewebsites_NetIndex_Dev_HtmlTKeyEB535076_2140_4106_8CAE_B230F6E2D082AKeyTRID()
+        {
+            this.LaunchTRIDAppAndVerifyDefaultValuesForExportPage("httP://thrive-app.azurewebsites.net/Index_Dev.html?tKey=EB535076-2140-4106-8CAE-B" +
+                    "230F6E2D082&aKey=TRID", "Export", "Wipfli-TridCalculator.pdf", ((string[])(null)));
+#line hidden
+        }
+        
         [TechTalk.SpecRun.TestRunCleanup()]
         public virtual void TestRunCleanup()
         {

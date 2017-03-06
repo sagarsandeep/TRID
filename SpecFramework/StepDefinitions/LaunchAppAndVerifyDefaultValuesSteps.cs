@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Threading;
 using NUnit.Framework;
 using OpenQA.Selenium;
@@ -59,6 +60,14 @@ namespace TRID.StepDefinitions
             UIActions.WebDriverWait(LoanEstimateLink, 60);
         }
 
+        [When(@"user navigate to Export Page")]
+        public void WhenUserNavigateToExportPage()
+        {
+            UIActions.Click(ExportLink);
+            UIActions.WebDriverWait(ExLoanInformationText, 60);
+        }
+
+
         #endregion
 
         #region Then
@@ -112,7 +121,7 @@ namespace TRID.StepDefinitions
             var isRowExists = false;
             try
             {
-                UIActions.GetText(MiPmiRatesGridBlankRow);
+                UIActions.GetText(MiPmiRatesGridRowsCount);
                 isRowExists = true;
             }
             catch (Exception)
@@ -204,11 +213,57 @@ namespace TRID.StepDefinitions
             UIActions.GiveInput(LeDisclosedTip, tip);
         }
 
+
+        [Then(@"all the input values should have default values")]
+        public void ThenAllTheInputValuesShouldHaveDefaultValues()
+        {
+            var loanIdNumber = TridVariable.LoanIdNumber;
+            UIActions.Clear(ExLoanIdNumber);
+            UIActions.GiveInput(ExLoanIdNumber, loanIdNumber);
+
+            var borrowersNames = TridVariable.BorrowersNames;
+            UIActions.Clear(ExBorrowersNames);
+            UIActions.GiveInput(ExBorrowersNames, borrowersNames);
+
+            var preparedBy = TridVariable.PreparedBy;
+            UIActions.Clear(ExPreparedBy);
+            UIActions.GiveInput(ExPreparedBy, preparedBy);
+
+            var nameOfLender = TridVariable.NameOfLender;
+            UIActions.Clear(ExNameOfLender);
+            UIActions.GiveInput(ExNameOfLender, nameOfLender);
+
+            var originalCreditor = TridVariable.OriginalCreditor;
+            UIActions.Clear(ExOriginalCreditor);
+            UIActions.GiveInput(ExOriginalCreditor, originalCreditor);
+        }
+
+
+        [Then(@"click on Test button on Export Page")]
+        public void ThenClickOnTestButtonOnExportPage()
+        {
+            UIActions.Click(ExTestButton);
+        }
+
+        [Then(@"click on Export to pdf button on Export Page")]
+        public void ThenClickOnExportToPdfButtonOnExportPage()
+        {
+            UIActions.Click(ExExportToPdfButton);
+        }
+
+        [Then(@"file gets downloaded with (.*)")]
+        public void ThenFileGetsDownloadedWith(string downloadedfileName)
+        {
+            Thread.Sleep(5000);
+            string filePath = @"C:\Users\sandees\Downloads\" + downloadedfileName;
+            Assert.IsTrue(File.Exists(filePath),"Exported File does not exists");
+        }
+
         #endregion
 
 
         [AfterScenario("TestDefaultValues")]
-        public void ScenarioClose()
+        public void TearDown()
         {
             UIActions.Quit();
         }

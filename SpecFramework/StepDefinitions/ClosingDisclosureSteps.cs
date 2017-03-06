@@ -346,7 +346,7 @@ namespace TRID.StepDefinitions
         #endregion
 
         [AfterScenario("LoanDetails")]
-        public void ScenarioClose()
+        public void TearDown()
         {
             UIActions.Quit();
         }

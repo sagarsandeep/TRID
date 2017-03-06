@@ -81,6 +81,11 @@
         public static string DisclosedPrepaidCharge = "";
         public static string DisclosedAmountFinanced ="";
         public static string PrepaidCharge = "";
+        public static string LoanIdNumber = "";
+        public static string BorrowersNames = "";
+        public static string PreparedBy = "";
+        public static string NameOfLender = "";
+        public static string OriginalCreditor = "";
 
         #endregion
 
@@ -230,6 +235,16 @@
 
             #endregion
 
+
+            #region Export
+
+            if (col == 2) LoanIdNumber = stringValue;
+            if (col == 3) BorrowersNames = stringValue;
+            if (col == 4) PreparedBy = stringValue;
+            if (col == 5) NameOfLender = stringValue;
+            if (col == 6) OriginalCreditor = stringValue;
+
+            #endregion
 
         }
     }
