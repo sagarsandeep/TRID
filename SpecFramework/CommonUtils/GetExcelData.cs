@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Configuration;
 using System.Runtime.InteropServices;
 using TRID.ProjectLibs;
 using TRID.ProjectLibs.Common;
@@ -8,7 +9,7 @@ namespace TRID.CommonUtils
 {
     public class GetExcelData : TridVariable
     {
-        private const string FilePath = @"D:\Projects\TRID\Project\SpecFramework\FeatureFiles\DataResources\TridTestData.xlsx";
+        private static string FilePath => ConfigurationManager.AppSettings["ExcelFilePath"];
 
         public string GetExcelCellValues(string sheetName, int row, int col)
         {
@@ -44,7 +45,6 @@ namespace TRID.CommonUtils
             Excel.Worksheet xWorksheet = xWorkbook.Sheets[sheetName];
             var xRange = xWorksheet.UsedRange;
             var data = "";
-            var rowCount = xRange.Rows.Count;
             var colCount = xRange.Columns.Count;
 
             for (var row = scenarioNo + 1; row == scenarioNo + 1; row++)

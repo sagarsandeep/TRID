@@ -5,7 +5,6 @@ using System.Threading;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using TRID.ActionClasses;
-using TRID.GlobalParam;
 using TRID.ProjectLibs.UI;
 
 namespace TRID.ProjectLibs.Common
