@@ -80,12 +80,13 @@
         public static string DisclosedFinanceCharge = "";
         public static string DisclosedPrepaidCharge = "";
         public static string DisclosedAmountFinanced ="";
-        public static string PrepaidCharge = "";
         public static string LoanIdNumber = "";
         public static string BorrowersNames = "";
         public static string PreparedBy = "";
         public static string NameOfLender = "";
         public static string OriginalCreditor = "";
+        public static string PrepaidCustomName = "";
+        public static string PrepaidCustomValue = "";
 
         #endregion
 
@@ -94,26 +95,31 @@
 
             #region Prepaid Charges
 
-            if (col == 2) FhaVaUsdaUpfrontPmiFree = stringValue;
-            if (col == 3) FloodFee = stringValue;
-            if (col == 4) InspectionFee = stringValue;
-            if (col == 5) LoanOriginationFee = stringValue;
-            if (col == 6) OtherFees = stringValue;
-            if (col == 7) PmiEscrowed = stringValue;
-            if (col == 8) PrepaidDailyInterest = stringValue;
-            if (col == 9) TaxServicing = stringValue;
-            if (col == 10) TitleClosingFee = stringValue;
-            if (col == 11) TitleClosingProtectionLetter = stringValue;
-            if (col == 12) TitleCourierFee = stringValue;
-            if (col == 13) TitleDrawFee = stringValue;
-            if (col == 14) TitleWireFee = stringValue;
-            if (col == 15) UnderWriting = stringValue;
-            if (col == 16) DisclosedFinanceCharge = stringValue;
-            if (col == 17) DisclosedPrepaidCharge = stringValue;
-            if (col == 18) DisclosedAmountFinanced = stringValue;
-            if (col == 19) FinanceCharge = stringValue;
-            if (col == 20) PrepaidCharge = stringValue;
-            if (col == 21) AmountFinanced = stringValue;
+            if (sheetName == "PrepaidCharges")
+            {
+                if (col == 2) FhaVaUsdaUpfrontPmiFree = stringValue;
+                if (col == 3) FloodFee = stringValue;
+                if (col == 4) InspectionFee = stringValue;
+                if (col == 5) LoanOriginationFee = stringValue;
+                if (col == 6) OtherFees = stringValue;
+                if (col == 7) PmiEscrowed = stringValue;
+                if (col == 8) PrepaidDailyInterest = stringValue;
+                if (col == 9) TaxServicing = stringValue;
+                if (col == 10) TitleClosingFee = stringValue;
+                if (col == 11) TitleClosingProtectionLetter = stringValue;
+                if (col == 12) TitleCourierFee = stringValue;
+                if (col == 13) TitleDrawFee = stringValue;
+                if (col == 14) TitleWireFee = stringValue;
+                if (col == 15) UnderWriting = stringValue;
+                if (col == 16) PrepaidCustomName = stringValue;
+                if (col == 17) PrepaidCustomValue = stringValue;
+                if (col == 18) DisclosedFinanceCharge = stringValue;
+                if (col == 19) DisclosedPrepaidCharge = stringValue;
+                if (col == 20) DisclosedAmountFinanced = stringValue;
+                if (col == 21) FinanceCharge = stringValue;
+                if (col == 22) PrepaidCharges = stringValue;
+                if (col == 23) AmountFinanced = stringValue;
+            }
 
             #endregion
 
@@ -238,14 +244,16 @@
 
             #region Export
 
-            if (col == 2) LoanIdNumber = stringValue;
-            if (col == 3) BorrowersNames = stringValue;
-            if (col == 4) PreparedBy = stringValue;
-            if (col == 5) NameOfLender = stringValue;
-            if (col == 6) OriginalCreditor = stringValue;
+            if (sheetName == "Export")
+            {
+                if (col == 2) LoanIdNumber = stringValue;
+                if (col == 3) BorrowersNames = stringValue;
+                if (col == 4) PreparedBy = stringValue;
+                if (col == 5) NameOfLender = stringValue;
+                if (col == 6) OriginalCreditor = stringValue;
 
-            #endregion
-
+                #endregion
+            }
         }
     }
 }

@@ -61,7 +61,7 @@ namespace TRID.FeatureFiles
             testRunner.CollectScenarioErrors();
         }
         
-        public virtual void ValidatingLoanDetailsOnClosingDisclosurePage(string url, string sheetName, string[] exampleTags)
+        public virtual void ValidatingLoanDetailsOnClosingDisclosurePage(string scenarioNo, string sheetName, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "LoanDetails"};
@@ -73,11 +73,11 @@ namespace TRID.FeatureFiles
 #line 4
 this.ScenarioSetup(scenarioInfo);
 #line 5
-testRunner.Given(string.Format("user is at TRID application homepage with {0}", url), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+testRunner.Given("user is at TRID application homepage", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 6
  testRunner.And("user navigate to Closing Disclosure Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 7
- testRunner.And(string.Format("user have all the input values from Excel sheet {0}", sheetName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("user have all the input values from Excel sheet {0} for scenario {1}", sheetName, scenarioNo), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 8
 testRunner.When("Calculation Method is 30 Over 360", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 9
@@ -104,17 +104,15 @@ testRunner.Then("Updated Principal and Interest value should display", ((string)
             this.ScenarioCleanup();
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Validating Loan Details on Closing Disclosure page, httP://thrive-app.azurewebsit" +
-            "es.net/Index_Dev.html?tKey=EB535076-2140-4106-8CAE-B230F6E2D082&aKey=TRID", new string[] {
+        [TechTalk.SpecRun.ScenarioAttribute("Validating Loan Details on Closing Disclosure page, 1", new string[] {
                 "LoanDetails"}, SourceLine=23)]
-        public virtual void ValidatingLoanDetailsOnClosingDisclosurePage_HttPThrive_App_Azurewebsites_NetIndex_Dev_HtmlTKeyEB535076_2140_4106_8CAE_B230F6E2D082AKeyTRID()
+        public virtual void ValidatingLoanDetailsOnClosingDisclosurePage_1()
         {
-            this.ValidatingLoanDetailsOnClosingDisclosurePage("httP://thrive-app.azurewebsites.net/Index_Dev.html?tKey=EB535076-2140-4106-8CAE-B" +
-                    "230F6E2D082&aKey=TRID", "ClosingDisclosure", ((string[])(null)));
+            this.ValidatingLoanDetailsOnClosingDisclosurePage("1", "ClosingDisclosure", ((string[])(null)));
 #line hidden
         }
         
-        public virtual void ValidatingLoanDetailsOnLoanEstimatePage(string url, string sheetName, string[] exampleTags)
+        public virtual void ValidatingLoanDetailsOnLoanEstimatePage(string scenarioNo, string sheetName, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "LoanDetails"};
@@ -126,11 +124,11 @@ testRunner.Then("Updated Principal and Interest value should display", ((string)
 #line 29
 this.ScenarioSetup(scenarioInfo);
 #line 30
-testRunner.Given(string.Format("user is at TRID application homepage with {0}", url), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+testRunner.Given("user is at TRID application homepage", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 31
  testRunner.And("user navigate to Loan Estimate Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 32
- testRunner.And(string.Format("user have all the input values from Excel sheet {0}", sheetName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("user have all the input values from Excel sheet {0} for scenario {1}", sheetName, scenarioNo), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 33
 testRunner.When("Calculation Method is 30 Over 360", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 34
@@ -159,17 +157,15 @@ testRunner.Then("Updated in 5 Years value should display", ((string)(null)), ((T
             this.ScenarioCleanup();
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Validating Loan Details on Loan Estimate Page, httP://thrive-app.azurewebsites.ne" +
-            "t/Index_Dev.html?tKey=EB535076-2140-4106-8CAE-B230F6E2D082&aKey=TRID", new string[] {
+        [TechTalk.SpecRun.ScenarioAttribute("Validating Loan Details on Loan Estimate Page, 1", new string[] {
                 "LoanDetails"}, SourceLine=46)]
-        public virtual void ValidatingLoanDetailsOnLoanEstimatePage_HttPThrive_App_Azurewebsites_NetIndex_Dev_HtmlTKeyEB535076_2140_4106_8CAE_B230F6E2D082AKeyTRID()
+        public virtual void ValidatingLoanDetailsOnLoanEstimatePage_1()
         {
-            this.ValidatingLoanDetailsOnLoanEstimatePage("httP://thrive-app.azurewebsites.net/Index_Dev.html?tKey=EB535076-2140-4106-8CAE-B" +
-                    "230F6E2D082&aKey=TRID", "LoanEstimate", ((string[])(null)));
+            this.ValidatingLoanDetailsOnLoanEstimatePage("1", "LoanEstimate", ((string[])(null)));
 #line hidden
         }
         
-        public virtual void ValidatingPMIOnMortgageInsruancePage(string url, string sheetName, string[] exampleTags)
+        public virtual void ValidatingPMIOnMortgageInsruancePage(string scenarioNo, string sheetName, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "LoanDetails"};
@@ -181,11 +177,11 @@ testRunner.Then("Updated in 5 Years value should display", ((string)(null)), ((T
 #line 51
 this.ScenarioSetup(scenarioInfo);
 #line 52
-testRunner.Given(string.Format("user is at TRID application homepage with {0}", url), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+testRunner.Given("user is at TRID application homepage", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 53
  testRunner.And("user navigate to Mortgage Insruance page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 54
- testRunner.And(string.Format("user have all the input values from Excel sheet {0}", sheetName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("user have all the input values from Excel sheet {0} for scenario {1}", sheetName, scenarioNo), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 55
 testRunner.When("Add Pmi Rate", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 56
@@ -200,13 +196,11 @@ testRunner.Then("Updated PMI value should display", ((string)(null)), ((TechTalk
             this.ScenarioCleanup();
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Validating PMI on Mortgage Insruance page, httP://thrive-app.azurewebsites.net/In" +
-            "dex_Dev.html?tKey=EB535076-2140-4106-8CAE-B230F6E2D082&aKey=TRID", new string[] {
+        [TechTalk.SpecRun.ScenarioAttribute("Validating PMI on Mortgage Insruance page, 1", new string[] {
                 "LoanDetails"}, SourceLine=61)]
-        public virtual void ValidatingPMIOnMortgageInsruancePage_HttPThrive_App_Azurewebsites_NetIndex_Dev_HtmlTKeyEB535076_2140_4106_8CAE_B230F6E2D082AKeyTRID()
+        public virtual void ValidatingPMIOnMortgageInsruancePage_1()
         {
-            this.ValidatingPMIOnMortgageInsruancePage("httP://thrive-app.azurewebsites.net/Index_Dev.html?tKey=EB535076-2140-4106-8CAE-B" +
-                    "230F6E2D082&aKey=TRID", "MortgageInsurance", ((string[])(null)));
+            this.ValidatingPMIOnMortgageInsruancePage("1", "MortgageInsurance", ((string[])(null)));
 #line hidden
         }
         

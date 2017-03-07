@@ -2,14 +2,9 @@
 using System.IO;
 using System.Threading;
 using NUnit.Framework;
-using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
-using Protractor;
 using TechTalk.SpecFlow;
 using TRID.ActionClasses;
 using TRID.CommonUtils;
-using TRID.GlobalParam;
-using TRID.ProjectLibs;
 using TRID.ProjectLibs.Common;
 using TRID.TestClasses;
 
@@ -22,18 +17,18 @@ namespace TRID.StepDefinitions
 
         #region Given       
 
-        [Given(@"user enters Trid Application (.*) in browser")]
-        public void GivenUserEntersTridApplicationInBrowser(string url)
+        [Given(@"user enters Trid Application url in browser")]
+        public void GivenUserEntersTridApplicationUrlInBrowser()
         {
-            UIActions.WindowMaximize();
-            UIActions.GoToUrl(url);
-            Thread.Sleep(10000);
+            UIActions.WebDriverWait(PcPrepaidChargesText, 60);
+            Thread.Sleep(5000);
         }
 
-        [Given(@"user gets default values from Excel sheet (.*)")]
-        public void GivenUserGetsDefaultValuesFromExcelSheet(string sheetName)
+
+        [Given(@"user gets default values from Excel sheet (.*) for scenario (.*)")]
+        public void GivenUserGetsDefaultValuesFromExcelSheetForScenario(string sheetName, int scenarioNo)
         {
-            _getData.GetExcelValues(sheetName);
+            _getData.GetExcelValues(scenarioNo, sheetName);
         }
 
         #endregion
@@ -88,7 +83,7 @@ namespace TRID.StepDefinitions
             var isRowExists = false;
             try
             {
-                UIActions.GetText(PcPrepaidChargeGridBlankRow);
+                UIActions.GetText(PcPrepaidChargeGridCount);
                 isRowExists = true;
             }
             catch (Exception)
@@ -260,7 +255,6 @@ namespace TRID.StepDefinitions
         }
 
         #endregion
-
 
         [AfterScenario("TestDefaultValues")]
         public void TearDown()

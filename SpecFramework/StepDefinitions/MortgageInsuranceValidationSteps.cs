@@ -1,5 +1,4 @@
-﻿using System;
-using System.Threading;
+﻿using System.Threading;
 using NUnit.Framework;
 using TechTalk.SpecFlow;
 using TRID.ActionClasses;
@@ -15,12 +14,13 @@ namespace TRID.StepDefinitions
 
         readonly GetExcelData _getData = new GetExcelData();
 
-        [Given(@"user launches TRID application with (.*)")]
-        public void GivenUserLaunchesTridApplicationWith(string url)
+        #region Given
+
+        [Given(@"user launches TRID application")]
+        public void GivenUserLaunchesTridApplication()
         {
-            UIActions.WindowMaximize();
-            UIActions.GoToUrl(url);
-            Thread.Sleep(10000);
+            UIActions.WebDriverWait(PcPrepaidChargesText, 60);
+            Thread.Sleep(5000);
         }
         
         [Given(@"user navigates to Mortgage Insurance Page")]
@@ -30,13 +30,17 @@ namespace TRID.StepDefinitions
             Thread.Sleep(5000);
         }
 
-        [Given(@"user have the input values from excel sheet (.*)")]
-        public void GivenUserHaveTheInputValuesFromExcelSheet(string sheetName)
+        [Given(@"user have the input values from excel sheet (.*) for scenario (.*)")]
+        public void GivenUserHaveTheInputValuesFromExcelSheetForScenario(string sheetName, int scenarioNo)
         {
-            _getData.GetExcelValues(sheetName);
+            _getData.GetExcelValues(scenarioNo, sheetName);
         }
 
+        #endregion
 
+        #region When
+
+        
         [When(@"user enters pmi rate values")]
         public void WhenUserEntersPmiRateValues()
         {
@@ -65,6 +69,11 @@ namespace TRID.StepDefinitions
             UIActions.GiveInput(MiLowerOfCostOrAppraisal, newInputValue);
         }
 
+        #endregion
+
+        #region Then
+      
+
         [Then(@"Payment Schedule is recalculated with new lower of cost value (.*)")]
         public void ThenPaymentScheduleIsRecalculatedWithNewLowerOfCostValue(int newInputValue)
         {
@@ -87,6 +96,7 @@ namespace TRID.StepDefinitions
             ProjActions.PmiRatesGridValidation();
         }
 
+        #endregion
 
         [AfterScenario("MortgageInsurance")]
         public void TearDown()

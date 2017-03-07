@@ -61,7 +61,7 @@ namespace TRID.FeatureFiles
             testRunner.CollectScenarioErrors();
         }
         
-        public virtual void LaunchTRIDAppAndVerifyDefaultValuesForPrepaidChargesPage(string url, string sheetName, string[] exampleTags)
+        public virtual void LaunchTRIDAppAndVerifyDefaultValuesForPrepaidChargesPage(string scenarioNo, string sheetName, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "TestDefaultValues"};
@@ -73,9 +73,9 @@ namespace TRID.FeatureFiles
 #line 5
 this.ScenarioSetup(scenarioInfo);
 #line 6
-testRunner.Given(string.Format("user enters Trid Application {0} in browser", url), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+testRunner.Given("user enters Trid Application url in browser", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 7
- testRunner.And(string.Format("user gets default values from Excel sheet {0}", sheetName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("user gets default values from Excel sheet {0} for scenario {1}", sheetName, scenarioNo), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 8
 testRunner.When("TRID Application launches", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 9
@@ -89,18 +89,15 @@ testRunner.Then("default page should be Prepaid Charges Page", ((string)(null)),
             this.ScenarioCleanup();
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Launch TRID App and verify default values for Prepaid Charges Page, httP://thrive" +
-            "-app.azurewebsites.net/Index_Dev.html?tKey=EB535076-2140-4106-8CAE-B230F6E2D082&" +
-            "aKey=TRID", new string[] {
+        [TechTalk.SpecRun.ScenarioAttribute("Launch TRID App and verify default values for Prepaid Charges Page, 1", new string[] {
                 "TestDefaultValues"}, SourceLine=13)]
-        public virtual void LaunchTRIDAppAndVerifyDefaultValuesForPrepaidChargesPage_HttPThrive_App_Azurewebsites_NetIndex_Dev_HtmlTKeyEB535076_2140_4106_8CAE_B230F6E2D082AKeyTRID()
+        public virtual void LaunchTRIDAppAndVerifyDefaultValuesForPrepaidChargesPage_1()
         {
-            this.LaunchTRIDAppAndVerifyDefaultValuesForPrepaidChargesPage("httP://thrive-app.azurewebsites.net/Index_Dev.html?tKey=EB535076-2140-4106-8CAE-B" +
-                    "230F6E2D082&aKey=TRID", "PrepaidCharges", ((string[])(null)));
+            this.LaunchTRIDAppAndVerifyDefaultValuesForPrepaidChargesPage("1", "PrepaidCharges", ((string[])(null)));
 #line hidden
         }
         
-        public virtual void LaunchTRIDAppAndVerifyDefaultValuesForMortgageInsurancePage(string url, string sheetName, string[] exampleTags)
+        public virtual void LaunchTRIDAppAndVerifyDefaultValuesForMortgageInsurancePage(string scenarioNo, string sheetName1, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "TestDefaultValues"};
@@ -112,9 +109,9 @@ testRunner.Then("default page should be Prepaid Charges Page", ((string)(null)),
 #line 19
 this.ScenarioSetup(scenarioInfo);
 #line 20
-testRunner.Given(string.Format("user enters Trid Application {0} in browser", url), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+testRunner.Given("user enters Trid Application url in browser", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 21
- testRunner.And(string.Format("user gets default values from Excel sheet {0}", sheetName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("user gets default values from Excel sheet <sheetName> for scenario {0}", scenarioNo), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 22
 testRunner.When("user navigate to Mortgage Insurance Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 23
@@ -125,18 +122,15 @@ testRunner.Then("PMI rates Grid should be empty", ((string)(null)), ((TechTalk.S
             this.ScenarioCleanup();
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Launch TRID App and verify default values for Mortgage Insurance Page, httP://thr" +
-            "ive-app.azurewebsites.net/Index_Dev.html?tKey=EB535076-2140-4106-8CAE-B230F6E2D0" +
-            "82&aKey=TRID", new string[] {
+        [TechTalk.SpecRun.ScenarioAttribute("Launch TRID App and verify default values for Mortgage Insurance Page, 1", new string[] {
                 "TestDefaultValues"}, SourceLine=26)]
-        public virtual void LaunchTRIDAppAndVerifyDefaultValuesForMortgageInsurancePage_HttPThrive_App_Azurewebsites_NetIndex_Dev_HtmlTKeyEB535076_2140_4106_8CAE_B230F6E2D082AKeyTRID()
+        public virtual void LaunchTRIDAppAndVerifyDefaultValuesForMortgageInsurancePage_1()
         {
-            this.LaunchTRIDAppAndVerifyDefaultValuesForMortgageInsurancePage("httP://thrive-app.azurewebsites.net/Index_Dev.html?tKey=EB535076-2140-4106-8CAE-B" +
-                    "230F6E2D082&aKey=TRID", "MortgageInsurance", ((string[])(null)));
+            this.LaunchTRIDAppAndVerifyDefaultValuesForMortgageInsurancePage("1", "MortgageInsurance", ((string[])(null)));
 #line hidden
         }
         
-        public virtual void LaunchTRIDAppAndVerifyDefaultValuesForLoanEstimatePage(string url, string sheetName, string[] exampleTags)
+        public virtual void LaunchTRIDAppAndVerifyDefaultValuesForLoanEstimatePage(string scenarioNo, string sheetName, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "TestDefaultValues"};
@@ -148,9 +142,9 @@ testRunner.Then("PMI rates Grid should be empty", ((string)(null)), ((TechTalk.S
 #line 32
 this.ScenarioSetup(scenarioInfo);
 #line 33
-testRunner.Given(string.Format("user enters Trid Application {0} in browser", url), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+testRunner.Given("user enters Trid Application url in browser", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 34
- testRunner.And(string.Format("user gets default values from Excel sheet {0}", sheetName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("user gets default values from Excel sheet {0} for scenario {1}", sheetName, scenarioNo), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 35
 testRunner.When("user navigate to Loan Estimate Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 36
@@ -172,18 +166,15 @@ testRunner.Then("calculation Method should have default value", ((string)(null))
             this.ScenarioCleanup();
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Launch TRID App and verify default values for Loan Estimate Page, httP://thrive-a" +
-            "pp.azurewebsites.net/Index_Dev.html?tKey=EB535076-2140-4106-8CAE-B230F6E2D082&aK" +
-            "ey=TRID", new string[] {
+        [TechTalk.SpecRun.ScenarioAttribute("Launch TRID App and verify default values for Loan Estimate Page, 1", new string[] {
                 "TestDefaultValues"}, SourceLine=44)]
-        public virtual void LaunchTRIDAppAndVerifyDefaultValuesForLoanEstimatePage_HttPThrive_App_Azurewebsites_NetIndex_Dev_HtmlTKeyEB535076_2140_4106_8CAE_B230F6E2D082AKeyTRID()
+        public virtual void LaunchTRIDAppAndVerifyDefaultValuesForLoanEstimatePage_1()
         {
-            this.LaunchTRIDAppAndVerifyDefaultValuesForLoanEstimatePage("httP://thrive-app.azurewebsites.net/Index_Dev.html?tKey=EB535076-2140-4106-8CAE-B" +
-                    "230F6E2D082&aKey=TRID", "LoanEstimate", ((string[])(null)));
+            this.LaunchTRIDAppAndVerifyDefaultValuesForLoanEstimatePage("1", "LoanEstimate", ((string[])(null)));
 #line hidden
         }
         
-        public virtual void LaunchTRIDAppAndVerifyDefaultValuesForExportPage(string url, string sheetName, string downloadedFileName, string[] exampleTags)
+        public virtual void LaunchTRIDAppAndVerifyDefaultValuesForExportPage(string scenarioNo, string sheetName, string downloadedFileName, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "TestDefaultValues"};
@@ -195,9 +186,9 @@ testRunner.Then("calculation Method should have default value", ((string)(null))
 #line 50
 this.ScenarioSetup(scenarioInfo);
 #line 51
-testRunner.Given(string.Format("user enters Trid Application {0} in browser", url), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+testRunner.Given("user enters Trid Application url in browser", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 52
- testRunner.And(string.Format("user gets default values from Excel sheet {0}", sheetName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("user gets default values from Excel sheet {0} for scenario {1}", sheetName, scenarioNo), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 53
 testRunner.When("user navigate to Export Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 54
@@ -212,14 +203,11 @@ testRunner.Then("all the input values should have default values", ((string)(nul
             this.ScenarioCleanup();
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Launch TRID App and verify default values for Export Page, httP://thrive-app.azur" +
-            "ewebsites.net/Index_Dev.html?tKey=EB535076-2140-4106-8CAE-B230F6E2D082&aKey=TRID" +
-            "", new string[] {
+        [TechTalk.SpecRun.ScenarioAttribute("Launch TRID App and verify default values for Export Page, 1", new string[] {
                 "TestDefaultValues"}, SourceLine=59)]
-        public virtual void LaunchTRIDAppAndVerifyDefaultValuesForExportPage_HttPThrive_App_Azurewebsites_NetIndex_Dev_HtmlTKeyEB535076_2140_4106_8CAE_B230F6E2D082AKeyTRID()
+        public virtual void LaunchTRIDAppAndVerifyDefaultValuesForExportPage_1()
         {
-            this.LaunchTRIDAppAndVerifyDefaultValuesForExportPage("httP://thrive-app.azurewebsites.net/Index_Dev.html?tKey=EB535076-2140-4106-8CAE-B" +
-                    "230F6E2D082&aKey=TRID", "Export", "Wipfli-TridCalculator.pdf", ((string[])(null)));
+            this.LaunchTRIDAppAndVerifyDefaultValuesForExportPage("1", "Export", "Wipfli-TridCalculator.pdf", ((string[])(null)));
 #line hidden
         }
         

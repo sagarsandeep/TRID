@@ -61,7 +61,7 @@ namespace TRID.FeatureFiles
             testRunner.CollectScenarioErrors();
         }
         
-        public virtual void EnterPMIRateDataInMortgageInsurancePage(string url, string sheetName, string[] exampleTags)
+        public virtual void EnterPMIRateDataInMortgageInsurancePage(string scenarioNo, string sheetName, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "MortgageInsurance",
@@ -74,11 +74,11 @@ namespace TRID.FeatureFiles
 #line 8
 this.ScenarioSetup(scenarioInfo);
 #line 9
-testRunner.Given(string.Format("user launches TRID application with {0}", url), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+testRunner.Given("user launches TRID application", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 10
  testRunner.And("user navigates to Mortgage Insurance Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 11
- testRunner.And(string.Format("user have the input values from excel sheet {0}", sheetName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("user have the input values from excel sheet {0} for scenario {1}", sheetName, scenarioNo), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 12
 testRunner.When("user enters pmi rate values", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 13
@@ -87,18 +87,16 @@ testRunner.Then("Pmi Rates Grid should have inserted values", ((string)(null)), 
             this.ScenarioCleanup();
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Enter PMI rate data in Mortgage Insurance Page, httP://thrive-app.azurewebsites.n" +
-            "et/Index_Dev.html?tKey=EB535076-2140-4106-8CAE-B230F6E2D082&aKey=TRID", new string[] {
+        [TechTalk.SpecRun.ScenarioAttribute("Enter PMI rate data in Mortgage Insurance Page, 1", new string[] {
                 "MortgageInsurance",
                 "GiveInput"}, SourceLine=15)]
-        public virtual void EnterPMIRateDataInMortgageInsurancePage_HttPThrive_App_Azurewebsites_NetIndex_Dev_HtmlTKeyEB535076_2140_4106_8CAE_B230F6E2D082AKeyTRID()
+        public virtual void EnterPMIRateDataInMortgageInsurancePage_1()
         {
-            this.EnterPMIRateDataInMortgageInsurancePage("httP://thrive-app.azurewebsites.net/Index_Dev.html?tKey=EB535076-2140-4106-8CAE-B" +
-                    "230F6E2D082&aKey=TRID", "MortgageInsurance", ((string[])(null)));
+            this.EnterPMIRateDataInMortgageInsurancePage("1", "MortgageInsurance", ((string[])(null)));
 #line hidden
         }
         
-        public virtual void SetValueLesserThanDefaultValueForLowerOfCostOrAppraisalInMortgageInsurancePage(string url, string defaultValue, string inputValue, string computedDate, string sheetName, string[] exampleTags)
+        public virtual void SetValueLesserThanDefaultValueForLowerOfCostOrAppraisalInMortgageInsurancePage(string scenarioNo, string defaultValue, string inputValue, string computedDate, string sheetName, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "MortgageInsurance"};
@@ -111,11 +109,11 @@ testRunner.Then("Pmi Rates Grid should have inserted values", ((string)(null)), 
 #line 20
 this.ScenarioSetup(scenarioInfo);
 #line 21
-testRunner.Given(string.Format("user launches TRID application with {0}", url), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+testRunner.Given("user launches TRID application", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 22
  testRunner.And("user navigates to Mortgage Insurance Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 23
- testRunner.And(string.Format("user have the input values from excel sheet {0}", sheetName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("user have the input values from excel sheet {0} for scenario {1}", sheetName, scenarioNo), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 24
 testRunner.When("user enters pmi rate values", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 25
@@ -135,8 +133,7 @@ testRunner.Then(string.Format("Payment Schedule is recalculated with new lower o
                 "MortgageInsurance"}, SourceLine=30)]
         public virtual void SetValueLesserThanDefaultValueForLowerOfCostOrAppraisalInMortgageInsurancePage_Variant0()
         {
-            this.SetValueLesserThanDefaultValueForLowerOfCostOrAppraisalInMortgageInsurancePage("httP://thrive-app.azurewebsites.net/Index_Dev.html?tKey=EB535076-2140-4106-8CAE-B" +
-                    "230F6E2D082&aKey=TRID", "155000", "131189", "3/1/2016", "MortgageInsurance", ((string[])(null)));
+            this.SetValueLesserThanDefaultValueForLowerOfCostOrAppraisalInMortgageInsurancePage("1", "155000", "131189", "3/1/2016", "MortgageInsurance", ((string[])(null)));
 #line hidden
         }
         
@@ -145,12 +142,11 @@ testRunner.Then(string.Format("Payment Schedule is recalculated with new lower o
                 "MortgageInsurance"}, SourceLine=30)]
         public virtual void SetValueLesserThanDefaultValueForLowerOfCostOrAppraisalInMortgageInsurancePage_Variant1()
         {
-            this.SetValueLesserThanDefaultValueForLowerOfCostOrAppraisalInMortgageInsurancePage("httP://thrive-app.azurewebsites.net/Index_Dev.html?tKey=EB535076-2140-4106-8CAE-B" +
-                    "230F6E2D082&aKey=TRID", "155000", "131188", "3/1/2016", "MortgageInsurance", ((string[])(null)));
+            this.SetValueLesserThanDefaultValueForLowerOfCostOrAppraisalInMortgageInsurancePage("1", "155000", "131188", "3/1/2016", "MortgageInsurance", ((string[])(null)));
 #line hidden
         }
         
-        public virtual void SetValueGreaterThanDefaultValueForLowerOfCostOrAppraisalInMortgageInsurancePage(string url, string defaultValue, string inputValue, string computedDate, string sheetName, string[] exampleTags)
+        public virtual void SetValueGreaterThanDefaultValueForLowerOfCostOrAppraisalInMortgageInsurancePage(string scenarioNo, string defaultValue, string inputValue, string computedDate, string sheetName, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "MortgageInsurance"};
@@ -163,11 +159,11 @@ testRunner.Then(string.Format("Payment Schedule is recalculated with new lower o
 #line 37
 this.ScenarioSetup(scenarioInfo);
 #line 38
-testRunner.Given(string.Format("user launches TRID application with {0}", url), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+testRunner.Given("user launches TRID application", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 39
  testRunner.And("user navigates to Mortgage Insurance Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 40
- testRunner.And(string.Format("user have the input values from excel sheet {0}", sheetName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("user have the input values from excel sheet {0} for scenario {1}", sheetName, scenarioNo), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 41
 testRunner.When("user enters pmi rate values", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 42
@@ -187,8 +183,7 @@ testRunner.Then(string.Format("Payment Schedule is recalculated with new lower o
                 "MortgageInsurance"}, SourceLine=47)]
         public virtual void SetValueGreaterThanDefaultValueForLowerOfCostOrAppraisalInMortgageInsurancePage_Variant0()
         {
-            this.SetValueGreaterThanDefaultValueForLowerOfCostOrAppraisalInMortgageInsurancePage("httP://thrive-app.azurewebsites.net/Index_Dev.html?tKey=EB535076-2140-4106-8CAE-B" +
-                    "230F6E2D082&aKey=TRID", "155000", "164860", "3/1/2016", "MortgageInsurance", ((string[])(null)));
+            this.SetValueGreaterThanDefaultValueForLowerOfCostOrAppraisalInMortgageInsurancePage("1", "155000", "164860", "3/1/2016", "MortgageInsurance", ((string[])(null)));
 #line hidden
         }
         
@@ -197,8 +192,7 @@ testRunner.Then(string.Format("Payment Schedule is recalculated with new lower o
                 "MortgageInsurance"}, SourceLine=47)]
         public virtual void SetValueGreaterThanDefaultValueForLowerOfCostOrAppraisalInMortgageInsurancePage_Variant1()
         {
-            this.SetValueGreaterThanDefaultValueForLowerOfCostOrAppraisalInMortgageInsurancePage("httP://thrive-app.azurewebsites.net/Index_Dev.html?tKey=EB535076-2140-4106-8CAE-B" +
-                    "230F6E2D082&aKey=TRID", "155000", "164861", "3/1/2016", "MortgageInsurance", ((string[])(null)));
+            this.SetValueGreaterThanDefaultValueForLowerOfCostOrAppraisalInMortgageInsurancePage("1", "155000", "164861", "3/1/2016", "MortgageInsurance", ((string[])(null)));
 #line hidden
         }
         

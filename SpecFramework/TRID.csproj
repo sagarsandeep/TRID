@@ -122,6 +122,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>MortgageInsuranceValidation.feature</DependentUpon>
     </Compile>
+    <Compile Include="FeatureFiles\PrepaidChargesValidation.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PrepaidChargesValidation.feature</DependentUpon>
+    </Compile>
     <Compile Include="GlobalParam\ObjectRepo.cs" />
     <Compile Include="HookFiles\General.cs" />
     <Compile Include="Jira\JiraApi\fields.cs" />
@@ -143,6 +148,7 @@
     <Compile Include="ProjectLibs\UI\UIElements.cs" />
     <Compile Include="StepDefinitions\LaunchAppAndVerifyDefaultValuesSteps.cs" />
     <Compile Include="StepDefinitions\MortgageInsuranceValidationSteps.cs" />
+    <Compile Include="StepDefinitions\PrepaidChargesValidationSteps.cs" />
     <Compile Include="TestClasses\LaunchTridApplication.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StepDefinitions\ClosingDisclosureSteps.cs" />
@@ -159,6 +165,7 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>ClosingDisclosure.feature.cs</LastGenOutput>
     </None>
+    <None Include="FeatureFiles\DataResources\TridTestData.xlsx" />
     <None Include="FeatureFiles\LaunchAppAndVerifyDefaultValues.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>LaunchAppAndVerifyDefaultValues.feature.cs</LastGenOutput>
@@ -166,6 +173,10 @@
     <None Include="FeatureFiles\MortgageInsuranceValidation.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>MortgageInsuranceValidation.feature.cs</LastGenOutput>
+    </None>
+    <None Include="FeatureFiles\PrepaidChargesValidation.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>PrepaidChargesValidation.feature.cs</LastGenOutput>
     </None>
     <None Include="packages.config" />
     <None Include="runtests.cmd" />
@@ -181,7 +192,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="FeatureFilePath\" />
-    <Folder Include="FeatureFiles\DataResources\" />
   </ItemGroup>
   <ItemGroup>
     <COMReference Include="Microsoft.Office.Core">

@@ -37,7 +37,7 @@ namespace TRID.CommonUtils
             return data;
         }
 
-        public string GetExcelValues(string sheetName)
+        public string GetExcelValues(int scenarioNo, string sheetName)
         {
             var xApplication = new Excel.Application();
             var xWorkbook = xApplication.Workbooks.Open(FilePath);
@@ -47,7 +47,7 @@ namespace TRID.CommonUtils
             var rowCount = xRange.Rows.Count;
             var colCount = xRange.Columns.Count;
 
-            for (var row = 1; row <= rowCount; row++)
+            for (var row = scenarioNo + 1; row == scenarioNo + 1; row++)
             for (var col = 1; col <= colCount; col++)
                 if (xRange.Cells[row, col] != null && xRange.Cells[row, col].Value2 != null)
                 {

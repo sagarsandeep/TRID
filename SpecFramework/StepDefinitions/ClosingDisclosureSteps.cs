@@ -4,7 +4,6 @@ using NUnit.Framework;
 using TechTalk.SpecFlow;
 using TRID.ActionClasses;
 using TRID.CommonUtils;
-using TRID.ProjectLibs;
 using TRID.ProjectLibs.Common;
 using TRID.TestClasses;
 
@@ -19,12 +18,11 @@ namespace TRID.StepDefinitions
         #region Given
 
 
-        [Given(@"user is at TRID application homepage with (.*)")]
-        public void GivenUserIsAtTridApplicationHomepageWith(string url)
+        [Given(@"user is at TRID application homepage")]
+        public void GivenUserIsAtTridApplicationHomepage()
         {
-            UIActions.WindowMaximize();
-            UIActions.GoToUrl(url);
-            Thread.Sleep(10000);
+            UIActions.WebDriverWait(PcPrepaidChargesText, 60);
+            Thread.Sleep(5000);
         }
 
         [Given(@"user navigate to Closing Disclosure Page")]
@@ -34,10 +32,10 @@ namespace TRID.StepDefinitions
             UIActions.WebDriverWait(CdLoanDetailsText, 60);
         }
 
-        [Given(@"user have all the input values from Excel sheet (.*)")]
-        public void GivenUserHaveAllTheInputValuesFromExcelSheet(string sheetName)
+        [Given(@"user have all the input values from Excel sheet (.*) for scenario (.*)")]
+        public void GivenUserHaveAllTheInputValuesFromExcelSheetForScenario(string sheetName, int scenarioNo)
         {
-            _getData.GetExcelValues(sheetName);
+            _getData.GetExcelValues(scenarioNo, sheetName);
         }
 
         [Given(@"user navigate to Loan Estimate Page")]

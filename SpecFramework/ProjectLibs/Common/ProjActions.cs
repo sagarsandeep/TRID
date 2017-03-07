@@ -199,5 +199,22 @@ namespace TRID.ProjectLibs.Common
                 Assert.True(numberOfPaymentArray.Contains(pmiRatesBeginPeriod), "PMI Rates Begin Period values are not as expected");
             }
         }
+
+        public static void PrepaidChargeGridValidation()
+        {
+            var prepaidChargeGridRowCount = UIActions.Count(PcPrepaidChargeGridCount);
+            Assert.AreEqual(1, prepaidChargeGridRowCount, "Prepaid Charge Grid entries are not as expected");
+
+            var prepaidCustomName = TridVariable.PrepaidCustomName;
+            var actualPrepaidCustomName = UIActions.GetText(PcPrepaidChargeGridCustomName);
+            Assert.AreEqual(prepaidCustomName, actualPrepaidCustomName, "Prepaid Charge Custom Name is not as expected");
+
+
+            var prepaidCustomValue = TridVariable.PrepaidCustomValue;
+            var actualPrepaidCustomValue = UIActions.GetText(PcPrepaidChargeGridCustomValue);
+            Assert.AreEqual(prepaidCustomValue, actualPrepaidCustomValue,
+                "Prepaid Charge Custom Value is not as expected");
+        }
     }
 }
+

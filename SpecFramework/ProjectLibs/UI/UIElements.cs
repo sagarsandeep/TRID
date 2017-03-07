@@ -238,11 +238,10 @@ namespace TRID.ProjectLibs.UI
 
         public static By PcPrepaidChargesText = By.XPath("//div[@id='PrepaidChargesInput']/md-toolbar/div");
 
-        //public static By PcFhaVaUsdaUpfrontPmiFree = By.Id("radio_6");
         public static By PcFhaVaUsdaUpfrontPmiFree = By.Id("input_6");
         public static By PcFloodFee = By.Id("input_7");
         public static By PcInspectionFee = By.Id("input_8");
-        public static By PcLoanOriginationFee = By.Id("input_8");
+        public static By PcLoanOriginationFee = By.Id("input_9");
         public static By PcOtherFees = By.Id("input_10");
         public static By PcPmiEscrowed = By.Id("input_11");
         public static By PcPrepaidDailyInterest = By.Id("input_12");
@@ -254,16 +253,36 @@ namespace TRID.ProjectLibs.UI
         public static By PcTitleWireFee = By.Id("input_18");
         public static By PcUnderWriting = By.Id("input_19");
 
-        public static By PcPrepaidChargeGridBlankRow = By.XPath("//section[@id='PrepaidChargeGrid']//tbody/tr");
+        public static By PcTestButton = By.XPath("//div[@id='PrepaidChargesInput']//button");
+
+        public static By PcCustomName = By.Id("input_20");
+        public static By PcCustomValue = By.Id("input_21");
+        public static By PcCustomFieldAddButton = By.XPath("//div[@id='PrepaidChargeGridInput']//button");
+        
+
+        public static By PcPrepaidChargeGridCount = By.XPath("//section[@id='PrepaidChargeGrid']//tbody/tr");
+        public static By PcPrepaidChargeGridCustomName = By.XPath("//section[@id='PrepaidChargeGrid']//tbody/tr/td[1]//span");
+        public static By PcPrepaidChargeGridCustomValue = By.XPath("//section[@id='PrepaidChargeGrid']//tbody/tr/td[2]//span");
         
 
         public static By PcDisclosedFinanceCharge = By.Id("input_22");
         public static By PcDisclosedPrepaidCharge = By.Id("input_23");
         public static By PcDisclosedAmountFinanced = By.Id("input_24");
 
+        //Finance Charge
+        public static By PcFcComputedValue = By.XPath("//div[@id='viewCompositionContainer']//div[1]/div[1]/ng-include//div[1]/p[1]");
+        public static By PcFcDisclosureValue = By.XPath("//div[@id='viewCompositionContainer']//div[1]/div[1]/ng-include//div[1]/p[2]");
+        public static By PcFcVarianceValue = By.XPath("//div[@id='viewCompositionContainer']//div[1]/div[1]/ng-include//div[1]/p[3]");
 
+        //Amount Financed
+        public static By PcAfComputedValue = By.XPath("//div[@id='viewCompositionContainer']//div[2]/div[1]/ng-include//div[1]/p[1]");
+        public static By PcAfDisclosureValue = By.XPath("//div[@id='viewCompositionContainer']//div[2]/div[1]/ng-include//div[1]/p[2]");
+        public static By PcAfVarianceValue = By.XPath("//div[@id='viewCompositionContainer']//div[2]/div[1]/ng-include//div[1]/p[3]");
 
-
+        //Prepaid Charges
+        public static By PcPcComputedValue = By.XPath("//div[@id='viewCompositionContainer']//div[1]/div[2]/ng-include//div[1]/p[1]");
+        public static By PcPcDisclosureValue = By.XPath("//div[@id='viewCompositionContainer']//div[1]/div[2]/ng-include//div[1]/p[2]");
+        public static By PcPcVarianceValue = By.XPath("//div[@id='viewCompositionContainer']//div[1]/div[2]/ng-include//div[1]/p[3]");
 
         #endregion
 
