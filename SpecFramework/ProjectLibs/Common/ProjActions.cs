@@ -214,6 +214,23 @@ namespace TRID.ProjectLibs.Common
             Assert.AreEqual(prepaidCustomValue, actualPrepaidCustomValue,
                 "Prepaid Charge Custom Value is not as expected");
         }
+
+        public static void PrepaidChargesGridEmptyValidation()
+        {
+            var isRowExists = false;
+            try
+            {
+                UIActions.GetText(PcPrepaidChargeGridCount);
+                isRowExists = true;
+            }
+            catch (Exception)
+            {
+                // ignored
+            }
+            if (isRowExists)
+                throw new Exception("Grid is not empty");
+        }
+
     }
 }
 

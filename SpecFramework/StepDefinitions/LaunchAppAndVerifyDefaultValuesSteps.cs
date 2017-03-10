@@ -80,18 +80,7 @@ namespace TRID.StepDefinitions
         {
 
             ProjActions.AddPrepaidChargesDefaultValues();
-            var isRowExists = false;
-            try
-            {
-                UIActions.GetText(PcPrepaidChargeGridCount);
-                isRowExists = true;
-            }
-            catch (Exception)
-            {
-                // ignored
-            }
-            if (isRowExists)
-                throw new Exception("Grid is not empty");
+            ProjActions.PrepaidChargesGridEmptyValidation();
         }
         
         [Then(@"Disclosed Values of Finance Charge, Prepaid Charge and Amount Financed are set to default values")]
@@ -113,18 +102,7 @@ namespace TRID.StepDefinitions
         [Then(@"PMI rates Grid should be empty")]
         public void ThenPmiRatesGridShouldBeEmpty()
         {
-            var isRowExists = false;
-            try
-            {
-                UIActions.GetText(MiPmiRatesGridRowsCount);
-                isRowExists = true;
-            }
-            catch (Exception)
-            {
-                // ignored
-            }
-            if (isRowExists)
-                throw new Exception("Grid is not empty");
+            ProjActions.PrepaidChargesGridEmptyValidation();
         }
         
         [Then(@"lower of cost or Appraisal should have default value")]

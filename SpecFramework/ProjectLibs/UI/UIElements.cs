@@ -1,4 +1,6 @@
-﻿using OpenQA.Selenium;
+﻿using System;
+using OpenQA.Selenium;
+using TRID.ActionClasses;
 using TRID.CommonUtils;
 
 namespace TRID.ProjectLibs.UI
@@ -46,7 +48,7 @@ namespace TRID.ProjectLibs.UI
         public static By CdAdvanceTypeMultiWithUnknownDates = By.Id("radio_47");
 
         public static By CdRepaymentTermTypeWhole = By.Id("radio_48");
-        public static By CdRepaymentTermTypeFinal = By.Id("radio_49");
+        public static By CdRepaymentTermTypeFinalBalloon = By.Id("radio_49");
         
         public static By CdLoanAmount = By.Id("input_50");
         public static By CdRateOfInterest = By.Id("input_51");
@@ -125,9 +127,12 @@ namespace TRID.ProjectLibs.UI
 
         #region Loan Estimate
 
+        public static By LeLoanDetailsText = By.XPath("//div[@id='LoanInformationInput']//div[@class='md-toolbar-tools ng-binding']");
+        public static By LePaymentScheduleText = By.XPath("//section[@id='PaymentScheduleOutput']//md-toolbar/div");
+
         public static By LeCalMtdActOver365 = By.Id("radio_29");
         public static By LeCalMtdActOver365LeapYear = By.Id("radio_30");
-        public static By LelMtdActOver360 = By.Id("radio_31");
+        public static By LelCalMtdActOver360 = By.Id("radio_31");
         public static By LeCalMtd30Over360 = By.Id("radio_32");
 
         public static By LeLoanTypeFixed = By.Id("radio_33");
@@ -194,6 +199,18 @@ namespace TRID.ProjectLibs.UI
         public static By LeTipComputedValue = By.XPath("//div[@id='viewCompositionContainer']/div/div[2]/div[2]//div[1]/p[1]");
         public static By LeTipDisclosureValue = By.XPath("//div[@id='viewCompositionContainer']/div/div[2]/div[2]//div[1]/p[2]");
         public static By LeTipVarianceValue = By.XPath("//div[@id='viewCompositionContainer']/div/div[2]/div[2]//div[1]/p[3]");
+
+        //Payment Schedule
+        public static By LeNumberOfPayments = By.XPath("//section[@id='PaymentScheduleOutput']//td[2]//span");
+
+        //Amortization Schedule
+        public static By LeAmortizationScheduleCount = By.XPath("//div[@id='Mortagagedetails']//md-list-item");
+        //static readonly int NumberOfPayments = Convert.ToInt32(UIActions.GetText(LeNumberOfPayments));
+        //public static By LeLastAmortizationScheduleRow = By.XPath("//div[@id='Mortagagedetails']/md-list/md-list-item[" + NumberOfPayments + "]//h4");
+        public static By LeFirstAmortizationDate = By.XPath("//div[@id='Mortagagedetails']//md-list-item[1]//p");
+        public static By LeSecondAmortizationDate = By.XPath("//div[@id='Mortagagedetails']//md-list-item[2]//p");
+
+
 
         #endregion
 

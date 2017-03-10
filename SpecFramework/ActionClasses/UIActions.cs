@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Threading;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.UI;
@@ -60,18 +59,18 @@ namespace TRID.ActionClasses
         }
 
 
-        static Actions actions = new Actions(ObjectRepo.Driver);
+        private static readonly Actions Actions = new Actions(ObjectRepo.Driver);
         public static void MoveToElement(By element)
         {
             var webElement = ObjectRepo.Driver.FindElement(element);
-            var moveToElement = actions.MoveToElement(webElement);
-            moveToElement.Perform();
+            Actions.MoveToElement(webElement).Perform();
+
         }
 
         public static void GoToTopOfPage(By element)
         {
             var webElement = ObjectRepo.Driver.FindElement(element);
-            actions.KeyUp(webElement, Keys.Up);
+            Actions.KeyUp(webElement, Keys.Up);
         }
 
         public static void Quit()

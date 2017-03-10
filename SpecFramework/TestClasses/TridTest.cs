@@ -21,7 +21,7 @@ namespace TRID.TestClasses
             ObjectRepo.Wait = new WebDriverWait(ObjectRepo.Driver, TimeSpan.FromSeconds(30));
             UIActions.WindowMaximize();
             UIActions.GoToUrl(Url + "?tKey=EB535076-2140-4106-8CAE-B230F6E2D082&aKey=TRID");
-            Thread.Sleep(10000);
+            Thread.Sleep(5000);
         }
     }
 }

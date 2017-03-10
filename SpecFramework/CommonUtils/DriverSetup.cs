@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Security.Policy;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium.IE;
+using OpenQA.Selenium.Remote;
 using Protractor;
 using TRID.Config.enumfolder;
 using TRID.Config.Interfaces;
@@ -23,7 +25,18 @@ namespace TRID.CommonUtils
         }
         private IWebDriver GetChromeDriver()
         {
-            IWebDriver driver = new ChromeDriver();
+            var capabilities = DesiredCapabilities.Chrome();
+            var options = new ChromeOptions();
+
+            options.AddArgument(@"--incognito");
+            options.AddArgument(@"--start-maximized");
+            capabilities.SetCapability(ChromeOptions.Capability, options);
+            IWebDriver driver = new ChromeDriver(options);
+            //var options = new ChromeOptions();
+            //options.AddArgument("incognito");
+            //var capabilities = options.ToCapabilities();
+            //IWebDriver driver = new ChromeDriver(new Uri(gridHubURL), capabilities);
+            //IWebDriver driver = new ChromeDriver(capabilities);
             return driver;
         }
         private IWebDriver GetIEDriver()

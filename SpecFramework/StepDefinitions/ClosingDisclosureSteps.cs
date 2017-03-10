@@ -348,7 +348,5 @@ namespace TRID.StepDefinitions
         {
             UIActions.Quit();
         }
-
-
     }
 }

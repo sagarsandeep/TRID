@@ -117,6 +117,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>LaunchAppAndVerifyDefaultValues.feature</DependentUpon>
     </Compile>
+    <Compile Include="FeatureFiles\LoanEstimateValidation.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LoanEstimateValidation.feature</DependentUpon>
+    </Compile>
     <Compile Include="FeatureFiles\MortgageInsuranceValidation.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -147,6 +152,7 @@
     <Compile Include="ProjectLibs\Common\TridVariable.cs" />
     <Compile Include="ProjectLibs\UI\UIElements.cs" />
     <Compile Include="StepDefinitions\LaunchAppAndVerifyDefaultValuesSteps.cs" />
+    <Compile Include="StepDefinitions\LoanEstimateValidationSteps.cs" />
     <Compile Include="StepDefinitions\MortgageInsuranceValidationSteps.cs" />
     <Compile Include="StepDefinitions\PrepaidChargesValidationSteps.cs" />
     <Compile Include="TestClasses\LaunchTridApplication.cs" />
@@ -169,6 +175,10 @@
     <None Include="FeatureFiles\LaunchAppAndVerifyDefaultValues.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>LaunchAppAndVerifyDefaultValues.feature.cs</LastGenOutput>
+    </None>
+    <None Include="FeatureFiles\LoanEstimateValidation.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>LoanEstimateValidation.feature.cs</LastGenOutput>
     </None>
     <None Include="FeatureFiles\MortgageInsuranceValidation.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
