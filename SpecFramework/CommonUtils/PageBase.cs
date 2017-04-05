@@ -5,6 +5,6 @@ namespace TRID.CommonUtils
 {
     public class PageBase
     {
-        public static IWebDriver Driver = ObjectRepo.Driver;
+        public IWebDriver Driver = ObjectRepo.Driver;
     }
 }

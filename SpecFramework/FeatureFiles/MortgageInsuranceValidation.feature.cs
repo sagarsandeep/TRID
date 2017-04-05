@@ -61,7 +61,7 @@ namespace TRID.FeatureFiles
             testRunner.CollectScenarioErrors();
         }
         
-        public virtual void EnterPMIRateDataInMortgageInsurancePage(string scenarioNo, string sheetName, string[] exampleTags)
+        public virtual void EnterPMIRateDataAndValidatePmiGridInMortgageInsurancePage(string no, string cdScenarioNo, string cdSheetName, string miScenarioNo, string miSheetName, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "MortgageInsurance",
@@ -70,129 +70,664 @@ namespace TRID.FeatureFiles
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Enter PMI rate data in Mortgage Insurance Page", @__tags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Enter PMI rate data and validate Pmi Grid in Mortgage Insurance Page", @__tags);
 #line 8
 this.ScenarioSetup(scenarioInfo);
 #line 9
-testRunner.Given("user launches TRID application", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+testRunner.Given("user is at TRID application homepage", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 10
- testRunner.And("user navigates to Mortgage Insurance Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("user navigate to Closing Disclosure Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 11
- testRunner.And(string.Format("user have the input values from excel sheet {0} for scenario {1}", sheetName, scenarioNo), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("user have closing disclosure data from excel sheet {0} for the scenario {1}", cdSheetName, cdScenarioNo), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 12
-testRunner.When("user enters pmi rate values", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.And(string.Format("user have Mortgage Insurance data from excel sheet {0} for the scenario {1}", miSheetName, miScenarioNo), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 13
+ testRunner.And("all the input and custom fields for prepaid charges have zero values", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 14
+testRunner.When("user navigate to Closing Disclosure Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 15
+ testRunner.And("user selects Calculation Method", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 16
+ testRunner.And("user selects loan type", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 17
+ testRunner.And("user selects Frequency of Payments", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 18
+ testRunner.And("user selects Loan Term", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 19
+ testRunner.And("user selects Repayment Term Type", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 20
+ testRunner.And("Enter Loan detail input values for computation for Closing Disclosure page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 21
+ testRunner.And("Enter Disclosed input values for Closing Disclosure page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 22
+ testRunner.And("user navigate to Mortgage Insurance Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 23
+ testRunner.And("user enters pmi rate values", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 24
+ testRunner.And("user enter input value for Lower Of Cost Or Appraisal", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 25
+ testRunner.And("user clicks on Mortgage Insurance Test Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 26
 testRunner.Then("Pmi Rates Grid should have inserted values", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Enter PMI rate data in Mortgage Insurance Page, 1", new string[] {
+        [TechTalk.SpecRun.ScenarioAttribute("Enter PMI rate data and validate Pmi Grid in Mortgage Insurance Page, 1", new string[] {
                 "MortgageInsurance",
-                "GiveInput"}, SourceLine=15)]
-        public virtual void EnterPMIRateDataInMortgageInsurancePage_1()
+                "GiveInput"}, SourceLine=28)]
+        public virtual void EnterPMIRateDataAndValidatePmiGridInMortgageInsurancePage_1()
         {
-            this.EnterPMIRateDataInMortgageInsurancePage("1", "MortgageInsurance", ((string[])(null)));
+            this.EnterPMIRateDataAndValidatePmiGridInMortgageInsurancePage("1", "1", "ClosingDisclosure", "1", "MortgageInsurance", ((string[])(null)));
 #line hidden
         }
         
-        public virtual void SetValueLesserThanDefaultValueForLowerOfCostOrAppraisalInMortgageInsurancePage(string scenarioNo, string defaultValue, string inputValue, string computedDate, string sheetName, string[] exampleTags)
+        [TechTalk.SpecRun.ScenarioAttribute("Enter PMI rate data and validate Pmi Grid in Mortgage Insurance Page, 2", new string[] {
+                "MortgageInsurance",
+                "GiveInput"}, SourceLine=28)]
+        public virtual void EnterPMIRateDataAndValidatePmiGridInMortgageInsurancePage_2()
+        {
+            this.EnterPMIRateDataAndValidatePmiGridInMortgageInsurancePage("2", "1", "ClosingDisclosure", "2", "MortgageInsurance", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Enter PMI rate data and validate Pmi Grid in Mortgage Insurance Page, 3", new string[] {
+                "MortgageInsurance",
+                "GiveInput"}, SourceLine=28)]
+        public virtual void EnterPMIRateDataAndValidatePmiGridInMortgageInsurancePage_3()
+        {
+            this.EnterPMIRateDataAndValidatePmiGridInMortgageInsurancePage("3", "1", "ClosingDisclosure", "3", "MortgageInsurance", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Enter PMI rate data and validate Pmi Grid in Mortgage Insurance Page, 4", new string[] {
+                "MortgageInsurance",
+                "GiveInput"}, SourceLine=28)]
+        public virtual void EnterPMIRateDataAndValidatePmiGridInMortgageInsurancePage_4()
+        {
+            this.EnterPMIRateDataAndValidatePmiGridInMortgageInsurancePage("4", "1", "ClosingDisclosure", "4", "MortgageInsurance", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Enter PMI rate data and validate Pmi Grid in Mortgage Insurance Page, 5", new string[] {
+                "MortgageInsurance",
+                "GiveInput"}, SourceLine=28)]
+        public virtual void EnterPMIRateDataAndValidatePmiGridInMortgageInsurancePage_5()
+        {
+            this.EnterPMIRateDataAndValidatePmiGridInMortgageInsurancePage("5", "1", "ClosingDisclosure", "5", "MortgageInsurance", ((string[])(null)));
+#line hidden
+        }
+        
+        public virtual void ValidatePMICardValueInMortgageInsurancePage(string no, string cdScenarioNo, string cdSheetName, string miScenarioNo, string miSheetName, string[] exampleTags)
         {
             string[] @__tags = new string[] {
-                    "MortgageInsurance"};
+                    "MortgageInsurance",
+                    "GiveInput"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Set value lesser than default value for lower of cost or appraisal in Mortgage In" +
-                    "surance Page", @__tags);
-#line 20
-this.ScenarioSetup(scenarioInfo);
-#line 21
-testRunner.Given("user launches TRID application", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 22
- testRunner.And("user navigates to Mortgage Insurance Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 23
- testRunner.And(string.Format("user have the input values from excel sheet {0} for scenario {1}", sheetName, scenarioNo), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 24
-testRunner.When("user enters pmi rate values", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 25
- testRunner.And(string.Format("user enters {0} lesser than default value for lower of cost or appraisal", inputValue), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 26
- testRunner.And("click on Other PMI inputs TEST Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 27
-testRunner.Then(string.Format("Payment Schedule is recalculated with new lower of cost value {0}", inputValue), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 28
- testRunner.And(string.Format("Drop off years for PMI changes to {0}", computedDate), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-            this.ScenarioCleanup();
-        }
-        
-        [TechTalk.SpecRun.ScenarioAttribute("Set value lesser than default value for lower of cost or appraisal in Mortgage In" +
-            "surance Page, Variant 0", new string[] {
-                "MortgageInsurance"}, SourceLine=30)]
-        public virtual void SetValueLesserThanDefaultValueForLowerOfCostOrAppraisalInMortgageInsurancePage_Variant0()
-        {
-            this.SetValueLesserThanDefaultValueForLowerOfCostOrAppraisalInMortgageInsurancePage("1", "155000", "131189", "3/1/2016", "MortgageInsurance", ((string[])(null)));
-#line hidden
-        }
-        
-        [TechTalk.SpecRun.ScenarioAttribute("Set value lesser than default value for lower of cost or appraisal in Mortgage In" +
-            "surance Page, Variant 1", new string[] {
-                "MortgageInsurance"}, SourceLine=30)]
-        public virtual void SetValueLesserThanDefaultValueForLowerOfCostOrAppraisalInMortgageInsurancePage_Variant1()
-        {
-            this.SetValueLesserThanDefaultValueForLowerOfCostOrAppraisalInMortgageInsurancePage("1", "155000", "131188", "3/1/2016", "MortgageInsurance", ((string[])(null)));
-#line hidden
-        }
-        
-        public virtual void SetValueGreaterThanDefaultValueForLowerOfCostOrAppraisalInMortgageInsurancePage(string scenarioNo, string defaultValue, string inputValue, string computedDate, string sheetName, string[] exampleTags)
-        {
-            string[] @__tags = new string[] {
-                    "MortgageInsurance"};
-            if ((exampleTags != null))
-            {
-                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
-            }
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Set value greater than default value for lower of cost or appraisal in Mortgage I" +
-                    "nsurance Page", @__tags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Validate PMI card value in Mortgage Insurance Page", @__tags);
 #line 37
 this.ScenarioSetup(scenarioInfo);
 #line 38
-testRunner.Given("user launches TRID application", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+testRunner.Given("user is at TRID application homepage", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 39
- testRunner.And("user navigates to Mortgage Insurance Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("user navigate to Closing Disclosure Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 40
- testRunner.And(string.Format("user have the input values from excel sheet {0} for scenario {1}", sheetName, scenarioNo), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("user have closing disclosure data from excel sheet {0} for the scenario {1}", cdSheetName, cdScenarioNo), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 41
-testRunner.When("user enters pmi rate values", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.And(string.Format("user have Mortgage Insurance data from excel sheet {0} for the scenario {1}", miSheetName, miScenarioNo), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 42
- testRunner.And(string.Format("user enters {0} greater than default value for lower of cost or appraisal", inputValue), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("all the input and custom fields for prepaid charges have zero values", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 43
- testRunner.And("click on Other PMI inputs TEST Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.When("user navigate to Closing Disclosure Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 44
-testRunner.Then(string.Format("Payment Schedule is recalculated with new lower of cost value {0}", inputValue), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.And("user selects Calculation Method", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 45
- testRunner.And(string.Format("Drop off years for PMI changes to {0}", computedDate), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("user selects loan type", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 46
+ testRunner.And("user selects Frequency of Payments", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 47
+ testRunner.And("user selects Loan Term", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 48
+ testRunner.And("user selects Repayment Term Type", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 49
+ testRunner.And("Enter Loan detail input values for computation for Closing Disclosure page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 50
+ testRunner.And("Enter Disclosed input values for Closing Disclosure page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 51
+ testRunner.And("user navigate to Mortgage Insurance Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 52
+ testRunner.And("user enters pmi rate values", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 53
+ testRunner.And("user enter input value for Lower Of Cost Or Appraisal", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 54
+ testRunner.And("user clicks on Mortgage Insurance Test Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 55
+testRunner.Then("updated/computed pmi value should display on Mortgage Insurance", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Set value greater than default value for lower of cost or appraisal in Mortgage I" +
-            "nsurance Page, Variant 0", new string[] {
-                "MortgageInsurance"}, SourceLine=47)]
-        public virtual void SetValueGreaterThanDefaultValueForLowerOfCostOrAppraisalInMortgageInsurancePage_Variant0()
+        [TechTalk.SpecRun.ScenarioAttribute("Validate PMI card value in Mortgage Insurance Page, 1", new string[] {
+                "MortgageInsurance",
+                "GiveInput"}, SourceLine=57)]
+        public virtual void ValidatePMICardValueInMortgageInsurancePage_1()
         {
-            this.SetValueGreaterThanDefaultValueForLowerOfCostOrAppraisalInMortgageInsurancePage("1", "155000", "164860", "3/1/2016", "MortgageInsurance", ((string[])(null)));
+            this.ValidatePMICardValueInMortgageInsurancePage("1", "1", "ClosingDisclosure", "1", "MortgageInsurance", ((string[])(null)));
 #line hidden
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Set value greater than default value for lower of cost or appraisal in Mortgage I" +
-            "nsurance Page, Variant 1", new string[] {
-                "MortgageInsurance"}, SourceLine=47)]
-        public virtual void SetValueGreaterThanDefaultValueForLowerOfCostOrAppraisalInMortgageInsurancePage_Variant1()
+        [TechTalk.SpecRun.ScenarioAttribute("Validate PMI card value in Mortgage Insurance Page, 2", new string[] {
+                "MortgageInsurance",
+                "GiveInput"}, SourceLine=57)]
+        public virtual void ValidatePMICardValueInMortgageInsurancePage_2()
         {
-            this.SetValueGreaterThanDefaultValueForLowerOfCostOrAppraisalInMortgageInsurancePage("1", "155000", "164861", "3/1/2016", "MortgageInsurance", ((string[])(null)));
+            this.ValidatePMICardValueInMortgageInsurancePage("2", "1", "ClosingDisclosure", "2", "MortgageInsurance", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Validate PMI card value in Mortgage Insurance Page, 3", new string[] {
+                "MortgageInsurance",
+                "GiveInput"}, SourceLine=57)]
+        public virtual void ValidatePMICardValueInMortgageInsurancePage_3()
+        {
+            this.ValidatePMICardValueInMortgageInsurancePage("3", "1", "ClosingDisclosure", "3", "MortgageInsurance", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Validate PMI card value in Mortgage Insurance Page, 4", new string[] {
+                "MortgageInsurance",
+                "GiveInput"}, SourceLine=57)]
+        public virtual void ValidatePMICardValueInMortgageInsurancePage_4()
+        {
+            this.ValidatePMICardValueInMortgageInsurancePage("4", "1", "ClosingDisclosure", "4", "MortgageInsurance", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Validate PMI card value in Mortgage Insurance Page, 5", new string[] {
+                "MortgageInsurance",
+                "GiveInput"}, SourceLine=57)]
+        public virtual void ValidatePMICardValueInMortgageInsurancePage_5()
+        {
+            this.ValidatePMICardValueInMortgageInsurancePage("5", "1", "ClosingDisclosure", "5", "MortgageInsurance", ((string[])(null)));
+#line hidden
+        }
+        
+        public virtual void ValidateDropOffYearsForPMICardValueInMortgageInsurancePage(string no, string cdScenarioNo, string cdSheetName, string miScenarioNo, string miSheetName, string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "MortgageInsurance",
+                    "GiveInput"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Validate Drop off years for PMI card value in Mortgage Insurance Page", @__tags);
+#line 66
+this.ScenarioSetup(scenarioInfo);
+#line 67
+testRunner.Given("user is at TRID application homepage", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 68
+ testRunner.And(string.Format("user have closing disclosure data from excel sheet {0} for the scenario {1}", cdSheetName, cdScenarioNo), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 69
+ testRunner.And(string.Format("user have Mortgage Insurance data from excel sheet {0} for the scenario {1}", miSheetName, miScenarioNo), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 70
+ testRunner.And("all the input and custom fields for prepaid charges have zero values", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 71
+testRunner.When("user navigate to Closing Disclosure Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 72
+ testRunner.And("user selects Calculation Method", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 73
+ testRunner.And("user selects loan type", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 74
+ testRunner.And("user selects Frequency of Payments", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 75
+ testRunner.And("user selects Loan Term", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 76
+ testRunner.And("user selects Repayment Term Type", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 77
+ testRunner.And("Enter Loan detail input values for computation for Closing Disclosure page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 78
+ testRunner.And("Enter Disclosed input values for Closing Disclosure page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 79
+ testRunner.And("user navigate to Mortgage Insurance Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 80
+ testRunner.And("user enters pmi rate values", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 81
+ testRunner.And("user enter input value for Lower Of Cost Or Appraisal", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 82
+ testRunner.And("user clicks on Mortgage Insurance Test Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 83
+testRunner.Then("updated/computed Drop off years for PMI value should display on Mortgage Insuranc" +
+                    "e", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Validate Drop off years for PMI card value in Mortgage Insurance Page, 1", new string[] {
+                "MortgageInsurance",
+                "GiveInput"}, SourceLine=85)]
+        public virtual void ValidateDropOffYearsForPMICardValueInMortgageInsurancePage_1()
+        {
+            this.ValidateDropOffYearsForPMICardValueInMortgageInsurancePage("1", "1", "ClosingDisclosure", "1", "MortgageInsurance", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Validate Drop off years for PMI card value in Mortgage Insurance Page, 2", new string[] {
+                "MortgageInsurance",
+                "GiveInput"}, SourceLine=85)]
+        public virtual void ValidateDropOffYearsForPMICardValueInMortgageInsurancePage_2()
+        {
+            this.ValidateDropOffYearsForPMICardValueInMortgageInsurancePage("2", "1", "ClosingDisclosure", "2", "MortgageInsurance", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Validate Drop off years for PMI card value in Mortgage Insurance Page, 3", new string[] {
+                "MortgageInsurance",
+                "GiveInput"}, SourceLine=85)]
+        public virtual void ValidateDropOffYearsForPMICardValueInMortgageInsurancePage_3()
+        {
+            this.ValidateDropOffYearsForPMICardValueInMortgageInsurancePage("3", "1", "ClosingDisclosure", "3", "MortgageInsurance", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Validate Drop off years for PMI card value in Mortgage Insurance Page, 4", new string[] {
+                "MortgageInsurance",
+                "GiveInput"}, SourceLine=85)]
+        public virtual void ValidateDropOffYearsForPMICardValueInMortgageInsurancePage_4()
+        {
+            this.ValidateDropOffYearsForPMICardValueInMortgageInsurancePage("4", "1", "ClosingDisclosure", "4", "MortgageInsurance", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Validate Drop off years for PMI card value in Mortgage Insurance Page, 5", new string[] {
+                "MortgageInsurance",
+                "GiveInput"}, SourceLine=85)]
+        public virtual void ValidateDropOffYearsForPMICardValueInMortgageInsurancePage_5()
+        {
+            this.ValidateDropOffYearsForPMICardValueInMortgageInsurancePage("5", "1", "ClosingDisclosure", "5", "MortgageInsurance", ((string[])(null)));
+#line hidden
+        }
+        
+        public virtual void ValidateTotalPeriodPaymentCardValueInMortgageInsurancePage(string no, string cdScenarioNo, string cdSheetName, string miScenarioNo, string miSheetName, string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "MortgageInsurance",
+                    "GiveInput"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Validate Total Period Payment card value in Mortgage Insurance Page", @__tags);
+#line 94
+this.ScenarioSetup(scenarioInfo);
+#line 95
+testRunner.Given("user is at TRID application homepage", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 96
+ testRunner.And(string.Format("user have closing disclosure data from excel sheet {0} for the scenario {1}", cdSheetName, cdScenarioNo), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 97
+ testRunner.And(string.Format("user have Mortgage Insurance data from excel sheet {0} for the scenario {1}", miSheetName, miScenarioNo), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 98
+ testRunner.And("all the input and custom fields for prepaid charges have zero values", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 99
+testRunner.When("user navigate to Closing Disclosure Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 100
+ testRunner.And("user selects Calculation Method", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 101
+ testRunner.And("user selects loan type", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 102
+ testRunner.And("user selects Frequency of Payments", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 103
+ testRunner.And("user selects Loan Term", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 104
+ testRunner.And("user selects Repayment Term Type", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 105
+ testRunner.And("Enter Loan detail input values for computation for Closing Disclosure page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 106
+ testRunner.And("Enter Disclosed input values for Closing Disclosure page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 107
+ testRunner.And("user navigate to Mortgage Insurance Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 108
+ testRunner.And("user enters pmi rate values", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 109
+ testRunner.And("user enter input value for Lower Of Cost Or Appraisal", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 110
+ testRunner.And("user clicks on Mortgage Insurance Test Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 111
+testRunner.Then("updated/computed Total Period Payment value should display on Mortgage Insurance", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Validate Total Period Payment card value in Mortgage Insurance Page, 1", new string[] {
+                "MortgageInsurance",
+                "GiveInput"}, SourceLine=113)]
+        public virtual void ValidateTotalPeriodPaymentCardValueInMortgageInsurancePage_1()
+        {
+            this.ValidateTotalPeriodPaymentCardValueInMortgageInsurancePage("1", "1", "ClosingDisclosure", "1", "MortgageInsurance", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Validate Total Period Payment card value in Mortgage Insurance Page, 2", new string[] {
+                "MortgageInsurance",
+                "GiveInput"}, SourceLine=113)]
+        public virtual void ValidateTotalPeriodPaymentCardValueInMortgageInsurancePage_2()
+        {
+            this.ValidateTotalPeriodPaymentCardValueInMortgageInsurancePage("2", "1", "ClosingDisclosure", "2", "MortgageInsurance", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Validate Total Period Payment card value in Mortgage Insurance Page, 3", new string[] {
+                "MortgageInsurance",
+                "GiveInput"}, SourceLine=113)]
+        public virtual void ValidateTotalPeriodPaymentCardValueInMortgageInsurancePage_3()
+        {
+            this.ValidateTotalPeriodPaymentCardValueInMortgageInsurancePage("3", "1", "ClosingDisclosure", "3", "MortgageInsurance", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Validate Total Period Payment card value in Mortgage Insurance Page, 4", new string[] {
+                "MortgageInsurance",
+                "GiveInput"}, SourceLine=113)]
+        public virtual void ValidateTotalPeriodPaymentCardValueInMortgageInsurancePage_4()
+        {
+            this.ValidateTotalPeriodPaymentCardValueInMortgageInsurancePage("4", "1", "ClosingDisclosure", "4", "MortgageInsurance", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Validate Total Period Payment card value in Mortgage Insurance Page, 5", new string[] {
+                "MortgageInsurance",
+                "GiveInput"}, SourceLine=113)]
+        public virtual void ValidateTotalPeriodPaymentCardValueInMortgageInsurancePage_5()
+        {
+            this.ValidateTotalPeriodPaymentCardValueInMortgageInsurancePage("5", "1", "ClosingDisclosure", "5", "MortgageInsurance", ((string[])(null)));
+#line hidden
+        }
+        
+        public virtual void ValidateTotalOfPaymentsCardValueInMortgageInsurancePage(string no, string cdScenarioNo, string cdSheetName, string miScenarioNo, string miSheetName, string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "MortgageInsurance",
+                    "GiveInput"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Validate Total Of Payments card value in Mortgage Insurance Page", @__tags);
+#line 122
+this.ScenarioSetup(scenarioInfo);
+#line 123
+testRunner.Given("user is at TRID application homepage", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 124
+ testRunner.And(string.Format("user have closing disclosure data from excel sheet {0} for the scenario {1}", cdSheetName, cdScenarioNo), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 125
+ testRunner.And(string.Format("user have Mortgage Insurance data from excel sheet {0} for the scenario {1}", miSheetName, miScenarioNo), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 126
+ testRunner.And("all the input and custom fields for prepaid charges have zero values", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 127
+testRunner.When("user navigate to Closing Disclosure Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 128
+ testRunner.And("user selects Calculation Method", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 129
+ testRunner.And("user selects loan type", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 130
+ testRunner.And("user selects Frequency of Payments", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 131
+ testRunner.And("user selects Loan Term", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 132
+ testRunner.And("user selects Repayment Term Type", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 133
+ testRunner.And("Enter Loan detail input values for computation for Closing Disclosure page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 134
+ testRunner.And("Enter Disclosed input values for Closing Disclosure page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 135
+ testRunner.And("user navigate to Mortgage Insurance Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 136
+ testRunner.And("user enters pmi rate values", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 137
+ testRunner.And("user enter input value for Lower Of Cost Or Appraisal", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 138
+ testRunner.And("user clicks on Mortgage Insurance Test Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 139
+testRunner.Then("updated/computed Total Of Payments value should display on Mortgage Insurance", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Validate Total Of Payments card value in Mortgage Insurance Page, 1", new string[] {
+                "MortgageInsurance",
+                "GiveInput"}, SourceLine=141)]
+        public virtual void ValidateTotalOfPaymentsCardValueInMortgageInsurancePage_1()
+        {
+            this.ValidateTotalOfPaymentsCardValueInMortgageInsurancePage("1", "1", "ClosingDisclosure", "1", "MortgageInsurance", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Validate Total Of Payments card value in Mortgage Insurance Page, 2", new string[] {
+                "MortgageInsurance",
+                "GiveInput"}, SourceLine=141)]
+        public virtual void ValidateTotalOfPaymentsCardValueInMortgageInsurancePage_2()
+        {
+            this.ValidateTotalOfPaymentsCardValueInMortgageInsurancePage("2", "1", "ClosingDisclosure", "2", "MortgageInsurance", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Validate Total Of Payments card value in Mortgage Insurance Page, 3", new string[] {
+                "MortgageInsurance",
+                "GiveInput"}, SourceLine=141)]
+        public virtual void ValidateTotalOfPaymentsCardValueInMortgageInsurancePage_3()
+        {
+            this.ValidateTotalOfPaymentsCardValueInMortgageInsurancePage("3", "1", "ClosingDisclosure", "3", "MortgageInsurance", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Validate Total Of Payments card value in Mortgage Insurance Page, 4", new string[] {
+                "MortgageInsurance",
+                "GiveInput"}, SourceLine=141)]
+        public virtual void ValidateTotalOfPaymentsCardValueInMortgageInsurancePage_4()
+        {
+            this.ValidateTotalOfPaymentsCardValueInMortgageInsurancePage("4", "1", "ClosingDisclosure", "4", "MortgageInsurance", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Validate Total Of Payments card value in Mortgage Insurance Page, 5", new string[] {
+                "MortgageInsurance",
+                "GiveInput"}, SourceLine=141)]
+        public virtual void ValidateTotalOfPaymentsCardValueInMortgageInsurancePage_5()
+        {
+            this.ValidateTotalOfPaymentsCardValueInMortgageInsurancePage("5", "1", "ClosingDisclosure", "5", "MortgageInsurance", ((string[])(null)));
+#line hidden
+        }
+        
+        public virtual void ValidateAmountFinancedCardValueInMortgageInsurancePage(string no, string cdScenarioNo, string cdSheetName, string miScenarioNo, string miSheetName, string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "MortgageInsurance",
+                    "GiveInput"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Validate Amount Financed card value in Mortgage Insurance Page", @__tags);
+#line 150
+this.ScenarioSetup(scenarioInfo);
+#line 151
+testRunner.Given("user is at TRID application homepage", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 152
+ testRunner.And(string.Format("user have closing disclosure data from excel sheet {0} for the scenario {1}", cdSheetName, cdScenarioNo), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 153
+ testRunner.And(string.Format("user have Mortgage Insurance data from excel sheet {0} for the scenario {1}", miSheetName, miScenarioNo), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 154
+ testRunner.And("all the input and custom fields for prepaid charges have zero values", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 155
+testRunner.When("user navigate to Closing Disclosure Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 156
+ testRunner.And("user selects Calculation Method", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 157
+ testRunner.And("user selects loan type", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 158
+ testRunner.And("user selects Frequency of Payments", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 159
+ testRunner.And("user selects Loan Term", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 160
+ testRunner.And("user selects Repayment Term Type", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 161
+ testRunner.And("Enter Loan detail input values for computation for Closing Disclosure page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 162
+ testRunner.And("Enter Disclosed input values for Closing Disclosure page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 163
+ testRunner.And("user navigate to Mortgage Insurance Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 164
+ testRunner.And("user enters pmi rate values", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 165
+ testRunner.And("user enter input value for Lower Of Cost Or Appraisal", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 166
+ testRunner.And("user clicks on Mortgage Insurance Test Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 167
+testRunner.Then("updated/computed Amount Financed value should display on Mortgage Insurance", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Validate Amount Financed card value in Mortgage Insurance Page, 1", new string[] {
+                "MortgageInsurance",
+                "GiveInput"}, SourceLine=169)]
+        public virtual void ValidateAmountFinancedCardValueInMortgageInsurancePage_1()
+        {
+            this.ValidateAmountFinancedCardValueInMortgageInsurancePage("1", "1", "ClosingDisclosure", "1", "MortgageInsurance", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Validate Amount Financed card value in Mortgage Insurance Page, 2", new string[] {
+                "MortgageInsurance",
+                "GiveInput"}, SourceLine=169)]
+        public virtual void ValidateAmountFinancedCardValueInMortgageInsurancePage_2()
+        {
+            this.ValidateAmountFinancedCardValueInMortgageInsurancePage("2", "1", "ClosingDisclosure", "2", "MortgageInsurance", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Validate Amount Financed card value in Mortgage Insurance Page, 3", new string[] {
+                "MortgageInsurance",
+                "GiveInput"}, SourceLine=169)]
+        public virtual void ValidateAmountFinancedCardValueInMortgageInsurancePage_3()
+        {
+            this.ValidateAmountFinancedCardValueInMortgageInsurancePage("3", "1", "ClosingDisclosure", "3", "MortgageInsurance", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Validate Amount Financed card value in Mortgage Insurance Page, 4", new string[] {
+                "MortgageInsurance",
+                "GiveInput"}, SourceLine=169)]
+        public virtual void ValidateAmountFinancedCardValueInMortgageInsurancePage_4()
+        {
+            this.ValidateAmountFinancedCardValueInMortgageInsurancePage("4", "1", "ClosingDisclosure", "4", "MortgageInsurance", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Validate Amount Financed card value in Mortgage Insurance Page, 5", new string[] {
+                "MortgageInsurance",
+                "GiveInput"}, SourceLine=169)]
+        public virtual void ValidateAmountFinancedCardValueInMortgageInsurancePage_5()
+        {
+            this.ValidateAmountFinancedCardValueInMortgageInsurancePage("5", "1", "ClosingDisclosure", "5", "MortgageInsurance", ((string[])(null)));
+#line hidden
+        }
+        
+        public virtual void ValidateAPRCardValueInMortgageInsurancePage(string no, string cdScenarioNo, string cdSheetName, string miScenarioNo, string miSheetName, string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "MortgageInsurance",
+                    "GiveInput"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Validate APR card value in Mortgage Insurance Page", @__tags);
+#line 178
+this.ScenarioSetup(scenarioInfo);
+#line 179
+testRunner.Given("user is at TRID application homepage", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 180
+ testRunner.And(string.Format("user have closing disclosure data from excel sheet {0} for the scenario {1}", cdSheetName, cdScenarioNo), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 181
+ testRunner.And(string.Format("user have Mortgage Insurance data from excel sheet {0} for the scenario {1}", miSheetName, miScenarioNo), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 182
+ testRunner.And("all the input and custom fields for prepaid charges have zero values", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 183
+testRunner.When("user navigate to Closing Disclosure Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 184
+ testRunner.And("user selects Calculation Method", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 185
+ testRunner.And("user selects loan type", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 186
+ testRunner.And("user selects Frequency of Payments", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 187
+ testRunner.And("user selects Loan Term", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 188
+ testRunner.And("user selects Repayment Term Type", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 189
+ testRunner.And("Enter Loan detail input values for computation for Closing Disclosure page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 190
+ testRunner.And("Enter Disclosed input values for Closing Disclosure page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 191
+ testRunner.And("user navigate to Mortgage Insurance Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 192
+ testRunner.And("user enters pmi rate values", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 193
+ testRunner.And("user enter input value for Lower Of Cost Or Appraisal", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 194
+ testRunner.And("user clicks on Mortgage Insurance Test Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 195
+testRunner.Then("updated/computed APR value should display on Mortgage Insurance", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Validate APR card value in Mortgage Insurance Page, 1", new string[] {
+                "MortgageInsurance",
+                "GiveInput"}, SourceLine=197)]
+        public virtual void ValidateAPRCardValueInMortgageInsurancePage_1()
+        {
+            this.ValidateAPRCardValueInMortgageInsurancePage("1", "1", "ClosingDisclosure", "1", "MortgageInsurance", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Validate APR card value in Mortgage Insurance Page, 2", new string[] {
+                "MortgageInsurance",
+                "GiveInput"}, SourceLine=197)]
+        public virtual void ValidateAPRCardValueInMortgageInsurancePage_2()
+        {
+            this.ValidateAPRCardValueInMortgageInsurancePage("2", "1", "ClosingDisclosure", "2", "MortgageInsurance", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Validate APR card value in Mortgage Insurance Page, 3", new string[] {
+                "MortgageInsurance",
+                "GiveInput"}, SourceLine=197)]
+        public virtual void ValidateAPRCardValueInMortgageInsurancePage_3()
+        {
+            this.ValidateAPRCardValueInMortgageInsurancePage("3", "1", "ClosingDisclosure", "3", "MortgageInsurance", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Validate APR card value in Mortgage Insurance Page, 4", new string[] {
+                "MortgageInsurance",
+                "GiveInput"}, SourceLine=197)]
+        public virtual void ValidateAPRCardValueInMortgageInsurancePage_4()
+        {
+            this.ValidateAPRCardValueInMortgageInsurancePage("4", "1", "ClosingDisclosure", "4", "MortgageInsurance", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Validate APR card value in Mortgage Insurance Page, 5", new string[] {
+                "MortgageInsurance",
+                "GiveInput"}, SourceLine=197)]
+        public virtual void ValidateAPRCardValueInMortgageInsurancePage_5()
+        {
+            this.ValidateAPRCardValueInMortgageInsurancePage("5", "1", "ClosingDisclosure", "5", "MortgageInsurance", ((string[])(null)));
 #line hidden
         }
         

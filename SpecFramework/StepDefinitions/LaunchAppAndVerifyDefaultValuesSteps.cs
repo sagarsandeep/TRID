@@ -47,7 +47,7 @@ namespace TRID.StepDefinitions
             UIActions.Click(MortgageInsuranceLink);
             UIActions.WebDriverWait(MortgageInsuranceLink, 60);
         }
-        
+
         [When(@"user navigate to Loan Estimate Page")]
         public void WhenUserNavigateToLoanEstimatePage()
         {
@@ -72,7 +72,7 @@ namespace TRID.StepDefinitions
         {
             string expectedPageText = "Prepaid Charges";
             string actualPageText = UIActions.GetText(PcPrepaidChargesText);
-            Assert.AreEqual(expectedPageText,actualPageText,"Prepaid Charges is not default Page");
+            Assert.AreEqual(expectedPageText, actualPageText, "Prepaid Charges is not default Page");
         }
 
         [Then(@"all the input and custom fields should have zero values")]
@@ -82,7 +82,7 @@ namespace TRID.StepDefinitions
             ProjActions.AddPrepaidChargesDefaultValues();
             ProjActions.PrepaidChargesGridEmptyValidation();
         }
-        
+
         [Then(@"Disclosed Values of Finance Charge, Prepaid Charge and Amount Financed are set to default values")]
         public void ThenDisclosedValuesOfFinanceChargePrepaidChargeAndAmountFinancedAreSetToDefaultValues()
         {
@@ -98,13 +98,13 @@ namespace TRID.StepDefinitions
             UIActions.Clear(PcDisclosedAmountFinanced);
             UIActions.GiveInput(PcDisclosedAmountFinanced, disclosedAmountFinanced);
         }
-        
+
         [Then(@"PMI rates Grid should be empty")]
         public void ThenPmiRatesGridShouldBeEmpty()
         {
             ProjActions.PrepaidChargesGridEmptyValidation();
         }
-        
+
         [Then(@"lower of cost or Appraisal should have default value")]
         public void ThenLowerOfCostOrAppraisalShouldHaveDefaultValue()
         {
@@ -116,75 +116,117 @@ namespace TRID.StepDefinitions
             UIActions.Clear(MiLowerOfCostOrAppraisal);
             UIActions.GiveInput(MiLowerOfCostOrAppraisal, lowerOfCostOrAppraisal);
         }
-        
-        [Then(@"calculation Method should have default value")]
-        public void ThenCalculationMethodShouldHaveDefaultValue()
-        {
-            UIActions.Click(CdCalMtd30Over360);
-        }
 
-        [Then(@"Loan Type should have default value")]
-        public void ThenLoanTypeShouldHaveDefaultValue()
-        {
-            UIActions.Click(CdLoanTypeFixed);
-        }
+        //[When(@"user selects Calculation Method in Loan Estimate Page")]
+        //public void WhenUserSelectsCalculationMethodInDisclosurePage()
+        //{
+        //    ClosingDisclosureVariable();
+        //    UIActions.Click(LeCalculationMethod);
+        //}
 
-        [Then(@"Frequency of Payments should have default value")]
-        public void ThenFrequencyOfPaymentsShouldHaveDefaultValue()
-        {
-            UIActions.Click(CdFreqOfPaymentMonthly);
-        }
-        
-        [Then(@"Loan Term should have default value")]
-        public void ThenLoanTermShouldHaveDefaultValue()
-        {
-            UIActions.Click(CdLoanTermMonths);
-            var loanTermValue = TridVariable.LoanTermValue;
-            UIActions.Clear(CdLoanTermValue);
-            UIActions.GiveInput(CdLoanTermValue, loanTermValue);
-        }
-        
-        [Then(@"Repayment Term Type should have default value")]
-        public void ThenRepaymentTermTypeShouldHaveDefaultValue()
-        {
-            UIActions.Click(CdRepaymentTermTypeWhole);
-        }
-        
-        [Then(@"Date of Loan, Date of Interest begins to accure and Date of First Payment should have default value")]
-        public void ThenDateOfLoanDateOfInterestBeginsToAccureAndDateOfFirstPaymentShouldHaveDefaultValue()
-        {
-            var dateOfLoan = DateTime.FromOADate(Convert.ToDouble(TridVariable.DateOfLoan)).ToString("d/M/yyyy");
-            UIActions.Clear(LeDateOfLoan);
-            UIActions.GiveInput(LeDateOfLoan, dateOfLoan);
+        //[When(@"user selects loan type in Loan Estimate Page")]
+        //public void WhenUserSelectsLoanTypeInLoanEstimatePage()
+        //{
+        //    ClosingDisclosureVariable();
+        //    UIActions.Click(LeLoanType);
+        //}
 
-            var dateOfInterestBegins = DateTime.FromOADate(Convert.ToDouble(TridVariable.DateInterestBeginToAccrue)).ToString("d/M/yyyy");
-            UIActions.Clear(LeDateOfInterestBegins);
-            UIActions.GiveInput(LeDateOfInterestBegins, dateOfInterestBegins);
+        //[When(@"user selects Frequency of Payments in Loan Estimate Page")]
+        //public void WhenUserSelectsFrequencyOfPaymentsInLoanEstimatePage()
+        //{
+        //    ClosingDisclosureVariable();
+        //    UIActions.Click(LeFrequencyOfPayments);
+        //}
 
-            var dateOfFirstPayment = DateTime.FromOADate(Convert.ToDouble(TridVariable.DateOfFirstPayment)).ToString("d/M/yyyy");
-            UIActions.Clear(LeDateOfFirstPayment);
-            UIActions.GiveInput(LeDateOfFirstPayment, dateOfFirstPayment);
-        }
-        
-        [Then(@"Disclosed values should have default values")]
-        public void ThenDisclosedValuesShouldHaveDefaultValues()
-        {
-            var in5Years = TridVariable.DiscLosedIn5Years;
-            UIActions.Clear(LeDisclosedIn5Years);
-            UIActions.GiveInput(LeDisclosedIn5Years, in5Years);
+        //[When(@"user selects Loan Term in Loan Estimate Page")]
+        //public void WhenUserSelectsLoanTermInLoanEstimatePage()
+        //{
+        //    ClosingDisclosureVariable();
+        //    UIActions.Click(LeLoanTerm);
+        //}
 
-            var in5YearsPrincipal = TridVariable.DiscLosedIn5YearsPrincipal;
-            UIActions.Clear(LeDisclosedIn5YearsPrincipal);
-            UIActions.GiveInput(LeDisclosedIn5YearsPrincipal, in5YearsPrincipal);
+        //[When(@"user selects Repayment Term Type in Loan Estimate Page")]
+        //public void WhenUserSelectsRepaymentTermTypeInLoanEstimatePage()
+        //{
+        //    ClosingDisclosureVariable();
+        //    UIActions.Click(LeRepaymentTermType);
+        //}
 
-            var apr = TridVariable.DisclosedApr;
-            UIActions.Clear(LeDisclosedApr);
-            UIActions.GiveInput(LeDisclosedApr, apr);
+        //[When(@"Enter Loan detail input values for computation for Loan Estimate page")]
+        //public void WhenEnterLoanDetailInputValuesForComputationforLoanEstimatepage()
+        //{
+        //    var loanTermValue = TridVariable.LoanTermValue;
+        //    UIActions.Clear(LeLoanTermValue);
+        //    UIActions.GiveInput(LeLoanTermValue, loanTermValue);
 
-            var tip = TridVariable.DisclosedTip;
-            UIActions.Clear(LeDisclosedTip);
-            UIActions.GiveInput(LeDisclosedTip, tip);
-        }
+        //    var loanAmount = TridVariable.LoanAmount;
+        //    UIActions.Clear(LeLoanAmount);
+        //    UIActions.GiveInput(LeLoanAmount, loanAmount);
+
+        //    var rateOfInterest = TridVariable.RateOfInterest;
+        //    UIActions.Clear(LeRateOfInterest);
+        //    UIActions.GiveInput(LeRateOfInterest, rateOfInterest);
+
+        //    var dateOfLoan = DateTime.FromOADate(Convert.ToDouble(TridVariable.DateOfLoan)).ToString("M/d/yyyy");
+        //    UIActions.Clear(LeDateOfLoan);
+        //    UIActions.GiveInput(LeDateOfLoan, dateOfLoan);
+
+        //    var dateOfInterestBegins = DateTime.FromOADate(Convert.ToDouble(TridVariable.DateInterestBeginToAccrue)).ToString("M/d/yyyy");
+        //    UIActions.Clear(LeDateOfInterestBegins);
+        //    UIActions.GiveInput(LeDateOfInterestBegins, dateOfInterestBegins);
+
+        //    var dateOfFirstPayment = DateTime.FromOADate(Convert.ToDouble(TridVariable.DateOfFirstPayment)).ToString("M/d/yyyy");
+        //    UIActions.Clear(LeDateOfFirstPayment);
+        //    UIActions.GiveInput(LeDateOfFirstPayment, dateOfFirstPayment);
+
+        //    var periodPayment = TridVariable.PeriodPayment;
+        //    UIActions.Clear(LePeriodPayment);
+        //    UIActions.GiveInput(LePeriodPayment, periodPayment);
+
+        //    var loanCostsForDisclosure = TridVariable.LoanCosts;
+        //    UIActions.Clear(LeLoanCostsForDisclosure);
+        //    UIActions.GiveInput(LeLoanCostsForDisclosure, loanCostsForDisclosure);
+
+        //    var finalBalloonPayment = TridVariable.FinalBalloonPayment;
+        //    UIActions.Clear(LeFinalBalloonPayment);
+        //    UIActions.GiveInput(LeFinalBalloonPayment, finalBalloonPayment);
+        //}
+
+        //[Then(@"Date of Loan, Date of Interest begins to accure and Date of First Payment should have default value")]
+        //public void ThenDateOfLoanDateOfInterestBeginsToAccureAndDateOfFirstPaymentShouldHaveDefaultValue()
+        //{
+        //    var dateOfLoan = DateTime.FromOADate(Convert.ToDouble(TridVariable.DateOfLoan)).ToString("M/d/yyyy");
+        //    UIActions.Clear(LeDateOfLoan);
+        //    UIActions.GiveInput(LeDateOfLoan, dateOfLoan);
+
+        //    var dateOfInterestBegins = DateTime.FromOADate(Convert.ToDouble(TridVariable.DateInterestBeginToAccrue)).ToString("M/d/yyyy");
+        //    UIActions.Clear(LeDateOfInterestBegins);
+        //    UIActions.GiveInput(LeDateOfInterestBegins, dateOfInterestBegins);
+
+        //    var dateOfFirstPayment = DateTime.FromOADate(Convert.ToDouble(TridVariable.DateOfFirstPayment)).ToString("M/d/yyyy");
+        //    UIActions.Clear(LeDateOfFirstPayment);
+        //    UIActions.GiveInput(LeDateOfFirstPayment, dateOfFirstPayment);
+        //}
+
+        //[When(@"Enter Disclosed input values for Loan Estimate Page")]
+        //public void WhenEnterDisclosedInputValuesForLoanEstimatePage()
+        //{
+        //    var in5Years = TridVariable.DiscLosedIn5Years;
+        //    UIActions.Clear(LeDisclosedIn5Years);
+        //    UIActions.GiveInput(LeDisclosedIn5Years, in5Years);
+
+        //    var in5YearsPrincipal = TridVariable.DiscLosedIn5YearsPrincipal;
+        //    UIActions.Clear(LeDisclosedIn5YearsPrincipal);
+        //    UIActions.GiveInput(LeDisclosedIn5YearsPrincipal, in5YearsPrincipal);
+
+        //    var apr = TridVariable.DisclosedApr;
+        //    UIActions.Clear(LeDisclosedApr);
+        //    UIActions.GiveInput(LeDisclosedApr, apr);
+
+        //    var tip = TridVariable.DisclosedTip;
+        //    UIActions.Clear(LeDisclosedTip);
+        //    UIActions.GiveInput(LeDisclosedTip, tip);
+        //}
 
 
         [Then(@"all the input values should have default values")]
@@ -229,7 +271,7 @@ namespace TRID.StepDefinitions
         {
             Thread.Sleep(5000);
             string filePath = @"C:\Users\sandees\Downloads\" + downloadedfileName;
-            Assert.IsTrue(File.Exists(filePath),"Exported File does not exists");
+            Assert.IsTrue(File.Exists(filePath), "Exported File does not exists");
         }
 
         #endregion

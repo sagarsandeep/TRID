@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.UI;
@@ -56,21 +57,6 @@ namespace TRID.ActionClasses
         {
             if (timeoutInSeconds > 0)
                new WebDriverWait(ObjectRepo.Driver, TimeSpan.FromSeconds(timeoutInSeconds)).Until(ExpectedConditions.VisibilityOfAllElementsLocatedBy(element));
-        }
-
-
-        private static readonly Actions Actions = new Actions(ObjectRepo.Driver);
-        public static void MoveToElement(By element)
-        {
-            var webElement = ObjectRepo.Driver.FindElement(element);
-            Actions.MoveToElement(webElement).Perform();
-
-        }
-
-        public static void GoToTopOfPage(By element)
-        {
-            var webElement = ObjectRepo.Driver.FindElement(element);
-            Actions.KeyUp(webElement, Keys.Up);
         }
 
         public static void Quit()

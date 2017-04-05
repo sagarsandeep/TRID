@@ -33,13 +33,13 @@ Scenario Outline: Launch TRID App and verify default values for Loan Estimate Pa
 Given user enters Trid Application url in browser
 	And user gets default values from Excel sheet <sheetName> for scenario <scenarioNo>
 When user navigate to Loan Estimate Page
-Then calculation Method should have default value
-	And Loan Type should have default value
-	And Frequency of Payments should have default value
-	And Loan Term should have default value
-	And Repayment Term Type should have default value
-	And Date of Loan, Date of Interest begins to accure and Date of First Payment should have default value
-	And Disclosed values should have default values
+	And user selects Calculation Method in Loan Estimate Page
+	And user selects loan type in Loan Estimate Page 
+	And user selects Frequency of Payments in Loan Estimate Page 
+	And user selects Loan Term in Loan Estimate Page 
+	And user selects Repayment Term Type in Loan Estimate Page
+	And Enter Loan detail input values for computation for Loan Estimate page
+	And Enter Disclosed input values for Loan Estimate Page
 Examples: 
 	| scenarioNo | sheetName    |
 	| 1          | LoanEstimate |

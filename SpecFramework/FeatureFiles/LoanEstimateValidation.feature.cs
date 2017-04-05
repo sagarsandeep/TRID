@@ -86,8 +86,6 @@ testRunner.When("user navigates to Loan Estimate Page", ((string)(null)), ((Tech
  testRunner.And("select repayment type as Regular P and I - Final Balloon Payment", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 12
  testRunner.And("user enters input value for Loan Amount", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 13
- testRunner.And("user enters input value for Final Balloon Payment", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 14
  testRunner.And("Click on Test button under loan details", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 15
@@ -244,6 +242,180 @@ testRunner.Then("Payment Date should be on 1st and 16th of every month", ((strin
         public virtual void ChoosesSemiMonthlyAsFrequencyOfPayments_1()
         {
             this.ChoosesSemiMonthlyAsFrequencyOfPayments("1", "PrepaidCharges", "5", "LoanEstimate", ((string[])(null)));
+#line hidden
+        }
+        
+        public virtual void ChoosesActualOver365AsCalculationMethod(string pcScenarioNo, string pcSheetName, string leScenarioNo, string leSheetName, string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "LoanEstimate"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Chooses Actual Over 365 as Calculation Method", @__tags);
+#line 80
+this.ScenarioSetup(scenarioInfo);
+#line 81
+testRunner.Given("user opens TRID application with Prepaid Charges as homepage", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 82
+ testRunner.And(string.Format("user have Prepaid Charges data from excel sheet {0} for the scenario {1}", pcSheetName, pcScenarioNo), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 83
+ testRunner.And(string.Format("user have Loan Estimate data from excel sheet {0} for the scenario {1}", leSheetName, leScenarioNo), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 84
+ testRunner.And("all the input and custom fields have zero values", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 85
+testRunner.When("user navigates to Loan Estimate Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 86
+ testRunner.And("select Calculation Method as Actual Over 365", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 87
+ testRunner.And("select Frequency of Payment as Monthly", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 88
+ testRunner.And("frequency of Pmt Value should be empty", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 89
+ testRunner.And("user enters input value for Loan Amount", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 90
+ testRunner.And("user enters input value for Date of loan", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 91
+ testRunner.And("user enters input value for Date Interest Begins to Accrue", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 92
+ testRunner.And("user enters input value for Date of first Payment", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 93
+ testRunner.And("user enters the input value for Period Payment", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 94
+ testRunner.And("Click on Test button under loan details", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 95
+testRunner.Then("Amortization schedule should be calculated as expected for Feb 2017", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Chooses Actual Over 365 as Calculation Method, 1", new string[] {
+                "LoanEstimate"}, SourceLine=97)]
+        public virtual void ChoosesActualOver365AsCalculationMethod_1()
+        {
+            this.ChoosesActualOver365AsCalculationMethod("1", "PrepaidCharges", "6", "LoanEstimate", ((string[])(null)));
+#line hidden
+        }
+        
+        public virtual void ChoosesActualOver365AndLeapYearsAsCalculationMethod(string pcScenarioNo, string pcSheetName, string leScenarioNo, string leSheetName, string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "LoanEstimate"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Chooses Actual Over 365 And Leap Years as Calculation Method", @__tags);
+#line 102
+this.ScenarioSetup(scenarioInfo);
+#line 103
+testRunner.Given("user opens TRID application with Prepaid Charges as homepage", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 104
+ testRunner.And(string.Format("user have Prepaid Charges data from excel sheet {0} for the scenario {1}", pcSheetName, pcScenarioNo), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 105
+ testRunner.And(string.Format("user have Loan Estimate data from excel sheet {0} for the scenario {1}", leSheetName, leScenarioNo), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 106
+ testRunner.And("all the input and custom fields for prepaid charges have zero values", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 107
+testRunner.When("user navigates to Loan Estimate Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 108
+ testRunner.And("select Calculation Method as Actual Over 365 And Leap Years", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 109
+ testRunner.And("select Frequency of Payment as Monthly", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 110
+ testRunner.And("frequency of Pmt Value should be empty", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 111
+ testRunner.And("user enters input value for Loan Amount", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 112
+ testRunner.And("user enters input value for Date of loan", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 113
+ testRunner.And("user enters input value for Date Interest Begins to Accrue", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 114
+ testRunner.And("user enters input value for Date of first Payment", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 115
+ testRunner.And("user enters the input value for Period Payment", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 116
+ testRunner.And("Click on Test button under loan details", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 117
+testRunner.Then("Amortization schedule should recaulcuate for Feb 2017", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Chooses Actual Over 365 And Leap Years as Calculation Method, 1", new string[] {
+                "LoanEstimate"}, SourceLine=119)]
+        public virtual void ChoosesActualOver365AndLeapYearsAsCalculationMethod_1()
+        {
+            this.ChoosesActualOver365AndLeapYearsAsCalculationMethod("1", "PrepaidCharges", "7", "LoanEstimate", ((string[])(null)));
+#line hidden
+        }
+        
+        public virtual void ValidatingLoanDetailsOnLoanEstimatePage(string pcScenarioNo, string pcSheetName, string leScenarioNo, string leSheetName, string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "LoanDetails"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Validating Loan Details on Loan Estimate Page", @__tags);
+#line 127
+this.ScenarioSetup(scenarioInfo);
+#line 128
+testRunner.Given("user is at TRID application homepage", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 129
+ testRunner.And(string.Format("user have Prepaid Charges data from excel sheet {0} for the scenario {1}", pcSheetName, pcScenarioNo), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 130
+ testRunner.And(string.Format("user have Loan Estimate data from excel sheet {0} for the scenario {1}", leSheetName, leScenarioNo), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 131
+ testRunner.And("user have Mortgage Insurance data from excel sheet <miSheetName> for the scenario" +
+                    " <miScenarioNo>", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 132
+ testRunner.And("user is at Prepaid Charges page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 133
+ testRunner.And("all the input and custom fields for prepaid charges have zero values", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 134
+ testRunner.And("user is at Mortgage Insurance Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 135
+ testRunner.And("PMI Rates Grid is empty", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 136
+testRunner.When("user navigate to Loan Estimate Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 137
+ testRunner.And("user selects Calculation Method in Loan Estimate Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 138
+ testRunner.And("user selects loan type in Loan Estimate Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 139
+ testRunner.And("user selects Frequency of Payments in Loan Estimate Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 140
+ testRunner.And("user selects Loan Term in Loan Estimate Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 141
+ testRunner.And("user selects Repayment Term Type in Loan Estimate Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 142
+ testRunner.And("Enter Loan detail input values for computation for Loan Estimate page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 143
+ testRunner.And("Enter Disclosed input values for Loan Estimate Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 144
+ testRunner.And("click on Loan Details TEST on Loan Estimate Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 145
+ testRunner.And("click on Disclosure TEST on Loan Estimate Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 146
+testRunner.Then("updated/computed in 5 Years value should display on Loan Estimate", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 147
+ testRunner.And("updated/computed in 5 Years principal value should display on Loan Estimate", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 148
+ testRunner.And("updated/computed APR value should display on Loan Estimate", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 149
+ testRunner.And("updated/computed TIP value should display on Loan Estimate", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Validating Loan Details on Loan Estimate Page, 1", new string[] {
+                "LoanDetails"}, SourceLine=151)]
+        public virtual void ValidatingLoanDetailsOnLoanEstimatePage_1()
+        {
+            this.ValidatingLoanDetailsOnLoanEstimatePage("1", "PrepaidCharges", "7", "LoanEstimate", ((string[])(null)));
 #line hidden
         }
         

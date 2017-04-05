@@ -2,11 +2,11 @@
 using OpenQA.Selenium;
 using TRID.ActionClasses;
 using TRID.CommonUtils;
+using TRID.ProjectLibs.Common;
 
 namespace TRID.ProjectLibs.UI
 {
     public class UIElements : PageBase
-
     {
         #region HeaderBar
 
@@ -22,57 +22,42 @@ namespace TRID.ProjectLibs.UI
 
         #region Closing DisclosurePage
 
-        public static By CdCalMtdActOver365 = By.Id("radio_29");
-        public static By CdCalMtdActOver365LeapYear = By.Id("radio_30");
-        public static By CalMtdActOver360 = By.Id("radio_31");
-        public static By CdCalMtd30Over360 = By.Id("radio_32");
+        public static By CdCalculationMethod;
+        public static By CdLoanType;
+        public static By CdFrequencyOfPayments;
+        public static By CdLoanTerm;
+        public static By CdRepaymentTermType;
+        public static void ClosingDisclosureVariable()
+        {
+            CdCalculationMethod = By.XPath("//md-radio-button[@aria-label='" + TridVariable.CalculationMethod + "']");
+            CdLoanType = By.XPath("//md-radio-button[@aria-label='" + TridVariable.LoanType + "']");
+            CdFrequencyOfPayments = By.XPath("//md-radio-button[@aria-label='" + TridVariable.FrequencyOfPayments + "']");
+            CdLoanTerm = By.XPath("//md-radio-button[@aria-label='" + TridVariable.LoanTerm + "']");
+            CdRepaymentTermType = By.XPath("//md-radio-button[@aria-label='" + TridVariable.RepaymentTermType + "']");
+        }
 
-        public static By CdLoanTypeFixed = By.Id("radio_33");
-        public static By CdLoanTypeVariable = By.Id("radio_34");
+        public static By CdFreqOfPmtValue = By.XPath("//div[@title='Frequency Of Pmt Value']//input");
+        public static By CdLoanTermValue = By.XPath("//div[@title='Loan Term Value']//input");
 
-        public static By CdFreqOfPaymentMonthly = By.Id("radio_35");
-        public static By CdFreqOfPaymentMultipleOfMonth = By.Id("radio_36");
-        public static By CdFreqOfPaymentBiWeekly = By.Id("radio_37");
-        public static By CdFreqOfPaymentSemiMonthly = By.Id("radio_38");
-        public static By CdFreqOfPaymentActualDays = By.Id("radio_39");
+        public static By CdLoanAmount = By.XPath("//div[@title='Loan Amount']//input");
+        public static By CdRateOfInterest = By.XPath("//div[@title='Rate Of Interest']//input");
+        public static By CdDateOfLoan = By.XPath("//div[@title='Date of loan']//input");
+        public static By CdDateOfInterestBegins = By.XPath("//div[@title='Date Interest Begins To Accrue']//input");
+        public static By CdDateOfFirstPayment = By.XPath("//div[@title='Date Of First Payment']//input");
+        public static By CdPeriodPayment = By.XPath("//div[@title='Period Payment']//input");
+        public static By CdLoanCostsForDisclosure = By.XPath("//div[@title='Loan Costs For Disclosure(Sum of Section A, B, C )']//input");
+        public static By CdFinalBalloonPayment = By.XPath("//div[@title='Final Balloon Payment']//input");
+        //public static By CdOddDays = 
+        //public static By CdLoanDetailsEstimatedEscrow = By.Id("input_64");
 
-        public static By CdLoanTermYears = By.Id("radio_40");
-        public static By CdLoanTermMonths = By.Id("radio_41");
-        public static By CdLoanTermDays = By.Id("radio_42");
-
-        public static By CdFreqOfPmtValue = By.Id("input_43");
-        public static By CdLoanTermValue = By.Id("input_44");
-
-        public static By CdAdvanceTypeSingle = By.Id("radio_45");
-        public static By CdAdvanceTypeMultiWithKnownDates = By.Id("radio_46");
-        public static By CdAdvanceTypeMultiWithUnknownDates = By.Id("radio_47");
-
-        public static By CdRepaymentTermTypeWhole = By.Id("radio_48");
-        public static By CdRepaymentTermTypeFinalBalloon = By.Id("radio_49");
-        
-        public static By CdLoanAmount = By.Id("input_50");
-        public static By CdRateOfInterest = By.Id("input_51");
-        public static By CdDateOfLoan = By.Id("input_53");
-        public static By CdDateOfInterestBegins = By.Id("input_55");
-        public static By CdDateOfFirstPayment = By.Id("input_57");
-        public static By CdPeriodPayment = By.Id("input_58");
-        public static By CdLoanCostsForDisclosure = By.Id("input_59");
-        public static By CdFinalBalloonPayment = By.Id("input_60");
-        //public static By OddDays =
-        public static By CdLoanDetailsEstimatedEscrow = By.Id("input_64");
-
-
-        public static By CdMonthlyPrincipalandInterest = By.Id("input_65");
-        public static By CdMonthlyPmi = By.Id("input_66");
-        public static By CdTotalMonthlyPayment = By.Id("input_67");
-        public static By CdPmiTerminalDate = By.Id("input_68");
-        public static By CdPmiCancelDate = By.Id("input_69");
-        public static By CdDisclosedEstimatedEscrow = By.Id("input_70");
-        public static By CdEscrowPropertyOverOneYear = By.Id("input_71");
-        public static By CdNonEscrowPropertyOverOneYear = By.Id("input_72");
-        public static By CdInitialEscrowPayment = By.Id("input_73");
-        public static By CdMonthlyEscrowPayment = By.Id("input_74");
-        public static By CdTotalOfPayment = By.Id("input_75");
+        public static By CdMonthlyPrincipalandInterest = By.XPath("//div[@title='Monthly Principal And Interest']//input");
+        public static By CdMonthlyPmi = By.XPath("//div[@title='Monthly PMI']//input");
+        public static By CdTotalMonthlyPayment = By.XPath("//div[@title='Total Monthly Payment']//input");
+        public static By CdPmiTerminalDate = By.XPath("//div[@title='PMI Termination Date (78%)']//input");
+        public static By CdPmiCancelDate = By.XPath("//div[@title='PMI Cancel Date (80%)']//input");
+        public static By CdDisclosedEstimatedEscrow = By.XPath("//div[@title='Estimated Escrow']//input");
+        public static By CdDisclosedFinalBalloonPayment = By.XPath("//div[@title='Dscl Final Balloon Payment']//input");
+        public static By CdDisclosedTotalOfPayment = By.XPath("//div[@title='Total Of Payment']//input");
 
         public static By CdLoanDetailsTest = By.XPath("//div[@id='LoanInformationInput']/form/div/div[1]//wipfli-button/button");
         public static By CdLoanDetailsReset = By.XPath("//div[@id='LoanInformationInput']//div[2]/div/wipfli-button/button");
@@ -89,38 +74,70 @@ namespace TRID.ProjectLibs.UI
         public static By CdPmiDisclosureValue = By.XPath("//div[@id='viewCompositionContainer']//div[2]/div[1]/ng-include//div[1]/p[2]");
         public static By CdPmiVarianceValue = By.XPath("//div[@id='viewCompositionContainer']//div[2]/div[1]/ng-include//div[1]/p[3]");
 
+        //Drop off years for PMI
+        public static By CdDoyfpComputedValue = By.XPath("//div[@id='viewCompositionContainer']//div[1]/div[2]/ng-include//div[1]/p[1]");
+        public static By CdDoyfpDisclosureValue = By.XPath("//div[@id='viewCompositionContainer']//div[1]/div[2]/ng-include//div[1]/p[2]");
+        public static By CdDoyfpVarianceValue = By.XPath("//div[@id='viewCompositionContainer']//div[1]/div[2]/ng-include//div[1]/p[3]");
 
         //Total Period Pymt
         public static By CdTppComputedValue = By.XPath("//div[@id='viewCompositionContainer']//div[2]/div[2]/ng-include//div[1]/p[1]");
         public static By CdTppDisclosureValue = By.XPath("//div[@id='viewCompositionContainer']//div[2]/div[2]/ng-include//div[1]/p[2]");
         public static By CdTppVarianceValue = By.XPath("//div[@id='viewCompositionContainer']//div[2]/div[2]/ng-include//div[1]/p[3]");
 
-        //Prepaid Charges
-        public static By CdPcComputedValue = By.XPath("//div[@id='viewCompositionContainer']//div[1]/div[6]/ng-include//div[1]/p[1]");
-        public static By CdPcDisclosureValue = By.XPath("//div[@id='viewCompositionContainer']//div[1]/div[6]/ng-include//div[1]/p[2]");
-        public static By CdPcVarianceValue = By.XPath("//div[@id='viewCompositionContainer']//div[1]/div[6]/ng-include//div[1]/p[3]");
-
         //APR
-        public static By CdAprComputedValue = By.XPath("//div[@id='viewCompositionContainer']//div[1]/div[7]/ng-include//div[1]/p[1]");
-        public static By CdAprDisclosureValue = By.XPath("//div[@id='viewCompositionContainer']//div[1]/div[7]/ng-include//div[1]/p[2]");
-        public static By CdAprVarianceValue = By.XPath("//div[@id='viewCompositionContainer']//div[1]/div[7]/ng-include//div[1]/p[3]");
+        public static By CdAprComputedValue = By.XPath("//div[@id='viewCompositionContainer']//div[1]/div[3]/ng-include//div[1]/p[1]");
+        public static By CdAprDisclosureValue = By.XPath("//div[@id='viewCompositionContainer']//div[1]/div[3]/ng-include//div[1]/p[2]");
+        public static By CdAprVarianceValue = By.XPath("//div[@id='viewCompositionContainer']//div[1]/div[3]/ng-include//div[1]/p[3]");
+
+        //Ballon Amount
+        public static By CdBaComputedValue = By.XPath("//div[@id='viewCompositionContainer']//div[2]/div[3]/ng-include//div[1]/p[1]");
+        public static By CdBaDisclosureValue = By.XPath("//div[@id='viewCompositionContainer']//div[2]/div[3]/ng-include//div[1]/p[2]");
+        public static By CdBaVarianceValue = By.XPath("//div[@id='viewCompositionContainer']//div[2]/div[3]/ng-include//div[1]/p[3]");
+
+        //Total Of Pymts
+        public static By CdTopComputedValue = By.XPath("//div[@id='viewCompositionContainer']//div[1]/div[4]/ng-include//div[1]/p[1]");
+        public static By CdTopDisclosureValue = By.XPath("//div[@id='viewCompositionContainer']//div[1]/div[4]/ng-include//div[1]/p[2]");
+        public static By CdTopVarianceValue = By.XPath("//div[@id='viewCompositionContainer']//div[1]/div[4]/ng-include//div[1]/p[3]");
 
         //Finance Charge
-        public static By CdFcComputedValue = By.XPath("//div[@id='viewCompositionContainer']//div[2]/div[6]/ng-include//div[1]/p[1]");
-        public static By CdFcDisclosureValue = By.XPath("//div[@id='viewCompositionContainer']//div[2]/div[6]/ng-include//div[1]/p[2]");
-        public static By CdFcVarianceValue = By.XPath("//div[@id='viewCompositionContainer']//div[2]/div[6]/ng-include//div[1]/p[3]");
+        public static By CdFcComputedValue = By.XPath("//div[@id='viewCompositionContainer']//div[2]/div[4]/ng-include//div[1]/p[1]");
+        public static By CdFcDisclosureValue = By.XPath("//div[@id='viewCompositionContainer']//div[2]/div[4]/ng-include//div[1]/p[2]");
+        public static By CdFcVarianceValue = By.XPath("//div[@id='viewCompositionContainer']//div[2]/div[4]/ng-include//div[1]/p[3]");
+
+        //Prepaid Charges
+        public static By CdPcComputedValue = By.XPath("//div[@id='viewCompositionContainer']//div[1]/div[5]/ng-include//div[1]/p[1]");
+        public static By CdPcDisclosureValue = By.XPath("//div[@id='viewCompositionContainer']//div[1]/div[5]/ng-include//div[1]/p[2]");
+        public static By CdPcVarianceValue = By.XPath("//div[@id='viewCompositionContainer']//div[1]/div[5]/ng-include//div[1]/p[3]");
 
         //Amount Financed
-        public static By CdAfComputedValue = By.XPath("//div[@id='viewCompositionContainer']//div[2]/div[7]/ng-include//div[1]/p[1]");
-        public static By CdAfDisclosureValue = By.XPath("//div[@id='viewCompositionContainer']//div[2]/div[7]/ng-include//div[1]/p[2]");
-        public static By CdAfVarianceValue = By.XPath("//div[@id='viewCompositionContainer']//div[2]/div[7]/ng-include//div[1]/p[3]");
+        public static By CdAfComputedValue = By.XPath("//div[@id='viewCompositionContainer']//div[2]/div[5]/ng-include//div[1]/p[1]");
+        public static By CdAfDisclosureValue = By.XPath("//div[@id='viewCompositionContainer']//div[2]/div[5]/ng-include//div[1]/p[2]");
+        public static By CdAfVarianceValue = By.XPath("//div[@id='viewCompositionContainer']//div[2]/div[5]/ng-include//div[1]/p[3]");
+
+        //Ecrw Prop Costs > 1 Yr 1
+        public static By CdEpcooyComputedValue = By.XPath("//div[@id='viewCompositionContainer']//div[1]/div[6]/ng-include//div[1]/p[1]");
+        public static By CdEpcooyDisclosureValue = By.XPath("//div[@id='viewCompositionContainer']//div[1]/div[6]/ng-include//div[1]/p[2]");
+        public static By CdEpcooyVarianceValue = By.XPath("//div[@id='viewCompositionContainer']//div[1]/div[6]/ng-include//div[1]/p[3]");
 
         //TIP
-        public static By CdTipComputedValue = By.XPath("//div[@id='viewCompositionContainer']//div[2]/div[8]/ng-include//div[1]/p[1]");
-        public static By CdTipDisclosureValue = By.XPath("//div[@id='viewCompositionContainer']//div[2]/div[8]/ng-include//div[1]/p[2]");
-        public static By CdTipVarianceValue = By.XPath("//div[@id='viewCompositionContainer']//div[2]/div[8]/ng-include//div[1]/p[3]");
+        public static By CdTipComputedValue = By.XPath("//div[@id='viewCompositionContainer']//div[2]/div[6]/ng-include//div[1]/p[1]");
+        public static By CdTipDisclosureValue = By.XPath("//div[@id='viewCompositionContainer']//div[2]/div[6]/ng-include//div[1]/p[2]");
+        public static By CdTipVarianceValue = By.XPath("//div[@id='viewCompositionContainer']//div[2]/div[6]/ng-include//div[1]/p[3]");
 
+        //Initial Escrow Pymt
+        public static By CdIepComputedValue = By.XPath("//div[@id='viewCompositionContainer']//div[1]/div[7]/ng-include//div[1]/p[1]");
+        public static By CdIepDisclosureValue = By.XPath("//div[@id='viewCompositionContainer']//div[1]/div[7]/ng-include//div[1]/p[2]");
+        public static By CdIepVarianceValue = By.XPath("//div[@id='viewCompositionContainer']//div[1]/div[7]/ng-include//div[1]/p[3]");
 
+        //Non Ecrw Prop Costs > 1 Yr 1
+        public static By CdNepcooyComputedValue = By.XPath("//div[@id='viewCompositionContainer']//div[2]/div[7]/ng-include//div[1]/p[1]");
+        public static By CdNepcooyDisclosureValue = By.XPath("//div[@id='viewCompositionContainer']//div[2]/div[7]/ng-include//div[1]/p[2]");
+        public static By CdNepcooyVarianceValue = By.XPath("//div[@id='viewCompositionContainer']//div[2]/div[7]/ng-include//div[1]/p[3]");
+
+        //Period Escrow Pymt
+        public static By CdPepComputedValue = By.XPath("//div[@id='viewCompositionContainer']//div[2]/div[8]/ng-include//div[1]/p[1]");
+        public static By CdPepDisclosureValue = By.XPath("//div[@id='viewCompositionContainer']//div[2]/div[8]/ng-include//div[1]/p[2]");
+        public static By CdPepVarianceValue = By.XPath("//div[@id='viewCompositionContainer']//div[2]/div[8]/ng-include//div[1]/p[3]");
 
         #endregion
 
@@ -130,33 +147,22 @@ namespace TRID.ProjectLibs.UI
         public static By LeLoanDetailsText = By.XPath("//div[@id='LoanInformationInput']//div[@class='md-toolbar-tools ng-binding']");
         public static By LePaymentScheduleText = By.XPath("//section[@id='PaymentScheduleOutput']//md-toolbar/div");
 
-        public static By LeCalMtdActOver365 = By.Id("radio_29");
-        public static By LeCalMtdActOver365LeapYear = By.Id("radio_30");
-        public static By LelCalMtdActOver360 = By.Id("radio_31");
-        public static By LeCalMtd30Over360 = By.Id("radio_32");
-
-        public static By LeLoanTypeFixed = By.Id("radio_33");
-        public static By LeLoanTypeVariable = By.Id("radio_34");
-
-        public static By LeFreqOfPaymentMonthly = By.Id("radio_35");
-        public static By LeFreqOfPaymentMultipleOfMonth = By.Id("radio_36");
-        public static By LeFreqOfPaymentBiWeekly = By.Id("radio_37");
-        public static By LeFreqOfPaymentSemiMonthly = By.Id("radio_38");
-        public static By LeFreqOfPaymentActualDays = By.Id("radio_39");
-
-        public static By LeLoanTermYears = By.Id("radio_40");
-        public static By LeLoanTermMonths = By.Id("radio_41");
-        public static By LeLoanTermDays = By.Id("radio_42");
+        public static By LeCalculationMethod;
+        public static By LeLoanType;
+        public static By LeFrequencyOfPayments;
+        public static By LeLoanTerm;
+        public static By LeRepaymentTermType;
+        public static void LoanEstimateRadioButtonVariable()
+        {
+            LeCalculationMethod = By.XPath("//md-radio-button[@aria-label='" + TridVariable.CalculationMethod + "']");
+            LeLoanType = By.XPath("//md-radio-button[@aria-label='" + TridVariable.LoanType + "']");
+            LeFrequencyOfPayments = By.XPath("//md-radio-button[@aria-label='" + TridVariable.FrequencyOfPayment + "']");
+            LeLoanTerm = By.XPath("//md-radio-button[@aria-label='" + TridVariable.LoanTerm + "']");
+            LeRepaymentTermType = By.XPath("//md-radio-button[@aria-label='" + TridVariable.RepaymentTermType + "']");
+        }
 
         public static By LeFreqOfPmtValue = By.Id("input_43");
         public static By LeLoanTermValue = By.Id("input_44");
-
-        public static By LeAdvanceTypeSingle = By.Id("radio_45");
-        public static By LeAdvanceTypeMultiWithKnownDates = By.Id("radio_46");
-        public static By LeAdvanceTypeMultiWithUnknownDates = By.Id("radio_47");
-
-        public static By LeRepaymentTermTypeWhole = By.Id("radio_48");
-        public static By LeRepaymentTermTypeFinal = By.Id("radio_49");
 
         public static By LeLoanAmount = By.Id("input_50");
         public static By LeRateOfInterest = By.Id("input_51");
@@ -167,7 +173,7 @@ namespace TRID.ProjectLibs.UI
         public static By LeLoanCostsForDisclosure = By.Id("input_59");
         public static By LeFinalBalloonPayment = By.Id("input_60");
         //public static By OddDays =
-        public static By LedLoanDetailsEstimatedEscrow = By.Id("input_64");
+        //public static By LedLoanDetailsEstimatedEscrow = By.Id("input_64");
 
         public static By LeDisclosedIn5Years = By.Id("input_64");
         public static By LeDisclosedIn5YearsPrincipal = By.Id("input_64");
@@ -205,10 +211,9 @@ namespace TRID.ProjectLibs.UI
 
         //Amortization Schedule
         public static By LeAmortizationScheduleCount = By.XPath("//div[@id='Mortagagedetails']//md-list-item");
-        //static readonly int NumberOfPayments = Convert.ToInt32(UIActions.GetText(LeNumberOfPayments));
-        //public static By LeLastAmortizationScheduleRow = By.XPath("//div[@id='Mortagagedetails']/md-list/md-list-item[" + NumberOfPayments + "]//h4");
         public static By LeFirstAmortizationDate = By.XPath("//div[@id='Mortagagedetails']//md-list-item[1]//p");
         public static By LeSecondAmortizationDate = By.XPath("//div[@id='Mortagagedetails']//md-list-item[2]//p");
+        public static By LeAmortizationFeb2017Amount = By.XPath("//div[@id='Mortagagedetails']//md-list-item[14]//h4");
 
 
 
@@ -217,37 +222,51 @@ namespace TRID.ProjectLibs.UI
 
         #region Mortgage Insurance
 
-        public static By MiAddNumber = By.Id("input_29");
-        public static By MiAddBeginPeriod = By.Id("input_30");
-        public static By MiAddEndPeriod = By.Id("input_31");
-        public static By MiAddPmiRate = By.Id("input_32");
+        public static By MiAddNumber = By.XPath("//div[@title='Number']//input");
+        //public static By MiAddNumber = By.ClassName("md-input ng-valid ng-valid-required ng-touched");
+        public static By MiAddBeginPeriod = By.XPath("//div[@title='Begin Period']//input");
+        public static By MiAddEndPeriod = By.XPath("//div[@title='End Period']//input");
+        public static By MiAddPmiRate = By.XPath("//div[@title='PMI Rate(%)']//input");
 
         public static By MiAddButton = By.XPath("//div[@id='MortgageInput']//button");
 
         public static By MiPmiRatesGridRowsCount = By.XPath("//section[@id='MortgageGrid']//tbody/tr");
 
-        public static By MiNumberOfPeriodsofAdvanceInsCollected = By.Id("input_33");
-        public static By MiLowerOfCostOrAppraisal = By.Id("input_34");
+        public static By MiNumberOfPeriodsofAdvanceInsCollected = By.XPath("//div[@title='Number of Periods of Advance Insurance Collected']//input");
+        public static By MiLowerOfCostOrAppraisal = By.XPath("//div[@title='Lower Of Cost Or Appraisal']//input");
 
         public static By MiTestButton = By.XPath("//div[@id='PrivateMortgageInsuranceInput']//button");
 
         //PMI
-        //public static By MiPmi =
+        public static By MiPmiComputedValue = By.XPath("//div[@id='viewCompositionContainer']//div[1]/div[1]/ng-include//div[1]/p[1]");
+        public static By MiPmiDisclosureValue = By.XPath("//div[@id='viewCompositionContainer']//div[1]/div[1]/ng-include//div[1]/p[2]");
+        public static By MiPmiVarianceValue = By.XPath("//div[@id='viewCompositionContainer']//div[1]/div[1]/ng-include//div[1]/p[3]");
 
         //Drop off years for PMI
-    
-        public static By MiDoyfpComputedValue = By.XPath("//div[@id='viewCompositionContainer']//div[2]/div[1]//div[1]/p[1]");
-        
-        //public static By MiTppComputedValue =
-        //public static By MiTopComputedValue =
-        //public static By MiAfComputedValue=
-        //public static By MiAprComputedValue =
+        public static By MiDoyfpComputedValue = By.XPath("//div[@id='viewCompositionContainer']//div[2]/div[1]/ng-include//div[1]/p[1]");
+        public static By MiDoyfpDisclosureValue = By.XPath("//div[@id='viewCompositionContainer']//div[2]/div[1]/ng-include//div[1]/p[2]");
+        public static By MiDoyfpVarianceValue = By.XPath("//div[@id='viewCompositionContainer']//div[2]/div[1]/ng-include//div[1]/p[3]");
 
+        //Total Period Pymt
+        public static By MiTppComputedValue = By.XPath("//div[@id='viewCompositionContainer']//div[1]/div[2]/ng-include//div[1]/p[1]");
+        public static By MiTppDisclosureValue = By.XPath("//div[@id='viewCompositionContainer']//div[1]/div[2]/ng-include//div[1]/p[2]");
+        public static By MiTppVarianceValue = By.XPath("//div[@id='viewCompositionContainer']//div[1]/div[2]/ng-include//div[1]/p[3]");
 
-        public static By MiPaymtScheduleGridRowsCount = By.XPath("//section[@id='PaymentScheduleOutput']//tbody/tr");
-        public static By Mi = By.XPath("//section[@id='PaymentScheduleOutput']//tbody/tr[1]/td[2]");
+        //Total Of Pymts
+        public static By MiTopComputedValue = By.XPath("//div[@id='viewCompositionContainer']//div[2]/div[2]/ng-include//div[1]/p[1]");
+        public static By MiTopDisclosureValue = By.XPath("//div[@id='viewCompositionContainer']//div[2]/div[2]/ng-include//div[1]/p[2]");
+        public static By MiTopVarianceValue = By.XPath("//div[@id='viewCompositionContainer']//div[2]/div[2]/ng-include//div[1]/p[3]");
 
+        //Amount Financed
+        public static By MiAfComputedValue = By.XPath("//div[@id='viewCompositionContainer']//div[1]/div[3]/ng-include//div[1]/p[1]");
+        public static By MiAfDisclosureValue = By.XPath("//div[@id='viewCompositionContainer']//div[1]/div[3]/ng-include//div[1]/p[2]");
+        public static By MiAfVarianceValue = By.XPath("//div[@id='viewCompositionContainer']//div[1]/div[3]/ng-include//div[1]/p[3]");
 
+        //APR
+        public static By MiAprComputedValue = By.XPath("//div[@id='viewCompositionContainer']//div[2]/div[3]/ng-include//div[1]/p[1]");
+        public static By MiAprDisclosureValue = By.XPath("//div[@id='viewCompositionContainer']//div[2]/div[3]/ng-include//div[1]/p[2]");
+        public static By MiAprVarianceValue = By.XPath("//div[@id='viewCompositionContainer']//div[2]/div[3]/ng-include//div[1]/p[3]");
+       
         #endregion
 
 
@@ -255,25 +274,25 @@ namespace TRID.ProjectLibs.UI
 
         public static By PcPrepaidChargesText = By.XPath("//div[@id='PrepaidChargesInput']/md-toolbar/div");
 
-        public static By PcFhaVaUsdaUpfrontPmiFree = By.Id("input_6");
-        public static By PcFloodFee = By.Id("input_7");
-        public static By PcInspectionFee = By.Id("input_8");
-        public static By PcLoanOriginationFee = By.Id("input_9");
-        public static By PcOtherFees = By.Id("input_10");
-        public static By PcPmiEscrowed = By.Id("input_11");
-        public static By PcPrepaidDailyInterest = By.Id("input_12");
-        public static By PcTaxServicing = By.Id("input_13");
-        public static By PcTitleClosingFee = By.Id("input_14");
-        public static By PcTitleClosingProtectionLetter = By.Id("input_15");
-        public static By PcTitleCourierFee = By.Id("input_16");
-        public static By PcTitleDrawFee = By.Id("input_17");
-        public static By PcTitleWireFee = By.Id("input_18");
-        public static By PcUnderWriting = By.Id("input_19");
+        public static By PcFhaVaUsdaUpfrontPmiFree = By.XPath("//div[@title='FHA/VA/USDA/Upfront PMI fee']//input");
+        public static By PcFloodFee = By.XPath("//div[@title='Flood Fee']//input");
+        public static By PcInspectionFee = By.XPath("//div[@title='Inspection Fee']//input");
+        public static By PcLoanOriginationFee = By.XPath("//div[@title='Loan Origination Fee']//input");
+        public static By PcOtherFees = By.XPath("//div[@title='Other Fees']//input");
+        public static By PcPmiEscrowed = By.XPath("//div[@title='PMI escrowed']//input");
+        public static By PcPrepaidDailyInterest = By.XPath("//div[@title='Prepaid Daily Interest']//input");
+        public static By PcTaxServicing = By.XPath("//div[@title='Tax Servicing']//input");
+        public static By PcTitleClosingFee = By.XPath("//div[@title='Title - Closing Fee']//input");
+        public static By PcTitleClosingProtectionLetter = By.XPath("//div[@title='Title - Closing protection letter']//input");
+        public static By PcTitleCourierFee = By.XPath("//div[@title='Title - Courier Fee']//input");
+        public static By PcTitleDrawFee = By.XPath("//div[@title='Title - Draw Fee']//input");
+        public static By PcTitleWireFee = By.XPath("//div[@title='Title - Wire Fee']//input");
+        public static By PcUnderWriting = By.XPath("//div[@title='Underwriting']//input");
 
         public static By PcTestButton = By.XPath("//div[@id='PrepaidChargesInput']//button");
 
-        public static By PcCustomName = By.Id("input_20");
-        public static By PcCustomValue = By.Id("input_21");
+        public static By PcCustomName = By.XPath("//div[@title='Number']//input");
+        public static By PcCustomValue = By.XPath("//div[@title='Number']//input");
         public static By PcCustomFieldAddButton = By.XPath("//div[@id='PrepaidChargeGridInput']//button");
         
 
@@ -282,9 +301,9 @@ namespace TRID.ProjectLibs.UI
         public static By PcPrepaidChargeGridCustomValue = By.XPath("//section[@id='PrepaidChargeGrid']//tbody/tr/td[2]//span");
         
 
-        public static By PcDisclosedFinanceCharge = By.Id("input_22");
-        public static By PcDisclosedPrepaidCharge = By.Id("input_23");
-        public static By PcDisclosedAmountFinanced = By.Id("input_24");
+        public static By PcDisclosedFinanceCharge = By.XPath("//div[@title='Finance Charge']//input");
+        public static By PcDisclosedPrepaidCharge = By.XPath("//div[@title='Prepaid Charge']//input");
+        public static By PcDisclosedAmountFinanced = By.XPath("//div[@title='Amount Financed']//input");
 
         //Finance Charge
         public static By PcFcComputedValue = By.XPath("//div[@id='viewCompositionContainer']//div[1]/div[1]/ng-include//div[1]/p[1]");
@@ -319,5 +338,92 @@ namespace TRID.ProjectLibs.UI
         public static By ExExportToPdfButton = By.XPath("//div[@id='LoanAccountInformationInput']//div[8]//button");
 
         #endregion
+
+
+        //#region Escrow
+
+        //public static By EscIsINSEscrowedYes = By.Id("radio_36");
+        //public static By EscIsINSEscrowedNo = By.Id("radio_36");
+
+        //public static By EscIsTaxEscrowedYes = By.Id("radio_37");
+        //public static By EscIsTaxEscrowedNo = By.Id("radio_37");
+
+        //public static By EscFopMonthly = By.Id("radio_39");
+
+
+        //public static By EscEscrowCalculationStartPeriodDate = By.Id("input_45");
+        //public static By EscCushionMonthsForInsurance = By.Id("input_46");
+        //public static By EscCushionMonthsForTax = By.Id("input_47");
+        //public static By EscCushionMonthsForPMI = By.Id("input_48");
+
+        //public static By EscEscrowInstallmentInputsNumber = By.Id("input_49");
+        //public static By EscDateForEscrowInsurance = By.Id("input_51");
+        //public static By EscInsuranceInstallmentAmount = By.Id("input_52");
+
+        //public static By EscEscrowTaxCalculationsInputsNumber = By.Id("input_53");
+        //public static By EscEscrowTaxCalculationsInputsDate = By.Id("input_55");
+        //public static By EscEscrowTaxCalculationsInputsTaxInstallmentAmount = By.Id("input_56");
+
+        //public static By EscEscrowInputForPMICalculationEscrowPMIDate = By.Id("input_58");
+        //public static By EscEscrowInputForPMICalculationEscrowPMIAmount = By.Id("input_59");
+
+        //public static By EscEscrowPropertyOverOneYear = By.Id("input_60");
+        //public static By EscNonEscrowPropertyOverOneYear = By.Id("input_61");
+        //public static By EscInitialEscrowPayment = By.Id("input_62");
+        //public static By EscMonthlyEscrowPayment = By.Id("input_63");
+        //public static By EscDisclosedEscrowPropertyOverOneYear = By.Id("input_64");
+        //public static By EscDisclosedNonEscrowPropertyOverOneYear = By.Id("input_65");
+        //public static By EscDisclosedInitialEscrowPayment = By.Id("input_66");
+        //public static By EscDisclosedMonthlyEscrowPayment = By.Id("input_67");
+
+        ////Insurance Info
+        //public static By EscInsuranceInfoAdjustmentBalance = ;
+        //public static By EscInsuranceInfoMinimumAmount = ;
+        //public static By EscInsuranceInfoCushionAmount = ;
+
+        ////Insurance Total Info
+        //public static By EscInsuranceTotalInfoPeriodInsuranceAmount = ;
+        //public static By EscInsuranceTotalInfoInputInsuranceAmount = ;
+
+        ////Tax Info
+        //public static By EscTaxInfoAdjustmentBalance = ;
+        //public static By EscTaxInfoMinimumAmount = ;
+        //public static By EscTaxInfoCushionAmounts = ;
+
+        ////Tax Total Info
+        //public static By EscTaxTotalInfoPeriodTaxAmount = ;
+        //public static By EscTaxTotalInfoInputTaxAmount = ;
+
+        ////PMI Info
+        //public static By EscPMIInfoAdjustmentBalance = ;
+        //public static By EscPMIInfoMinimumAmount = ;
+        //public static By EscPMInfoCushionAmount = ;
+
+        ////PMI Total Info
+        //public static By EscPMITotalInfoPeriodOMIAmount = ;
+        //public static By EscPMITotalInfoInputTaxAmount = ;
+
+        ////Aggregate Info
+        //public static By EscAggregateInfoAdjustmentBalance = ;
+        //public static By EscAggregateInfoMinimumAmount = ;
+        //public static By EscAggregateInfoCushionAmount = ;
+
+        ////Aggregate Total Info
+        //public static By EscAggregateTotalInfoAgregatePayment = ;
+        //public static By EscAggregateTotalInfoAggregateDeposit = ;
+
+        ////Ecrw Prop Costs > 1 Yr 1
+        //public static By EscEscrowPropertyOverOneYearCard = ;
+
+        ////Non Ecrw Prop Costs > 1 Yr 1
+        //public static By EscNonEscrowPropertyOverOneYearCard = ;
+
+        ////Initial Escrow Pymt
+        //public static By EscInitialEscrowPaymentCard = ;
+
+        ////Period Escrow Pymt
+        //public static By EscPeriodEscrowPaymentCard = ;
+
+        //#endregion
     }
 }

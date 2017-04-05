@@ -25,6 +25,12 @@ namespace TRID.CommonUtils
         }
         private IWebDriver GetChromeDriver()
         {
+            IWebDriver driver = new ChromeDriver();
+            return driver;
+        }
+
+        private IWebDriver GetIncognitoChromeDriver()
+        {
             var capabilities = DesiredCapabilities.Chrome();
             var options = new ChromeOptions();
 
@@ -32,11 +38,6 @@ namespace TRID.CommonUtils
             options.AddArgument(@"--start-maximized");
             capabilities.SetCapability(ChromeOptions.Capability, options);
             IWebDriver driver = new ChromeDriver(options);
-            //var options = new ChromeOptions();
-            //options.AddArgument("incognito");
-            //var capabilities = options.ToCapabilities();
-            //IWebDriver driver = new ChromeDriver(new Uri(gridHubURL), capabilities);
-            //IWebDriver driver = new ChromeDriver(capabilities);
             return driver;
         }
         private IWebDriver GetIEDriver()
@@ -55,6 +56,10 @@ namespace TRID.CommonUtils
 
                 case BrowserType.Chrome:
                     driver = GetChromeDriver();
+                    break;
+
+                case BrowserType.iChrome:
+                    driver = GetIncognitoChromeDriver();
                     break;
 
                 case BrowserType.IExplorer:

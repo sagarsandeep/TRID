@@ -4,6 +4,7 @@
     {
         Firefox,
         Chrome,
+        iChrome,
         IExplorer
     }
 }

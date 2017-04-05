@@ -112,6 +112,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ClosingDisclosure.feature</DependentUpon>
     </Compile>
+    <Compile Include="FeatureFiles\EscrowValidation.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EscrowValidation.feature</DependentUpon>
+    </Compile>
     <Compile Include="FeatureFiles\LaunchAppAndVerifyDefaultValues.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -150,6 +155,7 @@
     <Compile Include="ProjectLibs\API\GoogleAPI\Viewport.cs" />
     <Compile Include="ProjectLibs\Common\ProjActions.cs" />
     <Compile Include="ProjectLibs\Common\TridVariable.cs" />
+    <Compile Include="StepDefinitions\EscrowValidationSteps.cs" />
     <Compile Include="ProjectLibs\UI\UIElements.cs" />
     <Compile Include="StepDefinitions\LaunchAppAndVerifyDefaultValuesSteps.cs" />
     <Compile Include="StepDefinitions\LoanEstimateValidationSteps.cs" />
@@ -172,6 +178,11 @@
       <LastGenOutput>ClosingDisclosure.feature.cs</LastGenOutput>
     </None>
     <None Include="FeatureFiles\DataResources\TridTestData.xlsx" />
+    <None Include="FeatureFiles\DataResources\TridTestDataWithAllScenarios.xlsx" />
+    <None Include="FeatureFiles\EscrowValidation.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>EscrowValidation.feature.cs</LastGenOutput>
+    </None>
     <None Include="FeatureFiles\LaunchAppAndVerifyDefaultValues.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>LaunchAppAndVerifyDefaultValues.feature.cs</LastGenOutput>
