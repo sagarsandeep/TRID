@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Security.Cryptography.X509Certificates;
 using OpenQA.Selenium;
 using TRID.ActionClasses;
 using TRID.CommonUtils;
@@ -27,7 +28,7 @@ namespace TRID.ProjectLibs.UI
         public static By CdFrequencyOfPayments;
         public static By CdLoanTerm;
         public static By CdRepaymentTermType;
-        public static void ClosingDisclosureVariable()
+        public static void ClosingDisclosureRadioButtonVariable()
         {
             CdCalculationMethod = By.XPath("//md-radio-button[@aria-label='" + TridVariable.CalculationMethod + "']");
             CdLoanType = By.XPath("//md-radio-button[@aria-label='" + TridVariable.LoanType + "']");
@@ -340,41 +341,65 @@ namespace TRID.ProjectLibs.UI
         #endregion
 
 
-        //#region Escrow
+        #region Escrow
 
-        //public static By EscIsINSEscrowedYes = By.Id("radio_36");
-        //public static By EscIsINSEscrowedNo = By.Id("radio_36");
+        public static By EscEscrowCalcInputsText = By.XPath("//div[@id='EscrowCalculationsInput']/md-toolbar");
 
-        //public static By EscIsTaxEscrowedYes = By.Id("radio_37");
-        //public static By EscIsTaxEscrowedNo = By.Id("radio_37");
+        public static By EscIsInsEscrowed;
+        public static By EscIsTaxEscrowed;
+        public static By EscIsPmiEscrowed;
+        public static By EscFrequencyOfPayments;
+        public static void EscrowRadioButtonVariable()
+        {
+            EscIsInsEscrowed = By.XPath("//div[@title='Is INS Escrowed']//md-radio-button[@aria-label='"+TridVariable.IsInsEscrowed+"']");
+            EscIsTaxEscrowed = By.XPath("//div[@title='Is Tax Escrowed']//md-radio-button[@aria-label='" + TridVariable.IsTaxEscrowed + "']");
+            EscIsPmiEscrowed = By.XPath("//div[@title='Is PMI Escrowed']//md-radio-button[@aria-label='" + TridVariable.IsPmiEscrowed + "']");
+            EscFrequencyOfPayments = By.XPath("//div[@title='Frequency Of Payments']//md-radio-button[@aria-label='" + TridVariable.FrequencyOfPayments + "']");
+        }
 
-        //public static By EscFopMonthly = By.Id("radio_39");
 
+        public static By EscEscrowCalculationStartPeriodDate = By.XPath("//div[@title='Escrow Calculation Start Period Date']//input");
+        public static By EscCushionMonthsForInsurance = By.XPath("//div[@title='Cushion Months For Insurance']//input");
+        public static By EscCushionMonthsForTax = By.XPath("//div[@title='Cushion Months For Tax']//input");
+        public static By EscCushionMonthsForPmi = By.XPath("//div[@title='Cushion Months For PMI']//input");
 
-        //public static By EscEscrowCalculationStartPeriodDate = By.Id("input_45");
-        //public static By EscCushionMonthsForInsurance = By.Id("input_46");
-        //public static By EscCushionMonthsForTax = By.Id("input_47");
-        //public static By EscCushionMonthsForPMI = By.Id("input_48");
+        public static By EscEscrowInstallmentInputsNumber = By.XPath("//div[@id='EscrowInsuranceGridInputs']//div[@title='Number']//input");
+        public static By EscDateForEscrowInsurance = By.XPath("//div[@title='Date For Escrow Insurance']//input");
+        public static By EscInsuranceInstallmentAmount = By.XPath("//div[@title='Insuarnce Installment Amount']//input");
 
-        //public static By EscEscrowInstallmentInputsNumber = By.Id("input_49");
-        //public static By EscDateForEscrowInsurance = By.Id("input_51");
-        //public static By EscInsuranceInstallmentAmount = By.Id("input_52");
+        public static By EscrowInstallmentInfoGridRowCount = By.XPath("//section[@id='EscrowInsuranceGrid']//tbody/tr");
+        public static By EscrowInstallmentInfoGridNumber = By.XPath("//section[@id='EscrowInsuranceGrid']//tbody/tr/td[1]//span");
+        public static By EscrowInstallmentInfoGridInstallmentDate = By.XPath("//section[@id='EscrowInsuranceGrid']//tbody/tr/td[2]//span");
+        public static By EscrowInstallmentInfoGridInstallmentAmount = By.XPath("//section[@id='EscrowInsuranceGrid']//tbody/tr/td[3]//span");
 
-        //public static By EscEscrowTaxCalculationsInputsNumber = By.Id("input_53");
-        //public static By EscEscrowTaxCalculationsInputsDate = By.Id("input_55");
-        //public static By EscEscrowTaxCalculationsInputsTaxInstallmentAmount = By.Id("input_56");
+        public static By EscEscrowInstallmentInputsAddButton = By.XPath("//div[@id='EscrowInsuranceGridInputs']//div[4]//button");
 
-        //public static By EscEscrowInputForPMICalculationEscrowPMIDate = By.Id("input_58");
-        //public static By EscEscrowInputForPMICalculationEscrowPMIAmount = By.Id("input_59");
+        public static By EscEscrowTaxCalculationsInputsNumber = By.XPath("//div[@id='EscrowTaxCalculationsGridInputs']//div[@title='Number']//input");
+        public static By EscEscrowTaxCalculationsInputsDate = By.XPath("//div[@title='Date']//input");
+        public static By EscEscrowTaxCalculationsInputsTaxInstallmentAmount = By.XPath("//div[@title='Tax Installment Amount']//input");
 
-        //public static By EscEscrowPropertyOverOneYear = By.Id("input_60");
-        //public static By EscNonEscrowPropertyOverOneYear = By.Id("input_61");
-        //public static By EscInitialEscrowPayment = By.Id("input_62");
-        //public static By EscMonthlyEscrowPayment = By.Id("input_63");
-        //public static By EscDisclosedEscrowPropertyOverOneYear = By.Id("input_64");
-        //public static By EscDisclosedNonEscrowPropertyOverOneYear = By.Id("input_65");
-        //public static By EscDisclosedInitialEscrowPayment = By.Id("input_66");
-        //public static By EscDisclosedMonthlyEscrowPayment = By.Id("input_67");
+        public static By EscrowTaxInfoGridRowCount = By.XPath("//section[@id='EscrowTaxGrid']//tbody/tr");
+        public static By EscrowTaxInfoGridNumber = By.XPath("//section[@id='EscrowTaxGrid']//tbody/tr/td[1]//span");
+        public static By EscrowTaxInfoGridInstallmentDate = By.XPath("//section[@id='EscrowTaxGrid']//tbody/tr/td[2]//span");
+        public static By EscrowTaxInfoGridTaxInstallmentAmount = By.XPath("//section[@id='EscrowTaxGrid']//tbody/tr/td[3]//span");
+
+        public static By EscEscrowTaxCalculationsInputsAddButton = By.XPath("//div[@id='EscrowTaxCalculationsGridInputs']//div[4]//button");
+
+        public static By EscEscrowInputForPmiCalculationEscrowPmiDate = By.XPath("//div[@title='DateForPMICalc']//input");
+        public static By EscEscrowInputForPmiCalculationEscrowPmiAmount = By.XPath("//div[@title='PMI Amount']//input");
+
+        public static By EscEscrowPropertyOverOneYear = By.XPath("//div[@title='Escrow Property Over One Year']//input");
+        public static By EscNonEscrowPropertyOverOneYear = By.XPath("//div[@title='Non Escrow Property Over One Year']//input");
+        public static By EscInitialEscrowPayment = By.XPath("//div[@title='Initial Escrow Payment']//input");
+        public static By EscMonthlyEscrowPayment = By.XPath("//div[@title='Monthly Escrow Payment']//input");
+        public static By EscDisclosedEscrowPropertyOverOneYear = By.XPath("//div[@title='Dscl Escrow Property Over One Year']//input");
+        public static By EscDisclosedNonEscrowPropertyOverOneYear = By.XPath("//div[@title='Dscl Non Escrow Property Over One Year']//input");
+        public static By EscDisclosedInitialEscrowPayment = By.XPath("//div[@title='Dscl Initial Escrow Payment']//input");
+        public static By EscDisclosedMonthlyEscrowPayment = By.XPath("//div[@title='Dscl Monthly Escrow Payment']//input");
+        public static By EscDisclosedEscrowPayment = By.XPath("//div[@title=' Dscl Estimated Escrow']//input");
+
+        public static By EscEscrowCalculationInputTestButton = By.XPath("//div[@id='EscrowCalculationsInput']//wipfli-button/button");
+        public static By EscDisclosureForEscrowTestButton = By.XPath("//div[@id='LoanDisclosureForEscrow']//wipfli-button/button");
 
         ////Insurance Info
         //public static By EscInsuranceInfoAdjustmentBalance = ;
@@ -424,6 +449,28 @@ namespace TRID.ProjectLibs.UI
         ////Period Escrow Pymt
         //public static By EscPeriodEscrowPaymentCard = ;
 
-        //#endregion
+        #endregion
+
+
+        #region Variable Loan Details
+
+        public static By VldLoanAmount = By.XPath("//div[@title='Loan Amount']//input");
+        public static By VldRateOfInterest = By.XPath("//div[@title='Rate Of Interest']//input");
+        public static By VldFirstTermChange = By.XPath("//div[@title='First Term Change']//input");
+        public static By VldSubsequentTermChange = By.XPath("//div[@title='Subsequent Term Change']//input");
+        public static By VldDnRateCapFirstAdjustment = By.XPath("//div[@title='DN Rate Cap First Adjustment']//input");
+        public static By VldDnRateCapSubseqAdjustment = By.XPath("//div[@title='DN Rate Caps Subseq Adjustment']//input");
+        public static By VldUpRateCapFirstAdjustment = By.XPath("//div[@title='UP Rate Cap First Adjustment']//input");
+        public static By VldUpRateCapSubseqAdjustment = By.XPath("//div[@title='UP Rate Caps Subseq Adjustment']//input");
+        public static By VldFloorRate = By.XPath("//div[@title='Floor Rate']//input");
+        public static By VldMaxRateEver = By.XPath("//div[@title='Max Rate Ever']//input");
+        public static By VldIndex = By.XPath("//div[@title='Index']//input");
+        public static By VldMargin = By.XPath("//div[@title='Margin']//input");
+
+        public static By PaymentScheduleAprRowCount = By.XPath("//section[@id='PaymentScheduleOutputAPR']//tbody/tr");
+        public static By PaymentScheduleDownRowCount = By.XPath("//section[@id='PaymentScheduleOutputDN']//tbody/tr");
+        public static By PaymentScheduleUpRowCount = By.XPath("//section[@id='PaymentScheduleOutputUP']//tbody/tr");
+
+        #endregion
     }
 }

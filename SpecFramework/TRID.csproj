@@ -137,6 +137,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>PrepaidChargesValidation.feature</DependentUpon>
     </Compile>
+    <Compile Include="FeatureFiles\VariableLoanDetails.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>VariableLoanDetails.feature</DependentUpon>
+    </Compile>
     <Compile Include="GlobalParam\ObjectRepo.cs" />
     <Compile Include="HookFiles\General.cs" />
     <Compile Include="Jira\JiraApi\fields.cs" />
@@ -155,8 +160,8 @@
     <Compile Include="ProjectLibs\API\GoogleAPI\Viewport.cs" />
     <Compile Include="ProjectLibs\Common\ProjActions.cs" />
     <Compile Include="ProjectLibs\Common\TridVariable.cs" />
-    <Compile Include="StepDefinitions\EscrowValidationSteps.cs" />
     <Compile Include="ProjectLibs\UI\UIElements.cs" />
+    <Compile Include="StepDefinitions\EscrowValidationSteps.cs" />
     <Compile Include="StepDefinitions\LaunchAppAndVerifyDefaultValuesSteps.cs" />
     <Compile Include="StepDefinitions\LoanEstimateValidationSteps.cs" />
     <Compile Include="StepDefinitions\MortgageInsuranceValidationSteps.cs" />
@@ -198,6 +203,10 @@
     <None Include="FeatureFiles\PrepaidChargesValidation.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>PrepaidChargesValidation.feature.cs</LastGenOutput>
+    </None>
+    <None Include="FeatureFiles\VariableLoanDetails.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>VariableLoanDetails.feature.cs</LastGenOutput>
     </None>
     <None Include="packages.config" />
     <None Include="runtests.cmd" />

@@ -31,7 +31,7 @@ namespace TRID.StepDefinitions
         [Given(@"user is at TRID application homepage")]
         public void GivenUserIsAtTridApplicationHomepage()
         {
-            UIActions.WindowMaximize();
+            //UIActions.WindowMaximize();
             UIActions.GoToUrl(Url + "?tKey=EB535076-2140-4106-8CAE-B230F6E2D082&aKey=TRID");
             Thread.Sleep(5000);
             //Thread.Sleep(3000);
@@ -82,35 +82,35 @@ namespace TRID.StepDefinitions
         [When(@"user selects Calculation Method in Closing Disclosure Page")]
         public void WhenUserSelectsCalculationMethodInClosingDisclosurePage()
         {
-            ClosingDisclosureVariable();
+            ClosingDisclosureRadioButtonVariable();
             UIActions.Click(CdCalculationMethod);
         }
 
         [When(@"user selects loan type in Closing Disclosure Page")]
         public void WhenUserSelectsLoanTypeInClosingDisclosurePage()
         {
-            ClosingDisclosureVariable();
+            ClosingDisclosureRadioButtonVariable();
             UIActions.Click(CdLoanType);
         }
 
         [When(@"user selects Frequency of Payments in Closing Disclosure Page")]
         public void WhenUserSelectsFrequencyOfPaymentsInClosingDisclosurePage()
         {
-            ClosingDisclosureVariable();
+            ClosingDisclosureRadioButtonVariable();
             UIActions.Click(CdFrequencyOfPayments);
         }
 
         [When(@"user selects Loan Term in Closing Disclosure Page")]
         public void WhenUserSelectsLoanTermInClosingDisclosurePage()
         {
-            ClosingDisclosureVariable();
+            ClosingDisclosureRadioButtonVariable();
             UIActions.Click(CdLoanTerm);
         }
 
         [When(@"user selects Repayment Term Type in Closing Disclosure Page")]
         public void WhenUserSelectsRepaymentTermTypeInClosingDisclosurePage()
         {
-            ClosingDisclosureVariable();
+            ClosingDisclosureRadioButtonVariable();
             UIActions.Click(CdRepaymentTermType);
         }
 

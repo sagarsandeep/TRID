@@ -167,6 +167,8 @@ namespace TRID.ProjectLibs.Common
             else
             {
                 PmiRatesGridValidation();
+                UIActions.Click(UIElements.MiAddButton);
+                Thread.Sleep(5000);
             }
         }
 

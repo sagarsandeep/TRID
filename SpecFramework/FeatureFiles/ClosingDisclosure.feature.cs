@@ -2062,7 +2062,7 @@ testRunner.Then("updated/computed Period Escrow Payment value should display on 
 #line hidden
         }
         
-        public virtual void ValidatingPrincipalAndInterestCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI(string no, string pcScenarioNo, string pcSheetName, string miScenarioNo, string miSheetName, string cdScenarioNo, string cdSheetName, string[] exampleTags)
+        public virtual void ValidatingPrincipalAndInterestCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow(string no, string pcScenarioNo, string pcSheetName, string miScenarioNo, string miSheetName, string cdScenarioNo, string cdSheetName, string eScenarioNo, string eSheetName, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "LoanDetails"};
@@ -2071,7 +2071,7 @@ testRunner.Then("updated/computed Period Escrow Payment value should display on 
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Validating Principal and Interest card value on Closing Disclosure page with No P" +
-                    "repaid, with PMI", @__tags);
+                    "repaid, with PMI, with Escrow", @__tags);
 #line 520
 this.ScenarioSetup(scenarioInfo);
 #line 521
@@ -2083,34 +2083,64 @@ testRunner.Given("user is at TRID application homepage", ((string)(null)), ((Tec
 #line 524
  testRunner.And(string.Format("user have Mortgage Insurance data from excel sheet {0} for the scenario {1}", miSheetName, miScenarioNo), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 525
- testRunner.And("user is at Prepaid Charges page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("user have Escrow data from excel sheet {0} for the scenario {1}", eSheetName, eScenarioNo), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 526
- testRunner.And("all the input and custom fields for prepaid charges have zero values", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("user is at Prepaid Charges page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 527
-testRunner.When("user navigate to Mortgage Insurance Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.And("all the input and custom fields for prepaid charges have zero values", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 528
- testRunner.And("user enters pmi rate values", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.When("user navigate to Mortgage Insurance Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 529
- testRunner.And("user navigate to Closing Disclosure Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("user enters pmi rate values", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 530
- testRunner.And("user selects Calculation Method in Closing Disclosure Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("user navigate to Closing Disclosure Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 531
- testRunner.And("user selects loan type in Closing Disclosure Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("user selects Calculation Method in Closing Disclosure Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 532
- testRunner.And("user selects Frequency of Payments in Closing Disclosure Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("user selects loan type in Closing Disclosure Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 533
- testRunner.And("user selects Loan Term in Closing Disclosure Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("user selects Frequency of Payments in Closing Disclosure Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 534
- testRunner.And("user selects Repayment Term Type in Closing Disclosure Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("user selects Loan Term in Closing Disclosure Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 535
- testRunner.And("Enter Loan detail input values for computation for Closing Disclosure page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("user selects Repayment Term Type in Closing Disclosure Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 536
- testRunner.And("Enter Disclosed input values for Closing Disclosure page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("Enter Loan detail input values for computation for Closing Disclosure page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 537
- testRunner.And("click on Loan Details TEST on Closing Disclosure page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("Enter Disclosed input values for Closing Disclosure page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 538
- testRunner.And("click on Disclosure TEST on Closing Disclosure page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("click on Loan Details TEST on Closing Disclosure page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 539
+ testRunner.And("click on Disclosure TEST on Closing Disclosure page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 540
+ testRunner.And("user navigate to Escrow Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 541
+ testRunner.And("user selects value for Is Ins Escrowed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 542
+ testRunner.And("user selects value for Is Tax Escrowed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 543
+ testRunner.And("user selects value for Is PMI Escrowed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 544
+ testRunner.And("user enters values for Escrow Calculations start period Date", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 545
+ testRunner.And("user enters values for Cushion Months for Insurance", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 546
+ testRunner.And("user enters values for Cushion Months for Tax", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 547
+ testRunner.And("user enters values for Escrow insurance Inputs", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 548
+ testRunner.And("user enters values for Escrow Tax Calculations Inputs", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 549
+ testRunner.And("user enters values for Escrow PMI Calculations Inputs", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 550
+ testRunner.And("user clicks on Escrow Calculation Input Test Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 551
+ testRunner.And("user enters all other input values in Escrow Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 552
+ testRunner.And("user clicks on Disclosure For Escrow Test Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 553
+ testRunner.And("user navigate to Closing Disclosure Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 554
 testRunner.Then("updated/computed Principal and Interest value should display on Closing Disclosur" +
                     "e", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
@@ -2118,87 +2148,87 @@ testRunner.Then("updated/computed Principal and Interest value should display on
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Validating Principal and Interest card value on Closing Disclosure page with No P" +
-            "repaid, with PMI, 1", new string[] {
-                "LoanDetails"}, SourceLine=541)]
-        public virtual void ValidatingPrincipalAndInterestCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI_1()
+            "repaid, with PMI, with Escrow, 1", new string[] {
+                "LoanDetails"}, SourceLine=556)]
+        public virtual void ValidatingPrincipalAndInterestCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow_1()
         {
-            this.ValidatingPrincipalAndInterestCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI("1", "1", "PrepaidCharges", "1", "MortgageInsurance", "1", "ClosingDisclosure", ((string[])(null)));
+            this.ValidatingPrincipalAndInterestCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow("1", "1", "PrepaidCharges", "1", "MortgageInsurance", "1", "ClosingDisclosure", "1", "Escrow", ((string[])(null)));
 #line hidden
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Validating Principal and Interest card value on Closing Disclosure page with No P" +
-            "repaid, with PMI, 2", new string[] {
-                "LoanDetails"}, SourceLine=541)]
-        public virtual void ValidatingPrincipalAndInterestCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI_2()
+            "repaid, with PMI, with Escrow, 2", new string[] {
+                "LoanDetails"}, SourceLine=556)]
+        public virtual void ValidatingPrincipalAndInterestCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow_2()
         {
-            this.ValidatingPrincipalAndInterestCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI("2", "1", "PrepaidCharges", "1", "MortgageInsurance", "2", "ClosingDisclosure", ((string[])(null)));
+            this.ValidatingPrincipalAndInterestCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow("2", "1", "PrepaidCharges", "1", "MortgageInsurance", "2", "ClosingDisclosure", "2", "Escrow", ((string[])(null)));
 #line hidden
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Validating Principal and Interest card value on Closing Disclosure page with No P" +
-            "repaid, with PMI, 3", new string[] {
-                "LoanDetails"}, SourceLine=541)]
-        public virtual void ValidatingPrincipalAndInterestCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI_3()
+            "repaid, with PMI, with Escrow, 3", new string[] {
+                "LoanDetails"}, SourceLine=556)]
+        public virtual void ValidatingPrincipalAndInterestCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow_3()
         {
-            this.ValidatingPrincipalAndInterestCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI("3", "1", "PrepaidCharges", "1", "MortgageInsurance", "3", "ClosingDisclosure", ((string[])(null)));
+            this.ValidatingPrincipalAndInterestCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow("3", "1", "PrepaidCharges", "1", "MortgageInsurance", "3", "ClosingDisclosure", "3", "Escrow", ((string[])(null)));
 #line hidden
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Validating Principal and Interest card value on Closing Disclosure page with No P" +
-            "repaid, with PMI, 4", new string[] {
-                "LoanDetails"}, SourceLine=541)]
-        public virtual void ValidatingPrincipalAndInterestCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI_4()
+            "repaid, with PMI, with Escrow, 4", new string[] {
+                "LoanDetails"}, SourceLine=556)]
+        public virtual void ValidatingPrincipalAndInterestCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow_4()
         {
-            this.ValidatingPrincipalAndInterestCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI("4", "1", "PrepaidCharges", "1", "MortgageInsurance", "4", "ClosingDisclosure", ((string[])(null)));
+            this.ValidatingPrincipalAndInterestCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow("4", "1", "PrepaidCharges", "1", "MortgageInsurance", "4", "ClosingDisclosure", "4", "Escrow", ((string[])(null)));
 #line hidden
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Validating Principal and Interest card value on Closing Disclosure page with No P" +
-            "repaid, with PMI, 5", new string[] {
-                "LoanDetails"}, SourceLine=541)]
-        public virtual void ValidatingPrincipalAndInterestCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI_5()
+            "repaid, with PMI, with Escrow, 5", new string[] {
+                "LoanDetails"}, SourceLine=556)]
+        public virtual void ValidatingPrincipalAndInterestCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow_5()
         {
-            this.ValidatingPrincipalAndInterestCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI("5", "1", "PrepaidCharges", "1", "MortgageInsurance", "5", "ClosingDisclosure", ((string[])(null)));
+            this.ValidatingPrincipalAndInterestCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow("5", "1", "PrepaidCharges", "1", "MortgageInsurance", "5", "ClosingDisclosure", "5", "Escrow", ((string[])(null)));
 #line hidden
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Validating Principal and Interest card value on Closing Disclosure page with No P" +
-            "repaid, with PMI, 6", new string[] {
-                "LoanDetails"}, SourceLine=541)]
-        public virtual void ValidatingPrincipalAndInterestCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI_6()
+            "repaid, with PMI, with Escrow, 6", new string[] {
+                "LoanDetails"}, SourceLine=556)]
+        public virtual void ValidatingPrincipalAndInterestCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow_6()
         {
-            this.ValidatingPrincipalAndInterestCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI("6", "1", "PrepaidCharges", "1", "MortgageInsurance", "6", "ClosingDisclosure", ((string[])(null)));
+            this.ValidatingPrincipalAndInterestCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow("6", "1", "PrepaidCharges", "1", "MortgageInsurance", "6", "ClosingDisclosure", "6", "Escrow", ((string[])(null)));
 #line hidden
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Validating Principal and Interest card value on Closing Disclosure page with No P" +
-            "repaid, with PMI, 7", new string[] {
-                "LoanDetails"}, SourceLine=541)]
-        public virtual void ValidatingPrincipalAndInterestCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI_7()
+            "repaid, with PMI, with Escrow, 7", new string[] {
+                "LoanDetails"}, SourceLine=556)]
+        public virtual void ValidatingPrincipalAndInterestCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow_7()
         {
-            this.ValidatingPrincipalAndInterestCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI("7", "1", "PrepaidCharges", "1", "MortgageInsurance", "7", "ClosingDisclosure", ((string[])(null)));
+            this.ValidatingPrincipalAndInterestCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow("7", "1", "PrepaidCharges", "1", "MortgageInsurance", "7", "ClosingDisclosure", "7", "Escrow", ((string[])(null)));
 #line hidden
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Validating Principal and Interest card value on Closing Disclosure page with No P" +
-            "repaid, with PMI, 8", new string[] {
-                "LoanDetails"}, SourceLine=541)]
-        public virtual void ValidatingPrincipalAndInterestCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI_8()
+            "repaid, with PMI, with Escrow, 8", new string[] {
+                "LoanDetails"}, SourceLine=556)]
+        public virtual void ValidatingPrincipalAndInterestCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow_8()
         {
-            this.ValidatingPrincipalAndInterestCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI("8", "1", "PrepaidCharges", "1", "MortgageInsurance", "8", "ClosingDisclosure", ((string[])(null)));
+            this.ValidatingPrincipalAndInterestCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow("8", "1", "PrepaidCharges", "1", "MortgageInsurance", "8", "ClosingDisclosure", "8", "Escrow", ((string[])(null)));
 #line hidden
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Validating Principal and Interest card value on Closing Disclosure page with No P" +
-            "repaid, with PMI, 9", new string[] {
-                "LoanDetails"}, SourceLine=541)]
-        public virtual void ValidatingPrincipalAndInterestCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI_9()
+            "repaid, with PMI, with Escrow, 9", new string[] {
+                "LoanDetails"}, SourceLine=556)]
+        public virtual void ValidatingPrincipalAndInterestCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow_9()
         {
-            this.ValidatingPrincipalAndInterestCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI("9", "1", "PrepaidCharges", "1", "MortgageInsurance", "9", "ClosingDisclosure", ((string[])(null)));
+            this.ValidatingPrincipalAndInterestCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow("9", "1", "PrepaidCharges", "1", "MortgageInsurance", "9", "ClosingDisclosure", "9", "Escrow", ((string[])(null)));
 #line hidden
         }
         
-        public virtual void ValidatingPMICardValueOnClosingDisclosurePageWithNoPrepaidWithPMI(string no, string pcScenarioNo, string pcSheetName, string miScenarioNo, string miSheetName, string cdScenarioNo, string cdSheetName, string[] exampleTags)
+        public virtual void ValidatingPMICardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow(string no, string pcScenarioNo, string pcSheetName, string miScenarioNo, string miSheetName, string cdScenarioNo, string cdSheetName, string eScenarioNo, string eSheetName, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "LoanDetails"};
@@ -2206,133 +2236,136 @@ testRunner.Then("updated/computed Principal and Interest value should display on
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Validating PMI card value on Closing Disclosure page with No Prepaid, with PMI", @__tags);
-#line 554
-this.ScenarioSetup(scenarioInfo);
-#line 555
-testRunner.Given("user is at TRID application homepage", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 556
- testRunner.And(string.Format("user have Prepaid Charges data from excel sheet {0} for the scenario {1}", pcSheetName, pcScenarioNo), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 557
- testRunner.And(string.Format("user have closing disclosure data from excel sheet {0} for the scenario {1}", cdSheetName, cdScenarioNo), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 558
- testRunner.And(string.Format("user have Mortgage Insurance data from excel sheet {0} for the scenario {1}", miSheetName, miScenarioNo), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 559
- testRunner.And("user is at Prepaid Charges page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 560
- testRunner.And("all the input and custom fields for prepaid charges have zero values", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 561
-testRunner.When("user navigate to Mortgage Insurance Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 562
- testRunner.And("user enters pmi rate values", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 563
- testRunner.And("user navigate to Closing Disclosure Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 564
- testRunner.And("user selects Calculation Method in Closing Disclosure Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 565
- testRunner.And("user selects loan type in Closing Disclosure Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 566
- testRunner.And("user selects Frequency of Payments in Closing Disclosure Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 567
- testRunner.And("user selects Loan Term in Closing Disclosure Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 568
- testRunner.And("user selects Repayment Term Type in Closing Disclosure Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Validating PMI card value on Closing Disclosure page with No Prepaid, with PMI, w" +
+                    "ith Escrow", @__tags);
 #line 569
- testRunner.And("Enter Loan detail input values for computation for Closing Disclosure page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+this.ScenarioSetup(scenarioInfo);
 #line 570
- testRunner.And("Enter Disclosed input values for Closing Disclosure page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.Given("user is at TRID application homepage", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 571
- testRunner.And("click on Loan Details TEST on Closing Disclosure page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("user have Prepaid Charges data from excel sheet {0} for the scenario {1}", pcSheetName, pcScenarioNo), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 572
- testRunner.And("click on Disclosure TEST on Closing Disclosure page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("user have closing disclosure data from excel sheet {0} for the scenario {1}", cdSheetName, cdScenarioNo), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 573
+ testRunner.And(string.Format("user have Mortgage Insurance data from excel sheet {0} for the scenario {1}", miSheetName, miScenarioNo), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 574
+ testRunner.And(string.Format("user have Escrow data from excel sheet {0} for the scenario {1}", eSheetName, eScenarioNo), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 575
+ testRunner.And("user is at Prepaid Charges page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 576
+ testRunner.And("all the input and custom fields for prepaid charges have zero values", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 577
+testRunner.When("user navigate to Mortgage Insurance Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 578
+ testRunner.And("user enters pmi rate values", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 579
+ testRunner.And("user navigate to Closing Disclosure Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 580
+ testRunner.And("user selects Calculation Method in Closing Disclosure Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 581
+ testRunner.And("user selects loan type in Closing Disclosure Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 582
+ testRunner.And("user selects Frequency of Payments in Closing Disclosure Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 583
+ testRunner.And("user selects Loan Term in Closing Disclosure Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 584
+ testRunner.And("user selects Repayment Term Type in Closing Disclosure Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 585
+ testRunner.And("Enter Loan detail input values for computation for Closing Disclosure page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 586
+ testRunner.And("Enter Disclosed input values for Closing Disclosure page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 587
+ testRunner.And("click on Loan Details TEST on Closing Disclosure page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 588
+ testRunner.And("click on Disclosure TEST on Closing Disclosure page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 589
 testRunner.Then("updated/computed pmi value should display on Closing Disclosure", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Validating PMI card value on Closing Disclosure page with No Prepaid, with PMI, 1" +
-            "", new string[] {
-                "LoanDetails"}, SourceLine=575)]
-        public virtual void ValidatingPMICardValueOnClosingDisclosurePageWithNoPrepaidWithPMI_1()
+        [TechTalk.SpecRun.ScenarioAttribute("Validating PMI card value on Closing Disclosure page with No Prepaid, with PMI, w" +
+            "ith Escrow, 1", new string[] {
+                "LoanDetails"}, SourceLine=591)]
+        public virtual void ValidatingPMICardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow_1()
         {
-            this.ValidatingPMICardValueOnClosingDisclosurePageWithNoPrepaidWithPMI("1", "1", "PrepaidCharges", "1", "MortgageInsurance", "1", "ClosingDisclosure", ((string[])(null)));
+            this.ValidatingPMICardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow("1", "1", "PrepaidCharges", "1", "MortgageInsurance", "1", "ClosingDisclosure", "1", "Escrow", ((string[])(null)));
 #line hidden
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Validating PMI card value on Closing Disclosure page with No Prepaid, with PMI, 2" +
-            "", new string[] {
-                "LoanDetails"}, SourceLine=575)]
-        public virtual void ValidatingPMICardValueOnClosingDisclosurePageWithNoPrepaidWithPMI_2()
+        [TechTalk.SpecRun.ScenarioAttribute("Validating PMI card value on Closing Disclosure page with No Prepaid, with PMI, w" +
+            "ith Escrow, 2", new string[] {
+                "LoanDetails"}, SourceLine=591)]
+        public virtual void ValidatingPMICardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow_2()
         {
-            this.ValidatingPMICardValueOnClosingDisclosurePageWithNoPrepaidWithPMI("2", "1", "PrepaidCharges", "1", "MortgageInsurance", "2", "ClosingDisclosure", ((string[])(null)));
+            this.ValidatingPMICardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow("2", "1", "PrepaidCharges", "1", "MortgageInsurance", "2", "ClosingDisclosure", "2", "Escrow", ((string[])(null)));
 #line hidden
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Validating PMI card value on Closing Disclosure page with No Prepaid, with PMI, 3" +
-            "", new string[] {
-                "LoanDetails"}, SourceLine=575)]
-        public virtual void ValidatingPMICardValueOnClosingDisclosurePageWithNoPrepaidWithPMI_3()
+        [TechTalk.SpecRun.ScenarioAttribute("Validating PMI card value on Closing Disclosure page with No Prepaid, with PMI, w" +
+            "ith Escrow, 3", new string[] {
+                "LoanDetails"}, SourceLine=591)]
+        public virtual void ValidatingPMICardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow_3()
         {
-            this.ValidatingPMICardValueOnClosingDisclosurePageWithNoPrepaidWithPMI("3", "1", "PrepaidCharges", "1", "MortgageInsurance", "3", "ClosingDisclosure", ((string[])(null)));
+            this.ValidatingPMICardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow("3", "1", "PrepaidCharges", "1", "MortgageInsurance", "3", "ClosingDisclosure", "3", "Escrow", ((string[])(null)));
 #line hidden
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Validating PMI card value on Closing Disclosure page with No Prepaid, with PMI, 4" +
-            "", new string[] {
-                "LoanDetails"}, SourceLine=575)]
-        public virtual void ValidatingPMICardValueOnClosingDisclosurePageWithNoPrepaidWithPMI_4()
+        [TechTalk.SpecRun.ScenarioAttribute("Validating PMI card value on Closing Disclosure page with No Prepaid, with PMI, w" +
+            "ith Escrow, 4", new string[] {
+                "LoanDetails"}, SourceLine=591)]
+        public virtual void ValidatingPMICardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow_4()
         {
-            this.ValidatingPMICardValueOnClosingDisclosurePageWithNoPrepaidWithPMI("4", "1", "PrepaidCharges", "1", "MortgageInsurance", "4", "ClosingDisclosure", ((string[])(null)));
+            this.ValidatingPMICardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow("4", "1", "PrepaidCharges", "1", "MortgageInsurance", "4", "ClosingDisclosure", "4", "Escrow", ((string[])(null)));
 #line hidden
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Validating PMI card value on Closing Disclosure page with No Prepaid, with PMI, 5" +
-            "", new string[] {
-                "LoanDetails"}, SourceLine=575)]
-        public virtual void ValidatingPMICardValueOnClosingDisclosurePageWithNoPrepaidWithPMI_5()
+        [TechTalk.SpecRun.ScenarioAttribute("Validating PMI card value on Closing Disclosure page with No Prepaid, with PMI, w" +
+            "ith Escrow, 5", new string[] {
+                "LoanDetails"}, SourceLine=591)]
+        public virtual void ValidatingPMICardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow_5()
         {
-            this.ValidatingPMICardValueOnClosingDisclosurePageWithNoPrepaidWithPMI("5", "1", "PrepaidCharges", "1", "MortgageInsurance", "5", "ClosingDisclosure", ((string[])(null)));
+            this.ValidatingPMICardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow("5", "1", "PrepaidCharges", "1", "MortgageInsurance", "5", "ClosingDisclosure", "5", "Escrow", ((string[])(null)));
 #line hidden
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Validating PMI card value on Closing Disclosure page with No Prepaid, with PMI, 6" +
-            "", new string[] {
-                "LoanDetails"}, SourceLine=575)]
-        public virtual void ValidatingPMICardValueOnClosingDisclosurePageWithNoPrepaidWithPMI_6()
+        [TechTalk.SpecRun.ScenarioAttribute("Validating PMI card value on Closing Disclosure page with No Prepaid, with PMI, w" +
+            "ith Escrow, 6", new string[] {
+                "LoanDetails"}, SourceLine=591)]
+        public virtual void ValidatingPMICardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow_6()
         {
-            this.ValidatingPMICardValueOnClosingDisclosurePageWithNoPrepaidWithPMI("6", "1", "PrepaidCharges", "1", "MortgageInsurance", "6", "ClosingDisclosure", ((string[])(null)));
+            this.ValidatingPMICardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow("6", "1", "PrepaidCharges", "1", "MortgageInsurance", "6", "ClosingDisclosure", "6", "Escrow", ((string[])(null)));
 #line hidden
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Validating PMI card value on Closing Disclosure page with No Prepaid, with PMI, 7" +
-            "", new string[] {
-                "LoanDetails"}, SourceLine=575)]
-        public virtual void ValidatingPMICardValueOnClosingDisclosurePageWithNoPrepaidWithPMI_7()
+        [TechTalk.SpecRun.ScenarioAttribute("Validating PMI card value on Closing Disclosure page with No Prepaid, with PMI, w" +
+            "ith Escrow, 7", new string[] {
+                "LoanDetails"}, SourceLine=591)]
+        public virtual void ValidatingPMICardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow_7()
         {
-            this.ValidatingPMICardValueOnClosingDisclosurePageWithNoPrepaidWithPMI("7", "1", "PrepaidCharges", "1", "MortgageInsurance", "7", "ClosingDisclosure", ((string[])(null)));
+            this.ValidatingPMICardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow("7", "1", "PrepaidCharges", "1", "MortgageInsurance", "7", "ClosingDisclosure", "7", "Escrow", ((string[])(null)));
 #line hidden
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Validating PMI card value on Closing Disclosure page with No Prepaid, with PMI, 8" +
-            "", new string[] {
-                "LoanDetails"}, SourceLine=575)]
-        public virtual void ValidatingPMICardValueOnClosingDisclosurePageWithNoPrepaidWithPMI_8()
+        [TechTalk.SpecRun.ScenarioAttribute("Validating PMI card value on Closing Disclosure page with No Prepaid, with PMI, w" +
+            "ith Escrow, 8", new string[] {
+                "LoanDetails"}, SourceLine=591)]
+        public virtual void ValidatingPMICardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow_8()
         {
-            this.ValidatingPMICardValueOnClosingDisclosurePageWithNoPrepaidWithPMI("8", "1", "PrepaidCharges", "1", "MortgageInsurance", "8", "ClosingDisclosure", ((string[])(null)));
+            this.ValidatingPMICardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow("8", "1", "PrepaidCharges", "1", "MortgageInsurance", "8", "ClosingDisclosure", "8", "Escrow", ((string[])(null)));
 #line hidden
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Validating PMI card value on Closing Disclosure page with No Prepaid, with PMI, 9" +
-            "", new string[] {
-                "LoanDetails"}, SourceLine=575)]
-        public virtual void ValidatingPMICardValueOnClosingDisclosurePageWithNoPrepaidWithPMI_9()
+        [TechTalk.SpecRun.ScenarioAttribute("Validating PMI card value on Closing Disclosure page with No Prepaid, with PMI, w" +
+            "ith Escrow, 9", new string[] {
+                "LoanDetails"}, SourceLine=591)]
+        public virtual void ValidatingPMICardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow_9()
         {
-            this.ValidatingPMICardValueOnClosingDisclosurePageWithNoPrepaidWithPMI("9", "1", "PrepaidCharges", "1", "MortgageInsurance", "9", "ClosingDisclosure", ((string[])(null)));
+            this.ValidatingPMICardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow("9", "1", "PrepaidCharges", "1", "MortgageInsurance", "9", "ClosingDisclosure", "9", "Escrow", ((string[])(null)));
 #line hidden
         }
         
-        public virtual void ValidatingDropOffYearsForPMICardValueOnClosingDisclosurePageWithNoPrepaidWithPMI(string no, string pcScenarioNo, string pcSheetName, string miScenarioNo, string miSheetName, string cdScenarioNo, string cdSheetName, string[] exampleTags)
+        public virtual void ValidatingDropOffYearsForPMICardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow(string no, string pcScenarioNo, string pcSheetName, string miScenarioNo, string miSheetName, string cdScenarioNo, string cdSheetName, string eScenarioNo, string eSheetName, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "LoanDetails"};
@@ -2341,46 +2374,48 @@ testRunner.Then("updated/computed pmi value should display on Closing Disclosure
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Validating Drop off years for PMI card value on Closing Disclosure page with No P" +
-                    "repaid, with PMI", @__tags);
-#line 588
-this.ScenarioSetup(scenarioInfo);
-#line 589
-testRunner.Given("user is at TRID application homepage", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 590
- testRunner.And(string.Format("user have Prepaid Charges data from excel sheet {0} for the scenario {1}", pcSheetName, pcScenarioNo), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 591
- testRunner.And(string.Format("user have closing disclosure data from excel sheet {0} for the scenario {1}", cdSheetName, cdScenarioNo), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 592
- testRunner.And(string.Format("user have Mortgage Insurance data from excel sheet {0} for the scenario {1}", miSheetName, miScenarioNo), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 593
- testRunner.And("user is at Prepaid Charges page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 594
- testRunner.And("all the input and custom fields for prepaid charges have zero values", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 595
-testRunner.When("user navigate to Mortgage Insurance Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 596
- testRunner.And("user enters pmi rate values", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 597
- testRunner.And("user navigate to Closing Disclosure Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 598
- testRunner.And("user selects Calculation Method in Closing Disclosure Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 599
- testRunner.And("user selects loan type in Closing Disclosure Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 600
- testRunner.And("user selects Frequency of Payments in Closing Disclosure Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 601
- testRunner.And("user selects Loan Term in Closing Disclosure Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 602
- testRunner.And("user selects Repayment Term Type in Closing Disclosure Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 603
- testRunner.And("Enter Loan detail input values for computation for Closing Disclosure page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+                    "repaid, with PMI, with Escrow", @__tags);
 #line 604
- testRunner.And("Enter Disclosed input values for Closing Disclosure page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+this.ScenarioSetup(scenarioInfo);
 #line 605
- testRunner.And("click on Loan Details TEST on Closing Disclosure page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.Given("user is at TRID application homepage", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 606
- testRunner.And("click on Disclosure TEST on Closing Disclosure page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("user have Prepaid Charges data from excel sheet {0} for the scenario {1}", pcSheetName, pcScenarioNo), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 607
+ testRunner.And(string.Format("user have closing disclosure data from excel sheet {0} for the scenario {1}", cdSheetName, cdScenarioNo), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 608
+ testRunner.And(string.Format("user have Mortgage Insurance data from excel sheet {0} for the scenario {1}", miSheetName, miScenarioNo), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 609
+ testRunner.And(string.Format("user have Escrow data from excel sheet {0} for the scenario {1}", eSheetName, eScenarioNo), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 610
+ testRunner.And("user is at Prepaid Charges page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 611
+ testRunner.And("all the input and custom fields for prepaid charges have zero values", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 612
+testRunner.When("user navigate to Mortgage Insurance Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 613
+ testRunner.And("user enters pmi rate values", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 614
+ testRunner.And("user navigate to Closing Disclosure Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 615
+ testRunner.And("user selects Calculation Method in Closing Disclosure Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 616
+ testRunner.And("user selects loan type in Closing Disclosure Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 617
+ testRunner.And("user selects Frequency of Payments in Closing Disclosure Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 618
+ testRunner.And("user selects Loan Term in Closing Disclosure Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 619
+ testRunner.And("user selects Repayment Term Type in Closing Disclosure Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 620
+ testRunner.And("Enter Loan detail input values for computation for Closing Disclosure page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 621
+ testRunner.And("Enter Disclosed input values for Closing Disclosure page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 622
+ testRunner.And("click on Loan Details TEST on Closing Disclosure page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 623
+ testRunner.And("click on Disclosure TEST on Closing Disclosure page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 624
 testRunner.Then("updated/computed Drop off years for PMI value should display on Closing Disclosur" +
                     "e", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
@@ -2388,87 +2423,87 @@ testRunner.Then("updated/computed Drop off years for PMI value should display on
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Validating Drop off years for PMI card value on Closing Disclosure page with No P" +
-            "repaid, with PMI, 1", new string[] {
-                "LoanDetails"}, SourceLine=609)]
-        public virtual void ValidatingDropOffYearsForPMICardValueOnClosingDisclosurePageWithNoPrepaidWithPMI_1()
+            "repaid, with PMI, with Escrow, 1", new string[] {
+                "LoanDetails"}, SourceLine=626)]
+        public virtual void ValidatingDropOffYearsForPMICardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow_1()
         {
-            this.ValidatingDropOffYearsForPMICardValueOnClosingDisclosurePageWithNoPrepaidWithPMI("1", "1", "PrepaidCharges", "1", "MortgageInsurance", "1", "ClosingDisclosure", ((string[])(null)));
+            this.ValidatingDropOffYearsForPMICardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow("1", "1", "PrepaidCharges", "1", "MortgageInsurance", "1", "ClosingDisclosure", "1", "Escrow", ((string[])(null)));
 #line hidden
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Validating Drop off years for PMI card value on Closing Disclosure page with No P" +
-            "repaid, with PMI, 2", new string[] {
-                "LoanDetails"}, SourceLine=609)]
-        public virtual void ValidatingDropOffYearsForPMICardValueOnClosingDisclosurePageWithNoPrepaidWithPMI_2()
+            "repaid, with PMI, with Escrow, 2", new string[] {
+                "LoanDetails"}, SourceLine=626)]
+        public virtual void ValidatingDropOffYearsForPMICardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow_2()
         {
-            this.ValidatingDropOffYearsForPMICardValueOnClosingDisclosurePageWithNoPrepaidWithPMI("2", "1", "PrepaidCharges", "1", "MortgageInsurance", "2", "ClosingDisclosure", ((string[])(null)));
+            this.ValidatingDropOffYearsForPMICardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow("2", "1", "PrepaidCharges", "1", "MortgageInsurance", "2", "ClosingDisclosure", "2", "Escrow", ((string[])(null)));
 #line hidden
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Validating Drop off years for PMI card value on Closing Disclosure page with No P" +
-            "repaid, with PMI, 3", new string[] {
-                "LoanDetails"}, SourceLine=609)]
-        public virtual void ValidatingDropOffYearsForPMICardValueOnClosingDisclosurePageWithNoPrepaidWithPMI_3()
+            "repaid, with PMI, with Escrow, 3", new string[] {
+                "LoanDetails"}, SourceLine=626)]
+        public virtual void ValidatingDropOffYearsForPMICardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow_3()
         {
-            this.ValidatingDropOffYearsForPMICardValueOnClosingDisclosurePageWithNoPrepaidWithPMI("3", "1", "PrepaidCharges", "1", "MortgageInsurance", "3", "ClosingDisclosure", ((string[])(null)));
+            this.ValidatingDropOffYearsForPMICardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow("3", "1", "PrepaidCharges", "1", "MortgageInsurance", "3", "ClosingDisclosure", "3", "Escrow", ((string[])(null)));
 #line hidden
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Validating Drop off years for PMI card value on Closing Disclosure page with No P" +
-            "repaid, with PMI, 4", new string[] {
-                "LoanDetails"}, SourceLine=609)]
-        public virtual void ValidatingDropOffYearsForPMICardValueOnClosingDisclosurePageWithNoPrepaidWithPMI_4()
+            "repaid, with PMI, with Escrow, 4", new string[] {
+                "LoanDetails"}, SourceLine=626)]
+        public virtual void ValidatingDropOffYearsForPMICardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow_4()
         {
-            this.ValidatingDropOffYearsForPMICardValueOnClosingDisclosurePageWithNoPrepaidWithPMI("4", "1", "PrepaidCharges", "1", "MortgageInsurance", "4", "ClosingDisclosure", ((string[])(null)));
+            this.ValidatingDropOffYearsForPMICardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow("4", "1", "PrepaidCharges", "1", "MortgageInsurance", "4", "ClosingDisclosure", "4", "Escrow", ((string[])(null)));
 #line hidden
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Validating Drop off years for PMI card value on Closing Disclosure page with No P" +
-            "repaid, with PMI, 5", new string[] {
-                "LoanDetails"}, SourceLine=609)]
-        public virtual void ValidatingDropOffYearsForPMICardValueOnClosingDisclosurePageWithNoPrepaidWithPMI_5()
+            "repaid, with PMI, with Escrow, 5", new string[] {
+                "LoanDetails"}, SourceLine=626)]
+        public virtual void ValidatingDropOffYearsForPMICardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow_5()
         {
-            this.ValidatingDropOffYearsForPMICardValueOnClosingDisclosurePageWithNoPrepaidWithPMI("5", "1", "PrepaidCharges", "1", "MortgageInsurance", "5", "ClosingDisclosure", ((string[])(null)));
+            this.ValidatingDropOffYearsForPMICardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow("5", "1", "PrepaidCharges", "1", "MortgageInsurance", "5", "ClosingDisclosure", "5", "Escrow", ((string[])(null)));
 #line hidden
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Validating Drop off years for PMI card value on Closing Disclosure page with No P" +
-            "repaid, with PMI, 6", new string[] {
-                "LoanDetails"}, SourceLine=609)]
-        public virtual void ValidatingDropOffYearsForPMICardValueOnClosingDisclosurePageWithNoPrepaidWithPMI_6()
+            "repaid, with PMI, with Escrow, 6", new string[] {
+                "LoanDetails"}, SourceLine=626)]
+        public virtual void ValidatingDropOffYearsForPMICardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow_6()
         {
-            this.ValidatingDropOffYearsForPMICardValueOnClosingDisclosurePageWithNoPrepaidWithPMI("6", "1", "PrepaidCharges", "1", "MortgageInsurance", "6", "ClosingDisclosure", ((string[])(null)));
+            this.ValidatingDropOffYearsForPMICardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow("6", "1", "PrepaidCharges", "1", "MortgageInsurance", "6", "ClosingDisclosure", "6", "Escrow", ((string[])(null)));
 #line hidden
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Validating Drop off years for PMI card value on Closing Disclosure page with No P" +
-            "repaid, with PMI, 7", new string[] {
-                "LoanDetails"}, SourceLine=609)]
-        public virtual void ValidatingDropOffYearsForPMICardValueOnClosingDisclosurePageWithNoPrepaidWithPMI_7()
+            "repaid, with PMI, with Escrow, 7", new string[] {
+                "LoanDetails"}, SourceLine=626)]
+        public virtual void ValidatingDropOffYearsForPMICardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow_7()
         {
-            this.ValidatingDropOffYearsForPMICardValueOnClosingDisclosurePageWithNoPrepaidWithPMI("7", "1", "PrepaidCharges", "1", "MortgageInsurance", "7", "ClosingDisclosure", ((string[])(null)));
+            this.ValidatingDropOffYearsForPMICardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow("7", "1", "PrepaidCharges", "1", "MortgageInsurance", "7", "ClosingDisclosure", "7", "Escrow", ((string[])(null)));
 #line hidden
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Validating Drop off years for PMI card value on Closing Disclosure page with No P" +
-            "repaid, with PMI, 8", new string[] {
-                "LoanDetails"}, SourceLine=609)]
-        public virtual void ValidatingDropOffYearsForPMICardValueOnClosingDisclosurePageWithNoPrepaidWithPMI_8()
+            "repaid, with PMI, with Escrow, 8", new string[] {
+                "LoanDetails"}, SourceLine=626)]
+        public virtual void ValidatingDropOffYearsForPMICardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow_8()
         {
-            this.ValidatingDropOffYearsForPMICardValueOnClosingDisclosurePageWithNoPrepaidWithPMI("8", "1", "PrepaidCharges", "1", "MortgageInsurance", "8", "ClosingDisclosure", ((string[])(null)));
+            this.ValidatingDropOffYearsForPMICardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow("8", "1", "PrepaidCharges", "1", "MortgageInsurance", "8", "ClosingDisclosure", "8", "Escrow", ((string[])(null)));
 #line hidden
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Validating Drop off years for PMI card value on Closing Disclosure page with No P" +
-            "repaid, with PMI, 9", new string[] {
-                "LoanDetails"}, SourceLine=609)]
-        public virtual void ValidatingDropOffYearsForPMICardValueOnClosingDisclosurePageWithNoPrepaidWithPMI_9()
+            "repaid, with PMI, with Escrow, 9", new string[] {
+                "LoanDetails"}, SourceLine=626)]
+        public virtual void ValidatingDropOffYearsForPMICardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow_9()
         {
-            this.ValidatingDropOffYearsForPMICardValueOnClosingDisclosurePageWithNoPrepaidWithPMI("9", "1", "PrepaidCharges", "1", "MortgageInsurance", "9", "ClosingDisclosure", ((string[])(null)));
+            this.ValidatingDropOffYearsForPMICardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow("9", "1", "PrepaidCharges", "1", "MortgageInsurance", "9", "ClosingDisclosure", "9", "Escrow", ((string[])(null)));
 #line hidden
         }
         
-        public virtual void ValidatingTotalPeriodPaymentCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI(string no, string pcScenarioNo, string pcSheetName, string miScenarioNo, string miSheetName, string cdScenarioNo, string cdSheetName, string[] exampleTags)
+        public virtual void ValidatingTotalPeriodPaymentCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow(string no, string pcScenarioNo, string pcSheetName, string miScenarioNo, string miSheetName, string cdScenarioNo, string cdSheetName, string eScenarioNo, string eSheetName, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "LoanDetails"};
@@ -2477,133 +2512,135 @@ testRunner.Then("updated/computed Drop off years for PMI value should display on
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Validating Total Period Payment card value on Closing Disclosure page with No Pre" +
-                    "paid, with PMI", @__tags);
-#line 622
-this.ScenarioSetup(scenarioInfo);
-#line 623
-testRunner.Given("user is at TRID application homepage", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 624
- testRunner.And(string.Format("user have Prepaid Charges data from excel sheet {0} for the scenario {1}", pcSheetName, pcScenarioNo), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 625
- testRunner.And(string.Format("user have closing disclosure data from excel sheet {0} for the scenario {1}", cdSheetName, cdScenarioNo), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 626
- testRunner.And(string.Format("user have Mortgage Insurance data from excel sheet {0} for the scenario {1}", miSheetName, miScenarioNo), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 627
- testRunner.And("user is at Prepaid Charges page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 628
- testRunner.And("all the input and custom fields for prepaid charges have zero values", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 629
-testRunner.When("user navigate to Mortgage Insurance Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 630
- testRunner.And("user enters pmi rate values", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 631
- testRunner.And("user navigate to Closing Disclosure Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 632
- testRunner.And("user selects Calculation Method in Closing Disclosure Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 633
- testRunner.And("user selects loan type in Closing Disclosure Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 634
- testRunner.And("user selects Frequency of Payments in Closing Disclosure Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 635
- testRunner.And("user selects Loan Term in Closing Disclosure Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 636
- testRunner.And("user selects Repayment Term Type in Closing Disclosure Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 637
- testRunner.And("Enter Loan detail input values for computation for Closing Disclosure page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 638
- testRunner.And("Enter Disclosed input values for Closing Disclosure page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+                    "paid, with PMI, with Escrow", @__tags);
 #line 639
- testRunner.And("click on Loan Details TEST on Closing Disclosure page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+this.ScenarioSetup(scenarioInfo);
 #line 640
- testRunner.And("click on Disclosure TEST on Closing Disclosure page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.Given("user is at TRID application homepage", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 641
+ testRunner.And(string.Format("user have Prepaid Charges data from excel sheet {0} for the scenario {1}", pcSheetName, pcScenarioNo), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 642
+ testRunner.And(string.Format("user have closing disclosure data from excel sheet {0} for the scenario {1}", cdSheetName, cdScenarioNo), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 643
+ testRunner.And(string.Format("user have Mortgage Insurance data from excel sheet {0} for the scenario {1}", miSheetName, miScenarioNo), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 644
+ testRunner.And(string.Format("user have Escrow data from excel sheet {0} for the scenario {1}", eSheetName, eScenarioNo), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 645
+ testRunner.And("user is at Prepaid Charges page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 646
+ testRunner.And("all the input and custom fields for prepaid charges have zero values", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 647
+testRunner.When("user navigate to Mortgage Insurance Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 648
+ testRunner.And("user enters pmi rate values", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 649
+ testRunner.And("user navigate to Closing Disclosure Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 650
+ testRunner.And("user selects Calculation Method in Closing Disclosure Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 651
+ testRunner.And("user selects loan type in Closing Disclosure Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 652
+ testRunner.And("user selects Frequency of Payments in Closing Disclosure Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 653
+ testRunner.And("user selects Loan Term in Closing Disclosure Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 654
+ testRunner.And("user selects Repayment Term Type in Closing Disclosure Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 655
+ testRunner.And("Enter Loan detail input values for computation for Closing Disclosure page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 656
+ testRunner.And("Enter Disclosed input values for Closing Disclosure page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 657
+ testRunner.And("click on Loan Details TEST on Closing Disclosure page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 658
+ testRunner.And("click on Disclosure TEST on Closing Disclosure page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 659
 testRunner.Then("updated/computed Total Period Payment value should display on Closing Disclosure", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Validating Total Period Payment card value on Closing Disclosure page with No Pre" +
-            "paid, with PMI, 1", new string[] {
-                "LoanDetails"}, SourceLine=643)]
-        public virtual void ValidatingTotalPeriodPaymentCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI_1()
+            "paid, with PMI, with Escrow, 1", new string[] {
+                "LoanDetails"}, SourceLine=661)]
+        public virtual void ValidatingTotalPeriodPaymentCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow_1()
         {
-            this.ValidatingTotalPeriodPaymentCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI("1", "1", "PrepaidCharges", "1", "MortgageInsurance", "1", "ClosingDisclosure", ((string[])(null)));
+            this.ValidatingTotalPeriodPaymentCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow("1", "1", "PrepaidCharges", "1", "MortgageInsurance", "1", "ClosingDisclosure", "1", "Escrow", ((string[])(null)));
 #line hidden
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Validating Total Period Payment card value on Closing Disclosure page with No Pre" +
-            "paid, with PMI, 2", new string[] {
-                "LoanDetails"}, SourceLine=643)]
-        public virtual void ValidatingTotalPeriodPaymentCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI_2()
+            "paid, with PMI, with Escrow, 2", new string[] {
+                "LoanDetails"}, SourceLine=661)]
+        public virtual void ValidatingTotalPeriodPaymentCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow_2()
         {
-            this.ValidatingTotalPeriodPaymentCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI("2", "1", "PrepaidCharges", "1", "MortgageInsurance", "2", "ClosingDisclosure", ((string[])(null)));
+            this.ValidatingTotalPeriodPaymentCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow("2", "1", "PrepaidCharges", "1", "MortgageInsurance", "2", "ClosingDisclosure", "2", "Escrow", ((string[])(null)));
 #line hidden
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Validating Total Period Payment card value on Closing Disclosure page with No Pre" +
-            "paid, with PMI, 3", new string[] {
-                "LoanDetails"}, SourceLine=643)]
-        public virtual void ValidatingTotalPeriodPaymentCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI_3()
+            "paid, with PMI, with Escrow, 3", new string[] {
+                "LoanDetails"}, SourceLine=661)]
+        public virtual void ValidatingTotalPeriodPaymentCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow_3()
         {
-            this.ValidatingTotalPeriodPaymentCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI("3", "1", "PrepaidCharges", "1", "MortgageInsurance", "3", "ClosingDisclosure", ((string[])(null)));
+            this.ValidatingTotalPeriodPaymentCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow("3", "1", "PrepaidCharges", "1", "MortgageInsurance", "3", "ClosingDisclosure", "3", "Escrow", ((string[])(null)));
 #line hidden
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Validating Total Period Payment card value on Closing Disclosure page with No Pre" +
-            "paid, with PMI, 4", new string[] {
-                "LoanDetails"}, SourceLine=643)]
-        public virtual void ValidatingTotalPeriodPaymentCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI_4()
+            "paid, with PMI, with Escrow, 4", new string[] {
+                "LoanDetails"}, SourceLine=661)]
+        public virtual void ValidatingTotalPeriodPaymentCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow_4()
         {
-            this.ValidatingTotalPeriodPaymentCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI("4", "1", "PrepaidCharges", "1", "MortgageInsurance", "4", "ClosingDisclosure", ((string[])(null)));
+            this.ValidatingTotalPeriodPaymentCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow("4", "1", "PrepaidCharges", "1", "MortgageInsurance", "4", "ClosingDisclosure", "4", "Escrow", ((string[])(null)));
 #line hidden
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Validating Total Period Payment card value on Closing Disclosure page with No Pre" +
-            "paid, with PMI, 5", new string[] {
-                "LoanDetails"}, SourceLine=643)]
-        public virtual void ValidatingTotalPeriodPaymentCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI_5()
+            "paid, with PMI, with Escrow, 5", new string[] {
+                "LoanDetails"}, SourceLine=661)]
+        public virtual void ValidatingTotalPeriodPaymentCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow_5()
         {
-            this.ValidatingTotalPeriodPaymentCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI("5", "1", "PrepaidCharges", "1", "MortgageInsurance", "5", "ClosingDisclosure", ((string[])(null)));
+            this.ValidatingTotalPeriodPaymentCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow("5", "1", "PrepaidCharges", "1", "MortgageInsurance", "5", "ClosingDisclosure", "5", "Escrow", ((string[])(null)));
 #line hidden
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Validating Total Period Payment card value on Closing Disclosure page with No Pre" +
-            "paid, with PMI, 6", new string[] {
-                "LoanDetails"}, SourceLine=643)]
-        public virtual void ValidatingTotalPeriodPaymentCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI_6()
+            "paid, with PMI, with Escrow, 6", new string[] {
+                "LoanDetails"}, SourceLine=661)]
+        public virtual void ValidatingTotalPeriodPaymentCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow_6()
         {
-            this.ValidatingTotalPeriodPaymentCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI("6", "1", "PrepaidCharges", "1", "MortgageInsurance", "6", "ClosingDisclosure", ((string[])(null)));
+            this.ValidatingTotalPeriodPaymentCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow("6", "1", "PrepaidCharges", "1", "MortgageInsurance", "6", "ClosingDisclosure", "6", "Escrow", ((string[])(null)));
 #line hidden
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Validating Total Period Payment card value on Closing Disclosure page with No Pre" +
-            "paid, with PMI, 7", new string[] {
-                "LoanDetails"}, SourceLine=643)]
-        public virtual void ValidatingTotalPeriodPaymentCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI_7()
+            "paid, with PMI, with Escrow, 7", new string[] {
+                "LoanDetails"}, SourceLine=661)]
+        public virtual void ValidatingTotalPeriodPaymentCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow_7()
         {
-            this.ValidatingTotalPeriodPaymentCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI("7", "1", "PrepaidCharges", "1", "MortgageInsurance", "7", "ClosingDisclosure", ((string[])(null)));
+            this.ValidatingTotalPeriodPaymentCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow("7", "1", "PrepaidCharges", "1", "MortgageInsurance", "7", "ClosingDisclosure", "7", "Escrow", ((string[])(null)));
 #line hidden
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Validating Total Period Payment card value on Closing Disclosure page with No Pre" +
-            "paid, with PMI, 8", new string[] {
-                "LoanDetails"}, SourceLine=643)]
-        public virtual void ValidatingTotalPeriodPaymentCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI_8()
+            "paid, with PMI, with Escrow, 8", new string[] {
+                "LoanDetails"}, SourceLine=661)]
+        public virtual void ValidatingTotalPeriodPaymentCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow_8()
         {
-            this.ValidatingTotalPeriodPaymentCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI("8", "1", "PrepaidCharges", "1", "MortgageInsurance", "8", "ClosingDisclosure", ((string[])(null)));
+            this.ValidatingTotalPeriodPaymentCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow("8", "1", "PrepaidCharges", "1", "MortgageInsurance", "8", "ClosingDisclosure", "8", "Escrow", ((string[])(null)));
 #line hidden
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Validating Total Period Payment card value on Closing Disclosure page with No Pre" +
-            "paid, with PMI, 9", new string[] {
-                "LoanDetails"}, SourceLine=643)]
-        public virtual void ValidatingTotalPeriodPaymentCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI_9()
+            "paid, with PMI, with Escrow, 9", new string[] {
+                "LoanDetails"}, SourceLine=661)]
+        public virtual void ValidatingTotalPeriodPaymentCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow_9()
         {
-            this.ValidatingTotalPeriodPaymentCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI("9", "1", "PrepaidCharges", "1", "MortgageInsurance", "9", "ClosingDisclosure", ((string[])(null)));
+            this.ValidatingTotalPeriodPaymentCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow("9", "1", "PrepaidCharges", "1", "MortgageInsurance", "9", "ClosingDisclosure", "9", "Escrow", ((string[])(null)));
 #line hidden
         }
         
-        public virtual void ValidatingAPRCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI(string no, string pcScenarioNo, string pcSheetName, string miScenarioNo, string miSheetName, string cdScenarioNo, string cdSheetName, string[] exampleTags)
+        public virtual void ValidatingAPRCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow(string no, string pcScenarioNo, string pcSheetName, string miScenarioNo, string miSheetName, string cdScenarioNo, string cdSheetName, string eScenarioNo, string eSheetName, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "LoanDetails"};
@@ -2611,133 +2648,136 @@ testRunner.Then("updated/computed Total Period Payment value should display on C
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Validating APR card value on Closing Disclosure page with No Prepaid, with PMI", @__tags);
-#line 656
-this.ScenarioSetup(scenarioInfo);
-#line 657
-testRunner.Given("user is at TRID application homepage", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 658
- testRunner.And(string.Format("user have Prepaid Charges data from excel sheet {0} for the scenario {1}", pcSheetName, pcScenarioNo), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 659
- testRunner.And(string.Format("user have closing disclosure data from excel sheet {0} for the scenario {1}", cdSheetName, cdScenarioNo), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 660
- testRunner.And(string.Format("user have Mortgage Insurance data from excel sheet {0} for the scenario {1}", miSheetName, miScenarioNo), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 661
- testRunner.And("user is at Prepaid Charges page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 662
- testRunner.And("all the input and custom fields for prepaid charges have zero values", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 663
-testRunner.When("user navigate to Mortgage Insurance Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 664
- testRunner.And("user enters pmi rate values", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 665
- testRunner.And("user navigate to Closing Disclosure Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 666
- testRunner.And("user selects Calculation Method in Closing Disclosure Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 667
- testRunner.And("user selects loan type in Closing Disclosure Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 668
- testRunner.And("user selects Frequency of Payments in Closing Disclosure Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 669
- testRunner.And("user selects Loan Term in Closing Disclosure Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 670
- testRunner.And("user selects Repayment Term Type in Closing Disclosure Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 671
- testRunner.And("Enter Loan detail input values for computation for Closing Disclosure page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 672
- testRunner.And("Enter Disclosed input values for Closing Disclosure page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 673
- testRunner.And("click on Loan Details TEST on Closing Disclosure page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Validating APR card value on Closing Disclosure page with No Prepaid, with PMI, w" +
+                    "ith Escrow", @__tags);
 #line 674
- testRunner.And("click on Disclosure TEST on Closing Disclosure page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+this.ScenarioSetup(scenarioInfo);
 #line 675
+testRunner.Given("user is at TRID application homepage", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 676
+ testRunner.And(string.Format("user have Prepaid Charges data from excel sheet {0} for the scenario {1}", pcSheetName, pcScenarioNo), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 677
+ testRunner.And(string.Format("user have closing disclosure data from excel sheet {0} for the scenario {1}", cdSheetName, cdScenarioNo), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 678
+ testRunner.And(string.Format("user have Mortgage Insurance data from excel sheet {0} for the scenario {1}", miSheetName, miScenarioNo), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 679
+ testRunner.And(string.Format("user have Escrow data from excel sheet {0} for the scenario {1}", eSheetName, eScenarioNo), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 680
+ testRunner.And("user is at Prepaid Charges page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 681
+ testRunner.And("all the input and custom fields for prepaid charges have zero values", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 682
+testRunner.When("user navigate to Mortgage Insurance Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 683
+ testRunner.And("user enters pmi rate values", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 684
+ testRunner.And("user navigate to Closing Disclosure Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 685
+ testRunner.And("user selects Calculation Method in Closing Disclosure Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 686
+ testRunner.And("user selects loan type in Closing Disclosure Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 687
+ testRunner.And("user selects Frequency of Payments in Closing Disclosure Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 688
+ testRunner.And("user selects Loan Term in Closing Disclosure Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 689
+ testRunner.And("user selects Repayment Term Type in Closing Disclosure Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 690
+ testRunner.And("Enter Loan detail input values for computation for Closing Disclosure page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 691
+ testRunner.And("Enter Disclosed input values for Closing Disclosure page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 692
+ testRunner.And("click on Loan Details TEST on Closing Disclosure page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 693
+ testRunner.And("click on Disclosure TEST on Closing Disclosure page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 694
 testRunner.Then("updated/computed APR value should display on Closing Disclosure", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Validating APR card value on Closing Disclosure page with No Prepaid, with PMI, 1" +
-            "", new string[] {
-                "LoanDetails"}, SourceLine=677)]
-        public virtual void ValidatingAPRCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI_1()
+        [TechTalk.SpecRun.ScenarioAttribute("Validating APR card value on Closing Disclosure page with No Prepaid, with PMI, w" +
+            "ith Escrow, 1", new string[] {
+                "LoanDetails"}, SourceLine=696)]
+        public virtual void ValidatingAPRCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow_1()
         {
-            this.ValidatingAPRCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI("1", "1", "PrepaidCharges", "1", "MortgageInsurance", "1", "ClosingDisclosure", ((string[])(null)));
+            this.ValidatingAPRCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow("1", "1", "PrepaidCharges", "1", "MortgageInsurance", "1", "ClosingDisclosure", "1", "Escrow", ((string[])(null)));
 #line hidden
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Validating APR card value on Closing Disclosure page with No Prepaid, with PMI, 2" +
-            "", new string[] {
-                "LoanDetails"}, SourceLine=677)]
-        public virtual void ValidatingAPRCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI_2()
+        [TechTalk.SpecRun.ScenarioAttribute("Validating APR card value on Closing Disclosure page with No Prepaid, with PMI, w" +
+            "ith Escrow, 2", new string[] {
+                "LoanDetails"}, SourceLine=696)]
+        public virtual void ValidatingAPRCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow_2()
         {
-            this.ValidatingAPRCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI("2", "1", "PrepaidCharges", "1", "MortgageInsurance", "2", "ClosingDisclosure", ((string[])(null)));
+            this.ValidatingAPRCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow("2", "1", "PrepaidCharges", "1", "MortgageInsurance", "2", "ClosingDisclosure", "2", "Escrow", ((string[])(null)));
 #line hidden
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Validating APR card value on Closing Disclosure page with No Prepaid, with PMI, 3" +
-            "", new string[] {
-                "LoanDetails"}, SourceLine=677)]
-        public virtual void ValidatingAPRCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI_3()
+        [TechTalk.SpecRun.ScenarioAttribute("Validating APR card value on Closing Disclosure page with No Prepaid, with PMI, w" +
+            "ith Escrow, 3", new string[] {
+                "LoanDetails"}, SourceLine=696)]
+        public virtual void ValidatingAPRCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow_3()
         {
-            this.ValidatingAPRCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI("3", "1", "PrepaidCharges", "1", "MortgageInsurance", "3", "ClosingDisclosure", ((string[])(null)));
+            this.ValidatingAPRCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow("3", "1", "PrepaidCharges", "1", "MortgageInsurance", "3", "ClosingDisclosure", "3", "Escrow", ((string[])(null)));
 #line hidden
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Validating APR card value on Closing Disclosure page with No Prepaid, with PMI, 4" +
-            "", new string[] {
-                "LoanDetails"}, SourceLine=677)]
-        public virtual void ValidatingAPRCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI_4()
+        [TechTalk.SpecRun.ScenarioAttribute("Validating APR card value on Closing Disclosure page with No Prepaid, with PMI, w" +
+            "ith Escrow, 4", new string[] {
+                "LoanDetails"}, SourceLine=696)]
+        public virtual void ValidatingAPRCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow_4()
         {
-            this.ValidatingAPRCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI("4", "1", "PrepaidCharges", "1", "MortgageInsurance", "4", "ClosingDisclosure", ((string[])(null)));
+            this.ValidatingAPRCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow("4", "1", "PrepaidCharges", "1", "MortgageInsurance", "4", "ClosingDisclosure", "4", "Escrow", ((string[])(null)));
 #line hidden
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Validating APR card value on Closing Disclosure page with No Prepaid, with PMI, 5" +
-            "", new string[] {
-                "LoanDetails"}, SourceLine=677)]
-        public virtual void ValidatingAPRCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI_5()
+        [TechTalk.SpecRun.ScenarioAttribute("Validating APR card value on Closing Disclosure page with No Prepaid, with PMI, w" +
+            "ith Escrow, 5", new string[] {
+                "LoanDetails"}, SourceLine=696)]
+        public virtual void ValidatingAPRCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow_5()
         {
-            this.ValidatingAPRCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI("5", "1", "PrepaidCharges", "1", "MortgageInsurance", "5", "ClosingDisclosure", ((string[])(null)));
+            this.ValidatingAPRCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow("5", "1", "PrepaidCharges", "1", "MortgageInsurance", "5", "ClosingDisclosure", "5", "Escrow", ((string[])(null)));
 #line hidden
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Validating APR card value on Closing Disclosure page with No Prepaid, with PMI, 6" +
-            "", new string[] {
-                "LoanDetails"}, SourceLine=677)]
-        public virtual void ValidatingAPRCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI_6()
+        [TechTalk.SpecRun.ScenarioAttribute("Validating APR card value on Closing Disclosure page with No Prepaid, with PMI, w" +
+            "ith Escrow, 6", new string[] {
+                "LoanDetails"}, SourceLine=696)]
+        public virtual void ValidatingAPRCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow_6()
         {
-            this.ValidatingAPRCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI("6", "1", "PrepaidCharges", "1", "MortgageInsurance", "6", "ClosingDisclosure", ((string[])(null)));
+            this.ValidatingAPRCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow("6", "1", "PrepaidCharges", "1", "MortgageInsurance", "6", "ClosingDisclosure", "6", "Escrow", ((string[])(null)));
 #line hidden
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Validating APR card value on Closing Disclosure page with No Prepaid, with PMI, 7" +
-            "", new string[] {
-                "LoanDetails"}, SourceLine=677)]
-        public virtual void ValidatingAPRCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI_7()
+        [TechTalk.SpecRun.ScenarioAttribute("Validating APR card value on Closing Disclosure page with No Prepaid, with PMI, w" +
+            "ith Escrow, 7", new string[] {
+                "LoanDetails"}, SourceLine=696)]
+        public virtual void ValidatingAPRCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow_7()
         {
-            this.ValidatingAPRCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI("7", "1", "PrepaidCharges", "1", "MortgageInsurance", "7", "ClosingDisclosure", ((string[])(null)));
+            this.ValidatingAPRCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow("7", "1", "PrepaidCharges", "1", "MortgageInsurance", "7", "ClosingDisclosure", "7", "Escrow", ((string[])(null)));
 #line hidden
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Validating APR card value on Closing Disclosure page with No Prepaid, with PMI, 8" +
-            "", new string[] {
-                "LoanDetails"}, SourceLine=677)]
-        public virtual void ValidatingAPRCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI_8()
+        [TechTalk.SpecRun.ScenarioAttribute("Validating APR card value on Closing Disclosure page with No Prepaid, with PMI, w" +
+            "ith Escrow, 8", new string[] {
+                "LoanDetails"}, SourceLine=696)]
+        public virtual void ValidatingAPRCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow_8()
         {
-            this.ValidatingAPRCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI("8", "1", "PrepaidCharges", "1", "MortgageInsurance", "8", "ClosingDisclosure", ((string[])(null)));
+            this.ValidatingAPRCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow("8", "1", "PrepaidCharges", "1", "MortgageInsurance", "8", "ClosingDisclosure", "8", "Escrow", ((string[])(null)));
 #line hidden
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Validating APR card value on Closing Disclosure page with No Prepaid, with PMI, 9" +
-            "", new string[] {
-                "LoanDetails"}, SourceLine=677)]
-        public virtual void ValidatingAPRCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI_9()
+        [TechTalk.SpecRun.ScenarioAttribute("Validating APR card value on Closing Disclosure page with No Prepaid, with PMI, w" +
+            "ith Escrow, 9", new string[] {
+                "LoanDetails"}, SourceLine=696)]
+        public virtual void ValidatingAPRCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow_9()
         {
-            this.ValidatingAPRCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI("9", "1", "PrepaidCharges", "1", "MortgageInsurance", "9", "ClosingDisclosure", ((string[])(null)));
+            this.ValidatingAPRCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow("9", "1", "PrepaidCharges", "1", "MortgageInsurance", "9", "ClosingDisclosure", "9", "Escrow", ((string[])(null)));
 #line hidden
         }
         
-        public virtual void ValidatingBalloonAmountCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI(string no, string pcScenarioNo, string pcSheetName, string miScenarioNo, string miSheetName, string cdScenarioNo, string cdSheetName, string[] exampleTags)
+        public virtual void ValidatingBalloonAmountCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow(string no, string pcScenarioNo, string pcSheetName, string miScenarioNo, string miSheetName, string cdScenarioNo, string cdSheetName, string eScenarioNo, string eSheetName, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "LoanDetails"};
@@ -2746,133 +2786,135 @@ testRunner.Then("updated/computed APR value should display on Closing Disclosure
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Validating Balloon Amount card value on Closing Disclosure page with No Prepaid, " +
-                    "with PMI", @__tags);
-#line 690
-this.ScenarioSetup(scenarioInfo);
-#line 691
-testRunner.Given("user is at TRID application homepage", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 692
- testRunner.And(string.Format("user have Prepaid Charges data from excel sheet {0} for the scenario {1}", pcSheetName, pcScenarioNo), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 693
- testRunner.And(string.Format("user have closing disclosure data from excel sheet {0} for the scenario {1}", cdSheetName, cdScenarioNo), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 694
- testRunner.And(string.Format("user have Mortgage Insurance data from excel sheet {0} for the scenario {1}", miSheetName, miScenarioNo), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 695
- testRunner.And("user is at Prepaid Charges page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 696
- testRunner.And("all the input and custom fields for prepaid charges have zero values", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 697
-testRunner.When("user navigate to Mortgage Insurance Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 698
- testRunner.And("user enters pmi rate values", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 699
- testRunner.And("user navigate to Closing Disclosure Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 700
- testRunner.And("user selects Calculation Method in Closing Disclosure Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 701
- testRunner.And("user selects loan type in Closing Disclosure Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 702
- testRunner.And("user selects Frequency of Payments in Closing Disclosure Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 703
- testRunner.And("user selects Loan Term in Closing Disclosure Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 704
- testRunner.And("user selects Repayment Term Type in Closing Disclosure Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 705
- testRunner.And("Enter Loan detail input values for computation for Closing Disclosure page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 706
- testRunner.And("Enter Disclosed input values for Closing Disclosure page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 707
- testRunner.And("click on Loan Details TEST on Closing Disclosure page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 708
- testRunner.And("click on Disclosure TEST on Closing Disclosure page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+                    "with PMI, with Escrow", @__tags);
 #line 709
+this.ScenarioSetup(scenarioInfo);
+#line 710
+testRunner.Given("user is at TRID application homepage", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 711
+ testRunner.And(string.Format("user have Prepaid Charges data from excel sheet {0} for the scenario {1}", pcSheetName, pcScenarioNo), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 712
+ testRunner.And(string.Format("user have closing disclosure data from excel sheet {0} for the scenario {1}", cdSheetName, cdScenarioNo), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 713
+ testRunner.And(string.Format("user have Mortgage Insurance data from excel sheet {0} for the scenario {1}", miSheetName, miScenarioNo), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 714
+ testRunner.And(string.Format("user have Escrow data from excel sheet {0} for the scenario {1}", eSheetName, eScenarioNo), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 715
+ testRunner.And("user is at Prepaid Charges page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 716
+ testRunner.And("all the input and custom fields for prepaid charges have zero values", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 717
+testRunner.When("user navigate to Mortgage Insurance Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 718
+ testRunner.And("user enters pmi rate values", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 719
+ testRunner.And("user navigate to Closing Disclosure Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 720
+ testRunner.And("user selects Calculation Method in Closing Disclosure Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 721
+ testRunner.And("user selects loan type in Closing Disclosure Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 722
+ testRunner.And("user selects Frequency of Payments in Closing Disclosure Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 723
+ testRunner.And("user selects Loan Term in Closing Disclosure Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 724
+ testRunner.And("user selects Repayment Term Type in Closing Disclosure Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 725
+ testRunner.And("Enter Loan detail input values for computation for Closing Disclosure page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 726
+ testRunner.And("Enter Disclosed input values for Closing Disclosure page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 727
+ testRunner.And("click on Loan Details TEST on Closing Disclosure page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 728
+ testRunner.And("click on Disclosure TEST on Closing Disclosure page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 729
 testRunner.Then("updated/computed Balloon Amount value should display on Closing Disclosure", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Validating Balloon Amount card value on Closing Disclosure page with No Prepaid, " +
-            "with PMI, 1", new string[] {
-                "LoanDetails"}, SourceLine=711)]
-        public virtual void ValidatingBalloonAmountCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI_1()
+            "with PMI, with Escrow, 1", new string[] {
+                "LoanDetails"}, SourceLine=731)]
+        public virtual void ValidatingBalloonAmountCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow_1()
         {
-            this.ValidatingBalloonAmountCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI("1", "1", "PrepaidCharges", "1", "MortgageInsurance", "1", "ClosingDisclosure", ((string[])(null)));
+            this.ValidatingBalloonAmountCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow("1", "1", "PrepaidCharges", "1", "MortgageInsurance", "1", "ClosingDisclosure", "1", "Escrow", ((string[])(null)));
 #line hidden
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Validating Balloon Amount card value on Closing Disclosure page with No Prepaid, " +
-            "with PMI, 2", new string[] {
-                "LoanDetails"}, SourceLine=711)]
-        public virtual void ValidatingBalloonAmountCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI_2()
+            "with PMI, with Escrow, 2", new string[] {
+                "LoanDetails"}, SourceLine=731)]
+        public virtual void ValidatingBalloonAmountCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow_2()
         {
-            this.ValidatingBalloonAmountCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI("2", "1", "PrepaidCharges", "1", "MortgageInsurance", "2", "ClosingDisclosure", ((string[])(null)));
+            this.ValidatingBalloonAmountCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow("2", "1", "PrepaidCharges", "1", "MortgageInsurance", "2", "ClosingDisclosure", "2", "Escrow", ((string[])(null)));
 #line hidden
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Validating Balloon Amount card value on Closing Disclosure page with No Prepaid, " +
-            "with PMI, 3", new string[] {
-                "LoanDetails"}, SourceLine=711)]
-        public virtual void ValidatingBalloonAmountCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI_3()
+            "with PMI, with Escrow, 3", new string[] {
+                "LoanDetails"}, SourceLine=731)]
+        public virtual void ValidatingBalloonAmountCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow_3()
         {
-            this.ValidatingBalloonAmountCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI("3", "1", "PrepaidCharges", "1", "MortgageInsurance", "3", "ClosingDisclosure", ((string[])(null)));
+            this.ValidatingBalloonAmountCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow("3", "1", "PrepaidCharges", "1", "MortgageInsurance", "3", "ClosingDisclosure", "3", "Escrow", ((string[])(null)));
 #line hidden
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Validating Balloon Amount card value on Closing Disclosure page with No Prepaid, " +
-            "with PMI, 4", new string[] {
-                "LoanDetails"}, SourceLine=711)]
-        public virtual void ValidatingBalloonAmountCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI_4()
+            "with PMI, with Escrow, 4", new string[] {
+                "LoanDetails"}, SourceLine=731)]
+        public virtual void ValidatingBalloonAmountCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow_4()
         {
-            this.ValidatingBalloonAmountCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI("4", "1", "PrepaidCharges", "1", "MortgageInsurance", "4", "ClosingDisclosure", ((string[])(null)));
+            this.ValidatingBalloonAmountCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow("4", "1", "PrepaidCharges", "1", "MortgageInsurance", "4", "ClosingDisclosure", "4", "Escrow", ((string[])(null)));
 #line hidden
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Validating Balloon Amount card value on Closing Disclosure page with No Prepaid, " +
-            "with PMI, 5", new string[] {
-                "LoanDetails"}, SourceLine=711)]
-        public virtual void ValidatingBalloonAmountCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI_5()
+            "with PMI, with Escrow, 5", new string[] {
+                "LoanDetails"}, SourceLine=731)]
+        public virtual void ValidatingBalloonAmountCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow_5()
         {
-            this.ValidatingBalloonAmountCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI("5", "1", "PrepaidCharges", "1", "MortgageInsurance", "5", "ClosingDisclosure", ((string[])(null)));
+            this.ValidatingBalloonAmountCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow("5", "1", "PrepaidCharges", "1", "MortgageInsurance", "5", "ClosingDisclosure", "5", "Escrow", ((string[])(null)));
 #line hidden
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Validating Balloon Amount card value on Closing Disclosure page with No Prepaid, " +
-            "with PMI, 6", new string[] {
-                "LoanDetails"}, SourceLine=711)]
-        public virtual void ValidatingBalloonAmountCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI_6()
+            "with PMI, with Escrow, 6", new string[] {
+                "LoanDetails"}, SourceLine=731)]
+        public virtual void ValidatingBalloonAmountCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow_6()
         {
-            this.ValidatingBalloonAmountCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI("6", "1", "PrepaidCharges", "1", "MortgageInsurance", "6", "ClosingDisclosure", ((string[])(null)));
+            this.ValidatingBalloonAmountCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow("6", "1", "PrepaidCharges", "1", "MortgageInsurance", "6", "ClosingDisclosure", "6", "Escrow", ((string[])(null)));
 #line hidden
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Validating Balloon Amount card value on Closing Disclosure page with No Prepaid, " +
-            "with PMI, 7", new string[] {
-                "LoanDetails"}, SourceLine=711)]
-        public virtual void ValidatingBalloonAmountCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI_7()
+            "with PMI, with Escrow, 7", new string[] {
+                "LoanDetails"}, SourceLine=731)]
+        public virtual void ValidatingBalloonAmountCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow_7()
         {
-            this.ValidatingBalloonAmountCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI("7", "1", "PrepaidCharges", "1", "MortgageInsurance", "7", "ClosingDisclosure", ((string[])(null)));
+            this.ValidatingBalloonAmountCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow("7", "1", "PrepaidCharges", "1", "MortgageInsurance", "7", "ClosingDisclosure", "7", "Escrow", ((string[])(null)));
 #line hidden
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Validating Balloon Amount card value on Closing Disclosure page with No Prepaid, " +
-            "with PMI, 8", new string[] {
-                "LoanDetails"}, SourceLine=711)]
-        public virtual void ValidatingBalloonAmountCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI_8()
+            "with PMI, with Escrow, 8", new string[] {
+                "LoanDetails"}, SourceLine=731)]
+        public virtual void ValidatingBalloonAmountCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow_8()
         {
-            this.ValidatingBalloonAmountCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI("8", "1", "PrepaidCharges", "1", "MortgageInsurance", "8", "ClosingDisclosure", ((string[])(null)));
+            this.ValidatingBalloonAmountCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow("8", "1", "PrepaidCharges", "1", "MortgageInsurance", "8", "ClosingDisclosure", "8", "Escrow", ((string[])(null)));
 #line hidden
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Validating Balloon Amount card value on Closing Disclosure page with No Prepaid, " +
-            "with PMI, 9", new string[] {
-                "LoanDetails"}, SourceLine=711)]
-        public virtual void ValidatingBalloonAmountCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI_9()
+            "with PMI, with Escrow, 9", new string[] {
+                "LoanDetails"}, SourceLine=731)]
+        public virtual void ValidatingBalloonAmountCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow_9()
         {
-            this.ValidatingBalloonAmountCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI("9", "1", "PrepaidCharges", "1", "MortgageInsurance", "9", "ClosingDisclosure", ((string[])(null)));
+            this.ValidatingBalloonAmountCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow("9", "1", "PrepaidCharges", "1", "MortgageInsurance", "9", "ClosingDisclosure", "9", "Escrow", ((string[])(null)));
 #line hidden
         }
         
-        public virtual void ValidatingTotalOfPaymentsCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI(string no, string pcScenarioNo, string pcSheetName, string miScenarioNo, string miSheetName, string cdScenarioNo, string cdSheetName, string[] exampleTags)
+        public virtual void ValidatingTotalOfPaymentsCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow(string no, string pcScenarioNo, string pcSheetName, string miScenarioNo, string miSheetName, string cdScenarioNo, string cdSheetName, string eScenarioNo, string eSheetName, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "LoanDetails"};
@@ -2881,133 +2923,135 @@ testRunner.Then("updated/computed Balloon Amount value should display on Closing
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Validating Total of Payments card value on Closing Disclosure page with No Prepai" +
-                    "d, with PMI", @__tags);
-#line 724
+                    "d, with PMI, with Escrow", @__tags);
+#line 744
 this.ScenarioSetup(scenarioInfo);
-#line 725
+#line 745
 testRunner.Given("user is at TRID application homepage", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 726
+#line 746
  testRunner.And(string.Format("user have Prepaid Charges data from excel sheet {0} for the scenario {1}", pcSheetName, pcScenarioNo), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 727
+#line 747
  testRunner.And(string.Format("user have closing disclosure data from excel sheet {0} for the scenario {1}", cdSheetName, cdScenarioNo), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 728
+#line 748
  testRunner.And(string.Format("user have Mortgage Insurance data from excel sheet {0} for the scenario {1}", miSheetName, miScenarioNo), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 729
+#line 749
+ testRunner.And(string.Format("user have Escrow data from excel sheet {0} for the scenario {1}", eSheetName, eScenarioNo), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 750
  testRunner.And("user is at Prepaid Charges page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 730
+#line 751
  testRunner.And("all the input and custom fields for prepaid charges have zero values", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 731
+#line 752
 testRunner.When("user navigate to Mortgage Insurance Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 732
+#line 753
  testRunner.And("user enters pmi rate values", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 733
+#line 754
  testRunner.And("user navigate to Closing Disclosure Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 734
+#line 755
  testRunner.And("user selects Calculation Method in Closing Disclosure Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 735
+#line 756
  testRunner.And("user selects loan type in Closing Disclosure Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 736
+#line 757
  testRunner.And("user selects Frequency of Payments in Closing Disclosure Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 737
+#line 758
  testRunner.And("user selects Loan Term in Closing Disclosure Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 738
+#line 759
  testRunner.And("user selects Repayment Term Type in Closing Disclosure Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 739
+#line 760
  testRunner.And("Enter Loan detail input values for computation for Closing Disclosure page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 740
+#line 761
  testRunner.And("Enter Disclosed input values for Closing Disclosure page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 741
+#line 762
  testRunner.And("click on Loan Details TEST on Closing Disclosure page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 742
+#line 763
  testRunner.And("click on Disclosure TEST on Closing Disclosure page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 743
+#line 764
 testRunner.Then("updated/computed Total of Payments value should display on Closing Disclosure", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Validating Total of Payments card value on Closing Disclosure page with No Prepai" +
-            "d, with PMI, 1", new string[] {
-                "LoanDetails"}, SourceLine=745)]
-        public virtual void ValidatingTotalOfPaymentsCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI_1()
+            "d, with PMI, with Escrow, 1", new string[] {
+                "LoanDetails"}, SourceLine=766)]
+        public virtual void ValidatingTotalOfPaymentsCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow_1()
         {
-            this.ValidatingTotalOfPaymentsCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI("1", "1", "PrepaidCharges", "1", "MortgageInsurance", "1", "ClosingDisclosure", ((string[])(null)));
+            this.ValidatingTotalOfPaymentsCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow("1", "1", "PrepaidCharges", "1", "MortgageInsurance", "1", "ClosingDisclosure", "1", "Escrow", ((string[])(null)));
 #line hidden
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Validating Total of Payments card value on Closing Disclosure page with No Prepai" +
-            "d, with PMI, 2", new string[] {
-                "LoanDetails"}, SourceLine=745)]
-        public virtual void ValidatingTotalOfPaymentsCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI_2()
+            "d, with PMI, with Escrow, 2", new string[] {
+                "LoanDetails"}, SourceLine=766)]
+        public virtual void ValidatingTotalOfPaymentsCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow_2()
         {
-            this.ValidatingTotalOfPaymentsCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI("2", "1", "PrepaidCharges", "1", "MortgageInsurance", "2", "ClosingDisclosure", ((string[])(null)));
+            this.ValidatingTotalOfPaymentsCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow("2", "1", "PrepaidCharges", "1", "MortgageInsurance", "2", "ClosingDisclosure", "2", "Escrow", ((string[])(null)));
 #line hidden
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Validating Total of Payments card value on Closing Disclosure page with No Prepai" +
-            "d, with PMI, 3", new string[] {
-                "LoanDetails"}, SourceLine=745)]
-        public virtual void ValidatingTotalOfPaymentsCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI_3()
+            "d, with PMI, with Escrow, 3", new string[] {
+                "LoanDetails"}, SourceLine=766)]
+        public virtual void ValidatingTotalOfPaymentsCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow_3()
         {
-            this.ValidatingTotalOfPaymentsCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI("3", "1", "PrepaidCharges", "1", "MortgageInsurance", "3", "ClosingDisclosure", ((string[])(null)));
+            this.ValidatingTotalOfPaymentsCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow("3", "1", "PrepaidCharges", "1", "MortgageInsurance", "3", "ClosingDisclosure", "3", "Escrow", ((string[])(null)));
 #line hidden
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Validating Total of Payments card value on Closing Disclosure page with No Prepai" +
-            "d, with PMI, 4", new string[] {
-                "LoanDetails"}, SourceLine=745)]
-        public virtual void ValidatingTotalOfPaymentsCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI_4()
+            "d, with PMI, with Escrow, 4", new string[] {
+                "LoanDetails"}, SourceLine=766)]
+        public virtual void ValidatingTotalOfPaymentsCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow_4()
         {
-            this.ValidatingTotalOfPaymentsCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI("4", "1", "PrepaidCharges", "1", "MortgageInsurance", "4", "ClosingDisclosure", ((string[])(null)));
+            this.ValidatingTotalOfPaymentsCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow("4", "1", "PrepaidCharges", "1", "MortgageInsurance", "4", "ClosingDisclosure", "4", "Escrow", ((string[])(null)));
 #line hidden
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Validating Total of Payments card value on Closing Disclosure page with No Prepai" +
-            "d, with PMI, 5", new string[] {
-                "LoanDetails"}, SourceLine=745)]
-        public virtual void ValidatingTotalOfPaymentsCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI_5()
+            "d, with PMI, with Escrow, 5", new string[] {
+                "LoanDetails"}, SourceLine=766)]
+        public virtual void ValidatingTotalOfPaymentsCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow_5()
         {
-            this.ValidatingTotalOfPaymentsCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI("5", "1", "PrepaidCharges", "1", "MortgageInsurance", "5", "ClosingDisclosure", ((string[])(null)));
+            this.ValidatingTotalOfPaymentsCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow("5", "1", "PrepaidCharges", "1", "MortgageInsurance", "5", "ClosingDisclosure", "5", "Escrow", ((string[])(null)));
 #line hidden
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Validating Total of Payments card value on Closing Disclosure page with No Prepai" +
-            "d, with PMI, 6", new string[] {
-                "LoanDetails"}, SourceLine=745)]
-        public virtual void ValidatingTotalOfPaymentsCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI_6()
+            "d, with PMI, with Escrow, 6", new string[] {
+                "LoanDetails"}, SourceLine=766)]
+        public virtual void ValidatingTotalOfPaymentsCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow_6()
         {
-            this.ValidatingTotalOfPaymentsCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI("6", "1", "PrepaidCharges", "1", "MortgageInsurance", "6", "ClosingDisclosure", ((string[])(null)));
+            this.ValidatingTotalOfPaymentsCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow("6", "1", "PrepaidCharges", "1", "MortgageInsurance", "6", "ClosingDisclosure", "6", "Escrow", ((string[])(null)));
 #line hidden
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Validating Total of Payments card value on Closing Disclosure page with No Prepai" +
-            "d, with PMI, 7", new string[] {
-                "LoanDetails"}, SourceLine=745)]
-        public virtual void ValidatingTotalOfPaymentsCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI_7()
+            "d, with PMI, with Escrow, 7", new string[] {
+                "LoanDetails"}, SourceLine=766)]
+        public virtual void ValidatingTotalOfPaymentsCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow_7()
         {
-            this.ValidatingTotalOfPaymentsCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI("7", "1", "PrepaidCharges", "1", "MortgageInsurance", "7", "ClosingDisclosure", ((string[])(null)));
+            this.ValidatingTotalOfPaymentsCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow("7", "1", "PrepaidCharges", "1", "MortgageInsurance", "7", "ClosingDisclosure", "7", "Escrow", ((string[])(null)));
 #line hidden
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Validating Total of Payments card value on Closing Disclosure page with No Prepai" +
-            "d, with PMI, 8", new string[] {
-                "LoanDetails"}, SourceLine=745)]
-        public virtual void ValidatingTotalOfPaymentsCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI_8()
+            "d, with PMI, with Escrow, 8", new string[] {
+                "LoanDetails"}, SourceLine=766)]
+        public virtual void ValidatingTotalOfPaymentsCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow_8()
         {
-            this.ValidatingTotalOfPaymentsCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI("8", "1", "PrepaidCharges", "1", "MortgageInsurance", "8", "ClosingDisclosure", ((string[])(null)));
+            this.ValidatingTotalOfPaymentsCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow("8", "1", "PrepaidCharges", "1", "MortgageInsurance", "8", "ClosingDisclosure", "8", "Escrow", ((string[])(null)));
 #line hidden
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Validating Total of Payments card value on Closing Disclosure page with No Prepai" +
-            "d, with PMI, 9", new string[] {
-                "LoanDetails"}, SourceLine=745)]
-        public virtual void ValidatingTotalOfPaymentsCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI_9()
+            "d, with PMI, with Escrow, 9", new string[] {
+                "LoanDetails"}, SourceLine=766)]
+        public virtual void ValidatingTotalOfPaymentsCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow_9()
         {
-            this.ValidatingTotalOfPaymentsCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI("9", "1", "PrepaidCharges", "1", "MortgageInsurance", "9", "ClosingDisclosure", ((string[])(null)));
+            this.ValidatingTotalOfPaymentsCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow("9", "1", "PrepaidCharges", "1", "MortgageInsurance", "9", "ClosingDisclosure", "9", "Escrow", ((string[])(null)));
 #line hidden
         }
         
-        public virtual void ValidatingFinanceChargeCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI(string no, string pcScenarioNo, string pcSheetName, string miScenarioNo, string miSheetName, string cdScenarioNo, string cdSheetName, string[] exampleTags)
+        public virtual void ValidatingFinanceChargeCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow(string no, string pcScenarioNo, string pcSheetName, string miScenarioNo, string miSheetName, string cdScenarioNo, string cdSheetName, string eScenarioNo, string eSheetName, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "LoanDetails"};
@@ -3016,133 +3060,135 @@ testRunner.Then("updated/computed Total of Payments value should display on Clos
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Validating Finance Charge card value on Closing Disclosure page with No Prepaid, " +
-                    "with PMI", @__tags);
-#line 758
+                    "with PMI, with Escrow", @__tags);
+#line 779
 this.ScenarioSetup(scenarioInfo);
-#line 759
+#line 780
 testRunner.Given("user is at TRID application homepage", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 760
+#line 781
  testRunner.And(string.Format("user have Prepaid Charges data from excel sheet {0} for the scenario {1}", pcSheetName, pcScenarioNo), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 761
+#line 782
  testRunner.And(string.Format("user have closing disclosure data from excel sheet {0} for the scenario {1}", cdSheetName, cdScenarioNo), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 762
+#line 783
  testRunner.And(string.Format("user have Mortgage Insurance data from excel sheet {0} for the scenario {1}", miSheetName, miScenarioNo), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 763
+#line 784
+ testRunner.And(string.Format("user have Escrow data from excel sheet {0} for the scenario {1}", eSheetName, eScenarioNo), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 785
  testRunner.And("user is at Prepaid Charges page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 764
+#line 786
  testRunner.And("all the input and custom fields for prepaid charges have zero values", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 765
+#line 787
 testRunner.When("user navigate to Mortgage Insurance Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 766
+#line 788
  testRunner.And("user enters pmi rate values", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 767
+#line 789
  testRunner.And("user navigate to Closing Disclosure Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 768
+#line 790
  testRunner.And("user selects Calculation Method in Closing Disclosure Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 769
+#line 791
  testRunner.And("user selects loan type in Closing Disclosure Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 770
+#line 792
  testRunner.And("user selects Frequency of Payments in Closing Disclosure Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 771
+#line 793
  testRunner.And("user selects Loan Term in Closing Disclosure Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 772
+#line 794
  testRunner.And("user selects Repayment Term Type in Closing Disclosure Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 773
+#line 795
  testRunner.And("Enter Loan detail input values for computation for Closing Disclosure page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 774
+#line 796
  testRunner.And("Enter Disclosed input values for Closing Disclosure page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 775
+#line 797
  testRunner.And("click on Loan Details TEST on Closing Disclosure page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 776
+#line 798
  testRunner.And("click on Disclosure TEST on Closing Disclosure page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 777
+#line 799
 testRunner.Then("updated/computed Finance Charge value should display on Closing Disclosure", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Validating Finance Charge card value on Closing Disclosure page with No Prepaid, " +
-            "with PMI, 1", new string[] {
-                "LoanDetails"}, SourceLine=779)]
-        public virtual void ValidatingFinanceChargeCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI_1()
+            "with PMI, with Escrow, 1", new string[] {
+                "LoanDetails"}, SourceLine=801)]
+        public virtual void ValidatingFinanceChargeCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow_1()
         {
-            this.ValidatingFinanceChargeCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI("1", "1", "PrepaidCharges", "1", "MortgageInsurance", "1", "ClosingDisclosure", ((string[])(null)));
+            this.ValidatingFinanceChargeCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow("1", "1", "PrepaidCharges", "1", "MortgageInsurance", "1", "ClosingDisclosure", "1", "Escrow", ((string[])(null)));
 #line hidden
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Validating Finance Charge card value on Closing Disclosure page with No Prepaid, " +
-            "with PMI, 2", new string[] {
-                "LoanDetails"}, SourceLine=779)]
-        public virtual void ValidatingFinanceChargeCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI_2()
+            "with PMI, with Escrow, 2", new string[] {
+                "LoanDetails"}, SourceLine=801)]
+        public virtual void ValidatingFinanceChargeCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow_2()
         {
-            this.ValidatingFinanceChargeCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI("2", "1", "PrepaidCharges", "1", "MortgageInsurance", "2", "ClosingDisclosure", ((string[])(null)));
+            this.ValidatingFinanceChargeCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow("2", "1", "PrepaidCharges", "1", "MortgageInsurance", "2", "ClosingDisclosure", "2", "Escrow", ((string[])(null)));
 #line hidden
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Validating Finance Charge card value on Closing Disclosure page with No Prepaid, " +
-            "with PMI, 3", new string[] {
-                "LoanDetails"}, SourceLine=779)]
-        public virtual void ValidatingFinanceChargeCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI_3()
+            "with PMI, with Escrow, 3", new string[] {
+                "LoanDetails"}, SourceLine=801)]
+        public virtual void ValidatingFinanceChargeCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow_3()
         {
-            this.ValidatingFinanceChargeCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI("3", "1", "PrepaidCharges", "1", "MortgageInsurance", "3", "ClosingDisclosure", ((string[])(null)));
+            this.ValidatingFinanceChargeCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow("3", "1", "PrepaidCharges", "1", "MortgageInsurance", "3", "ClosingDisclosure", "3", "Escrow", ((string[])(null)));
 #line hidden
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Validating Finance Charge card value on Closing Disclosure page with No Prepaid, " +
-            "with PMI, 4", new string[] {
-                "LoanDetails"}, SourceLine=779)]
-        public virtual void ValidatingFinanceChargeCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI_4()
+            "with PMI, with Escrow, 4", new string[] {
+                "LoanDetails"}, SourceLine=801)]
+        public virtual void ValidatingFinanceChargeCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow_4()
         {
-            this.ValidatingFinanceChargeCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI("4", "1", "PrepaidCharges", "1", "MortgageInsurance", "4", "ClosingDisclosure", ((string[])(null)));
+            this.ValidatingFinanceChargeCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow("4", "1", "PrepaidCharges", "1", "MortgageInsurance", "4", "ClosingDisclosure", "4", "Escrow", ((string[])(null)));
 #line hidden
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Validating Finance Charge card value on Closing Disclosure page with No Prepaid, " +
-            "with PMI, 5", new string[] {
-                "LoanDetails"}, SourceLine=779)]
-        public virtual void ValidatingFinanceChargeCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI_5()
+            "with PMI, with Escrow, 5", new string[] {
+                "LoanDetails"}, SourceLine=801)]
+        public virtual void ValidatingFinanceChargeCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow_5()
         {
-            this.ValidatingFinanceChargeCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI("5", "1", "PrepaidCharges", "1", "MortgageInsurance", "5", "ClosingDisclosure", ((string[])(null)));
+            this.ValidatingFinanceChargeCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow("5", "1", "PrepaidCharges", "1", "MortgageInsurance", "5", "ClosingDisclosure", "5", "Escrow", ((string[])(null)));
 #line hidden
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Validating Finance Charge card value on Closing Disclosure page with No Prepaid, " +
-            "with PMI, 6", new string[] {
-                "LoanDetails"}, SourceLine=779)]
-        public virtual void ValidatingFinanceChargeCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI_6()
+            "with PMI, with Escrow, 6", new string[] {
+                "LoanDetails"}, SourceLine=801)]
+        public virtual void ValidatingFinanceChargeCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow_6()
         {
-            this.ValidatingFinanceChargeCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI("6", "1", "PrepaidCharges", "1", "MortgageInsurance", "6", "ClosingDisclosure", ((string[])(null)));
+            this.ValidatingFinanceChargeCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow("6", "1", "PrepaidCharges", "1", "MortgageInsurance", "6", "ClosingDisclosure", "6", "Escrow", ((string[])(null)));
 #line hidden
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Validating Finance Charge card value on Closing Disclosure page with No Prepaid, " +
-            "with PMI, 7", new string[] {
-                "LoanDetails"}, SourceLine=779)]
-        public virtual void ValidatingFinanceChargeCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI_7()
+            "with PMI, with Escrow, 7", new string[] {
+                "LoanDetails"}, SourceLine=801)]
+        public virtual void ValidatingFinanceChargeCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow_7()
         {
-            this.ValidatingFinanceChargeCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI("7", "1", "PrepaidCharges", "1", "MortgageInsurance", "7", "ClosingDisclosure", ((string[])(null)));
+            this.ValidatingFinanceChargeCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow("7", "1", "PrepaidCharges", "1", "MortgageInsurance", "7", "ClosingDisclosure", "7", "Escrow", ((string[])(null)));
 #line hidden
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Validating Finance Charge card value on Closing Disclosure page with No Prepaid, " +
-            "with PMI, 8", new string[] {
-                "LoanDetails"}, SourceLine=779)]
-        public virtual void ValidatingFinanceChargeCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI_8()
+            "with PMI, with Escrow, 8", new string[] {
+                "LoanDetails"}, SourceLine=801)]
+        public virtual void ValidatingFinanceChargeCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow_8()
         {
-            this.ValidatingFinanceChargeCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI("8", "1", "PrepaidCharges", "1", "MortgageInsurance", "8", "ClosingDisclosure", ((string[])(null)));
+            this.ValidatingFinanceChargeCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow("8", "1", "PrepaidCharges", "1", "MortgageInsurance", "8", "ClosingDisclosure", "8", "Escrow", ((string[])(null)));
 #line hidden
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Validating Finance Charge card value on Closing Disclosure page with No Prepaid, " +
-            "with PMI, 9", new string[] {
-                "LoanDetails"}, SourceLine=779)]
-        public virtual void ValidatingFinanceChargeCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI_9()
+            "with PMI, with Escrow, 9", new string[] {
+                "LoanDetails"}, SourceLine=801)]
+        public virtual void ValidatingFinanceChargeCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow_9()
         {
-            this.ValidatingFinanceChargeCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI("9", "1", "PrepaidCharges", "1", "MortgageInsurance", "9", "ClosingDisclosure", ((string[])(null)));
+            this.ValidatingFinanceChargeCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow("9", "1", "PrepaidCharges", "1", "MortgageInsurance", "9", "ClosingDisclosure", "9", "Escrow", ((string[])(null)));
 #line hidden
         }
         
-        public virtual void ValidatingPrepaidChargesCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI(string no, string pcScenarioNo, string pcSheetName, string miScenarioNo, string miSheetName, string cdScenarioNo, string cdSheetName, string[] exampleTags)
+        public virtual void ValidatingPrepaidChargesCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow(string no, string pcScenarioNo, string pcSheetName, string miScenarioNo, string miSheetName, string cdScenarioNo, string cdSheetName, string eScenarioNo, string eSheetName, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "LoanDetails"};
@@ -3151,133 +3197,135 @@ testRunner.Then("updated/computed Finance Charge value should display on Closing
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Validating Prepaid Charges card value on Closing Disclosure page with No Prepaid," +
-                    " with PMI", @__tags);
-#line 792
+                    " with PMI, with Escrow", @__tags);
+#line 814
 this.ScenarioSetup(scenarioInfo);
-#line 793
+#line 815
 testRunner.Given("user is at TRID application homepage", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 794
+#line 816
  testRunner.And(string.Format("user have Prepaid Charges data from excel sheet {0} for the scenario {1}", pcSheetName, pcScenarioNo), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 795
+#line 817
  testRunner.And(string.Format("user have closing disclosure data from excel sheet {0} for the scenario {1}", cdSheetName, cdScenarioNo), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 796
+#line 818
  testRunner.And(string.Format("user have Mortgage Insurance data from excel sheet {0} for the scenario {1}", miSheetName, miScenarioNo), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 797
+#line 819
+ testRunner.And(string.Format("user have Escrow data from excel sheet {0} for the scenario {1}", eSheetName, eScenarioNo), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 820
  testRunner.And("user is at Prepaid Charges page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 798
+#line 821
  testRunner.And("all the input and custom fields for prepaid charges have zero values", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 799
+#line 822
 testRunner.When("user navigate to Mortgage Insurance Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 800
+#line 823
  testRunner.And("user enters pmi rate values", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 801
+#line 824
  testRunner.And("user navigate to Closing Disclosure Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 802
+#line 825
  testRunner.And("user selects Calculation Method in Closing Disclosure Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 803
+#line 826
  testRunner.And("user selects loan type in Closing Disclosure Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 804
+#line 827
  testRunner.And("user selects Frequency of Payments in Closing Disclosure Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 805
+#line 828
  testRunner.And("user selects Loan Term in Closing Disclosure Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 806
+#line 829
  testRunner.And("user selects Repayment Term Type in Closing Disclosure Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 807
+#line 830
  testRunner.And("Enter Loan detail input values for computation for Closing Disclosure page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 808
+#line 831
  testRunner.And("Enter Disclosed input values for Closing Disclosure page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 809
+#line 832
  testRunner.And("click on Loan Details TEST on Closing Disclosure page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 810
+#line 833
  testRunner.And("click on Disclosure TEST on Closing Disclosure page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 811
+#line 834
 testRunner.Then("updated/computed Prepaid Charges value should display on Closing Disclosure", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Validating Prepaid Charges card value on Closing Disclosure page with No Prepaid," +
-            " with PMI, 1", new string[] {
-                "LoanDetails"}, SourceLine=813)]
-        public virtual void ValidatingPrepaidChargesCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI_1()
+            " with PMI, with Escrow, 1", new string[] {
+                "LoanDetails"}, SourceLine=836)]
+        public virtual void ValidatingPrepaidChargesCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow_1()
         {
-            this.ValidatingPrepaidChargesCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI("1", "1", "PrepaidCharges", "1", "MortgageInsurance", "1", "ClosingDisclosure", ((string[])(null)));
+            this.ValidatingPrepaidChargesCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow("1", "1", "PrepaidCharges", "1", "MortgageInsurance", "1", "ClosingDisclosure", "1", "Escrow", ((string[])(null)));
 #line hidden
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Validating Prepaid Charges card value on Closing Disclosure page with No Prepaid," +
-            " with PMI, 2", new string[] {
-                "LoanDetails"}, SourceLine=813)]
-        public virtual void ValidatingPrepaidChargesCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI_2()
+            " with PMI, with Escrow, 2", new string[] {
+                "LoanDetails"}, SourceLine=836)]
+        public virtual void ValidatingPrepaidChargesCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow_2()
         {
-            this.ValidatingPrepaidChargesCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI("2", "1", "PrepaidCharges", "1", "MortgageInsurance", "2", "ClosingDisclosure", ((string[])(null)));
+            this.ValidatingPrepaidChargesCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow("2", "1", "PrepaidCharges", "1", "MortgageInsurance", "2", "ClosingDisclosure", "2", "Escrow", ((string[])(null)));
 #line hidden
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Validating Prepaid Charges card value on Closing Disclosure page with No Prepaid," +
-            " with PMI, 3", new string[] {
-                "LoanDetails"}, SourceLine=813)]
-        public virtual void ValidatingPrepaidChargesCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI_3()
+            " with PMI, with Escrow, 3", new string[] {
+                "LoanDetails"}, SourceLine=836)]
+        public virtual void ValidatingPrepaidChargesCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow_3()
         {
-            this.ValidatingPrepaidChargesCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI("3", "1", "PrepaidCharges", "1", "MortgageInsurance", "3", "ClosingDisclosure", ((string[])(null)));
+            this.ValidatingPrepaidChargesCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow("3", "1", "PrepaidCharges", "1", "MortgageInsurance", "3", "ClosingDisclosure", "3", "Escrow", ((string[])(null)));
 #line hidden
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Validating Prepaid Charges card value on Closing Disclosure page with No Prepaid," +
-            " with PMI, 4", new string[] {
-                "LoanDetails"}, SourceLine=813)]
-        public virtual void ValidatingPrepaidChargesCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI_4()
+            " with PMI, with Escrow, 4", new string[] {
+                "LoanDetails"}, SourceLine=836)]
+        public virtual void ValidatingPrepaidChargesCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow_4()
         {
-            this.ValidatingPrepaidChargesCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI("4", "1", "PrepaidCharges", "1", "MortgageInsurance", "4", "ClosingDisclosure", ((string[])(null)));
+            this.ValidatingPrepaidChargesCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow("4", "1", "PrepaidCharges", "1", "MortgageInsurance", "4", "ClosingDisclosure", "4", "Escrow", ((string[])(null)));
 #line hidden
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Validating Prepaid Charges card value on Closing Disclosure page with No Prepaid," +
-            " with PMI, 5", new string[] {
-                "LoanDetails"}, SourceLine=813)]
-        public virtual void ValidatingPrepaidChargesCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI_5()
+            " with PMI, with Escrow, 5", new string[] {
+                "LoanDetails"}, SourceLine=836)]
+        public virtual void ValidatingPrepaidChargesCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow_5()
         {
-            this.ValidatingPrepaidChargesCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI("5", "1", "PrepaidCharges", "1", "MortgageInsurance", "5", "ClosingDisclosure", ((string[])(null)));
+            this.ValidatingPrepaidChargesCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow("5", "1", "PrepaidCharges", "1", "MortgageInsurance", "5", "ClosingDisclosure", "5", "Escrow", ((string[])(null)));
 #line hidden
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Validating Prepaid Charges card value on Closing Disclosure page with No Prepaid," +
-            " with PMI, 6", new string[] {
-                "LoanDetails"}, SourceLine=813)]
-        public virtual void ValidatingPrepaidChargesCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI_6()
+            " with PMI, with Escrow, 6", new string[] {
+                "LoanDetails"}, SourceLine=836)]
+        public virtual void ValidatingPrepaidChargesCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow_6()
         {
-            this.ValidatingPrepaidChargesCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI("6", "1", "PrepaidCharges", "1", "MortgageInsurance", "6", "ClosingDisclosure", ((string[])(null)));
+            this.ValidatingPrepaidChargesCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow("6", "1", "PrepaidCharges", "1", "MortgageInsurance", "6", "ClosingDisclosure", "6", "Escrow", ((string[])(null)));
 #line hidden
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Validating Prepaid Charges card value on Closing Disclosure page with No Prepaid," +
-            " with PMI, 7", new string[] {
-                "LoanDetails"}, SourceLine=813)]
-        public virtual void ValidatingPrepaidChargesCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI_7()
+            " with PMI, with Escrow, 7", new string[] {
+                "LoanDetails"}, SourceLine=836)]
+        public virtual void ValidatingPrepaidChargesCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow_7()
         {
-            this.ValidatingPrepaidChargesCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI("7", "1", "PrepaidCharges", "1", "MortgageInsurance", "7", "ClosingDisclosure", ((string[])(null)));
+            this.ValidatingPrepaidChargesCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow("7", "1", "PrepaidCharges", "1", "MortgageInsurance", "7", "ClosingDisclosure", "7", "Escrow", ((string[])(null)));
 #line hidden
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Validating Prepaid Charges card value on Closing Disclosure page with No Prepaid," +
-            " with PMI, 8", new string[] {
-                "LoanDetails"}, SourceLine=813)]
-        public virtual void ValidatingPrepaidChargesCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI_8()
+            " with PMI, with Escrow, 8", new string[] {
+                "LoanDetails"}, SourceLine=836)]
+        public virtual void ValidatingPrepaidChargesCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow_8()
         {
-            this.ValidatingPrepaidChargesCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI("8", "1", "PrepaidCharges", "1", "MortgageInsurance", "8", "ClosingDisclosure", ((string[])(null)));
+            this.ValidatingPrepaidChargesCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow("8", "1", "PrepaidCharges", "1", "MortgageInsurance", "8", "ClosingDisclosure", "8", "Escrow", ((string[])(null)));
 #line hidden
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Validating Prepaid Charges card value on Closing Disclosure page with No Prepaid," +
-            " with PMI, 9", new string[] {
-                "LoanDetails"}, SourceLine=813)]
-        public virtual void ValidatingPrepaidChargesCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI_9()
+            " with PMI, with Escrow, 9", new string[] {
+                "LoanDetails"}, SourceLine=836)]
+        public virtual void ValidatingPrepaidChargesCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow_9()
         {
-            this.ValidatingPrepaidChargesCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI("9", "1", "PrepaidCharges", "1", "MortgageInsurance", "9", "ClosingDisclosure", ((string[])(null)));
+            this.ValidatingPrepaidChargesCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow("9", "1", "PrepaidCharges", "1", "MortgageInsurance", "9", "ClosingDisclosure", "9", "Escrow", ((string[])(null)));
 #line hidden
         }
         
-        public virtual void ValidatingAmountFinancedCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI(string no, string pcScenarioNo, string pcSheetName, string miScenarioNo, string miSheetName, string cdScenarioNo, string cdSheetName, string[] exampleTags)
+        public virtual void ValidatingAmountFinancedCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow(string no, string pcScenarioNo, string pcSheetName, string miScenarioNo, string miSheetName, string cdScenarioNo, string cdSheetName, string eScenarioNo, string eSheetName, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "LoanDetails"};
@@ -3286,133 +3334,135 @@ testRunner.Then("updated/computed Prepaid Charges value should display on Closin
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Validating Amount Financed card value on Closing Disclosure page with No Prepaid," +
-                    " with PMI", @__tags);
-#line 826
+                    " with PMI, with Escrow", @__tags);
+#line 849
 this.ScenarioSetup(scenarioInfo);
-#line 827
+#line 850
 testRunner.Given("user is at TRID application homepage", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 828
+#line 851
  testRunner.And(string.Format("user have Prepaid Charges data from excel sheet {0} for the scenario {1}", pcSheetName, pcScenarioNo), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 829
+#line 852
  testRunner.And(string.Format("user have closing disclosure data from excel sheet {0} for the scenario {1}", cdSheetName, cdScenarioNo), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 830
+#line 853
  testRunner.And(string.Format("user have Mortgage Insurance data from excel sheet {0} for the scenario {1}", miSheetName, miScenarioNo), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 831
+#line 854
+ testRunner.And(string.Format("user have Escrow data from excel sheet {0} for the scenario {1}", eSheetName, eScenarioNo), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 855
  testRunner.And("user is at Prepaid Charges page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 832
+#line 856
  testRunner.And("all the input and custom fields for prepaid charges have zero values", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 833
+#line 857
 testRunner.When("user navigate to Mortgage Insurance Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 834
+#line 858
  testRunner.And("user enters pmi rate values", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 835
+#line 859
  testRunner.And("user navigate to Closing Disclosure Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 836
+#line 860
  testRunner.And("user selects Calculation Method in Closing Disclosure Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 837
+#line 861
  testRunner.And("user selects loan type in Closing Disclosure Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 838
+#line 862
  testRunner.And("user selects Frequency of Payments in Closing Disclosure Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 839
+#line 863
  testRunner.And("user selects Loan Term in Closing Disclosure Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 840
+#line 864
  testRunner.And("user selects Repayment Term Type in Closing Disclosure Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 841
+#line 865
  testRunner.And("Enter Loan detail input values for computation for Closing Disclosure page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 842
+#line 866
  testRunner.And("Enter Disclosed input values for Closing Disclosure page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 843
+#line 867
  testRunner.And("click on Loan Details TEST on Closing Disclosure page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 844
+#line 868
  testRunner.And("click on Disclosure TEST on Closing Disclosure page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 845
+#line 869
 testRunner.Then("updated/computed Amount Financed value should display on Closing Disclosure", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Validating Amount Financed card value on Closing Disclosure page with No Prepaid," +
-            " with PMI, 1", new string[] {
-                "LoanDetails"}, SourceLine=847)]
-        public virtual void ValidatingAmountFinancedCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI_1()
+            " with PMI, with Escrow, 1", new string[] {
+                "LoanDetails"}, SourceLine=871)]
+        public virtual void ValidatingAmountFinancedCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow_1()
         {
-            this.ValidatingAmountFinancedCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI("1", "1", "PrepaidCharges", "1", "MortgageInsurance", "1", "ClosingDisclosure", ((string[])(null)));
+            this.ValidatingAmountFinancedCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow("1", "1", "PrepaidCharges", "1", "MortgageInsurance", "1", "ClosingDisclosure", "1", "Escrow", ((string[])(null)));
 #line hidden
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Validating Amount Financed card value on Closing Disclosure page with No Prepaid," +
-            " with PMI, 2", new string[] {
-                "LoanDetails"}, SourceLine=847)]
-        public virtual void ValidatingAmountFinancedCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI_2()
+            " with PMI, with Escrow, 2", new string[] {
+                "LoanDetails"}, SourceLine=871)]
+        public virtual void ValidatingAmountFinancedCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow_2()
         {
-            this.ValidatingAmountFinancedCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI("2", "1", "PrepaidCharges", "1", "MortgageInsurance", "2", "ClosingDisclosure", ((string[])(null)));
+            this.ValidatingAmountFinancedCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow("2", "1", "PrepaidCharges", "1", "MortgageInsurance", "2", "ClosingDisclosure", "2", "Escrow", ((string[])(null)));
 #line hidden
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Validating Amount Financed card value on Closing Disclosure page with No Prepaid," +
-            " with PMI, 3", new string[] {
-                "LoanDetails"}, SourceLine=847)]
-        public virtual void ValidatingAmountFinancedCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI_3()
+            " with PMI, with Escrow, 3", new string[] {
+                "LoanDetails"}, SourceLine=871)]
+        public virtual void ValidatingAmountFinancedCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow_3()
         {
-            this.ValidatingAmountFinancedCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI("3", "1", "PrepaidCharges", "1", "MortgageInsurance", "3", "ClosingDisclosure", ((string[])(null)));
+            this.ValidatingAmountFinancedCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow("3", "1", "PrepaidCharges", "1", "MortgageInsurance", "3", "ClosingDisclosure", "3", "Escrow", ((string[])(null)));
 #line hidden
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Validating Amount Financed card value on Closing Disclosure page with No Prepaid," +
-            " with PMI, 4", new string[] {
-                "LoanDetails"}, SourceLine=847)]
-        public virtual void ValidatingAmountFinancedCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI_4()
+            " with PMI, with Escrow, 4", new string[] {
+                "LoanDetails"}, SourceLine=871)]
+        public virtual void ValidatingAmountFinancedCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow_4()
         {
-            this.ValidatingAmountFinancedCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI("4", "1", "PrepaidCharges", "1", "MortgageInsurance", "4", "ClosingDisclosure", ((string[])(null)));
+            this.ValidatingAmountFinancedCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow("4", "1", "PrepaidCharges", "1", "MortgageInsurance", "4", "ClosingDisclosure", "4", "Escrow", ((string[])(null)));
 #line hidden
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Validating Amount Financed card value on Closing Disclosure page with No Prepaid," +
-            " with PMI, 5", new string[] {
-                "LoanDetails"}, SourceLine=847)]
-        public virtual void ValidatingAmountFinancedCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI_5()
+            " with PMI, with Escrow, 5", new string[] {
+                "LoanDetails"}, SourceLine=871)]
+        public virtual void ValidatingAmountFinancedCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow_5()
         {
-            this.ValidatingAmountFinancedCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI("5", "1", "PrepaidCharges", "1", "MortgageInsurance", "5", "ClosingDisclosure", ((string[])(null)));
+            this.ValidatingAmountFinancedCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow("5", "1", "PrepaidCharges", "1", "MortgageInsurance", "5", "ClosingDisclosure", "5", "Escrow", ((string[])(null)));
 #line hidden
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Validating Amount Financed card value on Closing Disclosure page with No Prepaid," +
-            " with PMI, 6", new string[] {
-                "LoanDetails"}, SourceLine=847)]
-        public virtual void ValidatingAmountFinancedCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI_6()
+            " with PMI, with Escrow, 6", new string[] {
+                "LoanDetails"}, SourceLine=871)]
+        public virtual void ValidatingAmountFinancedCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow_6()
         {
-            this.ValidatingAmountFinancedCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI("6", "1", "PrepaidCharges", "1", "MortgageInsurance", "6", "ClosingDisclosure", ((string[])(null)));
+            this.ValidatingAmountFinancedCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow("6", "1", "PrepaidCharges", "1", "MortgageInsurance", "6", "ClosingDisclosure", "6", "Escrow", ((string[])(null)));
 #line hidden
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Validating Amount Financed card value on Closing Disclosure page with No Prepaid," +
-            " with PMI, 7", new string[] {
-                "LoanDetails"}, SourceLine=847)]
-        public virtual void ValidatingAmountFinancedCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI_7()
+            " with PMI, with Escrow, 7", new string[] {
+                "LoanDetails"}, SourceLine=871)]
+        public virtual void ValidatingAmountFinancedCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow_7()
         {
-            this.ValidatingAmountFinancedCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI("7", "1", "PrepaidCharges", "1", "MortgageInsurance", "7", "ClosingDisclosure", ((string[])(null)));
+            this.ValidatingAmountFinancedCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow("7", "1", "PrepaidCharges", "1", "MortgageInsurance", "7", "ClosingDisclosure", "7", "Escrow", ((string[])(null)));
 #line hidden
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Validating Amount Financed card value on Closing Disclosure page with No Prepaid," +
-            " with PMI, 8", new string[] {
-                "LoanDetails"}, SourceLine=847)]
-        public virtual void ValidatingAmountFinancedCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI_8()
+            " with PMI, with Escrow, 8", new string[] {
+                "LoanDetails"}, SourceLine=871)]
+        public virtual void ValidatingAmountFinancedCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow_8()
         {
-            this.ValidatingAmountFinancedCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI("8", "1", "PrepaidCharges", "1", "MortgageInsurance", "8", "ClosingDisclosure", ((string[])(null)));
+            this.ValidatingAmountFinancedCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow("8", "1", "PrepaidCharges", "1", "MortgageInsurance", "8", "ClosingDisclosure", "8", "Escrow", ((string[])(null)));
 #line hidden
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Validating Amount Financed card value on Closing Disclosure page with No Prepaid," +
-            " with PMI, 9", new string[] {
-                "LoanDetails"}, SourceLine=847)]
-        public virtual void ValidatingAmountFinancedCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI_9()
+            " with PMI, with Escrow, 9", new string[] {
+                "LoanDetails"}, SourceLine=871)]
+        public virtual void ValidatingAmountFinancedCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow_9()
         {
-            this.ValidatingAmountFinancedCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI("9", "1", "PrepaidCharges", "1", "MortgageInsurance", "9", "ClosingDisclosure", ((string[])(null)));
+            this.ValidatingAmountFinancedCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow("9", "1", "PrepaidCharges", "1", "MortgageInsurance", "9", "ClosingDisclosure", "9", "Escrow", ((string[])(null)));
 #line hidden
         }
         
-        public virtual void ValidatingEscrowPropertyCostsOverOneYearCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI(string no, string pcScenarioNo, string pcSheetName, string miScenarioNo, string miSheetName, string cdScenarioNo, string cdSheetName, string[] exampleTags)
+        public virtual void ValidatingEscrowPropertyCostsOverOneYearCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow(string no, string pcScenarioNo, string pcSheetName, string miScenarioNo, string miSheetName, string cdScenarioNo, string cdSheetName, string eScenarioNo, string eSheetName, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "LoanDetails"};
@@ -3421,46 +3471,48 @@ testRunner.Then("updated/computed Amount Financed value should display on Closin
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Validating Escrow Property Costs over one year card value on Closing Disclosure p" +
-                    "age with No Prepaid, with PMI", @__tags);
-#line 859
+                    "age with No Prepaid, with PMI, with Escrow", @__tags);
+#line 883
 this.ScenarioSetup(scenarioInfo);
-#line 860
+#line 884
 testRunner.Given("user is at TRID application homepage", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 861
+#line 885
  testRunner.And(string.Format("user have Prepaid Charges data from excel sheet {0} for the scenario {1}", pcSheetName, pcScenarioNo), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 862
+#line 886
  testRunner.And(string.Format("user have closing disclosure data from excel sheet {0} for the scenario {1}", cdSheetName, cdScenarioNo), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 863
+#line 887
  testRunner.And(string.Format("user have Mortgage Insurance data from excel sheet {0} for the scenario {1}", miSheetName, miScenarioNo), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 864
+#line 888
+ testRunner.And(string.Format("user have Escrow data from excel sheet {0} for the scenario {1}", eSheetName, eScenarioNo), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 889
  testRunner.And("user is at Prepaid Charges page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 865
+#line 890
  testRunner.And("all the input and custom fields for prepaid charges have zero values", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 866
+#line 891
 testRunner.When("user navigate to Mortgage Insurance Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 867
+#line 892
  testRunner.And("user enters pmi rate values", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 868
+#line 893
  testRunner.And("user navigate to Closing Disclosure Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 869
+#line 894
  testRunner.And("user selects Calculation Method in Closing Disclosure Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 870
+#line 895
  testRunner.And("user selects loan type in Closing Disclosure Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 871
+#line 896
  testRunner.And("user selects Frequency of Payments in Closing Disclosure Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 872
+#line 897
  testRunner.And("user selects Loan Term in Closing Disclosure Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 873
+#line 898
  testRunner.And("user selects Repayment Term Type in Closing Disclosure Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 874
+#line 899
  testRunner.And("Enter Loan detail input values for computation for Closing Disclosure page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 875
+#line 900
  testRunner.And("Enter Disclosed input values for Closing Disclosure page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 876
+#line 901
  testRunner.And("click on Loan Details TEST on Closing Disclosure page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 877
+#line 902
  testRunner.And("click on Disclosure TEST on Closing Disclosure page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 878
+#line 903
 testRunner.Then("updated/computed Escrow Property Costs over one year value should display on Clos" +
                     "ing Disclosure", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
@@ -3468,87 +3520,87 @@ testRunner.Then("updated/computed Escrow Property Costs over one year value shou
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Validating Escrow Property Costs over one year card value on Closing Disclosure p" +
-            "age with No Prepaid, with PMI, 1", new string[] {
-                "LoanDetails"}, SourceLine=880)]
-        public virtual void ValidatingEscrowPropertyCostsOverOneYearCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI_1()
+            "age with No Prepaid, with PMI, with Escrow, 1", new string[] {
+                "LoanDetails"}, SourceLine=905)]
+        public virtual void ValidatingEscrowPropertyCostsOverOneYearCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow_1()
         {
-            this.ValidatingEscrowPropertyCostsOverOneYearCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI("1", "1", "PrepaidCharges", "1", "MortgageInsurance", "1", "ClosingDisclosure", ((string[])(null)));
+            this.ValidatingEscrowPropertyCostsOverOneYearCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow("1", "1", "PrepaidCharges", "1", "MortgageInsurance", "1", "ClosingDisclosure", "1", "Escrow", ((string[])(null)));
 #line hidden
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Validating Escrow Property Costs over one year card value on Closing Disclosure p" +
-            "age with No Prepaid, with PMI, 2", new string[] {
-                "LoanDetails"}, SourceLine=880)]
-        public virtual void ValidatingEscrowPropertyCostsOverOneYearCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI_2()
+            "age with No Prepaid, with PMI, with Escrow, 2", new string[] {
+                "LoanDetails"}, SourceLine=905)]
+        public virtual void ValidatingEscrowPropertyCostsOverOneYearCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow_2()
         {
-            this.ValidatingEscrowPropertyCostsOverOneYearCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI("2", "1", "PrepaidCharges", "1", "MortgageInsurance", "2", "ClosingDisclosure", ((string[])(null)));
+            this.ValidatingEscrowPropertyCostsOverOneYearCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow("2", "1", "PrepaidCharges", "1", "MortgageInsurance", "2", "ClosingDisclosure", "2", "Escrow", ((string[])(null)));
 #line hidden
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Validating Escrow Property Costs over one year card value on Closing Disclosure p" +
-            "age with No Prepaid, with PMI, 3", new string[] {
-                "LoanDetails"}, SourceLine=880)]
-        public virtual void ValidatingEscrowPropertyCostsOverOneYearCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI_3()
+            "age with No Prepaid, with PMI, with Escrow, 3", new string[] {
+                "LoanDetails"}, SourceLine=905)]
+        public virtual void ValidatingEscrowPropertyCostsOverOneYearCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow_3()
         {
-            this.ValidatingEscrowPropertyCostsOverOneYearCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI("3", "1", "PrepaidCharges", "1", "MortgageInsurance", "3", "ClosingDisclosure", ((string[])(null)));
+            this.ValidatingEscrowPropertyCostsOverOneYearCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow("3", "1", "PrepaidCharges", "1", "MortgageInsurance", "3", "ClosingDisclosure", "3", "Escrow", ((string[])(null)));
 #line hidden
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Validating Escrow Property Costs over one year card value on Closing Disclosure p" +
-            "age with No Prepaid, with PMI, 4", new string[] {
-                "LoanDetails"}, SourceLine=880)]
-        public virtual void ValidatingEscrowPropertyCostsOverOneYearCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI_4()
+            "age with No Prepaid, with PMI, with Escrow, 4", new string[] {
+                "LoanDetails"}, SourceLine=905)]
+        public virtual void ValidatingEscrowPropertyCostsOverOneYearCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow_4()
         {
-            this.ValidatingEscrowPropertyCostsOverOneYearCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI("4", "1", "PrepaidCharges", "1", "MortgageInsurance", "4", "ClosingDisclosure", ((string[])(null)));
+            this.ValidatingEscrowPropertyCostsOverOneYearCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow("4", "1", "PrepaidCharges", "1", "MortgageInsurance", "4", "ClosingDisclosure", "4", "Escrow", ((string[])(null)));
 #line hidden
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Validating Escrow Property Costs over one year card value on Closing Disclosure p" +
-            "age with No Prepaid, with PMI, 5", new string[] {
-                "LoanDetails"}, SourceLine=880)]
-        public virtual void ValidatingEscrowPropertyCostsOverOneYearCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI_5()
+            "age with No Prepaid, with PMI, with Escrow, 5", new string[] {
+                "LoanDetails"}, SourceLine=905)]
+        public virtual void ValidatingEscrowPropertyCostsOverOneYearCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow_5()
         {
-            this.ValidatingEscrowPropertyCostsOverOneYearCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI("5", "1", "PrepaidCharges", "1", "MortgageInsurance", "5", "ClosingDisclosure", ((string[])(null)));
+            this.ValidatingEscrowPropertyCostsOverOneYearCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow("5", "1", "PrepaidCharges", "1", "MortgageInsurance", "5", "ClosingDisclosure", "5", "Escrow", ((string[])(null)));
 #line hidden
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Validating Escrow Property Costs over one year card value on Closing Disclosure p" +
-            "age with No Prepaid, with PMI, 6", new string[] {
-                "LoanDetails"}, SourceLine=880)]
-        public virtual void ValidatingEscrowPropertyCostsOverOneYearCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI_6()
+            "age with No Prepaid, with PMI, with Escrow, 6", new string[] {
+                "LoanDetails"}, SourceLine=905)]
+        public virtual void ValidatingEscrowPropertyCostsOverOneYearCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow_6()
         {
-            this.ValidatingEscrowPropertyCostsOverOneYearCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI("6", "1", "PrepaidCharges", "1", "MortgageInsurance", "6", "ClosingDisclosure", ((string[])(null)));
+            this.ValidatingEscrowPropertyCostsOverOneYearCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow("6", "1", "PrepaidCharges", "1", "MortgageInsurance", "6", "ClosingDisclosure", "6", "Escrow", ((string[])(null)));
 #line hidden
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Validating Escrow Property Costs over one year card value on Closing Disclosure p" +
-            "age with No Prepaid, with PMI, 7", new string[] {
-                "LoanDetails"}, SourceLine=880)]
-        public virtual void ValidatingEscrowPropertyCostsOverOneYearCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI_7()
+            "age with No Prepaid, with PMI, with Escrow, 7", new string[] {
+                "LoanDetails"}, SourceLine=905)]
+        public virtual void ValidatingEscrowPropertyCostsOverOneYearCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow_7()
         {
-            this.ValidatingEscrowPropertyCostsOverOneYearCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI("7", "1", "PrepaidCharges", "1", "MortgageInsurance", "7", "ClosingDisclosure", ((string[])(null)));
+            this.ValidatingEscrowPropertyCostsOverOneYearCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow("7", "1", "PrepaidCharges", "1", "MortgageInsurance", "7", "ClosingDisclosure", "7", "Escrow", ((string[])(null)));
 #line hidden
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Validating Escrow Property Costs over one year card value on Closing Disclosure p" +
-            "age with No Prepaid, with PMI, 8", new string[] {
-                "LoanDetails"}, SourceLine=880)]
-        public virtual void ValidatingEscrowPropertyCostsOverOneYearCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI_8()
+            "age with No Prepaid, with PMI, with Escrow, 8", new string[] {
+                "LoanDetails"}, SourceLine=905)]
+        public virtual void ValidatingEscrowPropertyCostsOverOneYearCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow_8()
         {
-            this.ValidatingEscrowPropertyCostsOverOneYearCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI("8", "1", "PrepaidCharges", "1", "MortgageInsurance", "8", "ClosingDisclosure", ((string[])(null)));
+            this.ValidatingEscrowPropertyCostsOverOneYearCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow("8", "1", "PrepaidCharges", "1", "MortgageInsurance", "8", "ClosingDisclosure", "8", "Escrow", ((string[])(null)));
 #line hidden
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Validating Escrow Property Costs over one year card value on Closing Disclosure p" +
-            "age with No Prepaid, with PMI, 9", new string[] {
-                "LoanDetails"}, SourceLine=880)]
-        public virtual void ValidatingEscrowPropertyCostsOverOneYearCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI_9()
+            "age with No Prepaid, with PMI, with Escrow, 9", new string[] {
+                "LoanDetails"}, SourceLine=905)]
+        public virtual void ValidatingEscrowPropertyCostsOverOneYearCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow_9()
         {
-            this.ValidatingEscrowPropertyCostsOverOneYearCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI("9", "1", "PrepaidCharges", "1", "MortgageInsurance", "9", "ClosingDisclosure", ((string[])(null)));
+            this.ValidatingEscrowPropertyCostsOverOneYearCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow("9", "1", "PrepaidCharges", "1", "MortgageInsurance", "9", "ClosingDisclosure", "9", "Escrow", ((string[])(null)));
 #line hidden
         }
         
-        public virtual void ValidatingTIPCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI(string no, string pcScenarioNo, string pcSheetName, string miScenarioNo, string miSheetName, string cdScenarioNo, string cdSheetName, string[] exampleTags)
+        public virtual void ValidatingTIPCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow(string no, string pcScenarioNo, string pcSheetName, string miScenarioNo, string miSheetName, string cdScenarioNo, string cdSheetName, string eScenarioNo, string eSheetName, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "LoanDetails"};
@@ -3556,133 +3608,136 @@ testRunner.Then("updated/computed Escrow Property Costs over one year value shou
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Validating TIP card value on Closing Disclosure page with No Prepaid, with PMI", @__tags);
-#line 893
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Validating TIP card value on Closing Disclosure page with No Prepaid, with PMI, w" +
+                    "ith Escrow", @__tags);
+#line 918
 this.ScenarioSetup(scenarioInfo);
-#line 894
+#line 919
 testRunner.Given("user is at TRID application homepage", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 895
+#line 920
  testRunner.And(string.Format("user have Prepaid Charges data from excel sheet {0} for the scenario {1}", pcSheetName, pcScenarioNo), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 896
+#line 921
  testRunner.And(string.Format("user have closing disclosure data from excel sheet {0} for the scenario {1}", cdSheetName, cdScenarioNo), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 897
+#line 922
  testRunner.And(string.Format("user have Mortgage Insurance data from excel sheet {0} for the scenario {1}", miSheetName, miScenarioNo), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 898
+#line 923
+ testRunner.And(string.Format("user have Escrow data from excel sheet {0} for the scenario {1}", eSheetName, eScenarioNo), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 924
  testRunner.And("user is at Prepaid Charges page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 899
+#line 925
  testRunner.And("all the input and custom fields for prepaid charges have zero values", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 900
+#line 926
 testRunner.When("user navigate to Mortgage Insurance Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 901
+#line 927
  testRunner.And("user enters pmi rate values", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 902
+#line 928
  testRunner.And("user navigate to Closing Disclosure Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 903
+#line 929
  testRunner.And("user selects Calculation Method in Closing Disclosure Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 904
+#line 930
  testRunner.And("user selects loan type in Closing Disclosure Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 905
+#line 931
  testRunner.And("user selects Frequency of Payments in Closing Disclosure Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 906
+#line 932
  testRunner.And("user selects Loan Term in Closing Disclosure Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 907
+#line 933
  testRunner.And("user selects Repayment Term Type in Closing Disclosure Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 908
+#line 934
  testRunner.And("Enter Loan detail input values for computation for Closing Disclosure page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 909
+#line 935
  testRunner.And("Enter Disclosed input values for Closing Disclosure page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 910
+#line 936
  testRunner.And("click on Loan Details TEST on Closing Disclosure page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 911
+#line 937
  testRunner.And("click on Disclosure TEST on Closing Disclosure page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 912
+#line 938
 testRunner.Then("updated/computed TIP value should display on Closing Disclosure", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Validating TIP card value on Closing Disclosure page with No Prepaid, with PMI, 1" +
-            "", new string[] {
-                "LoanDetails"}, SourceLine=914)]
-        public virtual void ValidatingTIPCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI_1()
+        [TechTalk.SpecRun.ScenarioAttribute("Validating TIP card value on Closing Disclosure page with No Prepaid, with PMI, w" +
+            "ith Escrow, 1", new string[] {
+                "LoanDetails"}, SourceLine=940)]
+        public virtual void ValidatingTIPCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow_1()
         {
-            this.ValidatingTIPCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI("1", "1", "PrepaidCharges", "1", "MortgageInsurance", "1", "ClosingDisclosure", ((string[])(null)));
+            this.ValidatingTIPCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow("1", "1", "PrepaidCharges", "1", "MortgageInsurance", "1", "ClosingDisclosure", "1", "Escrow", ((string[])(null)));
 #line hidden
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Validating TIP card value on Closing Disclosure page with No Prepaid, with PMI, 2" +
-            "", new string[] {
-                "LoanDetails"}, SourceLine=914)]
-        public virtual void ValidatingTIPCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI_2()
+        [TechTalk.SpecRun.ScenarioAttribute("Validating TIP card value on Closing Disclosure page with No Prepaid, with PMI, w" +
+            "ith Escrow, 2", new string[] {
+                "LoanDetails"}, SourceLine=940)]
+        public virtual void ValidatingTIPCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow_2()
         {
-            this.ValidatingTIPCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI("2", "1", "PrepaidCharges", "1", "MortgageInsurance", "2", "ClosingDisclosure", ((string[])(null)));
+            this.ValidatingTIPCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow("2", "1", "PrepaidCharges", "1", "MortgageInsurance", "2", "ClosingDisclosure", "2", "Escrow", ((string[])(null)));
 #line hidden
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Validating TIP card value on Closing Disclosure page with No Prepaid, with PMI, 3" +
-            "", new string[] {
-                "LoanDetails"}, SourceLine=914)]
-        public virtual void ValidatingTIPCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI_3()
+        [TechTalk.SpecRun.ScenarioAttribute("Validating TIP card value on Closing Disclosure page with No Prepaid, with PMI, w" +
+            "ith Escrow, 3", new string[] {
+                "LoanDetails"}, SourceLine=940)]
+        public virtual void ValidatingTIPCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow_3()
         {
-            this.ValidatingTIPCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI("3", "1", "PrepaidCharges", "1", "MortgageInsurance", "3", "ClosingDisclosure", ((string[])(null)));
+            this.ValidatingTIPCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow("3", "1", "PrepaidCharges", "1", "MortgageInsurance", "3", "ClosingDisclosure", "3", "Escrow", ((string[])(null)));
 #line hidden
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Validating TIP card value on Closing Disclosure page with No Prepaid, with PMI, 4" +
-            "", new string[] {
-                "LoanDetails"}, SourceLine=914)]
-        public virtual void ValidatingTIPCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI_4()
+        [TechTalk.SpecRun.ScenarioAttribute("Validating TIP card value on Closing Disclosure page with No Prepaid, with PMI, w" +
+            "ith Escrow, 4", new string[] {
+                "LoanDetails"}, SourceLine=940)]
+        public virtual void ValidatingTIPCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow_4()
         {
-            this.ValidatingTIPCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI("4", "1", "PrepaidCharges", "1", "MortgageInsurance", "4", "ClosingDisclosure", ((string[])(null)));
+            this.ValidatingTIPCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow("4", "1", "PrepaidCharges", "1", "MortgageInsurance", "4", "ClosingDisclosure", "4", "Escrow", ((string[])(null)));
 #line hidden
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Validating TIP card value on Closing Disclosure page with No Prepaid, with PMI, 5" +
-            "", new string[] {
-                "LoanDetails"}, SourceLine=914)]
-        public virtual void ValidatingTIPCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI_5()
+        [TechTalk.SpecRun.ScenarioAttribute("Validating TIP card value on Closing Disclosure page with No Prepaid, with PMI, w" +
+            "ith Escrow, 5", new string[] {
+                "LoanDetails"}, SourceLine=940)]
+        public virtual void ValidatingTIPCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow_5()
         {
-            this.ValidatingTIPCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI("5", "1", "PrepaidCharges", "1", "MortgageInsurance", "5", "ClosingDisclosure", ((string[])(null)));
+            this.ValidatingTIPCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow("5", "1", "PrepaidCharges", "1", "MortgageInsurance", "5", "ClosingDisclosure", "5", "Escrow", ((string[])(null)));
 #line hidden
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Validating TIP card value on Closing Disclosure page with No Prepaid, with PMI, 6" +
-            "", new string[] {
-                "LoanDetails"}, SourceLine=914)]
-        public virtual void ValidatingTIPCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI_6()
+        [TechTalk.SpecRun.ScenarioAttribute("Validating TIP card value on Closing Disclosure page with No Prepaid, with PMI, w" +
+            "ith Escrow, 6", new string[] {
+                "LoanDetails"}, SourceLine=940)]
+        public virtual void ValidatingTIPCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow_6()
         {
-            this.ValidatingTIPCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI("6", "1", "PrepaidCharges", "1", "MortgageInsurance", "6", "ClosingDisclosure", ((string[])(null)));
+            this.ValidatingTIPCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow("6", "1", "PrepaidCharges", "1", "MortgageInsurance", "6", "ClosingDisclosure", "6", "Escrow", ((string[])(null)));
 #line hidden
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Validating TIP card value on Closing Disclosure page with No Prepaid, with PMI, 7" +
-            "", new string[] {
-                "LoanDetails"}, SourceLine=914)]
-        public virtual void ValidatingTIPCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI_7()
+        [TechTalk.SpecRun.ScenarioAttribute("Validating TIP card value on Closing Disclosure page with No Prepaid, with PMI, w" +
+            "ith Escrow, 7", new string[] {
+                "LoanDetails"}, SourceLine=940)]
+        public virtual void ValidatingTIPCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow_7()
         {
-            this.ValidatingTIPCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI("7", "1", "PrepaidCharges", "1", "MortgageInsurance", "7", "ClosingDisclosure", ((string[])(null)));
+            this.ValidatingTIPCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow("7", "1", "PrepaidCharges", "1", "MortgageInsurance", "7", "ClosingDisclosure", "7", "Escrow", ((string[])(null)));
 #line hidden
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Validating TIP card value on Closing Disclosure page with No Prepaid, with PMI, 8" +
-            "", new string[] {
-                "LoanDetails"}, SourceLine=914)]
-        public virtual void ValidatingTIPCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI_8()
+        [TechTalk.SpecRun.ScenarioAttribute("Validating TIP card value on Closing Disclosure page with No Prepaid, with PMI, w" +
+            "ith Escrow, 8", new string[] {
+                "LoanDetails"}, SourceLine=940)]
+        public virtual void ValidatingTIPCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow_8()
         {
-            this.ValidatingTIPCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI("8", "1", "PrepaidCharges", "1", "MortgageInsurance", "8", "ClosingDisclosure", ((string[])(null)));
+            this.ValidatingTIPCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow("8", "1", "PrepaidCharges", "1", "MortgageInsurance", "8", "ClosingDisclosure", "8", "Escrow", ((string[])(null)));
 #line hidden
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Validating TIP card value on Closing Disclosure page with No Prepaid, with PMI, 9" +
-            "", new string[] {
-                "LoanDetails"}, SourceLine=914)]
-        public virtual void ValidatingTIPCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI_9()
+        [TechTalk.SpecRun.ScenarioAttribute("Validating TIP card value on Closing Disclosure page with No Prepaid, with PMI, w" +
+            "ith Escrow, 9", new string[] {
+                "LoanDetails"}, SourceLine=940)]
+        public virtual void ValidatingTIPCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow_9()
         {
-            this.ValidatingTIPCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI("9", "1", "PrepaidCharges", "1", "MortgageInsurance", "9", "ClosingDisclosure", ((string[])(null)));
+            this.ValidatingTIPCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow("9", "1", "PrepaidCharges", "1", "MortgageInsurance", "9", "ClosingDisclosure", "9", "Escrow", ((string[])(null)));
 #line hidden
         }
         
-        public virtual void ValidatingInitialEscrowPaymentCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI(string no, string pcScenarioNo, string pcSheetName, string miScenarioNo, string miSheetName, string cdScenarioNo, string cdSheetName, string[] exampleTags)
+        public virtual void ValidatingInitialEscrowPaymentCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow(string no, string pcScenarioNo, string pcSheetName, string miScenarioNo, string miSheetName, string cdScenarioNo, string cdSheetName, string eScenarioNo, string eSheetName, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "LoanDetails"};
@@ -3691,46 +3746,48 @@ testRunner.Then("updated/computed TIP value should display on Closing Disclosure
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Validating Initial Escrow Payment card value on Closing Disclosure page with No P" +
-                    "repaid, with PMI", @__tags);
-#line 927
+                    "repaid, with PMI, with Escrow", @__tags);
+#line 953
 this.ScenarioSetup(scenarioInfo);
-#line 928
+#line 954
 testRunner.Given("user is at TRID application homepage", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 929
+#line 955
  testRunner.And(string.Format("user have Prepaid Charges data from excel sheet {0} for the scenario {1}", pcSheetName, pcScenarioNo), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 930
+#line 956
  testRunner.And(string.Format("user have closing disclosure data from excel sheet {0} for the scenario {1}", cdSheetName, cdScenarioNo), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 931
+#line 957
  testRunner.And(string.Format("user have Mortgage Insurance data from excel sheet {0} for the scenario {1}", miSheetName, miScenarioNo), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 932
+#line 958
+ testRunner.And(string.Format("user have Escrow data from excel sheet {0} for the scenario {1}", eSheetName, eScenarioNo), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 959
  testRunner.And("user is at Prepaid Charges page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 933
+#line 960
  testRunner.And("all the input and custom fields for prepaid charges have zero values", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 934
+#line 961
 testRunner.When("user navigate to Mortgage Insurance Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 935
+#line 962
  testRunner.And("user enters pmi rate values", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 936
+#line 963
  testRunner.And("user navigate to Closing Disclosure Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 937
+#line 964
  testRunner.And("user selects Calculation Method in Closing Disclosure Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 938
+#line 965
  testRunner.And("user selects loan type in Closing Disclosure Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 939
+#line 966
  testRunner.And("user selects Frequency of Payments in Closing Disclosure Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 940
+#line 967
  testRunner.And("user selects Loan Term in Closing Disclosure Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 941
+#line 968
  testRunner.And("user selects Repayment Term Type in Closing Disclosure Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 942
+#line 969
  testRunner.And("Enter Loan detail input values for computation for Closing Disclosure page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 943
+#line 970
  testRunner.And("Enter Disclosed input values for Closing Disclosure page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 944
+#line 971
  testRunner.And("click on Loan Details TEST on Closing Disclosure page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 945
+#line 972
  testRunner.And("click on Disclosure TEST on Closing Disclosure page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 946
+#line 973
 testRunner.Then("updated/computed Initial Escrow Payment value should display on Closing Disclosur" +
                     "e", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
@@ -3738,87 +3795,87 @@ testRunner.Then("updated/computed Initial Escrow Payment value should display on
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Validating Initial Escrow Payment card value on Closing Disclosure page with No P" +
-            "repaid, with PMI, 1", new string[] {
-                "LoanDetails"}, SourceLine=948)]
-        public virtual void ValidatingInitialEscrowPaymentCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI_1()
+            "repaid, with PMI, with Escrow, 1", new string[] {
+                "LoanDetails"}, SourceLine=975)]
+        public virtual void ValidatingInitialEscrowPaymentCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow_1()
         {
-            this.ValidatingInitialEscrowPaymentCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI("1", "1", "PrepaidCharges", "1", "MortgageInsurance", "1", "ClosingDisclosure", ((string[])(null)));
+            this.ValidatingInitialEscrowPaymentCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow("1", "1", "PrepaidCharges", "1", "MortgageInsurance", "1", "ClosingDisclosure", "1", "Escrow", ((string[])(null)));
 #line hidden
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Validating Initial Escrow Payment card value on Closing Disclosure page with No P" +
-            "repaid, with PMI, 2", new string[] {
-                "LoanDetails"}, SourceLine=948)]
-        public virtual void ValidatingInitialEscrowPaymentCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI_2()
+            "repaid, with PMI, with Escrow, 2", new string[] {
+                "LoanDetails"}, SourceLine=975)]
+        public virtual void ValidatingInitialEscrowPaymentCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow_2()
         {
-            this.ValidatingInitialEscrowPaymentCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI("2", "1", "PrepaidCharges", "1", "MortgageInsurance", "2", "ClosingDisclosure", ((string[])(null)));
+            this.ValidatingInitialEscrowPaymentCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow("2", "1", "PrepaidCharges", "1", "MortgageInsurance", "2", "ClosingDisclosure", "2", "Escrow", ((string[])(null)));
 #line hidden
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Validating Initial Escrow Payment card value on Closing Disclosure page with No P" +
-            "repaid, with PMI, 3", new string[] {
-                "LoanDetails"}, SourceLine=948)]
-        public virtual void ValidatingInitialEscrowPaymentCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI_3()
+            "repaid, with PMI, with Escrow, 3", new string[] {
+                "LoanDetails"}, SourceLine=975)]
+        public virtual void ValidatingInitialEscrowPaymentCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow_3()
         {
-            this.ValidatingInitialEscrowPaymentCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI("3", "1", "PrepaidCharges", "1", "MortgageInsurance", "3", "ClosingDisclosure", ((string[])(null)));
+            this.ValidatingInitialEscrowPaymentCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow("3", "1", "PrepaidCharges", "1", "MortgageInsurance", "3", "ClosingDisclosure", "3", "Escrow", ((string[])(null)));
 #line hidden
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Validating Initial Escrow Payment card value on Closing Disclosure page with No P" +
-            "repaid, with PMI, 4", new string[] {
-                "LoanDetails"}, SourceLine=948)]
-        public virtual void ValidatingInitialEscrowPaymentCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI_4()
+            "repaid, with PMI, with Escrow, 4", new string[] {
+                "LoanDetails"}, SourceLine=975)]
+        public virtual void ValidatingInitialEscrowPaymentCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow_4()
         {
-            this.ValidatingInitialEscrowPaymentCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI("4", "1", "PrepaidCharges", "1", "MortgageInsurance", "4", "ClosingDisclosure", ((string[])(null)));
+            this.ValidatingInitialEscrowPaymentCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow("4", "1", "PrepaidCharges", "1", "MortgageInsurance", "4", "ClosingDisclosure", "4", "Escrow", ((string[])(null)));
 #line hidden
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Validating Initial Escrow Payment card value on Closing Disclosure page with No P" +
-            "repaid, with PMI, 5", new string[] {
-                "LoanDetails"}, SourceLine=948)]
-        public virtual void ValidatingInitialEscrowPaymentCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI_5()
+            "repaid, with PMI, with Escrow, 5", new string[] {
+                "LoanDetails"}, SourceLine=975)]
+        public virtual void ValidatingInitialEscrowPaymentCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow_5()
         {
-            this.ValidatingInitialEscrowPaymentCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI("5", "1", "PrepaidCharges", "1", "MortgageInsurance", "5", "ClosingDisclosure", ((string[])(null)));
+            this.ValidatingInitialEscrowPaymentCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow("5", "1", "PrepaidCharges", "1", "MortgageInsurance", "5", "ClosingDisclosure", "5", "Escrow", ((string[])(null)));
 #line hidden
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Validating Initial Escrow Payment card value on Closing Disclosure page with No P" +
-            "repaid, with PMI, 6", new string[] {
-                "LoanDetails"}, SourceLine=948)]
-        public virtual void ValidatingInitialEscrowPaymentCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI_6()
+            "repaid, with PMI, with Escrow, 6", new string[] {
+                "LoanDetails"}, SourceLine=975)]
+        public virtual void ValidatingInitialEscrowPaymentCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow_6()
         {
-            this.ValidatingInitialEscrowPaymentCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI("6", "1", "PrepaidCharges", "1", "MortgageInsurance", "6", "ClosingDisclosure", ((string[])(null)));
+            this.ValidatingInitialEscrowPaymentCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow("6", "1", "PrepaidCharges", "1", "MortgageInsurance", "6", "ClosingDisclosure", "6", "Escrow", ((string[])(null)));
 #line hidden
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Validating Initial Escrow Payment card value on Closing Disclosure page with No P" +
-            "repaid, with PMI, 7", new string[] {
-                "LoanDetails"}, SourceLine=948)]
-        public virtual void ValidatingInitialEscrowPaymentCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI_7()
+            "repaid, with PMI, with Escrow, 7", new string[] {
+                "LoanDetails"}, SourceLine=975)]
+        public virtual void ValidatingInitialEscrowPaymentCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow_7()
         {
-            this.ValidatingInitialEscrowPaymentCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI("7", "1", "PrepaidCharges", "1", "MortgageInsurance", "7", "ClosingDisclosure", ((string[])(null)));
+            this.ValidatingInitialEscrowPaymentCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow("7", "1", "PrepaidCharges", "1", "MortgageInsurance", "7", "ClosingDisclosure", "7", "Escrow", ((string[])(null)));
 #line hidden
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Validating Initial Escrow Payment card value on Closing Disclosure page with No P" +
-            "repaid, with PMI, 8", new string[] {
-                "LoanDetails"}, SourceLine=948)]
-        public virtual void ValidatingInitialEscrowPaymentCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI_8()
+            "repaid, with PMI, with Escrow, 8", new string[] {
+                "LoanDetails"}, SourceLine=975)]
+        public virtual void ValidatingInitialEscrowPaymentCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow_8()
         {
-            this.ValidatingInitialEscrowPaymentCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI("8", "1", "PrepaidCharges", "1", "MortgageInsurance", "8", "ClosingDisclosure", ((string[])(null)));
+            this.ValidatingInitialEscrowPaymentCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow("8", "1", "PrepaidCharges", "1", "MortgageInsurance", "8", "ClosingDisclosure", "8", "Escrow", ((string[])(null)));
 #line hidden
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Validating Initial Escrow Payment card value on Closing Disclosure page with No P" +
-            "repaid, with PMI, 9", new string[] {
-                "LoanDetails"}, SourceLine=948)]
-        public virtual void ValidatingInitialEscrowPaymentCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI_9()
+            "repaid, with PMI, with Escrow, 9", new string[] {
+                "LoanDetails"}, SourceLine=975)]
+        public virtual void ValidatingInitialEscrowPaymentCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow_9()
         {
-            this.ValidatingInitialEscrowPaymentCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI("9", "1", "PrepaidCharges", "1", "MortgageInsurance", "9", "ClosingDisclosure", ((string[])(null)));
+            this.ValidatingInitialEscrowPaymentCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow("9", "1", "PrepaidCharges", "1", "MortgageInsurance", "9", "ClosingDisclosure", "9", "Escrow", ((string[])(null)));
 #line hidden
         }
         
-        public virtual void ValidatingNonEscrowPropertyCostsOverOneYearCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI(string no, string pcScenarioNo, string pcSheetName, string miScenarioNo, string miSheetName, string cdScenarioNo, string cdSheetName, string[] exampleTags)
+        public virtual void ValidatingNonEscrowPropertyCostsOverOneYearCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow(string no, string pcScenarioNo, string pcSheetName, string miScenarioNo, string miSheetName, string cdScenarioNo, string cdSheetName, string eScenarioNo, string eSheetName, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "LoanDetails"};
@@ -3827,46 +3884,48 @@ testRunner.Then("updated/computed Initial Escrow Payment value should display on
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Validating Non Escrow Property Costs over one year card value on Closing Disclosu" +
-                    "re page with No Prepaid, with PMI", @__tags);
-#line 961
+                    "re page with No Prepaid, with PMI, with Escrow", @__tags);
+#line 988
 this.ScenarioSetup(scenarioInfo);
-#line 962
+#line 989
 testRunner.Given("user is at TRID application homepage", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 963
+#line 990
  testRunner.And(string.Format("user have Prepaid Charges data from excel sheet {0} for the scenario {1}", pcSheetName, pcScenarioNo), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 964
+#line 991
  testRunner.And(string.Format("user have closing disclosure data from excel sheet {0} for the scenario {1}", cdSheetName, cdScenarioNo), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 965
+#line 992
  testRunner.And(string.Format("user have Mortgage Insurance data from excel sheet {0} for the scenario {1}", miSheetName, miScenarioNo), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 966
+#line 993
+ testRunner.And(string.Format("user have Escrow data from excel sheet {0} for the scenario {1}", eSheetName, eScenarioNo), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 994
  testRunner.And("user is at Prepaid Charges page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 967
+#line 995
  testRunner.And("all the input and custom fields for prepaid charges have zero values", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 968
+#line 996
 testRunner.When("user navigate to Mortgage Insurance Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 969
+#line 997
  testRunner.And("user enters pmi rate values", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 970
+#line 998
  testRunner.And("user navigate to Closing Disclosure Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 971
+#line 999
  testRunner.And("user selects Calculation Method in Closing Disclosure Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 972
+#line 1000
  testRunner.And("user selects loan type in Closing Disclosure Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 973
+#line 1001
  testRunner.And("user selects Frequency of Payments in Closing Disclosure Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 974
+#line 1002
  testRunner.And("user selects Loan Term in Closing Disclosure Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 975
+#line 1003
  testRunner.And("user selects Repayment Term Type in Closing Disclosure Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 976
+#line 1004
  testRunner.And("Enter Loan detail input values for computation for Closing Disclosure page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 977
+#line 1005
  testRunner.And("Enter Disclosed input values for Closing Disclosure page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 978
+#line 1006
  testRunner.And("click on Loan Details TEST on Closing Disclosure page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 979
+#line 1007
  testRunner.And("click on Disclosure TEST on Closing Disclosure page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 980
+#line 1008
 testRunner.Then("updated/computed Non Escrow Property Costs over one year value should display on " +
                     "Closing Disclosure", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
@@ -3874,87 +3933,87 @@ testRunner.Then("updated/computed Non Escrow Property Costs over one year value 
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Validating Non Escrow Property Costs over one year card value on Closing Disclosu" +
-            "re page with No Prepaid, with PMI, 1", new string[] {
-                "LoanDetails"}, SourceLine=982)]
-        public virtual void ValidatingNonEscrowPropertyCostsOverOneYearCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI_1()
+            "re page with No Prepaid, with PMI, with Escrow, 1", new string[] {
+                "LoanDetails"}, SourceLine=1010)]
+        public virtual void ValidatingNonEscrowPropertyCostsOverOneYearCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow_1()
         {
-            this.ValidatingNonEscrowPropertyCostsOverOneYearCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI("1", "1", "PrepaidCharges", "1", "MortgageInsurance", "1", "ClosingDisclosure", ((string[])(null)));
+            this.ValidatingNonEscrowPropertyCostsOverOneYearCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow("1", "1", "PrepaidCharges", "1", "MortgageInsurance", "1", "ClosingDisclosure", "1", "Escrow", ((string[])(null)));
 #line hidden
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Validating Non Escrow Property Costs over one year card value on Closing Disclosu" +
-            "re page with No Prepaid, with PMI, 2", new string[] {
-                "LoanDetails"}, SourceLine=982)]
-        public virtual void ValidatingNonEscrowPropertyCostsOverOneYearCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI_2()
+            "re page with No Prepaid, with PMI, with Escrow, 2", new string[] {
+                "LoanDetails"}, SourceLine=1010)]
+        public virtual void ValidatingNonEscrowPropertyCostsOverOneYearCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow_2()
         {
-            this.ValidatingNonEscrowPropertyCostsOverOneYearCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI("2", "1", "PrepaidCharges", "1", "MortgageInsurance", "2", "ClosingDisclosure", ((string[])(null)));
+            this.ValidatingNonEscrowPropertyCostsOverOneYearCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow("2", "1", "PrepaidCharges", "1", "MortgageInsurance", "2", "ClosingDisclosure", "2", "Escrow", ((string[])(null)));
 #line hidden
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Validating Non Escrow Property Costs over one year card value on Closing Disclosu" +
-            "re page with No Prepaid, with PMI, 3", new string[] {
-                "LoanDetails"}, SourceLine=982)]
-        public virtual void ValidatingNonEscrowPropertyCostsOverOneYearCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI_3()
+            "re page with No Prepaid, with PMI, with Escrow, 3", new string[] {
+                "LoanDetails"}, SourceLine=1010)]
+        public virtual void ValidatingNonEscrowPropertyCostsOverOneYearCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow_3()
         {
-            this.ValidatingNonEscrowPropertyCostsOverOneYearCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI("3", "1", "PrepaidCharges", "1", "MortgageInsurance", "3", "ClosingDisclosure", ((string[])(null)));
+            this.ValidatingNonEscrowPropertyCostsOverOneYearCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow("3", "1", "PrepaidCharges", "1", "MortgageInsurance", "3", "ClosingDisclosure", "3", "Escrow", ((string[])(null)));
 #line hidden
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Validating Non Escrow Property Costs over one year card value on Closing Disclosu" +
-            "re page with No Prepaid, with PMI, 4", new string[] {
-                "LoanDetails"}, SourceLine=982)]
-        public virtual void ValidatingNonEscrowPropertyCostsOverOneYearCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI_4()
+            "re page with No Prepaid, with PMI, with Escrow, 4", new string[] {
+                "LoanDetails"}, SourceLine=1010)]
+        public virtual void ValidatingNonEscrowPropertyCostsOverOneYearCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow_4()
         {
-            this.ValidatingNonEscrowPropertyCostsOverOneYearCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI("4", "1", "PrepaidCharges", "1", "MortgageInsurance", "4", "ClosingDisclosure", ((string[])(null)));
+            this.ValidatingNonEscrowPropertyCostsOverOneYearCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow("4", "1", "PrepaidCharges", "1", "MortgageInsurance", "4", "ClosingDisclosure", "4", "Escrow", ((string[])(null)));
 #line hidden
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Validating Non Escrow Property Costs over one year card value on Closing Disclosu" +
-            "re page with No Prepaid, with PMI, 5", new string[] {
-                "LoanDetails"}, SourceLine=982)]
-        public virtual void ValidatingNonEscrowPropertyCostsOverOneYearCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI_5()
+            "re page with No Prepaid, with PMI, with Escrow, 5", new string[] {
+                "LoanDetails"}, SourceLine=1010)]
+        public virtual void ValidatingNonEscrowPropertyCostsOverOneYearCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow_5()
         {
-            this.ValidatingNonEscrowPropertyCostsOverOneYearCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI("5", "1", "PrepaidCharges", "1", "MortgageInsurance", "5", "ClosingDisclosure", ((string[])(null)));
+            this.ValidatingNonEscrowPropertyCostsOverOneYearCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow("5", "1", "PrepaidCharges", "1", "MortgageInsurance", "5", "ClosingDisclosure", "5", "Escrow", ((string[])(null)));
 #line hidden
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Validating Non Escrow Property Costs over one year card value on Closing Disclosu" +
-            "re page with No Prepaid, with PMI, 6", new string[] {
-                "LoanDetails"}, SourceLine=982)]
-        public virtual void ValidatingNonEscrowPropertyCostsOverOneYearCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI_6()
+            "re page with No Prepaid, with PMI, with Escrow, 6", new string[] {
+                "LoanDetails"}, SourceLine=1010)]
+        public virtual void ValidatingNonEscrowPropertyCostsOverOneYearCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow_6()
         {
-            this.ValidatingNonEscrowPropertyCostsOverOneYearCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI("6", "1", "PrepaidCharges", "1", "MortgageInsurance", "6", "ClosingDisclosure", ((string[])(null)));
+            this.ValidatingNonEscrowPropertyCostsOverOneYearCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow("6", "1", "PrepaidCharges", "1", "MortgageInsurance", "6", "ClosingDisclosure", "6", "Escrow", ((string[])(null)));
 #line hidden
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Validating Non Escrow Property Costs over one year card value on Closing Disclosu" +
-            "re page with No Prepaid, with PMI, 7", new string[] {
-                "LoanDetails"}, SourceLine=982)]
-        public virtual void ValidatingNonEscrowPropertyCostsOverOneYearCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI_7()
+            "re page with No Prepaid, with PMI, with Escrow, 7", new string[] {
+                "LoanDetails"}, SourceLine=1010)]
+        public virtual void ValidatingNonEscrowPropertyCostsOverOneYearCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow_7()
         {
-            this.ValidatingNonEscrowPropertyCostsOverOneYearCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI("7", "1", "PrepaidCharges", "1", "MortgageInsurance", "7", "ClosingDisclosure", ((string[])(null)));
+            this.ValidatingNonEscrowPropertyCostsOverOneYearCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow("7", "1", "PrepaidCharges", "1", "MortgageInsurance", "7", "ClosingDisclosure", "7", "Escrow", ((string[])(null)));
 #line hidden
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Validating Non Escrow Property Costs over one year card value on Closing Disclosu" +
-            "re page with No Prepaid, with PMI, 8", new string[] {
-                "LoanDetails"}, SourceLine=982)]
-        public virtual void ValidatingNonEscrowPropertyCostsOverOneYearCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI_8()
+            "re page with No Prepaid, with PMI, with Escrow, 8", new string[] {
+                "LoanDetails"}, SourceLine=1010)]
+        public virtual void ValidatingNonEscrowPropertyCostsOverOneYearCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow_8()
         {
-            this.ValidatingNonEscrowPropertyCostsOverOneYearCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI("8", "1", "PrepaidCharges", "1", "MortgageInsurance", "8", "ClosingDisclosure", ((string[])(null)));
+            this.ValidatingNonEscrowPropertyCostsOverOneYearCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow("8", "1", "PrepaidCharges", "1", "MortgageInsurance", "8", "ClosingDisclosure", "8", "Escrow", ((string[])(null)));
 #line hidden
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Validating Non Escrow Property Costs over one year card value on Closing Disclosu" +
-            "re page with No Prepaid, with PMI, 9", new string[] {
-                "LoanDetails"}, SourceLine=982)]
-        public virtual void ValidatingNonEscrowPropertyCostsOverOneYearCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI_9()
+            "re page with No Prepaid, with PMI, with Escrow, 9", new string[] {
+                "LoanDetails"}, SourceLine=1010)]
+        public virtual void ValidatingNonEscrowPropertyCostsOverOneYearCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow_9()
         {
-            this.ValidatingNonEscrowPropertyCostsOverOneYearCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI("9", "1", "PrepaidCharges", "1", "MortgageInsurance", "9", "ClosingDisclosure", ((string[])(null)));
+            this.ValidatingNonEscrowPropertyCostsOverOneYearCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow("9", "1", "PrepaidCharges", "1", "MortgageInsurance", "9", "ClosingDisclosure", "9", "Escrow", ((string[])(null)));
 #line hidden
         }
         
-        public virtual void ValidatingPeriodEscrowPaymentCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI(string no, string pcScenarioNo, string pcSheetName, string miScenarioNo, string miSheetName, string cdScenarioNo, string cdSheetName, string[] exampleTags)
+        public virtual void ValidatingPeriodEscrowPaymentCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow(string no, string pcScenarioNo, string pcSheetName, string miScenarioNo, string miSheetName, string cdScenarioNo, string cdSheetName, string eScenarioNo, string eSheetName, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "LoanDetails"};
@@ -3963,46 +4022,48 @@ testRunner.Then("updated/computed Non Escrow Property Costs over one year value 
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Validating Period Escrow Payment card value on Closing Disclosure page with No Pr" +
-                    "epaid, with PMI", @__tags);
-#line 994
+                    "epaid, with PMI, with Escrow", @__tags);
+#line 1022
 this.ScenarioSetup(scenarioInfo);
-#line 995
+#line 1023
 testRunner.Given("user is at TRID application homepage", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 996
+#line 1024
  testRunner.And(string.Format("user have Prepaid Charges data from excel sheet {0} for the scenario {1}", pcSheetName, pcScenarioNo), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 997
+#line 1025
  testRunner.And(string.Format("user have closing disclosure data from excel sheet {0} for the scenario {1}", cdSheetName, cdScenarioNo), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 998
+#line 1026
  testRunner.And(string.Format("user have Mortgage Insurance data from excel sheet {0} for the scenario {1}", miSheetName, miScenarioNo), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 999
+#line 1027
+ testRunner.And(string.Format("user have Escrow data from excel sheet {0} for the scenario {1}", eSheetName, eScenarioNo), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1028
  testRunner.And("user is at Prepaid Charges page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 1000
+#line 1029
  testRunner.And("all the input and custom fields for prepaid charges have zero values", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 1001
+#line 1030
 testRunner.When("user navigate to Mortgage Insurance Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 1002
+#line 1031
  testRunner.And("user enters pmi rate values", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 1003
+#line 1032
  testRunner.And("user navigate to Closing Disclosure Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 1004
+#line 1033
  testRunner.And("user selects Calculation Method in Closing Disclosure Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 1005
+#line 1034
  testRunner.And("user selects loan type in Closing Disclosure Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 1006
+#line 1035
  testRunner.And("user selects Frequency of Payments in Closing Disclosure Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 1007
+#line 1036
  testRunner.And("user selects Loan Term in Closing Disclosure Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 1008
+#line 1037
  testRunner.And("user selects Repayment Term Type in Closing Disclosure Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 1009
+#line 1038
  testRunner.And("Enter Loan detail input values for computation for Closing Disclosure page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 1010
+#line 1039
  testRunner.And("Enter Disclosed input values for Closing Disclosure page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 1011
+#line 1040
  testRunner.And("click on Loan Details TEST on Closing Disclosure page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 1012
+#line 1041
  testRunner.And("click on Disclosure TEST on Closing Disclosure page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 1013
+#line 1042
 testRunner.Then("updated/computed Period Escrow Payment value should display on Closing Disclosure" +
                     "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
@@ -4010,83 +4071,83 @@ testRunner.Then("updated/computed Period Escrow Payment value should display on 
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Validating Period Escrow Payment card value on Closing Disclosure page with No Pr" +
-            "epaid, with PMI, 1", new string[] {
-                "LoanDetails"}, SourceLine=1015)]
-        public virtual void ValidatingPeriodEscrowPaymentCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI_1()
+            "epaid, with PMI, with Escrow, 1", new string[] {
+                "LoanDetails"}, SourceLine=1044)]
+        public virtual void ValidatingPeriodEscrowPaymentCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow_1()
         {
-            this.ValidatingPeriodEscrowPaymentCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI("1", "1", "PrepaidCharges", "1", "MortgageInsurance", "1", "ClosingDisclosure", ((string[])(null)));
+            this.ValidatingPeriodEscrowPaymentCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow("1", "1", "PrepaidCharges", "1", "MortgageInsurance", "1", "ClosingDisclosure", "1", "Escrow", ((string[])(null)));
 #line hidden
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Validating Period Escrow Payment card value on Closing Disclosure page with No Pr" +
-            "epaid, with PMI, 2", new string[] {
-                "LoanDetails"}, SourceLine=1015)]
-        public virtual void ValidatingPeriodEscrowPaymentCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI_2()
+            "epaid, with PMI, with Escrow, 2", new string[] {
+                "LoanDetails"}, SourceLine=1044)]
+        public virtual void ValidatingPeriodEscrowPaymentCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow_2()
         {
-            this.ValidatingPeriodEscrowPaymentCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI("2", "1", "PrepaidCharges", "1", "MortgageInsurance", "2", "ClosingDisclosure", ((string[])(null)));
+            this.ValidatingPeriodEscrowPaymentCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow("2", "1", "PrepaidCharges", "1", "MortgageInsurance", "2", "ClosingDisclosure", "2", "Escrow", ((string[])(null)));
 #line hidden
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Validating Period Escrow Payment card value on Closing Disclosure page with No Pr" +
-            "epaid, with PMI, 3", new string[] {
-                "LoanDetails"}, SourceLine=1015)]
-        public virtual void ValidatingPeriodEscrowPaymentCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI_3()
+            "epaid, with PMI, with Escrow, 3", new string[] {
+                "LoanDetails"}, SourceLine=1044)]
+        public virtual void ValidatingPeriodEscrowPaymentCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow_3()
         {
-            this.ValidatingPeriodEscrowPaymentCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI("3", "1", "PrepaidCharges", "1", "MortgageInsurance", "3", "ClosingDisclosure", ((string[])(null)));
+            this.ValidatingPeriodEscrowPaymentCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow("3", "1", "PrepaidCharges", "1", "MortgageInsurance", "3", "ClosingDisclosure", "3", "Escrow", ((string[])(null)));
 #line hidden
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Validating Period Escrow Payment card value on Closing Disclosure page with No Pr" +
-            "epaid, with PMI, 4", new string[] {
-                "LoanDetails"}, SourceLine=1015)]
-        public virtual void ValidatingPeriodEscrowPaymentCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI_4()
+            "epaid, with PMI, with Escrow, 4", new string[] {
+                "LoanDetails"}, SourceLine=1044)]
+        public virtual void ValidatingPeriodEscrowPaymentCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow_4()
         {
-            this.ValidatingPeriodEscrowPaymentCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI("4", "1", "PrepaidCharges", "1", "MortgageInsurance", "4", "ClosingDisclosure", ((string[])(null)));
+            this.ValidatingPeriodEscrowPaymentCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow("4", "1", "PrepaidCharges", "1", "MortgageInsurance", "4", "ClosingDisclosure", "4", "Escrow", ((string[])(null)));
 #line hidden
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Validating Period Escrow Payment card value on Closing Disclosure page with No Pr" +
-            "epaid, with PMI, 5", new string[] {
-                "LoanDetails"}, SourceLine=1015)]
-        public virtual void ValidatingPeriodEscrowPaymentCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI_5()
+            "epaid, with PMI, with Escrow, 5", new string[] {
+                "LoanDetails"}, SourceLine=1044)]
+        public virtual void ValidatingPeriodEscrowPaymentCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow_5()
         {
-            this.ValidatingPeriodEscrowPaymentCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI("5", "1", "PrepaidCharges", "1", "MortgageInsurance", "5", "ClosingDisclosure", ((string[])(null)));
+            this.ValidatingPeriodEscrowPaymentCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow("5", "1", "PrepaidCharges", "1", "MortgageInsurance", "5", "ClosingDisclosure", "5", "Escrow", ((string[])(null)));
 #line hidden
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Validating Period Escrow Payment card value on Closing Disclosure page with No Pr" +
-            "epaid, with PMI, 6", new string[] {
-                "LoanDetails"}, SourceLine=1015)]
-        public virtual void ValidatingPeriodEscrowPaymentCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI_6()
+            "epaid, with PMI, with Escrow, 6", new string[] {
+                "LoanDetails"}, SourceLine=1044)]
+        public virtual void ValidatingPeriodEscrowPaymentCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow_6()
         {
-            this.ValidatingPeriodEscrowPaymentCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI("6", "1", "PrepaidCharges", "1", "MortgageInsurance", "6", "ClosingDisclosure", ((string[])(null)));
+            this.ValidatingPeriodEscrowPaymentCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow("6", "1", "PrepaidCharges", "1", "MortgageInsurance", "6", "ClosingDisclosure", "6", "Escrow", ((string[])(null)));
 #line hidden
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Validating Period Escrow Payment card value on Closing Disclosure page with No Pr" +
-            "epaid, with PMI, 7", new string[] {
-                "LoanDetails"}, SourceLine=1015)]
-        public virtual void ValidatingPeriodEscrowPaymentCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI_7()
+            "epaid, with PMI, with Escrow, 7", new string[] {
+                "LoanDetails"}, SourceLine=1044)]
+        public virtual void ValidatingPeriodEscrowPaymentCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow_7()
         {
-            this.ValidatingPeriodEscrowPaymentCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI("7", "1", "PrepaidCharges", "1", "MortgageInsurance", "7", "ClosingDisclosure", ((string[])(null)));
+            this.ValidatingPeriodEscrowPaymentCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow("7", "1", "PrepaidCharges", "1", "MortgageInsurance", "7", "ClosingDisclosure", "7", "Escrow", ((string[])(null)));
 #line hidden
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Validating Period Escrow Payment card value on Closing Disclosure page with No Pr" +
-            "epaid, with PMI, 8", new string[] {
-                "LoanDetails"}, SourceLine=1015)]
-        public virtual void ValidatingPeriodEscrowPaymentCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI_8()
+            "epaid, with PMI, with Escrow, 8", new string[] {
+                "LoanDetails"}, SourceLine=1044)]
+        public virtual void ValidatingPeriodEscrowPaymentCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow_8()
         {
-            this.ValidatingPeriodEscrowPaymentCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI("8", "1", "PrepaidCharges", "1", "MortgageInsurance", "8", "ClosingDisclosure", ((string[])(null)));
+            this.ValidatingPeriodEscrowPaymentCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow("8", "1", "PrepaidCharges", "1", "MortgageInsurance", "8", "ClosingDisclosure", "8", "Escrow", ((string[])(null)));
 #line hidden
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Validating Period Escrow Payment card value on Closing Disclosure page with No Pr" +
-            "epaid, with PMI, 9", new string[] {
-                "LoanDetails"}, SourceLine=1015)]
-        public virtual void ValidatingPeriodEscrowPaymentCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI_9()
+            "epaid, with PMI, with Escrow, 9", new string[] {
+                "LoanDetails"}, SourceLine=1044)]
+        public virtual void ValidatingPeriodEscrowPaymentCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow_9()
         {
-            this.ValidatingPeriodEscrowPaymentCardValueOnClosingDisclosurePageWithNoPrepaidWithPMI("9", "1", "PrepaidCharges", "1", "MortgageInsurance", "9", "ClosingDisclosure", ((string[])(null)));
+            this.ValidatingPeriodEscrowPaymentCardValueOnClosingDisclosurePageWithNoPrepaidWithPMIWithEscrow("9", "1", "PrepaidCharges", "1", "MortgageInsurance", "9", "ClosingDisclosure", "9", "Escrow", ((string[])(null)));
 #line hidden
         }
         

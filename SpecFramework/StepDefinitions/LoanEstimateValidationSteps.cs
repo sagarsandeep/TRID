@@ -55,35 +55,35 @@ namespace TRID.StepDefinitions
         [When(@"user selects Calculation Method in Loan Estimate Page")]
         public void WhenUserSelectsCalculationMethodInDisclosurePage()
         {
-            ClosingDisclosureVariable();
+            ClosingDisclosureRadioButtonVariable();
             UIActions.Click(LeCalculationMethod);
         }
 
         [When(@"user selects loan type in Loan Estimate Page")]
         public void WhenUserSelectsLoanTypeInLoanEstimatePage()
         {
-            ClosingDisclosureVariable();
+            ClosingDisclosureRadioButtonVariable();
             UIActions.Click(LeLoanType);
         }
 
         [When(@"user selects Frequency of Payments in Loan Estimate Page")]
         public void WhenUserSelectsFrequencyOfPaymentsInLoanEstimatePage()
         {
-            ClosingDisclosureVariable();
+            ClosingDisclosureRadioButtonVariable();
             UIActions.Click(LeFrequencyOfPayments);
         }
 
         [When(@"user selects Loan Term in Loan Estimate Page")]
         public void WhenUserSelectsLoanTermInLoanEstimatePage()
         {
-            ClosingDisclosureVariable();
+            ClosingDisclosureRadioButtonVariable();
             UIActions.Click(LeLoanTerm);
         }
 
         [When(@"user selects Repayment Term Type in Loan Estimate Page")]
         public void WhenUserSelectsRepaymentTermTypeInLoanEstimatePage()
         {
-            ClosingDisclosureVariable();
+            ClosingDisclosureRadioButtonVariable();
             UIActions.Click(LeRepaymentTermType);
         }
 

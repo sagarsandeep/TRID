@@ -17,7 +17,7 @@ namespace TRID.FeatureFiles
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "2.1.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [TechTalk.SpecRun.FeatureAttribute("EscrowValidation", SourceFile="FeatureFiles\\EscrowValidation.feature", SourceLine=0)]
+    [TechTalk.SpecRun.FeatureAttribute("EscrowValidation", Description="Escrow page validation with Insurance, Tax and PMI values", SourceFile="FeatureFiles\\EscrowValidation.feature", SourceLine=0)]
     public partial class EscrowValidationFeature
     {
         
@@ -30,7 +30,7 @@ namespace TRID.FeatureFiles
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "EscrowValidation", null, ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "EscrowValidation", "Escrow page validation with Insurance, Tax and PMI values", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -59,6 +59,157 @@ namespace TRID.FeatureFiles
         public virtual void ScenarioCleanup()
         {
             testRunner.CollectScenarioErrors();
+        }
+        
+        public virtual void AddTwoNumbers(string no, string pcScenarioNo, string pcSheetName, string miScenarioNo, string miSheetName, string cdScenarioNo, string cdSheetName, string eScenarioNo, string eSheetName, string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "Escrow"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Add two numbers", @__tags);
+#line 5
+this.ScenarioSetup(scenarioInfo);
+#line 6
+testRunner.Given("user is at TRID application homepage", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 7
+ testRunner.And(string.Format("user have Prepaid Charges data from excel sheet {0} for the scenario {1}", pcSheetName, pcScenarioNo), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 8
+ testRunner.And(string.Format("user have closing disclosure data from excel sheet {0} for the scenario {1}", cdSheetName, cdScenarioNo), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 9
+ testRunner.And(string.Format("user have Mortgage Insurance data from excel sheet {0} for the scenario {1}", miSheetName, miScenarioNo), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 10
+ testRunner.And(string.Format("user have Escrow data from excel sheet {0} for the scenario {1}", eSheetName, eScenarioNo), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 11
+ testRunner.And("user is at Prepaid Charges page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 12
+ testRunner.And("all the input and custom fields for prepaid charges have zero values", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 13
+testRunner.When("user navigate to Mortgage Insurance Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 14
+ testRunner.And("user enters pmi rate values", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 15
+ testRunner.And("user navigate to Closing Disclosure Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 16
+ testRunner.And("user selects Calculation Method in Closing Disclosure Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 17
+ testRunner.And("user selects loan type in Closing Disclosure Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 18
+ testRunner.And("user selects Frequency of Payments in Closing Disclosure Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 19
+ testRunner.And("user selects Loan Term in Closing Disclosure Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 20
+ testRunner.And("user selects Repayment Term Type in Closing Disclosure Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 21
+ testRunner.And("Enter Loan detail input values for computation for Closing Disclosure page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 22
+ testRunner.And("Enter Disclosed input values for Closing Disclosure page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 23
+ testRunner.And("click on Loan Details TEST on Closing Disclosure page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 24
+ testRunner.And("click on Disclosure TEST on Closing Disclosure page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 25
+ testRunner.And("user navigate to Escrow Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 26
+ testRunner.And("user selects value for Is Ins Escrowed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 27
+ testRunner.And("user selects value for Is Tax Escrowed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 28
+ testRunner.And("user selects value for Is PMI Escrowed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 29
+ testRunner.And("user enters values for Escrow Calculations start period Date", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 30
+ testRunner.And("user enters values for Cushion Months for Insurance", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 31
+ testRunner.And("user enters values for Cushion Months for Tax", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 32
+ testRunner.And("user enters values for Escrow insurance Inputs", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 33
+ testRunner.And("user enters values for Escrow Tax Calculations Inputs", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 34
+ testRunner.And("user enters values for Escrow PMI Calculations Inputs", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 35
+ testRunner.And("user clicks on Escrow Calculation Input Test Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 36
+ testRunner.And("user enters all other input values in Escrow Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 37
+ testRunner.And("user clicks on Disclosure For Escrow Test Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Add two numbers, 1", new string[] {
+                "Escrow"}, SourceLine=39)]
+        public virtual void AddTwoNumbers_1()
+        {
+            this.AddTwoNumbers("1", "1", "PrepaidCharges", "1", "MortgageInsurance", "1", "ClosingDisclosure", "1", "Escrow", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Add two numbers, 2", new string[] {
+                "Escrow"}, SourceLine=39)]
+        public virtual void AddTwoNumbers_2()
+        {
+            this.AddTwoNumbers("2", "1", "PrepaidCharges", "1", "MortgageInsurance", "2", "ClosingDisclosure", "2", "Escrow", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Add two numbers, 3", new string[] {
+                "Escrow"}, SourceLine=39)]
+        public virtual void AddTwoNumbers_3()
+        {
+            this.AddTwoNumbers("3", "1", "PrepaidCharges", "1", "MortgageInsurance", "3", "ClosingDisclosure", "3", "Escrow", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Add two numbers, 4", new string[] {
+                "Escrow"}, SourceLine=39)]
+        public virtual void AddTwoNumbers_4()
+        {
+            this.AddTwoNumbers("4", "1", "PrepaidCharges", "1", "MortgageInsurance", "4", "ClosingDisclosure", "4", "Escrow", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Add two numbers, 5", new string[] {
+                "Escrow"}, SourceLine=39)]
+        public virtual void AddTwoNumbers_5()
+        {
+            this.AddTwoNumbers("5", "1", "PrepaidCharges", "1", "MortgageInsurance", "5", "ClosingDisclosure", "5", "Escrow", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Add two numbers, 6", new string[] {
+                "Escrow"}, SourceLine=39)]
+        public virtual void AddTwoNumbers_6()
+        {
+            this.AddTwoNumbers("6", "1", "PrepaidCharges", "1", "MortgageInsurance", "6", "ClosingDisclosure", "6", "Escrow", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Add two numbers, 7", new string[] {
+                "Escrow"}, SourceLine=39)]
+        public virtual void AddTwoNumbers_7()
+        {
+            this.AddTwoNumbers("7", "1", "PrepaidCharges", "1", "MortgageInsurance", "7", "ClosingDisclosure", "7", "Escrow", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Add two numbers, 8", new string[] {
+                "Escrow"}, SourceLine=39)]
+        public virtual void AddTwoNumbers_8()
+        {
+            this.AddTwoNumbers("8", "1", "PrepaidCharges", "1", "MortgageInsurance", "8", "ClosingDisclosure", "8", "Escrow", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Add two numbers, 9", new string[] {
+                "Escrow"}, SourceLine=39)]
+        public virtual void AddTwoNumbers_9()
+        {
+            this.AddTwoNumbers("9", "1", "PrepaidCharges", "1", "MortgageInsurance", "9", "ClosingDisclosure", "9", "Escrow", ((string[])(null)));
+#line hidden
         }
         
         [TechTalk.SpecRun.TestRunCleanup()]
