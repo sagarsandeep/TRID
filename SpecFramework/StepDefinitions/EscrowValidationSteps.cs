@@ -105,20 +105,36 @@ namespace TRID.StepDefinitions
             Assert.AreNotEqual(1, EscrowTaxInfoGridRowCount, "Escrow Installment Info Grid is not empty");
 
             UIActions.Clear(EscEscrowTaxCalculationsInputsNumber);
-            UIActions.GiveInput(EscEscrowTaxCalculationsInputsNumber, TridVariable.EscrowTaxCalculationsInputsNumber);
+            UIActions.GiveInput(EscEscrowTaxCalculationsInputsNumber, TridVariable.EscrowTaxCalculationsInputsNumberFR);
 
             UIActions.Clear(EscEscrowTaxCalculationsInputsDate);
-            UIActions.GiveInput(EscEscrowTaxCalculationsInputsDate, TridVariable.EscrowTaxCalculationsInputsDate);
+            UIActions.GiveInput(EscEscrowTaxCalculationsInputsDate, TridVariable.EscrowTaxCalculationsInputsDateFR);
 
             UIActions.Clear(EscEscrowTaxCalculationsInputsTaxInstallmentAmount);
-            UIActions.GiveInput(EscEscrowTaxCalculationsInputsTaxInstallmentAmount, TridVariable.EscrowTaxCalculationsInputsTaxInstallmentAmount);
+            UIActions.GiveInput(EscEscrowTaxCalculationsInputsTaxInstallmentAmount, TridVariable.EscrowTaxCalculationsInputsTaxInstallmentAmountFR);
 
             UIActions.Click(EscEscrowTaxCalculationsInputsAddButton);
             Thread.Sleep(3000);
 
-            Assert.AreEqual(TridVariable.EscrowTaxCalculationsInputsNumber, UIActions.GetText(EscrowTaxInfoGridNumber), "Escrow Installment Info Number value does not matches as expected");
-            Assert.AreEqual(TridVariable.EscrowTaxCalculationsInputsDate, UIActions.GetText(EscrowTaxInfoGridInstallmentDate), "Escrow Installment Info Number value does not matches as expected");
-            Assert.AreEqual(TridVariable.EscrowTaxCalculationsInputsTaxInstallmentAmount, UIActions.GetText(EscrowTaxInfoGridTaxInstallmentAmount), "Escrow Installment Info Number value does not matches as expected");
+            UIActions.Clear(EscEscrowTaxCalculationsInputsNumber);
+            UIActions.GiveInput(EscEscrowTaxCalculationsInputsNumber, TridVariable.EscrowTaxCalculationsInputsNumberSR);
+
+            UIActions.Clear(EscEscrowTaxCalculationsInputsDate);
+            UIActions.GiveInput(EscEscrowTaxCalculationsInputsDate, TridVariable.EscrowTaxCalculationsInputsDateSR);
+
+            UIActions.Clear(EscEscrowTaxCalculationsInputsTaxInstallmentAmount);
+            UIActions.GiveInput(EscEscrowTaxCalculationsInputsTaxInstallmentAmount, TridVariable.EscrowTaxCalculationsInputsTaxInstallmentAmountSR);
+
+            UIActions.Click(EscEscrowTaxCalculationsInputsAddButton);
+            Thread.Sleep(3000);
+
+            Assert.AreEqual(TridVariable.EscrowTaxCalculationsInputsNumberFR, UIActions.GetText(EscrowTaxInfoGridNumberFR), "Escrow Installment Info Number value does not matches as expected");
+            Assert.AreEqual(TridVariable.EscrowTaxCalculationsInputsDateFR, UIActions.GetText(EscrowTaxInfoGridInstallmentDateFR), "Escrow Installment Info Number value does not matches as expected");
+            Assert.AreEqual(TridVariable.EscrowTaxCalculationsInputsTaxInstallmentAmountFR, UIActions.GetText(EscrowTaxInfoGridTaxInstallmentAmountFR), "Escrow Installment Info Number value does not matches as expected");
+
+            Assert.AreEqual(TridVariable.EscrowTaxCalculationsInputsNumberSR, UIActions.GetText(EscrowTaxInfoGridNumberSR), "Escrow Installment Info Number value does not matches as expected");
+            Assert.AreEqual(TridVariable.EscrowTaxCalculationsInputsDateSR, UIActions.GetText(EscrowTaxInfoGridInstallmentDateSR), "Escrow Installment Info Number value does not matches as expected");
+            Assert.AreEqual(TridVariable.EscrowTaxCalculationsInputsTaxInstallmentAmountSR, UIActions.GetText(EscrowTaxInfoGridTaxInstallmentAmountSR), "Escrow Installment Info Number value does not matches as expected");
         }
         
         [When(@"user enters values for Escrow PMI Calculations Inputs")]

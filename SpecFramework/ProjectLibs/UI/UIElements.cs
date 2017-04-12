@@ -17,9 +17,17 @@ namespace TRID.ProjectLibs.UI
         public static By MortgageInsuranceLink = By.LinkText("Mortgage Insurance");
         public static By EscrowLink = By.LinkText("Escrow");
         public static By ExportLink = By.LinkText("Export");
+        public static By StartNewLoanLink = By.LinkText("Start New Loan");
+        public static By AmortizationLink = By.LinkText("Amortization");
+        public static By VariableLoanDetailsLink = By.LinkText("Variable Loan Details");
 
         #endregion
 
+        #region Start New Loan
+
+        public static By SnlResetButton = By.XPath("//div[@id='StartNewLoan']//button");
+
+        #endregion
 
         #region Closing DisclosurePage
 
@@ -379,9 +387,13 @@ namespace TRID.ProjectLibs.UI
         public static By EscEscrowTaxCalculationsInputsTaxInstallmentAmount = By.XPath("//div[@title='Tax Installment Amount']//input");
 
         public static By EscrowTaxInfoGridRowCount = By.XPath("//section[@id='EscrowTaxGrid']//tbody/tr");
-        public static By EscrowTaxInfoGridNumber = By.XPath("//section[@id='EscrowTaxGrid']//tbody/tr/td[1]//span");
-        public static By EscrowTaxInfoGridInstallmentDate = By.XPath("//section[@id='EscrowTaxGrid']//tbody/tr/td[2]//span");
-        public static By EscrowTaxInfoGridTaxInstallmentAmount = By.XPath("//section[@id='EscrowTaxGrid']//tbody/tr/td[3]//span");
+        public static By EscrowTaxInfoGridNumberFR = By.XPath("//section[@id='EscrowTaxGrid']//tbody/tr[1]/td[1]//span");
+        public static By EscrowTaxInfoGridInstallmentDateFR = By.XPath("//section[@id='EscrowTaxGrid']//tbody/tr[1]/td[2]//span");
+        public static By EscrowTaxInfoGridTaxInstallmentAmountFR = By.XPath("//section[@id='EscrowTaxGrid']//tbody/tr[1]/td[3]//span");
+
+        public static By EscrowTaxInfoGridNumberSR = By.XPath("//section[@id='EscrowTaxGrid']//tbody/tr[2]/td[1]//span");
+        public static By EscrowTaxInfoGridInstallmentDateSR = By.XPath("//section[@id='EscrowTaxGrid']//tbody/tr[2]/td[2]//span");
+        public static By EscrowTaxInfoGridTaxInstallmentAmountSR = By.XPath("//section[@id='EscrowTaxGrid']//tbody/tr[2]/td[3]//span");
 
         public static By EscEscrowTaxCalculationsInputsAddButton = By.XPath("//div[@id='EscrowTaxCalculationsGridInputs']//div[4]//button");
 

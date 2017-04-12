@@ -11,33 +11,36 @@ namespace TRID.CommonUtils
     {
         private static string FilePath => ConfigurationManager.AppSettings["ExcelFilePath"];
 
-        public string GetExcelCellValues(string sheetName, int row, int col)
-        {
-            Excel.Application xApplication = new Excel.Application();
-            Excel.Workbook xWorkbook = xApplication.Workbooks.Open(FilePath);
-            Excel.Worksheet xWorksheet = xWorkbook.Sheets[sheetName];
-            Excel.Range xRange = xWorksheet.UsedRange;
-            var data = xRange.Cells[row, col].Value2.ToString();
+        //Get a cell value in single time of execution
+        //public string GetExcelCellValues(string sheetName, int row, int col)
+        //{
+        //    Excel.Application xApplication = new Excel.Application();
+        //    Excel.Workbook xWorkbook = xApplication.Workbooks.Open(FilePath);
+        //    Excel.Worksheet xWorksheet = xWorkbook.Sheets[sheetName];
+        //    Excel.Range xRange = xWorksheet.UsedRange;
+        //    var data = xRange.Cells[row, col].Value2.ToString();
             
-            //cleanup
-            GC.Collect();
-            GC.WaitForPendingFinalizers();
+        //    //cleanup
+        //    GC.Collect();
+        //    GC.WaitForPendingFinalizers();
 
-            //release com objects to fully kill excel process from running in the background
-            Marshal.ReleaseComObject(xRange);
-            Marshal.ReleaseComObject(xWorksheet);
+        //    //release com objects to fully kill excel process from running in the background
+        //    Marshal.ReleaseComObject(xRange);
+        //    Marshal.ReleaseComObject(xWorksheet);
 
-            //close and release
-            xWorkbook.Close();
-            Marshal.ReleaseComObject(xWorkbook);
+        //    //close and release
+        //    xWorkbook.Close();
+        //    Marshal.ReleaseComObject(xWorkbook);
 
-            //quit and release
-            xApplication.Quit();
-            Marshal.ReleaseComObject(xApplication);
+        //    //quit and release
+        //    xApplication.Quit();
+        //    Marshal.ReleaseComObject(xApplication);
 
-            return data;
-        }
+        //    return data;
+        //}
 
+
+        // Get Excel sheet all cell values
         public string GetExcelValues(int scenarioNo, string sheetName)
         {
             var xApplication = new Excel.Application();

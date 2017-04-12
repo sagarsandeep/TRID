@@ -31,13 +31,22 @@ namespace TRID.StepDefinitions
         [Given(@"user is at TRID application homepage")]
         public void GivenUserIsAtTridApplicationHomepage()
         {
-            //UIActions.WindowMaximize();
+            UIActions.WindowMaximize();
             UIActions.GoToUrl(Url + "?tKey=EB535076-2140-4106-8CAE-B230F6E2D082&aKey=TRID");
             Thread.Sleep(5000);
-            //Thread.Sleep(3000);
-            //UIActions.Click(PrepaidChargesLink);
             UIActions.WebDriverWait(PcPrepaidChargesText, 60);
             Thread.Sleep(5000);
+
+            UIActions.Click(StartNewLoanLink);
+            Thread.Sleep(5000);
+            UIActions.Click(SnlResetButton);
+            Thread.Sleep(5000);
+
+            UIActions.Click(PrepaidChargesLink);
+            Thread.Sleep(3000);
+            UIActions.WebDriverWait(PcPrepaidChargesText, 60);
+            Thread.Sleep(5000);
+
         }
        
         [Given(@"user have all the input values from Excel sheet (.*) for scenario (.*)")]
