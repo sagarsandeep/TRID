@@ -163,11 +163,14 @@ namespace TRID.ProjectLibs.Common
 
                 UIActions.Click(UIElements.MiAddButton);
                 Thread.Sleep(5000);
+
+                UIActions.Click(UIElements.MiTestButton);
+                Thread.Sleep(5000);
             }
             else
             {
                 PmiRatesGridValidation();
-                UIActions.Click(UIElements.MiAddButton);
+                UIActions.Click(UIElements.MiTestButton);
                 Thread.Sleep(5000);
             }
         }

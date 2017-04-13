@@ -59,6 +59,14 @@ namespace TRID.ActionClasses
                new WebDriverWait(ObjectRepo.Driver, TimeSpan.FromSeconds(timeoutInSeconds)).Until(ExpectedConditions.VisibilityOfAllElementsLocatedBy(element));
         }
 
+
+        static Actions _actions = new Actions(ObjectRepo.Driver);
+        public static void MouseHoverOver(By element)
+        {
+            var webElement = ObjectRepo.Driver.FindElement(element);
+            _actions.MoveToElement(webElement).Perform();
+        }
+
         public static void Quit()
         {
             ObjectRepo.Driver.Quit();

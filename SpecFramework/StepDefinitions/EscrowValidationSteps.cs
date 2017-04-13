@@ -52,8 +52,9 @@ namespace TRID.StepDefinitions
         [When(@"user enters values for Escrow Calculations start period Date")]
         public void WhenUserEntersValuesForEscrowCalculationsStartPeriodDate()
         {
+            var escrowCalculationStartPeriodDate = DateTime.FromOADate(Convert.ToDouble(TridVariable.EscrowCalculationStartPeriodDate)).ToString("MM/dd/yyyy");
             UIActions.Clear(EscEscrowCalculationStartPeriodDate);
-            UIActions.GiveInput(EscEscrowCalculationStartPeriodDate, TridVariable.EscrowCalculationStartPeriodDate);
+            UIActions.GiveInput(EscEscrowCalculationStartPeriodDate, escrowCalculationStartPeriodDate);
         }
         
         [When(@"user enters values for Cushion Months for Insurance")]
@@ -85,8 +86,11 @@ namespace TRID.StepDefinitions
             UIActions.Clear(EscEscrowInstallmentInputsNumber);
             UIActions.GiveInput(EscEscrowInstallmentInputsNumber, TridVariable.EscrowInstallmentInputsNumber);
 
+            Thread.Sleep(3000);
+            var dateForEscrowInsurance = DateTime.FromOADate(Convert.ToDouble(TridVariable.DateForEscrowInsurance)).ToString("MM/dd/yyyy");
             UIActions.Clear(EscDateForEscrowInsurance);
-            UIActions.GiveInput(EscDateForEscrowInsurance, TridVariable.DateForEscrowInsurance);
+            UIActions.GiveInput(EscDateForEscrowInsurance, dateForEscrowInsurance);
+            Thread.Sleep(3000);
 
             UIActions.Clear(EscInsuranceInstallmentAmount);
             UIActions.GiveInput(EscInsuranceInstallmentAmount, TridVariable.InsuranceInstallmentAmount);
@@ -95,8 +99,8 @@ namespace TRID.StepDefinitions
             Thread.Sleep(3000);
 
             Assert.AreEqual(TridVariable.EscrowInstallmentInputsNumber, UIActions.GetText(EscrowInstallmentInfoGridNumber), "Escrow Installment Info Number value does not matches as expected");
-            Assert.AreEqual(TridVariable.DateForEscrowInsurance, UIActions.GetText(EscrowInstallmentInfoGridInstallmentDate), "Escrow Installment Info Number value does not matches as expected");
-            Assert.AreEqual(TridVariable.InsuranceInstallmentAmount, UIActions.GetText(EscrowInstallmentInfoGridInstallmentAmount), "Escrow Installment Info Number value does not matches as expected");
+            Assert.AreEqual(dateForEscrowInsurance, UIActions.GetText(EscrowInstallmentInfoGridInstallmentDate), "Escrow Installment Info Date value does not matches as expected");
+            Assert.AreEqual(TridVariable.InsuranceInstallmentAmount, UIActions.GetText(EscrowInstallmentInfoGridInstallmentAmount), "Escrow Installment Info Amount value does not matches as expected");
         }
         
         [When(@"user enters values for Escrow Tax Calculations Inputs")]
@@ -107,8 +111,11 @@ namespace TRID.StepDefinitions
             UIActions.Clear(EscEscrowTaxCalculationsInputsNumber);
             UIActions.GiveInput(EscEscrowTaxCalculationsInputsNumber, TridVariable.EscrowTaxCalculationsInputsNumberFR);
 
+            Thread.Sleep(3000);
+            var escrowTaxCalculationsInputsDateFR = DateTime.FromOADate(Convert.ToDouble(TridVariable.EscrowTaxCalculationsInputsDateFR)).ToString("MM/dd/yyyy");
             UIActions.Clear(EscEscrowTaxCalculationsInputsDate);
-            UIActions.GiveInput(EscEscrowTaxCalculationsInputsDate, TridVariable.EscrowTaxCalculationsInputsDateFR);
+            UIActions.GiveInput(EscEscrowTaxCalculationsInputsDate, escrowTaxCalculationsInputsDateFR);
+            Thread.Sleep(3000);
 
             UIActions.Clear(EscEscrowTaxCalculationsInputsTaxInstallmentAmount);
             UIActions.GiveInput(EscEscrowTaxCalculationsInputsTaxInstallmentAmount, TridVariable.EscrowTaxCalculationsInputsTaxInstallmentAmountFR);
@@ -119,8 +126,11 @@ namespace TRID.StepDefinitions
             UIActions.Clear(EscEscrowTaxCalculationsInputsNumber);
             UIActions.GiveInput(EscEscrowTaxCalculationsInputsNumber, TridVariable.EscrowTaxCalculationsInputsNumberSR);
 
+            Thread.Sleep(3000);
+            var escrowTaxCalculationsInputsDateSR = DateTime.FromOADate(Convert.ToDouble(TridVariable.EscrowTaxCalculationsInputsDateSR)).ToString("MM/dd/yyyy");
             UIActions.Clear(EscEscrowTaxCalculationsInputsDate);
-            UIActions.GiveInput(EscEscrowTaxCalculationsInputsDate, TridVariable.EscrowTaxCalculationsInputsDateSR);
+            UIActions.GiveInput(EscEscrowTaxCalculationsInputsDate, escrowTaxCalculationsInputsDateSR);
+            Thread.Sleep(3000);
 
             UIActions.Clear(EscEscrowTaxCalculationsInputsTaxInstallmentAmount);
             UIActions.GiveInput(EscEscrowTaxCalculationsInputsTaxInstallmentAmount, TridVariable.EscrowTaxCalculationsInputsTaxInstallmentAmountSR);
@@ -129,25 +139,29 @@ namespace TRID.StepDefinitions
             Thread.Sleep(3000);
 
             Assert.AreEqual(TridVariable.EscrowTaxCalculationsInputsNumberFR, UIActions.GetText(EscrowTaxInfoGridNumberFR), "Escrow Installment Info Number value does not matches as expected");
-            Assert.AreEqual(TridVariable.EscrowTaxCalculationsInputsDateFR, UIActions.GetText(EscrowTaxInfoGridInstallmentDateFR), "Escrow Installment Info Number value does not matches as expected");
+            Assert.AreEqual(escrowTaxCalculationsInputsDateFR, UIActions.GetText(EscrowTaxInfoGridInstallmentDateFR), "Escrow Installment Info Number value does not matches as expected");
             Assert.AreEqual(TridVariable.EscrowTaxCalculationsInputsTaxInstallmentAmountFR, UIActions.GetText(EscrowTaxInfoGridTaxInstallmentAmountFR), "Escrow Installment Info Number value does not matches as expected");
 
             Assert.AreEqual(TridVariable.EscrowTaxCalculationsInputsNumberSR, UIActions.GetText(EscrowTaxInfoGridNumberSR), "Escrow Installment Info Number value does not matches as expected");
-            Assert.AreEqual(TridVariable.EscrowTaxCalculationsInputsDateSR, UIActions.GetText(EscrowTaxInfoGridInstallmentDateSR), "Escrow Installment Info Number value does not matches as expected");
+            Assert.AreEqual(escrowTaxCalculationsInputsDateSR, UIActions.GetText(EscrowTaxInfoGridInstallmentDateSR), "Escrow Installment Info Number value does not matches as expected");
             Assert.AreEqual(TridVariable.EscrowTaxCalculationsInputsTaxInstallmentAmountSR, UIActions.GetText(EscrowTaxInfoGridTaxInstallmentAmountSR), "Escrow Installment Info Number value does not matches as expected");
         }
         
         [When(@"user enters values for Escrow PMI Calculations Inputs")]
         public void WhenUserEntersValuesForEscrowPmiCalculationsInputs()
         {
+            var ecrowInputForPmiCalculationEscrowPmiDate = DateTime.FromOADate(Convert.ToDouble(TridVariable.EscrowInputForPmiCalculationEscrowPmiDate)).ToString("M/d/yyyy");
             UIActions.Clear(EscEscrowInputForPmiCalculationEscrowPmiDate);
-            UIActions.GiveInput(EscEscrowInputForPmiCalculationEscrowPmiDate, TridVariable.EscrowInputForPmiCalculationEscrowPmiDate);
+            UIActions.GiveInput(EscEscrowInputForPmiCalculationEscrowPmiDate, ecrowInputForPmiCalculationEscrowPmiDate);
         }
 
 
         [When(@"user clicks on Escrow Calculation Input Test Button")]
         public void WhenUserClicksOnEscrowCalculationInputTestButton()
         {
+
+            UIActions.MouseHoverOver(EscEscrowCalcInputsText);
+            Thread.Sleep(3000);
             UIActions.Click(EscEscrowCalculationInputTestButton);
             Thread.Sleep(5000);
         }

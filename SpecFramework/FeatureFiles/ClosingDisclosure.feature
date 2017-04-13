@@ -586,6 +586,20 @@ When user navigate to Mortgage Insurance Page
 	And Enter Disclosed input values for Closing Disclosure page
 	And click on Loan Details TEST on Closing Disclosure page
 	And click on Disclosure TEST on Closing Disclosure page
+	And user navigate to Escrow Page
+	And user selects value for Is Ins Escrowed
+	And user selects value for Is Tax Escrowed
+	And user selects value for Is PMI Escrowed
+	And user enters values for Escrow Calculations start period Date
+	And user enters values for Cushion Months for Insurance
+	And user enters values for Cushion Months for Tax
+	And user enters values for Escrow insurance Inputs
+	And user enters values for Escrow Tax Calculations Inputs
+	And user enters values for Escrow PMI Calculations Inputs
+	And user clicks on Escrow Calculation Input Test Button
+	And user enters all other input values in Escrow Page
+	And user clicks on Disclosure For Escrow Test Button
+	And user navigate to Closing Disclosure Page
 Then updated/computed pmi value should display on Closing Disclosure
 	Examples: 
 	| No | pcScenarioNo | pcSheetName    | miScenarioNo | miSheetName       | cdScenarioNo | cdSheetName       | eScenarioNo | eSheetName |
@@ -621,6 +635,20 @@ When user navigate to Mortgage Insurance Page
 	And Enter Disclosed input values for Closing Disclosure page
 	And click on Loan Details TEST on Closing Disclosure page
 	And click on Disclosure TEST on Closing Disclosure page
+	And user navigate to Escrow Page
+	And user selects value for Is Ins Escrowed
+	And user selects value for Is Tax Escrowed
+	And user selects value for Is PMI Escrowed
+	And user enters values for Escrow Calculations start period Date
+	And user enters values for Cushion Months for Insurance
+	And user enters values for Cushion Months for Tax
+	And user enters values for Escrow insurance Inputs
+	And user enters values for Escrow Tax Calculations Inputs
+	And user enters values for Escrow PMI Calculations Inputs
+	And user clicks on Escrow Calculation Input Test Button
+	And user enters all other input values in Escrow Page
+	And user clicks on Disclosure For Escrow Test Button
+	And user navigate to Closing Disclosure Page
 Then updated/computed Drop off years for PMI value should display on Closing Disclosure
 	Examples: 
 	| No | pcScenarioNo | pcSheetName    | miScenarioNo | miSheetName       | cdScenarioNo | cdSheetName       | eScenarioNo | eSheetName |
@@ -656,6 +684,20 @@ When user navigate to Mortgage Insurance Page
 	And Enter Disclosed input values for Closing Disclosure page
 	And click on Loan Details TEST on Closing Disclosure page
 	And click on Disclosure TEST on Closing Disclosure page
+	And user navigate to Escrow Page
+	And user selects value for Is Ins Escrowed
+	And user selects value for Is Tax Escrowed
+	And user selects value for Is PMI Escrowed
+	And user enters values for Escrow Calculations start period Date
+	And user enters values for Cushion Months for Insurance
+	And user enters values for Cushion Months for Tax
+	And user enters values for Escrow insurance Inputs
+	And user enters values for Escrow Tax Calculations Inputs
+	And user enters values for Escrow PMI Calculations Inputs
+	And user clicks on Escrow Calculation Input Test Button
+	And user enters all other input values in Escrow Page
+	And user clicks on Disclosure For Escrow Test Button
+	And user navigate to Closing Disclosure Page
 Then updated/computed Total Period Payment value should display on Closing Disclosure
 	Examples: 
 	| No | pcScenarioNo | pcSheetName    | miScenarioNo | miSheetName       | cdScenarioNo | cdSheetName       | eScenarioNo | eSheetName |
@@ -691,6 +733,20 @@ When user navigate to Mortgage Insurance Page
 	And Enter Disclosed input values for Closing Disclosure page
 	And click on Loan Details TEST on Closing Disclosure page
 	And click on Disclosure TEST on Closing Disclosure page
+	And user navigate to Escrow Page
+	And user selects value for Is Ins Escrowed
+	And user selects value for Is Tax Escrowed
+	And user selects value for Is PMI Escrowed
+	And user enters values for Escrow Calculations start period Date
+	And user enters values for Cushion Months for Insurance
+	And user enters values for Cushion Months for Tax
+	And user enters values for Escrow insurance Inputs
+	And user enters values for Escrow Tax Calculations Inputs
+	And user enters values for Escrow PMI Calculations Inputs
+	And user clicks on Escrow Calculation Input Test Button
+	And user enters all other input values in Escrow Page
+	And user clicks on Disclosure For Escrow Test Button
+	And user navigate to Closing Disclosure Page
 Then updated/computed APR value should display on Closing Disclosure
 	Examples: 
 	| No | pcScenarioNo | pcSheetName    | miScenarioNo | miSheetName       | cdScenarioNo | cdSheetName       | eScenarioNo | eSheetName |
@@ -726,6 +782,20 @@ When user navigate to Mortgage Insurance Page
 	And Enter Disclosed input values for Closing Disclosure page
 	And click on Loan Details TEST on Closing Disclosure page
 	And click on Disclosure TEST on Closing Disclosure page
+	And user navigate to Escrow Page
+	And user selects value for Is Ins Escrowed
+	And user selects value for Is Tax Escrowed
+	And user selects value for Is PMI Escrowed
+	And user enters values for Escrow Calculations start period Date
+	And user enters values for Cushion Months for Insurance
+	And user enters values for Cushion Months for Tax
+	And user enters values for Escrow insurance Inputs
+	And user enters values for Escrow Tax Calculations Inputs
+	And user enters values for Escrow PMI Calculations Inputs
+	And user clicks on Escrow Calculation Input Test Button
+	And user enters all other input values in Escrow Page
+	And user clicks on Disclosure For Escrow Test Button
+	And user navigate to Closing Disclosure Page
 Then updated/computed Balloon Amount value should display on Closing Disclosure
 	Examples: 
 	| No | pcScenarioNo | pcSheetName    | miScenarioNo | miSheetName       | cdScenarioNo | cdSheetName       | eScenarioNo | eSheetName |
@@ -761,6 +831,20 @@ When user navigate to Mortgage Insurance Page
 	And Enter Disclosed input values for Closing Disclosure page
 	And click on Loan Details TEST on Closing Disclosure page
 	And click on Disclosure TEST on Closing Disclosure page
+	And user navigate to Escrow Page
+	And user selects value for Is Ins Escrowed
+	And user selects value for Is Tax Escrowed
+	And user selects value for Is PMI Escrowed
+	And user enters values for Escrow Calculations start period Date
+	And user enters values for Cushion Months for Insurance
+	And user enters values for Cushion Months for Tax
+	And user enters values for Escrow insurance Inputs
+	And user enters values for Escrow Tax Calculations Inputs
+	And user enters values for Escrow PMI Calculations Inputs
+	And user clicks on Escrow Calculation Input Test Button
+	And user enters all other input values in Escrow Page
+	And user clicks on Disclosure For Escrow Test Button
+	And user navigate to Closing Disclosure Page
 Then updated/computed Total of Payments value should display on Closing Disclosure
 	Examples: 
 	| No | pcScenarioNo | pcSheetName    | miScenarioNo | miSheetName       | cdScenarioNo | cdSheetName       | eScenarioNo | eSheetName |
@@ -796,6 +880,20 @@ When user navigate to Mortgage Insurance Page
 	And Enter Disclosed input values for Closing Disclosure page
 	And click on Loan Details TEST on Closing Disclosure page
 	And click on Disclosure TEST on Closing Disclosure page
+	And user navigate to Escrow Page
+	And user selects value for Is Ins Escrowed
+	And user selects value for Is Tax Escrowed
+	And user selects value for Is PMI Escrowed
+	And user enters values for Escrow Calculations start period Date
+	And user enters values for Cushion Months for Insurance
+	And user enters values for Cushion Months for Tax
+	And user enters values for Escrow insurance Inputs
+	And user enters values for Escrow Tax Calculations Inputs
+	And user enters values for Escrow PMI Calculations Inputs
+	And user clicks on Escrow Calculation Input Test Button
+	And user enters all other input values in Escrow Page
+	And user clicks on Disclosure For Escrow Test Button
+	And user navigate to Closing Disclosure Page
 Then updated/computed Finance Charge value should display on Closing Disclosure
 	Examples: 
 	| No | pcScenarioNo | pcSheetName    | miScenarioNo | miSheetName       | cdScenarioNo | cdSheetName       | eScenarioNo | eSheetName |
@@ -831,6 +929,20 @@ When user navigate to Mortgage Insurance Page
 	And Enter Disclosed input values for Closing Disclosure page
 	And click on Loan Details TEST on Closing Disclosure page
 	And click on Disclosure TEST on Closing Disclosure page
+	And user navigate to Escrow Page
+	And user selects value for Is Ins Escrowed
+	And user selects value for Is Tax Escrowed
+	And user selects value for Is PMI Escrowed
+	And user enters values for Escrow Calculations start period Date
+	And user enters values for Cushion Months for Insurance
+	And user enters values for Cushion Months for Tax
+	And user enters values for Escrow insurance Inputs
+	And user enters values for Escrow Tax Calculations Inputs
+	And user enters values for Escrow PMI Calculations Inputs
+	And user clicks on Escrow Calculation Input Test Button
+	And user enters all other input values in Escrow Page
+	And user clicks on Disclosure For Escrow Test Button
+	And user navigate to Closing Disclosure Page
 Then updated/computed Prepaid Charges value should display on Closing Disclosure
 	Examples: 
 	| No | pcScenarioNo | pcSheetName    | miScenarioNo | miSheetName       | cdScenarioNo | cdSheetName       | eScenarioNo | eSheetName |
@@ -866,6 +978,21 @@ When user navigate to Mortgage Insurance Page
 	And Enter Disclosed input values for Closing Disclosure page
 	And click on Loan Details TEST on Closing Disclosure page
 	And click on Disclosure TEST on Closing Disclosure page
+	And user navigate to Escrow Page
+	And user selects value for Is Ins Escrowed
+	And user selects value for Is Tax Escrowed
+	And user selects value for Is PMI Escrowed
+	And user enters values for Escrow Calculations start period Date
+	And user enters values for Cushion Months for Insurance
+	And user enters values for Cushion Months for Tax
+	And user enters values for Escrow insurance Inputs
+	And user enters values for Escrow Tax Calculations Inputs
+	And user enters values for Escrow PMI Calculations Inputs
+	And user enters values for Cushion Months for Insurance
+	And user clicks on Escrow Calculation Input Test Button
+	And user enters all other input values in Escrow Page
+	And user clicks on Disclosure For Escrow Test Button
+	And user navigate to Closing Disclosure Page
 Then updated/computed Amount Financed value should display on Closing Disclosure
 	Examples: 
 	| No | pcScenarioNo | pcSheetName    | miScenarioNo | miSheetName       | cdScenarioNo | cdSheetName       | eScenarioNo | eSheetName |
@@ -900,6 +1027,20 @@ When user navigate to Mortgage Insurance Page
 	And Enter Disclosed input values for Closing Disclosure page
 	And click on Loan Details TEST on Closing Disclosure page
 	And click on Disclosure TEST on Closing Disclosure page
+	And user navigate to Escrow Page
+	And user selects value for Is Ins Escrowed
+	And user selects value for Is Tax Escrowed
+	And user selects value for Is PMI Escrowed
+	And user enters values for Escrow Calculations start period Date
+	And user enters values for Cushion Months for Insurance
+	And user enters values for Cushion Months for Tax
+	And user enters values for Escrow insurance Inputs
+	And user enters values for Escrow Tax Calculations Inputs
+	And user enters values for Escrow PMI Calculations Inputs
+	And user clicks on Escrow Calculation Input Test Button
+	And user enters all other input values in Escrow Page
+	And user clicks on Disclosure For Escrow Test Button
+	And user navigate to Closing Disclosure Page
 Then updated/computed Escrow Property Costs over one year value should display on Closing Disclosure
 	Examples: 
 	| No | pcScenarioNo | pcSheetName    | miScenarioNo | miSheetName       | cdScenarioNo | cdSheetName       | eScenarioNo | eSheetName |
@@ -935,6 +1076,20 @@ When user navigate to Mortgage Insurance Page
 	And Enter Disclosed input values for Closing Disclosure page
 	And click on Loan Details TEST on Closing Disclosure page
 	And click on Disclosure TEST on Closing Disclosure page
+	And user navigate to Escrow Page
+	And user selects value for Is Ins Escrowed
+	And user selects value for Is Tax Escrowed
+	And user selects value for Is PMI Escrowed
+	And user enters values for Escrow Calculations start period Date
+	And user enters values for Cushion Months for Insurance
+	And user enters values for Cushion Months for Tax
+	And user enters values for Escrow insurance Inputs
+	And user enters values for Escrow Tax Calculations Inputs
+	And user enters values for Escrow PMI Calculations Inputs
+	And user clicks on Escrow Calculation Input Test Button
+	And user enters all other input values in Escrow Page
+	And user clicks on Disclosure For Escrow Test Button
+	And user navigate to Closing Disclosure Page
 Then updated/computed TIP value should display on Closing Disclosure
 	Examples: 
 	| No | pcScenarioNo | pcSheetName    | miScenarioNo | miSheetName       | cdScenarioNo | cdSheetName       | eScenarioNo | eSheetName |
@@ -970,6 +1125,20 @@ When user navigate to Mortgage Insurance Page
 	And Enter Disclosed input values for Closing Disclosure page
 	And click on Loan Details TEST on Closing Disclosure page
 	And click on Disclosure TEST on Closing Disclosure page
+	And user navigate to Escrow Page
+	And user selects value for Is Ins Escrowed
+	And user selects value for Is Tax Escrowed
+	And user selects value for Is PMI Escrowed
+	And user enters values for Escrow Calculations start period Date
+	And user enters values for Cushion Months for Insurance
+	And user enters values for Cushion Months for Tax
+	And user enters values for Escrow insurance Inputs
+	And user enters values for Escrow Tax Calculations Inputs
+	And user enters values for Escrow PMI Calculations Inputs
+	And user clicks on Escrow Calculation Input Test Button
+	And user enters all other input values in Escrow Page
+	And user clicks on Disclosure For Escrow Test Button
+	And user navigate to Closing Disclosure Page
 Then updated/computed Initial Escrow Payment value should display on Closing Disclosure
 	Examples: 
 	| No | pcScenarioNo | pcSheetName    | miScenarioNo | miSheetName       | cdScenarioNo | cdSheetName       | eScenarioNo | eSheetName |
@@ -1005,6 +1174,20 @@ When user navigate to Mortgage Insurance Page
 	And Enter Disclosed input values for Closing Disclosure page
 	And click on Loan Details TEST on Closing Disclosure page
 	And click on Disclosure TEST on Closing Disclosure page
+	And user navigate to Escrow Page
+	And user selects value for Is Ins Escrowed
+	And user selects value for Is Tax Escrowed
+	And user selects value for Is PMI Escrowed
+	And user enters values for Escrow Calculations start period Date
+	And user enters values for Cushion Months for Insurance
+	And user enters values for Cushion Months for Tax
+	And user enters values for Escrow insurance Inputs
+	And user enters values for Escrow Tax Calculations Inputs
+	And user enters values for Escrow PMI Calculations Inputs
+	And user clicks on Escrow Calculation Input Test Button
+	And user enters all other input values in Escrow Page
+	And user clicks on Disclosure For Escrow Test Button
+	And user navigate to Closing Disclosure Page
 Then updated/computed Non Escrow Property Costs over one year value should display on Closing Disclosure
 	Examples: 
 	| No | pcScenarioNo | pcSheetName    | miScenarioNo | miSheetName       | cdScenarioNo | cdSheetName       | eScenarioNo | eSheetName |
@@ -1039,6 +1222,20 @@ When user navigate to Mortgage Insurance Page
 	And Enter Disclosed input values for Closing Disclosure page
 	And click on Loan Details TEST on Closing Disclosure page
 	And click on Disclosure TEST on Closing Disclosure page
+	And user navigate to Escrow Page
+	And user selects value for Is Ins Escrowed
+	And user selects value for Is Tax Escrowed
+	And user selects value for Is PMI Escrowed
+	And user enters values for Escrow Calculations start period Date
+	And user enters values for Cushion Months for Insurance
+	And user enters values for Cushion Months for Tax
+	And user enters values for Escrow insurance Inputs
+	And user enters values for Escrow Tax Calculations Inputs
+	And user enters values for Escrow PMI Calculations Inputs
+	And user clicks on Escrow Calculation Input Test Button
+	And user enters all other input values in Escrow Page
+	And user clicks on Disclosure For Escrow Test Button
+	And user navigate to Closing Disclosure Page
 Then updated/computed Period Escrow Payment value should display on Closing Disclosure
 	Examples: 
 	| No | pcScenarioNo | pcSheetName    | miScenarioNo | miSheetName       | cdScenarioNo | cdSheetName       | eScenarioNo | eSheetName |
