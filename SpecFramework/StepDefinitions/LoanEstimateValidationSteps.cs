@@ -55,97 +55,99 @@ namespace TRID.StepDefinitions
         [When(@"user selects Calculation Method in Loan Estimate Page")]
         public void WhenUserSelectsCalculationMethodInDisclosurePage()
         {
-            ClosingDisclosureRadioButtonVariable();
-            UIActions.Click(LeCalculationMethod);
+            LoanDetailsRadioButtonVariable();
+            UIActions.Click(CalculationMethod);
         }
 
         [When(@"user selects loan type in Loan Estimate Page")]
         public void WhenUserSelectsLoanTypeInLoanEstimatePage()
         {
-            ClosingDisclosureRadioButtonVariable();
-            UIActions.Click(LeLoanType);
+            LoanDetailsRadioButtonVariable();
+            UIActions.Click(LoanType);
         }
 
         [When(@"user selects Frequency of Payments in Loan Estimate Page")]
         public void WhenUserSelectsFrequencyOfPaymentsInLoanEstimatePage()
         {
-            ClosingDisclosureRadioButtonVariable();
-            UIActions.Click(LeFrequencyOfPayments);
+            LoanDetailsRadioButtonVariable();
+            UIActions.Click(FrequencyOfPayments);
         }
 
         [When(@"user selects Loan Term in Loan Estimate Page")]
         public void WhenUserSelectsLoanTermInLoanEstimatePage()
         {
-            ClosingDisclosureRadioButtonVariable();
-            UIActions.Click(LeLoanTerm);
+            LoanDetailsRadioButtonVariable();
+            UIActions.Click(LoanTerm);
         }
 
         [When(@"user selects Repayment Term Type in Loan Estimate Page")]
         public void WhenUserSelectsRepaymentTermTypeInLoanEstimatePage()
         {
-            ClosingDisclosureRadioButtonVariable();
-            UIActions.Click(LeRepaymentTermType);
+            LoanDetailsRadioButtonVariable();
+            UIActions.Click(RepaymentTermType);
         }
 
         [When(@"Enter Loan detail input values for computation for Loan Estimate page")]
         public void WhenEnterLoanDetailInputValuesForComputationforLoanEstimatepage()
         {
             var loanTermValue = TridVariable.LoanTermValue;
-            UIActions.Clear(LeLoanTermValue);
-            UIActions.GiveInput(LeLoanTermValue, loanTermValue);
+            UIActions.Clear(LoanTermValue);
+            UIActions.GiveInput(LoanTermValue, loanTermValue);
 
             var loanAmount = TridVariable.LoanAmount;
-            UIActions.Clear(LeLoanAmount);
-            UIActions.GiveInput(LeLoanAmount, loanAmount);
+            UIActions.Clear(LoanAmount);
+            UIActions.GiveInput(LoanAmount, loanAmount);
 
             var rateOfInterest = TridVariable.RateOfInterest;
-            UIActions.Clear(LeRateOfInterest);
-            UIActions.GiveInput(LeRateOfInterest, rateOfInterest);
+            UIActions.Clear(RateOfInterest);
+            UIActions.GiveInput(RateOfInterest, rateOfInterest);
 
             var dateOfLoan = DateTime.FromOADate(Convert.ToDouble(TridVariable.DateOfLoan)).ToString("M/d/yyyy");
-            UIActions.Clear(LeDateOfLoan);
-            UIActions.GiveInput(LeDateOfLoan, dateOfLoan);
+            UIActions.Clear(DateOfLoan);
+            UIActions.GiveInput(DateOfLoan, dateOfLoan);
 
             var dateOfInterestBegins = DateTime.FromOADate(Convert.ToDouble(TridVariable.DateInterestBeginToAccrue)).ToString("M/d/yyyy");
-            UIActions.Clear(LeDateOfInterestBegins);
-            UIActions.GiveInput(LeDateOfInterestBegins, dateOfInterestBegins);
+            UIActions.Clear(DateOfInterestBegins);
+            UIActions.GiveInput(DateOfInterestBegins, dateOfInterestBegins);
 
             var dateOfFirstPayment = DateTime.FromOADate(Convert.ToDouble(TridVariable.DateOfFirstPayment)).ToString("M/d/yyyy");
-            UIActions.Clear(LeDateOfFirstPayment);
-            UIActions.GiveInput(LeDateOfFirstPayment, dateOfFirstPayment);
+            UIActions.Clear(DateOfFirstPayment);
+            UIActions.GiveInput(DateOfFirstPayment, dateOfFirstPayment);
 
             var periodPayment = TridVariable.PeriodPayment;
-            UIActions.Clear(LePeriodPayment);
-            UIActions.GiveInput(LePeriodPayment, periodPayment);
+            UIActions.Clear(PeriodPayment);
+            UIActions.GiveInput(PeriodPayment, periodPayment);
 
             var loanCostsForDisclosure = TridVariable.LoanCosts;
-            UIActions.Clear(LeLoanCostsForDisclosure);
-            UIActions.GiveInput(LeLoanCostsForDisclosure, loanCostsForDisclosure);
+            UIActions.Clear(LoanCostsForDisclosure);
+            UIActions.GiveInput(LoanCostsForDisclosure, loanCostsForDisclosure);
 
-            var finalBalloonPayment = TridVariable.FinalBalloonPayment;
-            UIActions.Clear(LeFinalBalloonPayment);
-            UIActions.GiveInput(LeFinalBalloonPayment, finalBalloonPayment);
+            //var finalBalloonPayment = TridVariable.FinalBalloonPayment;
+            //UIActions.Clear(FinalBalloonPayment);
+            //UIActions.GiveInput(FinalBalloonPayment, finalBalloonPayment);
         }
 
-        [When(@"Enter Disclosed input values for Loan Estimate Page")]
-        public void WhenEnterDisclosedInputValuesForLoanEstimatePage()
+        [When(@"user enters disclsoed input values for Loan Estimate")]
+        public void WhenUserEntersDisclsoedInputValuesForLoanEstimate()
         {
             var in5Years = TridVariable.DiscLosedIn5Years;
-            UIActions.Clear(LeDisclosedIn5Years);
-            UIActions.GiveInput(LeDisclosedIn5Years, in5Years);
+            UIActions.Clear(DisclosedIn5Years);
+            UIActions.GiveInput(DisclosedIn5Years, in5Years);
 
             var in5YearsPrincipal = TridVariable.DiscLosedIn5YearsPrincipal;
-            UIActions.Clear(LeDisclosedIn5YearsPrincipal);
-            UIActions.GiveInput(LeDisclosedIn5YearsPrincipal, in5YearsPrincipal);
+            UIActions.Clear(DisclosedIn5YearsPrincipal);
+            UIActions.GiveInput(DisclosedIn5YearsPrincipal, in5YearsPrincipal);
 
             var apr = TridVariable.DisclosedApr;
-            UIActions.Clear(LeDisclosedApr);
-            UIActions.GiveInput(LeDisclosedApr, apr);
+            UIActions.Clear(DisclosedApr);
+            UIActions.GiveInput(DisclosedApr, apr);
 
             var tip = TridVariable.DisclosedTip;
-            UIActions.Clear(LeDisclosedTip);
-            UIActions.GiveInput(LeDisclosedTip, tip);
+            UIActions.Clear(DisclosedTip);
+            UIActions.GiveInput(DisclosedTip, tip);
         }
+
+
 
         //[When(@"user enters input value for Loan Amount")]
         //public void WhenUserEntersInputValueForLoanAmount()
@@ -159,24 +161,24 @@ namespace TRID.StepDefinitions
         //public void WhenUserEntersInputValueForDateOfLoan()
         //{
         //    var dateOfLoan = DateTime.FromOADate(Convert.ToDouble(TridVariable.DateOfLoan)).ToString("d/M/yyyy");
-        //    UIActions.Clear(LeDateOfLoan);
-        //    UIActions.GiveInput(LeDateOfLoan, dateOfLoan);
+        //    UIActions.Clear(DateOfLoan);
+        //    UIActions.GiveInput(DateOfLoan, dateOfLoan);
         //}
 
         //[When(@"user enters input value for Date Interest Begins to Accrue")]
         //public void WhenUserEntersInputValueForDateInterestBeginsToAccrue()
         //{
         //    var dateOfInterestBegins = DateTime.FromOADate(Convert.ToDouble(TridVariable.DateInterestBeginToAccrue)).ToString("d/M/yyyy");
-        //    UIActions.Clear(LeDateOfInterestBegins);
-        //    UIActions.GiveInput(LeDateOfInterestBegins, dateOfInterestBegins);
+        //    UIActions.Clear(DateOfInterestBegins);
+        //    UIActions.GiveInput(DateOfInterestBegins, dateOfInterestBegins);
         //}
 
         //[When(@"user enters input value for Date of first Payment")]
         //public void WhenUserEntersInputValueForDateOfFirstPayment()
         //{
         //    var dateOfFirstPayment = DateTime.FromOADate(Convert.ToDouble(TridVariable.DateOfFirstPayment)).ToString("d/M/yyyy");
-        //    UIActions.Clear(LeDateOfFirstPayment);
-        //    UIActions.GiveInput(LeDateOfFirstPayment, dateOfFirstPayment);
+        //    UIActions.Clear(DateOfFirstPayment);
+        //    UIActions.GiveInput(DateOfFirstPayment, dateOfFirstPayment);
         //    Thread.Sleep(3000);
         //}
 
@@ -184,8 +186,8 @@ namespace TRID.StepDefinitions
         //public void WhenUserEntersInputValueForFinalBalloonPayment()
         //{
         //    var finalBalloonPayment = TridVariable.FinalBalloonPayment;
-        //    UIActions.Clear(LeFinalBalloonPayment);
-        //    UIActions.GiveInput(LeFinalBalloonPayment, finalBalloonPayment);
+        //    UIActions.Clear(FinalBalloonPayment);
+        //    UIActions.GiveInput(FinalBalloonPayment, finalBalloonPayment);
         //}
 
 
@@ -199,70 +201,70 @@ namespace TRID.StepDefinitions
 
             UIActions.Click(LoanEstimateLink);
             Thread.Sleep(3000);
-            UIActions.WebDriverWait(LeLoanDetailsText, 60);
+            //UIActions.WebDriverWait(LoanDetailsText, 60);
 
-            UIActions.Click(LeLoanDetailsTest);
+            //UIActions.Click(LoanDetailsTest);
             Thread.Sleep(5000);
         }
 
         //[When(@"select Frequency of Payment as Multiple of Months")]
         //public void WhenSelectFrequencyOfPaymentAsMultipleOfMonths()
         //{
-        //    UIActions.Click(LeFreqOfPaymentMultipleOfMonth);
+        //    UIActions.Click(FreqOfPaymentMultipleOfMonth);
         //}
 
         //[When(@"user enters input value under frequency of Pmt Value")]
         //public void WhenUserEntersInputValueUnderFrequencyOfPmtValue()
         //{
         //    var frequencyOfPaymentValue = TridVariable.FrequencyOfPmtValue;
-        //    UIActions.Clear(LeFreqOfPmtValue);
-        //    UIActions.GiveInput(LeFreqOfPmtValue, frequencyOfPaymentValue);
+        //    UIActions.Clear(FreqOfPmtValue);
+        //    UIActions.GiveInput(FreqOfPmtValue, frequencyOfPaymentValue);
         //}
 
         //[When(@"user enters the input value for Period Payment")]
         //public void WhenUserEntersTheInputValueForPeriodPayment()
         //{
         //    var periodPayment = TridVariable.PeriodPayment;
-        //    UIActions.Clear(LePeriodPayment);
-        //    UIActions.GiveInput(LePeriodPayment, periodPayment);
+        //    UIActions.Clear(PeriodPayment);
+        //    UIActions.GiveInput(PeriodPayment, periodPayment);
         //}
 
         //[When(@"select Frequency of Payment as Bi-Weekly")]
         //public void WhenSelectFrequencyOfPaymentAsBi_Weekly()
         //{
-        //    UIActions.Click(LeFreqOfPaymentBiWeekly);
+        //    UIActions.Click(FreqOfPaymentBiWeekly);
         //}
 
         //[When(@"frequency of Pmt Value should be empty")]
         //public void WhenFrequencyOfPmtValueShouldBeEmpty()
         //{
-        //    UIActions.Clear(LeFreqOfPmtValue);
+        //    UIActions.Clear(FreqOfPmtValue);
         //}
 
         //[When(@"select Frequency of Payment as semi Monthly")]
         //public void WhenSelectFrequencyOfPaymentAsSemiMonthly()
         //{
-        //    UIActions.Click(LeFreqOfPaymentSemiMonthly);
+        //    UIActions.Click(FreqOfPaymentSemiMonthly);
         //}
 
 
-        [Then(@"Amortization schedule should be calculated as expected for Feb 2017")]
-        public void ThenAmortizationScheduleShouldBeCalculatedAsExpectedForFeb()
-        {
-            var ExpectedAmortizationFeb2017Amount = "$606.68 = $197.71 + $408.97 + $0.00";
-            var actualAmortizationFeb2017Amount = UIActions.GetText(LeAmortizationFeb2017Amount);
+        //[Then(@"Amortization schedule should be calculated as expected for Feb 2017")]
+        //public void ThenAmortizationScheduleShouldBeCalculatedAsExpectedForFeb()
+        //{
+        //    var ExpectedAmortizationFeb2017Amount = "$606.68 = $197.71 + $408.97 + $0.00";
+        //    var actualAmortizationFeb2017Amount = UIActions.GetText(AmortizationFeb2017Amount);
 
-            Assert.AreEqual(ExpectedAmortizationFeb2017Amount, actualAmortizationFeb2017Amount, "Amortization Caluclation for Feb 2017 does not matches as expected");
-        }
+        //    Assert.AreEqual(ExpectedAmortizationFeb2017Amount, actualAmortizationFeb2017Amount, "Amortization Caluclation for Feb 2017 does not matches as expected");
+        //}
 
-        [Then(@"Amortization schedule should recaulcuate for Feb 2017")]
-        public void ThenAmortizationScheduleShouldRecaulcuateForFeb()
-        {
-            var ExpectedAmortizationFeb2017Amount = "$606.68 = $197.75 + $408.93 + $0.00";
-            var actualAmortizationFeb2017Amount = UIActions.GetText(LeAmortizationFeb2017Amount);
+        //[Then(@"Amortization schedule should recaulcuate for Feb 2017")]
+        //public void ThenAmortizationScheduleShouldRecaulcuateForFeb()
+        //{
+        //    var ExpectedAmortizationFeb2017Amount = "$606.68 = $197.75 + $408.93 + $0.00";
+        //    var actualAmortizationFeb2017Amount = UIActions.GetText(AmortizationFeb2017Amount);
 
-            Assert.AreEqual(ExpectedAmortizationFeb2017Amount, actualAmortizationFeb2017Amount, "Amortization Caluclation for Feb 2017 does not matches as expected");
-        }
+        //    Assert.AreEqual(ExpectedAmortizationFeb2017Amount, actualAmortizationFeb2017Amount, "Amortization Caluclation for Feb 2017 does not matches as expected");
+        //}
 
 
         #endregion

@@ -6,6 +6,7 @@ using TechTalk.SpecFlow;
 using TRID.ActionClasses;
 using TRID.CommonUtils;
 using TRID.ProjectLibs.Common;
+using TRID.ProjectLibs.UI;
 using TRID.TestClasses;
 
 namespace TRID.StepDefinitions
@@ -21,15 +22,15 @@ namespace TRID.StepDefinitions
         [Given(@"user launches TRID application")]
         public void GivenUserLaunchesTridApplication()
         {
-            UIActions.WebDriverWait(PcPrepaidChargesText, 60);
-            Thread.Sleep(5000);
+            //UIActions.WebDriverWait(PrepaidChargesText, 60);
+            //Thread.Sleep(5000);
         }
 
         [Given(@"user navigates to Mortgage Insurance Page")]
         public void GivenUserNavigatesToMortgageInsurancePage()
         {
-            UIActions.Click(MortgageInsuranceLink);
-            Thread.Sleep(5000);
+            //UIActions.Click(MortgageInsuranceLink);
+            //Thread.Sleep(5000);
         }
 
 
@@ -61,15 +62,49 @@ namespace TRID.StepDefinitions
         public void WhenUserEntersPmiRateValues()
         {
             ProjActions.AddPmiRate();
+            Thread.Sleep(3000);
             ProjActions.PmiRatesGridValidation();
         }
+
+        [When(@"user enters other pmi input values")]
+        public void WhenUserEntersOtherPmiInputValues()
+        {
+            var numberOfPrdsOfAdvcInsurance = TridVariable.NumberOfPrdsOfAdvcInsurance;
+            UIActions.Clear(NumberOfPeriodsofAdvanceInsCollected);
+            UIActions.GiveInput(NumberOfPeriodsofAdvanceInsCollected, numberOfPrdsOfAdvcInsurance);
+
+            var lowerOfCostOfAppraisal = TridVariable.LowerOfCostOfAppraisal;
+            UIActions.Clear(LowerOfCostOrAppraisal);
+            UIActions.GiveInput(LowerOfCostOrAppraisal, lowerOfCostOfAppraisal);
+
+            var totalMiInSectionFPrepaids = TridVariable.TotalMiInSectionFPrepaids;
+            UIActions.Clear(TotalMiInSectionFPrepaids);
+            UIActions.GiveInput(TotalMiInSectionFPrepaids, totalMiInSectionFPrepaids);
+
+            var totalMiInSectionGEscrow = TridVariable.TotalMiInSectionGEscrow;
+            UIActions.Clear(TotalMiInSectionGEscrow);
+            UIActions.GiveInput(TotalMiInSectionGEscrow, totalMiInSectionGEscrow);
+        }
+
 
         [When(@"user enter input value for Lower Of Cost Or Appraisal")]
         public void WhenUserEnterInputValueForLowerOfCostOrAppraisal()
         {
-            var lowerOfCostOfAppraisal = TridVariable.LowerOfCostOfAppraisal;
-            UIActions.Clear(MiLowerOfCostOrAppraisal);
-            UIActions.GiveInput(MiLowerOfCostOrAppraisal, lowerOfCostOfAppraisal);
+            //var numberOfPrdsOfAdvcInsurance = TridVariable.NumberOfPrdsOfAdvcInsurance;
+            //UIActions.Clear(NumberOfPeriodsofAdvanceInsCollected);
+            //UIActions.GiveInput(NumberOfPeriodsofAdvanceInsCollected, numberOfPrdsOfAdvcInsurance);
+
+            //var lowerOfCostOfAppraisal = TridVariable.LowerOfCostOfAppraisal;
+            //UIActions.Clear(LowerOfCostOrAppraisal);
+            //UIActions.GiveInput(LowerOfCostOrAppraisal, lowerOfCostOfAppraisal);
+
+            //var totalMiInSectionFPrepaids = TridVariable.TotalMiInSectionFPrepaids;
+            //UIActions.Clear(TotalMiInSectionFPrepaids);
+            //UIActions.GiveInput(TotalMiInSectionFPrepaids, totalMiInSectionFPrepaids);
+
+            //var totalMiInSectionGEscrow = TridVariable.TotalMiInSectionGEscrow;
+            //UIActions.Clear(TotalMiInSectionGEscrow);
+            //UIActions.GiveInput(TotalMiInSectionGEscrow, totalMiInSectionGEscrow);
         }
 
 
@@ -84,8 +119,8 @@ namespace TRID.StepDefinitions
         [When(@"user clicks on Mortgage Insurance Test Button")]
         public void WhenUserClicksOnMortgageInsuranceTestButton()
         {
-            UIActions.Click(MiTestButton);
-            Thread.Sleep(5000);
+            //UIActions.Click(TestButton);
+            //Thread.Sleep(5000);
         }
 
 
@@ -106,8 +141,8 @@ namespace TRID.StepDefinitions
         [When(@"user enters new (.*) other than default value for lower of cost or appraisal")]
         public void WhenUserEntersNewOtherThanDefaultValueForLowerOfCostOrAppraisal(string newInputValue)
         {
-            UIActions.Clear(MiLowerOfCostOrAppraisal);
-            UIActions.GiveInput(MiLowerOfCostOrAppraisal, newInputValue);
+            UIActions.Clear(LowerOfCostOrAppraisal);
+            UIActions.GiveInput(LowerOfCostOrAppraisal, newInputValue);
         }
 
 
@@ -126,7 +161,7 @@ namespace TRID.StepDefinitions
         //public void ThenDropOffYearsForPmiChangesTo(string computedDate)
         //{
         //    string dropOffYearsForPmi = computedDate;
-        //    string actualDropOffYearsForPmi = UIActions.GetText(MiDoyfpComputedValue);
+        //    string actualDropOffYearsForPmi = UIActions.GetText(DoyfpComputedValue);
 
         //    Assert.AreNotEqual(dropOffYearsForPmi,actualDropOffYearsForPmi, "Drop Off Years for PMI does not matches with expected result");
         //}

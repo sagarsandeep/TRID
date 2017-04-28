@@ -1,7 +1,5 @@
-﻿using System;
-using OpenQA.Selenium;
+﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
-using Protractor;
 using TRID.CommonUtils;
 using TRID.Config.Interfaces;
 

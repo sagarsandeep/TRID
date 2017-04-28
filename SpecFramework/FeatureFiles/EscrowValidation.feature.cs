@@ -61,7 +61,7 @@ namespace TRID.FeatureFiles
             testRunner.CollectScenarioErrors();
         }
         
-        public virtual void AddTwoNumbers(string no, string pcScenarioNo, string pcSheetName, string miScenarioNo, string miSheetName, string cdScenarioNo, string cdSheetName, string eScenarioNo, string eSheetName, string[] exampleTags)
+        public virtual void EscrowPage(string no, string pcScenarioNo, string pcSheetName, string miScenarioNo, string miSheetName, string cdScenarioNo, string cdSheetName, string eScenarioNo, string eSheetName, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "Escrow"};
@@ -69,7 +69,7 @@ namespace TRID.FeatureFiles
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Add two numbers", @__tags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Escrow Page", @__tags);
 #line 5
 this.ScenarioSetup(scenarioInfo);
 #line 6
@@ -140,75 +140,75 @@ testRunner.When("user navigate to Mortgage Insurance Page", ((string)(null)), ((
             this.ScenarioCleanup();
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Add two numbers, 1", new string[] {
+        [TechTalk.SpecRun.ScenarioAttribute("Escrow Page, 1", new string[] {
                 "Escrow"}, SourceLine=39)]
-        public virtual void AddTwoNumbers_1()
+        public virtual void EscrowPage_1()
         {
-            this.AddTwoNumbers("1", "1", "PrepaidCharges", "1", "MortgageInsurance", "1", "ClosingDisclosure", "1", "Escrow", ((string[])(null)));
+            this.EscrowPage("1", "1", "PrepaidCharges", "1", "MortgageInsurance", "1", "ClosingDisclosure", "1", "Escrow", ((string[])(null)));
 #line hidden
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Add two numbers, 2", new string[] {
+        [TechTalk.SpecRun.ScenarioAttribute("Escrow Page, 2", new string[] {
                 "Escrow"}, SourceLine=39)]
-        public virtual void AddTwoNumbers_2()
+        public virtual void EscrowPage_2()
         {
-            this.AddTwoNumbers("2", "1", "PrepaidCharges", "1", "MortgageInsurance", "2", "ClosingDisclosure", "2", "Escrow", ((string[])(null)));
+            this.EscrowPage("2", "1", "PrepaidCharges", "1", "MortgageInsurance", "2", "ClosingDisclosure", "2", "Escrow", ((string[])(null)));
 #line hidden
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Add two numbers, 3", new string[] {
+        [TechTalk.SpecRun.ScenarioAttribute("Escrow Page, 3", new string[] {
                 "Escrow"}, SourceLine=39)]
-        public virtual void AddTwoNumbers_3()
+        public virtual void EscrowPage_3()
         {
-            this.AddTwoNumbers("3", "1", "PrepaidCharges", "1", "MortgageInsurance", "3", "ClosingDisclosure", "3", "Escrow", ((string[])(null)));
+            this.EscrowPage("3", "1", "PrepaidCharges", "1", "MortgageInsurance", "3", "ClosingDisclosure", "3", "Escrow", ((string[])(null)));
 #line hidden
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Add two numbers, 4", new string[] {
+        [TechTalk.SpecRun.ScenarioAttribute("Escrow Page, 4", new string[] {
                 "Escrow"}, SourceLine=39)]
-        public virtual void AddTwoNumbers_4()
+        public virtual void EscrowPage_4()
         {
-            this.AddTwoNumbers("4", "1", "PrepaidCharges", "1", "MortgageInsurance", "4", "ClosingDisclosure", "4", "Escrow", ((string[])(null)));
+            this.EscrowPage("4", "1", "PrepaidCharges", "1", "MortgageInsurance", "4", "ClosingDisclosure", "4", "Escrow", ((string[])(null)));
 #line hidden
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Add two numbers, 5", new string[] {
+        [TechTalk.SpecRun.ScenarioAttribute("Escrow Page, 5", new string[] {
                 "Escrow"}, SourceLine=39)]
-        public virtual void AddTwoNumbers_5()
+        public virtual void EscrowPage_5()
         {
-            this.AddTwoNumbers("5", "1", "PrepaidCharges", "1", "MortgageInsurance", "5", "ClosingDisclosure", "5", "Escrow", ((string[])(null)));
+            this.EscrowPage("5", "1", "PrepaidCharges", "1", "MortgageInsurance", "5", "ClosingDisclosure", "5", "Escrow", ((string[])(null)));
 #line hidden
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Add two numbers, 6", new string[] {
+        [TechTalk.SpecRun.ScenarioAttribute("Escrow Page, 6", new string[] {
                 "Escrow"}, SourceLine=39)]
-        public virtual void AddTwoNumbers_6()
+        public virtual void EscrowPage_6()
         {
-            this.AddTwoNumbers("6", "1", "PrepaidCharges", "1", "MortgageInsurance", "6", "ClosingDisclosure", "6", "Escrow", ((string[])(null)));
+            this.EscrowPage("6", "1", "PrepaidCharges", "1", "MortgageInsurance", "6", "ClosingDisclosure", "6", "Escrow", ((string[])(null)));
 #line hidden
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Add two numbers, 7", new string[] {
+        [TechTalk.SpecRun.ScenarioAttribute("Escrow Page, 7", new string[] {
                 "Escrow"}, SourceLine=39)]
-        public virtual void AddTwoNumbers_7()
+        public virtual void EscrowPage_7()
         {
-            this.AddTwoNumbers("7", "1", "PrepaidCharges", "1", "MortgageInsurance", "7", "ClosingDisclosure", "7", "Escrow", ((string[])(null)));
+            this.EscrowPage("7", "1", "PrepaidCharges", "1", "MortgageInsurance", "7", "ClosingDisclosure", "7", "Escrow", ((string[])(null)));
 #line hidden
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Add two numbers, 8", new string[] {
+        [TechTalk.SpecRun.ScenarioAttribute("Escrow Page, 8", new string[] {
                 "Escrow"}, SourceLine=39)]
-        public virtual void AddTwoNumbers_8()
+        public virtual void EscrowPage_8()
         {
-            this.AddTwoNumbers("8", "1", "PrepaidCharges", "1", "MortgageInsurance", "8", "ClosingDisclosure", "8", "Escrow", ((string[])(null)));
+            this.EscrowPage("8", "1", "PrepaidCharges", "1", "MortgageInsurance", "8", "ClosingDisclosure", "8", "Escrow", ((string[])(null)));
 #line hidden
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Add two numbers, 9", new string[] {
+        [TechTalk.SpecRun.ScenarioAttribute("Escrow Page, 9", new string[] {
                 "Escrow"}, SourceLine=39)]
-        public virtual void AddTwoNumbers_9()
+        public virtual void EscrowPage_9()
         {
-            this.AddTwoNumbers("9", "1", "PrepaidCharges", "1", "MortgageInsurance", "9", "ClosingDisclosure", "9", "Escrow", ((string[])(null)));
+            this.EscrowPage("9", "1", "PrepaidCharges", "1", "MortgageInsurance", "9", "ClosingDisclosure", "9", "Escrow", ((string[])(null)));
 #line hidden
         }
         

@@ -63,22 +63,44 @@ namespace TRID.FeatureFiles
             testRunner.CollectScenarioErrors();
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Add two numbers", new string[] {
+        [TechTalk.SpecRun.ScenarioAttribute("Variable Loan DetailsGiven user is at TRID application homepage", new string[] {
                 "mytag"}, SourceLine=6)]
-        public virtual void AddTwoNumbers()
+        public virtual void VariableLoanDetailsGivenUserIsAtTRIDApplicationHomepage()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Add two numbers", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Variable Loan DetailsGiven user is at TRID application homepage", new string[] {
                         "mytag"});
 #line 7
 this.ScenarioSetup(scenarioInfo);
 #line 8
- testRunner.Given("I have entered 50 into the calculator", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.And("user have Prepaid Charges data from excel sheet <pcSheetName> for the scenario <p" +
+                    "cScenarioNo>", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 9
- testRunner.And("I have entered 70 into the calculator", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("user have closing disclosure data from excel sheet <cdSheetName> for the scenario" +
+                    " <cdScenarioNo>", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 10
- testRunner.When("I press add", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.And("user have Mortgage Insurance data from excel sheet <miSheetName> for the scenario" +
+                    " <miScenarioNo>", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 11
- testRunner.Then("the result should be 120 on the screen", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.And("user have Escrow data from excel sheet <eSheetName> for the scenario <eScenarioNo" +
+                    ">", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 12
+ testRunner.And("user is at Prepaid Charges page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 13
+ testRunner.And("all the input and custom fields for prepaid charges have zero values", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 14
+testRunner.When("user navigate to Mortgage Insurance Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 15
+ testRunner.And("user enters pmi rate values", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 16
+ testRunner.And("user navigate to Closing Disclosure Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 17
+ testRunner.And("user selects Calculation Method in Closing Disclosure Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 18
+ testRunner.And("user selects loan type in Closing Disclosure Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 19
+ testRunner.And("user navigate to Variable Loan Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 20
+ testRunner.And("user enters input values for Variable Loan Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }

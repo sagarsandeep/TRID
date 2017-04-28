@@ -2,7 +2,7 @@
 Escrow page validation with Insurance, Tax and PMI values
 
 @Escrow
-Scenario Outline: Add two numbers
+Scenario Outline: Escrow Page
 Given user is at TRID application homepage
 	And user have Prepaid Charges data from excel sheet <pcSheetName> for the scenario <pcScenarioNo>
 	And user have closing disclosure data from excel sheet <cdSheetName> for the scenario <cdScenarioNo>

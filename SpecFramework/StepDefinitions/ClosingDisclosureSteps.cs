@@ -19,13 +19,13 @@ namespace TRID.StepDefinitions
 
         #region Given
 
-        [Given(@"user is at Prepaid Charges page")]
-        public void GivenUserIsAtPrepaidChargesPage()
-        {
-            Thread.Sleep(3000);
-            UIActions.Click(PrepaidChargesLink);
-            UIActions.WebDriverWait(PcPrepaidChargesText, 60);
-        }
+        //[Given(@"user is at Prepaid Charges page")]
+        //public void GivenUserIsAtPrepaidChargesPage()
+        //{
+        //    Thread.Sleep(3000);
+        //    UIActions.Click(LoanDetailsText);
+        //    //UIActions.WebDriverWait(PrepaidChargesText, 60);
+        //}
 
 
         [Given(@"user is at TRID application homepage")]
@@ -34,19 +34,10 @@ namespace TRID.StepDefinitions
             UIActions.WindowMaximize();
             UIActions.GoToUrl(Url + "?tKey=EB535076-2140-4106-8CAE-B230F6E2D082&aKey=TRID");
             Thread.Sleep(5000);
-            UIActions.WebDriverWait(PcPrepaidChargesText, 60);
-            Thread.Sleep(5000);
+            UIActions.WebDriverWait(SnlStartNewLoanText, 60);
 
-            UIActions.Click(StartNewLoanLink);
-            Thread.Sleep(5000);
             UIActions.Click(SnlResetButton);
             Thread.Sleep(5000);
-
-            UIActions.Click(PrepaidChargesLink);
-            Thread.Sleep(3000);
-            UIActions.WebDriverWait(PcPrepaidChargesText, 60);
-            Thread.Sleep(5000);
-
         }
        
         [Given(@"user have all the input values from Excel sheet (.*) for scenario (.*)")]
@@ -65,8 +56,8 @@ namespace TRID.StepDefinitions
         [Given(@"user is at Mortgage Insurance Page")]
         public void GivenUserIsAtMortgageInsurancePage()
         {
-            UIActions.Click(MortgageInsuranceLink);
-            UIActions.WebDriverWait(MortgageInsuranceLink, 60);
+            //UIActions.Click(MortgageInsuranceLink);
+            //UIActions.WebDriverWait(MortgageInsuranceLink, 60);
         }
 
         [Given(@"PMI Rates Grid is empty")]
@@ -81,6 +72,16 @@ namespace TRID.StepDefinitions
 
         #region When
 
+        [When(@"user navigate to Loan Inputs Page")]
+        public void WhenUserNavigateToLoanInputsPage()
+        {
+            UIActions.Click(LoanInputsLink);
+            Thread.Sleep(5000);
+
+            UIActions.WebDriverWait(LoanDetailsText, 60);
+        }
+
+
         [When(@"user navigate to Closing Disclosure Page")]
         public void GivenUserNavigateToClosingClosingDisclosurePage()
         {
@@ -88,111 +89,158 @@ namespace TRID.StepDefinitions
             UIActions.WebDriverWait(CdLoanDetailsText, 60);
         }
 
-        [When(@"user selects Calculation Method in Closing Disclosure Page")]
+        [When(@"user selects Calculation Method")]
         public void WhenUserSelectsCalculationMethodInClosingDisclosurePage()
         {
-            ClosingDisclosureRadioButtonVariable();
-            UIActions.Click(CdCalculationMethod);
+            LoanDetailsRadioButtonVariable();
+            UIActions.Click(CalculationMethod);         
         }
 
-        [When(@"user selects loan type in Closing Disclosure Page")]
+        [When(@"user selects loan type")]
         public void WhenUserSelectsLoanTypeInClosingDisclosurePage()
         {
-            ClosingDisclosureRadioButtonVariable();
-            UIActions.Click(CdLoanType);
+            LoanDetailsRadioButtonVariable();
+            UIActions.Click(LoanType);
+
+            if (CalculationMethod.Equals("Variable"))
+            {
+                var firstTermChange = TridVariable.FirstTermChange;
+                UIActions.Clear(FirstTermChange);
+                UIActions.GiveInput(FirstTermChange, firstTermChange);
+
+                var subsequentTermChange = TridVariable.SubsequentTermChange;
+                UIActions.Clear(SubsequentTermChange);
+                UIActions.GiveInput(SubsequentTermChange, subsequentTermChange);
+
+                var dnRateCapFirstAdjustment = TridVariable.DnRateCapFirstAdjustment;
+                UIActions.Clear(DnRateCapFirstAdjustment);
+                UIActions.GiveInput(DnRateCapFirstAdjustment, dnRateCapFirstAdjustment);
+
+                var dnRateCapsubsequentAdjustment = TridVariable.DnRateCapsubsequentAdjustment;
+                UIActions.Clear(DnRateCapSubseqAdjustment);
+                UIActions.GiveInput(DnRateCapSubseqAdjustment, dnRateCapsubsequentAdjustment);
+
+                var upRateCapFirstAdjustment = TridVariable.UpRateCapFirstAdjustment;
+                UIActions.Clear(UpRateCapFirstAdjustment);
+                UIActions.GiveInput(UpRateCapFirstAdjustment, upRateCapFirstAdjustment);
+
+                var upRateCapsubsequentAdjustment = TridVariable.UpRateCapsubsequentAdjustment;
+                UIActions.Clear(UpRateCapSubseqAdjustment);
+                UIActions.GiveInput(UpRateCapSubseqAdjustment, upRateCapsubsequentAdjustment);
+
+                var floorRate = TridVariable.FloorRate;
+                UIActions.Clear(FloorRate);
+                UIActions.GiveInput(FloorRate, floorRate);
+
+                var maxRateEver = TridVariable.MaxRateEver;
+                UIActions.Clear(MaxRateEver);
+                UIActions.GiveInput(MaxRateEver, maxRateEver);
+
+                var index = TridVariable.Index;
+                UIActions.Clear(Index);
+                UIActions.GiveInput(Index, index);
+
+                var margin = TridVariable.Margin;
+                UIActions.Clear(Margin);
+                UIActions.GiveInput(Margin, margin);
+
+                var indexRate = TridVariable.RoundingFactor;
+                UIActions.Clear(Index);
+                UIActions.GiveInput(Index, indexRate);
+            }
         }
 
-        [When(@"user selects Frequency of Payments in Closing Disclosure Page")]
+        [When(@"user selects Frequency of Payments")]
         public void WhenUserSelectsFrequencyOfPaymentsInClosingDisclosurePage()
         {
-            ClosingDisclosureRadioButtonVariable();
-            UIActions.Click(CdFrequencyOfPayments);
+            LoanDetailsRadioButtonVariable();
+            UIActions.Click(FrequencyOfPayments);
         }
 
-        [When(@"user selects Loan Term in Closing Disclosure Page")]
+        [When(@"user selects Loan Term")]
         public void WhenUserSelectsLoanTermInClosingDisclosurePage()
         {
-            ClosingDisclosureRadioButtonVariable();
-            UIActions.Click(CdLoanTerm);
+            LoanDetailsRadioButtonVariable();
+            UIActions.Click(LoanTerm);
         }
 
-        [When(@"user selects Repayment Term Type in Closing Disclosure Page")]
+        [When(@"user selects Repayment Term Type")]
         public void WhenUserSelectsRepaymentTermTypeInClosingDisclosurePage()
         {
-            ClosingDisclosureRadioButtonVariable();
-            UIActions.Click(CdRepaymentTermType);
+            LoanDetailsRadioButtonVariable();
+            UIActions.Click(RepaymentTermType);
         }
 
-        [When(@"Enter Loan detail input values for computation for Closing Disclosure page")]
+        [When(@"Enter Loan detail input values for computation")]
         public void WhenEnterLoanDetailInputValuesForComputationforClosingDisclosurepage()
         {
             var loanTermValue = TridVariable.LoanTermValue;
-            UIActions.Clear(CdLoanTermValue);
-            UIActions.GiveInput(CdLoanTermValue, loanTermValue);
+            UIActions.Clear(LoanTermValue);
+            UIActions.GiveInput(LoanTermValue, loanTermValue);
 
             var loanAmount = TridVariable.LoanAmount;
-            UIActions.Clear(CdLoanAmount);
-            UIActions.GiveInput(CdLoanAmount, loanAmount);
+            UIActions.Clear(LoanAmount);
+            UIActions.GiveInput(LoanAmount, loanAmount);
 
             var rateOfInterest = TridVariable.RateOfInterest;
-            UIActions.Clear(CdRateOfInterest);
-            UIActions.GiveInput(CdRateOfInterest, rateOfInterest);
+            UIActions.Clear(RateOfInterest);
+            UIActions.GiveInput(RateOfInterest, rateOfInterest);
 
-            var dateOfLoan = DateTime.FromOADate(Convert.ToDouble(TridVariable.DateOfLoan)).ToString("M/d/yyyy");
-            UIActions.Clear(CdDateOfLoan);
-            UIActions.GiveInput(CdDateOfLoan, dateOfLoan);
+            var dateOfLoan = ProjActions.GetDate(TridVariable.DateOfLoan);
+            UIActions.Clear(DateOfLoan);
+            UIActions.GiveInput(DateOfLoan, dateOfLoan);
 
-            var dateOfInterestBegins = DateTime.FromOADate(Convert.ToDouble(TridVariable.DateInterestBeginToAccrue)).ToString("M/d/yyyy");
-            UIActions.Clear(CdDateOfInterestBegins);
-            UIActions.GiveInput(CdDateOfInterestBegins, dateOfInterestBegins);
+            var dateOfInterestBegins = ProjActions.GetDate(TridVariable.DateInterestBeginToAccrue);
+            UIActions.Clear(DateOfInterestBegins);
+            UIActions.GiveInput(DateOfInterestBegins, dateOfInterestBegins);
 
-            var dateOfFirstPayment = DateTime.FromOADate(Convert.ToDouble(TridVariable.DateOfFirstPayment)).ToString("M/d/yyyy");
-            UIActions.Clear(CdDateOfFirstPayment);
-            UIActions.GiveInput(CdDateOfFirstPayment, dateOfFirstPayment);
+            var dateOfFirstPayment = ProjActions.GetDate(TridVariable.DateOfFirstPayment);
+            UIActions.Clear(DateOfFirstPayment);
+            UIActions.GiveInput(DateOfFirstPayment, dateOfFirstPayment);
 
             var periodPayment = TridVariable.PeriodPayment;
-            UIActions.Clear(CdPeriodPayment);
-            UIActions.GiveInput(CdPeriodPayment, periodPayment);
+            UIActions.Clear(PeriodPayment);
+            UIActions.GiveInput(PeriodPayment, periodPayment);
 
             var loanCostsForDisclosure = TridVariable.LoanCosts;
-            UIActions.Clear(CdLoanCostsForDisclosure);
-            UIActions.GiveInput(CdLoanCostsForDisclosure, loanCostsForDisclosure);
+            UIActions.Clear(LoanCostsForDisclosure);
+            UIActions.GiveInput(LoanCostsForDisclosure, loanCostsForDisclosure);
 
-            var finalBalloonPayment = TridVariable.FinalBalloonPayment;
-            UIActions.Clear(CdFinalBalloonPayment);
-            UIActions.GiveInput(CdFinalBalloonPayment, finalBalloonPayment);
+            //var finalBalloonPayment = TridVariable.FinalBalloonPayment;
+            //UIActions.Clear(FinalBalloonPayment);
+            //UIActions.GiveInput(FinalBalloonPayment, finalBalloonPayment);
         }
 
         [When(@"Enter Disclosed input values for Closing Disclosure page")]
         public void WhenEnterDisclosedInputValuesForClosingDisclosurePage()
         {
             var monthlyPrincipalAndInterest = TridVariable.MonthlyPrincipalAndInterest;
-            UIActions.Clear(CdMonthlyPrincipalandInterest);
-            UIActions.GiveInput(CdMonthlyPrincipalandInterest, monthlyPrincipalAndInterest);
+            UIActions.Clear(DisclosedMonthlyPrincipalandInterest);
+            UIActions.GiveInput(DisclosedMonthlyPrincipalandInterest, monthlyPrincipalAndInterest);
 
             var monthlyPmi = TridVariable.MonthlyPmi;
-            UIActions.Clear(CdMonthlyPmi);
-            UIActions.GiveInput(CdMonthlyPmi, monthlyPmi);
+            UIActions.Clear(DisclosedMonthlyPmi);
+            UIActions.GiveInput(DisclosedMonthlyPmi, monthlyPmi);
 
             var totalMonhtlyPayment = TridVariable.TotalMonhtlyPayment;
-            UIActions.Clear(CdTotalMonthlyPayment);
-            UIActions.GiveInput(CdTotalMonthlyPayment, totalMonhtlyPayment);
+            UIActions.Clear(DisclosedTotalPeriodicPayment);
+            UIActions.GiveInput(DisclosedTotalPeriodicPayment, totalMonhtlyPayment);
 
-            var pmiTerminationDate = DateTime.FromOADate(Convert.ToDouble(TridVariable.PmiTerminationDate)).ToString("M/d/yyyy");
-            UIActions.Clear(CdPmiTerminalDate);
-            UIActions.GiveInput(CdPmiTerminalDate, pmiTerminationDate);
+            var pmiTerminationDate = ProjActions.GetDate(TridVariable.PmiTerminationDate);
+            UIActions.Clear(DisclosedPmiTerminalDate);
+            UIActions.GiveInput(DisclosedPmiTerminalDate, pmiTerminationDate);
 
-            var pmiCancelDate = DateTime.FromOADate(Convert.ToDouble(TridVariable.PmiCancelDate)).ToString("M/d/yyyy");
-            UIActions.Clear(CdPmiCancelDate);
-            UIActions.GiveInput(CdPmiCancelDate, pmiCancelDate);
+            var pmiCancelDate = ProjActions.GetDate(TridVariable.PmiCancelDate);
+            UIActions.Clear(DisclosedPmiCancelDate);
+            UIActions.GiveInput(DisclosedPmiCancelDate, pmiCancelDate);
 
             var disclosedFinalBalloonPayment = TridVariable.DisclosedFinalBalloonPayment;
-            UIActions.Clear(CdDisclosedFinalBalloonPayment);
-            UIActions.GiveInput(CdDisclosedFinalBalloonPayment, disclosedFinalBalloonPayment);
+            UIActions.Clear(DisclosedFinalBalloonPayment);
+            UIActions.GiveInput(DisclosedFinalBalloonPayment, disclosedFinalBalloonPayment);
 
             var disclosedTotalOfPayment = TridVariable.DisclosedTotalOfPayment;
-            UIActions.Clear(CdDisclosedTotalOfPayment);
-            UIActions.GiveInput(CdDisclosedTotalOfPayment, disclosedTotalOfPayment);
+            UIActions.Clear(DisclosedTotalOfPayment);
+            UIActions.GiveInput(DisclosedTotalOfPayment, disclosedTotalOfPayment);
         }
 
 
@@ -202,18 +250,18 @@ namespace TRID.StepDefinitions
             Thread.Sleep(3000);
             UIActions.Click(LoanEstimateLink);
             Thread.Sleep(3000);
-            UIActions.WebDriverWait(LeLoanDetailsText, 60);
+            //UIActions.WebDriverWait(LoanDetailsText, 60);
 
-            UIActions.Click(ClosingDisclosureLink);
-            Thread.Sleep(3000);
-            UIActions.WebDriverWait(CdLoanDetailsText, 60);
+            //UIActions.Click(ClosingDisclosureLink);
+            //Thread.Sleep(3000);
+            //UIActions.WebDriverWait(LoanDetailsText, 60);
         }
 
 
         [When(@"click on Disclosure TEST on Closing Disclosure page")]
         public void WhenClickOnDisclosureTestOnClosingDisclosurePage()
         {
-            UIActions.Click(CdDisclosedTest);
+            //UIActions.Click(DisclosedTest);
         }
 
 
@@ -222,24 +270,74 @@ namespace TRID.StepDefinitions
         {
             Thread.Sleep(3000);
             UIActions.Click(ClosingDisclosureLink);
-            Thread.Sleep(3000);
-            UIActions.WebDriverWait(CdLoanDetailsText, 60);
+        //    Thread.Sleep(3000);
+        //    UIActions.WebDriverWait(LoanDetailsText, 60);
 
 
-            UIActions.Click(LoanEstimateLink);
-            Thread.Sleep(3000);
-            UIActions.WebDriverWait(LeLoanDetailsText, 60);
+        //    UIActions.Click(LoanEstimateLink);
+        //    Thread.Sleep(3000);
+        //    UIActions.WebDriverWait(LoanDetailsText, 60);
 
-            UIActions.Click(LeLoanDetailsTest);
-            Thread.Sleep(5000);
+        //    UIActions.Click(LoanDetailsTest);
+        //    Thread.Sleep(5000);
         }
 
         [When(@"click on Disclosure TEST on Loan Estimate Page")]
         public void WhenClickOnDisclosureTestOnLoanEstimatePage()
         {
-            UIActions.Click(LeDisclosedTest);
+            //UIActions.Click(DisclosedTest);
         }
-       
+
+        [When(@"user navigates to Disclosure Inputs Page")]
+        public void WhenUserNavigatesToDisclosureInputsPage()
+        {
+            UIActions.Click(DisclosureInputsLink);
+            Thread.Sleep(5000);
+            UIActions.WebDriverWait(DisclosedValuesText, 60);
+        }
+
+        [When(@"user enters disclosed input values for closing disclousre section")]
+        public void WhenUserEntersDisclosedInputValuesForClosingDisclousreSection()
+        {
+            var monthlyPrincipalAndInterest = TridVariable.MonthlyPrincipalAndInterest;
+            UIActions.Clear(DisclosedMonthlyPrincipalandInterest);
+            UIActions.GiveInput(DisclosedMonthlyPrincipalandInterest, monthlyPrincipalAndInterest);
+
+            var monthlyPmi = TridVariable.MonthlyPmi;
+            UIActions.Clear(DisclosedMonthlyPmi);
+            UIActions.GiveInput(DisclosedMonthlyPmi, monthlyPmi);
+
+            var totalMonhtlyPayment = TridVariable.TotalMonhtlyPayment;
+            UIActions.Clear(DisclosedTotalPeriodicPayment);
+            UIActions.GiveInput(DisclosedTotalPeriodicPayment, totalMonhtlyPayment);
+
+            var pmiTerminationDate = ProjActions.GetDate(TridVariable.PmiTerminationDate);
+            UIActions.Clear(DisclosedPmiTerminalDate);
+            UIActions.GiveInput(DisclosedPmiTerminalDate, pmiTerminationDate);
+
+            var pmiCancelDate = ProjActions.GetDate(TridVariable.PmiCancelDate);
+            UIActions.Clear(DisclosedPmiCancelDate);
+            UIActions.GiveInput(DisclosedPmiCancelDate, pmiCancelDate);
+
+            var disclosedFinalBalloonPayment = TridVariable.DisclosedFinalBalloonPayment;
+            UIActions.Clear(DisclosedFinalBalloonPayment);
+            UIActions.GiveInput(DisclosedFinalBalloonPayment, disclosedFinalBalloonPayment);
+
+            var disclosedTotalOfPayment = TridVariable.DisclosedTotalOfPayment;
+            UIActions.Clear(DisclosedTotalOfPayment);
+            UIActions.GiveInput(DisclosedTotalOfPayment, disclosedTotalOfPayment);
+        }
+
+        [When(@"user navigates to Closing Disclosure Cards Page")]
+        public void WhenUserNavigatesToClosingDisclosureCardsPage()
+        {
+            UIActions.Click(ClosingDisclosureLink);
+            Thread.Sleep(5000);
+            UIActions.WebDriverWait(MonthlyPrincipalAndInterestText, 60);
+        }
+
+
+
         #endregion
 
 
@@ -249,13 +347,13 @@ namespace TRID.StepDefinitions
         [Then(@"updated/computed Principal and Interest value should display on Closing Disclosure")]
         public void ThenUpdatedComputedPrincipalAndInterestValueShouldDisplayOnClosingDisclosure()
         {
-            var cValue = ProjActions.GetNumericValueFromString(UIActions.GetText(CdPiComputedValue));
+            var cValue = Math.Round(ProjActions.GetNumericValueFromString(UIActions.GetText(PiComputedValue)), 2);
 
-            var actualCValue = Convert.ToDouble(TridVariable.PrincipalAndInt);
-            Assert.AreEqual(actualCValue, cValue, "Computed value does not match as expected");
+            var expectedValue = Math.Round(Convert.ToDouble(TridVariable.PrincipalAndInt), 2);
+            Assert.AreEqual(expectedValue, cValue, "Computed value does not match as expected");
 
-            var dValue = ProjActions.GetNumericValueFromString(UIActions.GetText(CdPiDisclosureValue));
-            var vValue = ProjActions.GetNumericValueFromString(UIActions.GetText(CdPiVarianceValue));
+            var dValue = ProjActions.GetNumericValueFromString(UIActions.GetText(PiDisclosureValue));
+            var vValue = ProjActions.GetNumericValueFromString(UIActions.GetText(PiVarianceValue));
 
             var actualVarianceValue = Math.Abs(Math.Round(cValue - dValue, 2));
 
@@ -270,13 +368,13 @@ namespace TRID.StepDefinitions
         [Then(@"updated/computed pmi value should display on Closing Disclosure")]
         public void ThenUpdatedComputedPmiValueShouldDisplayOnClosingDisclosure()
         {
-            var cValue = ProjActions.GetNumericValueFromString(UIActions.GetText(CdPmiComputedValue));
+            var cValue = Math.Round(ProjActions.GetNumericValueFromString(UIActions.GetText(PmiComputedValue)),2);
 
-            var actualCValue = Convert.ToDouble(TridVariable.Pmi);
-            Assert.AreEqual(actualCValue, cValue, "Computed value does not match as expected");
+            var expectedValue = Math.Round(Convert.ToDouble(TridVariable.Pmi),2);
+            Assert.AreEqual(expectedValue, cValue, "Computed value does not match as expected");
 
-            var dValue = ProjActions.GetNumericValueFromString(UIActions.GetText(CdPmiDisclosureValue));
-            var vValue = ProjActions.GetNumericValueFromString(UIActions.GetText(CdPmiVarianceValue));
+            var dValue = ProjActions.GetNumericValueFromString(UIActions.GetText(PmiDisclosureValue));
+            var vValue = ProjActions.GetNumericValueFromString(UIActions.GetText(PmiVarianceValue));
 
             var actualVarianceValue = Math.Abs(Math.Round(cValue - dValue, 2));
 
@@ -290,34 +388,14 @@ namespace TRID.StepDefinitions
 
         [Then(@"updated/computed Drop off years for PMI value should display on Closing Disclosure")]
         public void ThenUpdatedComputedDropOffYearsForPmiValueShouldDisplayOnClosingDisclosure()
-        {
-            //var cValue = ProjActions.GetNumericValueFromString(UIActions.GetText(CdDoyfpComputedValue));
+        {          
+            var cValue = ProjActions.GetDatePart(DoyfpComputedValue);
+            
+            var expectedValue = Convert.ToDateTime(ProjActions.GetDate(TridVariable.DropOffYearsForPmi));
+            Assert.AreEqual(expectedValue, cValue, "Computed value does not match as expected");
 
-            //var actualCValue = Convert.ToDouble(TridVariable.DropOffYearsForPmi);
-            //Assert.AreEqual(actualCValue, cValue, "Computed value does not match as expected");
-
-            //var dValue = ProjActions.GetNumericValueFromString(UIActions.GetText(CdDoyfpDisclosureValue));
-            //var vValue = ProjActions.GetNumericValueFromString(UIActions.GetText(CdDoyfpVarianceValue));
-
-            //var actualVarianceValue = Math.Abs(Math.Round(cValue - dValue, 2));
-
-            //Assert.AreEqual(vValue, actualVarianceValue, "Variance does not match as expected");
-            //var ss = UIActions.GetText(CdDoyfpComputedValue);
-            //var cValue = new DateTime();
-
-            //if (UIActions.GetText(CdDoyfpComputedValue) != "(C): N/A")
-            var cValue = ProjActions.GetDatePart(CdDoyfpComputedValue);
-            //else
-            //{
-            //    cValue = nullda
-            //}
-
-
-            var actualCValue = Convert.ToDateTime(DateTime.FromOADate(Convert.ToDouble(TridVariable.DropOffYearsForPmi)).ToString("M/d/yyyy"));
-            Assert.AreEqual(actualCValue, cValue, "Computed value does not match as expected");
-
-            var dValue = ProjActions.GetDatePart(CdDoyfpDisclosureValue);
-            var vValue = ProjActions.GetNumericValueFromString(UIActions.GetText(CdDoyfpVarianceValue));
+            var dValue = ProjActions.GetDatePart(DoyfpDisclosureValue);
+            var vValue = ProjActions.GetNumericValueFromString(UIActions.GetText(DoyfpVarianceValue));
 
             var actualVarianceValue = (cValue - dValue).TotalDays;
 
@@ -331,13 +409,13 @@ namespace TRID.StepDefinitions
         [Then(@"updated/computed Total Period Payment value should display on Closing Disclosure")]
         public void ThenUpdatedComputedTotalPeriodPaymentValueShouldDisplayOnClosingDisclosure()
         {
-            var cValue = ProjActions.GetNumericValueFromString(UIActions.GetText(CdTppComputedValue));
+            var cValue = Math.Round(ProjActions.GetNumericValueFromString(UIActions.GetText(TppComputedValue)),2);
 
-            var actualCValue = Convert.ToDouble(TridVariable.TotalPeriodPayment);
-            Assert.AreEqual(actualCValue, cValue, "Computed value does not match as expected");
+            var expectedValue = Math.Round(Convert.ToDouble(TridVariable.TotalPeriodPayment),2);
+            Assert.AreEqual(expectedValue, cValue, "Computed value does not match as expected");
 
-            var dValue = ProjActions.GetNumericValueFromString(UIActions.GetText(CdTppDisclosureValue));
-            var vValue = ProjActions.GetNumericValueFromString(UIActions.GetText(CdTppVarianceValue));
+            var dValue = ProjActions.GetNumericValueFromString(UIActions.GetText(TppDisclosureValue));
+            var vValue = ProjActions.GetNumericValueFromString(UIActions.GetText(TppVarianceValue));
 
             var actualVarianceValue = Math.Abs(Math.Round(cValue - dValue, 2));
 
@@ -352,13 +430,13 @@ namespace TRID.StepDefinitions
         [Then(@"updated/computed Prepaid Charges value should display on Closing Disclosure")]
         public void ThenUpdatedComputedPrepaidChargesValueShouldDisplayOnClosingDisclosure()
         {
-            var cValue = ProjActions.GetNumericValueFromString(UIActions.GetText(CdPcComputedValue));
+            var cValue = Math.Round(ProjActions.GetNumericValueFromString(UIActions.GetText(PcComputedValue)), 2);
 
-            var actualCValue = Convert.ToDouble(TridVariable.PrepaidCharges);
-            Assert.AreEqual(actualCValue, cValue, "Computed value does not match as expected");
+            var expectedValue = Math.Round(Convert.ToDouble(TridVariable.PrepaidCharges), 2);
+            Assert.AreEqual(expectedValue, cValue, "Computed value does not match as expected");
 
-            var dValue = ProjActions.GetNumericValueFromString(UIActions.GetText(CdPcDisclosureValue));
-            var vValue = ProjActions.GetNumericValueFromString(UIActions.GetText(CdPcVarianceValue));
+            var dValue = ProjActions.GetNumericValueFromString(UIActions.GetText(PcDisclosureValue));
+            var vValue = ProjActions.GetNumericValueFromString(UIActions.GetText(PcVarianceValue));
 
             var actualVarianceValue = Math.Abs(Math.Round(cValue - dValue, 2));
 
@@ -373,13 +451,13 @@ namespace TRID.StepDefinitions
         [Then(@"updated/computed Amount Financed value should display on Closing Disclosure")]
         public void ThenUpdatedComputedAmountFinancedValueShouldDisplayOnClosingDisclosure()
         {
-            var cValue = ProjActions.GetNumericValueFromString(UIActions.GetText(CdAfComputedValue));
+            var cValue = Math.Round(ProjActions.GetNumericValueFromString(UIActions.GetText(AfComputedValue)), 2);
 
-            var actualCValue = Convert.ToDouble(TridVariable.AmountFinanced);
-            Assert.AreEqual(actualCValue, cValue, "Computed value does not match as expected");
+            var expectedValue = Math.Round(Convert.ToDouble(TridVariable.AmountFinanced), 2);
+            Assert.AreEqual(expectedValue, cValue, "Computed value does not match as expected");
 
-            var dValue = ProjActions.GetNumericValueFromString(UIActions.GetText(CdAfDisclosureValue));
-            var vValue = ProjActions.GetNumericValueFromString(UIActions.GetText(CdAfVarianceValue));
+            var dValue = ProjActions.GetNumericValueFromString(UIActions.GetText(AfDisclosureValue));
+            var vValue = ProjActions.GetNumericValueFromString(UIActions.GetText(AfVarianceValue));
 
             var actualVarianceValue = Math.Abs(Math.Round(cValue - dValue, 2));
 
@@ -394,10 +472,10 @@ namespace TRID.StepDefinitions
         [Then(@"updated/computed Escrow Property Costs over one year value should display on Closing Disclosure")]
         public void ThenUpdatedComputedEscrowPropertyCostsOverOneYearValueShouldDisplayOnClosingDisclosure()
         {
-            var cValue = ProjActions.GetNumericValueFromString(UIActions.GetText(CdEpcooyComputedValue));
+            var cValue = Math.Round(ProjActions.GetNumericValueFromString(UIActions.GetText(CdEpcooyComputedValue)), 2);
 
-            var actualCValue = Convert.ToDouble(TridVariable.EscrowPropertyOverOneYear);
-            Assert.AreEqual(actualCValue, cValue, "Computed value does not match as expected");
+            var expectedValue = Math.Round(Convert.ToDouble(TridVariable.EscrowPropertyOverOneYear), 2);
+            Assert.AreEqual(expectedValue, cValue, "Computed value does not match as expected");
 
             var dValue = ProjActions.GetNumericValueFromString(UIActions.GetText(CdEpcooyDisclosureValue));
             var vValue = ProjActions.GetNumericValueFromString(UIActions.GetText(CdEpcooyVarianceValue));
@@ -416,15 +494,15 @@ namespace TRID.StepDefinitions
         [Then(@"updated/computed APR value should display on Closing Disclosure")]
         public void ThenUpdatedComputedAprValueShouldDisplayOnClosingDisclosure()
         {
-            var cValue = ProjActions.GetNumericValueFromString(UIActions.GetText(CdAprComputedValue));
+            var cValue = Math.Round(ProjActions.GetNumericValueFromString(UIActions.GetText(AprComputedValue)), 3);
 
-            var actualCValue = Convert.ToDouble(TridVariable.Apr);
-            Assert.AreEqual(actualCValue, cValue, "Computed value does not match as expected");
+            var expectedValue = Math.Round(Convert.ToDouble(TridVariable.Apr), 2);
+            Assert.AreEqual(expectedValue, cValue, "Computed value does not match as expected");
 
-            var dValue = ProjActions.GetNumericValueFromString(UIActions.GetText(CdAprDisclosureValue));
-            var vValue = ProjActions.GetNumericValueFromString(UIActions.GetText(CdAprVarianceValue));
+            var dValue = ProjActions.GetNumericValueFromString(UIActions.GetText(AprDisclosureValue));
+            var vValue = ProjActions.GetNumericValueFromString(UIActions.GetText(AprVarianceValue));
 
-            var actualVarianceValue = Math.Abs(Math.Round(cValue - dValue, 2));
+            var actualVarianceValue = Math.Abs(Math.Round(cValue - dValue, 3));
 
             Assert.AreEqual(vValue, actualVarianceValue, "Variance does not match as expected");
 
@@ -437,13 +515,13 @@ namespace TRID.StepDefinitions
         [Then(@"updated/computed Balloon Amount value should display on Closing Disclosure")]
         public void ThenUpdatedComputedBalloonAmountValueShouldDisplayOnClosingDisclosure()
         {
-            var cValue = ProjActions.GetNumericValueFromString(UIActions.GetText(CdBaComputedValue));
+            var cValue = Math.Round(ProjActions.GetNumericValueFromString(UIActions.GetText(BaComputedValue)), 2);
 
-            var actualCValue = Convert.ToDouble(TridVariable.FinalBalloonPayment);
-            Assert.AreEqual(actualCValue, cValue, "Computed value does not match as expected");
+            var expectedValue = Math.Round(Convert.ToDouble(TridVariable.BalloonAmount), 2);
+            Assert.AreEqual(expectedValue, cValue, "Computed value does not match as expected");
 
-            var dValue = ProjActions.GetNumericValueFromString(UIActions.GetText(CdBaDisclosureValue));
-            var vValue = ProjActions.GetNumericValueFromString(UIActions.GetText(CdBaVarianceValue));
+            var dValue = ProjActions.GetNumericValueFromString(UIActions.GetText(BaDisclosureValue));
+            var vValue = ProjActions.GetNumericValueFromString(UIActions.GetText(BaVarianceValue));
 
             var actualVarianceValue = Math.Abs(Math.Round(cValue - dValue, 2));
 
@@ -458,13 +536,13 @@ namespace TRID.StepDefinitions
         [Then(@"updated/computed Total of Payments value should display on Closing Disclosure")]
         public void ThenUpdatedComputedTotalOfPaymentsValueShouldDisplayOnClosingDisclosure()
         {
-            var cValue = ProjActions.GetNumericValueFromString(UIActions.GetText(CdTopComputedValue));
+            var cValue = Math.Round(ProjActions.GetNumericValueFromString(UIActions.GetText(TopComputedValue)), 2);
 
-            var actualCValue = Convert.ToDouble(TridVariable.TotalOfPayments);
-            Assert.AreEqual(actualCValue, cValue, "Computed value does not match as expected");
+            var expectedValue = Math.Round(Convert.ToDouble(TridVariable.TotalOfPayments), 2);
+            Assert.AreEqual(expectedValue, cValue, "Computed value does not match as expected");
 
-            var dValue = ProjActions.GetNumericValueFromString(UIActions.GetText(CdTopDisclosureValue));
-            var vValue = ProjActions.GetNumericValueFromString(UIActions.GetText(CdTopVarianceValue));
+            var dValue = ProjActions.GetNumericValueFromString(UIActions.GetText(TopDisclosureValue));
+            var vValue = ProjActions.GetNumericValueFromString(UIActions.GetText(TopVarianceValue));
 
             var actualVarianceValue = Math.Abs(Math.Round(cValue - dValue, 2));
 
@@ -479,13 +557,13 @@ namespace TRID.StepDefinitions
         [Then(@"updated/computed Finance Charge value should display on Closing Disclosure")]
         public void ThenUpdatedComputedFinanceChargeValueShouldDisplayOnClosingDisclosure()
         {
-            var cValue = ProjActions.GetNumericValueFromString(UIActions.GetText(CdFcComputedValue));
+            var cValue = Math.Round(ProjActions.GetNumericValueFromString(UIActions.GetText(FcComputedValue)), 2);
 
-            var actualCValue = Convert.ToDouble(TridVariable.FinanceCharge);
-            Assert.AreEqual(actualCValue, cValue, "Computed value does not match as expected");
+            var expectedValue = Math.Round(Convert.ToDouble(TridVariable.FinanceCharge), 2);
+            Assert.AreEqual(expectedValue, cValue, "Computed value does not match as expected");
 
-            var dValue = ProjActions.GetNumericValueFromString(UIActions.GetText(CdFcDisclosureValue));
-            var vValue = ProjActions.GetNumericValueFromString(UIActions.GetText(CdFcVarianceValue));
+            var dValue = ProjActions.GetNumericValueFromString(UIActions.GetText(FcDisclosureValue));
+            var vValue = ProjActions.GetNumericValueFromString(UIActions.GetText(FcVarianceValue));
 
             var actualVarianceValue = Math.Abs(Math.Round(cValue - dValue, 2));
 
@@ -500,13 +578,13 @@ namespace TRID.StepDefinitions
         [Then(@"updated/computed TIP value should display on Closing Disclosure")]
         public void ThenUpdatedComputedTipValueShouldDisplayOnClosingDisclosure()
         {
-            var cValue = ProjActions.GetNumericValueFromString(UIActions.GetText(CdTipComputedValue));
+            var cValue = Math.Round(ProjActions.GetNumericValueFromString(UIActions.GetText(TipComputedValue)), 2);
 
-            var actualCValue = Convert.ToDouble(TridVariable.Tip);
-            Assert.AreEqual(actualCValue, cValue, "Computed value does not match as expected");
+            var expectedValue = Math.Round(Convert.ToDouble(TridVariable.Tip), 2);
+            Assert.AreEqual(expectedValue, cValue, "Computed value does not match as expected");
 
-            var dValue = ProjActions.GetNumericValueFromString(UIActions.GetText(CdTipDisclosureValue));
-            var vValue = ProjActions.GetNumericValueFromString(UIActions.GetText(CdTipVarianceValue));
+            var dValue = ProjActions.GetNumericValueFromString(UIActions.GetText(TipDisclosureValue));
+            var vValue = ProjActions.GetNumericValueFromString(UIActions.GetText(TipVarianceValue));
 
             var actualVarianceValue = Math.Abs(Math.Round(cValue - dValue, 2));
 
@@ -521,10 +599,10 @@ namespace TRID.StepDefinitions
         [Then(@"updated/computed Initial Escrow Payment value should display on Closing Disclosure")]
         public void ThenUpdatedComputedInitialEscrowPaymentValueShouldDisplayOnClosingDisclosure()
         {
-            var cValue = ProjActions.GetNumericValueFromString(UIActions.GetText(CdIepComputedValue));
+            var cValue = Math.Round(ProjActions.GetNumericValueFromString(UIActions.GetText(CdIepComputedValue)), 2);
 
-            var actualCValue = Convert.ToDouble(TridVariable.InitialEscrowPayment);
-            Assert.AreEqual(actualCValue, cValue, "Computed value does not match as expected");
+            var expectedValue = Math.Round(Convert.ToDouble(TridVariable.InitialEscrowPayment), 2);
+            Assert.AreEqual(expectedValue, cValue, "Computed value does not match as expected");
 
             var dValue = ProjActions.GetNumericValueFromString(UIActions.GetText(CdIepDisclosureValue));
             var vValue = ProjActions.GetNumericValueFromString(UIActions.GetText(CdIepVarianceValue));
@@ -543,10 +621,10 @@ namespace TRID.StepDefinitions
         [Then(@"updated/computed Non Escrow Property Costs over one year value should display on Closing Disclosure")]
         public void ThenUpdatedComputedNonEscrowPropertyCostsOverOneYearValueShouldDisplayOnClosingDisclosure()
         {
-            var cValue = ProjActions.GetNumericValueFromString(UIActions.GetText(CdNepcooyComputedValue));
+            var cValue = Math.Round(ProjActions.GetNumericValueFromString(UIActions.GetText(CdNepcooyComputedValue)), 2);
 
-            var actualCValue = Convert.ToDouble(TridVariable.NonEscrowPropertyOverOneYear);
-            Assert.AreEqual(actualCValue, cValue, "Computed value does not match as expected");
+            var expectedValue = Math.Round(Convert.ToDouble(TridVariable.NonEscrowPropertyOverOneYear), 2);
+            Assert.AreEqual(expectedValue, cValue, "Computed value does not match as expected");
 
             var dValue = ProjActions.GetNumericValueFromString(UIActions.GetText(CdNepcooyDisclosureValue));
             var vValue = ProjActions.GetNumericValueFromString(UIActions.GetText(CdNepcooyVarianceValue));
@@ -564,10 +642,10 @@ namespace TRID.StepDefinitions
         [Then(@"updated/computed Period Escrow Payment value should display on Closing Disclosure")]
         public void ThenUpdatedComputedPeriodEscrowPaymentValueShouldDisplayOnClosingDisclosure()
         {
-            var cValue = ProjActions.GetNumericValueFromString(UIActions.GetText(CdPepComputedValue));
+            var cValue = Math.Round(ProjActions.GetNumericValueFromString(UIActions.GetText(CdPepComputedValue)), 2);
 
-            var actualCValue = Convert.ToDouble(TridVariable.Tip);
-            Assert.AreEqual(actualCValue, cValue, "Computed value does not match as expected");
+            var expectedValue = Math.Round(Convert.ToDouble(TridVariable.Tip), 2);
+            Assert.AreEqual(expectedValue, cValue, "Computed value does not match as expected");
 
             var dValue = ProjActions.GetNumericValueFromString(UIActions.GetText(CdPepDisclosureValue));
             var vValue = ProjActions.GetNumericValueFromString(UIActions.GetText(CdPepVarianceValue));

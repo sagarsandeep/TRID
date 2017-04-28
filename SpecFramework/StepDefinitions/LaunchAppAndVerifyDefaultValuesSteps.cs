@@ -20,7 +20,7 @@ namespace TRID.StepDefinitions
         [Given(@"user enters Trid Application url in browser")]
         public void GivenUserEntersTridApplicationUrlInBrowser()
         {
-            UIActions.WebDriverWait(PcPrepaidChargesText, 60);
+            //UIActions.WebDriverWait(PrepaidChargesText, 60);
             Thread.Sleep(5000);
         }
 
@@ -38,14 +38,14 @@ namespace TRID.StepDefinitions
         [When(@"TRID Application launches")]
         public void WhenTridApplicationLaunches()
         {
-            UIActions.WebDriverWait(PcPrepaidChargesText, 60);
+            //UIActions.WebDriverWait(PrepaidChargesText, 60);
         }
 
         [When(@"user navigate to Mortgage Insurance Page")]
         public void WhenUserNavigateToMortgageInsurancePage()
         {
-            UIActions.Click(MortgageInsuranceLink);
-            UIActions.WebDriverWait(MortgageInsuranceLink, 60);
+            //UIActions.Click(MortgageInsuranceLink);
+            //UIActions.WebDriverWait(MortgageInsuranceLink, 60);
         }
 
         [When(@"user navigate to Loan Estimate Page")]
@@ -71,8 +71,8 @@ namespace TRID.StepDefinitions
         public void ThenDefaultPageShouldBePrepaidChargesPage()
         {
             string expectedPageText = "Prepaid Charges";
-            string actualPageText = UIActions.GetText(PcPrepaidChargesText);
-            Assert.AreEqual(expectedPageText, actualPageText, "Prepaid Charges is not default Page");
+            //string actualPageText = UIActions.GetText(PrepaidChargesText);
+            //Assert.AreEqual(expectedPageText, actualPageText, "Prepaid Charges is not default Page");
         }
 
         [Then(@"all the input and custom fields should have zero values")]
@@ -87,16 +87,16 @@ namespace TRID.StepDefinitions
         public void ThenDisclosedValuesOfFinanceChargePrepaidChargeAndAmountFinancedAreSetToDefaultValues()
         {
             var disclosedFinanceCharge = TridVariable.DisclosedFinanceCharge;
-            UIActions.Clear(PcDisclosedFinanceCharge);
-            UIActions.GiveInput(PcDisclosedFinanceCharge, disclosedFinanceCharge);
+            UIActions.Clear(DisclosedFinanceCharge);
+            UIActions.GiveInput(DisclosedFinanceCharge, disclosedFinanceCharge);
 
             var disclosedPrepaidCharge = TridVariable.DisclosedPrepaidCharge;
-            UIActions.Clear(PcDisclosedPrepaidCharge);
-            UIActions.GiveInput(PcDisclosedPrepaidCharge, disclosedPrepaidCharge);
+            UIActions.Clear(DisclosedPrepaidCharge);
+            UIActions.GiveInput(DisclosedPrepaidCharge, disclosedPrepaidCharge);
 
             var disclosedAmountFinanced = TridVariable.DisclosedAmountFinanced;
-            UIActions.Clear(PcDisclosedAmountFinanced);
-            UIActions.GiveInput(PcDisclosedAmountFinanced, disclosedAmountFinanced);
+            UIActions.Clear(DisclosedAmountFinanced);
+            UIActions.GiveInput(DisclosedAmountFinanced, disclosedAmountFinanced);
         }
 
         [Then(@"PMI rates Grid should be empty")]
@@ -108,47 +108,47 @@ namespace TRID.StepDefinitions
         [Then(@"lower of cost or Appraisal should have default value")]
         public void ThenLowerOfCostOrAppraisalShouldHaveDefaultValue()
         {
-            var numberOfPeriodsofAdvanceInsCollected = TridVariable.NoOfPrdsOfAdvcInsurance;
-            UIActions.Clear(MiNumberOfPeriodsofAdvanceInsCollected);
-            UIActions.GiveInput(MiNumberOfPeriodsofAdvanceInsCollected, numberOfPeriodsofAdvanceInsCollected);
+            var numberOfPeriodsofAdvanceInsCollected = TridVariable.NumberOfPrdsOfAdvcInsurance;
+            UIActions.Clear(NumberOfPeriodsofAdvanceInsCollected);
+            UIActions.GiveInput(NumberOfPeriodsofAdvanceInsCollected, numberOfPeriodsofAdvanceInsCollected);
 
             var lowerOfCostOrAppraisal = TridVariable.LowerOfCostOfAppraisal;
-            UIActions.Clear(MiLowerOfCostOrAppraisal);
-            UIActions.GiveInput(MiLowerOfCostOrAppraisal, lowerOfCostOrAppraisal);
+            UIActions.Clear(LowerOfCostOrAppraisal);
+            UIActions.GiveInput(LowerOfCostOrAppraisal, lowerOfCostOrAppraisal);
         }
 
         //[When(@"user selects Calculation Method in Loan Estimate Page")]
         //public void WhenUserSelectsCalculationMethodInDisclosurePage()
         //{
-        //    ClosingDisclosureRadioButtonVariable();
+        //    LoanDetailsRadioButtonVariable();
         //    UIActions.Click(LeCalculationMethod);
         //}
 
         //[When(@"user selects loan type in Loan Estimate Page")]
         //public void WhenUserSelectsLoanTypeInLoanEstimatePage()
         //{
-        //    ClosingDisclosureRadioButtonVariable();
+        //    LoanDetailsRadioButtonVariable();
         //    UIActions.Click(LeLoanType);
         //}
 
         //[When(@"user selects Frequency of Payments in Loan Estimate Page")]
         //public void WhenUserSelectsFrequencyOfPaymentsInLoanEstimatePage()
         //{
-        //    ClosingDisclosureRadioButtonVariable();
+        //    LoanDetailsRadioButtonVariable();
         //    UIActions.Click(LeFrequencyOfPayments);
         //}
 
         //[When(@"user selects Loan Term in Loan Estimate Page")]
         //public void WhenUserSelectsLoanTermInLoanEstimatePage()
         //{
-        //    ClosingDisclosureRadioButtonVariable();
+        //    LoanDetailsRadioButtonVariable();
         //    UIActions.Click(LeLoanTerm);
         //}
 
         //[When(@"user selects Repayment Term Type in Loan Estimate Page")]
         //public void WhenUserSelectsRepaymentTermTypeInLoanEstimatePage()
         //{
-        //    ClosingDisclosureRadioButtonVariable();
+        //    LoanDetailsRadioButtonVariable();
         //    UIActions.Click(LeRepaymentTermType);
         //}
 
