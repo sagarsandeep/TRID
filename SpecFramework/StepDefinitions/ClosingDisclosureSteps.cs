@@ -50,7 +50,7 @@ namespace TRID.StepDefinitions
         public void GivenUserNavigateToLoanEstimatePage()
         {
             UIActions.Click(LoanEstimateLink);
-            UIActions.WebDriverWait(CdLoanDetailsText, 60);
+            UIActions.WebDriverWait(LoanDetailsText, 60);
         }
 
         [Given(@"user is at Mortgage Insurance Page")]
@@ -86,7 +86,7 @@ namespace TRID.StepDefinitions
         public void GivenUserNavigateToClosingClosingDisclosurePage()
         {
             UIActions.Click(ClosingDisclosureLink);
-            UIActions.WebDriverWait(CdLoanDetailsText, 60);
+            UIActions.WebDriverWait(LoanDetailsText, 60);
         }
 
         [When(@"user selects Calculation Method")]
@@ -206,9 +206,68 @@ namespace TRID.StepDefinitions
             UIActions.Clear(LoanCostsForDisclosure);
             UIActions.GiveInput(LoanCostsForDisclosure, loanCostsForDisclosure);
 
-            //var finalBalloonPayment = TridVariable.FinalBalloonPayment;
-            //UIActions.Clear(FinalBalloonPayment);
-            //UIActions.GiveInput(FinalBalloonPayment, finalBalloonPayment);
+            UIActions.Click(OddDaysClick);
+            UIActions.Click(OddDaysSelect);
+        }
+
+        [When(@"user enters all input values for Prepaid Charges")]
+        public void WhenUserEntersAllInputValuesForPrepaidCharges()
+        {
+            var fhaVaUsdaUpfrontPmiFree = TridVariable.FhaVaUsdaUpfrontPmiFree;
+            UIActions.Clear(FhaVaUsdaUpfrontPmiFree);
+            UIActions.GiveInput(FhaVaUsdaUpfrontPmiFree, fhaVaUsdaUpfrontPmiFree);
+
+            var floodFee = TridVariable.FloodFee;
+            UIActions.Clear(FloodFee);
+            UIActions.GiveInput(FloodFee, floodFee);
+
+            var inspectionFee = TridVariable.InspectionFee;
+            UIActions.Clear(InspectionFee);
+            UIActions.GiveInput(InspectionFee, inspectionFee);
+
+            var loanOriginationFee = TridVariable.LoanOriginationFee;
+            UIActions.Clear(LoanOriginationFee);
+            UIActions.GiveInput(LoanOriginationFee, loanOriginationFee);
+
+            var otherFees = TridVariable.OtherFees;
+            UIActions.Clear(OtherFees);
+            UIActions.GiveInput(OtherFees, otherFees);
+
+            var pmiEscrowed = TridVariable.PmiEscrowed;
+            UIActions.Clear(PmiEscrowed);
+            UIActions.GiveInput(PmiEscrowed, pmiEscrowed);
+
+            var prepaidDailyInterest = TridVariable.PrepaidDailyInterest;
+            UIActions.Clear(PrepaidDailyInterest);
+            UIActions.GiveInput(PrepaidDailyInterest, prepaidDailyInterest);
+
+            var taxServicing = TridVariable.TaxServicing;
+            UIActions.Clear(TaxServicing);
+            UIActions.GiveInput(TaxServicing, taxServicing);
+
+            var titleClosingFee = TridVariable.TitleClosingFee;
+            UIActions.Clear(TitleClosingFee);
+            UIActions.GiveInput(TitleClosingFee, titleClosingFee);
+
+            var titleClosingProtectionLetter = TridVariable.TitleClosingProtectionLetter;
+            UIActions.Clear(TitleClosingProtectionLetter);
+            UIActions.GiveInput(TitleClosingProtectionLetter, titleClosingProtectionLetter);
+
+            var titleCourierFee = TridVariable.TitleCourierFee;
+            UIActions.Clear(TitleCourierFee);
+            UIActions.GiveInput(TitleCourierFee, titleCourierFee);
+
+            var titleDrawFee = TridVariable.TitleDrawFee;
+            UIActions.Clear(TitleDrawFee);
+            UIActions.GiveInput(TitleDrawFee, titleDrawFee);
+
+            var titleWireFee = TridVariable.TitleWireFee;
+            UIActions.Clear(TitleWireFee);
+            UIActions.GiveInput(TitleWireFee, titleWireFee);
+
+            var underWriting = TridVariable.UnderWriting;
+            UIActions.Clear(UnderWriting);
+            UIActions.GiveInput(UnderWriting, underWriting);
         }
 
         [When(@"Enter Disclosed input values for Closing Disclosure page")]
@@ -326,6 +385,39 @@ namespace TRID.StepDefinitions
             var disclosedTotalOfPayment = TridVariable.DisclosedTotalOfPayment;
             UIActions.Clear(DisclosedTotalOfPayment);
             UIActions.GiveInput(DisclosedTotalOfPayment, disclosedTotalOfPayment);
+        }
+
+        [When(@"user enters disclsoed input values for Loan Estimate")]
+        public void WhenUserEntersDisclsoedInputValuesForLoanEstimate()
+        {
+            var in5Years = TridVariable.DiscLosedIn5Years;
+            UIActions.Clear(DisclosedIn5Years);
+            UIActions.GiveInput(DisclosedIn5Years, in5Years);
+
+            var in5YearsPrincipal = TridVariable.DiscLosedIn5YearsPrincipal;
+            UIActions.Clear(DisclosedIn5YearsPrincipal);
+            UIActions.GiveInput(DisclosedIn5YearsPrincipal, in5YearsPrincipal);
+
+            var apr = TridVariable.DisclosedApr;
+            UIActions.Clear(DisclosedApr);
+            UIActions.GiveInput(DisclosedApr, apr);
+
+            var tip = TridVariable.DisclosedTip;
+            UIActions.Clear(DisclosedTip);
+            UIActions.GiveInput(DisclosedTip, tip);
+        }
+
+        [When(@"user enters disclosed input values for Prepaid Charges")]
+        public void WhenUserEntersDisclosedInputValuesForPrepaidCharges()
+        {
+            UIActions.Clear(DisclosedFinanceCharge);
+            UIActions.GiveInput(DisclosedFinanceCharge, TridVariable.DisclosedFinanceCharge);
+
+            UIActions.Clear(DisclosedPrepaidCharge);
+            UIActions.GiveInput(DisclosedPrepaidCharge, TridVariable.DisclosedPrepaidCharge);
+
+            UIActions.Clear(DisclosedAmountFinanced);
+            UIActions.GiveInput(DisclosedAmountFinanced, TridVariable.DisclosedAmountFinanced);
         }
 
         [When(@"user navigates to Closing Disclosure Cards Page")]
@@ -472,13 +564,13 @@ namespace TRID.StepDefinitions
         [Then(@"updated/computed Escrow Property Costs over one year value should display on Closing Disclosure")]
         public void ThenUpdatedComputedEscrowPropertyCostsOverOneYearValueShouldDisplayOnClosingDisclosure()
         {
-            var cValue = Math.Round(ProjActions.GetNumericValueFromString(UIActions.GetText(CdEpcooyComputedValue)), 2);
+            var cValue = Math.Round(ProjActions.GetNumericValueFromString(UIActions.GetText(EpcooyComputedValue)), 2);
 
             var expectedValue = Math.Round(Convert.ToDouble(TridVariable.EscrowPropertyOverOneYear), 2);
             Assert.AreEqual(expectedValue, cValue, "Computed value does not match as expected");
 
-            var dValue = ProjActions.GetNumericValueFromString(UIActions.GetText(CdEpcooyDisclosureValue));
-            var vValue = ProjActions.GetNumericValueFromString(UIActions.GetText(CdEpcooyVarianceValue));
+            var dValue = ProjActions.GetNumericValueFromString(UIActions.GetText(EpcooyDisclosureValue));
+            var vValue = ProjActions.GetNumericValueFromString(UIActions.GetText(EpcooyVarianceValue));
 
             var actualVarianceValue = Math.Abs(Math.Round(cValue - dValue, 2));
 
@@ -599,13 +691,13 @@ namespace TRID.StepDefinitions
         [Then(@"updated/computed Initial Escrow Payment value should display on Closing Disclosure")]
         public void ThenUpdatedComputedInitialEscrowPaymentValueShouldDisplayOnClosingDisclosure()
         {
-            var cValue = Math.Round(ProjActions.GetNumericValueFromString(UIActions.GetText(CdIepComputedValue)), 2);
+            var cValue = Math.Round(ProjActions.GetNumericValueFromString(UIActions.GetText(IepComputedValue)), 2);
 
             var expectedValue = Math.Round(Convert.ToDouble(TridVariable.InitialEscrowPayment), 2);
             Assert.AreEqual(expectedValue, cValue, "Computed value does not match as expected");
 
-            var dValue = ProjActions.GetNumericValueFromString(UIActions.GetText(CdIepDisclosureValue));
-            var vValue = ProjActions.GetNumericValueFromString(UIActions.GetText(CdIepVarianceValue));
+            var dValue = ProjActions.GetNumericValueFromString(UIActions.GetText(IepDisclosureValue));
+            var vValue = ProjActions.GetNumericValueFromString(UIActions.GetText(IepVarianceValue));
 
             var actualVarianceValue = Math.Abs(Math.Round(cValue - dValue, 2));
 
@@ -621,13 +713,13 @@ namespace TRID.StepDefinitions
         [Then(@"updated/computed Non Escrow Property Costs over one year value should display on Closing Disclosure")]
         public void ThenUpdatedComputedNonEscrowPropertyCostsOverOneYearValueShouldDisplayOnClosingDisclosure()
         {
-            var cValue = Math.Round(ProjActions.GetNumericValueFromString(UIActions.GetText(CdNepcooyComputedValue)), 2);
+            var cValue = Math.Round(ProjActions.GetNumericValueFromString(UIActions.GetText(NepcooyComputedValue)), 2);
 
             var expectedValue = Math.Round(Convert.ToDouble(TridVariable.NonEscrowPropertyOverOneYear), 2);
             Assert.AreEqual(expectedValue, cValue, "Computed value does not match as expected");
 
-            var dValue = ProjActions.GetNumericValueFromString(UIActions.GetText(CdNepcooyDisclosureValue));
-            var vValue = ProjActions.GetNumericValueFromString(UIActions.GetText(CdNepcooyVarianceValue));
+            var dValue = ProjActions.GetNumericValueFromString(UIActions.GetText(NepcooyDisclosureValue));
+            var vValue = ProjActions.GetNumericValueFromString(UIActions.GetText(NepcooyVarianceValue));
 
             var actualVarianceValue = Math.Abs(Math.Round(cValue - dValue, 2));
 
@@ -642,13 +734,13 @@ namespace TRID.StepDefinitions
         [Then(@"updated/computed Period Escrow Payment value should display on Closing Disclosure")]
         public void ThenUpdatedComputedPeriodEscrowPaymentValueShouldDisplayOnClosingDisclosure()
         {
-            var cValue = Math.Round(ProjActions.GetNumericValueFromString(UIActions.GetText(CdPepComputedValue)), 2);
+            var cValue = Math.Round(ProjActions.GetNumericValueFromString(UIActions.GetText(PepComputedValue)), 2);
 
             var expectedValue = Math.Round(Convert.ToDouble(TridVariable.Tip), 2);
             Assert.AreEqual(expectedValue, cValue, "Computed value does not match as expected");
 
-            var dValue = ProjActions.GetNumericValueFromString(UIActions.GetText(CdPepDisclosureValue));
-            var vValue = ProjActions.GetNumericValueFromString(UIActions.GetText(CdPepVarianceValue));
+            var dValue = ProjActions.GetNumericValueFromString(UIActions.GetText(PepDisclosureValue));
+            var vValue = ProjActions.GetNumericValueFromString(UIActions.GetText(PepVarianceValue));
 
             var actualVarianceValue = Math.Abs(Math.Round(cValue - dValue, 2));
 

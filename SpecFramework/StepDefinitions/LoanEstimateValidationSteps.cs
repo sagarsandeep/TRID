@@ -127,25 +127,25 @@ namespace TRID.StepDefinitions
             //UIActions.GiveInput(FinalBalloonPayment, finalBalloonPayment);
         }
 
-        [When(@"user enters disclsoed input values for Loan Estimate")]
-        public void WhenUserEntersDisclsoedInputValuesForLoanEstimate()
-        {
-            var in5Years = TridVariable.DiscLosedIn5Years;
-            UIActions.Clear(DisclosedIn5Years);
-            UIActions.GiveInput(DisclosedIn5Years, in5Years);
+        //[When(@"user enters disclsoed input values for Loan Estimate")]
+        //public void WhenUserEntersDisclsoedInputValuesForLoanEstimate()
+        //{
+        //    var in5Years = TridVariable.DiscLosedIn5Years;
+        //    UIActions.Clear(DisclosedIn5Years);
+        //    UIActions.GiveInput(DisclosedIn5Years, in5Years);
 
-            var in5YearsPrincipal = TridVariable.DiscLosedIn5YearsPrincipal;
-            UIActions.Clear(DisclosedIn5YearsPrincipal);
-            UIActions.GiveInput(DisclosedIn5YearsPrincipal, in5YearsPrincipal);
+        //    var in5YearsPrincipal = TridVariable.DiscLosedIn5YearsPrincipal;
+        //    UIActions.Clear(DisclosedIn5YearsPrincipal);
+        //    UIActions.GiveInput(DisclosedIn5YearsPrincipal, in5YearsPrincipal);
 
-            var apr = TridVariable.DisclosedApr;
-            UIActions.Clear(DisclosedApr);
-            UIActions.GiveInput(DisclosedApr, apr);
+        //    var apr = TridVariable.DisclosedApr;
+        //    UIActions.Clear(DisclosedApr);
+        //    UIActions.GiveInput(DisclosedApr, apr);
 
-            var tip = TridVariable.DisclosedTip;
-            UIActions.Clear(DisclosedTip);
-            UIActions.GiveInput(DisclosedTip, tip);
-        }
+        //    var tip = TridVariable.DisclosedTip;
+        //    UIActions.Clear(DisclosedTip);
+        //    UIActions.GiveInput(DisclosedTip, tip);
+        //}
 
 
 
@@ -196,7 +196,7 @@ namespace TRID.StepDefinitions
         {
             UIActions.Click(ClosingDisclosureLink);
             Thread.Sleep(3000);
-            UIActions.WebDriverWait(CdLoanDetailsText, 60);
+            UIActions.WebDriverWait(LoanDetailsText, 60);
 
 
             UIActions.Click(LoanEstimateLink);
@@ -273,175 +273,175 @@ namespace TRID.StepDefinitions
         #region Then
 
 
-        [Then(@"Amortization Schedule should recalculate and last row balance should be zero")]
-        public void ThenAmortizationScheduleShouldRecalculateAndLastRowBalanceShouldBeZero()
-        {
+        //[Then(@"Amortization Schedule should recalculate and last row balance should be zero")]
+        //public void ThenAmortizationScheduleShouldRecalculateAndLastRowBalanceShouldBeZero()
+        //{
 
-            var numberOfPayments = Convert.ToInt32(UIActions.GetText(LeNumberOfPayments));
-            var amortizationScheduleCount = Convert.ToInt32(UIActions.Count(LeAmortizationScheduleCount));
+        //    var numberOfPayments = Convert.ToInt32(UIActions.GetText(LeNumberOfPayments));
+        //    var amortizationScheduleCount = Convert.ToInt32(UIActions.Count(LeAmortizationScheduleCount));
 
-            Assert.IsTrue(numberOfPayments == amortizationScheduleCount, "Number of Amortization Schedule is not as expected");
-
-
-            var expectedLastAmortizationRowValue = "$0.00 = $0.00 + $0.00 + $0.00";
-            var actualLastAmortizationRowValue = UIActions.GetText(By.XPath("//div[@id='Mortagagedetails']/md-list/md-list-item[" + numberOfPayments + "]//h4"));
-
-            Assert.AreEqual(expectedLastAmortizationRowValue, actualLastAmortizationRowValue, "Actual Amortization Last Balance Amount does not matches with expected amount");
-        }
-
-        [Then(@"Payment Date should be of two month period")]
-        public void ThenPaymentDateShouldBeOfTwoMonthPeriod()
-        {
-            var firstAmortizationDay = Convert.ToDateTime(UIActions.GetText(LeFirstAmortizationDate)).Day;
-            var secondAmortizationDay = Convert.ToDateTime(UIActions.GetText(LeSecondAmortizationDate)).Day;
-
-            var firstAmortizationMonth = Convert.ToDateTime(UIActions.GetText(LeFirstAmortizationDate)).Month;
-            var secondAmortizationMonth = Convert.ToDateTime(UIActions.GetText(LeSecondAmortizationDate)).Month;
-
-            var dayDifference = secondAmortizationDay - firstAmortizationDay;
-            var monthDifference = secondAmortizationMonth - firstAmortizationMonth;
-
-            Assert.AreEqual(0, dayDifference, "The Day of Payment Date is not on 1st of every month");
-            Assert.AreEqual(2, monthDifference, "The period bewteen Payment Date is not 2 Months");
-        }
-
-        [Then(@"Payment Date should be increment of 14 days")]
-        public void ThenPaymentDateShouldBeIncrementOf14Days()
-        {
-            var numberOfPayments = Convert.ToInt32(UIActions.GetText(LeNumberOfPayments));
-            for (int i = 1; i < numberOfPayments; i++)
-            {
-                var firstAmortizationDay = Convert.ToDateTime(UIActions.GetText(By.XPath("//div[@id='Mortagagedetails']//md-list-item[" + i + "]//p"))).Date;
-                var secondAmortizationDay = Convert.ToDateTime(UIActions.GetText(By.XPath("//div[@id='Mortagagedetails']//md-list-item[" + ++i + "]//p"))).Date;
-
-                var dayDifference = (secondAmortizationDay - firstAmortizationDay).TotalDays;
-
-                Assert.AreEqual(14, dayDifference, "The Day of Payment Date is not on 1st of every month");
-            }
-        }
-
-        [Then(@"Payment Schedule should recalculate 780 number of payments")]
-        public void ThenPaymentScheduleShouldRecalculate780NumberOfPayments()
-        {
-            var numberOfPayments = Convert.ToInt32(UIActions.GetText(LeNumberOfPayments));
-
-            Assert.AreEqual(780, numberOfPayments, "Number of Payment schedule is not 780");
-        }
+        //    Assert.IsTrue(numberOfPayments == amortizationScheduleCount, "Number of Amortization Schedule is not as expected");
 
 
-        [Then(@"Payment Schedule should recalculate 720 number of payments")]
-        public void ThenPaymentScheduleShouldRecalculate720NumberOfPayments()
-        {
-            var numberOfPayments = Convert.ToInt32(UIActions.GetText(LeNumberOfPayments));
+        //    var expectedLastAmortizationRowValue = "$0.00 = $0.00 + $0.00 + $0.00";
+        //    var actualLastAmortizationRowValue = UIActions.GetText(By.XPath("//div[@id='Mortagagedetails']/md-list/md-list-item[" + numberOfPayments + "]//h4"));
 
-            Assert.AreEqual(720, numberOfPayments, "Number of Payment schedule is not 720");
-        }
+        //    Assert.AreEqual(expectedLastAmortizationRowValue, actualLastAmortizationRowValue, "Actual Amortization Last Balance Amount does not matches with expected amount");
+        //}
 
-        [Then(@"Payment Date should be on 1st and 16th of every month")]
-        public void ThenPaymentDateShouldBeOn1StAnd16ThOfEveryMonth()
-        {
-            var numberOfPayments = Convert.ToInt32(UIActions.GetText(LeNumberOfPayments));
-            for (int i = 1; i <= numberOfPayments; i++)
-            {
-                if (i % 2 == 0)
-                {
-                    var amortizationDay = Convert.ToDateTime(UIActions.GetText(By.XPath("//div[@id='Mortagagedetails']//md-list-item[" + i + "]//p"))).Day;
-                    Assert.AreEqual(16, amortizationDay, "The Payment date is not on 16th of month");
-                }
-                else
-                {
-                    var amortizationDay = Convert.ToDateTime(UIActions.GetText(By.XPath("//div[@id='Mortagagedetails']//md-list-item[" + i + "]//p"))).Day;
-                    Assert.AreEqual(1, amortizationDay, "The Payment date is not on 1st of month");
-                }
-            }
-        }
+        //[Then(@"Payment Date should be of two month period")]
+        //public void ThenPaymentDateShouldBeOfTwoMonthPeriod()
+        //{
+        //    var firstAmortizationDay = Convert.ToDateTime(UIActions.GetText(LeFirstAmortizationDate)).Day;
+        //    var secondAmortizationDay = Convert.ToDateTime(UIActions.GetText(LeSecondAmortizationDate)).Day;
 
+        //    var firstAmortizationMonth = Convert.ToDateTime(UIActions.GetText(LeFirstAmortizationDate)).Month;
+        //    var secondAmortizationMonth = Convert.ToDateTime(UIActions.GetText(LeSecondAmortizationDate)).Month;
 
-        [Then(@"updated/computed TIP value should display on Loan Estimate")]
-        public void ThenUpdatedComputedTipValueShouldDisplayOnLoanEstimate()
-        {
-            var cValue = ProjActions.GetNumericValueFromString(UIActions.GetText(LeTipComputedValue));
+        //    var dayDifference = secondAmortizationDay - firstAmortizationDay;
+        //    var monthDifference = secondAmortizationMonth - firstAmortizationMonth;
 
-            var actualCValue = Convert.ToDouble(TridVariable.Tip);
-            Assert.AreEqual(actualCValue, cValue, "Computed value does not match as expected");
+        //    Assert.AreEqual(0, dayDifference, "The Day of Payment Date is not on 1st of every month");
+        //    Assert.AreEqual(2, monthDifference, "The period bewteen Payment Date is not 2 Months");
+        //}
 
-            var dValue = ProjActions.GetNumericValueFromString(UIActions.GetText(LeTipDisclosureValue));
-            var vValue = ProjActions.GetNumericValueFromString(UIActions.GetText(LeTipVarianceValue));
+        //[Then(@"Payment Date should be increment of 14 days")]
+        //public void ThenPaymentDateShouldBeIncrementOf14Days()
+        //{
+        //    var numberOfPayments = Convert.ToInt32(UIActions.GetText(LeNumberOfPayments));
+        //    for (int i = 1; i < numberOfPayments; i++)
+        //    {
+        //        var firstAmortizationDay = Convert.ToDateTime(UIActions.GetText(By.XPath("//div[@id='Mortagagedetails']//md-list-item[" + i + "]//p"))).Date;
+        //        var secondAmortizationDay = Convert.ToDateTime(UIActions.GetText(By.XPath("//div[@id='Mortagagedetails']//md-list-item[" + ++i + "]//p"))).Date;
 
-            var actualVarianceValue = Math.Abs(Math.Round(cValue - dValue, 2));
+        //        var dayDifference = (secondAmortizationDay - firstAmortizationDay).TotalDays;
 
-            Assert.AreEqual(vValue, actualVarianceValue, "Variance does not match as expected");
+        //        Assert.AreEqual(14, dayDifference, "The Day of Payment Date is not on 1st of every month");
+        //    }
+        //}
 
-            Console.WriteLine("===========================================================");
-            Console.WriteLine("Expected :" + vValue);
-            Console.WriteLine("Actual :" + actualVarianceValue);
-            Console.WriteLine("=========================PASSED===========================");
-        }
+        //[Then(@"Payment Schedule should recalculate 780 number of payments")]
+        //public void ThenPaymentScheduleShouldRecalculate780NumberOfPayments()
+        //{
+        //    var numberOfPayments = Convert.ToInt32(UIActions.GetText(LeNumberOfPayments));
+
+        //    Assert.AreEqual(780, numberOfPayments, "Number of Payment schedule is not 780");
+        //}
 
 
-        [Then(@"updated/computed in 5 Years value should display on Loan Estimate")]
-        public void ThenUpdatedComputedIn5YearsValueShouldDisplayOnLoanEstimate()
-        {
-            var cValue = ProjActions.GetNumericValueFromString(UIActions.GetText(LeI5YComputedValue));
+        //[Then(@"Payment Schedule should recalculate 720 number of payments")]
+        //public void ThenPaymentScheduleShouldRecalculate720NumberOfPayments()
+        //{
+        //    var numberOfPayments = Convert.ToInt32(UIActions.GetText(LeNumberOfPayments));
 
-            var actualCValue = Convert.ToDouble(TridVariable.In5Years);
-            Assert.AreEqual(actualCValue, cValue, "Computed value does not match as expected");
+        //    Assert.AreEqual(720, numberOfPayments, "Number of Payment schedule is not 720");
+        //}
 
-            var dValue = ProjActions.GetNumericValueFromString(UIActions.GetText(LeI5YDisclosureValue));
-            var vValue = ProjActions.GetNumericValueFromString(UIActions.GetText(LeI5YVarianceValue));
-
-            var actualVarianceValue = Math.Abs(Math.Round(cValue - dValue, 2));
-
-            Assert.AreEqual(vValue, actualVarianceValue, "Variance does not match as expected");
-
-            Console.WriteLine("===========================================================");
-            Console.WriteLine("Expected :" + vValue);
-            Console.WriteLine("Actual :" + actualVarianceValue);
-            Console.WriteLine("=========================PASSED===========================");
-        }
-
-        [Then(@"updated/computed in 5 Years principal value should display on Loan Estimate")]
-        public void ThenUpdatedComputedIn5YearsPrincipalValueShouldDisplayOnLoanEstimate()
-        {
-            var cValue = ProjActions.GetNumericValueFromString(UIActions.GetText(LeI5YpComputedValue));
-
-            var actualCValue = Convert.ToDouble(TridVariable.In5YearsPrincipal);
-            Assert.AreEqual(actualCValue, cValue, "Computed value does not match as expected");
-
-            var dValue = ProjActions.GetNumericValueFromString(UIActions.GetText(LeI5YpDisclosureValue));
-            var vValue = ProjActions.GetNumericValueFromString(UIActions.GetText(LeI5YpVarianceValue));
-
-            var actualVarianceValue = Math.Abs(Math.Round(cValue - dValue, 2));
-
-            Assert.AreEqual(vValue, actualVarianceValue, "Variance does not match as expected");
-
-            Console.WriteLine("===========================================================");
-            Console.WriteLine("Expected :" + vValue);
-            Console.WriteLine("Actual :" + actualVarianceValue);
-            Console.WriteLine("=========================PASSED===========================");
-        }
+        //[Then(@"Payment Date should be on 1st and 16th of every month")]
+        //public void ThenPaymentDateShouldBeOn1StAnd16ThOfEveryMonth()
+        //{
+        //    var numberOfPayments = Convert.ToInt32(UIActions.GetText(LeNumberOfPayments));
+        //    for (int i = 1; i <= numberOfPayments; i++)
+        //    {
+        //        if (i % 2 == 0)
+        //        {
+        //            var amortizationDay = Convert.ToDateTime(UIActions.GetText(By.XPath("//div[@id='Mortagagedetails']//md-list-item[" + i + "]//p"))).Day;
+        //            Assert.AreEqual(16, amortizationDay, "The Payment date is not on 16th of month");
+        //        }
+        //        else
+        //        {
+        //            var amortizationDay = Convert.ToDateTime(UIActions.GetText(By.XPath("//div[@id='Mortagagedetails']//md-list-item[" + i + "]//p"))).Day;
+        //            Assert.AreEqual(1, amortizationDay, "The Payment date is not on 1st of month");
+        //        }
+        //    }
+        //}
 
 
-        [Then(@"updated/computed APR value should display on Loan Estimate")]
-        public void ThenUpdatedComputedAprValueShouldDisplayOnLoanEstimate()
-        {
-            var cValue = ProjActions.GetNumericValueFromString(UIActions.GetText(LeAprComputedValue));
+        //[Then(@"updated/computed TIP value should display on Loan Estimate")]
+        //public void ThenUpdatedComputedTipValueShouldDisplayOnLoanEstimate()
+        //{
+        //    var cValue = ProjActions.GetNumericValueFromString(UIActions.GetText(LeTipComputedValue));
 
-            var actualCValue = Convert.ToDouble(TridVariable.Apr);
-            Assert.AreEqual(actualCValue, cValue, "Computed value does not match as expected");
+        //    var actualCValue = Convert.ToDouble(TridVariable.Tip);
+        //    Assert.AreEqual(actualCValue, cValue, "Computed value does not match as expected");
 
-            var dValue = ProjActions.GetNumericValueFromString(UIActions.GetText(LeAprDisclosureValue));
-            var vValue = ProjActions.GetNumericValueFromString(UIActions.GetText(LeAprVarianceValue));
+        //    var dValue = ProjActions.GetNumericValueFromString(UIActions.GetText(LeTipDisclosureValue));
+        //    var vValue = ProjActions.GetNumericValueFromString(UIActions.GetText(LeTipVarianceValue));
 
-            var actualVarianceValue = Math.Abs(Math.Round(cValue - dValue, 2));
+        //    var actualVarianceValue = Math.Abs(Math.Round(cValue - dValue, 2));
 
-            Assert.AreEqual(vValue, actualVarianceValue, "Variance does not match as expected");
+        //    Assert.AreEqual(vValue, actualVarianceValue, "Variance does not match as expected");
 
-            Console.WriteLine("===========================================================");
-            Console.WriteLine("Expected :" + vValue);
-            Console.WriteLine("Actual :" + actualVarianceValue);
-            Console.WriteLine("=========================PASSED===========================");
-        }
+        //    Console.WriteLine("===========================================================");
+        //    Console.WriteLine("Expected :" + vValue);
+        //    Console.WriteLine("Actual :" + actualVarianceValue);
+        //    Console.WriteLine("=========================PASSED===========================");
+        //}
+
+
+        //[Then(@"updated/computed in 5 Years value should display on Loan Estimate")]
+        //public void ThenUpdatedComputedIn5YearsValueShouldDisplayOnLoanEstimate()
+        //{
+        //    var cValue = ProjActions.GetNumericValueFromString(UIActions.GetText(LeI5YComputedValue));
+
+        //    var actualCValue = Convert.ToDouble(TridVariable.In5Years);
+        //    Assert.AreEqual(actualCValue, cValue, "Computed value does not match as expected");
+
+        //    var dValue = ProjActions.GetNumericValueFromString(UIActions.GetText(LeI5YDisclosureValue));
+        //    var vValue = ProjActions.GetNumericValueFromString(UIActions.GetText(LeI5YVarianceValue));
+
+        //    var actualVarianceValue = Math.Abs(Math.Round(cValue - dValue, 2));
+
+        //    Assert.AreEqual(vValue, actualVarianceValue, "Variance does not match as expected");
+
+        //    Console.WriteLine("===========================================================");
+        //    Console.WriteLine("Expected :" + vValue);
+        //    Console.WriteLine("Actual :" + actualVarianceValue);
+        //    Console.WriteLine("=========================PASSED===========================");
+        //}
+
+        //[Then(@"updated/computed in 5 Years principal value should display on Loan Estimate")]
+        //public void ThenUpdatedComputedIn5YearsPrincipalValueShouldDisplayOnLoanEstimate()
+        //{
+        //    var cValue = ProjActions.GetNumericValueFromString(UIActions.GetText(LeI5YpComputedValue));
+
+        //    var actualCValue = Convert.ToDouble(TridVariable.In5YearsPrincipal);
+        //    Assert.AreEqual(actualCValue, cValue, "Computed value does not match as expected");
+
+        //    var dValue = ProjActions.GetNumericValueFromString(UIActions.GetText(LeI5YpDisclosureValue));
+        //    var vValue = ProjActions.GetNumericValueFromString(UIActions.GetText(LeI5YpVarianceValue));
+
+        //    var actualVarianceValue = Math.Abs(Math.Round(cValue - dValue, 2));
+
+        //    Assert.AreEqual(vValue, actualVarianceValue, "Variance does not match as expected");
+
+        //    Console.WriteLine("===========================================================");
+        //    Console.WriteLine("Expected :" + vValue);
+        //    Console.WriteLine("Actual :" + actualVarianceValue);
+        //    Console.WriteLine("=========================PASSED===========================");
+        //}
+
+
+        //[Then(@"updated/computed APR value should display on Loan Estimate")]
+        //public void ThenUpdatedComputedAprValueShouldDisplayOnLoanEstimate()
+        //{
+        //    var cValue = ProjActions.GetNumericValueFromString(UIActions.GetText(LeAprComputedValue));
+
+        //    var actualCValue = Convert.ToDouble(TridVariable.Apr);
+        //    Assert.AreEqual(actualCValue, cValue, "Computed value does not match as expected");
+
+        //    var dValue = ProjActions.GetNumericValueFromString(UIActions.GetText(LeAprDisclosureValue));
+        //    var vValue = ProjActions.GetNumericValueFromString(UIActions.GetText(LeAprVarianceValue));
+
+        //    var actualVarianceValue = Math.Abs(Math.Round(cValue - dValue, 2));
+
+        //    Assert.AreEqual(vValue, actualVarianceValue, "Variance does not match as expected");
+
+        //    Console.WriteLine("===========================================================");
+        //    Console.WriteLine("Expected :" + vValue);
+        //    Console.WriteLine("Actual :" + actualVarianceValue);
+        //    Console.WriteLine("=========================PASSED===========================");
+        //}
 
         #endregion
 

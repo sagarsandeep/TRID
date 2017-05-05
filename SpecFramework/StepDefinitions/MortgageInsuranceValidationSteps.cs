@@ -61,7 +61,7 @@ namespace TRID.StepDefinitions
         [When(@"user enters pmi rate values")]
         public void WhenUserEntersPmiRateValues()
         {
-            ProjActions.AddPmiRate();
+            ProjActions.AddPmiRateValues();
             Thread.Sleep(3000);
             ProjActions.PmiRatesGridValidation();
         }
@@ -173,126 +173,126 @@ namespace TRID.StepDefinitions
             ProjActions.PmiRatesGridValidation();
         }
 
-        [Then(@"updated/computed pmi value should display on Mortgage Insurance")]
-        public void ThenUpdatedComputedPmiValueShouldDisplayOnMortgageInsurance()
-        {
-            var cValue = ProjActions.GetNumericValueFromString(UIActions.GetText(MiPmiComputedValue));
+        //[Then(@"updated/computed pmi value should display on Mortgage Insurance")]
+        //public void ThenUpdatedComputedPmiValueShouldDisplayOnMortgageInsurance()
+        //{
+        //    var cValue = ProjActions.GetNumericValueFromString(UIActions.GetText(MiPmiComputedValue));
 
-            var actualCValue = Convert.ToDouble(TridVariable.Pmi);
-            Assert.AreEqual(actualCValue, cValue, "Computed value does not match as expected");
+        //    var actualCValue = Convert.ToDouble(TridVariable.Pmi);
+        //    Assert.AreEqual(actualCValue, cValue, "Computed value does not match as expected");
 
-            var dValue = ProjActions.GetNumericValueFromString(UIActions.GetText(MiPmiDisclosureValue));
-            var vValue = ProjActions.GetNumericValueFromString(UIActions.GetText(MiPmiVarianceValue));
+        //    var dValue = ProjActions.GetNumericValueFromString(UIActions.GetText(MiPmiDisclosureValue));
+        //    var vValue = ProjActions.GetNumericValueFromString(UIActions.GetText(MiPmiVarianceValue));
 
-            var actualVarianceValue = Math.Abs(Math.Round(cValue - dValue, 2));
+        //    var actualVarianceValue = Math.Abs(Math.Round(cValue - dValue, 2));
 
-            Assert.AreEqual(vValue, actualVarianceValue, "Variance does not match as expected");
+        //    Assert.AreEqual(vValue, actualVarianceValue, "Variance does not match as expected");
 
-            Console.WriteLine("===========================================================");
-            Console.WriteLine("Expected :" + vValue);
-            Console.WriteLine("Actual :" + actualVarianceValue);
-            Console.WriteLine("=========================PASSED===========================");
-        }
+        //    Console.WriteLine("===========================================================");
+        //    Console.WriteLine("Expected :" + vValue);
+        //    Console.WriteLine("Actual :" + actualVarianceValue);
+        //    Console.WriteLine("=========================PASSED===========================");
+        //}
 
-        [Then(@"updated/computed Drop off years for PMI value should display on Mortgage Insurance")]
-        public void ThenUpdatedComputedDropOffYearsForPmiValueShouldDisplayOnMortgageInsurance()
-        {
-            var cValue = ProjActions.GetDatePart(MiDoyfpComputedValue);
+        //[Then(@"updated/computed Drop off years for PMI value should display on Mortgage Insurance")]
+        //public void ThenUpdatedComputedDropOffYearsForPmiValueShouldDisplayOnMortgageInsurance()
+        //{
+        //    var cValue = ProjActions.GetDatePart(MiDoyfpComputedValue);
 
-            var actualCValue = Convert.ToDateTime(DateTime.FromOADate(Convert.ToDouble(TridVariable.DropOffYearsForPmi)).ToString("M/d/yyyy"));
-            Assert.AreEqual(actualCValue, cValue, "Computed value does not match as expected");
+        //    var actualCValue = Convert.ToDateTime(DateTime.FromOADate(Convert.ToDouble(TridVariable.DropOffYearsForPmi)).ToString("M/d/yyyy"));
+        //    Assert.AreEqual(actualCValue, cValue, "Computed value does not match as expected");
 
-            var dValue = ProjActions.GetDatePart(MiDoyfpDisclosureValue);
-            var vValue = ProjActions.GetNumericValueFromString(UIActions.GetText(MiDoyfpVarianceValue));
+        //    var dValue = ProjActions.GetDatePart(MiDoyfpDisclosureValue);
+        //    var vValue = ProjActions.GetNumericValueFromString(UIActions.GetText(MiDoyfpVarianceValue));
 
-            var actualVarianceValue = (cValue - dValue).TotalDays;
+        //    var actualVarianceValue = (cValue - dValue).TotalDays;
 
-            Assert.AreEqual(vValue, actualVarianceValue, "Variance does not match as expected");
-            Console.WriteLine("===========================================================");
-            Console.WriteLine("Expected :" + vValue);
-            Console.WriteLine("Actual :" + actualVarianceValue);
-            Console.WriteLine("=========================PASSED===========================");
-        }
+        //    Assert.AreEqual(vValue, actualVarianceValue, "Variance does not match as expected");
+        //    Console.WriteLine("===========================================================");
+        //    Console.WriteLine("Expected :" + vValue);
+        //    Console.WriteLine("Actual :" + actualVarianceValue);
+        //    Console.WriteLine("=========================PASSED===========================");
+        //}
 
-        [Then(@"updated/computed Total Period Payment value should display on Mortgage Insurance")]
-        public void ThenUpdatedComputedTotalPeriodPaymentValueShouldDisplayOnMortgageInsurance()
-        {
-            var cValue = ProjActions.GetNumericValueFromString(UIActions.GetText(MiTppComputedValue));
+        //[Then(@"updated/computed Total Period Payment value should display on Mortgage Insurance")]
+        //public void ThenUpdatedComputedTotalPeriodPaymentValueShouldDisplayOnMortgageInsurance()
+        //{
+        //    var cValue = ProjActions.GetNumericValueFromString(UIActions.GetText(MiTppComputedValue));
 
-            var actualCValue = Convert.ToDouble(TridVariable.TotalPeriodPayment);
-            Assert.AreEqual(actualCValue, cValue, "Computed value does not match as expected");
+        //    var actualCValue = Convert.ToDouble(TridVariable.TotalPeriodPayment);
+        //    Assert.AreEqual(actualCValue, cValue, "Computed value does not match as expected");
 
-            var dValue = ProjActions.GetNumericValueFromString(UIActions.GetText(MiTppDisclosureValue));
-            var vValue = ProjActions.GetNumericValueFromString(UIActions.GetText(MiTppVarianceValue));
+        //    var dValue = ProjActions.GetNumericValueFromString(UIActions.GetText(MiTppDisclosureValue));
+        //    var vValue = ProjActions.GetNumericValueFromString(UIActions.GetText(MiTppVarianceValue));
 
-            var actualVarianceValue = Math.Abs(Math.Round(cValue - dValue, 2));
+        //    var actualVarianceValue = Math.Abs(Math.Round(cValue - dValue, 2));
 
-            Assert.AreEqual(vValue, actualVarianceValue, "Variance does not match as expected");
-            Console.WriteLine("===========================================================");
-            Console.WriteLine("Expected :" + vValue);
-            Console.WriteLine("Actual :" + actualVarianceValue);
-            Console.WriteLine("=========================PASSED===========================");
-        }
+        //    Assert.AreEqual(vValue, actualVarianceValue, "Variance does not match as expected");
+        //    Console.WriteLine("===========================================================");
+        //    Console.WriteLine("Expected :" + vValue);
+        //    Console.WriteLine("Actual :" + actualVarianceValue);
+        //    Console.WriteLine("=========================PASSED===========================");
+        //}
 
-        [Then(@"updated/computed Total Of Payments value should display on Mortgage Insurance")]
-        public void ThenUpdatedComputedTotalOfPaymentsValueShouldDisplayOnMortgageInsurance()
-        {
-            var cValue = ProjActions.GetNumericValueFromString(UIActions.GetText(MiTopComputedValue));
+        //[Then(@"updated/computed Total Of Payments value should display on Mortgage Insurance")]
+        //public void ThenUpdatedComputedTotalOfPaymentsValueShouldDisplayOnMortgageInsurance()
+        //{
+        //    var cValue = ProjActions.GetNumericValueFromString(UIActions.GetText(MiTopComputedValue));
 
-            var actualCValue = Convert.ToDouble(TridVariable.TotalOfPayments);
-            Assert.AreEqual(actualCValue, cValue, "Computed value does not match as expected");
+        //    var actualCValue = Convert.ToDouble(TridVariable.TotalOfPayments);
+        //    Assert.AreEqual(actualCValue, cValue, "Computed value does not match as expected");
 
-            var dValue = ProjActions.GetNumericValueFromString(UIActions.GetText(MiTopDisclosureValue));
-            var vValue = ProjActions.GetNumericValueFromString(UIActions.GetText(MiTopVarianceValue));
+        //    var dValue = ProjActions.GetNumericValueFromString(UIActions.GetText(MiTopDisclosureValue));
+        //    var vValue = ProjActions.GetNumericValueFromString(UIActions.GetText(MiTopVarianceValue));
 
-            var actualVarianceValue = Math.Abs(Math.Round(cValue - dValue, 2));
+        //    var actualVarianceValue = Math.Abs(Math.Round(cValue - dValue, 2));
 
-            Assert.AreEqual(vValue, actualVarianceValue, "Variance does not match as expected");
-            Console.WriteLine("===========================================================");
-            Console.WriteLine("Expected :" + vValue);
-            Console.WriteLine("Actual :" + actualVarianceValue);
-            Console.WriteLine("=========================PASSED===========================");
-        }
+        //    Assert.AreEqual(vValue, actualVarianceValue, "Variance does not match as expected");
+        //    Console.WriteLine("===========================================================");
+        //    Console.WriteLine("Expected :" + vValue);
+        //    Console.WriteLine("Actual :" + actualVarianceValue);
+        //    Console.WriteLine("=========================PASSED===========================");
+        //}
 
-        [Then(@"updated/computed Amount Financed value should display on Mortgage Insurance")]
-        public void ThenUpdatedComputedAmountFinancedValueShouldDisplayOnMortgageInsurance()
-        {
-            var cValue = ProjActions.GetNumericValueFromString(UIActions.GetText(MiAfComputedValue));
+        //[Then(@"updated/computed Amount Financed value should display on Mortgage Insurance")]
+        //public void ThenUpdatedComputedAmountFinancedValueShouldDisplayOnMortgageInsurance()
+        //{
+        //    var cValue = ProjActions.GetNumericValueFromString(UIActions.GetText(MiAfComputedValue));
 
-            var actualCValue = Convert.ToDouble(TridVariable.AmountFinanced);
-            Assert.AreEqual(actualCValue, cValue, "Computed value does not match as expected");
+        //    var actualCValue = Convert.ToDouble(TridVariable.AmountFinanced);
+        //    Assert.AreEqual(actualCValue, cValue, "Computed value does not match as expected");
 
-            var dValue = ProjActions.GetNumericValueFromString(UIActions.GetText(MiAfDisclosureValue));
-            var vValue = ProjActions.GetNumericValueFromString(UIActions.GetText(MiAfVarianceValue));
+        //    var dValue = ProjActions.GetNumericValueFromString(UIActions.GetText(MiAfDisclosureValue));
+        //    var vValue = ProjActions.GetNumericValueFromString(UIActions.GetText(MiAfVarianceValue));
 
-            var actualVarianceValue = Math.Abs(Math.Round(cValue - dValue, 2));
+        //    var actualVarianceValue = Math.Abs(Math.Round(cValue - dValue, 2));
 
-            Assert.AreEqual(vValue, actualVarianceValue, "Variance does not match as expected");
-            Console.WriteLine("===========================================================");
-            Console.WriteLine("Expected :" + vValue);
-            Console.WriteLine("Actual :" + actualVarianceValue);
-            Console.WriteLine("=========================PASSED===========================");
-        }
+        //    Assert.AreEqual(vValue, actualVarianceValue, "Variance does not match as expected");
+        //    Console.WriteLine("===========================================================");
+        //    Console.WriteLine("Expected :" + vValue);
+        //    Console.WriteLine("Actual :" + actualVarianceValue);
+        //    Console.WriteLine("=========================PASSED===========================");
+        //}
 
-        [Then(@"updated/computed APR value should display on Mortgage Insurance")]
-        public void ThenUpdatedComputedAprValueShouldDisplayOnMortgageInsurance()
-        {
-            var cValue = ProjActions.GetNumericValueFromString(UIActions.GetText(MiAprComputedValue));
+        //[Then(@"updated/computed APR value should display on Mortgage Insurance")]
+        //public void ThenUpdatedComputedAprValueShouldDisplayOnMortgageInsurance()
+        //{
+        //    var cValue = ProjActions.GetNumericValueFromString(UIActions.GetText(MiAprComputedValue));
 
-            var actualCValue = Convert.ToDouble(TridVariable.Apr);
-            Assert.AreEqual(actualCValue, cValue, "Computed value does not match as expected");
+        //    var actualCValue = Convert.ToDouble(TridVariable.Apr);
+        //    Assert.AreEqual(actualCValue, cValue, "Computed value does not match as expected");
 
-            var dValue = Math.Round(ProjActions.GetNumericValueFromString(UIActions.GetText(MiAprDisclosureValue)), 2);
-            var vValue = Math.Round(ProjActions.GetNumericValueFromString(UIActions.GetText(MiAprVarianceValue)), 2);
+        //    var dValue = Math.Round(ProjActions.GetNumericValueFromString(UIActions.GetText(MiAprDisclosureValue)), 2);
+        //    var vValue = Math.Round(ProjActions.GetNumericValueFromString(UIActions.GetText(MiAprVarianceValue)), 2);
 
-            var actualVarianceValue = Math.Abs(Math.Round(cValue - dValue, 2));
+        //    var actualVarianceValue = Math.Abs(Math.Round(cValue - dValue, 2));
 
-            Assert.AreEqual(vValue, actualVarianceValue, "Variance does not match as expected");
-            Console.WriteLine("===========================================================");
-            Console.WriteLine("Expected :" + vValue);
-            Console.WriteLine("Actual :" + actualVarianceValue);
-            Console.WriteLine("=========================PASSED===========================");
-        }
+        //    Assert.AreEqual(vValue, actualVarianceValue, "Variance does not match as expected");
+        //    Console.WriteLine("===========================================================");
+        //    Console.WriteLine("Expected :" + vValue);
+        //    Console.WriteLine("Actual :" + actualVarianceValue);
+        //    Console.WriteLine("=========================PASSED===========================");
+        //}
 
         #endregion
 

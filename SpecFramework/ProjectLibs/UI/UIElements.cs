@@ -4,30 +4,30 @@ using TRID.ProjectLibs.Common;
 
 namespace TRID.ProjectLibs.UI
 {
-    public class UIElements : PageBase
+    public class UIElements
     {
-        #region HeaderBar
+        //#region HeaderBar
 
-        public static By StartNewLoanLink = By.LinkText("Start New Loan");
-        public static By LoanInputsLink = By.LinkText("Loan Inputs");
-        public static By DisclosureInputsLink = By.LinkText("Disclosure Inputs");
-        public static By LoanEstimateLink = By.LinkText("Loan Estimate");
-        public static By ClosingDisclosureLink = By.LinkText("Closing Disclosure");
-        public static By EscrowLink = By.LinkText("Escrow");
-        public static By AmortizationLink = By.LinkText("Amortization");
-        public static By VariableAmortizationLink = By.LinkText("Variable Amortization");        
-        public static By ExportLink = By.LinkText("Export");
-        public static By EscrowGrid = By.LinkText("EscrowGrid");
+        //public static By StartNewLoanLink = By.LinkText("Start New Loan");
+        //public static By LoanInputsLink = By.LinkText("Loan Inputs");
+        //public static By DisclosureInputsLink = By.LinkText("Disclosure Inputs");
+        //public static By LoanEstimateLink = By.LinkText("Loan Estimate");
+        //public static By ClosingDisclosureLink = By.LinkText("Closing Disclosure");
+        //public static By EscrowLink = By.LinkText("Escrow");
+        //public static By AmortizationLink = By.LinkText("Amortization");
+        //public static By VariableAmortizationLink = By.LinkText("Variable Amortization");        
+        //public static By ExportLink = By.LinkText("Export");
+        //public static By EscrowGrid = By.LinkText("EscrowGrid");
 
 
-        #endregion
+        //#endregion
 
-        #region Start New Loan
+        //#region Start New Loan
 
-        public static By SnlStartNewLoanText = By.XPath("//div[@id='StartNewLoan']/md-toolbar");
-        public static By SnlResetButton = By.XPath("//div[@id='StartNewLoan']//button");
+        //public static By SnlStartNewLoanText = By.XPath("//div[@id='StartNewLoan']/md-toolbar");
+        //public static By SnlResetButton = By.XPath("//div[@id='StartNewLoan']//button");
 
-        #endregion
+        //#endregion
 
         #region Closing Disclosure Page
 
@@ -128,241 +128,246 @@ namespace TRID.ProjectLibs.UI
         //public static By CdAfDisclosureValue = By.XPath("//div[@id='viewCompositionContainer']//div[3]/div[3]/ng-include//div[1]/p[2]");
         //public static By CdAfVarianceValue = By.XPath("//div[@id='viewCompositionContainer']//div[3]/div[3]/ng-include//div[1]/p[3]");
 
-        //Ecrw Prop Costs > 1 Yr 1
-        public static By CdEpcooyComputedValue = By.XPath("//div[@id='viewCompositionContainer']//div[1]/div[6]/ng-include//div[1]/p[1]");
-        public static By CdEpcooyDisclosureValue = By.XPath("//div[@id='viewCompositionContainer']//div[1]/div[6]/ng-include//div[1]/p[2]");
-        public static By CdEpcooyVarianceValue = By.XPath("//div[@id='viewCompositionContainer']//div[1]/div[6]/ng-include//div[1]/p[3]");
+        ////Ecrw Prop Costs > 1 Yr 1
+        //public static By CdEpcooyComputedValue = By.XPath("//div[@id='viewCompositionContainer']//div[1]/div[6]/ng-include//div[1]/p[1]");
+        //public static By CdEpcooyDisclosureValue = By.XPath("//div[@id='viewCompositionContainer']//div[1]/div[6]/ng-include//div[1]/p[2]");
+        //public static By CdEpcooyVarianceValue = By.XPath("//div[@id='viewCompositionContainer']//div[1]/div[6]/ng-include//div[1]/p[3]");
        
-        //Initial Escrow Pymt
-        public static By CdIepComputedValue = By.XPath("//div[@id='viewCompositionContainer']//div[1]/div[7]/ng-include//div[1]/p[1]");
-        public static By CdIepDisclosureValue = By.XPath("//div[@id='viewCompositionContainer']//div[1]/div[7]/ng-include//div[1]/p[2]");
-        public static By CdIepVarianceValue = By.XPath("//div[@id='viewCompositionContainer']//div[1]/div[7]/ng-include//div[1]/p[3]");
+        ////Initial Escrow Pymt
+        //public static By CdIepComputedValue = By.XPath("//div[@id='viewCompositionContainer']//div[1]/div[7]/ng-include//div[1]/p[1]");
+        //public static By CdIepDisclosureValue = By.XPath("//div[@id='viewCompositionContainer']//div[1]/div[7]/ng-include//div[1]/p[2]");
+        //public static By CdIepVarianceValue = By.XPath("//div[@id='viewCompositionContainer']//div[1]/div[7]/ng-include//div[1]/p[3]");
 
-        //Non Ecrw Prop Costs > 1 Yr 1
-        public static By CdNepcooyComputedValue = By.XPath("//div[@id='viewCompositionContainer']//div[2]/div[7]/ng-include//div[1]/p[1]");
-        public static By CdNepcooyDisclosureValue = By.XPath("//div[@id='viewCompositionContainer']//div[2]/div[7]/ng-include//div[1]/p[2]");
-        public static By CdNepcooyVarianceValue = By.XPath("//div[@id='viewCompositionContainer']//div[2]/div[7]/ng-include//div[1]/p[3]");
+        ////Non Ecrw Prop Costs > 1 Yr 1
+        //public static By CdNepcooyComputedValue = By.XPath("//div[@id='viewCompositionContainer']//div[2]/div[7]/ng-include//div[1]/p[1]");
+        //public static By CdNepcooyDisclosureValue = By.XPath("//div[@id='viewCompositionContainer']//div[2]/div[7]/ng-include//div[1]/p[2]");
+        //public static By CdNepcooyVarianceValue = By.XPath("//div[@id='viewCompositionContainer']//div[2]/div[7]/ng-include//div[1]/p[3]");
 
-        //Period Escrow Pymt
-        public static By CdPepComputedValue = By.XPath("//div[@id='viewCompositionContainer']//div[2]/div[8]/ng-include//div[1]/p[1]");
-        public static By CdPepDisclosureValue = By.XPath("//div[@id='viewCompositionContainer']//div[2]/div[8]/ng-include//div[1]/p[2]");
-        public static By CdPepVarianceValue = By.XPath("//div[@id='viewCompositionContainer']//div[2]/div[8]/ng-include//div[1]/p[3]");
-
-        #endregion
-
-
-        #region All Input Values
-
-        public static By LoanDetailsText = By.XPath("//div[@id='LoanInformationInput']/md-toolbar");
-        //Loan Details
-        public static By CalculationMethod;
-        public static By LoanType;
-        public static By FrequencyOfPayments;
-        public static By LoanTerm;
-        public static By RepaymentTermType;
-        public static void LoanDetailsRadioButtonVariable()
-        {
-            CalculationMethod = By.XPath("//md-radio-button[@aria-label='" + TridVariable.CalculationMethod + "']");
-            LoanType = By.XPath("//md-radio-button[@aria-label='" + TridVariable.LoanType + "']");
-            FrequencyOfPayments = By.XPath("//md-radio-button[@aria-label='" + TridVariable.FrequencyOfPayments + "']");
-            LoanTerm = By.XPath("//md-radio-button[@aria-label='" + TridVariable.LoanTerm + "']");
-            RepaymentTermType = By.XPath("//md-radio-button[@aria-label='" + TridVariable.RepaymentTermType + "']");
-        }
-        public static By FreqOfPmtValue = By.XPath("//div[@title='Frequency Of Pmt Value']//input");
-        public static By LoanTermValue = By.XPath("//div[@title='Loan Term Value']//input");
-        public static By LoanAmount = By.XPath("//div[@title='Loan Amount']//input");
-        public static By RateOfInterest = By.XPath("//div[@title='Rate Of Interest']//input");
-        public static By DateOfLoan = By.XPath("//div[@title='Date of loan']//input");
-        public static By DateOfInterestBegins = By.XPath("//div[@title='Date Interest Begins To Accrue']//input");
-        public static By DateOfFirstPayment = By.XPath("//div[@title='Date Of First Payment']//input");
-        public static By PeriodPayment = By.XPath("//div[@title='Period Payment']//input");
-        public static By LoanCostsForDisclosure = By.XPath("//div[@title='Loan Costs For Disclosure(Sum of Section A, B, C )']//input");
-        //public static By OddDays = 
-
-        //Varibale Loan Details
-        public static By FirstTermChange = By.XPath("//div[@title='First Term Change']//input");
-        public static By SubsequentTermChange = By.XPath("//div[@title='Subsequent Term Change']//input");
-        public static By DnRateCapFirstAdjustment = By.XPath("//div[@title='DN Rate Cap First Adjustment']//input");
-        public static By DnRateCapSubseqAdjustment = By.XPath("//div[@title='DN Rate Caps Subseq Adjustment']//input");
-        public static By UpRateCapFirstAdjustment = By.XPath("//div[@title='UP Rate Cap First Adjustment']//input");
-        public static By UpRateCapSubseqAdjustment = By.XPath("//div[@title='UP Rate Caps Subseq Adjustment']//input");
-        public static By FloorRate = By.XPath("//div[@title='Floor Rate']//input");
-        public static By MaxRateEver = By.XPath("//div[@title='Max Rate Ever']//input");
-        public static By Index = By.XPath("//div[@title='Index']//input");
-        public static By Margin = By.XPath("//div[@title='Margin']//input");
-        public static By RoundingFactor = By.XPath("//div[@title='Rounding Factor']//input");
-
-        //Mortgage Insurance
-        public static By AddNumber = By.XPath("//div[@title='Number']//input");
-        public static By AddBeginPeriod = By.XPath("//div[@title='Begin Period']//input");
-        public static By AddEndPeriod = By.XPath("//div[@title='End Period']//input");
-        public static By AddPmiRate = By.XPath("//div[@title='PMI Rate(%)']//input");
-        public static By AddButton = By.XPath("//div[@id='MortgageInput']//button");
-        public static By PmiRatesGridRowsCount = By.XPath("//section[@id='MortgageGrid']//tbody/tr");
-        public static By NumberOfPeriodsofAdvanceInsCollected = By.XPath("//div[@title='Number of Periods of Advance Insurance Collected']//input");
-        public static By LowerOfCostOrAppraisal = By.XPath("//div[@title='Lower Of Cost Or Appraisal']//input");
-        public static By TotalMiInSectionFPrepaids = By.XPath("//div[@title='Total MI In Section F (Prepaids)']//input");
-        public static By TotalMiInSectionGEscrow = By.XPath("//div[@title='Total MI In Section G (Escrow)']//input");
-
-        //Escrow
-        public static By EscrowCalcInputsText = By.XPath("//div[@id='EscrowCalculationsInput']/md-toolbar");
-        public static By IsInsEscrowed;
-        public static By IsTaxEscrowed;
-        public static By IsPmiEscrowed;
-        public static void EscrowRadioButtonVariable()
-        {
-            IsInsEscrowed = By.XPath("//div[@title='Is INS Escrowed']//md-radio-button[@aria-label='" + TridVariable.IsInsEscrowed + "']");
-            IsTaxEscrowed = By.XPath("//div[@title='Is Tax Escrowed']//md-radio-button[@aria-label='" + TridVariable.IsTaxEscrowed + "']");
-            IsPmiEscrowed = By.XPath("//div[@title='Is PMI Escrowed']//md-radio-button[@aria-label='" + TridVariable.IsPmiEscrowed + "']");
-        }
-        public static By CushionMonthsForInsurance = By.XPath("//div[@title='Cushion Months For Insurance']//input");
-        public static By CushionMonthsForTax = By.XPath("//div[@title='Cushion Months For Tax']//input");
-        public static By EscrowInstallmentInputsNumber = By.XPath("//div[@id='EscrowInsuranceGridInputs']//div[@title='Number']//input");
-        public static By DateForEscrowInsurance = By.XPath("//div[@title='Date For Escrow Insurance']//input");
-        public static By InsuranceInstallmentAmount = By.XPath("//div[@title='Insuarnce Installment Amount']//input");
-        public static By EscrowInstallmentInputsAddButton = By.XPath("//div[@id='EscrowInsuranceGridInputs']//div[4]//button");
-        public static By EscrowInstallmentInfoGridRowCount = By.XPath("//section[@id='EscrowInsuranceGrid']//tbody/tr");
-        public static By EscrowInstallmentInfoGridNumber = By.XPath("//section[@id='EscrowInsuranceGrid']//tbody/tr/td[1]//span");
-        public static By EscrowInstallmentInfoGridInstallmentDate = By.XPath("//section[@id='EscrowInsuranceGrid']//tbody/tr/td[2]//span");
-        public static By EscrowInstallmentInfoGridInstallmentAmount = By.XPath("//section[@id='EscrowInsuranceGrid']//tbody/tr/td[3]//span");
-        public static By EscrowTaxCalculationsInputsNumber = By.XPath("//div[@id='EscrowTaxCalculationsGridInputs']//div[@title='Number']//input");
-        public static By EscrowTaxCalculationsInputsDate = By.XPath("//div[@title='Date']//input");
-        public static By EscrowTaxCalculationsInputsTaxInstallmentAmount = By.XPath("//div[@title='Tax Installment Amount']//input");
-        public static By EscrowTaxCalculationsInputsAddButton = By.XPath("//div[@id='EscrowTaxCalculationsGridInputs']//div[4]//button");
-        public static By EscrowTaxInfoGridRowCount = By.XPath("//section[@id='EscrowTaxGrid']//tbody/tr");
-        public static By EscrowTaxInfoGridNumberFR = By.XPath("//section[@id='EscrowTaxGrid']//tbody/tr[1]/td[1]//span");
-        public static By EscrowTaxInfoGridInstallmentDateFR = By.XPath("//section[@id='EscrowTaxGrid']//tbody/tr[1]/td[2]//span");
-        public static By EscrowTaxInfoGridTaxInstallmentAmountFR = By.XPath("//section[@id='EscrowTaxGrid']//tbody/tr[1]/td[3]//span");                    
-        public static By EscrowTaxInfoGridNumberSR = By.XPath("//section[@id='EscrowTaxGrid']//tbody/tr[2]/td[1]//span");
-        public static By EscrowTaxInfoGridInstallmentDateSR = By.XPath("//section[@id='EscrowTaxGrid']//tbody/tr[2]/td[2]//span");
-        public static By EscrowTaxInfoGridTaxInstallmentAmountSR = By.XPath("//section[@id='EscrowTaxGrid']//tbody/tr[2]/td[3]//span");
-
-
-        //Prepaid Charges
-        public static By FhaVaUsdaUpfrontPmiFree = By.XPath("//div[@title='FHA/VA/USDA/Upfront PMI fee']//input");
-        public static By FloodFee = By.XPath("//div[@title='Flood Fee']//input");
-        public static By InspectionFee = By.XPath("//div[@title='Inspection Fee']//input");
-        public static By LoanOriginationFee = By.XPath("//div[@title='Loan Origination Fee']//input");
-        public static By OtherFees = By.XPath("//div[@title='Other Fees']//input");
-        public static By PmiEscrowed = By.XPath("//div[@title='PMI escrowed']//input");
-        public static By PrepaidDailyInterest = By.XPath("//div[@title='Prepaid Daily Interest']//input");
-        public static By TaxServicing = By.XPath("//div[@title='Tax Servicing']//input");
-        public static By TitleClosingFee = By.XPath("//div[@title='Title - Closing Fee']//input");
-        public static By TitleClosingProtectionLetter = By.XPath("//div[@title='Title - Closing protection letter']//input");
-        public static By TitleCourierFee = By.XPath("//div[@title='Title - Courier Fee']//input");
-        public static By TitleDrawFee = By.XPath("//div[@title='Title - Draw Fee']//input");
-        public static By TitleWireFee = By.XPath("//div[@title='Title - Wire Fee']//input");
-        public static By UnderWriting = By.XPath("//div[@title='Underwriting']//input");
-        public static By CustomName = By.XPath("//div[@title='Number']//input");
-        public static By CustomValue = By.XPath("//div[@title='Number']//input");
-        public static By CustomFieldAddButton = By.XPath("//div[@id='PrepaidChargeGridInput']//button");
-        public static By PrepaidChargeGridCount = By.XPath("//section[@id='PrepaidChargeGrid']//tbody/tr");
-        public static By PrepaidChargeGridCustomName = By.XPath("//section[@id='PrepaidChargeGrid']//tbody/tr/td[1]//span");
-        public static By PrepaidChargeGridCustomValue = By.XPath("//section[@id='PrepaidChargeGrid']//tbody/tr/td[2]//span");
+        ////Period Escrow Pymt
+        //public static By CdPepComputedValue = By.XPath("//div[@id='viewCompositionContainer']//div[2]/div[8]/ng-include//div[1]/p[1]");
+        //public static By CdPepDisclosureValue = By.XPath("//div[@id='viewCompositionContainer']//div[2]/div[8]/ng-include//div[1]/p[2]");
+        //public static By CdPepVarianceValue = By.XPath("//div[@id='viewCompositionContainer']//div[2]/div[8]/ng-include//div[1]/p[3]");
 
         #endregion
 
 
-        #region Disclosed Inputs
+        //#region All Input Values
 
-        public static By DisclosedValuesText = By.XPath("//div[@id='DisclosureInput']/md-toolbar");
+        //public static By LoanDetailsText = By.XPath("//div[@id='LoanInformationInput']/md-toolbar");
+        ////Loan Details
+        //public static By CalculationMethod;
+        //public static By LoanType;
+        //public static By FrequencyOfPayments;
+        //public static By LoanTerm;
+        //public static By RepaymentTermType;
+        //public static By OddDaysSelect;
 
-        //Closing Disclosure
-        public static By DisclosedMonthlyPrincipalandInterest = By.XPath("//div[@title='Dscl Monthly Principal And Interest']//input");
-        public static By DisclosedMonthlyPmi = By.XPath("//div[@title='Dscl Monthly PMI']//input");
-        public static By DisclosedTotalPeriodicPayment = By.XPath("//div[@title='Dscl Total Periodic Payment ']//input");
-        public static By DisclosedPmiTerminalDate = By.XPath("//div[@title='Dscl PMI Termination Date (78%)']//input");
-        public static By DisclosedPmiCancelDate = By.XPath("//div[@title='Dscl PMI Cancel Date (80%)']//input");
-        public static By DisclosedFinalBalloonPayment = By.XPath("//div[@title='Dscl Final Balloon Payment']//input");
-        public static By DisclosedTotalOfPayment = By.XPath("//div[@title='Dscl Total Of Payment']//input");
+        //public static void LoanDetailsRadioButtonVariable()
+        //{
+        //    CalculationMethod = By.XPath("//md-radio-button[@aria-label='" + TridVariable.CalculationMethod + "']");
+        //    LoanType = By.XPath("//md-radio-button[@aria-label='" + TridVariable.LoanType + "']");
+        //    FrequencyOfPayments = By.XPath("//md-radio-button[@aria-label='" + TridVariable.FrequencyOfPayments + "']");
+        //    LoanTerm = By.XPath("//md-radio-button[@aria-label='" + TridVariable.LoanTerm + "']");
+        //    RepaymentTermType = By.XPath("//md-radio-button[@aria-label='" + TridVariable.RepaymentTermType + "']");
+        //    OddDaysSelect = By.XPath("//md-option[@value='" + TridVariable.OddDaysInterestCollected + "']");
+        //}
+    
+        //public static By FreqOfPmtValue = By.XPath("//div[@title='Frequency Of Pmt Value']//input");
+        //public static By LoanTermValue = By.XPath("//div[@title='Loan Term Value']//input");
+        //public static By LoanAmount = By.XPath("//div[@title='Loan Amount']//input");
+        //public static By RateOfInterest = By.XPath("//div[@title='Rate Of Interest']//input");
+        //public static By DateOfLoan = By.XPath("//div[@title='Date of loan']//input");
+        //public static By DateOfInterestBegins = By.XPath("//div[@title='Date Interest Begins To Accrue']//input");
+        //public static By DateOfFirstPayment = By.XPath("//div[@title='Date Of First Payment']//input");
+        //public static By PeriodPayment = By.XPath("//div[@title='Period Payment']//input");
+        //public static By LoanCostsForDisclosure = By.XPath("//div[@title='Loan Costs For Disclosure(Sum of Section A, B, C )']//input");
+        //public static By OddDaysClick = By.ClassName("md-select-value");
+        ////public static By OddDaysSelect = By.XPath("//md-option[@value='"+ TridVariable.OddDaysInterestCollected +"']");
+
+        ////Varibale Loan Details
+        //public static By FirstTermChange = By.XPath("//div[@title='First Term Change']//input");
+        //public static By SubsequentTermChange = By.XPath("//div[@title='Subsequent Term Change']//input");
+        //public static By DnRateCapFirstAdjustment = By.XPath("//div[@title='DN Rate Cap First Adjustment']//input");
+        //public static By DnRateCapSubseqAdjustment = By.XPath("//div[@title='DN Rate Caps Subseq Adjustment']//input");
+        //public static By UpRateCapFirstAdjustment = By.XPath("//div[@title='UP Rate Cap First Adjustment']//input");
+        //public static By UpRateCapSubseqAdjustment = By.XPath("//div[@title='UP Rate Caps Subseq Adjustment']//input");
+        //public static By FloorRate = By.XPath("//div[@title='Floor Rate']//input");
+        //public static By MaxRateEver = By.XPath("//div[@title='Max Rate Ever']//input");
+        //public static By Index = By.XPath("//div[@title='Index']//input");
+        //public static By Margin = By.XPath("//div[@title='Margin']//input");
+        //public static By RoundingFactor = By.XPath("//div[@title='Rounding Factor']//input");
+
+        ////Mortgage Insurance
+        //public static By AddNumber = By.XPath("//div[@title='Number']//input");
+        //public static By AddBeginPeriod = By.XPath("//div[@title='Begin Period']//input");
+        //public static By AddEndPeriod = By.XPath("//div[@title='End Period']//input");
+        //public static By AddPmiRate = By.XPath("//div[@title='PMI Rate(%)']//input");
+        //public static By AddButton = By.XPath("//div[@id='MortgageInput']//button");
+        //public static By PmiRatesGridRowsCount = By.XPath("//section[@id='MortgageGrid']//tbody/tr");
+        //public static By NumberOfPeriodsofAdvanceInsCollected = By.XPath("//div[@title='Number of Periods of Advance Insurance Collected']//input");
+        //public static By LowerOfCostOrAppraisal = By.XPath("//div[@title='Lower Of Cost Or Appraisal']//input");
+        //public static By TotalMiInSectionFPrepaids = By.XPath("//div[@title='Total MI In Section F (Prepaids)']//input");
+        //public static By TotalMiInSectionGEscrow = By.XPath("//div[@title='Total MI In Section G (Escrow)']//input");
+
+        ////Escrow
+        //public static By EscrowCalcInputsText = By.XPath("//div[@id='EscrowCalculationsInput']/md-toolbar");
+        //public static By IsInsEscrowed;
+        //public static By IsTaxEscrowed;
+        //public static By IsPmiEscrowed;
+        //public static void EscrowRadioButtonVariable()
+        //{
+        //    IsInsEscrowed = By.XPath("//div[@title='Is INS Escrowed']//md-radio-button[@aria-label='" + TridVariable.IsInsEscrowed + "']");
+        //    IsTaxEscrowed = By.XPath("//div[@title='Is Tax Escrowed']//md-radio-button[@aria-label='" + TridVariable.IsTaxEscrowed + "']");
+        //    IsPmiEscrowed = By.XPath("//div[@title='Is PMI Escrowed']//md-radio-button[@aria-label='" + TridVariable.IsPmiEscrowed + "']");
+        //}
+        //public static By CushionMonthsForInsurance = By.XPath("//div[@title='Cushion Months For Insurance']//input");
+        //public static By CushionMonthsForTax = By.XPath("//div[@title='Cushion Months For Tax']//input");
+        //public static By EscrowInstallmentInputsNumber = By.XPath("//div[@id='EscrowInsuranceGridInputs']//div[@title='Number']//input");
+        //public static By DateForEscrowInsurance = By.XPath("//div[@title='Date For Escrow Insurance']//input");
+        //public static By InsuranceInstallmentAmount = By.XPath("//div[@title='Insuarnce Installment Amount']//input");
+        //public static By EscrowInstallmentInputsAddButton = By.XPath("//div[@id='EscrowInsuranceGridInputs']//div[4]//button");
+        //public static By EscrowInstallmentInfoGridRowCount = By.XPath("//section[@id='EscrowInsuranceGrid']//tbody/tr");
+        //public static By EscrowInstallmentInfoGridNumber = By.XPath("//section[@id='EscrowInsuranceGrid']//tbody/tr/td[1]//span");
+        //public static By EscrowInstallmentInfoGridInstallmentDate = By.XPath("//section[@id='EscrowInsuranceGrid']//tbody/tr/td[2]//span");
+        //public static By EscrowInstallmentInfoGridInstallmentAmount = By.XPath("//section[@id='EscrowInsuranceGrid']//tbody/tr/td[3]//span");
+        //public static By EscrowTaxCalculationsInputsNumber = By.XPath("//div[@id='EscrowTaxCalculationsGridInputs']//div[@title='Number']//input");
+        //public static By EscrowTaxCalculationsInputsDate = By.XPath("//div[@title='Date']//input");
+        //public static By EscrowTaxCalculationsInputsTaxInstallmentAmount = By.XPath("//div[@title='Tax Installment Amount']//input");
+        //public static By EscrowTaxCalculationsInputsAddButton = By.XPath("//div[@id='EscrowTaxCalculationsGridInputs']//div[4]//button");
+        //public static By EscrowTaxInfoGridRowCount = By.XPath("//section[@id='EscrowTaxGrid']//tbody/tr");
+        //public static By EscrowTaxInfoGridNumberFR = By.XPath("//section[@id='EscrowTaxGrid']//tbody/tr[1]/td[1]//span");
+        //public static By EscrowTaxInfoGridInstallmentDateFR = By.XPath("//section[@id='EscrowTaxGrid']//tbody/tr[1]/td[2]//span");
+        //public static By EscrowTaxInfoGridTaxInstallmentAmountFR = By.XPath("//section[@id='EscrowTaxGrid']//tbody/tr[1]/td[3]//span");                    
+        //public static By EscrowTaxInfoGridNumberSR = By.XPath("//section[@id='EscrowTaxGrid']//tbody/tr[2]/td[1]//span");
+        //public static By EscrowTaxInfoGridInstallmentDateSR = By.XPath("//section[@id='EscrowTaxGrid']//tbody/tr[2]/td[2]//span");
+        //public static By EscrowTaxInfoGridTaxInstallmentAmountSR = By.XPath("//section[@id='EscrowTaxGrid']//tbody/tr[2]/td[3]//span");
 
 
-        //Loan Estimate
-        public static By DisclosedIn5Years = By.XPath("//div[@title='Dscl In 5 Years']//input");
-        public static By DisclosedIn5YearsPrincipal = By.XPath("//div[@title='Dscl In 5 Years Principal']//input");
-        public static By DisclosedApr = By.XPath("//div[@title='Dscl APR']//input");
-        public static By DisclosedTip = By.XPath("//div[@title='Dscl Total Interest Percentage']//input");
+        ////Prepaid Charges
+        //public static By FhaVaUsdaUpfrontPmiFree = By.XPath("//div[@title='FHA/VA/USDA/Upfront PMI fee']//input");
+        //public static By FloodFee = By.XPath("//div[@title='Flood Fee']//input");
+        //public static By InspectionFee = By.XPath("//div[@title='Inspection Fee']//input");
+        //public static By LoanOriginationFee = By.XPath("//div[@title='Loan Origination Fee']//input");
+        //public static By OtherFees = By.XPath("//div[@title='Other Fees']//input");
+        //public static By PmiEscrowed = By.XPath("//div[@title='PMI escrowed']//input");
+        //public static By PrepaidDailyInterest = By.XPath("//div[@title='Prepaid Daily Interest']//input");
+        //public static By TaxServicing = By.XPath("//div[@title='Tax Servicing']//input");
+        //public static By TitleClosingFee = By.XPath("//div[@title='Title - Closing Fee']//input");
+        //public static By TitleClosingProtectionLetter = By.XPath("//div[@title='Title - Closing protection letter']//input");
+        //public static By TitleCourierFee = By.XPath("//div[@title='Title - Courier Fee']//input");
+        //public static By TitleDrawFee = By.XPath("//div[@title='Title - Draw Fee']//input");
+        //public static By TitleWireFee = By.XPath("//div[@title='Title - Wire Fee']//input");
+        //public static By UnderWriting = By.XPath("//div[@title='Underwriting']//input");
+        //public static By CustomName = By.XPath("//div[@title='Number']//input");
+        //public static By CustomValue = By.XPath("//div[@title='Number']//input");
+        //public static By CustomFieldAddButton = By.XPath("//div[@id='PrepaidChargeGridInput']//button");
+        //public static By PrepaidChargeGridCount = By.XPath("//section[@id='PrepaidChargeGrid']//tbody/tr");
+        //public static By PrepaidChargeGridCustomName = By.XPath("//section[@id='PrepaidChargeGrid']//tbody/tr/td[1]//span");
+        //public static By PrepaidChargeGridCustomValue = By.XPath("//section[@id='PrepaidChargeGrid']//tbody/tr/td[2]//span");
 
-        //Escrow
-        public static By EscrowPropertyOverOneYear = By.XPath("//div[@title='Escrow Property Over One Year']//input");
-        public static By NonEscrowPropertyOverOneYear = By.XPath("//div[@title='Non Escrow Property Over One Year']//input");
-        public static By InitialEscrowPayment = By.XPath("//div[@title='Initial Escrow Payment']//input");
-        //public static By MonthlyEscrowPayment = By.XPath("//div[@title='Monthly Escrow Payment']//input");
-        public static By DisclosedEscrowPropertyOverOneYear = By.XPath("//div[@title='Dscl Escrow Property Over One Year']//input");
-        public static By DisclosedNonEscrowPropertyOverOneYear = By.XPath("//div[@title='Dscl Non Escrow Property Over One Year']//input");
-        public static By DisclosedInitialEscrowPayment = By.XPath("//div[@title='Dscl Initial Escrow Payment']//input");
-        public static By DisclosedMonthlyEscrowPayment = By.XPath("//div[@title='Dscl Monthly Escrow Payment']//input");
-        public static By DisclosedEstimatedEscrow = By.XPath("//div[@title=' Dscl Estimated Escrow']//input");
+        //#endregion
 
 
-        //Prepaid Charges
-        public static By DisclosedFinanceCharge = By.XPath("//div[@title='Dscl Finance Charge']//input");
-        public static By DisclosedPrepaidCharge = By.XPath("//div[@title='Dscl Prepaid Charge']//input");
-        public static By DisclosedAmountFinanced = By.XPath("//div[@title='Dscl Amount Financed']//input");
+        //#region Disclosed Inputs
 
-        #endregion
+        //public static By DisclosedValuesText = By.XPath("//div[@id='DisclosureInput']/md-toolbar");
+
+        ////Closing Disclosure
+        //public static By DisclosedMonthlyPrincipalandInterest = By.XPath("//div[@title='Dscl Monthly Principal And Interest']//input");
+        //public static By DisclosedMonthlyPmi = By.XPath("//div[@title='Dscl Monthly PMI']//input");
+        //public static By DisclosedTotalPeriodicPayment = By.XPath("//div[@title='Dscl Total Periodic Payment ']//input");
+        //public static By DisclosedPmiTerminalDate = By.XPath("//div[@title='Dscl PMI Termination Date (78%)']//input");
+        //public static By DisclosedPmiCancelDate = By.XPath("//div[@title='Dscl PMI Cancel Date (80%)']//input");
+        //public static By DisclosedFinalBalloonPayment = By.XPath("//div[@title='Dscl Final Balloon Payment']//input");
+        //public static By DisclosedTotalOfPayment = By.XPath("//div[@title='Dscl Total Of Payment']//input");
 
 
-        #region Closing Disclosure Cards
+        ////Loan Estimate
+        //public static By DisclosedIn5Years = By.XPath("//div[@title='Dscl In 5 Years']//input");
+        //public static By DisclosedIn5YearsPrincipal = By.XPath("//div[@title='Dscl In 5 Years Principal']//input");
+        //public static By DisclosedApr = By.XPath("//div[@title='Dscl APR']//input");
+        //public static By DisclosedTip = By.XPath("//div[@title='Dscl Total Interest Percentage']//input");
 
-        public static By MonthlyPrincipalAndInterestText = By.XPath("//div[@id='viewCompositionContainer']/div/div[1]/div[1]//md-toolbar");
+        ////Escrow
+        //public static By EscrowPropertyOverOneYear = By.XPath("//div[@title='Escrow Property Over One Year']//input");
+        //public static By NonEscrowPropertyOverOneYear = By.XPath("//div[@title='Non Escrow Property Over One Year']//input");
+        //public static By InitialEscrowPayment = By.XPath("//div[@title='Initial Escrow Payment']//input");
+        ////public static By MonthlyEscrowPayment = By.XPath("//div[@title='Monthly Escrow Payment']//input");
+        //public static By DisclosedEscrowPropertyOverOneYear = By.XPath("//div[@title='Dscl Escrow Property Over One Year']//input");
+        //public static By DisclosedNonEscrowPropertyOverOneYear = By.XPath("//div[@title='Dscl Non Escrow Property Over One Year']//input");
+        //public static By DisclosedInitialEscrowPayment = By.XPath("//div[@title='Dscl Initial Escrow Payment']//input");
+        //public static By DisclosedMonthlyEscrowPayment = By.XPath("//div[@title='Dscl Monthly Escrow Payment']//input");
+        //public static By DisclosedEstimatedEscrow = By.XPath("//div[@title=' Dscl Estimated Escrow']//input");
 
-        //Princpal & Interest
-        public static By PiComputedValue = By.XPath("//div[@id='viewCompositionContainer']//div[1]/div[1]/ng-include//div[1]/p[1]");
-        public static By PiDisclosureValue = By.XPath("//div[@id='viewCompositionContainer']//div[1]/div[1]/ng-include//div[1]/p[2]");
-        public static By PiVarianceValue = By.XPath("//div[@id='viewCompositionContainer']//div[1]/div[1]/ng-include//div[1]/p[3]");
 
-        //TIP
-        public static By TipComputedValue = By.XPath("//div[@id='viewCompositionContainer']//div[2]/div[1]/ng-include//div[1]/p[1]");
-        public static By TipDisclosureValue = By.XPath("//div[@id='viewCompositionContainer']//div[2]/div[1]/ng-include//div[1]/p[2]");
-        public static By TipVarianceValue = By.XPath("//div[@id='viewCompositionContainer']//div[2]/div[1]/ng-include//div[1]/p[3]");
+        ////Prepaid Charges
+        //public static By DisclosedFinanceCharge = By.XPath("//div[@title='Dscl Finance Charge']//input");
+        //public static By DisclosedPrepaidCharge = By.XPath("//div[@title='Dscl Prepaid Charge']//input");
+        //public static By DisclosedAmountFinanced = By.XPath("//div[@title='Dscl Amount Financed']//input");
 
-        //PMI
-        public static By PmiComputedValue = By.XPath("//div[@id='viewCompositionContainer']//div[3]/div[1]/ng-include//div[1]/p[1]");
-        public static By PmiDisclosureValue = By.XPath("//div[@id='viewCompositionContainer']//div[3]/div[1]/ng-include//div[1]/p[2]");
-        public static By PmiVarianceValue = By.XPath("//div[@id='viewCompositionContainer']//div[3]/div[1]/ng-include//div[1]/p[3]");
+        //#endregion
 
-        //Ballon Amount
-        public static By BaComputedValue = By.XPath("//div[@id='viewCompositionContainer']//div[1]/div[2]/ng-include//div[1]/p[1]");
-        public static By BaDisclosureValue = By.XPath("//div[@id='viewCompositionContainer']//div[1]/div[2]/ng-include//div[1]/p[2]");
-        public static By BaVarianceValue = By.XPath("//div[@id='viewCompositionContainer']//div[1]/div[2]/ng-include//div[1]/p[3]");
 
-        //APR
-        public static By AprComputedValue = By.XPath("//div[@id='viewCompositionContainer']//div[2]/div[2]/ng-include//div[1]/p[1]");
-        public static By AprDisclosureValue = By.XPath("//div[@id='viewCompositionContainer']//div[2]/div[2]/ng-include//div[1]/p[2]");
-        public static By AprVarianceValue = By.XPath("//div[@id='viewCompositionContainer']//div[2]/div[2]/ng-include//div[1]/p[3]");
+        //#region Closing Disclosure Cards
 
-        //Finance Charge
-        public static By FcComputedValue = By.XPath("//div[@id='viewCompositionContainer']//div[3]/div[2]/ng-include//div[1]/p[1]");
-        public static By FcDisclosureValue = By.XPath("//div[@id='viewCompositionContainer']//div[3]/div[2]/ng-include//div[1]/p[2]");
-        public static By FcVarianceValue = By.XPath("//div[@id='viewCompositionContainer']//div[3]/div[2]/ng-include//div[1]/p[3]");
+        //public static By MonthlyPrincipalAndInterestText = By.XPath("//div[@id='viewCompositionContainer']/div/div[1]/div[1]//md-toolbar");
 
-        //Drop off years for PMI
-        public static By DoyfpComputedValue = By.XPath("//div[@id='viewCompositionContainer']//div[3]/div[4]/ng-include//div[1]/p[1]");
-        public static By DoyfpDisclosureValue = By.XPath("//div[@id='viewCompositionContainer']//div[3]/div[4]/ng-include//div[1]/p[2]");
-        public static By DoyfpVarianceValue = By.XPath("//div[@id='viewCompositionContainer']//div[3]/div[4]/ng-include//div[1]/p[3]");
+        ////Princpal & Interest
+        //public static By PiComputedValue = By.XPath("//div[@id='viewCompositionContainer']//div[1]/div[1]/ng-include//div[1]/p[1]");
+        //public static By PiDisclosureValue = By.XPath("//div[@id='viewCompositionContainer']//div[1]/div[1]/ng-include//div[1]/p[2]");
+        //public static By PiVarianceValue = By.XPath("//div[@id='viewCompositionContainer']//div[1]/div[1]/ng-include//div[1]/p[3]");
 
-        //Total Period Pymt
-        public static By TppComputedValue = By.XPath("//div[@id='viewCompositionContainer']//div[1]/div[4]/ng-include//div[1]/p[1]");
-        public static By TppDisclosureValue = By.XPath("//div[@id='viewCompositionContainer']//div[1]/div[4]/ng-include//div[1]/p[2]");
-        public static By TppVarianceValue = By.XPath("//div[@id='viewCompositionContainer']//div[1]/div[4]/ng-include//div[1]/p[3]");
+        ////TIP
+        //public static By TipComputedValue = By.XPath("//div[@id='viewCompositionContainer']//div[2]/div[1]/ng-include//div[1]/p[1]");
+        //public static By TipDisclosureValue = By.XPath("//div[@id='viewCompositionContainer']//div[2]/div[1]/ng-include//div[1]/p[2]");
+        //public static By TipVarianceValue = By.XPath("//div[@id='viewCompositionContainer']//div[2]/div[1]/ng-include//div[1]/p[3]");
 
-        //Total Of Pymts
-        public static By TopComputedValue = By.XPath("//div[@id='viewCompositionContainer']//div[2]/div[3]/ng-include//div[1]/p[1]");
-        public static By TopDisclosureValue = By.XPath("//div[@id='viewCompositionContainer']//div[2]/div[3]/ng-include//div[1]/p[2]");
-        public static By TopVarianceValue = By.XPath("//div[@id='viewCompositionContainer']//div[2]/div[3]/ng-include//div[1]/p[3]");
+        ////PMI
+        //public static By PmiComputedValue = By.XPath("//div[@id='viewCompositionContainer']//div[3]/div[1]/ng-include//div[1]/p[1]");
+        //public static By PmiDisclosureValue = By.XPath("//div[@id='viewCompositionContainer']//div[3]/div[1]/ng-include//div[1]/p[2]");
+        //public static By PmiVarianceValue = By.XPath("//div[@id='viewCompositionContainer']//div[3]/div[1]/ng-include//div[1]/p[3]");
 
-        //Prepaid Charges
-        public static By PcComputedValue = By.XPath("//div[@id='viewCompositionContainer']//div[2]/div[4]/ng-include//div[1]/p[1]");
-        public static By PcDisclosureValue = By.XPath("//div[@id='viewCompositionContainer']//div[2]/div[4]/ng-include//div[1]/p[2]");
-        public static By PcVarianceValue = By.XPath("//div[@id='viewCompositionContainer']//div[2]/div[4]/ng-include//div[1]/p[3]");
+        ////Ballon Amount
+        //public static By BaComputedValue = By.XPath("//div[@id='viewCompositionContainer']//div[1]/div[2]/ng-include//div[1]/p[1]");
+        //public static By BaDisclosureValue = By.XPath("//div[@id='viewCompositionContainer']//div[1]/div[2]/ng-include//div[1]/p[2]");
+        //public static By BaVarianceValue = By.XPath("//div[@id='viewCompositionContainer']//div[1]/div[2]/ng-include//div[1]/p[3]");
 
-        //Amount Financed
-        public static By AfComputedValue = By.XPath("//div[@id='viewCompositionContainer']//div[3]/div[3]/ng-include//div[1]/p[1]");
-        public static By AfDisclosureValue = By.XPath("//div[@id='viewCompositionContainer']//div[3]/div[3]/ng-include//div[1]/p[2]");
-        public static By AfVarianceValue = By.XPath("//div[@id='viewCompositionContainer']//div[3]/div[3]/ng-include//div[1]/p[3]");
+        ////APR
+        //public static By AprComputedValue = By.XPath("//div[@id='viewCompositionContainer']//div[2]/div[2]/ng-include//div[1]/p[1]");
+        //public static By AprDisclosureValue = By.XPath("//div[@id='viewCompositionContainer']//div[2]/div[2]/ng-include//div[1]/p[2]");
+        //public static By AprVarianceValue = By.XPath("//div[@id='viewCompositionContainer']//div[2]/div[2]/ng-include//div[1]/p[3]");
 
-        #endregion
+        ////Finance Charge
+        //public static By FcComputedValue = By.XPath("//div[@id='viewCompositionContainer']//div[3]/div[2]/ng-include//div[1]/p[1]");
+        //public static By FcDisclosureValue = By.XPath("//div[@id='viewCompositionContainer']//div[3]/div[2]/ng-include//div[1]/p[2]");
+        //public static By FcVarianceValue = By.XPath("//div[@id='viewCompositionContainer']//div[3]/div[2]/ng-include//div[1]/p[3]");
+
+        ////Drop off years for PMI
+        //public static By DoyfpComputedValue = By.XPath("//div[@id='viewCompositionContainer']//div[3]/div[4]/ng-include//div[1]/p[1]");
+        //public static By DoyfpDisclosureValue = By.XPath("//div[@id='viewCompositionContainer']//div[3]/div[4]/ng-include//div[1]/p[2]");
+        //public static By DoyfpVarianceValue = By.XPath("//div[@id='viewCompositionContainer']//div[3]/div[4]/ng-include//div[1]/p[3]");
+
+        ////Total Period Pymt
+        //public static By TppComputedValue = By.XPath("//div[@id='viewCompositionContainer']//div[1]/div[4]/ng-include//div[1]/p[1]");
+        //public static By TppDisclosureValue = By.XPath("//div[@id='viewCompositionContainer']//div[1]/div[4]/ng-include//div[1]/p[2]");
+        //public static By TppVarianceValue = By.XPath("//div[@id='viewCompositionContainer']//div[1]/div[4]/ng-include//div[1]/p[3]");
+
+        ////Total Of Pymts
+        //public static By TopComputedValue = By.XPath("//div[@id='viewCompositionContainer']//div[2]/div[3]/ng-include//div[1]/p[1]");
+        //public static By TopDisclosureValue = By.XPath("//div[@id='viewCompositionContainer']//div[2]/div[3]/ng-include//div[1]/p[2]");
+        //public static By TopVarianceValue = By.XPath("//div[@id='viewCompositionContainer']//div[2]/div[3]/ng-include//div[1]/p[3]");
+
+        ////Prepaid Charges
+        //public static By PcComputedValue = By.XPath("//div[@id='viewCompositionContainer']//div[2]/div[4]/ng-include//div[1]/p[1]");
+        //public static By PcDisclosureValue = By.XPath("//div[@id='viewCompositionContainer']//div[2]/div[4]/ng-include//div[1]/p[2]");
+        //public static By PcVarianceValue = By.XPath("//div[@id='viewCompositionContainer']//div[2]/div[4]/ng-include//div[1]/p[3]");
+
+        ////Amount Financed
+        //public static By AfComputedValue = By.XPath("//div[@id='viewCompositionContainer']//div[3]/div[3]/ng-include//div[1]/p[1]");
+        //public static By AfDisclosureValue = By.XPath("//div[@id='viewCompositionContainer']//div[3]/div[3]/ng-include//div[1]/p[2]");
+        //public static By AfVarianceValue = By.XPath("//div[@id='viewCompositionContainer']//div[3]/div[3]/ng-include//div[1]/p[3]");
+
+        //#endregion
 
 
         #region Loan Estimate

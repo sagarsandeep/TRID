@@ -8,7 +8,7 @@ using TRID.ProjectLibs.UI;
 
 namespace TRID.TestClasses
 {
-  public class TridTest : UIElements
+  public class TridTest : TridHeaderUiElements
     {
         public TridTest()
        {

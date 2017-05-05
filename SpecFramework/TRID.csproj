@@ -156,6 +156,11 @@
     <Compile Include="ProjectLibs\API\GoogleAPI\Viewport.cs" />
     <Compile Include="ProjectLibs\Common\ProjActions.cs" />
     <Compile Include="ProjectLibs\Common\TridVariable.cs" />
+    <Compile Include="ProjectLibs\UI\ClosingDisclosureCardsUIElements.cs" />
+    <Compile Include="ProjectLibs\UI\DisclosureInputsUiElements.cs" />
+    <Compile Include="ProjectLibs\UI\LoanInputsUiElements.cs" />
+    <Compile Include="ProjectLibs\UI\StartNewLoanUIElements.cs" />
+    <Compile Include="ProjectLibs\UI\TridHeaderUIElements.cs" />
     <Compile Include="ProjectLibs\UI\UIElements.cs" />
     <Compile Include="StepDefinitions\EscrowValidationSteps.cs" />
     <Compile Include="StepDefinitions\LaunchAppAndVerifyDefaultValuesSteps.cs" />

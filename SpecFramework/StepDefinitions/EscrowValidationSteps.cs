@@ -151,65 +151,65 @@ namespace TRID.StepDefinitions
         }
 
 
-        [When(@"user enters all input values for Prepaid Charges")]
-        public void WhenUserEntersAllInputValuesForPrepaidCharges()
-        {
-            var fhaVaUsdaUpfrontPmiFree = TridVariable.FhaVaUsdaUpfrontPmiFree;
-            UIActions.Clear(FhaVaUsdaUpfrontPmiFree);
-            UIActions.GiveInput(FhaVaUsdaUpfrontPmiFree, fhaVaUsdaUpfrontPmiFree);
+        //[When(@"user enters all input values for Prepaid Charges")]
+        //public void WhenUserEntersAllInputValuesForPrepaidCharges()
+        //{
+        //    var fhaVaUsdaUpfrontPmiFree = TridVariable.FhaVaUsdaUpfrontPmiFree;
+        //    UIActions.Clear(FhaVaUsdaUpfrontPmiFree);
+        //    UIActions.GiveInput(FhaVaUsdaUpfrontPmiFree, fhaVaUsdaUpfrontPmiFree);
 
-            var floodFee = TridVariable.FloodFee;
-            UIActions.Clear(FloodFee);
-            UIActions.GiveInput(FloodFee, floodFee);
+        //    var floodFee = TridVariable.FloodFee;
+        //    UIActions.Clear(FloodFee);
+        //    UIActions.GiveInput(FloodFee, floodFee);
 
-            var inspectionFee = TridVariable.InspectionFee;
-            UIActions.Clear(InspectionFee);
-            UIActions.GiveInput(InspectionFee, inspectionFee);
+        //    var inspectionFee = TridVariable.InspectionFee;
+        //    UIActions.Clear(InspectionFee);
+        //    UIActions.GiveInput(InspectionFee, inspectionFee);
 
-            var loanOriginationFee = TridVariable.LoanOriginationFee;
-            UIActions.Clear(LoanOriginationFee);
-            UIActions.GiveInput(LoanOriginationFee, loanOriginationFee);
+        //    var loanOriginationFee = TridVariable.LoanOriginationFee;
+        //    UIActions.Clear(LoanOriginationFee);
+        //    UIActions.GiveInput(LoanOriginationFee, loanOriginationFee);
 
-            var otherFees = TridVariable.OtherFees;
-            UIActions.Clear(OtherFees);
-            UIActions.GiveInput(OtherFees, otherFees);
+        //    var otherFees = TridVariable.OtherFees;
+        //    UIActions.Clear(OtherFees);
+        //    UIActions.GiveInput(OtherFees, otherFees);
 
-            var pmiEscrowed = TridVariable.PmiEscrowed;
-            UIActions.Clear(PmiEscrowed);
-            UIActions.GiveInput(PmiEscrowed, pmiEscrowed);
+        //    var pmiEscrowed = TridVariable.PmiEscrowed;
+        //    UIActions.Clear(PmiEscrowed);
+        //    UIActions.GiveInput(PmiEscrowed, pmiEscrowed);
 
-            var prepaidDailyInterest = TridVariable.PrepaidDailyInterest;
-            UIActions.Clear(PrepaidDailyInterest);
-            UIActions.GiveInput(PrepaidDailyInterest, prepaidDailyInterest);
+        //    var prepaidDailyInterest = TridVariable.PrepaidDailyInterest;
+        //    UIActions.Clear(PrepaidDailyInterest);
+        //    UIActions.GiveInput(PrepaidDailyInterest, prepaidDailyInterest);
 
-            var taxServicing = TridVariable.TaxServicing;
-            UIActions.Clear(TaxServicing);
-            UIActions.GiveInput(TaxServicing, taxServicing);
+        //    var taxServicing = TridVariable.TaxServicing;
+        //    UIActions.Clear(TaxServicing);
+        //    UIActions.GiveInput(TaxServicing, taxServicing);
 
-            var titleClosingFee = TridVariable.TitleClosingFee;
-            UIActions.Clear(TitleClosingFee);
-            UIActions.GiveInput(TitleClosingFee, titleClosingFee);
+        //    var titleClosingFee = TridVariable.TitleClosingFee;
+        //    UIActions.Clear(TitleClosingFee);
+        //    UIActions.GiveInput(TitleClosingFee, titleClosingFee);
 
-            var titleClosingProtectionLetter = TridVariable.TitleClosingProtectionLetter;
-            UIActions.Clear(TitleClosingProtectionLetter);
-            UIActions.GiveInput(TitleClosingProtectionLetter, titleClosingProtectionLetter);
+        //    var titleClosingProtectionLetter = TridVariable.TitleClosingProtectionLetter;
+        //    UIActions.Clear(TitleClosingProtectionLetter);
+        //    UIActions.GiveInput(TitleClosingProtectionLetter, titleClosingProtectionLetter);
 
-            var titleCourierFee = TridVariable.TitleCourierFee;
-            UIActions.Clear(TitleCourierFee);
-            UIActions.GiveInput(TitleCourierFee, titleCourierFee);
+        //    var titleCourierFee = TridVariable.TitleCourierFee;
+        //    UIActions.Clear(TitleCourierFee);
+        //    UIActions.GiveInput(TitleCourierFee, titleCourierFee);
 
-            var titleDrawFee = TridVariable.TitleDrawFee;
-            UIActions.Clear(TitleDrawFee);
-            UIActions.GiveInput(TitleDrawFee, titleDrawFee);
+        //    var titleDrawFee = TridVariable.TitleDrawFee;
+        //    UIActions.Clear(TitleDrawFee);
+        //    UIActions.GiveInput(TitleDrawFee, titleDrawFee);
 
-            var titleWireFee = TridVariable.TitleWireFee;
-            UIActions.Clear(TitleWireFee);
-            UIActions.GiveInput(TitleWireFee, titleWireFee);
+        //    var titleWireFee = TridVariable.TitleWireFee;
+        //    UIActions.Clear(TitleWireFee);
+        //    UIActions.GiveInput(TitleWireFee, titleWireFee);
 
-            var underWriting = TridVariable.UnderWriting;
-            UIActions.Clear(UnderWriting);
-            UIActions.GiveInput(UnderWriting, underWriting);
-        }
+        //    var underWriting = TridVariable.UnderWriting;
+        //    UIActions.Clear(UnderWriting);
+        //    UIActions.GiveInput(UnderWriting, underWriting);
+        //}
 
 
         [When(@"user enters values for Escrow PMI Calculations Inputs")]

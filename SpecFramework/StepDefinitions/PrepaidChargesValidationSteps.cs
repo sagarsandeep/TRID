@@ -98,7 +98,7 @@ namespace TRID.StepDefinitions
         public void GivenUserIsAtLoanEstimatePage()
         {
             UIActions.Click(LoanEstimateLink);
-            UIActions.WebDriverWait(CdLoanDetailsText, 60);
+            UIActions.WebDriverWait(LoanDetailsText, 60);
         }
 
         [When(@"user enters Loan Amount (.*)")]
@@ -123,73 +123,73 @@ namespace TRID.StepDefinitions
             ProjActions.PrepaidChargeGridValidation();
         }
 
-        [When(@"user enters disclosed input values for Prepaid Charges")]
-        public void WhenUserEntersDisclosedInputValuesForPrepaidCharges()
-        {
-            UIActions.Clear(DisclosedFinanceCharge);
-            UIActions.GiveInput(DisclosedFinanceCharge, TridVariable.DisclosedFinanceCharge);
+        //[When(@"user enters disclosed input values for Prepaid Charges")]
+        //public void WhenUserEntersDisclosedInputValuesForPrepaidCharges()
+        //{
+        //    UIActions.Clear(DisclosedFinanceCharge);
+        //    UIActions.GiveInput(DisclosedFinanceCharge, TridVariable.DisclosedFinanceCharge);
 
-            UIActions.Clear(DisclosedPrepaidCharge);
-            UIActions.GiveInput(DisclosedPrepaidCharge, TridVariable.DisclosedPrepaidCharge);
+        //    UIActions.Clear(DisclosedPrepaidCharge);
+        //    UIActions.GiveInput(DisclosedPrepaidCharge, TridVariable.DisclosedPrepaidCharge);
 
-            UIActions.Clear(DisclosedAmountFinanced);
-            UIActions.GiveInput(DisclosedAmountFinanced, TridVariable.DisclosedAmountFinanced);
-        }
+        //    UIActions.Clear(DisclosedAmountFinanced);
+        //    UIActions.GiveInput(DisclosedAmountFinanced, TridVariable.DisclosedAmountFinanced);
+        //}
 
 
         #endregion
 
         #region Then
 
-        [Then(@"Prepaid Charges should recalculate and update with expected computed value")]
-        public void ThenPrepaidChargesShouldRecalculateAndUpdateWithExpectedComputedValue()
-        {
-            var cValue = ProjActions.GetNumericValueFromString(UIActions.GetText(PcPcComputedValue));
+        //[Then(@"Prepaid Charges should recalculate and update with expected computed value")]
+        //public void ThenPrepaidChargesShouldRecalculateAndUpdateWithExpectedComputedValue()
+        //{
+        //    var cValue = ProjActions.GetNumericValueFromString(UIActions.GetText(PcPcComputedValue));
 
-            var actualCValue = Convert.ToDouble(TridVariable.PrepaidCharges);
-            Assert.AreEqual(actualCValue, cValue, "Computed value does not match as expected");
+        //    var actualCValue = Convert.ToDouble(TridVariable.PrepaidCharges);
+        //    Assert.AreEqual(actualCValue, cValue, "Computed value does not match as expected");
 
-            var dValue = ProjActions.GetNumericValueFromString(UIActions.GetText(PcPcDisclosureValue));
-            var vValue = ProjActions.GetNumericValueFromString(UIActions.GetText(PcPcVarianceValue));
+        //    var dValue = ProjActions.GetNumericValueFromString(UIActions.GetText(PcPcDisclosureValue));
+        //    var vValue = ProjActions.GetNumericValueFromString(UIActions.GetText(PcPcVarianceValue));
 
-            var actualVarianceValue = Math.Abs(Math.Round(cValue - dValue, 2));
+        //    var actualVarianceValue = Math.Abs(Math.Round(cValue - dValue, 2));
 
-            Assert.AreEqual(vValue, actualVarianceValue, "Variance does not match as expected");
-        }
+        //    Assert.AreEqual(vValue, actualVarianceValue, "Variance does not match as expected");
+        //}
 
-        [Then(@"Amount Fianced should recalculate and update with expected computed value")]
-        public void ThenAmountFiancedShouldRecalculateAndUpdateWithExpectedComputedValue()
-        {
-            var cValue = ProjActions.GetNumericValueFromString(UIActions.GetText(PcAfComputedValue));
+        //[Then(@"Amount Fianced should recalculate and update with expected computed value")]
+        //public void ThenAmountFiancedShouldRecalculateAndUpdateWithExpectedComputedValue()
+        //{
+        //    var cValue = ProjActions.GetNumericValueFromString(UIActions.GetText(PcAfComputedValue));
 
-            var actualCValue = Convert.ToDouble(TridVariable.AmountFinanced);
-            Assert.AreEqual(actualCValue, cValue, "Computed value does not match as expected");
+        //    var actualCValue = Convert.ToDouble(TridVariable.AmountFinanced);
+        //    Assert.AreEqual(actualCValue, cValue, "Computed value does not match as expected");
 
-            var dValue = ProjActions.GetNumericValueFromString(UIActions.GetText(PcAfDisclosureValue));
-            var vValue = ProjActions.GetNumericValueFromString(UIActions.GetText(PcAfVarianceValue));
+        //    var dValue = ProjActions.GetNumericValueFromString(UIActions.GetText(PcAfDisclosureValue));
+        //    var vValue = ProjActions.GetNumericValueFromString(UIActions.GetText(PcAfVarianceValue));
 
-            var actualVarianceValue = Math.Abs(Math.Round(cValue - dValue, 2));
+        //    var actualVarianceValue = Math.Abs(Math.Round(cValue - dValue, 2));
 
-            Assert.AreEqual(vValue, actualVarianceValue, "Variance does not match as expected");
-        }
+        //    Assert.AreEqual(vValue, actualVarianceValue, "Variance does not match as expected");
+        //}
 
 
-        [Then(@"Amount Fianced should recalculate and should be reduced with previous value")]
-        public void ThenAmountFiancedShouldRecalculateAndShouldBeReducedWithPreviousValue()
-        {
-            var cValue = ProjActions.GetNumericValueFromString(UIActions.GetText(PcAfComputedValue));
+        //[Then(@"Amount Fianced should recalculate and should be reduced with previous value")]
+        //public void ThenAmountFiancedShouldRecalculateAndShouldBeReducedWithPreviousValue()
+        //{
+        //    var cValue = ProjActions.GetNumericValueFromString(UIActions.GetText(PcAfComputedValue));
 
-            var actualCValue = Convert.ToDouble(TridVariable.AmountFinanced);
-            Assert.AreNotEqual(actualCValue, cValue, "Computed value does not match as expected");
-            Assert.IsTrue(cValue < actualCValue, "Computed value is not less than the previous value");
+        //    var actualCValue = Convert.ToDouble(TridVariable.AmountFinanced);
+        //    Assert.AreNotEqual(actualCValue, cValue, "Computed value does not match as expected");
+        //    Assert.IsTrue(cValue < actualCValue, "Computed value is not less than the previous value");
 
-            var dValue = ProjActions.GetNumericValueFromString(UIActions.GetText(PcAfDisclosureValue));
-            var vValue = ProjActions.GetNumericValueFromString(UIActions.GetText(PcAfVarianceValue));
+        //    var dValue = ProjActions.GetNumericValueFromString(UIActions.GetText(PcAfDisclosureValue));
+        //    var vValue = ProjActions.GetNumericValueFromString(UIActions.GetText(PcAfVarianceValue));
 
-            var actualVarianceValue = Math.Abs(Math.Round(cValue - dValue, 2));
+        //    var actualVarianceValue = Math.Abs(Math.Round(cValue - dValue, 2));
 
-            Assert.AreEqual(vValue, actualVarianceValue, "Variance does not match as expected");
-        }
+        //    Assert.AreEqual(vValue, actualVarianceValue, "Variance does not match as expected");
+        //}
 
 
         #endregion

@@ -11,66 +11,66 @@ using TRID.ProjectLibs.UI;
 
 namespace TRID.ProjectLibs.Common
 {
-    class ProjActions
+    class ProjActions : TridHeaderUiElements
     {
 
         public static void AddPrepaidChargesDefaultValues()
         {
             var fhaVaUsdaUpfrontPmiFree = TridVariable.FhaVaUsdaUpfrontPmiFree;
-            UIActions.Clear(UIElements.FhaVaUsdaUpfrontPmiFree);
-            UIActions.GiveInput(UIElements.FhaVaUsdaUpfrontPmiFree, fhaVaUsdaUpfrontPmiFree);
+            UIActions.Clear(FhaVaUsdaUpfrontPmiFree);
+            UIActions.GiveInput(FhaVaUsdaUpfrontPmiFree, fhaVaUsdaUpfrontPmiFree);
 
             var floodFee = TridVariable.FloodFee;
-            UIActions.Clear(UIElements.FloodFee);
-            UIActions.GiveInput(UIElements.FloodFee, floodFee);
+            UIActions.Clear(FloodFee);
+            UIActions.GiveInput(FloodFee, floodFee);
 
             var inspectionFee = TridVariable.InspectionFee;
-            UIActions.Clear(UIElements.InspectionFee);
-            UIActions.GiveInput(UIElements.InspectionFee, inspectionFee);
+            UIActions.Clear(InspectionFee);
+            UIActions.GiveInput(InspectionFee, inspectionFee);
 
             var loanOriginationFee = TridVariable.LoanOriginationFee;
-            UIActions.Clear(UIElements.LoanOriginationFee);
-            UIActions.GiveInput(UIElements.LoanOriginationFee, loanOriginationFee);
+            UIActions.Clear(LoanOriginationFee);
+            UIActions.GiveInput(LoanOriginationFee, loanOriginationFee);
 
             var otherFees = TridVariable.OtherFees;
-            UIActions.Clear(UIElements.OtherFees);
-            UIActions.GiveInput(UIElements.OtherFees, otherFees);
+            UIActions.Clear(OtherFees);
+            UIActions.GiveInput(OtherFees, otherFees);
 
             var pmiEscrowed = TridVariable.PmiEscrowed;
-            UIActions.Clear(UIElements.PmiEscrowed);
-            UIActions.GiveInput(UIElements.PmiEscrowed, pmiEscrowed);
+            UIActions.Clear(PmiEscrowed);
+            UIActions.GiveInput(PmiEscrowed, pmiEscrowed);
 
             var prepaidDailyInterest = TridVariable.PrepaidDailyInterest;
-            UIActions.Clear(UIElements.PrepaidDailyInterest);
-            UIActions.GiveInput(UIElements.PrepaidDailyInterest, prepaidDailyInterest);
+            UIActions.Clear(PrepaidDailyInterest);
+            UIActions.GiveInput(PrepaidDailyInterest, prepaidDailyInterest);
 
             var taxServicing = TridVariable.TaxServicing;
-            UIActions.Clear(UIElements.TaxServicing);
-            UIActions.GiveInput(UIElements.TaxServicing, taxServicing);
+            UIActions.Clear(TaxServicing);
+            UIActions.GiveInput(TaxServicing, taxServicing);
 
             var titleClosingFee = TridVariable.TitleClosingFee;
-            UIActions.Clear(UIElements.TitleClosingFee);
-            UIActions.GiveInput(UIElements.TitleClosingFee, titleClosingFee);
+            UIActions.Clear(TitleClosingFee);
+            UIActions.GiveInput(TitleClosingFee, titleClosingFee);
 
             var titleClosingProtectionLetter = TridVariable.TitleClosingProtectionLetter;
-            UIActions.Clear(UIElements.TitleClosingProtectionLetter);
-            UIActions.GiveInput(UIElements.TitleClosingProtectionLetter, titleClosingProtectionLetter);
+            UIActions.Clear(TitleClosingProtectionLetter);
+            UIActions.GiveInput(TitleClosingProtectionLetter, titleClosingProtectionLetter);
 
             var titleCourierFee = TridVariable.TitleCourierFee;
-            UIActions.Clear(UIElements.TitleCourierFee);
-            UIActions.GiveInput(UIElements.TitleCourierFee, titleCourierFee);
+            UIActions.Clear(TitleCourierFee);
+            UIActions.GiveInput(TitleCourierFee, titleCourierFee);
 
             var titleDrawFee = TridVariable.TitleDrawFee;
-            UIActions.Clear(UIElements.TitleDrawFee);
-            UIActions.GiveInput(UIElements.TitleDrawFee, titleDrawFee);
+            UIActions.Clear(TitleDrawFee);
+            UIActions.GiveInput(TitleDrawFee, titleDrawFee);
 
             var titleWireFee = TridVariable.TitleWireFee;
-            UIActions.Clear(UIElements.TitleWireFee);
-            UIActions.GiveInput(UIElements.TitleWireFee, titleWireFee);
+            UIActions.Clear(TitleWireFee);
+            UIActions.GiveInput(TitleWireFee, titleWireFee);
 
             var underWriting = TridVariable.UnderWriting;
-            UIActions.Clear(UIElements.UnderWriting);
-            UIActions.GiveInput(UIElements.UnderWriting, underWriting);       
+            UIActions.Clear(UnderWriting);
+            UIActions.GiveInput(UnderWriting, underWriting);       
         }
 
         public static double GetNumericValueFromString(string inputString)
@@ -95,67 +95,67 @@ namespace TRID.ProjectLibs.Common
             return date;
         }
 
-        public static void AddPmiRate()
+        public static void AddPmiRateValues()
         {
-            var pmiRatesGridRowsCount = UIActions.Count(UIElements.PmiRatesGridRowsCount);
+            var pmiRatesGridRowsCount = UIActions.Count(PmiRatesGridRowsCount);
 
             if (pmiRatesGridRowsCount == 0)
             {
                 var firstAddNumber = TridVariable.FirstAddNumber;
-                UIActions.Clear(UIElements.AddNumber);
-                UIActions.GiveInput(UIElements.AddNumber, firstAddNumber);
+                UIActions.Clear(AddNumber);
+                UIActions.GiveInput(AddNumber, firstAddNumber);
 
                 var firstAddBeginPeriod = TridVariable.FirstAddBeginPeriod;
-                UIActions.Clear(UIElements.AddBeginPeriod);
-                UIActions.GiveInput(UIElements.AddBeginPeriod, firstAddBeginPeriod);
+                UIActions.Clear(AddBeginPeriod);
+                UIActions.GiveInput(AddBeginPeriod, firstAddBeginPeriod);
 
                 var firstAddEndPeriod = TridVariable.FirstAddEndPeriod;
-                UIActions.Clear(UIElements.AddEndPeriod);
-                UIActions.GiveInput(UIElements.AddEndPeriod, firstAddEndPeriod);
+                UIActions.Clear(AddEndPeriod);
+                UIActions.GiveInput(AddEndPeriod, firstAddEndPeriod);
 
                 var firstAddPmiRate = TridVariable.FirstAddPmiRate;
-                UIActions.Clear(UIElements.AddPmiRate);
-                UIActions.GiveInput(UIElements.AddPmiRate, firstAddPmiRate);
+                UIActions.Clear(AddPmiRate);
+                UIActions.GiveInput(AddPmiRate, firstAddPmiRate);
 
-                UIActions.Click(UIElements.AddButton);
+                UIActions.Click(AddButton);
                 Thread.Sleep(5000);
 
                 var secondAddNumber = TridVariable.SecondAddNumber;
-                UIActions.Clear(UIElements.AddNumber);
-                UIActions.GiveInput(UIElements.AddNumber, secondAddNumber);
+                UIActions.Clear(AddNumber);
+                UIActions.GiveInput(AddNumber, secondAddNumber);
 
                 var secondAddBeginPeriod = TridVariable.SecondAddBeginPeriod;
-                UIActions.Clear(UIElements.AddBeginPeriod);
-                UIActions.GiveInput(UIElements.AddBeginPeriod, secondAddBeginPeriod);
+                UIActions.Clear(AddBeginPeriod);
+                UIActions.GiveInput(AddBeginPeriod, secondAddBeginPeriod);
 
                 var secondAddEndPeriod = TridVariable.SecondAddEndPeriod;
-                UIActions.Clear(UIElements.AddEndPeriod);
-                UIActions.GiveInput(UIElements.AddEndPeriod, secondAddEndPeriod);
+                UIActions.Clear(AddEndPeriod);
+                UIActions.GiveInput(AddEndPeriod, secondAddEndPeriod);
 
                 var secondAddPmiRate = TridVariable.SecondAddPmiRate;
-                UIActions.Clear(UIElements.AddPmiRate);
-                UIActions.GiveInput(UIElements.AddPmiRate, secondAddPmiRate);
+                UIActions.Clear(AddPmiRate);
+                UIActions.GiveInput(AddPmiRate, secondAddPmiRate);
 
-                UIActions.Click(UIElements.AddButton);
+                UIActions.Click(AddButton);
                 Thread.Sleep(5000);
 
                 var thirdAddNumber = TridVariable.ThirdAddNumber;
-                UIActions.Clear(UIElements.AddNumber);
-                UIActions.GiveInput(UIElements.AddNumber, thirdAddNumber);
+                UIActions.Clear(AddNumber);
+                UIActions.GiveInput(AddNumber, thirdAddNumber);
 
                 var thirdAddBeginPeriod = TridVariable.ThirdAddBeginPeriod;
-                UIActions.Clear(UIElements.AddBeginPeriod);
-                UIActions.GiveInput(UIElements.AddBeginPeriod, thirdAddBeginPeriod);
+                UIActions.Clear(AddBeginPeriod);
+                UIActions.GiveInput(AddBeginPeriod, thirdAddBeginPeriod);
 
                 var thirdAddEndPeriod = TridVariable.ThirdAddEndPeriod;
-                UIActions.Clear(UIElements.AddEndPeriod);
-                UIActions.GiveInput(UIElements.AddEndPeriod, thirdAddEndPeriod);
+                UIActions.Clear(AddEndPeriod);
+                UIActions.GiveInput(AddEndPeriod, thirdAddEndPeriod);
 
                 var thirdAddPmiRate = TridVariable.ThirdAddPmiRate;
-                UIActions.Clear(UIElements.AddPmiRate);
-                UIActions.GiveInput(UIElements.AddPmiRate, thirdAddPmiRate);
+                UIActions.Clear(AddPmiRate);
+                UIActions.GiveInput(AddPmiRate, thirdAddPmiRate);
 
-                UIActions.Click(UIElements.AddButton);
+                UIActions.Click(AddButton);
                 Thread.Sleep(5000);
             }
             else
@@ -195,7 +195,7 @@ namespace TRID.ProjectLibs.Common
 
         public static void PmiRatesGridValidation()
         {
-            var pmiRatesGridRowsCount = UIActions.Count(UIElements.PmiRatesGridRowsCount);
+            var pmiRatesGridRowsCount = UIActions.Count(PmiRatesGridRowsCount);
             var numberOfPaymentArray = new[] { TridVariable.FirstAddBeginPeriod, TridVariable.SecondAddBeginPeriod, TridVariable.ThirdAddBeginPeriod };
 
             Thread.Sleep(3000);
@@ -217,7 +217,7 @@ namespace TRID.ProjectLibs.Common
             var isRowExists = false;
             try
             {
-                UIActions.Count(UIElements.PmiRatesGridRowsCount);
+                UIActions.Count(PmiRatesGridRowsCount);
                 isRowExists = true;
             }
             catch (Exception)
@@ -231,16 +231,16 @@ namespace TRID.ProjectLibs.Common
 
         public static void PrepaidChargeGridValidation()
         {
-            var prepaidChargeGridRowCount = UIActions.Count(UIElements.PrepaidChargeGridCount);
+            var prepaidChargeGridRowCount = UIActions.Count(PrepaidChargeGridCount);
             Assert.AreEqual(1, prepaidChargeGridRowCount, "Prepaid Charge Grid entries are not as expected");
 
             var prepaidCustomName = TridVariable.PrepaidCustomName;
-            var actualPrepaidCustomName = UIActions.GetText(UIElements.PrepaidChargeGridCustomName);
+            var actualPrepaidCustomName = UIActions.GetText(PrepaidChargeGridCustomName);
             Assert.AreEqual(prepaidCustomName, actualPrepaidCustomName, "Prepaid Charge Custom Name is not as expected");
 
 
             var prepaidCustomValue = TridVariable.PrepaidCustomValue;
-            var actualPrepaidCustomValue = UIActions.GetText(UIElements.PrepaidChargeGridCustomValue);
+            var actualPrepaidCustomValue = UIActions.GetText(PrepaidChargeGridCustomValue);
             Assert.AreEqual(prepaidCustomValue, actualPrepaidCustomValue,
                 "Prepaid Charge Custom Value is not as expected");
         }
@@ -250,7 +250,7 @@ namespace TRID.ProjectLibs.Common
             var isRowExists = false;
             try
             {
-                UIActions.GetText(UIElements.PrepaidChargeGridCount);
+                UIActions.GetText(PrepaidChargeGridCount);
                 isRowExists = true;
             }
             catch (Exception)

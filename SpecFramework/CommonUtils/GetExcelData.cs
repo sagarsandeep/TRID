@@ -50,13 +50,13 @@ namespace TRID.CommonUtils
             var data = "";
             var colCount = xRange.Columns.Count;
 
-            for (var row = scenarioNo + 1; row == scenarioNo + 1; row++)
+            for (var row = scenarioNo; row == scenarioNo; row++)
             for (var col = 1; col <= colCount; col++)
                 if (xRange.Cells[row, col] != null && xRange.Cells[row, col].Value2 != null)
                 {
                     data = xRange.Cells[row, col].Value2.ToString();
                     GetVariableNameAndSetValues(row, col, data, sheetName);
-                }
+                }        
 
             //cleanup
             GC.Collect();
