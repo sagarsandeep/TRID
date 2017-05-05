@@ -482,8 +482,11 @@ namespace TRID.StepDefinitions
         public void ThenUpdatedComputedDropOffYearsForPmiValueShouldDisplayOnClosingDisclosure()
         {          
             var cValue = ProjActions.GetDatePart(DoyfpComputedValue);
-            
-            var expectedValue = Convert.ToDateTime(ProjActions.GetDate(TridVariable.DropOffYearsForPmi));
+            DateTime? expectedValue;
+            if (TridVariable.DropOffYearsForPmi.Equals("N/A"))
+                expectedValue = null;
+            else
+            expectedValue = Convert.ToDateTime(ProjActions.GetDate(TridVariable.DropOffYearsForPmi));
             Assert.AreEqual(expectedValue, cValue, "Computed value does not match as expected");
 
             var dValue = ProjActions.GetDatePart(DoyfpDisclosureValue);
