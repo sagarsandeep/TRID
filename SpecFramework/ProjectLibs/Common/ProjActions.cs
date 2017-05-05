@@ -90,6 +90,9 @@ namespace TRID.ProjectLibs.Common
             string date = "null";
             if (variable.IsNotNullOrEmpty())
             {
+                if (variable.Equals("N/A"))
+                    date = variable;
+                else
                 date = DateTime.FromOADate(Convert.ToDouble(variable)).ToString("M/d/yyyy");
             }
             return date;

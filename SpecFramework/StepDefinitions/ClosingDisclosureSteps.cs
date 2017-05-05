@@ -281,7 +281,7 @@ namespace TRID.StepDefinitions
             UIActions.Clear(DisclosedMonthlyPmi);
             UIActions.GiveInput(DisclosedMonthlyPmi, monthlyPmi);
 
-            var totalMonhtlyPayment = TridVariable.TotalMonhtlyPayment;
+            var totalMonhtlyPayment = TridVariable.TotalPeiodicPayment;
             UIActions.Clear(DisclosedTotalPeriodicPayment);
             UIActions.GiveInput(DisclosedTotalPeriodicPayment, totalMonhtlyPayment);
 
@@ -366,7 +366,7 @@ namespace TRID.StepDefinitions
             UIActions.Clear(DisclosedMonthlyPmi);
             UIActions.GiveInput(DisclosedMonthlyPmi, monthlyPmi);
 
-            var totalMonhtlyPayment = TridVariable.TotalMonhtlyPayment;
+            var totalMonhtlyPayment = TridVariable.TotalPeiodicPayment;
             UIActions.Clear(DisclosedTotalPeriodicPayment);
             UIActions.GiveInput(DisclosedTotalPeriodicPayment, totalMonhtlyPayment);
 

@@ -187,6 +187,7 @@
     </None>
     <None Include="FeatureFiles\DataResources\TridTestData.xlsx" />
     <None Include="FeatureFiles\DataResources\TridTestDataWithAllScenarios.xlsx" />
+    <None Include="FeatureFiles\DataResources\TridTestScenarios.xlsx" />
     <None Include="FeatureFiles\EscrowValidation.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>EscrowValidation.feature.cs</LastGenOutput>
@@ -212,6 +213,7 @@
       <LastGenOutput>VariableLoanDetails.feature.cs</LastGenOutput>
     </None>
     <None Include="packages.config" />
+    <None Include="RunTests.bat" />
     <None Include="runtests.cmd" />
     <None Include="SpecRunTestProfile.xsd">
       <SubType>Designer</SubType>
