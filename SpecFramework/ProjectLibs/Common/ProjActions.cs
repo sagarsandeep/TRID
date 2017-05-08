@@ -119,6 +119,8 @@ namespace TRID.ProjectLibs.Common
 
                 UIActions.Click(AddButton);
                 Thread.Sleep(5000);
+                UIActions.Click(AddNumber);
+                Thread.Sleep(5000);
 
                 var secondAddNumber = TridVariable.SecondAddNumber;
                 UIActions.Clear(AddNumber);
@@ -138,6 +140,8 @@ namespace TRID.ProjectLibs.Common
 
                 UIActions.Click(AddButton);
                 Thread.Sleep(5000);
+                UIActions.Click(AddNumber);
+                Thread.Sleep(5000);
 
                 var thirdAddNumber = TridVariable.ThirdAddNumber;
                 UIActions.Clear(AddNumber);
@@ -156,6 +160,8 @@ namespace TRID.ProjectLibs.Common
                 UIActions.GiveInput(AddPmiRate, thirdAddPmiRate);
 
                 UIActions.Click(AddButton);
+                Thread.Sleep(5000);
+                UIActions.Click(AddNumber);
                 Thread.Sleep(5000);
             }
             else
