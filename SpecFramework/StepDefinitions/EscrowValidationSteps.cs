@@ -30,8 +30,8 @@ namespace TRID.StepDefinitions
         
         [When(@"user selects value for Is Ins Escrowed")]
         public void WhenUserSelectsValueForIsInsEscrowed()
-        {
-            UIActions.MouseHoverOver(LoanDetailsText);
+        {  
+            UIActions.ScrollUp();
             EscrowRadioButtonVariable();
             UIActions.Click(IsInsEscrowed);
         }

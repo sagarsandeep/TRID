@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Configuration;
+using System.Diagnostics;
 using System.Threading;
 using NUnit.Framework;
 using TechTalk.SpecFlow;
@@ -80,6 +81,16 @@ namespace TRID.StepDefinitions
 
             UIActions.WebDriverWait(LoanDetailsText, 60);
         }
+
+        [When(@"user navigate to Amortization Page")]
+        public void WhenUserNavigateToAmortizationPage()
+        {
+            UIActions.Click(AmortizationLink);
+            Thread.Sleep(5000);
+
+            UIActions.WebDriverWait(AmortizationPaymentScheduleText, 60);
+        }
+
 
 
         [When(@"user navigate to Closing Disclosure Page")]

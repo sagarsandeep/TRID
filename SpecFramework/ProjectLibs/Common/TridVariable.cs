@@ -164,28 +164,28 @@ namespace TRID.ProjectLibs.Common
 
             if (sheetName == "PrepaidCharges")
             {
-                if (col == 2) FhaVaUsdaUpfrontPmiFree = stringValue;
-                if (col == 3) FloodFee = stringValue;
-                if (col == 4) InspectionFee = stringValue;
-                if (col == 5) LoanOriginationFee = stringValue;
-                if (col == 6) OtherFees = stringValue;
-                if (col == 7) PmiEscrowed = stringValue;
-                if (col == 8) PrepaidDailyInterest = stringValue;
-                if (col == 9) TaxServicing = stringValue;
-                if (col == 10) TitleClosingFee = stringValue;
-                if (col == 11) TitleClosingProtectionLetter = stringValue;
-                if (col == 12) TitleCourierFee = stringValue;
-                if (col == 13) TitleDrawFee = stringValue;
-                if (col == 14) TitleWireFee = stringValue;
-                if (col == 15) UnderWriting = stringValue;
-                if (col == 16) PrepaidCustomName = stringValue;
-                if (col == 17) PrepaidCustomValue = stringValue;
-                if (col == 18) DisclosedFinanceCharge = stringValue;
-                if (col == 19) DisclosedPrepaidCharge = stringValue;
-                if (col == 20) DisclosedAmountFinanced = stringValue;
-                if (col == 21) FinanceCharge = stringValue;
-                if (col == 22) PrepaidCharges = stringValue;
-                if (col == 23) AmountFinanced = stringValue;
+                if (col == 3 ) FhaVaUsdaUpfrontPmiFree = stringValue;
+                if (col == 4 ) FloodFee = stringValue;
+                if (col == 5 ) InspectionFee = stringValue;
+                if (col == 6 ) LoanOriginationFee = stringValue;
+                if (col == 7 ) OtherFees = stringValue;
+                if (col == 8 ) PmiEscrowed = stringValue;
+                if (col == 9 ) PrepaidDailyInterest = stringValue;
+                if (col == 10) TaxServicing = stringValue;
+                if (col == 11) TitleClosingFee = stringValue;
+                if (col == 12) TitleClosingProtectionLetter = stringValue;
+                if (col == 13) TitleCourierFee = stringValue;
+                if (col == 14) TitleDrawFee = stringValue;
+                if (col == 15) TitleWireFee = stringValue;
+                if (col == 16) UnderWriting = stringValue;
+                if (col == 17) PrepaidCustomName = stringValue;
+                if (col == 18) PrepaidCustomValue = stringValue;
+                if (col == 19) DisclosedFinanceCharge = stringValue;
+                if (col == 20) DisclosedPrepaidCharge = stringValue;
+                if (col == 21) DisclosedAmountFinanced = stringValue;
+                if (col == 22) FinanceCharge = stringValue;
+                if (col == 23) PrepaidCharges = stringValue;
+                if (col == 24) AmountFinanced = stringValue;
             }
 
             #endregion
@@ -439,17 +439,17 @@ namespace TRID.ProjectLibs.Common
 
             if (sheetName == "Variable Loan Details")
             {
-                if (col == 2)  FirstTermChange = stringValue;
-                if (col == 3)  SubsequentTermChange = stringValue;
-                if (col == 4)  DnRateCapFirstAdjustment = stringValue;
-                if (col == 5)  DnRateCapsubsequentAdjustment = stringValue;
-                if (col == 6)  UpRateCapFirstAdjustment = stringValue;
-                if (col == 7)  UpRateCapsubsequentAdjustment = stringValue;
-                if (col == 8)  FloorRate = stringValue;
-                if (col == 9)  MaxRateEver = stringValue;
-                if (col == 10) Index = stringValue;
-                if (col == 11) Margin = stringValue;
-                if (col == 12) RoundingFactor = stringValue;
+                if (col == 3 )  FirstTermChange = stringValue;
+                if (col == 4 )  SubsequentTermChange = stringValue;
+                if (col == 5 )  DnRateCapFirstAdjustment = stringValue;
+                if (col == 6 )  DnRateCapsubsequentAdjustment = stringValue;
+                if (col == 7 )  UpRateCapFirstAdjustment = stringValue;
+                if (col == 8 )  UpRateCapsubsequentAdjustment = stringValue;
+                if (col == 9 )  FloorRate = stringValue;
+                if (col == 10)  MaxRateEver = stringValue;
+                if (col == 11) Index = stringValue;
+                if (col == 12) Margin = stringValue;
+                if (col == 13) RoundingFactor = stringValue;
             }
 
             #endregion

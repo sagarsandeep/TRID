@@ -19,5 +19,8 @@ namespace TRID.ProjectLibs.UI
         public static By VariableAmortizationLink = By.LinkText("Variable Amortization");
         public static By ExportLink = By.LinkText("Export");
         public static By EscrowGrid = By.LinkText("EscrowGrid");
+
+
+        public static By AmortizationPaymentScheduleText = By.XPath("//section[@id='PaymentScheduleOutput']//md-toolbar/div");
     }
 }

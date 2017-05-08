@@ -18,7 +18,11 @@ When user navigate to Loan Inputs Page
 	And user selects Frequency of Payments
 	And user selects Loan Term
 	And user selects Repayment Term Type
-	And Enter Loan detail input values for computation
+    And Enter Loan detail input values for computation 
+    And user navigate to Amortization Page
+    And user navigate to Loan Inputs Page
+	And user navigate to Amortization Page
+	And user navigate to Loan Inputs Page
 	And user enters all input values for Prepaid Charges
 	#And user enters input value for prepaid custom fields
 	And user navigates to Disclosure Inputs Page
@@ -52,7 +56,9 @@ When user navigate to Loan Inputs Page
 	And user selects Frequency of Payments
 	And user selects Loan Term
 	And user selects Repayment Term Type
-	And Enter Loan detail input values for computation
+    And Enter Loan detail input values for computation 
+    And user navigate to Amortization Page
+    And user navigate to Loan Inputs Page
 	And user enters all input values for Prepaid Charges
 	#And user enters input value for prepaid custom fields
 	And user navigates to Disclosure Inputs Page
@@ -87,7 +93,9 @@ When user navigate to Loan Inputs Page
 	And user selects Frequency of Payments
 	And user selects Loan Term
 	And user selects Repayment Term Type
-	And Enter Loan detail input values for computation
+    And Enter Loan detail input values for computation 
+    And user navigate to Amortization Page
+    And user navigate to Loan Inputs Page
 	And user enters all input values for Prepaid Charges
 	#And user enters input value for prepaid custom fields
 	And user navigates to Disclosure Inputs Page
@@ -122,7 +130,9 @@ When user navigate to Loan Inputs Page
 	And user selects Frequency of Payments
 	And user selects Loan Term
 	And user selects Repayment Term Type
-	And Enter Loan detail input values for computation
+    And Enter Loan detail input values for computation 
+    And user navigate to Amortization Page
+    And user navigate to Loan Inputs Page
 	And user enters all input values for Prepaid Charges
 	#And user enters input value for prepaid custom fields
 	And user navigates to Disclosure Inputs Page
@@ -157,7 +167,9 @@ When user navigate to Loan Inputs Page
 	And user selects Frequency of Payments
 	And user selects Loan Term
 	And user selects Repayment Term Type
-	And Enter Loan detail input values for computation
+    And Enter Loan detail input values for computation 
+    And user navigate to Amortization Page
+    And user navigate to Loan Inputs Page
 	And user enters all input values for Prepaid Charges
 	#And user enters input value for prepaid custom fields
 	And user navigates to Disclosure Inputs Page
@@ -192,7 +204,9 @@ When user navigate to Loan Inputs Page
 	And user selects Frequency of Payments
 	And user selects Loan Term
 	And user selects Repayment Term Type
-	And Enter Loan detail input values for computation
+    And Enter Loan detail input values for computation 
+    And user navigate to Amortization Page
+    And user navigate to Loan Inputs Page
 	And user enters all input values for Prepaid Charges
 	#And user enters input value for prepaid custom fields
 	And user navigates to Disclosure Inputs Page
@@ -226,7 +240,9 @@ When user navigate to Loan Inputs Page
 	And user selects Frequency of Payments
 	And user selects Loan Term
 	And user selects Repayment Term Type
-	And Enter Loan detail input values for computation
+    And Enter Loan detail input values for computation 
+    And user navigate to Amortization Page
+    And user navigate to Loan Inputs Page
 	And user enters all input values for Prepaid Charges
 	#And user enters input value for prepaid custom fields
 	And user navigates to Disclosure Inputs Page
@@ -261,7 +277,9 @@ When user navigate to Loan Inputs Page
 	And user selects Frequency of Payments
 	And user selects Loan Term
 	And user selects Repayment Term Type
-	And Enter Loan detail input values for computation
+    And Enter Loan detail input values for computation 
+    And user navigate to Amortization Page
+    And user navigate to Loan Inputs Page
 	And user enters all input values for Prepaid Charges
 	#And user enters input value for prepaid custom fields
 	And user navigates to Disclosure Inputs Page
@@ -295,7 +313,9 @@ When user navigate to Loan Inputs Page
 	And user selects Frequency of Payments
 	And user selects Loan Term
 	And user selects Repayment Term Type
-	And Enter Loan detail input values for computation
+    And Enter Loan detail input values for computation 
+    And user navigate to Amortization Page
+    And user navigate to Loan Inputs Page
 	And user enters all input values for Prepaid Charges
 	#And user enters input value for prepaid custom fields
 	And user navigates to Disclosure Inputs Page
@@ -330,7 +350,9 @@ When user navigate to Loan Inputs Page
 	And user selects Frequency of Payments
 	And user selects Loan Term
 	And user selects Repayment Term Type
-	And Enter Loan detail input values for computation
+    And Enter Loan detail input values for computation 
+    And user navigate to Amortization Page
+    And user navigate to Loan Inputs Page
 	And user enters all input values for Prepaid Charges
 	#And user enters input value for prepaid custom fields
 	And user navigates to Disclosure Inputs Page
@@ -364,7 +386,9 @@ When user navigate to Loan Inputs Page
 	And user selects Frequency of Payments
 	And user selects Loan Term
 	And user selects Repayment Term Type
-	And Enter Loan detail input values for computation
+    And Enter Loan detail input values for computation 
+    And user navigate to Amortization Page
+    And user navigate to Loan Inputs Page
 	And user enters all input values for Prepaid Charges
 	#And user enters input value for prepaid custom fields
 	And user navigates to Disclosure Inputs Page
@@ -399,7 +423,9 @@ When user navigate to Loan Inputs Page
 	And user selects Frequency of Payments
 	And user selects Loan Term
 	And user selects Repayment Term Type
-	And Enter Loan detail input values for computation
+    And Enter Loan detail input values for computation 
+    And user navigate to Amortization Page
+    And user navigate to Loan Inputs Page
 	And user enters all input values for Prepaid Charges
 	#And user enters input value for prepaid custom fields
 	And user navigates to Disclosure Inputs Page
@@ -434,7 +460,9 @@ When user navigate to Loan Inputs Page
 	And user selects Frequency of Payments
 	And user selects Loan Term
 	And user selects Repayment Term Type
-	And Enter Loan detail input values for computation
+    And Enter Loan detail input values for computation 
+    And user navigate to Amortization Page
+    And user navigate to Loan Inputs Page
 	And user enters all input values for Prepaid Charges
 	#And user enters input value for prepaid custom fields
 	And user navigates to Disclosure Inputs Page
@@ -469,7 +497,9 @@ When user navigate to Loan Inputs Page
 	And user selects Frequency of Payments
 	And user selects Loan Term
 	And user selects Repayment Term Type
-	And Enter Loan detail input values for computation
+    And Enter Loan detail input values for computation 
+    And user navigate to Amortization Page
+    And user navigate to Loan Inputs Page
 	And user enters all input values for Prepaid Charges
 	#And user enters input value for prepaid custom fields
 	And user navigates to Disclosure Inputs Page
@@ -504,7 +534,9 @@ When user navigate to Loan Inputs Page
 	And user selects Frequency of Payments
 	And user selects Loan Term
 	And user selects Repayment Term Type
-	And Enter Loan detail input values for computation
+    And Enter Loan detail input values for computation 
+    And user navigate to Amortization Page
+    And user navigate to Loan Inputs Page
 	And user enters all input values for Prepaid Charges
 	#And user enters input value for prepaid custom fields
 	And user navigates to Disclosure Inputs Page
@@ -544,7 +576,9 @@ When user navigate to Loan Inputs Page
 	And user selects Frequency of Payments
 	And user selects Loan Term
 	And user selects Repayment Term Type
-	And Enter Loan detail input values for computation
+    And Enter Loan detail input values for computation 
+    And user navigate to Amortization Page
+    And user navigate to Loan Inputs Page
 	And user enters pmi rate values
 	And user enters other pmi input values
 	And user selects value for Is Ins Escrowed
@@ -596,7 +630,9 @@ When user navigate to Loan Inputs Page
 	And user selects Frequency of Payments
 	And user selects Loan Term
 	And user selects Repayment Term Type
-	And Enter Loan detail input values for computation
+    And Enter Loan detail input values for computation 
+    And user navigate to Amortization Page
+    And user navigate to Loan Inputs Page
 	And user enters pmi rate values
 	And user enters other pmi input values
 	And user selects value for Is Ins Escrowed
@@ -649,7 +685,9 @@ When user navigate to Loan Inputs Page
 	And user selects Frequency of Payments
 	And user selects Loan Term
 	And user selects Repayment Term Type
-	And Enter Loan detail input values for computation
+    And Enter Loan detail input values for computation 
+    And user navigate to Amortization Page
+    And user navigate to Loan Inputs Page
 	And user enters pmi rate values
 	And user enters other pmi input values
 	And user selects value for Is Ins Escrowed
@@ -702,7 +740,9 @@ When user navigate to Loan Inputs Page
 	And user selects Frequency of Payments
 	And user selects Loan Term
 	And user selects Repayment Term Type
-	And Enter Loan detail input values for computation
+    And Enter Loan detail input values for computation 
+    And user navigate to Amortization Page
+    And user navigate to Loan Inputs Page
 	And user enters pmi rate values
 	And user enters other pmi input values
 	And user selects value for Is Ins Escrowed
@@ -754,7 +794,9 @@ When user navigate to Loan Inputs Page
 	And user selects Frequency of Payments
 	And user selects Loan Term
 	And user selects Repayment Term Type
-	And Enter Loan detail input values for computation
+    And Enter Loan detail input values for computation 
+    And user navigate to Amortization Page
+    And user navigate to Loan Inputs Page
 	And user enters pmi rate values
 	And user enters other pmi input values
 	And user selects value for Is Ins Escrowed
@@ -807,7 +849,9 @@ When user navigate to Loan Inputs Page
 	And user selects Frequency of Payments
 	And user selects Loan Term
 	And user selects Repayment Term Type
-	And Enter Loan detail input values for computation
+    And Enter Loan detail input values for computation 
+    And user navigate to Amortization Page
+    And user navigate to Loan Inputs Page
 	And user enters pmi rate values
 	And user enters other pmi input values
 	And user selects value for Is Ins Escrowed
@@ -860,7 +904,9 @@ When user navigate to Loan Inputs Page
 	And user selects Frequency of Payments
 	And user selects Loan Term
 	And user selects Repayment Term Type
-	And Enter Loan detail input values for computation
+    And Enter Loan detail input values for computation 
+    And user navigate to Amortization Page
+    And user navigate to Loan Inputs Page
 	And user enters pmi rate values
 	And user enters other pmi input values
 	And user selects value for Is Ins Escrowed
@@ -913,7 +959,9 @@ When user navigate to Loan Inputs Page
 	And user selects Frequency of Payments
 	And user selects Loan Term
 	And user selects Repayment Term Type
-	And Enter Loan detail input values for computation
+    And Enter Loan detail input values for computation 
+    And user navigate to Amortization Page
+    And user navigate to Loan Inputs Page
 	And user enters pmi rate values
 	And user enters other pmi input values
 	And user selects value for Is Ins Escrowed
@@ -966,7 +1014,9 @@ When user navigate to Loan Inputs Page
 	And user selects Frequency of Payments
 	And user selects Loan Term
 	And user selects Repayment Term Type
-	And Enter Loan detail input values for computation
+    And Enter Loan detail input values for computation 
+    And user navigate to Amortization Page
+    And user navigate to Loan Inputs Page
 	And user enters pmi rate values
 	And user enters other pmi input values
 	And user selects value for Is Ins Escrowed
@@ -1019,7 +1069,9 @@ When user navigate to Loan Inputs Page
 	And user selects Frequency of Payments
 	And user selects Loan Term
 	And user selects Repayment Term Type
-	And Enter Loan detail input values for computation
+    And Enter Loan detail input values for computation 
+    And user navigate to Amortization Page
+    And user navigate to Loan Inputs Page
 	And user enters pmi rate values
 	And user enters other pmi input values
 	And user selects value for Is Ins Escrowed
@@ -1072,7 +1124,9 @@ When user navigate to Loan Inputs Page
 	And user selects Frequency of Payments
 	And user selects Loan Term
 	And user selects Repayment Term Type
-	And Enter Loan detail input values for computation
+    And Enter Loan detail input values for computation 
+    And user navigate to Amortization Page
+    And user navigate to Loan Inputs Page
 	And user enters pmi rate values
 	And user enters other pmi input values
 	And user selects value for Is Ins Escrowed
@@ -1125,7 +1179,9 @@ When user navigate to Loan Inputs Page
 	And user selects Frequency of Payments
 	And user selects Loan Term
 	And user selects Repayment Term Type
-	And Enter Loan detail input values for computation
+    And Enter Loan detail input values for computation 
+    And user navigate to Amortization Page
+    And user navigate to Loan Inputs Page
 	And user enters pmi rate values
 	And user enters other pmi input values
 	And user selects value for Is Ins Escrowed
@@ -1178,7 +1234,9 @@ When user navigate to Loan Inputs Page
 	And user selects Frequency of Payments
 	And user selects Loan Term
 	And user selects Repayment Term Type
-	And Enter Loan detail input values for computation
+    And Enter Loan detail input values for computation 
+    And user navigate to Amortization Page
+    And user navigate to Loan Inputs Page
 	And user enters pmi rate values
 	And user enters other pmi input values
 	And user selects value for Is Ins Escrowed
@@ -1231,7 +1289,9 @@ When user navigate to Loan Inputs Page
 	And user selects Frequency of Payments
 	And user selects Loan Term
 	And user selects Repayment Term Type
-	And Enter Loan detail input values for computation
+    And Enter Loan detail input values for computation 
+    And user navigate to Amortization Page
+    And user navigate to Loan Inputs Page
 	And user enters pmi rate values
 	And user enters other pmi input values
 	And user selects value for Is Ins Escrowed
@@ -1283,7 +1343,9 @@ When user navigate to Loan Inputs Page
 	And user selects Frequency of Payments
 	And user selects Loan Term
 	And user selects Repayment Term Type
-	And Enter Loan detail input values for computation
+    And Enter Loan detail input values for computation 
+    And user navigate to Amortization Page
+    And user navigate to Loan Inputs Page
 	And user enters pmi rate values
 	And user enters other pmi input values
 	And user selects value for Is Ins Escrowed
@@ -1340,7 +1402,9 @@ When user navigate to Loan Inputs Page
 	And user selects Frequency of Payments
 	And user selects Loan Term
 	And user selects Repayment Term Type
-	And Enter Loan detail input values for computation
+    And Enter Loan detail input values for computation 
+    And user navigate to Amortization Page
+    And user navigate to Loan Inputs Page
 	And user enters pmi rate values
 	And user enters other pmi input values
 	And user navigates to Disclosure Inputs Page
@@ -1366,7 +1430,9 @@ When user navigate to Loan Inputs Page
 	And user selects Frequency of Payments
 	And user selects Loan Term
 	And user selects Repayment Term Type
-	And Enter Loan detail input values for computation
+    And Enter Loan detail input values for computation 
+    And user navigate to Amortization Page
+    And user navigate to Loan Inputs Page
 	And user enters pmi rate values
 	And user enters other pmi input values
 	And user navigates to Disclosure Inputs Page
@@ -1392,7 +1458,9 @@ When user navigate to Loan Inputs Page
 	And user selects Frequency of Payments
 	And user selects Loan Term
 	And user selects Repayment Term Type
-	And Enter Loan detail input values for computation
+    And Enter Loan detail input values for computation 
+    And user navigate to Amortization Page
+    And user navigate to Loan Inputs Page
 	And user enters pmi rate values
 	And user enters other pmi input values
 	And user navigates to Disclosure Inputs Page
@@ -1418,7 +1486,9 @@ When user navigate to Loan Inputs Page
 	And user selects Frequency of Payments
 	And user selects Loan Term
 	And user selects Repayment Term Type
-	And Enter Loan detail input values for computation
+    And Enter Loan detail input values for computation 
+    And user navigate to Amortization Page
+    And user navigate to Loan Inputs Page
 	And user enters pmi rate values
 	And user enters other pmi input values
 	And user navigates to Disclosure Inputs Page
@@ -1444,7 +1514,9 @@ When user navigate to Loan Inputs Page
 	And user selects Frequency of Payments
 	And user selects Loan Term
 	And user selects Repayment Term Type
-	And Enter Loan detail input values for computation
+    And Enter Loan detail input values for computation 
+    And user navigate to Amortization Page
+    And user navigate to Loan Inputs Page
 	And user enters pmi rate values
 	And user enters other pmi input values
 	And user navigates to Disclosure Inputs Page
@@ -1470,7 +1542,9 @@ When user navigate to Loan Inputs Page
 	And user selects Frequency of Payments
 	And user selects Loan Term
 	And user selects Repayment Term Type
-	And Enter Loan detail input values for computation
+    And Enter Loan detail input values for computation 
+    And user navigate to Amortization Page
+    And user navigate to Loan Inputs Page
 	And user enters pmi rate values
 	And user enters other pmi input values
 	And user navigates to Disclosure Inputs Page
@@ -1495,7 +1569,9 @@ When user navigate to Loan Inputs Page
 	And user selects Frequency of Payments
 	And user selects Loan Term
 	And user selects Repayment Term Type
-	And Enter Loan detail input values for computation
+    And Enter Loan detail input values for computation 
+    And user navigate to Amortization Page
+    And user navigate to Loan Inputs Page
 	And user enters pmi rate values
 	And user enters other pmi input values
 	And user navigates to Disclosure Inputs Page
@@ -1521,7 +1597,9 @@ When user navigate to Loan Inputs Page
 	And user selects Frequency of Payments
 	And user selects Loan Term
 	And user selects Repayment Term Type
-	And Enter Loan detail input values for computation
+    And Enter Loan detail input values for computation 
+    And user navigate to Amortization Page
+    And user navigate to Loan Inputs Page
 	And user enters pmi rate values
 	And user enters other pmi input values
 	And user navigates to Disclosure Inputs Page
@@ -1546,7 +1624,9 @@ When user navigate to Loan Inputs Page
 	And user selects Frequency of Payments
 	And user selects Loan Term
 	And user selects Repayment Term Type
-	And Enter Loan detail input values for computation
+    And Enter Loan detail input values for computation 
+    And user navigate to Amortization Page
+    And user navigate to Loan Inputs Page
 	And user enters pmi rate values
 	And user enters other pmi input values
 	And user navigates to Disclosure Inputs Page
@@ -1572,7 +1652,9 @@ When user navigate to Loan Inputs Page
 	And user selects Frequency of Payments
 	And user selects Loan Term
 	And user selects Repayment Term Type
-	And Enter Loan detail input values for computation
+    And Enter Loan detail input values for computation 
+    And user navigate to Amortization Page
+    And user navigate to Loan Inputs Page
 	And user enters pmi rate values
 	And user enters other pmi input values
 	And user navigates to Disclosure Inputs Page
@@ -1597,7 +1679,9 @@ When user navigate to Loan Inputs Page
 	And user selects Frequency of Payments
 	And user selects Loan Term
 	And user selects Repayment Term Type
-	And Enter Loan detail input values for computation
+    And Enter Loan detail input values for computation 
+    And user navigate to Amortization Page
+    And user navigate to Loan Inputs Page
 	And user enters pmi rate values
 	And user enters other pmi input values
 	And user navigates to Disclosure Inputs Page
@@ -1623,7 +1707,9 @@ When user navigate to Loan Inputs Page
 	And user selects Frequency of Payments
 	And user selects Loan Term
 	And user selects Repayment Term Type
-	And Enter Loan detail input values for computation
+    And Enter Loan detail input values for computation 
+    And user navigate to Amortization Page
+    And user navigate to Loan Inputs Page
 	And user enters pmi rate values
 	And user enters other pmi input values
 	And user navigates to Disclosure Inputs Page
@@ -1649,7 +1735,9 @@ When user navigate to Loan Inputs Page
 	And user selects Frequency of Payments
 	And user selects Loan Term
 	And user selects Repayment Term Type
-	And Enter Loan detail input values for computation
+    And Enter Loan detail input values for computation 
+    And user navigate to Amortization Page
+    And user navigate to Loan Inputs Page
 	And user enters pmi rate values
 	And user enters other pmi input values
 	And user navigates to Disclosure Inputs Page
@@ -1675,7 +1763,9 @@ When user navigate to Loan Inputs Page
 	And user selects Frequency of Payments
 	And user selects Loan Term
 	And user selects Repayment Term Type
-	And Enter Loan detail input values for computation
+    And Enter Loan detail input values for computation 
+    And user navigate to Amortization Page
+    And user navigate to Loan Inputs Page
 	And user enters pmi rate values
 	And user enters other pmi input values
 	And user navigates to Disclosure Inputs Page
@@ -1701,7 +1791,9 @@ When user navigate to Loan Inputs Page
 	And user selects Frequency of Payments
 	And user selects Loan Term
 	And user selects Repayment Term Type
-	And Enter Loan detail input values for computation
+    And Enter Loan detail input values for computation 
+    And user navigate to Amortization Page
+    And user navigate to Loan Inputs Page
 	And user enters pmi rate values
 	And user enters other pmi input values
 	And user navigates to Disclosure Inputs Page
@@ -1729,7 +1821,9 @@ When user navigate to Loan Inputs Page
 	And user selects Frequency of Payments
 	And user selects Loan Term
 	And user selects Repayment Term Type
-	And Enter Loan detail input values for computation
+    And Enter Loan detail input values for computation 
+    And user navigate to Amortization Page
+    And user navigate to Loan Inputs Page
 	And user selects value for Is Ins Escrowed
 	And user selects value for Is Tax Escrowed
 	And user selects value for Is PMI Escrowed
@@ -1761,7 +1855,9 @@ When user navigate to Loan Inputs Page
 	And user selects Frequency of Payments
 	And user selects Loan Term
 	And user selects Repayment Term Type
-	And Enter Loan detail input values for computation
+    And Enter Loan detail input values for computation 
+    And user navigate to Amortization Page
+    And user navigate to Loan Inputs Page
 	And user selects value for Is Ins Escrowed
 	And user selects value for Is Tax Escrowed
 	And user selects value for Is PMI Escrowed
@@ -1793,7 +1889,9 @@ When user navigate to Loan Inputs Page
 	And user selects Frequency of Payments
 	And user selects Loan Term
 	And user selects Repayment Term Type
-	And Enter Loan detail input values for computation
+    And Enter Loan detail input values for computation 
+    And user navigate to Amortization Page
+    And user navigate to Loan Inputs Page
 	And user selects value for Is Ins Escrowed
 	And user selects value for Is Tax Escrowed
 	And user selects value for Is PMI Escrowed
@@ -1825,7 +1923,9 @@ When user navigate to Loan Inputs Page
 	And user selects Frequency of Payments
 	And user selects Loan Term
 	And user selects Repayment Term Type
-	And Enter Loan detail input values for computation
+    And Enter Loan detail input values for computation 
+    And user navigate to Amortization Page
+    And user navigate to Loan Inputs Page
 	And user selects value for Is Ins Escrowed
 	And user selects value for Is Tax Escrowed
 	And user selects value for Is PMI Escrowed
@@ -1856,7 +1956,9 @@ When user navigate to Loan Inputs Page
 	And user selects Frequency of Payments
 	And user selects Loan Term
 	And user selects Repayment Term Type
-	And Enter Loan detail input values for computation
+    And Enter Loan detail input values for computation 
+    And user navigate to Amortization Page
+    And user navigate to Loan Inputs Page
 	And user selects value for Is Ins Escrowed
 	And user selects value for Is Tax Escrowed
 	And user selects value for Is PMI Escrowed
@@ -1888,7 +1990,9 @@ When user navigate to Loan Inputs Page
 	And user selects Frequency of Payments
 	And user selects Loan Term
 	And user selects Repayment Term Type
-	And Enter Loan detail input values for computation
+    And Enter Loan detail input values for computation 
+    And user navigate to Amortization Page
+    And user navigate to Loan Inputs Page
 	And user selects value for Is Ins Escrowed
 	And user selects value for Is Tax Escrowed
 	And user selects value for Is PMI Escrowed
@@ -1920,7 +2024,9 @@ When user navigate to Loan Inputs Page
 	And user selects Frequency of Payments
 	And user selects Loan Term
 	And user selects Repayment Term Type
-	And Enter Loan detail input values for computation
+    And Enter Loan detail input values for computation 
+    And user navigate to Amortization Page
+    And user navigate to Loan Inputs Page
 	And user selects value for Is Ins Escrowed
 	And user selects value for Is Tax Escrowed
 	And user selects value for Is PMI Escrowed
@@ -1952,7 +2058,9 @@ When user navigate to Loan Inputs Page
 	And user selects Frequency of Payments
 	And user selects Loan Term
 	And user selects Repayment Term Type
-	And Enter Loan detail input values for computation
+    And Enter Loan detail input values for computation 
+    And user navigate to Amortization Page
+    And user navigate to Loan Inputs Page
 	And user selects value for Is Ins Escrowed
 	And user selects value for Is Tax Escrowed
 	And user selects value for Is PMI Escrowed
@@ -1984,7 +2092,9 @@ When user navigate to Loan Inputs Page
 	And user selects Frequency of Payments
 	And user selects Loan Term
 	And user selects Repayment Term Type
-	And Enter Loan detail input values for computation
+    And Enter Loan detail input values for computation 
+    And user navigate to Amortization Page
+    And user navigate to Loan Inputs Page
 	And user selects value for Is Ins Escrowed
 	And user selects value for Is Tax Escrowed
 	And user selects value for Is PMI Escrowed
@@ -2016,7 +2126,9 @@ When user navigate to Loan Inputs Page
 	And user selects Frequency of Payments
 	And user selects Loan Term
 	And user selects Repayment Term Type
-	And Enter Loan detail input values for computation
+    And Enter Loan detail input values for computation 
+    And user navigate to Amortization Page
+    And user navigate to Loan Inputs Page
 	And user selects value for Is Ins Escrowed
 	And user selects value for Is Tax Escrowed
 	And user selects value for Is PMI Escrowed
@@ -2048,7 +2160,9 @@ When user navigate to Loan Inputs Page
 	And user selects Frequency of Payments
 	And user selects Loan Term
 	And user selects Repayment Term Type
-	And Enter Loan detail input values for computation
+    And Enter Loan detail input values for computation 
+    And user navigate to Amortization Page
+    And user navigate to Loan Inputs Page
 	And user selects value for Is Ins Escrowed
 	And user selects value for Is Tax Escrowed
 	And user selects value for Is PMI Escrowed
@@ -2080,7 +2194,9 @@ When user navigate to Loan Inputs Page
 	And user selects Frequency of Payments
 	And user selects Loan Term
 	And user selects Repayment Term Type
-	And Enter Loan detail input values for computation
+    And Enter Loan detail input values for computation 
+    And user navigate to Amortization Page
+    And user navigate to Loan Inputs Page
 	And user selects value for Is Ins Escrowed
 	And user selects value for Is Tax Escrowed
 	And user selects value for Is PMI Escrowed
@@ -2112,7 +2228,9 @@ When user navigate to Loan Inputs Page
 	And user selects Frequency of Payments
 	And user selects Loan Term
 	And user selects Repayment Term Type
-	And Enter Loan detail input values for computation
+    And Enter Loan detail input values for computation 
+    And user navigate to Amortization Page
+    And user navigate to Loan Inputs Page
 	And user selects value for Is Ins Escrowed
 	And user selects value for Is Tax Escrowed
 	And user selects value for Is PMI Escrowed
@@ -2144,7 +2262,9 @@ When user navigate to Loan Inputs Page
 	And user selects Frequency of Payments
 	And user selects Loan Term
 	And user selects Repayment Term Type
-	And Enter Loan detail input values for computation
+    And Enter Loan detail input values for computation 
+    And user navigate to Amortization Page
+    And user navigate to Loan Inputs Page
 	And user selects value for Is Ins Escrowed
 	And user selects value for Is Tax Escrowed
 	And user selects value for Is PMI Escrowed
@@ -2175,7 +2295,9 @@ When user navigate to Loan Inputs Page
 	And user selects Frequency of Payments
 	And user selects Loan Term
 	And user selects Repayment Term Type
-	And Enter Loan detail input values for computation
+    And Enter Loan detail input values for computation 
+    And user navigate to Amortization Page
+    And user navigate to Loan Inputs Page
 	And user selects value for Is Ins Escrowed
 	And user selects value for Is Tax Escrowed
 	And user selects value for Is PMI Escrowed
@@ -2213,7 +2335,9 @@ When user navigate to Loan Inputs Page
 	And user selects Frequency of Payments
 	And user selects Loan Term
 	And user selects Repayment Term Type
-	And Enter Loan detail input values for computation
+    And Enter Loan detail input values for computation 
+    And user navigate to Amortization Page
+    And user navigate to Loan Inputs Page
 	And user enters pmi rate values
 	And user enters other pmi input values
 	And user enters all input values for Prepaid Charges
@@ -2252,7 +2376,9 @@ When user navigate to Loan Inputs Page
 	And user selects Frequency of Payments
 	And user selects Loan Term
 	And user selects Repayment Term Type
-	And Enter Loan detail input values for computation
+    And Enter Loan detail input values for computation 
+    And user navigate to Amortization Page
+    And user navigate to Loan Inputs Page
 	And user enters pmi rate values
 	And user enters other pmi input values
 	And user enters all input values for Prepaid Charges
@@ -2290,7 +2416,9 @@ When user navigate to Loan Inputs Page
 	And user selects Frequency of Payments
 	And user selects Loan Term
 	And user selects Repayment Term Type
-	And Enter Loan detail input values for computation
+    And Enter Loan detail input values for computation 
+    And user navigate to Amortization Page
+    And user navigate to Loan Inputs Page
 	And user enters pmi rate values
 	And user enters other pmi input values
 	And user enters all input values for Prepaid Charges
@@ -2328,7 +2456,9 @@ When user navigate to Loan Inputs Page
 	And user selects Frequency of Payments
 	And user selects Loan Term
 	And user selects Repayment Term Type
-	And Enter Loan detail input values for computation
+    And Enter Loan detail input values for computation 
+    And user navigate to Amortization Page
+    And user navigate to Loan Inputs Page
 	And user enters pmi rate values
 	And user enters other pmi input values
 	And user enters all input values for Prepaid Charges
@@ -2366,7 +2496,9 @@ When user navigate to Loan Inputs Page
 	And user selects Frequency of Payments
 	And user selects Loan Term
 	And user selects Repayment Term Type
-	And Enter Loan detail input values for computation
+    And Enter Loan detail input values for computation 
+    And user navigate to Amortization Page
+    And user navigate to Loan Inputs Page
 	And user enters pmi rate values
 	And user enters other pmi input values
 	And user enters all input values for Prepaid Charges
@@ -2404,7 +2536,9 @@ When user navigate to Loan Inputs Page
 	And user selects Frequency of Payments
 	And user selects Loan Term
 	And user selects Repayment Term Type
-	And Enter Loan detail input values for computation
+    And Enter Loan detail input values for computation 
+    And user navigate to Amortization Page
+    And user navigate to Loan Inputs Page
 	And user enters pmi rate values
 	And user enters other pmi input values
 	And user enters all input values for Prepaid Charges
@@ -2441,7 +2575,9 @@ When user navigate to Loan Inputs Page
 	And user selects Frequency of Payments
 	And user selects Loan Term
 	And user selects Repayment Term Type
-	And Enter Loan detail input values for computation
+    And Enter Loan detail input values for computation 
+    And user navigate to Amortization Page
+    And user navigate to Loan Inputs Page
 	And user enters pmi rate values
 	And user enters other pmi input values
 	And user enters all input values for Prepaid Charges
@@ -2479,7 +2615,9 @@ When user navigate to Loan Inputs Page
 	And user selects Frequency of Payments
 	And user selects Loan Term
 	And user selects Repayment Term Type
-	And Enter Loan detail input values for computation
+    And Enter Loan detail input values for computation 
+    And user navigate to Amortization Page
+    And user navigate to Loan Inputs Page
 	And user enters pmi rate values
 	And user enters other pmi input values
 	And user enters all input values for Prepaid Charges
@@ -2516,7 +2654,9 @@ When user navigate to Loan Inputs Page
 	And user selects Frequency of Payments
 	And user selects Loan Term
 	And user selects Repayment Term Type
-	And Enter Loan detail input values for computation
+    And Enter Loan detail input values for computation 
+    And user navigate to Amortization Page
+    And user navigate to Loan Inputs Page
 	And user enters pmi rate values
 	And user enters other pmi input values
 	And user enters all input values for Prepaid Charges
@@ -2554,7 +2694,9 @@ When user navigate to Loan Inputs Page
 	And user selects Frequency of Payments
 	And user selects Loan Term
 	And user selects Repayment Term Type
-	And Enter Loan detail input values for computation
+    And Enter Loan detail input values for computation 
+    And user navigate to Amortization Page
+    And user navigate to Loan Inputs Page
 	And user enters pmi rate values
 	And user enters other pmi input values
 	And user enters all input values for Prepaid Charges
@@ -2591,7 +2733,9 @@ When user navigate to Loan Inputs Page
 	And user selects Frequency of Payments
 	And user selects Loan Term
 	And user selects Repayment Term Type
-	And Enter Loan detail input values for computation
+    And Enter Loan detail input values for computation 
+    And user navigate to Amortization Page
+    And user navigate to Loan Inputs Page
 	And user enters pmi rate values
 	And user enters other pmi input values
 	And user enters all input values for Prepaid Charges
@@ -2629,7 +2773,9 @@ When user navigate to Loan Inputs Page
 	And user selects Frequency of Payments
 	And user selects Loan Term
 	And user selects Repayment Term Type
-	And Enter Loan detail input values for computation
+    And Enter Loan detail input values for computation 
+    And user navigate to Amortization Page
+    And user navigate to Loan Inputs Page
 	And user enters pmi rate values
 	And user enters other pmi input values
 	And user enters all input values for Prepaid Charges
@@ -2667,7 +2813,9 @@ When user navigate to Loan Inputs Page
 	And user selects Frequency of Payments
 	And user selects Loan Term
 	And user selects Repayment Term Type
-	And Enter Loan detail input values for computation
+    And Enter Loan detail input values for computation 
+    And user navigate to Amortization Page
+    And user navigate to Loan Inputs Page
 	And user enters pmi rate values
 	And user enters other pmi input values
 	And user enters all input values for Prepaid Charges
@@ -2705,7 +2853,9 @@ When user navigate to Loan Inputs Page
 	And user selects Frequency of Payments
 	And user selects Loan Term
 	And user selects Repayment Term Type
-	And Enter Loan detail input values for computation
+    And Enter Loan detail input values for computation 
+    And user navigate to Amortization Page
+    And user navigate to Loan Inputs Page
 	And user enters pmi rate values
 	And user enters other pmi input values
 	And user enters all input values for Prepaid Charges
@@ -2743,7 +2893,9 @@ When user navigate to Loan Inputs Page
 	And user selects Frequency of Payments
 	And user selects Loan Term
 	And user selects Repayment Term Type
-	And Enter Loan detail input values for computation
+    And Enter Loan detail input values for computation 
+    And user navigate to Amortization Page
+    And user navigate to Loan Inputs Page
 	And user enters pmi rate values
 	And user enters other pmi input values
 	And user enters all input values for Prepaid Charges
@@ -2784,7 +2936,9 @@ When user navigate to Loan Inputs Page
 	And user selects Frequency of Payments
 	And user selects Loan Term
 	And user selects Repayment Term Type
-	And Enter Loan detail input values for computation
+    And Enter Loan detail input values for computation 
+    And user navigate to Amortization Page
+    And user navigate to Loan Inputs Page
 	And user selects value for Is Ins Escrowed
 	And user selects value for Is Tax Escrowed
 	And user selects value for Is PMI Escrowed
@@ -2820,7 +2974,9 @@ When user navigate to Loan Inputs Page
 	And user selects Frequency of Payments
 	And user selects Loan Term
 	And user selects Repayment Term Type
-	And Enter Loan detail input values for computation
+    And Enter Loan detail input values for computation 
+    And user navigate to Amortization Page
+    And user navigate to Loan Inputs Page
 	And user selects value for Is Ins Escrowed
 	And user selects value for Is Tax Escrowed
 	And user selects value for Is PMI Escrowed
@@ -2855,7 +3011,9 @@ When user navigate to Loan Inputs Page
 	And user selects Frequency of Payments
 	And user selects Loan Term
 	And user selects Repayment Term Type
-	And Enter Loan detail input values for computation
+    And Enter Loan detail input values for computation 
+    And user navigate to Amortization Page
+    And user navigate to Loan Inputs Page
 	And user selects value for Is Ins Escrowed
 	And user selects value for Is Tax Escrowed
 	And user selects value for Is PMI Escrowed
@@ -2890,7 +3048,9 @@ When user navigate to Loan Inputs Page
 	And user selects Frequency of Payments
 	And user selects Loan Term
 	And user selects Repayment Term Type
-	And Enter Loan detail input values for computation
+    And Enter Loan detail input values for computation 
+    And user navigate to Amortization Page
+    And user navigate to Loan Inputs Page
 	And user selects value for Is Ins Escrowed
 	And user selects value for Is Tax Escrowed
 	And user selects value for Is PMI Escrowed
@@ -2924,7 +3084,9 @@ When user navigate to Loan Inputs Page
 	And user selects Frequency of Payments
 	And user selects Loan Term
 	And user selects Repayment Term Type
-	And Enter Loan detail input values for computation
+    And Enter Loan detail input values for computation 
+    And user navigate to Amortization Page
+    And user navigate to Loan Inputs Page
 	And user selects value for Is Ins Escrowed
 	And user selects value for Is Tax Escrowed
 	And user selects value for Is PMI Escrowed
@@ -2959,7 +3121,9 @@ When user navigate to Loan Inputs Page
 	And user selects Frequency of Payments
 	And user selects Loan Term
 	And user selects Repayment Term Type
-	And Enter Loan detail input values for computation
+    And Enter Loan detail input values for computation 
+    And user navigate to Amortization Page
+    And user navigate to Loan Inputs Page
 	And user selects value for Is Ins Escrowed
 	And user selects value for Is Tax Escrowed
 	And user selects value for Is PMI Escrowed
@@ -2994,7 +3158,9 @@ When user navigate to Loan Inputs Page
 	And user selects Frequency of Payments
 	And user selects Loan Term
 	And user selects Repayment Term Type
-	And Enter Loan detail input values for computation
+    And Enter Loan detail input values for computation 
+    And user navigate to Amortization Page
+    And user navigate to Loan Inputs Page
 	And user selects value for Is Ins Escrowed
 	And user selects value for Is Tax Escrowed
 	And user selects value for Is PMI Escrowed
@@ -3029,7 +3195,9 @@ When user navigate to Loan Inputs Page
 	And user selects Frequency of Payments
 	And user selects Loan Term
 	And user selects Repayment Term Type
-	And Enter Loan detail input values for computation
+    And Enter Loan detail input values for computation 
+    And user navigate to Amortization Page
+    And user navigate to Loan Inputs Page
 	And user selects value for Is Ins Escrowed
 	And user selects value for Is Tax Escrowed
 	And user selects value for Is PMI Escrowed
@@ -3064,7 +3232,9 @@ When user navigate to Loan Inputs Page
 	And user selects Frequency of Payments
 	And user selects Loan Term
 	And user selects Repayment Term Type
-	And Enter Loan detail input values for computation
+    And Enter Loan detail input values for computation 
+    And user navigate to Amortization Page
+    And user navigate to Loan Inputs Page
 	And user selects value for Is Ins Escrowed
 	And user selects value for Is Tax Escrowed
 	And user selects value for Is PMI Escrowed
@@ -3099,7 +3269,9 @@ When user navigate to Loan Inputs Page
 	And user selects Frequency of Payments
 	And user selects Loan Term
 	And user selects Repayment Term Type
-	And Enter Loan detail input values for computation
+    And Enter Loan detail input values for computation 
+    And user navigate to Amortization Page
+    And user navigate to Loan Inputs Page
 	And user selects value for Is Ins Escrowed
 	And user selects value for Is Tax Escrowed
 	And user selects value for Is PMI Escrowed
@@ -3134,7 +3306,9 @@ When user navigate to Loan Inputs Page
 	And user selects Frequency of Payments
 	And user selects Loan Term
 	And user selects Repayment Term Type
-	And Enter Loan detail input values for computation
+    And Enter Loan detail input values for computation 
+    And user navigate to Amortization Page
+    And user navigate to Loan Inputs Page
 	And user selects value for Is Ins Escrowed
 	And user selects value for Is Tax Escrowed
 	And user selects value for Is PMI Escrowed
@@ -3169,7 +3343,9 @@ When user navigate to Loan Inputs Page
 	And user selects Frequency of Payments
 	And user selects Loan Term
 	And user selects Repayment Term Type
-	And Enter Loan detail input values for computation
+    And Enter Loan detail input values for computation 
+    And user navigate to Amortization Page
+    And user navigate to Loan Inputs Page
 	And user selects value for Is Ins Escrowed
 	And user selects value for Is Tax Escrowed
 	And user selects value for Is PMI Escrowed
@@ -3204,7 +3380,9 @@ When user navigate to Loan Inputs Page
 	And user selects Frequency of Payments
 	And user selects Loan Term
 	And user selects Repayment Term Type
-	And Enter Loan detail input values for computation
+    And Enter Loan detail input values for computation 
+    And user navigate to Amortization Page
+    And user navigate to Loan Inputs Page
 	And user selects value for Is Ins Escrowed
 	And user selects value for Is Tax Escrowed
 	And user selects value for Is PMI Escrowed
@@ -3239,7 +3417,9 @@ When user navigate to Loan Inputs Page
 	And user selects Frequency of Payments
 	And user selects Loan Term
 	And user selects Repayment Term Type
-	And Enter Loan detail input values for computation
+    And Enter Loan detail input values for computation 
+    And user navigate to Amortization Page
+    And user navigate to Loan Inputs Page
 	And user selects value for Is Ins Escrowed
 	And user selects value for Is Tax Escrowed
 	And user selects value for Is PMI Escrowed
@@ -3273,7 +3453,9 @@ When user navigate to Loan Inputs Page
 	And user selects Frequency of Payments
 	And user selects Loan Term
 	And user selects Repayment Term Type
-	And Enter Loan detail input values for computation
+    And Enter Loan detail input values for computation 
+    And user navigate to Amortization Page
+    And user navigate to Loan Inputs Page
 	And user selects value for Is Ins Escrowed
 	And user selects value for Is Tax Escrowed
 	And user selects value for Is PMI Escrowed

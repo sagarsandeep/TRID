@@ -1,8 +1,11 @@
 ﻿using System;
+using System.Windows.Forms;
+using System.Windows.Forms.VisualStyles;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.UI;
 using TRID.GlobalParam;
+using Keys = OpenQA.Selenium.Keys;
 
 namespace TRID.ActionClasses
 {
@@ -64,6 +67,11 @@ namespace TRID.ActionClasses
         {
             var webElement = ObjectRepo.Driver.FindElement(element);
             _actions.MoveToElement(webElement).Perform();
+        }
+
+        public static void ScrollUp()
+        {
+            ((IJavaScriptExecutor)ObjectRepo.Driver).ExecuteScript("window.scroll(0,0);");
         }
 
         public static void Quit()
