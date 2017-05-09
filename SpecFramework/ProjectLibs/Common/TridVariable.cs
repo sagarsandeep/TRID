@@ -191,39 +191,39 @@ namespace TRID.ProjectLibs.Common
             #endregion
 
 
-            #region Loan Estimate
+            //#region Loan Estimate
 
-            if (sheetName == "LoanEstimate")
-            {
-                if (col == 2) CalculationMethod = stringValue;
-                if (col == 3) LoanType = stringValue;
-                if (col == 4) FrequencyOfPayments = stringValue;
-                if (col == 5) LoanTerm = stringValue;
-                if (col == 6) AdvanceType = stringValue;
-                if (col == 7) RepaymentTermType = stringValue;
-                if (col == 8) FrequencyOfPmtValue = stringValue;
-                if (col == 9) LoanTermValue = stringValue;
-                if (col == 10) LoanAmount = stringValue;
-                if (col == 11) RateOfInterest = stringValue;
-                if (col == 12) DateOfLoan = stringValue;
-                if (col == 13) DateInterestBeginToAccrue = stringValue;
-                if (col == 14) DateOfFirstPayment = stringValue;
-                if (col == 15) PeriodPayment = stringValue;
-                if (col == 16) LoanCosts = stringValue;
-                //if (col == 17) FinalBalloonPayment = stringValue;
-                if (col == 18) OddDaysInterestCollected = stringValue;
-                if (col == 19) LoanDetailsEstimatedEscrow = stringValue;
-                if (col == 20) DiscLosedIn5Years = stringValue;
-                if (col == 21) DiscLosedIn5YearsPrincipal = stringValue;
-                if (col == 22) DisclosedApr = stringValue;
-                if (col == 23) DisclosedTip = stringValue;
-                if (col == 24) In5Years = stringValue;
-                if (col == 25) In5YearsPrincipal = stringValue;
-                if (col == 26) Apr = stringValue;
-                if (col == 27) Tip = stringValue;
-            }
+            //if (sheetName == "LoanEstimate")
+            //{
+            //    if (col == 2) CalculationMethod = stringValue;
+            //    if (col == 3) LoanType = stringValue;
+            //    if (col == 4) FrequencyOfPayments = stringValue;
+            //    if (col == 5) LoanTerm = stringValue;
+            //    if (col == 6) AdvanceType = stringValue;
+            //    if (col == 7) RepaymentTermType = stringValue;
+            //    if (col == 8) FrequencyOfPmtValue = stringValue;
+            //    if (col == 9) LoanTermValue = stringValue;
+            //    if (col == 10) LoanAmount = stringValue;
+            //    if (col == 11) RateOfInterest = stringValue;
+            //    if (col == 12) DateOfLoan = stringValue;
+            //    if (col == 13) DateInterestBeginToAccrue = stringValue;
+            //    if (col == 14) DateOfFirstPayment = stringValue;
+            //    if (col == 15) PeriodPayment = stringValue;
+            //    if (col == 16) LoanCosts = stringValue;
+            //    //if (col == 17) FinalBalloonPayment = stringValue;
+            //    if (col == 18) OddDaysInterestCollected = stringValue;
+            //    if (col == 19) LoanDetailsEstimatedEscrow = stringValue;
+            //    if (col == 20) DiscLosedIn5Years = stringValue;
+            //    if (col == 21) DiscLosedIn5YearsPrincipal = stringValue;
+            //    if (col == 22) DisclosedApr = stringValue;
+            //    if (col == 23) DisclosedTip = stringValue;
+            //    if (col == 24) In5Years = stringValue;
+            //    if (col == 25) In5YearsPrincipal = stringValue;
+            //    if (col == 26) Apr = stringValue;
+            //    if (col == 27) Tip = stringValue;
+            //}
 
-            #endregion
+            //#endregion
 
 
             //#region Closing Disclosure
@@ -482,44 +482,48 @@ namespace TRID.ProjectLibs.Common
                 if (col == 25) PmiCancelDate = stringValue;
                 if (col == 26) DisclosedFinalBalloonPayment = stringValue;
                 if (col == 27) DisclosedTotalOfPayment = stringValue;
-                if (col == 28) IsInsEscrowed = stringValue;
-                if (col == 29) IsTaxEscrowed = stringValue;
-                if (col == 30) IsPmiEscrowed = stringValue;
-                if (col == 31) CushionMonthsForInsurance = stringValue;
-                if (col == 32) CushionMonthsForTax = stringValue;
-                if (col == 33) EscrowInstallmentInputsNumber = stringValue;
-                if (col == 34) DateForEscrowInsurance = stringValue;
-                if (col == 35) InsuranceInstallmentAmount = stringValue;
-                if (col == 36) EscrowTaxCalculationsInputsNumberFR = stringValue;
-                if (col == 37) EscrowTaxCalculationsInputsDateFR = stringValue;
-                if (col == 38) EscrowTaxCalculationsInputsTaxInstallmentAmountFR = stringValue;
-                if (col == 39) EscrowTaxCalculationsInputsNumberSR = stringValue;
-                if (col == 40) EscrowTaxCalculationsInputsDateSR = stringValue;
-                if (col == 41) EscrowTaxCalculationsInputsTaxInstallmentAmountSR = stringValue;
-                if (col == 42) EscrowPropertyOverOneYear = stringValue;
-                if (col == 43) NonEscrowPropertyOverOneYear = stringValue;
-                if (col == 44) InitialEscrowPayment = stringValue;
-                if (col == 45) MonthlyEscrowPayment = stringValue;
-                if (col == 46) DisclosedEscrowPropertyOverOneYear = stringValue;
-                if (col == 47) DisclosedNonEscrowPropertyOverOneYear = stringValue;
-                if (col == 48) DisclosedInitialEscrowPayment = stringValue;
-                if (col == 49) DisclosedMonthlyEscrowPayment = stringValue;
-                if (col == 50) DisclosedEstimatedEscrow = stringValue;
-                if (col == 51) PrincipalAndInt = stringValue;
-                if (col == 52) Pmi = stringValue;
-                if (col == 53) DropOffYearsForPmi = stringValue;
-                if (col == 54) TotalPeriodPayment = stringValue;
-                if (col == 55) Apr = stringValue;
-                if (col == 56) BalloonAmount = stringValue;
-                if (col == 57) TotalOfPayments = stringValue;
-                if (col == 58) FinanceCharge = stringValue;
-                if (col == 59) PrepaidCharges = stringValue;
-                if (col == 60) AmountFinanced = stringValue;
-                if (col == 61) Tip = stringValue;
-                if (col == 62) EscrowPropertyOverOneYear = stringValue;
-                if (col == 63) InitialEscrowPayment = stringValue;
-                if (col == 64) NonEscrowPropertyOverOneYear = stringValue;
-                if (col == 65) PeriodEscrowPayment = stringValue;
+                if (col == 28) DiscLosedIn5Years = stringValue;
+                if (col == 29) DiscLosedIn5YearsPrincipal = stringValue;
+                if (col == 30) DisclosedApr = stringValue;
+                if (col == 31) DisclosedTip = stringValue;
+                if (col == 32) IsInsEscrowed = stringValue;
+                if (col == 33) IsTaxEscrowed = stringValue;
+                if (col == 34) IsPmiEscrowed = stringValue;
+                if (col == 35) CushionMonthsForInsurance = stringValue;
+                if (col == 36) CushionMonthsForTax = stringValue;
+                if (col == 37) EscrowInstallmentInputsNumber = stringValue;
+                if (col == 38) DateForEscrowInsurance = stringValue;
+                if (col == 39) InsuranceInstallmentAmount = stringValue;
+                if (col == 40) EscrowTaxCalculationsInputsNumberFR = stringValue;
+                if (col == 41) EscrowTaxCalculationsInputsDateFR = stringValue;
+                if (col == 42) EscrowTaxCalculationsInputsTaxInstallmentAmountFR = stringValue;
+                if (col == 43) EscrowTaxCalculationsInputsNumberSR = stringValue;
+                if (col == 44) EscrowTaxCalculationsInputsDateSR = stringValue;
+                if (col == 45) EscrowTaxCalculationsInputsTaxInstallmentAmountSR = stringValue;
+                if (col == 46) EscrowPropertyOverOneYear = stringValue;
+                if (col == 47) NonEscrowPropertyOverOneYear = stringValue;
+                if (col == 48) InitialEscrowPayment = stringValue;
+                if (col == 49) MonthlyEscrowPayment = stringValue;
+                if (col == 50) DisclosedEscrowPropertyOverOneYear = stringValue;
+                if (col == 51) DisclosedNonEscrowPropertyOverOneYear = stringValue;
+                if (col == 52) DisclosedInitialEscrowPayment = stringValue;
+                if (col == 53) DisclosedMonthlyEscrowPayment = stringValue;
+                if (col == 54) DisclosedEstimatedEscrow = stringValue;
+                if (col == 55) PrincipalAndInt = stringValue;
+                if (col == 56) Pmi = stringValue;
+                if (col == 57) DropOffYearsForPmi = stringValue;
+                if (col == 58) TotalPeriodPayment = stringValue;
+                if (col == 59) Apr = stringValue;
+                if (col == 60) BalloonAmount = stringValue;
+                if (col == 61) TotalOfPayments = stringValue;
+                if (col == 62) FinanceCharge = stringValue;
+                if (col == 63) PrepaidCharges = stringValue;
+                if (col == 64) AmountFinanced = stringValue;
+                if (col == 65) Tip = stringValue;
+                if (col == 66) EscrowPropertyOverOneYear = stringValue;
+                if (col == 67) InitialEscrowPayment = stringValue;
+                if (col == 68) NonEscrowPropertyOverOneYear = stringValue;
+                if (col == 69) PeriodEscrowPayment = stringValue;
 
                 #endregion
             }
