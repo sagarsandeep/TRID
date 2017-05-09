@@ -44,7 +44,8 @@ namespace TRID.CommonUtils
         public string GetExcelValues(int scenarioNo, string sheetName)
         {
             var xApplication = new Excel.Application();
-            var xWorkbook = xApplication.Workbooks.Open(FilePath);
+            xApplication.DisplayAlerts = false;
+            var xWorkbook = xApplication.Workbooks.Open(FilePath, Notify:false);
             Excel.Worksheet xWorksheet = xWorkbook.Sheets[sheetName];
             var xRange = xWorksheet.UsedRange;
             var data = "";
@@ -56,8 +57,8 @@ namespace TRID.CommonUtils
                 {
                     data = xRange.Cells[row, col].Value2.ToString();
                     GetVariableNameAndSetValues(row, col, data, sheetName);
-                }        
-
+                }
+            
             //cleanup
             GC.Collect();
             GC.WaitForPendingFinalizers();
