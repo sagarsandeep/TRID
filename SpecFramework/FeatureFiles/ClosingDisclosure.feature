@@ -21,8 +21,6 @@ When user navigate to Loan Inputs Page
     And Enter Loan detail input values for computation 
     And user navigate to Amortization Page
     And user navigate to Loan Inputs Page
-	And user navigate to Amortization Page
-	And user navigate to Loan Inputs Page
 	And user enters all input values for Prepaid Charges
 	#And user enters input value for prepaid custom fields
 	And user navigates to Disclosure Inputs Page

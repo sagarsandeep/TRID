@@ -185,6 +185,10 @@ namespace TRID.StepDefinitions
         [When(@"Enter Loan detail input values for computation")]
         public void WhenEnterLoanDetailInputValuesForComputationforClosingDisclosurepage()
         {
+            var frequencyOfPmtValue = TridVariable.FrequencyOfPmtValue;
+            UIActions.Clear(FreqOfPmtValue);
+            UIActions.GiveInput(FreqOfPmtValue, frequencyOfPmtValue);
+
             var loanTermValue = TridVariable.LoanTermValue;
             UIActions.Clear(LoanTermValue);
             UIActions.GiveInput(LoanTermValue, loanTermValue);
