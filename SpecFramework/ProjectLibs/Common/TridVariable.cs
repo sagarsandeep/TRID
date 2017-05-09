@@ -352,14 +352,7 @@ namespace TRID.ProjectLibs.Common
                 if (col == 5) NumberOfPrdsOfAdvcInsurance = stringValue;
                 if (col == 6) LowerOfCostOfAppraisal = stringValue;
                 if (col == 7) TotalMiInSectionFPrepaids = stringValue;
-                if (col == 8) TotalMiInSectionGEscrow = stringValue;
-                if (col == 9) Pmi = stringValue;
-                if (col == 10) DropOffYearsForPmi = stringValue;
-                if (col == 11) TotalPeriodPayment = stringValue;
-                if (col == 12) TotalOfPayments = stringValue;
-                if (col == 13) AmountFinanced = stringValue;
-                if (col == 14) Apr = stringValue;
-                           
+                if (col == 8) TotalMiInSectionGEscrow = stringValue;              
             }              
                            
             #endregion
