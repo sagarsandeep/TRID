@@ -1,12 +1,9 @@
 ﻿using System;
 using System.Threading;
 using NUnit.Framework;
-using OpenQA.Selenium;
-using OpenQA.Selenium.Interactions;
 using TechTalk.SpecFlow;
 using TRID.ActionClasses;
 using TRID.CommonUtils;
-using TRID.GlobalParam;
 using TRID.ProjectLibs.Common;
 using TRID.TestClasses;
 
@@ -365,7 +362,7 @@ namespace TRID.StepDefinitions
         //    var actualCValue = Convert.ToDouble(TridVariable.Tip);
         //    Assert.AreEqual(actualCValue, cValue, "Computed value does not match as expected");
 
-        //    var dValue = ProjActions.GetNumericValueFromString(UIActions.GetText(LeTipDisclosureValue));
+        //    var actualDValue = ProjActions.GetNumericValueFromString(UIActions.GetText(LeTipDisclosureValue));
         //    var vValue = ProjActions.GetNumericValueFromString(UIActions.GetText(LeTipVarianceValue));
 
         //    var actualVarianceValue = Math.Abs(Math.Round(cValue - dValue, 2));
@@ -387,7 +384,7 @@ namespace TRID.StepDefinitions
         //    var actualCValue = Convert.ToDouble(TridVariable.In5Years);
         //    Assert.AreEqual(actualCValue, cValue, "Computed value does not match as expected");
 
-        //    var dValue = ProjActions.GetNumericValueFromString(UIActions.GetText(LeI5YDisclosureValue));
+        //    var actualDValue = ProjActions.GetNumericValueFromString(UIActions.GetText(LeI5YDisclosureValue));
         //    var vValue = ProjActions.GetNumericValueFromString(UIActions.GetText(LeI5YVarianceValue));
 
         //    var actualVarianceValue = Math.Abs(Math.Round(cValue - dValue, 2));
@@ -408,7 +405,7 @@ namespace TRID.StepDefinitions
         //    var actualCValue = Convert.ToDouble(TridVariable.In5YearsPrincipal);
         //    Assert.AreEqual(actualCValue, cValue, "Computed value does not match as expected");
 
-        //    var dValue = ProjActions.GetNumericValueFromString(UIActions.GetText(LeI5YpDisclosureValue));
+        //    var actualDValue = ProjActions.GetNumericValueFromString(UIActions.GetText(LeI5YpDisclosureValue));
         //    var vValue = ProjActions.GetNumericValueFromString(UIActions.GetText(LeI5YpVarianceValue));
 
         //    var actualVarianceValue = Math.Abs(Math.Round(cValue - dValue, 2));
@@ -430,7 +427,7 @@ namespace TRID.StepDefinitions
         //    var actualCValue = Convert.ToDouble(TridVariable.Apr);
         //    Assert.AreEqual(actualCValue, cValue, "Computed value does not match as expected");
 
-        //    var dValue = ProjActions.GetNumericValueFromString(UIActions.GetText(LeAprDisclosureValue));
+        //    var actualDValue = ProjActions.GetNumericValueFromString(UIActions.GetText(LeAprDisclosureValue));
         //    var vValue = ProjActions.GetNumericValueFromString(UIActions.GetText(LeAprVarianceValue));
 
         //    var actualVarianceValue = Math.Abs(Math.Round(cValue - dValue, 2));

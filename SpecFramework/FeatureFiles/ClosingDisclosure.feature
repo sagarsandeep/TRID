@@ -556,6 +556,80 @@ Then updated/computed Period Escrow Payment value should display on Closing Disc
  | 57  | 53           | PrepaidCharges | 35           | ClosingDisclosure |
 
 
+@WithPrepaid
+@NoPMI
+@NoEscrow
+Scenario Outline: Validating In 5 Years card value on Closing Disclosure page with Prepaid, No PMI, No Escrow
+Given user is at TRID application homepage
+	And user have Prepaid Charges data from excel sheet <pcSheetName> for the scenario <pcScenarioNo>
+	And user have closing disclosure data from excel sheet <cdSheetName> for the scenario <cdScenarioNo>
+When user navigate to Loan Inputs Page
+	And user selects Calculation Method
+	And user selects loan type
+	And user selects Frequency of Payments
+	And user selects Loan Term
+	And user selects Repayment Term Type
+    And Enter Loan detail input values for computation 
+    And user navigate to Amortization Page
+    And user navigate to Loan Inputs Page
+	And user enters all input values for Prepaid Charges
+	#And user enters input value for prepaid custom fields
+	And user navigates to Disclosure Inputs Page
+	And user enters disclosed input values for closing disclousre section
+	And user enters disclsoed input values for Loan Estimate
+	And user enters disclosed input values for Prepaid Charges
+	And user navigates to Closing Disclosure Cards Page
+Then updated/computed Period Escrow Payment value should display on Closing Disclosure
+ Examples: 
+ | No  | pcScenarioNo | pcSheetName    | cdScenarioNo | cdSheetName       |
+ | 41R | 42           | PrepaidCharges | 23           | ClosingDisclosure |
+ | 50  | 46           | PrepaidCharges | 28           | ClosingDisclosure |
+ | 51  | 47           | PrepaidCharges | 29           | ClosingDisclosure |
+ | 52  | 48           | PrepaidCharges | 30           | ClosingDisclosure |
+ | 53  | 49           | PrepaidCharges | 31           | ClosingDisclosure |
+ | 54  | 50           | PrepaidCharges | 32           | ClosingDisclosure |
+ | 55  | 51           | PrepaidCharges | 33           | ClosingDisclosure |
+ | 56  | 52           | PrepaidCharges | 34           | ClosingDisclosure |
+ | 57  | 53           | PrepaidCharges | 35           | ClosingDisclosure |
+
+
+
+@WithPrepaid
+@NoPMI
+@NoEscrow
+Scenario Outline: Validating In 5 Years Principal card value on Closing Disclosure page with Prepaid, No PMI, No Escrow
+Given user is at TRID application homepage
+	And user have Prepaid Charges data from excel sheet <pcSheetName> for the scenario <pcScenarioNo>
+	And user have closing disclosure data from excel sheet <cdSheetName> for the scenario <cdScenarioNo>
+When user navigate to Loan Inputs Page
+	And user selects Calculation Method
+	And user selects loan type
+	And user selects Frequency of Payments
+	And user selects Loan Term
+	And user selects Repayment Term Type
+    And Enter Loan detail input values for computation 
+    And user navigate to Amortization Page
+    And user navigate to Loan Inputs Page
+	And user enters all input values for Prepaid Charges
+	#And user enters input value for prepaid custom fields
+	And user navigates to Disclosure Inputs Page
+	And user enters disclosed input values for closing disclousre section
+	And user enters disclsoed input values for Loan Estimate
+	And user enters disclosed input values for Prepaid Charges
+	And user navigates to Closing Disclosure Cards Page
+Then updated/computed Period Escrow Payment value should display on Closing Disclosure
+ Examples: 
+ | No  | pcScenarioNo | pcSheetName    | cdScenarioNo | cdSheetName       |
+ | 41R | 42           | PrepaidCharges | 23           | ClosingDisclosure |
+ | 50  | 46           | PrepaidCharges | 28           | ClosingDisclosure |
+ | 51  | 47           | PrepaidCharges | 29           | ClosingDisclosure |
+ | 52  | 48           | PrepaidCharges | 30           | ClosingDisclosure |
+ | 53  | 49           | PrepaidCharges | 31           | ClosingDisclosure |
+ | 54  | 50           | PrepaidCharges | 32           | ClosingDisclosure |
+ | 55  | 51           | PrepaidCharges | 33           | ClosingDisclosure |
+ | 56  | 52           | PrepaidCharges | 34           | ClosingDisclosure |
+ | 57  | 53           | PrepaidCharges | 35           | ClosingDisclosure |
+
 #============================================================================================================================ 
 #============================== Closing Disclosure with No Prepaid, with PMI, with Escrow ===================================
 #============================================================================================================================  

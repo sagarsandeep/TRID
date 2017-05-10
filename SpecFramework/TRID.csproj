@@ -158,6 +158,7 @@
     <Compile Include="ProjectLibs\Common\TridVariable.cs" />
     <Compile Include="ProjectLibs\UI\ClosingDisclosureCardsUIElements.cs" />
     <Compile Include="ProjectLibs\UI\DisclosureInputsUiElements.cs" />
+    <Compile Include="ProjectLibs\UI\LoanEstimateCardsUiElements.cs" />
     <Compile Include="ProjectLibs\UI\LoanInputsUiElements.cs" />
     <Compile Include="ProjectLibs\UI\StartNewLoanUIElements.cs" />
     <Compile Include="ProjectLibs\UI\TridHeaderUIElements.cs" />

@@ -181,7 +181,7 @@ namespace TRID.StepDefinitions
         //    var actualCValue = Convert.ToDouble(TridVariable.Pmi);
         //    Assert.AreEqual(actualCValue, cValue, "Computed value does not match as expected");
 
-        //    var dValue = ProjActions.GetNumericValueFromString(UIActions.GetText(MiPmiDisclosureValue));
+        //    var actualDValue = ProjActions.GetNumericValueFromString(UIActions.GetText(MiPmiDisclosureValue));
         //    var vValue = ProjActions.GetNumericValueFromString(UIActions.GetText(MiPmiVarianceValue));
 
         //    var actualVarianceValue = Math.Abs(Math.Round(cValue - dValue, 2));
@@ -202,7 +202,7 @@ namespace TRID.StepDefinitions
         //    var actualCValue = Convert.ToDateTime(DateTime.FromOADate(Convert.ToDouble(TridVariable.DropOffYearsForPmi)).ToString("M/d/yyyy"));
         //    Assert.AreEqual(actualCValue, cValue, "Computed value does not match as expected");
 
-        //    var dValue = ProjActions.GetDatePart(MiDoyfpDisclosureValue);
+        //    var actualDValue = ProjActions.GetDatePart(MiDoyfpDisclosureValue);
         //    var vValue = ProjActions.GetNumericValueFromString(UIActions.GetText(MiDoyfpVarianceValue));
 
         //    var actualVarianceValue = (cValue - dValue).TotalDays;
@@ -222,7 +222,7 @@ namespace TRID.StepDefinitions
         //    var actualCValue = Convert.ToDouble(TridVariable.TotalPeriodPayment);
         //    Assert.AreEqual(actualCValue, cValue, "Computed value does not match as expected");
 
-        //    var dValue = ProjActions.GetNumericValueFromString(UIActions.GetText(MiTppDisclosureValue));
+        //    var actualDValue = ProjActions.GetNumericValueFromString(UIActions.GetText(MiTppDisclosureValue));
         //    var vValue = ProjActions.GetNumericValueFromString(UIActions.GetText(MiTppVarianceValue));
 
         //    var actualVarianceValue = Math.Abs(Math.Round(cValue - dValue, 2));
@@ -242,7 +242,7 @@ namespace TRID.StepDefinitions
         //    var actualCValue = Convert.ToDouble(TridVariable.TotalOfPayments);
         //    Assert.AreEqual(actualCValue, cValue, "Computed value does not match as expected");
 
-        //    var dValue = ProjActions.GetNumericValueFromString(UIActions.GetText(MiTopDisclosureValue));
+        //    var actualDValue = ProjActions.GetNumericValueFromString(UIActions.GetText(MiTopDisclosureValue));
         //    var vValue = ProjActions.GetNumericValueFromString(UIActions.GetText(MiTopVarianceValue));
 
         //    var actualVarianceValue = Math.Abs(Math.Round(cValue - dValue, 2));
@@ -262,7 +262,7 @@ namespace TRID.StepDefinitions
         //    var actualCValue = Convert.ToDouble(TridVariable.AmountFinanced);
         //    Assert.AreEqual(actualCValue, cValue, "Computed value does not match as expected");
 
-        //    var dValue = ProjActions.GetNumericValueFromString(UIActions.GetText(MiAfDisclosureValue));
+        //    var actualDValue = ProjActions.GetNumericValueFromString(UIActions.GetText(MiAfDisclosureValue));
         //    var vValue = ProjActions.GetNumericValueFromString(UIActions.GetText(MiAfVarianceValue));
 
         //    var actualVarianceValue = Math.Abs(Math.Round(cValue - dValue, 2));
@@ -282,7 +282,7 @@ namespace TRID.StepDefinitions
         //    var actualCValue = Convert.ToDouble(TridVariable.Apr);
         //    Assert.AreEqual(actualCValue, cValue, "Computed value does not match as expected");
 
-        //    var dValue = Math.Round(ProjActions.GetNumericValueFromString(UIActions.GetText(MiAprDisclosureValue)), 2);
+        //    var actualDValue = Math.Round(ProjActions.GetNumericValueFromString(UIActions.GetText(MiAprDisclosureValue)), 2);
         //    var vValue = Math.Round(ProjActions.GetNumericValueFromString(UIActions.GetText(MiAprVarianceValue)), 2);
 
         //    var actualVarianceValue = Math.Abs(Math.Round(cValue - dValue, 2));

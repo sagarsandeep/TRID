@@ -3,7 +3,7 @@ using TRID.CommonUtils;
 
 namespace TRID.ProjectLibs.UI
 {
-    public class ClosingDisclosureCardsUiElements : PageBase
+    public class ClosingDisclosureCardsUiElements : LoanEstimateCardsUiElements
     {
         public static By MonthlyPrincipalAndInterestText = By.XPath("//div[@id='viewCompositionContainer']/div/div[1]/div[1]//md-toolbar");
 
