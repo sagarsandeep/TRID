@@ -663,6 +663,7 @@ When user navigate to Loan Inputs Page
 	And user navigates to Disclosure Inputs Page
 	And user enters disclosed input values for closing disclousre section
 	And user enters disclsoed input values for Loan Estimate
+	And user enters disclosed input values for Prepaid Charges
 	And user enters disclosed input values for Escrow Property
 	And user navigates to Closing Disclosure Cards Page
 Then updated/computed Principal and Interest value should display on Closing Disclosure
@@ -717,6 +718,7 @@ When user navigate to Loan Inputs Page
 	And user navigates to Disclosure Inputs Page
 	And user enters disclosed input values for closing disclousre section
 	And user enters disclsoed input values for Loan Estimate
+	And user enters disclosed input values for Prepaid Charges
 	And user enters disclosed input values for Escrow Property
 	And user navigates to Closing Disclosure Cards Page
 Then updated/computed pmi value should display on Closing Disclosure
@@ -772,6 +774,7 @@ When user navigate to Loan Inputs Page
 	And user navigates to Disclosure Inputs Page
 	And user enters disclosed input values for closing disclousre section
 	And user enters disclsoed input values for Loan Estimate
+	And user enters disclosed input values for Prepaid Charges
 	And user enters disclosed input values for Escrow Property
 	And user navigates to Closing Disclosure Cards Page
 Then updated/computed Drop off years for PMI value should display on Closing Disclosure
@@ -827,6 +830,7 @@ When user navigate to Loan Inputs Page
 	And user navigates to Disclosure Inputs Page
 	And user enters disclosed input values for closing disclousre section
 	And user enters disclsoed input values for Loan Estimate
+	And user enters disclosed input values for Prepaid Charges
 	And user enters disclosed input values for Escrow Property
 	And user navigates to Closing Disclosure Cards Page
 Then updated/computed Total Period Payment value should display on Closing Disclosure
@@ -881,6 +885,7 @@ When user navigate to Loan Inputs Page
 	And user navigates to Disclosure Inputs Page
 	And user enters disclosed input values for closing disclousre section
 	And user enters disclsoed input values for Loan Estimate
+	And user enters disclosed input values for Prepaid Charges
 	And user enters disclosed input values for Escrow Property
 	And user navigates to Closing Disclosure Cards Page
 Then updated/computed APR value should display on Closing Disclosure
@@ -936,6 +941,7 @@ When user navigate to Loan Inputs Page
 	And user navigates to Disclosure Inputs Page
 	And user enters disclosed input values for closing disclousre section
 	And user enters disclsoed input values for Loan Estimate
+	And user enters disclosed input values for Prepaid Charges
 	And user enters disclosed input values for Escrow Property
 	And user navigates to Closing Disclosure Cards Page
 Then updated/computed Balloon Amount value should display on Closing Disclosure
@@ -991,6 +997,7 @@ When user navigate to Loan Inputs Page
 	And user navigates to Disclosure Inputs Page
 	And user enters disclosed input values for closing disclousre section
 	And user enters disclsoed input values for Loan Estimate
+	And user enters disclosed input values for Prepaid Charges
 	And user enters disclosed input values for Escrow Property
 	And user navigates to Closing Disclosure Cards Page
 Then updated/computed Total of Payments value should display on Closing Disclosure
@@ -1046,6 +1053,7 @@ When user navigate to Loan Inputs Page
 	And user navigates to Disclosure Inputs Page
 	And user enters disclosed input values for closing disclousre section
 	And user enters disclsoed input values for Loan Estimate
+	And user enters disclosed input values for Prepaid Charges
 	And user enters disclosed input values for Escrow Property
 	And user navigates to Closing Disclosure Cards Page
 Then updated/computed Finance Charge value should display on Closing Disclosure
@@ -1101,6 +1109,7 @@ When user navigate to Loan Inputs Page
 	And user navigates to Disclosure Inputs Page
 	And user enters disclosed input values for closing disclousre section
 	And user enters disclsoed input values for Loan Estimate
+	And user enters disclosed input values for Prepaid Charges
 	And user enters disclosed input values for Escrow Property
 	And user navigates to Closing Disclosure Cards Page
 Then updated/computed Prepaid Charges value should display on Closing Disclosure
@@ -1156,6 +1165,7 @@ When user navigate to Loan Inputs Page
 	And user navigates to Disclosure Inputs Page
 	And user enters disclosed input values for closing disclousre section
 	And user enters disclsoed input values for Loan Estimate
+	And user enters disclosed input values for Prepaid Charges
 	And user enters disclosed input values for Escrow Property
 	And user navigates to Closing Disclosure Cards Page
 Then updated/computed Amount Financed value should display on Closing Disclosure
@@ -1211,6 +1221,7 @@ When user navigate to Loan Inputs Page
 	And user navigates to Disclosure Inputs Page
 	And user enters disclosed input values for closing disclousre section
 	And user enters disclsoed input values for Loan Estimate
+	And user enters disclosed input values for Prepaid Charges
 	And user enters disclosed input values for Escrow Property
 	And user navigates to Closing Disclosure Cards Page
 Then updated/computed Escrow Property Costs over one year value should display on Closing Disclosure
@@ -1266,6 +1277,7 @@ When user navigate to Loan Inputs Page
 	And user navigates to Disclosure Inputs Page
 	And user enters disclosed input values for closing disclousre section
 	And user enters disclsoed input values for Loan Estimate
+	And user enters disclosed input values for Prepaid Charges
 	And user enters disclosed input values for Escrow Property
 	And user navigates to Closing Disclosure Cards Page
 Then updated/computed TIP value should display on Closing Disclosure
@@ -1321,6 +1333,7 @@ When user navigate to Loan Inputs Page
 	And user navigates to Disclosure Inputs Page
 	And user enters disclosed input values for closing disclousre section
 	And user enters disclsoed input values for Loan Estimate
+	And user enters disclosed input values for Prepaid Charges
 	And user enters disclosed input values for Escrow Property
 	And user navigates to Closing Disclosure Cards Page
 Then updated/computed Initial Escrow Payment value should display on Closing Disclosure
@@ -1376,6 +1389,7 @@ When user navigate to Loan Inputs Page
 	And user navigates to Disclosure Inputs Page
 	And user enters disclosed input values for closing disclousre section
 	And user enters disclsoed input values for Loan Estimate
+	And user enters disclosed input values for Prepaid Charges
 	And user enters disclosed input values for Escrow Property
 	And user navigates to Closing Disclosure Cards Page
 Then updated/computed Non Escrow Property Costs over one year value should display on Closing Disclosure
@@ -1430,6 +1444,7 @@ When user navigate to Loan Inputs Page
 	And user navigates to Disclosure Inputs Page
 	And user enters disclosed input values for closing disclousre section
 	And user enters disclsoed input values for Loan Estimate
+	And user enters disclosed input values for Prepaid Charges
 	And user enters disclosed input values for Escrow Property
 	And user navigates to Closing Disclosure Cards Page
 Then updated/computed Period Escrow Payment value should display on Closing Disclosure
