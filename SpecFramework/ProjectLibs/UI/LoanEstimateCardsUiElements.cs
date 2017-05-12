@@ -5,6 +5,8 @@ namespace TRID.ProjectLibs.UI
 {
     public class LoanEstimateCardsUiElements : PageBase
     {
+        public static By LoanEstimateIn5YearsText = By.XPath("//div[@id='viewCompositionContainer']/div/div[1]/div[1]//md-toolbar");
+
         //In 5 years
         public static By I5YComputedValue = By.XPath("//div[@id='viewCompositionContainer']/div/div[1]/div[1]//div[1]/p[1]");
         public static By I5YDisclosureValue = By.XPath("//div[@id='viewCompositionContainer']/div/div[1]/div[1]//div[1]/p[2]");

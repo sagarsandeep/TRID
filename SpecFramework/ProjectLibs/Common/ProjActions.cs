@@ -6,7 +6,6 @@ using NUnit.Framework;
 using OpenQA.Selenium;
 using TechTalk.SpecRun.Helper;
 using TRID.ActionClasses;
-using TRID.CommonUtils;
 using TRID.ProjectLibs.UI;
 
 namespace TRID.ProjectLibs.Common
@@ -119,8 +118,6 @@ namespace TRID.ProjectLibs.Common
 
                 UIActions.Click(AddButton);
                 Thread.Sleep(5000);
-                UIActions.Click(AddNumber);
-                Thread.Sleep(5000);
 
                 var secondAddNumber = TridVariable.SecondAddNumber;
                 UIActions.Clear(AddNumber);
@@ -139,8 +136,6 @@ namespace TRID.ProjectLibs.Common
                 UIActions.GiveInput(AddPmiRate, secondAddPmiRate);
 
                 UIActions.Click(AddButton);
-                Thread.Sleep(5000);
-                UIActions.Click(AddNumber);
                 Thread.Sleep(5000);
 
                 var thirdAddNumber = TridVariable.ThirdAddNumber;
@@ -161,8 +156,6 @@ namespace TRID.ProjectLibs.Common
 
                 UIActions.Click(AddButton);
                 Thread.Sleep(5000);
-                UIActions.Click(AddNumber);
-                Thread.Sleep(5000);
             }
             else
             {
@@ -170,34 +163,6 @@ namespace TRID.ProjectLibs.Common
                 Thread.Sleep(5000);
             }
         }
-
-        //public static void PaymentScheduleValidation(int newInputValue)
-        //{
-        //    var paymentScheduleGridRowCount = UIActions.Count(MiPaymtScheduleGridRowsCount);
-        //    var numberOfPaymentArray = new[] {"35", "313"};
-        //    var totalNumberOfpayments = 0;
-
-
-        //    if (newInputValue == 131189 || newInputValue == 164860)
-        //        Assert.AreEqual(3, paymentScheduleGridRowCount, "Payment Schedule Grid entries are not as expected");
-
-        //    if (newInputValue == 131188)
-        //        Assert.AreEqual(4, paymentScheduleGridRowCount, "Payment Schedule Grid entries are not as expected");
-
-        //    if (newInputValue == 164861)
-        //        Assert.AreEqual(2, paymentScheduleGridRowCount, "Payment Schedule Grid entries are not as expected");
-
-        //    for (var row = 1; row <= paymentScheduleGridRowCount; row++)
-        //    {
-        //        var numberOfPaymentGridValues =
-        //            UIActions.GetText(
-        //                By.XPath("//section[@id='PaymentScheduleOutput']//tbody/tr[" + row + "]/td[2]//span"));
-        //        Assert.False(numberOfPaymentArray.Contains(numberOfPaymentGridValues), "Number of Payment value does not recalculated");
-
-        //        totalNumberOfpayments += Convert.ToInt32(numberOfPaymentGridValues);
-        //    }
-        //    Assert.AreEqual(360, totalNumberOfpayments, "Total number of payments value is not as expected");
-        //}
 
         public static void PmiRatesGridValidation()
         {
