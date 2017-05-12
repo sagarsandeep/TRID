@@ -98,88 +98,99 @@ namespace TRID.ProjectLibs.Common
         {
             var pmiRatesGridRowsCount = UIActions.Count(PmiRatesGridRowsCount);
 
-            if (pmiRatesGridRowsCount == 0)
+            if (TridVariable.FirstAddNumber != "")
             {
-                var firstAddNumber = TridVariable.FirstAddNumber;
-                UIActions.Clear(AddNumber);
-                UIActions.GiveInput(AddNumber, firstAddNumber);
+                if (pmiRatesGridRowsCount == 0)
+                {
+                    var firstAddNumber = TridVariable.FirstAddNumber;
+                    UIActions.Clear(AddNumber);
+                    UIActions.GiveInput(AddNumber, firstAddNumber);
 
-                var firstAddBeginPeriod = TridVariable.FirstAddBeginPeriod;
-                UIActions.Clear(AddBeginPeriod);
-                UIActions.GiveInput(AddBeginPeriod, firstAddBeginPeriod);
+                    var firstAddBeginPeriod = TridVariable.FirstAddBeginPeriod;
+                    UIActions.Clear(AddBeginPeriod);
+                    UIActions.GiveInput(AddBeginPeriod, firstAddBeginPeriod);
 
-                var firstAddEndPeriod = TridVariable.FirstAddEndPeriod;
-                UIActions.Clear(AddEndPeriod);
-                UIActions.GiveInput(AddEndPeriod, firstAddEndPeriod);
+                    var firstAddEndPeriod = TridVariable.FirstAddEndPeriod;
+                    UIActions.Clear(AddEndPeriod);
+                    UIActions.GiveInput(AddEndPeriod, firstAddEndPeriod);
 
-                var firstAddPmiRate = TridVariable.FirstAddPmiRate;
-                UIActions.Clear(AddPmiRate);
-                UIActions.GiveInput(AddPmiRate, firstAddPmiRate);
+                    var firstAddPmiRate = TridVariable.FirstAddPmiRate;
+                    UIActions.Clear(AddPmiRate);
+                    UIActions.GiveInput(AddPmiRate, firstAddPmiRate);
 
-                UIActions.Click(AddButton);
-                Thread.Sleep(5000);
+                    UIActions.Click(AddButton);
+                    Thread.Sleep(5000);
 
-                var secondAddNumber = TridVariable.SecondAddNumber;
-                UIActions.Clear(AddNumber);
-                UIActions.GiveInput(AddNumber, secondAddNumber);
+                    var secondAddNumber = TridVariable.SecondAddNumber;
+                    UIActions.Clear(AddNumber);
+                    UIActions.GiveInput(AddNumber, secondAddNumber);
 
-                var secondAddBeginPeriod = TridVariable.SecondAddBeginPeriod;
-                UIActions.Clear(AddBeginPeriod);
-                UIActions.GiveInput(AddBeginPeriod, secondAddBeginPeriod);
+                    var secondAddBeginPeriod = TridVariable.SecondAddBeginPeriod;
+                    UIActions.Clear(AddBeginPeriod);
+                    UIActions.GiveInput(AddBeginPeriod, secondAddBeginPeriod);
 
-                var secondAddEndPeriod = TridVariable.SecondAddEndPeriod;
-                UIActions.Clear(AddEndPeriod);
-                UIActions.GiveInput(AddEndPeriod, secondAddEndPeriod);
+                    var secondAddEndPeriod = TridVariable.SecondAddEndPeriod;
+                    UIActions.Clear(AddEndPeriod);
+                    UIActions.GiveInput(AddEndPeriod, secondAddEndPeriod);
 
-                var secondAddPmiRate = TridVariable.SecondAddPmiRate;
-                UIActions.Clear(AddPmiRate);
-                UIActions.GiveInput(AddPmiRate, secondAddPmiRate);
+                    var secondAddPmiRate = TridVariable.SecondAddPmiRate;
+                    UIActions.Clear(AddPmiRate);
+                    UIActions.GiveInput(AddPmiRate, secondAddPmiRate);
 
-                UIActions.Click(AddButton);
-                Thread.Sleep(5000);
+                    UIActions.Click(AddButton);
+                    Thread.Sleep(5000);
 
-                var thirdAddNumber = TridVariable.ThirdAddNumber;
-                UIActions.Clear(AddNumber);
-                UIActions.GiveInput(AddNumber, thirdAddNumber);
+                    var thirdAddNumber = TridVariable.ThirdAddNumber;
+                    UIActions.Clear(AddNumber);
+                    UIActions.GiveInput(AddNumber, thirdAddNumber);
 
-                var thirdAddBeginPeriod = TridVariable.ThirdAddBeginPeriod;
-                UIActions.Clear(AddBeginPeriod);
-                UIActions.GiveInput(AddBeginPeriod, thirdAddBeginPeriod);
+                    var thirdAddBeginPeriod = TridVariable.ThirdAddBeginPeriod;
+                    UIActions.Clear(AddBeginPeriod);
+                    UIActions.GiveInput(AddBeginPeriod, thirdAddBeginPeriod);
 
-                var thirdAddEndPeriod = TridVariable.ThirdAddEndPeriod;
-                UIActions.Clear(AddEndPeriod);
-                UIActions.GiveInput(AddEndPeriod, thirdAddEndPeriod);
+                    var thirdAddEndPeriod = TridVariable.ThirdAddEndPeriod;
+                    UIActions.Clear(AddEndPeriod);
+                    UIActions.GiveInput(AddEndPeriod, thirdAddEndPeriod);
 
-                var thirdAddPmiRate = TridVariable.ThirdAddPmiRate;
-                UIActions.Clear(AddPmiRate);
-                UIActions.GiveInput(AddPmiRate, thirdAddPmiRate);
+                    var thirdAddPmiRate = TridVariable.ThirdAddPmiRate;
+                    UIActions.Clear(AddPmiRate);
+                    UIActions.GiveInput(AddPmiRate, thirdAddPmiRate);
 
-                UIActions.Click(AddButton);
-                Thread.Sleep(5000);
-            }
-            else
-            {
-                PmiRatesGridValidation();
-                Thread.Sleep(5000);
+                    UIActions.Click(AddButton);
+                    Thread.Sleep(5000);
+                }
+                else
+                {
+                    PmiRatesGridValidation();
+                    Thread.Sleep(5000);
+                }
             }
         }
 
         public static void PmiRatesGridValidation()
         {
-            var pmiRatesGridRowsCount = UIActions.Count(PmiRatesGridRowsCount);
-            var numberOfPaymentArray = new[] { TridVariable.FirstAddBeginPeriod, TridVariable.SecondAddBeginPeriod, TridVariable.ThirdAddBeginPeriod };
-
-            Thread.Sleep(3000);
-            Assert.AreEqual(3, pmiRatesGridRowsCount, "PMI Rates Grid entries are not as expected");
-
-            for (var row = 1; row <= pmiRatesGridRowsCount; row++)
+            if (TridVariable.FirstAddNumber != "")
             {
-                var pmiRatesBeginPeriod =
-                    UIActions.GetText(
-                        By.XPath("//section[@id='MortgageGrid']//tbody/tr[" + row + "]/td[2]//span"));
+                var pmiRatesGridRowsCount = UIActions.Count(PmiRatesGridRowsCount);
+                var numberOfPaymentArray = new[]
+                {
+                    TridVariable.FirstAddBeginPeriod, TridVariable.SecondAddBeginPeriod,
+                    TridVariable.ThirdAddBeginPeriod
+                };
+
                 Thread.Sleep(3000);
-                Assert.True(numberOfPaymentArray.Contains(pmiRatesBeginPeriod), "PMI Rates Begin Period values are not as expected");
-                Thread.Sleep(3000);
+                Assert.AreEqual(3, pmiRatesGridRowsCount, "PMI Rates Grid entries are not as expected");
+
+                for (var row = 1; row <= pmiRatesGridRowsCount; row++)
+                {
+                    var pmiRatesBeginPeriod =
+                        UIActions.GetText(
+                            By.XPath("//section[@id='MortgageGrid']//tbody/tr[" + row + "]/td[2]//span"));
+                    Thread.Sleep(3000);
+                    Assert.True(numberOfPaymentArray.Contains(pmiRatesBeginPeriod),
+                        "PMI Rates Begin Period values are not as expected");
+                    Thread.Sleep(3000);
+                }
             }
         }
 
