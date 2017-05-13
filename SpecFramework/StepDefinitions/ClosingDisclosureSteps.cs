@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Configuration;
+using System.Security.Cryptography.X509Certificates;
 using System.Threading;
 using NUnit.Framework;
 using TechTalk.SpecFlow;
@@ -202,9 +203,17 @@ namespace TRID.StepDefinitions
             UIActions.Clear(LoanTermValue);
             UIActions.GiveInput(LoanTermValue, loanTermValue);
 
-            var loanAmount = TridVariable.LoanAmount;
-            UIActions.Clear(LoanAmount);
-            UIActions.GiveInput(LoanAmount, loanAmount);
+            //var loanAmount = TridVariable.LoanAmount;
+            //UIActions.Clear(LoanAmount);
+            //UIActions.GiveInput(LoanAmount, loanAmount);
+
+            var baseloanAmount = TridVariable.LoanAmount;
+            UIActions.Clear(BaseLoanAmount);
+            UIActions.GiveInput(BaseLoanAmount, baseloanAmount);
+
+            var upfrontLoanFactor = "1";
+            UIActions.Clear(UpfrontLoanFactor);
+            UIActions.GiveInput(UpfrontLoanFactor, upfrontLoanFactor);
 
             var rateOfInterest = TridVariable.RateOfInterest;
             UIActions.Clear(RateOfInterest);
@@ -576,7 +585,7 @@ namespace TRID.StepDefinitions
 
         [Then(@"updated/computed Drop off years for PMI value should display on Closing Disclosure")]
         public void ThenUpdatedComputedDropOffYearsForPmiValueShouldDisplayOnClosingDisclosure()
-        {
+         {
             if (TridVariable.DropOffYearsForPmi.Equals("N/A"))
                 DropOffYearsForPmiNotApplicableValidation();
             else

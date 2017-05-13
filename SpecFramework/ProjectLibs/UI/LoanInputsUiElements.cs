@@ -24,6 +24,8 @@ namespace TRID.ProjectLibs.UI
         }
         public static By FreqOfPmtValue = By.XPath("//div[@title='Frequency Of Pmt Value']//input");
         public static By LoanTermValue = By.XPath("//div[@title='Loan Term Value']//input");
+        public static By BaseLoanAmount = By.XPath("//div[@title='Base Loan Amount']//input");
+        public static By UpfrontLoanFactor = By.XPath("//div[@title='Upfornt Loan Factor']//input");
         public static By LoanAmount = By.XPath("//div[@title='Loan Amount']//input");
         public static By RateOfInterest = By.XPath("//div[@title='Rate Of Interest']//input");
         public static By DateOfLoan = By.XPath("//div[@title='Date of loan']//input");
