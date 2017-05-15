@@ -6,13 +6,13 @@ namespace TRID.ProjectLibs.UI
     public class LoanInputsUiElements : DisclosureInputsUiElements
     {
         public static By LoanDetailsText = By.XPath("//div[@id='LoanInformationInput']/md-toolbar");
-        //Loan Details
         public static By CalculationMethod;
         public static By LoanType;
         public static By FrequencyOfPayments;
         public static By LoanTerm;
         public static By RepaymentTermType;
         public static By OddDaysSelect;
+        public static By UpfrontMipFinanced;
         public static void LoanDetailsRadioButtonVariable()
         {
             CalculationMethod = By.XPath("//md-radio-button[@aria-label='" + TridVariable.CalculationMethod + "']");
@@ -21,6 +21,7 @@ namespace TRID.ProjectLibs.UI
             LoanTerm = By.XPath("//md-radio-button[@aria-label='" + TridVariable.LoanTerm + "']");
             RepaymentTermType = By.XPath("//md-radio-button[@aria-label='" + TridVariable.RepaymentTermType + "']");
             OddDaysSelect = By.XPath("//md-option[@value='" + TridVariable.OddDaysInterestCollected + "']");
+            UpfrontMipFinanced = By.XPath("//div[@title='Upfront MIP Financed']//md-radio-button[@value='" + TridVariable.UpfrontMipFinanced + "']");
         }
         public static By FreqOfPmtValue = By.XPath("//div[@title='Frequency Of Pmt Value']//input");
         public static By LoanTermValue = By.XPath("//div[@title='Loan Term Value']//input");
@@ -28,6 +29,7 @@ namespace TRID.ProjectLibs.UI
         public static By UpfrontLoanFactor = By.XPath("//div[@title='Upfornt Loan Factor']//input");
         public static By LoanAmount = By.XPath("//div[@title='Loan Amount']//input");
         public static By RateOfInterest = By.XPath("//div[@title='Rate Of Interest']//input");
+        public static By UpfrontMip = By.XPath("//div[@title='Upfront MIP']//input");
         public static By DateOfLoan = By.XPath("//div[@title='Date of loan']//input");
         public static By DateOfInterestBegins = By.XPath("//div[@title='Date Interest Begins To Accrue']//input");
         public static By DateOfFirstPayment = By.XPath("//div[@title='Date Of First Payment']//input");

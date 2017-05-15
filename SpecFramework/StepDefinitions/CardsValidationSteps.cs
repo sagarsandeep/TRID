@@ -13,19 +13,24 @@ using TRID.TestClasses;
 namespace TRID.StepDefinitions
 {
     [Binding]
-    public class ClosingDisclosureSteps : TridTest
+    public class CardsValidationSteps : TridTest
     {
         private static string Url => ConfigurationManager.AppSettings["url"];
+        private static string Url1 => ConfigurationManager.AppSettings["url1"];
         readonly GetExcelData _getData = new GetExcelData();
         public static bool TestCaseStatus = true;
+        public static int TestFailureCount = 0;
+        public static string CardsFailure = "";
+
 
         #region Given
 
+       
         [Given(@"user is at TRID application homepage")]
         public void GivenUserIsAtTridApplicationHomepage()
         {
             UIActions.WindowMaximize();
-            UIActions.GoToUrl(Url + "?tKey=EB535076-2140-4106-8CAE-B230F6E2D082&aKey=TRID");
+            UIActions.GoToUrl(Url + "&" + Url1);
             Thread.Sleep(5000);
             UIActions.WebDriverWait(SnlStartNewLoanText, 60);
 
@@ -76,7 +81,6 @@ namespace TRID.StepDefinitions
         {
             ProjActions.PmiRatesGridEmptyValidation();
         }
-
 
         #endregion
 
@@ -203,21 +207,24 @@ namespace TRID.StepDefinitions
             UIActions.Clear(LoanTermValue);
             UIActions.GiveInput(LoanTermValue, loanTermValue);
 
-            //var loanAmount = TridVariable.LoanAmount;
-            //UIActions.Clear(LoanAmount);
-            //UIActions.GiveInput(LoanAmount, loanAmount);
-
-            var baseloanAmount = TridVariable.LoanAmount;
+            var baseLoanAmount = TridVariable.BaseLoanAmount;
             UIActions.Clear(BaseLoanAmount);
-            UIActions.GiveInput(BaseLoanAmount, baseloanAmount);
+            UIActions.GiveInput(BaseLoanAmount, baseLoanAmount);
 
-            var upfrontLoanFactor = "1";
+            var upfrontLoanFactor = TridVariable.UpfrontLoanFactor;
             UIActions.Clear(UpfrontLoanFactor);
             UIActions.GiveInput(UpfrontLoanFactor, upfrontLoanFactor);
 
             var rateOfInterest = TridVariable.RateOfInterest;
             UIActions.Clear(RateOfInterest);
             UIActions.GiveInput(RateOfInterest, rateOfInterest);
+
+            var upfrontMip = TridVariable.UpfrontMip;
+            UIActions.Clear(UpfrontMip);
+            UIActions.GiveInput(UpfrontMip, upfrontMip);
+
+            LoanDetailsRadioButtonVariable();
+            UIActions.Click(UpfrontMipFinanced);
 
             var dateOfLoan = ProjActions.GetDate(TridVariable.DateOfLoan);
             UIActions.Clear(DateOfLoan);
@@ -301,6 +308,14 @@ namespace TRID.StepDefinitions
             var underWriting = TridVariable.UnderWriting;
             UIActions.Clear(UnderWriting);
             UIActions.GiveInput(UnderWriting, underWriting);
+
+            var totalMiInSectionFPrepaids = TridVariable.TotalMiInSectionFPrepaids;
+            UIActions.Clear(TotalMiInSectionFPrepaids);
+            UIActions.GiveInput(TotalMiInSectionFPrepaids, totalMiInSectionFPrepaids);
+
+            var totalMiInSectionGEscrow = TridVariable.TotalMiInSectionGEscrow;
+            UIActions.Clear(TotalMiInSectionGEscrow);
+            UIActions.GiveInput(TotalMiInSectionGEscrow, totalMiInSectionGEscrow);
         }
 
         [When(@"user enters pmi rate values")]
@@ -321,14 +336,6 @@ namespace TRID.StepDefinitions
             var lowerOfCostOfAppraisal = TridVariable.LowerOfCostOfAppraisal;
             UIActions.Clear(LowerOfCostOrAppraisal);
             UIActions.GiveInput(LowerOfCostOrAppraisal, lowerOfCostOfAppraisal);
-
-            var totalMiInSectionFPrepaids = TridVariable.TotalMiInSectionFPrepaids;
-            UIActions.Clear(TotalMiInSectionFPrepaids);
-            UIActions.GiveInput(TotalMiInSectionFPrepaids, totalMiInSectionFPrepaids);
-
-            var totalMiInSectionGEscrow = TridVariable.TotalMiInSectionGEscrow;
-            UIActions.Clear(TotalMiInSectionGEscrow);
-            UIActions.GiveInput(TotalMiInSectionGEscrow, totalMiInSectionGEscrow);
         }
 
         [When(@"Enter Disclosed input values for Closing Disclosure page")]
@@ -363,50 +370,6 @@ namespace TRID.StepDefinitions
             UIActions.GiveInput(DisclosedTotalOfPayment, disclosedTotalOfPayment);
         }
 
-
-        [When(@"click on Loan Details TEST on Closing Disclosure page")]
-        public void WhenClickOnLoanDetailsTestOnClosingDisclosurePage()
-        {
-            Thread.Sleep(3000);
-            UIActions.Click(LoanEstimateLink);
-            Thread.Sleep(3000);
-            //UIActions.WebDriverWait(LoanDetailsText, 60);
-
-            //UIActions.Click(ClosingDisclosureLink);
-            //Thread.Sleep(3000);
-            //UIActions.WebDriverWait(LoanDetailsText, 60);
-        }
-
-
-        [When(@"click on Disclosure TEST on Closing Disclosure page")]
-        public void WhenClickOnDisclosureTestOnClosingDisclosurePage()
-        {
-            //UIActions.Click(DisclosedTest);
-        }
-
-
-        [When(@"click on Loan Details TEST on Loan Estimate Page")]
-        public void WhenClickOnLoanDetailsTestOnLoanEstimatePage()
-        {
-            Thread.Sleep(3000);
-            UIActions.Click(ClosingDisclosureLink);
-        //    Thread.Sleep(3000);
-        //    UIActions.WebDriverWait(LoanDetailsText, 60);
-
-
-        //    UIActions.Click(LoanEstimateLink);
-        //    Thread.Sleep(3000);
-        //    UIActions.WebDriverWait(LoanDetailsText, 60);
-
-        //    UIActions.Click(LoanDetailsTest);
-        //    Thread.Sleep(5000);
-        }
-
-        [When(@"click on Disclosure TEST on Loan Estimate Page")]
-        public void WhenClickOnDisclosureTestOnLoanEstimatePage()
-        {
-            //UIActions.Click(DisclosedTest);
-        }
 
         [When(@"user navigates to Disclosure Inputs Page")]
         public void WhenUserNavigatesToDisclosureInputsPage()
@@ -497,9 +460,6 @@ namespace TRID.StepDefinitions
             UIActions.WebDriverWait(LoanEstimateIn5YearsText, 60);
         }
 
-
-
-
         #endregion
 
 
@@ -541,6 +501,8 @@ namespace TRID.StepDefinitions
             {
                 Console.WriteLine(e);
                 TestCaseStatus = false;
+                TestFailureCount += 1;
+                CardsFailure += "|| PrincipalAndInt ||";
             }
         }
 
@@ -580,6 +542,8 @@ namespace TRID.StepDefinitions
             {
                 Console.WriteLine(e);
                 TestCaseStatus = false;
+                TestFailureCount += 1;
+                CardsFailure += "|| Pmi ||";
             }
         }
 
@@ -620,6 +584,8 @@ namespace TRID.StepDefinitions
                 {
                     Console.WriteLine(e);
                     TestCaseStatus = false;
+                    TestFailureCount += 1;
+                    CardsFailure += "|| DropOffYearsForPmi ||";
                 }
         }
 
@@ -656,6 +622,8 @@ namespace TRID.StepDefinitions
             {
                 Console.WriteLine(e);
                 TestCaseStatus = false;
+                TestFailureCount += 1;
+                CardsFailure += "|| DropOffYearsForPmi ||";
             }
         }
 
@@ -696,6 +664,8 @@ namespace TRID.StepDefinitions
             {
                 Console.WriteLine(e);
                 TestCaseStatus = false;
+                TestFailureCount += 1;
+                CardsFailure += "|| TotalPeriodPayment ||";
             }
         }
 
@@ -735,6 +705,8 @@ namespace TRID.StepDefinitions
             {
                 Console.WriteLine(e);
                 TestCaseStatus = false;
+                TestFailureCount += 1;
+                CardsFailure += "|| PrepaidCharges ||";
             }
         }
 
@@ -774,6 +746,8 @@ namespace TRID.StepDefinitions
             {
                 Console.WriteLine(e);
                 TestCaseStatus = false;
+                TestFailureCount += 1;
+                CardsFailure += "|| AmountFinanced ||";
             }
         }
 
@@ -813,6 +787,8 @@ namespace TRID.StepDefinitions
             {
                 Console.WriteLine(e);
                 TestCaseStatus = false;
+                TestFailureCount += 1;
+                CardsFailure += "|| EscrowPropertyOverOneYear ||";
             }
         }
 
@@ -853,6 +829,8 @@ namespace TRID.StepDefinitions
             {
                 Console.WriteLine(e);
                 TestCaseStatus = false;
+                TestFailureCount += 1;
+                CardsFailure += "|| Apr ||";
             }
         }
 
@@ -892,6 +870,8 @@ namespace TRID.StepDefinitions
             {
                 Console.WriteLine(e);
                 TestCaseStatus = false;
+                TestFailureCount += 1;
+                CardsFailure += "|| BalloonAmount ||";
             }
         }
 
@@ -931,6 +911,8 @@ namespace TRID.StepDefinitions
             {
                 Console.WriteLine(e);
                 TestCaseStatus = false;
+                TestFailureCount += 1;
+                CardsFailure += "|| TotalOfPayments ||";
             }
         }
 
@@ -970,6 +952,8 @@ namespace TRID.StepDefinitions
             {
                 Console.WriteLine(e);
                 TestCaseStatus = false;
+                TestFailureCount += 1;
+                CardsFailure += "|| FinanceCharge ||";
             }
         }
 
@@ -1009,6 +993,8 @@ namespace TRID.StepDefinitions
             {
                 Console.WriteLine(e);
                 TestCaseStatus = false;
+                TestFailureCount += 1;
+                CardsFailure += "|| Tip ||";
             }
         }
 
@@ -1048,6 +1034,8 @@ namespace TRID.StepDefinitions
             {
                 Console.WriteLine(e);
                 TestCaseStatus = false;
+                TestFailureCount += 1;
+                CardsFailure += "|| InitialEscrowPayment ||";
             }
         }
 
@@ -1088,6 +1076,8 @@ namespace TRID.StepDefinitions
             {
                 Console.WriteLine(e);
                 TestCaseStatus = false;
+                TestFailureCount += 1;
+                CardsFailure += "|| NonEscrowPropertyOverOneYear ||";
             }
         }
 
@@ -1127,6 +1117,8 @@ namespace TRID.StepDefinitions
             {
                 Console.WriteLine(e);
                 TestCaseStatus = false;
+                TestFailureCount += 1;
+                CardsFailure += "|| PeriodEscrowPayment ||";
             }
         }
 
@@ -1165,6 +1157,8 @@ namespace TRID.StepDefinitions
             {
                 Console.WriteLine(e);
                 TestCaseStatus = false;
+                TestFailureCount += 1;
+                CardsFailure += "|| In5Years ||";
             }
         }
 
@@ -1203,20 +1197,13 @@ namespace TRID.StepDefinitions
             {
                 Console.WriteLine(e);
                 TestCaseStatus = false;
+                TestFailureCount += 1;
+                CardsFailure += "|| In5YearsPrincipal ||";
             }
         }
 
         #endregion
 
-        //[AfterScenario]
-        //public static void TridTestCaseStatus()
-        //{
-        //    if (!TestCaseStatus)
-        //    {
-        //        throw new Exception("Test Case failed");
-        //    }
-        //    UIActions.Quit();
-        //}
 
         [AfterTestRun]
         public static void TearDown()
@@ -1224,6 +1211,8 @@ namespace TRID.StepDefinitions
             UIActions.Quit();
             if (!TestCaseStatus)
             {
+                Console.WriteLine("The total number of cards Failue: " +TestFailureCount);
+                Console.WriteLine("Name of cards Failed: " +CardsFailure);
                 throw new Exception("Test Case failed");
             }
         }
