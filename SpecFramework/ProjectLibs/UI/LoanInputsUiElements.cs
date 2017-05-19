@@ -102,7 +102,6 @@ namespace TRID.ProjectLibs.UI
         public static By InspectionFee = By.XPath("//div[@title='Inspection Fee']//input");
         public static By LoanOriginationFee = By.XPath("//div[@title='Loan Origination Fee']//input");
         public static By OtherFees = By.XPath("//div[@title='Other Fees']//input");
-        public static By PmiEscrowed = By.XPath("//div[@title='PMI escrowed']//input");
         public static By PrepaidDailyInterest = By.XPath("//div[@title='Prepaid Daily Interest']//input");
         public static By TaxServicing = By.XPath("//div[@title='Tax Servicing']//input");
         public static By TitleClosingFee = By.XPath("//div[@title='Title - Closing Fee']//input");

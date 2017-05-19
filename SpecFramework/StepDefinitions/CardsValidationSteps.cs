@@ -19,7 +19,7 @@ namespace TRID.StepDefinitions
         private static string Url1 => ConfigurationManager.AppSettings["url1"];
         readonly GetExcelData _getData = new GetExcelData();
         public static bool TestCaseStatus = true;
-        public static int TestFailureCount = 0;
+        public static int TestFailureCount;
         public static string CardsFailure = "";
 
 
@@ -247,6 +247,7 @@ namespace TRID.StepDefinitions
             UIActions.GiveInput(LoanCostsForDisclosure, loanCostsForDisclosure);
 
             UIActions.Click(OddDaysClick);
+            Thread.Sleep(3000);
             UIActions.Click(OddDaysSelect);
         }
 
@@ -272,10 +273,6 @@ namespace TRID.StepDefinitions
             var otherFees = TridVariable.OtherFees;
             UIActions.Clear(OtherFees);
             UIActions.GiveInput(OtherFees, otherFees);
-
-            var pmiEscrowed = TridVariable.PmiEscrowed;
-            UIActions.Clear(PmiEscrowed);
-            UIActions.GiveInput(PmiEscrowed, pmiEscrowed);
 
             var prepaidDailyInterest = TridVariable.PrepaidDailyInterest;
             UIActions.Clear(PrepaidDailyInterest);

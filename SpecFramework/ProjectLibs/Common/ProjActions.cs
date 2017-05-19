@@ -35,10 +35,6 @@ namespace TRID.ProjectLibs.Common
             UIActions.Clear(OtherFees);
             UIActions.GiveInput(OtherFees, otherFees);
 
-            var pmiEscrowed = TridVariable.PmiEscrowed;
-            UIActions.Clear(PmiEscrowed);
-            UIActions.GiveInput(PmiEscrowed, pmiEscrowed);
-
             var prepaidDailyInterest = TridVariable.PrepaidDailyInterest;
             UIActions.Clear(PrepaidDailyInterest);
             UIActions.GiveInput(PrepaidDailyInterest, prepaidDailyInterest);
@@ -161,8 +157,9 @@ namespace TRID.ProjectLibs.Common
                 }
                 else
                 {
+                    Thread.Sleep(1000);
                     PmiRatesGridValidation();
-                    Thread.Sleep(5000);
+                    Thread.Sleep(3000);
                 }
             }
         }

@@ -80,7 +80,6 @@ namespace TRID.ProjectLibs.Common
         public static string InspectionFee = "";
         public static string LoanOriginationFee = "";
         public static string OtherFees = "";
-        public static string PmiEscrowed = "";
         public static string PrepaidDailyInterest = "";
         public static string TaxServicing = "";
         public static string TitleClosingFee = "";
@@ -184,25 +183,24 @@ namespace TRID.ProjectLibs.Common
 
             if (sheetName == "PrepaidCharges")
             {
-                if (col == 3 ) FhaVaUsdaUpfrontPmiFree = stringValue;
-                if (col == 4 ) FloodFee = stringValue;
-                if (col == 5 ) InspectionFee = stringValue;
-                if (col == 6 ) LoanOriginationFee = stringValue;
-                if (col == 7 ) OtherFees = stringValue;
-                if (col == 8 ) PmiEscrowed = stringValue;
-                if (col == 9 ) PrepaidDailyInterest = stringValue;
-                if (col == 10) TaxServicing = stringValue;
-                if (col == 11) TitleClosingFee = stringValue;
-                if (col == 12) TitleClosingProtectionLetter = stringValue;
-                if (col == 13) TitleCourierFee = stringValue;
-                if (col == 14) TitleDrawFee = stringValue;
-                if (col == 15) TitleWireFee = stringValue;
-                if (col == 16) UnderWriting = stringValue;
-                if (col == 17) PrepaidCustomName = stringValue;
-                if (col == 18) PrepaidCustomValue = stringValue;
-                if (col == 19) TotalMiInSectionFPrepaids = stringValue;
-                if (col == 20) TotalMiInSectionGEscrow = stringValue;
-            }
+                if (col == 3) FhaVaUsdaUpfrontPmiFree = stringValue;
+                if (col == 4) FloodFee = stringValue;
+                if (col == 5) InspectionFee = stringValue;
+                if (col == 6) LoanOriginationFee = stringValue;
+                if (col == 7) OtherFees = stringValue;
+                if (col == 8) PrepaidDailyInterest = stringValue;
+                if (col == 9) TaxServicing = stringValue;
+                if (col == 10) TitleClosingFee = stringValue;
+                if (col == 11) TitleClosingProtectionLetter = stringValue;
+                if (col == 12) TitleCourierFee = stringValue;
+                if (col == 13) TitleDrawFee = stringValue;
+                if (col == 14) TitleWireFee = stringValue;
+                if (col == 15) UnderWriting = stringValue;
+                if (col == 16) PrepaidCustomName = stringValue;
+                if (col == 17) PrepaidCustomValue = stringValue;
+                if (col == 18) TotalMiInSectionFPrepaids = stringValue;
+                if (col == 19) TotalMiInSectionGEscrow = stringValue;
+            }              
 
             #endregion
 

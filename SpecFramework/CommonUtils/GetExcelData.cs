@@ -1,6 +1,11 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 using System.Configuration;
+using System.Linq;
 using System.Runtime.InteropServices;
+using Newtonsoft.Json;
+using NUnit.Framework.Interfaces;
 using TRID.ProjectLibs;
 using TRID.ProjectLibs.Common;
 using Excel = Microsoft.Office.Interop.Excel;
@@ -11,54 +16,24 @@ namespace TRID.CommonUtils
     {
         private static string FilePath => ConfigurationManager.AppSettings["ExcelFilePath"];
 
-        //Get a cell value in single time of execution
-        //public string GetExcelCellValues(string sheetName, int row, int col)
-        //{
-        //    Excel.Application xApplication = new Excel.Application();
-        //    Excel.Workbook xWorkbook = xApplication.Workbooks.Open(FilePath);
-        //    Excel.Worksheet xWorksheet = xWorkbook.Sheets[sheetName];
-        //    Excel.Range xRange = xWorksheet.UsedRange;
-        //    var data = xRange.Cells[row, col].Value2.ToString();
-            
-        //    //cleanup
-        //    GC.Collect();
-        //    GC.WaitForPendingFinalizers();
-
-        //    //release com objects to fully kill excel process from running in the background
-        //    Marshal.ReleaseComObject(xRange);
-        //    Marshal.ReleaseComObject(xWorksheet);
-
-        //    //close and release
-        //    xWorkbook.Close();
-        //    Marshal.ReleaseComObject(xWorkbook);
-
-        //    //quit and release
-        //    xApplication.Quit();
-        //    Marshal.ReleaseComObject(xApplication);
-
-        //    return data;
-        //}
-
-
         // Get Excel sheet all cell values
-        public string GetExcelValues(int scenarioNo, string sheetName)
+        public void GetExcelValues(int rowNumber, string sheetName)
         {
             var xApplication = new Excel.Application();
             xApplication.DisplayAlerts = false;
-            var xWorkbook = xApplication.Workbooks.Open(FilePath, Notify:false);
+            var xWorkbook = xApplication.Workbooks.Open(FilePath, Notify: false);
             Excel.Worksheet xWorksheet = xWorkbook.Sheets[sheetName];
             var xRange = xWorksheet.UsedRange;
-            var data = "";
+            var cellValue = "";
+            var columnNumber = 0;
             var colCount = xRange.Columns.Count;
-
-            for (var row = scenarioNo; row == scenarioNo; row++)
-            for (var col = 1; col <= colCount; col++)
-                if (xRange.Cells[row, col] != null && xRange.Cells[row, col].Value2 != null)
+            for (columnNumber = 1; columnNumber <= colCount; columnNumber++)
+                if (xRange.Cells[rowNumber, columnNumber] != null && xRange.Cells[rowNumber, columnNumber].Value2 != null)
                 {
-                    data = xRange.Cells[row, col].Value2.ToString();
-                    GetVariableNameAndSetValues(row, col, data, sheetName);
+                    cellValue = xRange.Cells[rowNumber, columnNumber].Value2.ToString();
+                    GetVariableNameAndSetValues(rowNumber, columnNumber, cellValue, sheetName);
                 }
-            
+
             //cleanup
             GC.Collect();
             GC.WaitForPendingFinalizers();
@@ -74,8 +49,6 @@ namespace TRID.CommonUtils
             //quit and release
             xApplication.Quit();
             Marshal.ReleaseComObject(xApplication);
-
-            return data;
         }
     }
 }

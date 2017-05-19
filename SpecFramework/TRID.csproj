@@ -138,12 +138,6 @@
     <Compile Include="ProjectLibs\UI\StartNewLoanUIElements.cs" />
     <Compile Include="ProjectLibs\UI\TridHeaderUIElements.cs" />
     <Compile Include="ProjectLibs\UI\UIElements.cs" />
-    <Compile Include="SampleTests\ConvertToJasonSteps.cs" />
-    <Compile Include="SampleTests\ConvertToJson.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ConvertToJson.feature</DependentUpon>
-    </Compile>
     <Compile Include="StepDefinitions\EscrowValidationSteps.cs" />
     <Compile Include="TestClasses\LaunchTridApplication.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -172,10 +166,6 @@
     <None Include="packages.config" />
     <None Include="RunTests.bat" />
     <None Include="runtests.cmd" />
-    <None Include="SampleTests\ConvertToJson.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>ConvertToJson.feature.cs</LastGenOutput>
-    </None>
     <None Include="SpecRunTestProfile.xsd">
       <SubType>Designer</SubType>
     </None>
