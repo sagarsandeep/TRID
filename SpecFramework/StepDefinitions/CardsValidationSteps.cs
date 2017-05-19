@@ -207,6 +207,11 @@ namespace TRID.StepDefinitions
             UIActions.Clear(LoanTermValue);
             UIActions.GiveInput(LoanTermValue, loanTermValue);
 
+
+            var numberOfPayments = TridVariable.NumberOfPayments;
+            UIActions.Clear(NumberOfPayments);
+            UIActions.GiveInput(NumberOfPayments, numberOfPayments);
+
             var baseLoanAmount = TridVariable.BaseLoanAmount;
             UIActions.Clear(BaseLoanAmount);
             UIActions.GiveInput(BaseLoanAmount, baseLoanAmount);
