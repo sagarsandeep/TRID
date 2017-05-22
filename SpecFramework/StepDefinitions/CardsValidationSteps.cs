@@ -94,6 +94,10 @@ namespace TRID.StepDefinitions
             Thread.Sleep(5000);
 
             UIActions.WebDriverWait(LoanDetailsText, 60);
+
+            UIActions.ScrollDown();
+            Thread.Sleep(2000);
+            UIActions.ScrollUp();
         }
 
         [When(@"user navigate to Amortization Page")]
@@ -110,14 +114,17 @@ namespace TRID.StepDefinitions
         [When(@"user navigate to Closing Disclosure Page")]
         public void GivenUserNavigateToClosingClosingDisclosurePage()
         {
+            
             UIActions.Click(ClosingDisclosureLink);
-            UIActions.WebDriverWait(LoanDetailsText, 60);
+            UIActions.WebDriverWait(LoanDetailsText, 60);            
         }
 
         [When(@"user selects Calculation Method")]
         public void WhenUserSelectsCalculationMethodInClosingDisclosurePage()
         {
+            Thread.Sleep(2000);
             LoanDetailsRadioButtonVariable();
+            Thread.Sleep(2000);
             UIActions.Click(CalculationMethod);         
         }
 
@@ -452,6 +459,10 @@ namespace TRID.StepDefinitions
             UIActions.Click(ClosingDisclosureLink);
             Thread.Sleep(5000);
             UIActions.WebDriverWait(MonthlyPrincipalAndInterestText, 60);
+
+            UIActions.ScrollDown();
+            Thread.Sleep(2000);
+            UIActions.ScrollUp();
         }
 
         [When(@"user navigates to Loan Estimate Cards Page")]

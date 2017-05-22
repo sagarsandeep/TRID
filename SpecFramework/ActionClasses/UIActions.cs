@@ -74,6 +74,11 @@ namespace TRID.ActionClasses
             ((IJavaScriptExecutor)ObjectRepo.Driver).ExecuteScript("window.scroll(0,0);");
         }
 
+        public static void ScrollDown()
+        {
+            ((IJavaScriptExecutor)ObjectRepo.Driver).ExecuteScript("window.scroll(0,10000);");
+        }
+
         public static void Quit()
         {
             ObjectRepo.Driver.Quit();
