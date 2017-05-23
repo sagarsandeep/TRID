@@ -33,6 +33,7 @@ namespace TRID.StepDefinitions
         {  
             UIActions.ScrollUp();
             EscrowRadioButtonVariable();
+            UIActions.WebDriverWait(IsInsEscrowed, 60);
             UIActions.Click(IsInsEscrowed);
         }
         
@@ -40,6 +41,7 @@ namespace TRID.StepDefinitions
         public void WhenUserSelectsValueForIsTaxEscrowed()
         {
             EscrowRadioButtonVariable();
+            UIActions.WebDriverWait(IsTaxEscrowed, 60);
             UIActions.Click(IsTaxEscrowed);
         }
         
@@ -47,6 +49,7 @@ namespace TRID.StepDefinitions
         public void WhenUserSelectsValueForIsPmiEscrowed()
         {
             EscrowRadioButtonVariable();
+            UIActions.WebDriverWait(IsPmiEscrowed, 60);
             UIActions.Click(IsPmiEscrowed);
         }
         

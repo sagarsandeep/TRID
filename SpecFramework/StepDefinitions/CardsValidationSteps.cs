@@ -125,6 +125,7 @@ namespace TRID.StepDefinitions
             Thread.Sleep(2000);
             LoanDetailsRadioButtonVariable();
             Thread.Sleep(2000);
+            UIActions.WebDriverWait(CalculationMethod,60);
             UIActions.Click(CalculationMethod);         
         }
 
