@@ -20,11 +20,13 @@ When user navigate to Loan Inputs Page
 	And user enters other pmi input values
 	And user selects value for Is Ins Escrowed
 	And user selects value for Is Tax Escrowed
-	And user selects value for Is PMI Escrowed
-	And user enters values for Cushion Months for Insurance
-	And user enters values for Cushion Months for Tax
+	And user selects value for Is Other1 Escrowed
+	And user selects value for Is Other2 Escrowed
+	And user enters input values for Cushion Months
 	And user enters values for Escrow insurance Inputs
 	And user enters values for Escrow Tax Calculations Inputs
+	And user enters values for Escrow Other1 Calculations Inputs
+	And user enters values for Escrow Other2 Calculations Inputs
 	And user enters all input values for Prepaid Charges
 	#And user enters input value for prepaid custom fields
 	And user navigates to Disclosure Inputs Page
@@ -34,12 +36,13 @@ When user navigate to Loan Inputs Page
 	And user enters disclosed input values for Escrow Property
 	And user navigates to Closing Disclosure Cards Page
 Then updated/computed Principal and Interest value should display on Closing Disclosure
-	And updated/computed pmi value should display on Closing Disclosure
-	And updated/computed Drop off years for PMI value should display on Closing Disclosure
-	And updated/computed Total Period Payment value should display on Closing Disclosure
+	And updated/computed Mortgage Insurance value should display on Closing Disclosure
+	And updated/computed Scheduled PMI Termination Date value should display on Closing Disclosure
+	And updated/computed Estimated Total Monthly Payment value should display on Closing Disclosure
 	And updated/computed Prepaid Charges value should display on Closing Disclosure
 	And updated/computed Amount Financed value should display on Closing Disclosure
-	#And updated/computed Escrow Property Costs over one year value should display on Closing Disclosure
+	#And updated/computed Escrow Property Costs over one year 11 Months value should display on Closing Disclosure
+	#And updated/computed Escrow Property Costs over one year 12 Months value should display on Closing Disclosure
 	And updated/computed APR value should display on Closing Disclosure
 	And updated/computed Balloon Amount value should display on Closing Disclosure
 	And updated/computed Total of Payments value should display on Closing Disclosure
@@ -47,7 +50,8 @@ Then updated/computed Principal and Interest value should display on Closing Dis
 	And updated/computed TIP value should display on Closing Disclosure
 	#And updated/computed Initial Escrow Payment value should display on Closing Disclosure
 	#And updated/computed Non Escrow Property Costs over one year value should display on Closing Disclosure
-	#And updated/computed Period Escrow Payment value should display on Closing Disclosure
+	#And updated/computed Estimated Escrow value should display on Closing Disclosure
+	#And updated/computed Estimated Taxes, Insurance & Assessments value should display on Closing Disclosure
 Examples:
 	| ScenarioNo | RowNumber | pcSheetName    | miSheetName       | cdSheetName       | aRowNumber | aSheetName |
 	| 1R         | 2         | PrepaidCharges | MortgageInsurance | ClosingDisclosure | 1          | ARM Terms  |
@@ -128,11 +132,13 @@ When user navigate to Loan Inputs Page
 	And user enters other pmi input values
 	And user selects value for Is Ins Escrowed
 	And user selects value for Is Tax Escrowed
-	And user selects value for Is PMI Escrowed
-	And user enters values for Cushion Months for Insurance
-	And user enters values for Cushion Months for Tax
+	And user selects value for Is Other1 Escrowed
+	And user selects value for Is Other2 Escrowed
+	And user enters input values for Cushion Months
 	And user enters values for Escrow insurance Inputs
 	And user enters values for Escrow Tax Calculations Inputs
+	And user enters values for Escrow Other1 Calculations Inputs
+	And user enters values for Escrow Other2 Calculations Inputs
 	And user enters all input values for Prepaid Charges
 	#And user enters input value for prepaid custom fields
 	And user navigates to Disclosure Inputs Page

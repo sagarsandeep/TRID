@@ -67,15 +67,19 @@ namespace TRID.ProjectLibs.UI
         public static By EscrowCalcInputsText = By.XPath("//div[@id='EscrowCalculationsInput']/md-toolbar");
         public static By IsInsEscrowed;
         public static By IsTaxEscrowed;
-        public static By IsPmiEscrowed;
+        public static By IsOther1Escrowed;
+        public static By IsOther2Escrowed;
         public static void EscrowRadioButtonVariable()
         {
             IsInsEscrowed = By.XPath("//div[@title='Is INS Escrowed']//md-radio-button[@aria-label='" + TridVariable.IsInsEscrowed + "']");
             IsTaxEscrowed = By.XPath("//div[@title='Is Tax Escrowed']//md-radio-button[@aria-label='" + TridVariable.IsTaxEscrowed + "']");
-            IsPmiEscrowed = By.XPath("//div[@title='Is PMI Escrowed']//md-radio-button[@aria-label='" + TridVariable.IsPmiEscrowed + "']");
+            IsOther1Escrowed = By.XPath("//div[@title='Is Other1 Escrowed']//md-radio-button[@aria-label='" + TridVariable.IsOther1Escrowed + "']");
+            IsOther2Escrowed = By.XPath("//div[@title='Is Other2 Escrowed']//md-radio-button[@aria-label='" + TridVariable.IsOther2Escrowed + "']");
         }
         public static By CushionMonthsForInsurance = By.XPath("//div[@title='Cushion Months For Insurance']//input");
         public static By CushionMonthsForTax = By.XPath("//div[@title='Cushion Months For Tax']//input");
+        public static By CushionMonthsForOther1 = By.XPath("//div[@title='Cushion Months For Other1']//input");
+        public static By CushionMonthsForOther2 = By.XPath("//div[@title='Cushion Months For Other2']//input");
         public static By EscrowInstallmentInputsNumber = By.XPath("//div[@id='EscrowInsuranceGridInputs']//div[@title='Number']//input");
         public static By DateForEscrowInsurance = By.XPath("//div[@title='Date For Escrow Insurance']//input");
         public static By InsuranceInstallmentAmount = By.XPath("//div[@title='Insuarnce Installment Amount']//input");
@@ -95,6 +99,24 @@ namespace TRID.ProjectLibs.UI
         public static By EscrowTaxInfoGridNumberSR = By.XPath("//section[@id='EscrowTaxGrid']//tbody/tr[2]/td[1]//span");
         public static By EscrowTaxInfoGridInstallmentDateSR = By.XPath("//section[@id='EscrowTaxGrid']//tbody/tr[2]/td[3]//span");
         public static By EscrowTaxInfoGridTaxInstallmentAmountSR = By.XPath("//section[@id='EscrowTaxGrid']//tbody/tr[2]/td[4]//span");
+
+        public static By EscrowOther1InputsNumber = By.XPath("//div[@id='EscrowOther1GridInputs']//div[@title='Number']//input");
+        public static By DateForEscrowOther1 = By.XPath("//div[@title='Date For Escrow Other']//input");
+        public static By Other1InstallmentAmount = By.XPath("//div[@title='Other1 Installment Amount']//input");
+        public static By EscrowOther1InputsAddButton = By.XPath("//div[@id='EscrowOther1GridInputs']//div[4]//button");
+        public static By EscrowOther1InfoGridRowCount = By.XPath("//section[@id='EscrowOther1Grid']//tbody/tr");
+        public static By EscrowOther1InfoGridNumber = By.XPath("//section[@id='EscrowOther1Grid']//tbody/tr/td[1]//span");
+        public static By EscrowOther1InfoGridInstallmentDate = By.XPath("//section[@id='EscrowOther1Grid']//tbody/tr/td[3]//span");
+        public static By EscrowOther1InfoGridInstallmentAmount = By.XPath("//section[@id='EscrowOther1Grid']//tbody/tr/td[4]//span");
+
+        public static By EscrowOther2InputsNumber = By.XPath("//div[@id='EscrowOther2GridInputs']//div[@title='Number']//input");
+        public static By DateForEscrowOther2 = By.XPath("//div[@title='Date For Escrow Other2']//input");
+        public static By Other2InstallmentAmount = By.XPath("//div[@title='Other2 Installment Amount']//input");
+        public static By EscrowOther2InputsAddButton = By.XPath("//div[@id='EscrowOther2GridInputs']//div[4]//button");
+        public static By EscrowOther2InfoGridRowCount = By.XPath("//section[@id='EscrowOther2Grid']//tbody/tr");
+        public static By EscrowOther2InfoGridNumber = By.XPath("//section[@id='EscrowOther2Grid']//tbody/tr/td[1]//span");
+        public static By EscrowOther2InfoGridInstallmentDate = By.XPath("//section[@id='EscrowOther2Grid']//tbody/tr/td[3]//span");
+        public static By EscrowOther2InfoGridInstallmentAmount = By.XPath("//section[@id='EscrowOther2Grid']//tbody/tr/td[4]//span");
 
 
         //Prepaid Charges

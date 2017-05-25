@@ -108,11 +108,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CardsValidation.feature</DependentUpon>
     </Compile>
-    <Compile Include="FeatureFiles\EscrowValidation.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>EscrowValidation.feature</DependentUpon>
-    </Compile>
     <Compile Include="GlobalParam\ObjectRepo.cs" />
     <Compile Include="HookFiles\General.cs" />
     <Compile Include="Jira\JiraApi\fields.cs" />
@@ -138,7 +133,6 @@
     <Compile Include="ProjectLibs\UI\StartNewLoanUIElements.cs" />
     <Compile Include="ProjectLibs\UI\TridHeaderUIElements.cs" />
     <Compile Include="ProjectLibs\UI\UIElements.cs" />
-    <Compile Include="StepDefinitions\EscrowValidationSteps.cs" />
     <Compile Include="TestClasses\LaunchTridApplication.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StepDefinitions\CardsValidationSteps.cs" />
@@ -159,10 +153,6 @@
     <None Include="FeatureFiles\DataResources\TridTestData.xlsx" />
     <None Include="FeatureFiles\DataResources\TridTestDataWithAllScenarios.xlsx" />
     <None Include="FeatureFiles\DataResources\TridTestScenarios.xlsx" />
-    <None Include="FeatureFiles\EscrowValidation.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>EscrowValidation.feature.cs</LastGenOutput>
-    </None>
     <None Include="packages.config" />
     <None Include="RunTests.bat" />
     <None Include="runtests.cmd" />

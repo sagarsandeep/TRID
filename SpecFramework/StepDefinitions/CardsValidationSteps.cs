@@ -31,18 +31,10 @@ namespace TRID.StepDefinitions
         {
             UIActions.WindowMaximize();
             UIActions.GoToUrl(Url + "&" + Url1);
-            Thread.Sleep(5000);
             UIActions.WebDriverWait(SnlStartNewLoanText, 60);
 
             UIActions.Click(SnlResetButton);
-            Thread.Sleep(5000);
-        }
-       
-        [Given(@"user have all the input values from Excel sheet (.*) for scenario (.*)")]
-        public void GivenUserHaveAllTheInputValuesFromExcelSheetForScenario(string sheetName, int scenarioNo)
-        {
-            _getData.GetExcelValues(scenarioNo, sheetName);
-        }
+        }           
 
         [Given(@"user have closing disclosure data from excel sheet (.*) for the scenario (.*)")]
         public void GivenUserHaveClosingDisclosureDataFromExcelSheetForTheScenario(string sheetName, int scenarioNo)
@@ -68,6 +60,11 @@ namespace TRID.StepDefinitions
             _getData.GetExcelValues(scenarioNo, sheetName);
         }
 
+        [Given(@"user have Escrow data from excel sheet (.*) for the scenario (.*)")]
+        public void GivenUserHaveEscrowDataFromExcelSheetForTheScenario(string sheetName, int scenarioNo)
+        {
+            _getData.GetExcelValues(scenarioNo, sheetName);
+        }
 
         [Given(@"user navigate to Loan Estimate Page")]
         public void GivenUserNavigateToLoanEstimatePage()
@@ -91,8 +88,6 @@ namespace TRID.StepDefinitions
         public void WhenUserNavigateToLoanInputsPage()
         {
             UIActions.Click(LoanInputsLink);
-            Thread.Sleep(5000);
-
             UIActions.WebDriverWait(LoanDetailsText, 60);
 
             UIActions.ScrollDown();
@@ -104,8 +99,6 @@ namespace TRID.StepDefinitions
         public void WhenUserNavigateToAmortizationPage()
         {
             UIActions.Click(AmortizationLink);
-            Thread.Sleep(5000);
-
             UIActions.WebDriverWait(AmortizationPaymentScheduleText, 60);
         }
 
@@ -122,9 +115,7 @@ namespace TRID.StepDefinitions
         [When(@"user selects Calculation Method")]
         public void WhenUserSelectsCalculationMethodInClosingDisclosurePage()
         {
-            Thread.Sleep(2000);
             LoanDetailsRadioButtonVariable();
-            Thread.Sleep(2000);
             UIActions.WebDriverWait(CalculationMethod,60);
             UIActions.Click(CalculationMethod);         
         }
@@ -260,7 +251,6 @@ namespace TRID.StepDefinitions
             UIActions.GiveInput(LoanCostsForDisclosure, loanCostsForDisclosure);
 
             UIActions.Click(OddDaysClick);
-            Thread.Sleep(3000);
             UIActions.Click(OddDaysSelect);
         }
 
@@ -385,7 +375,6 @@ namespace TRID.StepDefinitions
         public void WhenUserNavigatesToDisclosureInputsPage()
         {
             UIActions.Click(DisclosureInputsLink);
-            Thread.Sleep(5000);
             UIActions.WebDriverWait(DisclosedValuesText, 60);
         }
 
@@ -458,8 +447,7 @@ namespace TRID.StepDefinitions
         public void WhenUserNavigatesToClosingDisclosureCardsPage()
         {
             UIActions.Click(ClosingDisclosureLink);
-            Thread.Sleep(5000);
-            UIActions.WebDriverWait(MonthlyPrincipalAndInterestText, 60);
+            UIActions.WebDriverWait(AprLabelText, 60);
 
             UIActions.ScrollDown();
             Thread.Sleep(2000);
@@ -470,8 +458,239 @@ namespace TRID.StepDefinitions
         public void WhenUserNavigatesToLoanEstimateCardsPage()
         {
             UIActions.Click(LoanEstimateLink);
-            Thread.Sleep(5000);
             UIActions.WebDriverWait(LoanEstimateIn5YearsText, 60);
+        }
+
+        [When(@"user selects value for Is Ins Escrowed")]
+        public void WhenUserSelectsValueForIsInsEscrowed()
+        {
+            UIActions.ScrollUp();
+            EscrowRadioButtonVariable();
+            UIActions.WebDriverWait(IsInsEscrowed, 60);
+            UIActions.Click(IsInsEscrowed);
+        }
+
+        [When(@"user selects value for Is Tax Escrowed")]
+        public void WhenUserSelectsValueForIsTaxEscrowed()
+        {
+            EscrowRadioButtonVariable();
+            UIActions.WebDriverWait(IsTaxEscrowed, 60);
+            UIActions.Click(IsTaxEscrowed);
+        }
+
+        [When(@"user selects value for Is Other1 Escrowed")]
+        public void WhenUserSelectsValueForIsOther1Escrowed()
+        {
+            EscrowRadioButtonVariable();
+            UIActions.WebDriverWait(IsOther1Escrowed, 60);
+            UIActions.Click(IsOther1Escrowed);
+        }
+
+        [When(@"user selects value for Is Other2 Escrowed")]
+        public void WhenUserSelectsValueForIsOther2Escrowed()
+        {
+            EscrowRadioButtonVariable();
+            UIActions.WebDriverWait(IsOther2Escrowed, 60);
+            UIActions.Click(IsOther2Escrowed);
+        }
+
+        [When(@"user enters input values for Cushion Months")]
+        public void WhenUserEntersInputValuesForCushionMonths()
+        {
+            UIActions.Clear(CushionMonthsForInsurance);
+            UIActions.GiveInput(CushionMonthsForInsurance, TridVariable.CushionMonthsForInsurance);
+
+            UIActions.Clear(CushionMonthsForTax);
+            UIActions.GiveInput(CushionMonthsForTax, TridVariable.CushionMonthsForTax);
+        }
+
+        [When(@"user enters values for Escrow insurance Inputs")]
+        public void WhenUserEntersValuesForEscrowInsuranceInputs()
+        {
+            if (TridVariable.EscrowInstallmentInputsNumber!="0")
+            {
+                Assert.AreNotEqual(1, EscrowInstallmentInfoGridRowCount, "Escrow Installment Info Grid is not empty");
+
+                UIActions.Clear(EscrowInstallmentInputsNumber);
+                UIActions.GiveInput(EscrowInstallmentInputsNumber, TridVariable.EscrowInstallmentInputsNumber);
+
+                var dateForEscrowInsurance =
+                    DateTime.FromOADate(Convert.ToDouble(TridVariable.DateForEscrowInsurance)).ToString("MM/dd/yyyy");
+                UIActions.Clear(DateForEscrowInsurance);
+                UIActions.GiveInput(DateForEscrowInsurance, dateForEscrowInsurance);
+                Thread.Sleep(500);
+
+                UIActions.Clear(InsuranceInstallmentAmount);
+                UIActions.GiveInput(InsuranceInstallmentAmount, TridVariable.InsuranceInstallmentAmount);
+
+                UIActions.Click(EscrowInstallmentInputsAddButton);
+                Thread.Sleep(1000);
+
+                Assert.AreEqual(TridVariable.EscrowInstallmentInputsNumber,
+                    UIActions.GetText(EscrowInstallmentInfoGridNumber),
+                    "Escrow Installment Info Number value does not matches as expected");
+                Assert.AreEqual(dateForEscrowInsurance, UIActions.GetText(EscrowInstallmentInfoGridInstallmentDate),
+                    "Escrow Installment Info Date value does not matches as expected");
+                Assert.AreEqual(TridVariable.InsuranceInstallmentAmount,
+                    UIActions.GetText(EscrowInstallmentInfoGridInstallmentAmount),
+                    "Escrow Installment Info Amount value does not matches as expected");
+            }
+        }
+
+        [When(@"user enters values for Escrow Tax Calculations Inputs")]
+        public void WhenUserEntersValuesForEscrowTaxCalculationsInputs()
+        {
+            if (TridVariable.EscrowTaxCalculationsInputsNumberFR!="0")
+            {
+                Assert.AreNotEqual(1, EscrowTaxInfoGridRowCount, "Escrow Installment Info Grid is not empty");
+
+                UIActions.Clear(EscrowTaxCalculationsInputsNumber);
+                UIActions.GiveInput(EscrowTaxCalculationsInputsNumber, TridVariable.EscrowTaxCalculationsInputsNumberFR);
+
+                var escrowTaxCalculationsInputsDateFR =
+                    DateTime.FromOADate(Convert.ToDouble(TridVariable.EscrowTaxCalculationsInputsDateFR))
+                        .ToString("MM/dd/yyyy");
+                UIActions.Clear(EscrowTaxCalculationsInputsDate);
+                UIActions.GiveInput(EscrowTaxCalculationsInputsDate, escrowTaxCalculationsInputsDateFR);
+                Thread.Sleep(500);
+
+                UIActions.Clear(EscrowTaxCalculationsInputsTaxInstallmentAmount);
+                UIActions.GiveInput(EscrowTaxCalculationsInputsTaxInstallmentAmount,
+                    TridVariable.EscrowTaxCalculationsInputsTaxInstallmentAmountFR);
+
+                UIActions.Click(EscrowTaxCalculationsInputsAddButton);
+                Thread.Sleep(1000);
+
+                Assert.AreEqual(TridVariable.EscrowTaxCalculationsInputsNumberFR,
+                    UIActions.GetText(EscrowTaxInfoGridNumberFR),
+                    "Escrow Installment Info Number value does not matches as expected");
+                Assert.AreEqual(escrowTaxCalculationsInputsDateFR, UIActions.GetText(EscrowTaxInfoGridInstallmentDateFR),
+                    "Escrow Installment Info Number value does not matches as expected");
+                Assert.AreEqual(TridVariable.EscrowTaxCalculationsInputsTaxInstallmentAmountFR,
+                    UIActions.GetText(EscrowTaxInfoGridTaxInstallmentAmountFR),
+                    "Escrow Installment Info Number value does not matches as expected");
+            }
+
+            if (TridVariable.EscrowTaxCalculationsInputsNumberSR!="0")
+            {
+
+                UIActions.Clear(EscrowTaxCalculationsInputsNumber);
+                UIActions.GiveInput(EscrowTaxCalculationsInputsNumber, TridVariable.EscrowTaxCalculationsInputsNumberSR);
+
+
+                var escrowTaxCalculationsInputsDateSR =
+                    DateTime.FromOADate(Convert.ToDouble(TridVariable.EscrowTaxCalculationsInputsDateSR))
+                        .ToString("MM/dd/yyyy");
+                UIActions.Clear(EscrowTaxCalculationsInputsDate);
+                UIActions.GiveInput(EscrowTaxCalculationsInputsDate, escrowTaxCalculationsInputsDateSR);
+                Thread.Sleep(500);
+
+                UIActions.Clear(EscrowTaxCalculationsInputsTaxInstallmentAmount);
+                UIActions.GiveInput(EscrowTaxCalculationsInputsTaxInstallmentAmount,
+                    TridVariable.EscrowTaxCalculationsInputsTaxInstallmentAmountSR);
+
+                UIActions.Click(EscrowTaxCalculationsInputsAddButton);
+                Thread.Sleep(1000);
+
+                Assert.AreEqual(TridVariable.EscrowTaxCalculationsInputsNumberSR,
+                    UIActions.GetText(EscrowTaxInfoGridNumberSR),
+                    "Escrow Installment Info Number value does not matches as expected");
+                Assert.AreEqual(escrowTaxCalculationsInputsDateSR, UIActions.GetText(EscrowTaxInfoGridInstallmentDateSR),
+                    "Escrow Installment Info Number value does not matches as expected");
+                Assert.AreEqual(TridVariable.EscrowTaxCalculationsInputsTaxInstallmentAmountSR,
+                    UIActions.GetText(EscrowTaxInfoGridTaxInstallmentAmountSR),
+                    "Escrow Installment Info Number value does not matches as expected");
+            }
+        }
+
+
+        [When(@"user enters values for Escrow Other1 Calculations Inputs")]
+        public void WhenUserEntersValuesForEscrowOther1CalculationsInputs()
+        {
+            if (TridVariable.EscrowOther1CalculationsInputsNumber!="0")
+            {
+                Assert.AreNotEqual(1, EscrowOther1InfoGridRowCount, "Escrow Installment Info Grid is not empty");
+
+                UIActions.Clear(EscrowOther1InputsNumber);
+                UIActions.GiveInput(EscrowOther1InputsNumber, TridVariable.EscrowOther1CalculationsInputsNumber);
+
+                var dateForEscrowOther1 =
+                    DateTime.FromOADate(Convert.ToDouble(TridVariable.EscrowOther1CalculationsInputsDate)).ToString("MM/dd/yyyy");
+                UIActions.Clear(DateForEscrowOther1);
+                UIActions.GiveInput(DateForEscrowOther1, dateForEscrowOther1);
+                Thread.Sleep(500);
+
+                UIActions.Clear(Other1InstallmentAmount);
+                UIActions.GiveInput(Other1InstallmentAmount, TridVariable.EscrowOther1CalculationsInputsAmount);
+
+                UIActions.Click(EscrowOther1InputsAddButton);
+                Thread.Sleep(1000);
+
+                Assert.AreEqual(TridVariable.EscrowOther1CalculationsInputsNumber,
+                    UIActions.GetText(EscrowOther1InfoGridNumber),
+                    "Escrow Other1 Info Number value does not matches as expected");
+                Assert.AreEqual(dateForEscrowOther1, UIActions.GetText(EscrowOther1InfoGridInstallmentDate),
+                    "Escrow Other1 Info Date value does not matches as expected");
+                Assert.AreEqual(TridVariable.EscrowOther1CalculationsInputsAmount,
+                    UIActions.GetText(EscrowOther1InfoGridInstallmentAmount),
+                    "Escrow Other1 Info Amount value does not matches as expected");
+            }
+        }
+
+        [When(@"user enters values for Escrow Other2 Calculations Inputs")]
+        public void WhenUserEntersValuesForEscrowOther2CalculationsInputs()
+        {
+            if (TridVariable.EscrowOther2CalculationsInputsNumber!="0")
+            {
+                Assert.AreNotEqual(1, EscrowOther2InfoGridRowCount, "Escrow Installment Info Grid is not empty");
+
+                UIActions.Clear(EscrowOther2InputsNumber);
+                UIActions.GiveInput(EscrowOther2InputsNumber, TridVariable.EscrowOther2CalculationsInputsNumber);
+
+                var dateForEscrowOther2 =
+                    DateTime.FromOADate(Convert.ToDouble(TridVariable.EscrowOther2CalculationsInputsDate))
+                        .ToString("MM/dd/yyyy");
+                UIActions.Clear(DateForEscrowOther2);
+                UIActions.GiveInput(DateForEscrowOther2, dateForEscrowOther2);
+                Thread.Sleep(500);
+
+                UIActions.Clear(Other2InstallmentAmount);
+                UIActions.GiveInput(Other2InstallmentAmount, TridVariable.EscrowOther2CalculationsInputsAmount);
+
+                UIActions.Click(EscrowOther2InputsAddButton);
+                Thread.Sleep(1000);
+
+                Assert.AreEqual(TridVariable.EscrowOther2CalculationsInputsNumber,
+                    UIActions.GetText(EscrowOther2InfoGridNumber),
+                    "Escrow Other2 Info Number value does not matches as expected");
+                Assert.AreEqual(dateForEscrowOther2, UIActions.GetText(EscrowOther2InfoGridInstallmentDate),
+                    "Escrow Other2 Info Date value does not matches as expected");
+                Assert.AreEqual(TridVariable.EscrowOther2CalculationsInputsAmount,
+                    UIActions.GetText(EscrowOther2InfoGridInstallmentAmount),
+                    "Escrow Other2 Info Amount value does not matches as expected");
+            }
+        }
+
+        [When(@"user enters disclosed input values for Escrow Property")]
+        public void WhenUserEntersDisclosedInputValuesForEscrowProperty()
+        {
+            UIActions.Clear(DisclosedEscrowPropertyOverOneYear11Months);
+            UIActions.GiveInput(DisclosedEscrowPropertyOverOneYear11Months, TridVariable.DisclosedEscrowPropertyOverOneYear11Months);
+
+            UIActions.Clear(DisclosedEscrowPropertyOverOneYear12Months);
+            UIActions.GiveInput(DisclosedEscrowPropertyOverOneYear12Months, TridVariable.DisclosedEscrowPropertyOverOneYear12Months);
+
+            UIActions.Clear(DisclosedNonEscrowPropertyOverOneYear);
+            UIActions.GiveInput(DisclosedNonEscrowPropertyOverOneYear, TridVariable.DisclosedNonEscrowPropertyOverOneYear);
+
+            UIActions.Clear(DisclosedEstimatedTaxesInsurnaceAssessments);
+            UIActions.GiveInput(DisclosedEstimatedTaxesInsurnaceAssessments, TridVariable.DisclosedEstimatedTaxesInsuranceAssessments);
+
+            UIActions.Clear(DisclosedInitialEscrowPayment);
+            UIActions.GiveInput(DisclosedInitialEscrowPayment, TridVariable.DisclosedInitialEscrowPayment); ;
+
+            UIActions.Clear(DisclosedPeriodEscrowPayment);
+            UIActions.GiveInput(DisclosedPeriodEscrowPayment, TridVariable.DisclosedPeriodEscrowPayment);
         }
 
         #endregion
@@ -504,11 +723,11 @@ namespace TRID.StepDefinitions
                 var expectedVValue = Convert.ToDouble(TridVariable.VariancePrincipalAndInt);
                 var actualVValue = ProjActions.GetNumericValueFromString(UIActions.GetText(PiVarianceValue));
 
-                Assert.AreEqual(actualVValue, expectedVValue, "Variance does not match as expected");
+                Assert.AreEqual(expectedVValue, actualVValue, "Variance does not match as expected");
 
                 Console.WriteLine("===========================================================");
-                Console.WriteLine("ExpectedVarianceValue :" + actualVValue);
-                Console.WriteLine("ActualVarianceValue :" + expectedVValue);
+                Console.WriteLine("ExpectedVarianceValue :" + expectedVValue);
+                Console.WriteLine("ActualVarianceValue :" + actualVValue);
                 Console.WriteLine("============================================================");
             }
             catch (Exception e)
@@ -520,15 +739,15 @@ namespace TRID.StepDefinitions
             }
         }
 
-        [Then(@"updated/computed pmi value should display on Closing Disclosure")]
-        public void ThenUpdatedComputedPmiValueShouldDisplayOnClosingDisclosure()
+        [Then(@"updated/computed Mortgage Insurance value should display on Closing Disclosure")]
+        public void ThenUpdatedComputedMortgageInsuranceValueShouldDisplayOnClosingDisclosure()
         {
             try
             {
                 var actualCValue = Math.Round(
-                    ProjActions.GetNumericValueFromString(UIActions.GetText(PmiComputedValue)), 2);
+                    ProjActions.GetNumericValueFromString(UIActions.GetText(MiComputedValue)), 2);
 
-                var expectedCValue = Math.Round(Convert.ToDouble(TridVariable.Pmi), 2);
+                var expectedCValue = Math.Round(Convert.ToDouble(TridVariable.MortgageInsurance), 2);
                 Assert.AreEqual(expectedCValue, actualCValue, "Computed value does not match as expected");
 
                 Console.WriteLine("===========================================================");
@@ -536,20 +755,20 @@ namespace TRID.StepDefinitions
                 Console.WriteLine("ActualComputedValue :" + actualCValue);
                 Console.WriteLine("============================================================");
 
-                var actualDValue = ProjActions.GetNumericValueFromString(UIActions.GetText(PmiDisclosureValue));
+                var actualDValue = ProjActions.GetNumericValueFromString(UIActions.GetText(MiDisclosureValue));
 
                 Console.WriteLine("===========================================================");
                 Console.WriteLine("DisclosedValue :" + actualDValue);
                 Console.WriteLine("============================================================");
 
-                var expectedVValue = Convert.ToDouble(TridVariable.VariancePmi);
-                var actualVValue = ProjActions.GetNumericValueFromString(UIActions.GetText(PmiVarianceValue));
+                var expectedVValue = Convert.ToDouble(TridVariable.VarianceMortgageInsurance);
+                var actualVValue = ProjActions.GetNumericValueFromString(UIActions.GetText(MiVarianceValue));
 
-                Assert.AreEqual(actualVValue, expectedVValue, "Variance does not match as expected");
+                Assert.AreEqual(expectedVValue, actualVValue, "Variance does not match as expected");
 
                 Console.WriteLine("===========================================================");
-                Console.WriteLine("ExpectedVarianceValue :" + actualVValue);
-                Console.WriteLine("ActualVarianceValue :" + expectedVValue);
+                Console.WriteLine("ExpectedVarianceValue :" + expectedVValue);
+                Console.WriteLine("ActualVarianceValue :" + actualVValue);
                 Console.WriteLine("============================================================");
             }
             catch (Exception e)
@@ -557,58 +776,19 @@ namespace TRID.StepDefinitions
                 Console.WriteLine(e);
                 TestCaseStatus = false;
                 TestFailureCount += 1;
-                CardsFailure += "|| Pmi ||";
+                CardsFailure += "|| MortgageInsurance ||";
             }
         }
 
-        [Then(@"updated/computed Drop off years for PMI value should display on Closing Disclosure")]
-        public void ThenUpdatedComputedDropOffYearsForPmiValueShouldDisplayOnClosingDisclosure()
-         {
-            if (TridVariable.DropOffYearsForPmi.Equals("N/A"))
-                DropOffYearsForPmiNotApplicableValidation();
-            else
-                try
-                {
-                    var actualCValue = ProjActions.GetDatePart(DoyfpComputedValue);
-                    var expectedCValue = Convert.ToDateTime(ProjActions.GetDate(TridVariable.DropOffYearsForPmi));
-                    Assert.AreEqual(expectedCValue, actualCValue, "Computed value does not match as expected");
-
-                    Console.WriteLine("===========================================================");
-                    Console.WriteLine("ExpectedComputedValue :" + expectedCValue);
-                    Console.WriteLine("ActualComputedValue :" + actualCValue);
-                    Console.WriteLine("============================================================");
-
-                    var actualDValue = ProjActions.GetDatePart(DoyfpDisclosureValue);
-
-                    Console.WriteLine("===========================================================");
-                    Console.WriteLine("DisclosedValue :" + actualDValue);
-                    Console.WriteLine("============================================================");
-
-                    var expectedVValue = Convert.ToDouble(TridVariable.VarianceDropOffYearsForPmi);
-                    var actualVValue = ProjActions.GetNumericValueFromString(UIActions.GetText(DoyfpVarianceValue));
-
-                    Assert.AreEqual(actualVValue, expectedVValue, "Variance does not match as expected");
-
-                    Console.WriteLine("===========================================================");
-                    Console.WriteLine("ExpectedVarianceValue :" + actualVValue);
-                    Console.WriteLine("ActualVarianceValue :" + expectedVValue);
-                    Console.WriteLine("============================================================");
-                }
-                catch (Exception e)
-                {
-                    Console.WriteLine(e);
-                    TestCaseStatus = false;
-                    TestFailureCount += 1;
-                    CardsFailure += "|| DropOffYearsForPmi ||";
-                }
-        }
-
-        public static void DropOffYearsForPmiNotApplicableValidation()
+        [Then(@"updated/computed APR value should display on Closing Disclosure")]
+        public void ThenUpdatedComputedAprValueShouldDisplayOnClosingDisclosure()
         {
             try
             {
-                var actualCValue = UIActions.GetText(DoyfpComputedValue);
-                var expectedCValue = "(C): " + TridVariable.DropOffYearsForPmi;
+                var actualCValue = Math.Round(
+                    ProjActions.GetNumericValueFromString(UIActions.GetText(AprComputedValue)), 3);
+
+                var expectedCValue = Math.Round(Convert.ToDouble(TridVariable.Apr), 3);
                 Assert.AreEqual(expectedCValue, actualCValue, "Computed value does not match as expected");
 
                 Console.WriteLine("===========================================================");
@@ -616,20 +796,100 @@ namespace TRID.StepDefinitions
                 Console.WriteLine("ActualComputedValue :" + actualCValue);
                 Console.WriteLine("============================================================");
 
-                var actualDValue = UIActions.GetText(DoyfpDisclosureValue);
+                var actualDValue = ProjActions.GetNumericValueFromString(UIActions.GetText(AprDisclosureValue));
+
+                Console.WriteLine("===========================================================");
+                Console.WriteLine("DisclosedValue :" + actualDValue);
+                Console.WriteLine("============================================================");
+
+                var expectedVValue = Convert.ToDouble(TridVariable.VarianceApr);
+                var actualVValue = ProjActions.GetNumericValueFromString(UIActions.GetText(AprVarianceValue));
+
+                Assert.AreEqual(expectedVValue, actualVValue, "Variance does not match as expected");
+
+                Console.WriteLine("===========================================================");
+                Console.WriteLine("ExpectedVarianceValue :" + expectedVValue);
+                Console.WriteLine("ActualVarianceValue :" + actualVValue);
+                Console.WriteLine("============================================================");
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                TestCaseStatus = false;
+                TestFailureCount += 1;
+                CardsFailure += "|| APR ||";
+            }
+        }
+
+        [Then(@"updated/computed Scheduled PMI Termination Date value should display on Closing Disclosure")]
+        public void ThenUpdatedComputedScheduledPmiTerminationDateValueShouldDisplayOnClosingDisclosure()
+        {
+            if (TridVariable.ScheduledPmiTerminationDate.Equals("N/A"))
+                ScheduledPmiTerminationDateNotApplicableValidation();
+            else
+                try
+                {
+                    var actualCValue = ProjActions.GetDatePart(SptdComputedValue);
+                    var expectedCValue = Convert.ToDateTime(ProjActions.GetDate(TridVariable.ScheduledPmiTerminationDate));
+                    Assert.AreEqual(expectedCValue, actualCValue, "Computed value does not match as expected");
+
+                    Console.WriteLine("===========================================================");
+                    Console.WriteLine("ExpectedComputedValue :" + expectedCValue);
+                    Console.WriteLine("ActualComputedValue :" + actualCValue);
+                    Console.WriteLine("============================================================");
+
+                    var actualDValue = ProjActions.GetDatePart(SptdDisclosureValue);
+
+                    Console.WriteLine("===========================================================");
+                    Console.WriteLine("DisclosedValue :" + actualDValue);
+                    Console.WriteLine("============================================================");
+
+                    var expectedVValue = Convert.ToDouble(TridVariable.VarianceScheduledPmiTerminationDate);
+                    var actualVValue = ProjActions.GetNumericValueFromString(UIActions.GetText(SptdVarianceValue));
+
+                    Assert.AreEqual(expectedVValue, actualVValue, "Variance does not match as expected");
+
+                    Console.WriteLine("===========================================================");
+                    Console.WriteLine("ExpectedVarianceValue :" + expectedVValue);
+                    Console.WriteLine("ActualVarianceValue :" + actualVValue);
+                    Console.WriteLine("============================================================");
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e);
+                    TestCaseStatus = false;
+                    TestFailureCount += 1;
+                    CardsFailure += "|| ScheduledPMITerminationDate ||";
+                }
+        }
+
+        public static void ScheduledPmiTerminationDateNotApplicableValidation()
+        {
+            try
+            {
+                var actualCValue = UIActions.GetText(SptdComputedValue);
+                var expectedCValue = "(C): " + TridVariable.ScheduledPmiTerminationDate;
+                Assert.AreEqual(expectedCValue, actualCValue, "Computed value does not match as expected");
+
+                Console.WriteLine("===========================================================");
+                Console.WriteLine("ExpectedComputedValue :" + expectedCValue);
+                Console.WriteLine("ActualComputedValue :" + actualCValue);
+                Console.WriteLine("============================================================");
+
+                var actualDValue = UIActions.GetText(SptdDisclosureValue);
 
                 Console.WriteLine("===========================================================");
                 Console.WriteLine("DisclosedValue :" + actualDValue);
                 Console.WriteLine("============================================================");
 
                 var expectedVValue = "(V): N/A Days";
-                var actualVValue = UIActions.GetText(DoyfpVarianceValue);
+                var actualVValue = UIActions.GetText(SptdVarianceValue);
 
-                Assert.AreEqual(actualVValue, expectedVValue, "Variance does not match as expected");
+                Assert.AreEqual(expectedVValue, actualVValue, "Variance does not match as expected");
 
                 Console.WriteLine("===========================================================");
-                Console.WriteLine("ExpectedVarianceValue :" + actualVValue);
-                Console.WriteLine("ActualVarianceValue :" + expectedVValue);
+                Console.WriteLine("ExpectedVarianceValue :" + expectedVValue);
+                Console.WriteLine("ActualVarianceValue :" + actualVValue);
                 Console.WriteLine("============================================================");
             }
             catch (Exception e)
@@ -642,15 +902,15 @@ namespace TRID.StepDefinitions
         }
 
 
-        [Then(@"updated/computed Total Period Payment value should display on Closing Disclosure")]
-        public void ThenUpdatedComputedTotalPeriodPaymentValueShouldDisplayOnClosingDisclosure()
+        [Then(@"updated/computed Estimated Total Monthly Payment value should display on Closing Disclosure")]
+        public void ThenUpdatedComputedEstimatedTotalMonthlyPaymentValueShouldDisplayOnClosingDisclosure()
         {
             try
             {
                 var actualCValue = Math.Round(
-                    ProjActions.GetNumericValueFromString(UIActions.GetText(TppComputedValue)), 2);
+                    ProjActions.GetNumericValueFromString(UIActions.GetText(EtmpComputedValue)), 2);
 
-                var expectedCValue = Math.Round(Convert.ToDouble(TridVariable.TotalPeriodPayment), 2);
+                var expectedCValue = Math.Round(Convert.ToDouble(TridVariable.EstimatedTotalMonthlyPayment), 2);
                 Assert.AreEqual(expectedCValue, actualCValue, "Computed value does not match as expected");
 
                 Console.WriteLine("===========================================================");
@@ -658,20 +918,20 @@ namespace TRID.StepDefinitions
                 Console.WriteLine("ActualComputedValue :" + actualCValue);
                 Console.WriteLine("============================================================");
 
-                var actualDValue = ProjActions.GetNumericValueFromString(UIActions.GetText(TppDisclosureValue));
+                var actualDValue = ProjActions.GetNumericValueFromString(UIActions.GetText(EtmpDisclosureValue));
 
                 Console.WriteLine("===========================================================");
                 Console.WriteLine("DisclosedValue :" + actualDValue);
                 Console.WriteLine("============================================================");
 
-                var expectedVValue = Convert.ToDouble(TridVariable.VarianceTotalPeriodPayment);
-                var actualVValue = ProjActions.GetNumericValueFromString(UIActions.GetText(TppVarianceValue));
+                var expectedVValue = Convert.ToDouble(TridVariable.VarianceEstimatedTotalMonthlyPayment);
+                var actualVValue = ProjActions.GetNumericValueFromString(UIActions.GetText(EtmpVarianceValue));
 
-                Assert.AreEqual(actualVValue, expectedVValue, "Variance does not match as expected");
+                Assert.AreEqual(expectedVValue, actualVValue, "Variance does not match as expected");
 
                 Console.WriteLine("===========================================================");
-                Console.WriteLine("ExpectedVarianceValue :" + actualVValue);
-                Console.WriteLine("ActualVarianceValue :" + expectedVValue);
+                Console.WriteLine("ExpectedVarianceValue :" + expectedVValue);
+                Console.WriteLine("ActualVarianceValue :" + actualVValue);
                 Console.WriteLine("============================================================");
             }
             catch (Exception e)
@@ -679,7 +939,7 @@ namespace TRID.StepDefinitions
                 Console.WriteLine(e);
                 TestCaseStatus = false;
                 TestFailureCount += 1;
-                CardsFailure += "|| TotalPeriodPayment ||";
+                CardsFailure += "|| EstimatedTotalMonthlyPayment ||";
             }
         }
 
@@ -708,11 +968,11 @@ namespace TRID.StepDefinitions
                 var expectedVValue = Convert.ToDouble(TridVariable.VariancePrepaidCharges);
                 var actualVValue = ProjActions.GetNumericValueFromString(UIActions.GetText(PcVarianceValue));
 
-                Assert.AreEqual(actualVValue, expectedVValue, "Variance does not match as expected");
+                Assert.AreEqual(expectedVValue, actualVValue, "Variance does not match as expected");
 
                 Console.WriteLine("===========================================================");
-                Console.WriteLine("ExpectedVarianceValue :" + actualVValue);
-                Console.WriteLine("ActualVarianceValue :" + expectedVValue);
+                Console.WriteLine("ExpectedVarianceValue :" + expectedVValue);
+                Console.WriteLine("ActualVarianceValue :" + actualVValue);
                 Console.WriteLine("============================================================");
             }
             catch (Exception e)
@@ -749,11 +1009,11 @@ namespace TRID.StepDefinitions
                 var expectedVValue = Convert.ToDouble(TridVariable.VarianceAmountFinanced);
                 var actualVValue = ProjActions.GetNumericValueFromString(UIActions.GetText(AfVarianceValue));
 
-                Assert.AreEqual(actualVValue, expectedVValue, "Variance does not match as expected");
+                Assert.AreEqual(expectedVValue, actualVValue, "Variance does not match as expected");
 
                 Console.WriteLine("===========================================================");
-                Console.WriteLine("ExpectedVarianceValue :" + actualVValue);
-                Console.WriteLine("ActualVarianceValue :" + expectedVValue);
+                Console.WriteLine("ExpectedVarianceValue :" + expectedVValue);
+                Console.WriteLine("ActualVarianceValue :" + actualVValue);
                 Console.WriteLine("============================================================");
             }
             catch (Exception e)
@@ -765,15 +1025,15 @@ namespace TRID.StepDefinitions
             }
         }
 
-        [Then(@"updated/computed Escrow Property Costs over one year value should display on Closing Disclosure")]
-        public void ThenUpdatedComputedEscrowPropertyCostsOverOneYearValueShouldDisplayOnClosingDisclosure()
+        [Then(@"updated/computed Escrow Property Costs over one year 11 Months value should display on Closing Disclosure")]
+        public void ThenUpdatedComputedEscrowPropertyCostsOverOneYear11MonthsValueShouldDisplayOnClosingDisclosure()
         {
             try
             {
                 var actualCValue =
-                    Math.Round(ProjActions.GetNumericValueFromString(UIActions.GetText(EpcooyComputedValue)), 2);
+                    Math.Round(ProjActions.GetNumericValueFromString(UIActions.GetText(E1O11ComputedValue)), 2);
 
-                var expectedCValue = Math.Round(Convert.ToDouble(TridVariable.EscrowPropertyOverOneYear), 2);
+                var expectedCValue = Math.Round(Convert.ToDouble(TridVariable.EscrowPropertyOver1Year11Months), 2);
                 Assert.AreEqual(expectedCValue, actualCValue, "Computed value does not match as expected");
 
                 Console.WriteLine("===========================================================");
@@ -781,20 +1041,20 @@ namespace TRID.StepDefinitions
                 Console.WriteLine("ActualComputedValue :" + actualCValue);
                 Console.WriteLine("============================================================");
 
-                var actualDValue = ProjActions.GetNumericValueFromString(UIActions.GetText(EpcooyDisclosureValue));
+                var actualDValue = ProjActions.GetNumericValueFromString(UIActions.GetText(E1O11DisclosureValue));
 
                 Console.WriteLine("===========================================================");
                 Console.WriteLine("DisclosedValue :" + actualDValue);
                 Console.WriteLine("============================================================");
 
-                var expectedVValue = Convert.ToDouble(TridVariable.VarianceEscrowPropertyOverOneYear);
-                var actualVValue = ProjActions.GetNumericValueFromString(UIActions.GetText(EpcooyVarianceValue));
+                var expectedVValue = Convert.ToDouble(TridVariable.VarianceEscrowPropertyOver1Year11Months);
+                var actualVValue = ProjActions.GetNumericValueFromString(UIActions.GetText(E1O11VarianceValue));
 
-                Assert.AreEqual(actualVValue, expectedVValue, "Variance does not match as expected");
+                Assert.AreEqual(expectedVValue, actualVValue, "Variance does not match as expected");
 
                 Console.WriteLine("===========================================================");
-                Console.WriteLine("ExpectedVarianceValue :" + actualVValue);
-                Console.WriteLine("ActualVarianceValue :" + expectedVValue);
+                Console.WriteLine("ExpectedVarianceValue :" + expectedVValue);
+                Console.WriteLine("ActualVarianceValue :" + actualVValue);
                 Console.WriteLine("============================================================");
             }
             catch (Exception e)
@@ -802,20 +1062,19 @@ namespace TRID.StepDefinitions
                 Console.WriteLine(e);
                 TestCaseStatus = false;
                 TestFailureCount += 1;
-                CardsFailure += "|| EscrowPropertyOverOneYear ||";
+                CardsFailure += "|| EscrowPropertyOver1Year11Months ||";
             }
         }
 
-
-        [Then(@"updated/computed APR value should display on Closing Disclosure")]
-        public void ThenUpdatedComputedAprValueShouldDisplayOnClosingDisclosure()
+        [Then(@"updated/computed Escrow Property Costs over one year 12 Months value should display on Closing Disclosure")]
+        public void ThenUpdatedComputedEscrowPropertyCostsOverOneYear12MonthsValueShouldDisplayOnClosingDisclosure()
         {
             try
             {
-                var actualCValue = Math.Round(
-                    ProjActions.GetNumericValueFromString(UIActions.GetText(AprComputedValue)), 3);
+                var actualCValue =
+                    Math.Round(ProjActions.GetNumericValueFromString(UIActions.GetText(E1O12ComputedValue)), 2);
 
-                var expectedCValue = Math.Round(Convert.ToDouble(TridVariable.Apr), 3);
+                var expectedCValue = Math.Round(Convert.ToDouble(TridVariable.EscrowPropertyOver1Year12Months), 2);
                 Assert.AreEqual(expectedCValue, actualCValue, "Computed value does not match as expected");
 
                 Console.WriteLine("===========================================================");
@@ -823,20 +1082,20 @@ namespace TRID.StepDefinitions
                 Console.WriteLine("ActualComputedValue :" + actualCValue);
                 Console.WriteLine("============================================================");
 
-                var actualDValue = ProjActions.GetNumericValueFromString(UIActions.GetText(AprDisclosureValue));
+                var actualDValue = ProjActions.GetNumericValueFromString(UIActions.GetText(E1O12DisclosureValue));
 
                 Console.WriteLine("===========================================================");
                 Console.WriteLine("DisclosedValue :" + actualDValue);
                 Console.WriteLine("============================================================");
 
-                var expectedVValue = Convert.ToDouble(TridVariable.VarianceApr);
-                var actualVValue = ProjActions.GetNumericValueFromString(UIActions.GetText(AprVarianceValue));
+                var expectedVValue = Convert.ToDouble(TridVariable.VarianceEscrowPropertyOver1Year12Months);
+                var actualVValue = ProjActions.GetNumericValueFromString(UIActions.GetText(E1O12VarianceValue));
 
-                Assert.AreEqual(actualVValue, expectedVValue, "Variance does not match as expected");
+                Assert.AreEqual(expectedVValue, actualVValue, "Variance does not match as expected");
 
                 Console.WriteLine("===========================================================");
-                Console.WriteLine("ExpectedVarianceValue :" + actualVValue);
-                Console.WriteLine("ActualVarianceValue :" + expectedVValue);
+                Console.WriteLine("ExpectedVarianceValue :" + expectedVValue);
+                Console.WriteLine("ActualVarianceValue :" + actualVValue);
                 Console.WriteLine("============================================================");
             }
             catch (Exception e)
@@ -844,9 +1103,12 @@ namespace TRID.StepDefinitions
                 Console.WriteLine(e);
                 TestCaseStatus = false;
                 TestFailureCount += 1;
-                CardsFailure += "|| Apr ||";
+                CardsFailure += "|| EscrowPropertyOver1Year12Months ||";
             }
         }
+
+
+
 
         [Then(@"updated/computed Balloon Amount value should display on Closing Disclosure")]
         public void ThenUpdatedComputedBalloonAmountValueShouldDisplayOnClosingDisclosure()
@@ -873,11 +1135,11 @@ namespace TRID.StepDefinitions
                 var expectedVValue = Convert.ToDouble(TridVariable.VarianceBalloonAmount);
                 var actualVValue = ProjActions.GetNumericValueFromString(UIActions.GetText(BaVarianceValue));
 
-                Assert.AreEqual(actualVValue, expectedVValue, "Variance does not match as expected");
+                Assert.AreEqual(expectedVValue, actualVValue, "Variance does not match as expected");
 
                 Console.WriteLine("===========================================================");
-                Console.WriteLine("ExpectedVarianceValue :" + actualVValue);
-                Console.WriteLine("ActualVarianceValue :" + expectedVValue);
+                Console.WriteLine("ExpectedVarianceValue :" + expectedVValue);
+                Console.WriteLine("ActualVarianceValue :" + actualVValue);
                 Console.WriteLine("============================================================");
             }
             catch (Exception e)
@@ -914,11 +1176,11 @@ namespace TRID.StepDefinitions
                 var expectedVValue = Convert.ToDouble(TridVariable.VarianceTotalOfPayments);
                 var actualVValue = ProjActions.GetNumericValueFromString(UIActions.GetText(TopVarianceValue));
 
-                Assert.AreEqual(actualVValue, expectedVValue, "Variance does not match as expected");
+                Assert.AreEqual(expectedVValue, actualVValue, "Variance does not match as expected");
 
                 Console.WriteLine("===========================================================");
-                Console.WriteLine("ExpectedVarianceValue :" + actualVValue);
-                Console.WriteLine("ActualVarianceValue :" + expectedVValue);
+                Console.WriteLine("ExpectedVarianceValue :" + expectedVValue);
+                Console.WriteLine("ActualVarianceValue :" + actualVValue);
                 Console.WriteLine("============================================================");
             }
             catch (Exception e)
@@ -955,11 +1217,11 @@ namespace TRID.StepDefinitions
                 var expectedVValue = Convert.ToDouble(TridVariable.VarianceFinanceCharge);
                 var actualVValue = ProjActions.GetNumericValueFromString(UIActions.GetText(FcVarianceValue));
 
-                Assert.AreEqual(actualVValue, expectedVValue, "Variance does not match as expected");
+                Assert.AreEqual(expectedVValue, actualVValue, "Variance does not match as expected");
 
                 Console.WriteLine("===========================================================");
-                Console.WriteLine("ExpectedVarianceValue :" + actualVValue);
-                Console.WriteLine("ActualVarianceValue :" + expectedVValue);
+                Console.WriteLine("ExpectedVarianceValue :" + expectedVValue);
+                Console.WriteLine("ActualVarianceValue :" + actualVValue);
                 Console.WriteLine("============================================================");
             }
             catch (Exception e)
@@ -996,11 +1258,11 @@ namespace TRID.StepDefinitions
                 var expectedVValue = Convert.ToDouble(TridVariable.VarianceTip);
                 var actualVValue = ProjActions.GetNumericValueFromString(UIActions.GetText(TipVarianceValue));
 
-                Assert.AreEqual(actualVValue, expectedVValue, "Variance does not match as expected");
+                Assert.AreEqual(expectedVValue, actualVValue, "Variance does not match as expected");
 
                 Console.WriteLine("===========================================================");
-                Console.WriteLine("ExpectedVarianceValue :" + actualVValue);
-                Console.WriteLine("ActualVarianceValue :" + expectedVValue);
+                Console.WriteLine("ExpectedVarianceValue :" + expectedVValue);
+                Console.WriteLine("ActualVarianceValue :" + actualVValue);
                 Console.WriteLine("============================================================");
             }
             catch (Exception e)
@@ -1008,7 +1270,7 @@ namespace TRID.StepDefinitions
                 Console.WriteLine(e);
                 TestCaseStatus = false;
                 TestFailureCount += 1;
-                CardsFailure += "|| Tip ||";
+                CardsFailure += "|| TIP ||";
             }
         }
 
@@ -1037,11 +1299,11 @@ namespace TRID.StepDefinitions
                 var expectedVValue = Convert.ToDouble(TridVariable.VarianceInitialEscrowPayment);
                 var actualVValue = ProjActions.GetNumericValueFromString(UIActions.GetText(IepVarianceValue));
 
-                Assert.AreEqual(actualVValue, expectedVValue, "Variance does not match as expected");
+                Assert.AreEqual(expectedVValue, actualVValue, "Variance does not match as expected");
 
                 Console.WriteLine("===========================================================");
-                Console.WriteLine("ExpectedVarianceValue :" + actualVValue);
-                Console.WriteLine("ActualVarianceValue :" + expectedVValue);
+                Console.WriteLine("ExpectedVarianceValue :" + expectedVValue);
+                Console.WriteLine("ActualVarianceValue :" + actualVValue);
                 Console.WriteLine("============================================================");
             }
             catch (Exception e)
@@ -1060,7 +1322,7 @@ namespace TRID.StepDefinitions
             try
             {
                 var actualCValue =
-                    Math.Round(ProjActions.GetNumericValueFromString(UIActions.GetText(NepcooyComputedValue)), 2);
+                    Math.Round(ProjActions.GetNumericValueFromString(UIActions.GetText(Neo1YComputedValue)), 2);
 
                 var expectedCValue = Math.Round(Convert.ToDouble(TridVariable.NonEscrowPropertyOverOneYear), 2);
                 Assert.AreEqual(expectedCValue, actualCValue, "Computed value does not match as expected");
@@ -1070,20 +1332,20 @@ namespace TRID.StepDefinitions
                 Console.WriteLine("ActualComputedValue :" + actualCValue);
                 Console.WriteLine("============================================================");
 
-                var actualDValue = ProjActions.GetNumericValueFromString(UIActions.GetText(NepcooyDisclosureValue));
+                var actualDValue = ProjActions.GetNumericValueFromString(UIActions.GetText(Neo1YDisclosureValue));
 
                 Console.WriteLine("===========================================================");
                 Console.WriteLine("DisclosedValue :" + actualDValue);
                 Console.WriteLine("============================================================");
 
                 var expectedVValue = Convert.ToDouble(TridVariable.VarianceNonEscrowPropertyOverOneYear);
-                var actualVValue = ProjActions.GetNumericValueFromString(UIActions.GetText(NepcooyVarianceValue));
+                var actualVValue = ProjActions.GetNumericValueFromString(UIActions.GetText(Neo1YVarianceValue));
 
                 Assert.AreEqual(actualVValue, expectedVValue, "Variance does not match as expected");
 
                 Console.WriteLine("===========================================================");
-                Console.WriteLine("ExpectedVarianceValue :" + actualVValue);
-                Console.WriteLine("ActualVarianceValue :" + expectedVValue);
+                Console.WriteLine("ExpectedVarianceValue :" + expectedVValue);
+                Console.WriteLine("ActualVarianceValue :" + actualVValue);
                 Console.WriteLine("============================================================");
             }
             catch (Exception e)
@@ -1095,15 +1357,15 @@ namespace TRID.StepDefinitions
             }
         }
 
-        [Then(@"updated/computed Period Escrow Payment value should display on Closing Disclosure")]
-        public void ThenUpdatedComputedPeriodEscrowPaymentValueShouldDisplayOnClosingDisclosure()
+        [Then(@"updated/computed Estimated Escrow value should display on Closing Disclosure")]
+        public void ThenUpdatedComputedEstimatedEscrowValueShouldDisplayOnClosingDisclosure()
         {
             try
             {
                 var actualCValue = Math.Round(
-                    ProjActions.GetNumericValueFromString(UIActions.GetText(PepComputedValue)), 2);
+                    ProjActions.GetNumericValueFromString(UIActions.GetText(EeComputedValue)), 2);
 
-                var expectedCValue = Math.Round(Convert.ToDouble(TridVariable.PeriodEscrowPayment), 2);
+                var expectedCValue = Math.Round(Convert.ToDouble(TridVariable.EstimatedEscrow), 2);
                 Assert.AreEqual(expectedCValue, actualCValue, "Computed value does not match as expected");
 
                 Console.WriteLine("===========================================================");
@@ -1111,20 +1373,20 @@ namespace TRID.StepDefinitions
                 Console.WriteLine("ActualComputedValue :" + actualCValue);
                 Console.WriteLine("============================================================");
 
-                var actualDValue = ProjActions.GetNumericValueFromString(UIActions.GetText(PepDisclosureValue));
+                var actualDValue = ProjActions.GetNumericValueFromString(UIActions.GetText(EeDisclosureValue));
 
                 Console.WriteLine("===========================================================");
                 Console.WriteLine("DisclosedValue :" + actualDValue);
                 Console.WriteLine("============================================================");
 
-                var expectedVValue = Convert.ToDouble(TridVariable.VariancePeriodEscrowPayment);
-                var actualVValue = ProjActions.GetNumericValueFromString(UIActions.GetText(PepVarianceValue));
+                var expectedVValue = Convert.ToDouble(TridVariable.VarianceEstimatedEscrow);
+                var actualVValue = ProjActions.GetNumericValueFromString(UIActions.GetText(EeVarianceValue));
 
                 Assert.AreEqual(actualVValue, expectedVValue, "Variance does not match as expected");
 
                 Console.WriteLine("===========================================================");
-                Console.WriteLine("ExpectedVarianceValue :" + actualVValue);
-                Console.WriteLine("ActualVarianceValue :" + expectedVValue);
+                Console.WriteLine("ExpectedVarianceValue :" + expectedVValue);
+                Console.WriteLine("ActualVarianceValue :" + actualVValue);
                 Console.WriteLine("============================================================");
             }
             catch (Exception e)
@@ -1132,9 +1394,51 @@ namespace TRID.StepDefinitions
                 Console.WriteLine(e);
                 TestCaseStatus = false;
                 TestFailureCount += 1;
-                CardsFailure += "|| PeriodEscrowPayment ||";
+                CardsFailure += "|| EstimatedEscrow ||";
             }
         }
+
+        [Then(@"updated/computed Estimated Taxes, Insurance & Assessments value should display on Closing Disclosure")]
+        public void ThenUpdatedComputedEstimatedTaxesInsuranceAssessmentsValueShouldDisplayOnClosingDisclosure()
+        {
+            try
+            {
+                var actualCValue = Math.Round(
+                    ProjActions.GetNumericValueFromString(UIActions.GetText(EtiaComputedValue)), 2);
+
+                var expectedCValue = Math.Round(Convert.ToDouble(TridVariable.EstimatedTaxesInsuranceAssessments), 2);
+                Assert.AreEqual(expectedCValue, actualCValue, "Computed value does not match as expected");
+
+                Console.WriteLine("===========================================================");
+                Console.WriteLine("ExpectedComputedValue :" + expectedCValue);
+                Console.WriteLine("ActualComputedValue :" + actualCValue);
+                Console.WriteLine("============================================================");
+
+                var actualDValue = ProjActions.GetNumericValueFromString(UIActions.GetText(EtiaDisclosureValue));
+
+                Console.WriteLine("===========================================================");
+                Console.WriteLine("DisclosedValue :" + actualDValue);
+                Console.WriteLine("============================================================");
+
+                var expectedVValue = Convert.ToDouble(TridVariable.VarianceEstimatedTaxesInsuranceAssessments);
+                var actualVValue = ProjActions.GetNumericValueFromString(UIActions.GetText(EtiaVarianceValue));
+
+                Assert.AreEqual(actualVValue, expectedVValue, "Variance does not match as expected");
+
+                Console.WriteLine("===========================================================");
+                Console.WriteLine("ExpectedVarianceValue :" + expectedVValue);
+                Console.WriteLine("ActualVarianceValue :" + actualVValue);
+                Console.WriteLine("============================================================");
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                TestCaseStatus = false;
+                TestFailureCount += 1;
+                CardsFailure += "|| EstimatedTaxesInsuranceAssessments ||";
+            }
+        }
+
 
         [Then(@"updated/computed in 5 Years value should display on Loan Estimate")]
         public void ThenUpdatedComputedIn5YearsValueShouldDisplayOnLoanEstimate()
@@ -1163,8 +1467,8 @@ namespace TRID.StepDefinitions
                 Assert.AreEqual(actualVValue, expectedVValue, "Variance does not match as expected");
 
                 Console.WriteLine("===========================================================");
-                Console.WriteLine("ExpectedVarianceValue :" + actualVValue);
-                Console.WriteLine("ActualVarianceValue :" + expectedVValue);
+                Console.WriteLine("ExpectedVarianceValue :" + expectedVValue);
+                Console.WriteLine("ActualVarianceValue :" + actualVValue);
                 Console.WriteLine("============================================================");
             }
             catch (Exception e)
@@ -1203,8 +1507,8 @@ namespace TRID.StepDefinitions
                 Assert.AreEqual(actualVValue, expectedVValue, "Variance does not match as expected");
 
                 Console.WriteLine("===========================================================");
-                Console.WriteLine("ExpectedVarianceValue :" + actualVValue);
-                Console.WriteLine("ActualVarianceValue :" + expectedVValue);
+                Console.WriteLine("ExpectedVarianceValue :" + expectedVValue);
+                Console.WriteLine("ActualVarianceValue :" + actualVValue);
                 Console.WriteLine("============================================================");
             }
             catch (Exception e)

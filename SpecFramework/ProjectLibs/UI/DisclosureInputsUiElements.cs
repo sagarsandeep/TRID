@@ -28,15 +28,12 @@ namespace TRID.ProjectLibs.UI
         public static By DisclosedTip = By.XPath("//div[@title='Dscl Total Interest Percentage']//input");
 
         //Escrow
-        public static By EscrowPropertyOverOneYear = By.XPath("//div[@title='Escrow Property Over One Year']//input");
-        public static By NonEscrowPropertyOverOneYear = By.XPath("//div[@title='Non Escrow Property Over One Year']//input");
-        public static By InitialEscrowPayment = By.XPath("//div[@title='Initial Escrow Payment']//input");
-        //public static By MonthlyEscrowPayment = By.XPath("//div[@title='Monthly Escrow Payment']//input");
-        public static By DisclosedEscrowPropertyOverOneYear = By.XPath("//div[@title='Dscl Escrow Property Over One Year']//input");
-        public static By DisclosedNonEscrowPropertyOverOneYear = By.XPath("//div[@title='Dscl Non Escrow Property Over One Year']//input");
+        public static By DisclosedEscrowPropertyOverOneYear11Months = By.XPath("//div[@title='Dscl 11mo Escrow Property Cost Over One Year']//input");
+        public static By DisclosedEscrowPropertyOverOneYear12Months = By.XPath("//div[@title='Dscl 12mo Escrow Property Cost Over One Year']//input");
+        public static By DisclosedNonEscrowPropertyOverOneYear = By.XPath("//div[@title='Dscl Non Escrow Property Cost Over One Year']//input");
+        public static By DisclosedEstimatedTaxesInsurnaceAssessments = By.XPath("//div[@title='Dscl Estimated Taxes Insurance Assessments']//input");
         public static By DisclosedInitialEscrowPayment = By.XPath("//div[@title='Dscl Initial Escrow Payment']//input");
-        public static By DisclosedMonthlyEscrowPayment = By.XPath("//div[@title='Dscl Monthly Escrow Payment']//input");
-        public static By DisclosedEstimatedEscrow = By.XPath("//div[@title=' Dscl Estimated Escrow']//input");
+        public static By DisclosedPeriodEscrowPayment = By.XPath("//div[@title='Dscl Period Escrow Payment']//input");
 
 
         //Prepaid Charges

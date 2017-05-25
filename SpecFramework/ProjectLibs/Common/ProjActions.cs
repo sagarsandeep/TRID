@@ -70,7 +70,7 @@ namespace TRID.ProjectLibs.Common
 
         public static double GetNumericValueFromString(string inputString)
         {
-            var result = Regex.Replace(inputString, @"[^0-9\.]+", "");
+            var result = Regex.Replace(inputString, @"[^0-9\.-]+", "");
             return Convert.ToDouble(result);
         }
 
@@ -115,7 +115,7 @@ namespace TRID.ProjectLibs.Common
                     UIActions.GiveInput(AddPmiRate, firstAddPmiRate);
 
                     UIActions.Click(AddButton);
-                    Thread.Sleep(5000);
+                    Thread.Sleep(1000);
 
                     var secondAddNumber = TridVariable.SecondAddNumber;
                     UIActions.Clear(AddNumber);
@@ -134,7 +134,7 @@ namespace TRID.ProjectLibs.Common
                     UIActions.GiveInput(AddPmiRate, secondAddPmiRate);
 
                     UIActions.Click(AddButton);
-                    Thread.Sleep(5000);
+                    Thread.Sleep(1000);
 
                     var thirdAddNumber = TridVariable.ThirdAddNumber;
                     UIActions.Clear(AddNumber);
@@ -153,13 +153,11 @@ namespace TRID.ProjectLibs.Common
                     UIActions.GiveInput(AddPmiRate, thirdAddPmiRate);
 
                     UIActions.Click(AddButton);
-                    Thread.Sleep(5000);
+                    Thread.Sleep(1000);
                 }
                 else
                 {
-                    Thread.Sleep(1000);
                     PmiRatesGridValidation();
-                    Thread.Sleep(3000);
                 }
             }
         }
@@ -171,11 +169,10 @@ namespace TRID.ProjectLibs.Common
                 var pmiRatesGridRowsCount = UIActions.Count(PmiRatesGridRowsCount);
                 var numberOfPaymentArray = new[]
                 {
-                    TridVariable.FirstAddBeginPeriod, TridVariable.SecondAddBeginPeriod,
+                    TridVariable.FirstAddBeginPeriod,
+                    TridVariable.SecondAddBeginPeriod,
                     TridVariable.ThirdAddBeginPeriod
                 };
-
-                Thread.Sleep(3000);
                 Assert.AreEqual(3, pmiRatesGridRowsCount, "PMI Rates Grid entries are not as expected");
 
                 for (var row = 1; row <= pmiRatesGridRowsCount; row++)
@@ -183,10 +180,8 @@ namespace TRID.ProjectLibs.Common
                     var pmiRatesBeginPeriod =
                         UIActions.GetText(
                             By.XPath("//section[@id='MortgageGrid']//tbody/tr[" + row + "]/td[2]//span"));
-                    Thread.Sleep(3000);
                     Assert.True(numberOfPaymentArray.Contains(pmiRatesBeginPeriod),
                         "PMI Rates Begin Period values are not as expected");
-                    Thread.Sleep(3000);
                 }
             }
         }
