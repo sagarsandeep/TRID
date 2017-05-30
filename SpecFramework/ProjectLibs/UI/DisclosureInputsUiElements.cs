@@ -20,7 +20,6 @@ namespace TRID.ProjectLibs.UI
         public static By DisclosedFinalBalloonPayment = By.XPath("//div[@title='Dscl Final Balloon Payment']//input");
         public static By DisclosedTotalOfPayment = By.XPath("//div[@title='Dscl Total Of Payment']//input");
 
-
         //Loan Estimate
         public static By DisclosedIn5Years = By.XPath("//div[@title='Dscl In 5 Years']//input");
         public static By DisclosedIn5YearsPrincipal = By.XPath("//div[@title='Dscl In 5 Years Principal']//input");
@@ -34,7 +33,6 @@ namespace TRID.ProjectLibs.UI
         public static By DisclosedEstimatedTaxesInsurnaceAssessments = By.XPath("//div[@title='Dscl Estimated Taxes Insurance Assessments']//input");
         public static By DisclosedInitialEscrowPayment = By.XPath("//div[@title='Dscl Initial Escrow Payment']//input");
         public static By DisclosedPeriodEscrowPayment = By.XPath("//div[@title='Dscl Period Escrow Payment']//input");
-
 
         //Prepaid Charges
         public static By DisclosedFinanceCharge = By.XPath("//div[@title='Dscl Finance Charge']//input");

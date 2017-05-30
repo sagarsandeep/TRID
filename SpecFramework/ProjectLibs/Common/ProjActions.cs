@@ -13,61 +13,6 @@ namespace TRID.ProjectLibs.Common
     class ProjActions : TridHeaderUiElements
     {
 
-        public static void AddPrepaidChargesDefaultValues()
-        {
-            var fhaVaUsdaUpfrontPmiFree = TridVariable.FhaVaUsdaUpfrontPmiFree;
-            UIActions.Clear(FhaVaUsdaUpfrontPmiFree);
-            UIActions.GiveInput(FhaVaUsdaUpfrontPmiFree, fhaVaUsdaUpfrontPmiFree);
-
-            var floodFee = TridVariable.FloodFee;
-            UIActions.Clear(FloodFee);
-            UIActions.GiveInput(FloodFee, floodFee);
-
-            var inspectionFee = TridVariable.InspectionFee;
-            UIActions.Clear(InspectionFee);
-            UIActions.GiveInput(InspectionFee, inspectionFee);
-
-            var loanOriginationFee = TridVariable.LoanOriginationFee;
-            UIActions.Clear(LoanOriginationFee);
-            UIActions.GiveInput(LoanOriginationFee, loanOriginationFee);
-
-            var otherFees = TridVariable.OtherFees;
-            UIActions.Clear(OtherFees);
-            UIActions.GiveInput(OtherFees, otherFees);
-
-            var prepaidDailyInterest = TridVariable.PrepaidDailyInterest;
-            UIActions.Clear(PrepaidDailyInterest);
-            UIActions.GiveInput(PrepaidDailyInterest, prepaidDailyInterest);
-
-            var taxServicing = TridVariable.TaxServicing;
-            UIActions.Clear(TaxServicing);
-            UIActions.GiveInput(TaxServicing, taxServicing);
-
-            var titleClosingFee = TridVariable.TitleClosingFee;
-            UIActions.Clear(TitleClosingFee);
-            UIActions.GiveInput(TitleClosingFee, titleClosingFee);
-
-            var titleClosingProtectionLetter = TridVariable.TitleClosingProtectionLetter;
-            UIActions.Clear(TitleClosingProtectionLetter);
-            UIActions.GiveInput(TitleClosingProtectionLetter, titleClosingProtectionLetter);
-
-            var titleCourierFee = TridVariable.TitleCourierFee;
-            UIActions.Clear(TitleCourierFee);
-            UIActions.GiveInput(TitleCourierFee, titleCourierFee);
-
-            var titleDrawFee = TridVariable.TitleDrawFee;
-            UIActions.Clear(TitleDrawFee);
-            UIActions.GiveInput(TitleDrawFee, titleDrawFee);
-
-            var titleWireFee = TridVariable.TitleWireFee;
-            UIActions.Clear(TitleWireFee);
-            UIActions.GiveInput(TitleWireFee, titleWireFee);
-
-            var underWriting = TridVariable.UnderWriting;
-            UIActions.Clear(UnderWriting);
-            UIActions.GiveInput(UnderWriting, underWriting);       
-        }
-
         public static double GetNumericValueFromString(string inputString)
         {
             var result = Regex.Replace(inputString, @"[^0-9\.-]+", "");
@@ -208,12 +153,12 @@ namespace TRID.ProjectLibs.Common
             var prepaidChargeGridRowCount = UIActions.Count(PrepaidChargeGridCount);
             Assert.AreEqual(1, prepaidChargeGridRowCount, "Prepaid Charge Grid entries are not as expected");
 
-            var prepaidCustomName = TridVariable.PrepaidCustomName;
+            var prepaidCustomName = TridVariable.PrepaidCustomFieldsCustomName;
             var actualPrepaidCustomName = UIActions.GetText(PrepaidChargeGridCustomName);
             Assert.AreEqual(prepaidCustomName, actualPrepaidCustomName, "Prepaid Charge Custom Name is not as expected");
 
 
-            var prepaidCustomValue = TridVariable.PrepaidCustomValue;
+            var prepaidCustomValue = TridVariable.PrepaidCustomFieldsCustomValue;
             var actualPrepaidCustomValue = UIActions.GetText(PrepaidChargeGridCustomValue);
             Assert.AreEqual(prepaidCustomValue, actualPrepaidCustomValue,
                 "Prepaid Charge Custom Value is not as expected");

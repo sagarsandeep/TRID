@@ -231,8 +231,8 @@ namespace TRID.ProjectLibs.UI
         //public static By EscrowInstallmentInfoGridInstallmentDate = By.XPath("//section[@id='EscrowInsuranceGrid']//tbody/tr/td[2]//span");
         //public static By EscrowInstallmentInfoGridInstallmentAmount = By.XPath("//section[@id='EscrowInsuranceGrid']//tbody/tr/td[3]//span");
         //public static By EscrowTaxCalculationsInputsNumber = By.XPath("//div[@id='EscrowTaxCalculationsGridInputs']//div[@title='Number']//input");
-        //public static By EscrowTaxCalculationsInputsDate = By.XPath("//div[@title='Date']//input");
-        //public static By EscrowTaxCalculationsInputsTaxInstallmentAmount = By.XPath("//div[@title='Tax Installment Amount']//input");
+        //public static By TaxCostDate = By.XPath("//div[@title='Date']//input");
+        //public static By TaxCostAmount = By.XPath("//div[@title='Tax Installment Amount']//input");
         //public static By EscrowTaxCalculationsInputsAddButton = By.XPath("//div[@id='EscrowTaxCalculationsGridInputs']//div[4]//button");
         //public static By EscrowTaxInfoGridRowCount = By.XPath("//section[@id='EscrowTaxGrid']//tbody/tr");
         //public static By EscrowTaxInfoGridNumberFR = By.XPath("//section[@id='EscrowTaxGrid']//tbody/tr[1]/td[1]//span");

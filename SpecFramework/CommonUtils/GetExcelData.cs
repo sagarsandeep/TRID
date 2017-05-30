@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using System.Configuration;
-using System.Linq;
 using System.Runtime.InteropServices;
-using Newtonsoft.Json;
-using NUnit.Framework.Interfaces;
-using TRID.ProjectLibs;
 using TRID.ProjectLibs.Common;
 using Excel = Microsoft.Office.Interop.Excel;
 
@@ -25,7 +19,7 @@ namespace TRID.CommonUtils
             Excel.Worksheet xWorksheet = xWorkbook.Sheets[sheetName];
             var xRange = xWorksheet.UsedRange;
             var cellValue = "";
-            var columnNumber = 0;
+            int columnNumber;
             var colCount = xRange.Columns.Count;
             for (columnNumber = 1; columnNumber <= colCount; columnNumber++)
                 if (xRange.Cells[rowNumber, columnNumber] != null && xRange.Cells[rowNumber, columnNumber].Value2 != null)

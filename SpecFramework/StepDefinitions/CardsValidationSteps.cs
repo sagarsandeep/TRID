@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Configuration;
-using System.Security.Cryptography.X509Certificates;
 using System.Threading;
 using NUnit.Framework;
 using TechTalk.SpecFlow;
@@ -89,10 +88,6 @@ namespace TRID.StepDefinitions
         {
             UIActions.Click(LoanInputsLink);
             UIActions.WebDriverWait(LoanDetailsText, 60);
-
-            UIActions.ScrollDown();
-            Thread.Sleep(2000);
-            UIActions.ScrollUp();
         }
 
         [When(@"user navigate to Amortization Page")]
@@ -101,8 +96,6 @@ namespace TRID.StepDefinitions
             UIActions.Click(AmortizationLink);
             UIActions.WebDriverWait(AmortizationPaymentScheduleText, 60);
         }
-
-
 
         [When(@"user navigate to Closing Disclosure Page")]
         public void GivenUserNavigateToClosingClosingDisclosurePage()
@@ -198,57 +191,41 @@ namespace TRID.StepDefinitions
         [When(@"Enter Loan detail input values for computation")]
         public void WhenEnterLoanDetailInputValuesForComputationforClosingDisclosurepage()
         {
-            var frequencyOfPmtValue = TridVariable.FrequencyOfPmtValue;
             UIActions.Clear(FreqOfPmtValue);
-            UIActions.GiveInput(FreqOfPmtValue, frequencyOfPmtValue);
+            UIActions.GiveInput(FreqOfPmtValue, TridVariable.FrequencyOfPmtValue);
 
-            var loanTermValue = TridVariable.LoanTermValue;
             UIActions.Clear(LoanTermValue);
-            UIActions.GiveInput(LoanTermValue, loanTermValue);
+            UIActions.GiveInput(LoanTermValue, TridVariable.LoanTermValue);
 
-
-            var numberOfPayments = TridVariable.NumberOfPayments;
             UIActions.Clear(NumberOfPayments);
-            UIActions.GiveInput(NumberOfPayments, numberOfPayments);
+            UIActions.GiveInput(NumberOfPayments, TridVariable.NumberOfPayments);
 
-            var baseLoanAmount = TridVariable.BaseLoanAmount;
             UIActions.Clear(BaseLoanAmount);
-            UIActions.GiveInput(BaseLoanAmount, baseLoanAmount);
+            UIActions.GiveInput(BaseLoanAmount, TridVariable.BaseLoanAmount);
 
-            var upfrontLoanFactor = TridVariable.UpfrontLoanFactor;
             UIActions.Clear(UpfrontLoanFactor);
-            UIActions.GiveInput(UpfrontLoanFactor, upfrontLoanFactor);
+            UIActions.GiveInput(UpfrontLoanFactor, TridVariable.UpfrontLoanFactor);
 
-            var rateOfInterest = TridVariable.RateOfInterest;
             UIActions.Clear(RateOfInterest);
-            UIActions.GiveInput(RateOfInterest, rateOfInterest);
+            UIActions.GiveInput(RateOfInterest, TridVariable.RateOfInterest);
 
-            var upfrontMip = TridVariable.UpfrontMip;
             UIActions.Clear(UpfrontMip);
-            UIActions.GiveInput(UpfrontMip, upfrontMip);
+            UIActions.GiveInput(UpfrontMip, TridVariable.UpfrontMip);
 
             LoanDetailsRadioButtonVariable();
             UIActions.Click(UpfrontMipFinanced);
 
-            var dateOfLoan = ProjActions.GetDate(TridVariable.DateOfLoan);
             UIActions.Clear(DateOfLoan);
-            UIActions.GiveInput(DateOfLoan, dateOfLoan);
+            UIActions.GiveInput(DateOfLoan, ProjActions.GetDate(TridVariable.DateOfLoan));
 
-            var dateOfInterestBegins = ProjActions.GetDate(TridVariable.DateInterestBeginToAccrue);
             UIActions.Clear(DateOfInterestBegins);
-            UIActions.GiveInput(DateOfInterestBegins, dateOfInterestBegins);
+            UIActions.GiveInput(DateOfInterestBegins, ProjActions.GetDate(TridVariable.DateInterestBeginToAccrue));
 
-            var dateOfFirstPayment = ProjActions.GetDate(TridVariable.DateOfFirstPayment);
             UIActions.Clear(DateOfFirstPayment);
-            UIActions.GiveInput(DateOfFirstPayment, dateOfFirstPayment);
+            UIActions.GiveInput(DateOfFirstPayment, ProjActions.GetDate(TridVariable.DateOfFirstPayment));
 
-            var periodPayment = TridVariable.PeriodPayment;
             UIActions.Clear(PeriodPayment);
-            UIActions.GiveInput(PeriodPayment, periodPayment);
-
-            var loanCostsForDisclosure = TridVariable.LoanCosts;
-            UIActions.Clear(LoanCostsForDisclosure);
-            UIActions.GiveInput(LoanCostsForDisclosure, loanCostsForDisclosure);
+            UIActions.GiveInput(PeriodPayment, TridVariable.PeriodPayment);
 
             UIActions.Click(OddDaysClick);
             UIActions.Click(OddDaysSelect);
@@ -256,73 +233,75 @@ namespace TRID.StepDefinitions
 
         [When(@"user enters all input values for Prepaid Charges")]
         public void WhenUserEntersAllInputValuesForPrepaidCharges()
-        {
-            var fhaVaUsdaUpfrontPmiFree = TridVariable.FhaVaUsdaUpfrontPmiFree;
-            UIActions.Clear(FhaVaUsdaUpfrontPmiFree);
-            UIActions.GiveInput(FhaVaUsdaUpfrontPmiFree, fhaVaUsdaUpfrontPmiFree);
+        {       
+            UIActions.Clear(OriginationChargePoints);
+            UIActions.GiveInput(OriginationChargePoints, TridVariable.OriginationChargePoints);
 
-            var floodFee = TridVariable.FloodFee;
-            UIActions.Clear(FloodFee);
-            UIActions.GiveInput(FloodFee, floodFee);
+            UIActions.Clear(OriginationChargeOther1);
+            UIActions.GiveInput(OriginationChargeOther1, TridVariable.OriginationChargeOther1);
 
-            var inspectionFee = TridVariable.InspectionFee;
-            UIActions.Clear(InspectionFee);
-            UIActions.GiveInput(InspectionFee, inspectionFee);
+            UIActions.Clear(OriginationChargeOther2);
+            UIActions.GiveInput(OriginationChargeOther2, TridVariable.OriginationChargeOther2);
 
-            var loanOriginationFee = TridVariable.LoanOriginationFee;
-            UIActions.Clear(LoanOriginationFee);
-            UIActions.GiveInput(LoanOriginationFee, loanOriginationFee);
+            UIActions.Clear(Flood);
+            UIActions.GiveInput(Flood, TridVariable.Flood);
 
-            var otherFees = TridVariable.OtherFees;
-            UIActions.Clear(OtherFees);
-            UIActions.GiveInput(OtherFees, otherFees);
+            UIActions.Clear(FHAUSDA);
+            UIActions.GiveInput(FHAUSDA, TridVariable.FHAUSDA);
 
-            var prepaidDailyInterest = TridVariable.PrepaidDailyInterest;
-            UIActions.Clear(PrepaidDailyInterest);
-            UIActions.GiveInput(PrepaidDailyInterest, prepaidDailyInterest);
-
-            var taxServicing = TridVariable.TaxServicing;
             UIActions.Clear(TaxServicing);
-            UIActions.GiveInput(TaxServicing, taxServicing);
+            UIActions.GiveInput(TaxServicing, TridVariable.TaxServicing);
 
-            var titleClosingFee = TridVariable.TitleClosingFee;
-            UIActions.Clear(TitleClosingFee);
-            UIActions.GiveInput(TitleClosingFee, titleClosingFee);
+            UIActions.Clear(UpfrontPMIVAGuarantee);
+            UIActions.GiveInput(UpfrontPMIVAGuarantee, TridVariable.UpfrontPMIVAGuarantee);
 
-            var titleClosingProtectionLetter = TridVariable.TitleClosingProtectionLetter;
+            UIActions.Clear(SectionBOther1);
+            UIActions.GiveInput(SectionBOther1, TridVariable.SectionBOther1);
+
+            UIActions.Clear(SectionBOther2);
+            UIActions.GiveInput(SectionBOther2, TridVariable.SectionBOther2);
+
             UIActions.Clear(TitleClosingProtectionLetter);
-            UIActions.GiveInput(TitleClosingProtectionLetter, titleClosingProtectionLetter);
+            UIActions.GiveInput(TitleClosingProtectionLetter, TridVariable.TitleClosingProtectionLetter);
 
-            var titleCourierFee = TridVariable.TitleCourierFee;
-            UIActions.Clear(TitleCourierFee);
-            UIActions.GiveInput(TitleCourierFee, titleCourierFee);
+            UIActions.Clear(TitleClosingSettlement);
+            UIActions.GiveInput(TitleClosingSettlement, TridVariable.TitleClosingSettlement);
 
-            var titleDrawFee = TridVariable.TitleDrawFee;
-            UIActions.Clear(TitleDrawFee);
-            UIActions.GiveInput(TitleDrawFee, titleDrawFee);
+            UIActions.Clear(TitleCourierOverNight);
+            UIActions.GiveInput(TitleCourierOverNight, TridVariable.TitleCourierOverNight);
 
-            var titleWireFee = TridVariable.TitleWireFee;
-            UIActions.Clear(TitleWireFee);
-            UIActions.GiveInput(TitleWireFee, titleWireFee);
+            UIActions.Clear(TitleWire);
+            UIActions.GiveInput(TitleWire, TridVariable.TitleWire);
 
-            var underWriting = TridVariable.UnderWriting;
-            UIActions.Clear(UnderWriting);
-            UIActions.GiveInput(UnderWriting, underWriting);
+            UIActions.Clear(TitleOther1);
+            UIActions.GiveInput(TitleOther1, TridVariable.TitleOther1);
+       
+            UIActions.Clear(TitleOther2);
+            UIActions.GiveInput(TitleOther2, TridVariable.TitleOther2);
+ 
+            UIActions.Clear(SectionCOther1);
+            UIActions.GiveInput(SectionCOther1, TridVariable.SectionCOther1);
 
-            var totalMiInSectionFPrepaids = TridVariable.TotalMiInSectionFPrepaids;
+            UIActions.Clear(SectionCOther2);
+            UIActions.GiveInput(SectionCOther2, TridVariable.SectionCOther2);
+
+            UIActions.Clear(PrepaidDailyInterest);
+            UIActions.GiveInput(PrepaidDailyInterest, TridVariable.PrepaidDailyInterest);
+
             UIActions.Clear(TotalMiInSectionFPrepaids);
-            UIActions.GiveInput(TotalMiInSectionFPrepaids, totalMiInSectionFPrepaids);
+            UIActions.GiveInput(TotalMiInSectionFPrepaids, TridVariable.TotalMiInSectionFPrepaids);
 
-            var totalMiInSectionGEscrow = TridVariable.TotalMiInSectionGEscrow;
             UIActions.Clear(TotalMiInSectionGEscrow);
-            UIActions.GiveInput(TotalMiInSectionGEscrow, totalMiInSectionGEscrow);
+            UIActions.GiveInput(TotalMiInSectionGEscrow, TridVariable.TotalMiInSectionGEscrow);
+
+            UIActions.Clear(LoanCostsSumABC);
+            UIActions.GiveInput(LoanCostsSumABC, TridVariable.LoanCostsSumABC);
         }
 
         [When(@"user enters pmi rate values")]
         public void WhenUserEntersPmiRateValues()
         {
             ProjActions.AddPmiRateValues();
-            Thread.Sleep(3000);
             ProjActions.PmiRatesGridValidation();
         }
 
@@ -448,10 +427,6 @@ namespace TRID.StepDefinitions
         {
             UIActions.Click(ClosingDisclosureLink);
             UIActions.WebDriverWait(AprLabelText, 60);
-
-            UIActions.ScrollDown();
-            Thread.Sleep(2000);
-            UIActions.ScrollUp();
         }
 
         [When(@"user navigates to Loan Estimate Cards Page")]
@@ -464,7 +439,6 @@ namespace TRID.StepDefinitions
         [When(@"user selects value for Is Ins Escrowed")]
         public void WhenUserSelectsValueForIsInsEscrowed()
         {
-            UIActions.ScrollUp();
             EscrowRadioButtonVariable();
             UIActions.WebDriverWait(IsInsEscrowed, 60);
             UIActions.Click(IsInsEscrowed);
@@ -502,37 +476,62 @@ namespace TRID.StepDefinitions
 
             UIActions.Clear(CushionMonthsForTax);
             UIActions.GiveInput(CushionMonthsForTax, TridVariable.CushionMonthsForTax);
+
+            UIActions.Clear(CushionMonthsForOther1);
+            UIActions.GiveInput(CushionMonthsForOther1, TridVariable.CushionMonthsForOther1);
+
+            UIActions.Clear(CushionMonthsForOther2);
+            UIActions.GiveInput(CushionMonthsForOther2, TridVariable.CushionMonthsForOther2);
         }
+
+        [When(@"user enters input value for Date Of First Monthly PMI Disbursement")]
+        public void WhenUserEntersInputValueForDateOfFirstMonthlyPmiDisbursement()
+        {
+            if (TridVariable.DateOfFirstMonthlyPmiDisbursement!="")
+            {
+                var dateOfFirstMonthlyPmiDisbursement =
+                    DateTime.FromOADate(Convert.ToDouble(TridVariable.DateOfFirstMonthlyPmiDisbursement))
+                        .ToString("MM/dd/yyyy");
+                UIActions.Clear(DateOfFirstMonthlyPmiDisbursement);
+                UIActions.GiveInput(DateOfFirstMonthlyPmiDisbursement, dateOfFirstMonthlyPmiDisbursement);
+            }
+            else
+            {
+                UIActions.Clear(DateOfFirstMonthlyPmiDisbursement);
+            }
+        }
+
 
         [When(@"user enters values for Escrow insurance Inputs")]
         public void WhenUserEntersValuesForEscrowInsuranceInputs()
         {
-            if (TridVariable.EscrowInstallmentInputsNumber!="0")
+            if (TridVariable.InsuranceCostNumber!="0")
             {
-                Assert.AreNotEqual(1, EscrowInstallmentInfoGridRowCount, "Escrow Installment Info Grid is not empty");
+                var insuranceGridRowCount = UIActions.Count(InsuranceGridRowCount);
+                Assert.AreNotEqual(1, insuranceGridRowCount, "Escrow Installment Info Grid is not empty");
 
-                UIActions.Clear(EscrowInstallmentInputsNumber);
-                UIActions.GiveInput(EscrowInstallmentInputsNumber, TridVariable.EscrowInstallmentInputsNumber);
+                UIActions.Clear(InsuranceCostNumber);
+                UIActions.GiveInput(InsuranceCostNumber, TridVariable.InsuranceCostNumber);
 
                 var dateForEscrowInsurance =
-                    DateTime.FromOADate(Convert.ToDouble(TridVariable.DateForEscrowInsurance)).ToString("MM/dd/yyyy");
-                UIActions.Clear(DateForEscrowInsurance);
-                UIActions.GiveInput(DateForEscrowInsurance, dateForEscrowInsurance);
+                    DateTime.FromOADate(Convert.ToDouble(TridVariable.DateInsurancePaidDisbursed)).ToString("MM/dd/yyyy");
+                UIActions.Clear(DateInsurancePaidDisbursed);
+                UIActions.GiveInput(DateInsurancePaidDisbursed, dateForEscrowInsurance);
                 Thread.Sleep(500);
 
-                UIActions.Clear(InsuranceInstallmentAmount);
-                UIActions.GiveInput(InsuranceInstallmentAmount, TridVariable.InsuranceInstallmentAmount);
+                UIActions.Clear(InsuranceAmount);
+                UIActions.GiveInput(InsuranceAmount, TridVariable.InsuranceAmount);
 
-                UIActions.Click(EscrowInstallmentInputsAddButton);
-                Thread.Sleep(1000);
+                UIActions.Click(InsuranceCostAddButton);
+                Thread.Sleep(500);
 
-                Assert.AreEqual(TridVariable.EscrowInstallmentInputsNumber,
-                    UIActions.GetText(EscrowInstallmentInfoGridNumber),
+                Assert.AreEqual(TridVariable.InsuranceCostNumber,
+                    UIActions.GetText(InsuranceGridNumber),
                     "Escrow Installment Info Number value does not matches as expected");
-                Assert.AreEqual(dateForEscrowInsurance, UIActions.GetText(EscrowInstallmentInfoGridInstallmentDate),
+                Assert.AreEqual(dateForEscrowInsurance, UIActions.GetText(InsuranceGridDate),
                     "Escrow Installment Info Date value does not matches as expected");
-                Assert.AreEqual(TridVariable.InsuranceInstallmentAmount,
-                    UIActions.GetText(EscrowInstallmentInfoGridInstallmentAmount),
+                Assert.AreEqual(TridVariable.InsuranceAmount,
+                    UIActions.GetText(InsuranceGridAmount),
                     "Escrow Installment Info Amount value does not matches as expected");
             }
         }
@@ -540,65 +539,65 @@ namespace TRID.StepDefinitions
         [When(@"user enters values for Escrow Tax Calculations Inputs")]
         public void WhenUserEntersValuesForEscrowTaxCalculationsInputs()
         {
-            if (TridVariable.EscrowTaxCalculationsInputsNumberFR!="0")
+            if (TridVariable.TaxCostNumberFR!="0")
             {
-                Assert.AreNotEqual(1, EscrowTaxInfoGridRowCount, "Escrow Installment Info Grid is not empty");
+                var taxGridRowCount = UIActions.Count(TaxGridRowCount);
+                Assert.AreNotEqual(1, taxGridRowCount, "Escrow Installment Info Grid is not empty");
 
-                UIActions.Clear(EscrowTaxCalculationsInputsNumber);
-                UIActions.GiveInput(EscrowTaxCalculationsInputsNumber, TridVariable.EscrowTaxCalculationsInputsNumberFR);
+                UIActions.Clear(TaxCostNumber);
+                UIActions.GiveInput(TaxCostNumber, TridVariable.TaxCostNumberFR);
 
                 var escrowTaxCalculationsInputsDateFR =
-                    DateTime.FromOADate(Convert.ToDouble(TridVariable.EscrowTaxCalculationsInputsDateFR))
+                    DateTime.FromOADate(Convert.ToDouble(TridVariable.TaxCostDateFR))
                         .ToString("MM/dd/yyyy");
-                UIActions.Clear(EscrowTaxCalculationsInputsDate);
-                UIActions.GiveInput(EscrowTaxCalculationsInputsDate, escrowTaxCalculationsInputsDateFR);
+                UIActions.Clear(TaxCostDate);
+                UIActions.GiveInput(TaxCostDate, escrowTaxCalculationsInputsDateFR);
                 Thread.Sleep(500);
 
-                UIActions.Clear(EscrowTaxCalculationsInputsTaxInstallmentAmount);
-                UIActions.GiveInput(EscrowTaxCalculationsInputsTaxInstallmentAmount,
-                    TridVariable.EscrowTaxCalculationsInputsTaxInstallmentAmountFR);
+                UIActions.Clear(TaxCostAmount);
+                UIActions.GiveInput(TaxCostAmount,
+                    TridVariable.TaxCostInstallmentAmountFR);
 
-                UIActions.Click(EscrowTaxCalculationsInputsAddButton);
-                Thread.Sleep(1000);
+                UIActions.Click(TaxCostAddButton);
+                Thread.Sleep(500);
 
-                Assert.AreEqual(TridVariable.EscrowTaxCalculationsInputsNumberFR,
-                    UIActions.GetText(EscrowTaxInfoGridNumberFR),
+                Assert.AreEqual(TridVariable.TaxCostNumberFR,
+                    UIActions.GetText(TaxGridNumberFR),
                     "Escrow Installment Info Number value does not matches as expected");
-                Assert.AreEqual(escrowTaxCalculationsInputsDateFR, UIActions.GetText(EscrowTaxInfoGridInstallmentDateFR),
+                Assert.AreEqual(escrowTaxCalculationsInputsDateFR, UIActions.GetText(TaxGridDateFR),
                     "Escrow Installment Info Number value does not matches as expected");
-                Assert.AreEqual(TridVariable.EscrowTaxCalculationsInputsTaxInstallmentAmountFR,
-                    UIActions.GetText(EscrowTaxInfoGridTaxInstallmentAmountFR),
+                Assert.AreEqual(TridVariable.TaxCostInstallmentAmountFR,
+                    UIActions.GetText(TaxGridAmountFR),
                     "Escrow Installment Info Number value does not matches as expected");
             }
 
-            if (TridVariable.EscrowTaxCalculationsInputsNumberSR!="0")
+            if (TridVariable.TaxCostNumberSR!="0")
             {
 
-                UIActions.Clear(EscrowTaxCalculationsInputsNumber);
-                UIActions.GiveInput(EscrowTaxCalculationsInputsNumber, TridVariable.EscrowTaxCalculationsInputsNumberSR);
-
+                UIActions.Clear(TaxCostNumber);
+                UIActions.GiveInput(TaxCostNumber, TridVariable.TaxCostNumberSR);
 
                 var escrowTaxCalculationsInputsDateSR =
-                    DateTime.FromOADate(Convert.ToDouble(TridVariable.EscrowTaxCalculationsInputsDateSR))
+                    DateTime.FromOADate(Convert.ToDouble(TridVariable.TaxCostDateSR))
                         .ToString("MM/dd/yyyy");
-                UIActions.Clear(EscrowTaxCalculationsInputsDate);
-                UIActions.GiveInput(EscrowTaxCalculationsInputsDate, escrowTaxCalculationsInputsDateSR);
+                UIActions.Clear(TaxCostDate);
+                UIActions.GiveInput(TaxCostDate, escrowTaxCalculationsInputsDateSR);
                 Thread.Sleep(500);
 
-                UIActions.Clear(EscrowTaxCalculationsInputsTaxInstallmentAmount);
-                UIActions.GiveInput(EscrowTaxCalculationsInputsTaxInstallmentAmount,
-                    TridVariable.EscrowTaxCalculationsInputsTaxInstallmentAmountSR);
+                UIActions.Clear(TaxCostAmount);
+                UIActions.GiveInput(TaxCostAmount,
+                    TridVariable.TaxCostInstallmentAmountSR);
 
-                UIActions.Click(EscrowTaxCalculationsInputsAddButton);
-                Thread.Sleep(1000);
+                UIActions.Click(TaxCostAddButton);
+                Thread.Sleep(500);
 
-                Assert.AreEqual(TridVariable.EscrowTaxCalculationsInputsNumberSR,
-                    UIActions.GetText(EscrowTaxInfoGridNumberSR),
+                Assert.AreEqual(TridVariable.TaxCostNumberSR,
+                    UIActions.GetText(TaxGridNumberSR),
                     "Escrow Installment Info Number value does not matches as expected");
-                Assert.AreEqual(escrowTaxCalculationsInputsDateSR, UIActions.GetText(EscrowTaxInfoGridInstallmentDateSR),
+                Assert.AreEqual(escrowTaxCalculationsInputsDateSR, UIActions.GetText(TaxGridDateSR),
                     "Escrow Installment Info Number value does not matches as expected");
-                Assert.AreEqual(TridVariable.EscrowTaxCalculationsInputsTaxInstallmentAmountSR,
-                    UIActions.GetText(EscrowTaxInfoGridTaxInstallmentAmountSR),
+                Assert.AreEqual(TridVariable.TaxCostInstallmentAmountSR,
+                    UIActions.GetText(TaxGridAmountSR),
                     "Escrow Installment Info Number value does not matches as expected");
             }
         }
@@ -607,32 +606,33 @@ namespace TRID.StepDefinitions
         [When(@"user enters values for Escrow Other1 Calculations Inputs")]
         public void WhenUserEntersValuesForEscrowOther1CalculationsInputs()
         {
-            if (TridVariable.EscrowOther1CalculationsInputsNumber!="0")
+            if (TridVariable.OtherCost1Number!="0")
             {
-                Assert.AreNotEqual(1, EscrowOther1InfoGridRowCount, "Escrow Installment Info Grid is not empty");
+                var otherCost1GridRowCount = UIActions.Count(OtherCost1GridRowCount);
+                Assert.AreNotEqual(1, otherCost1GridRowCount, "Escrow Installment Info Grid is not empty");
 
-                UIActions.Clear(EscrowOther1InputsNumber);
-                UIActions.GiveInput(EscrowOther1InputsNumber, TridVariable.EscrowOther1CalculationsInputsNumber);
+                UIActions.Clear(OtherCost1Number);
+                UIActions.GiveInput(OtherCost1Number, TridVariable.OtherCost1Number);
 
                 var dateForEscrowOther1 =
-                    DateTime.FromOADate(Convert.ToDouble(TridVariable.EscrowOther1CalculationsInputsDate)).ToString("MM/dd/yyyy");
-                UIActions.Clear(DateForEscrowOther1);
-                UIActions.GiveInput(DateForEscrowOther1, dateForEscrowOther1);
+                    DateTime.FromOADate(Convert.ToDouble(TridVariable.OtherCost1Date)).ToString("MM/dd/yyyy");
+                UIActions.Clear(OtherCost1Date);
+                UIActions.GiveInput(OtherCost1Date, dateForEscrowOther1);
                 Thread.Sleep(500);
 
-                UIActions.Clear(Other1InstallmentAmount);
-                UIActions.GiveInput(Other1InstallmentAmount, TridVariable.EscrowOther1CalculationsInputsAmount);
+                UIActions.Clear(OtherCost1Amount);
+                UIActions.GiveInput(OtherCost1Amount, TridVariable.OtherCost1Amount);
 
-                UIActions.Click(EscrowOther1InputsAddButton);
-                Thread.Sleep(1000);
+                UIActions.Click(OtherCost1AddButton);
+                Thread.Sleep(500);
 
-                Assert.AreEqual(TridVariable.EscrowOther1CalculationsInputsNumber,
-                    UIActions.GetText(EscrowOther1InfoGridNumber),
+                Assert.AreEqual(TridVariable.OtherCost1Number,
+                    UIActions.GetText(OtherCost1GridNumber),
                     "Escrow Other1 Info Number value does not matches as expected");
-                Assert.AreEqual(dateForEscrowOther1, UIActions.GetText(EscrowOther1InfoGridInstallmentDate),
+                Assert.AreEqual(dateForEscrowOther1, UIActions.GetText(OtherCost1GridDate),
                     "Escrow Other1 Info Date value does not matches as expected");
-                Assert.AreEqual(TridVariable.EscrowOther1CalculationsInputsAmount,
-                    UIActions.GetText(EscrowOther1InfoGridInstallmentAmount),
+                Assert.AreEqual(TridVariable.OtherCost1Amount,
+                    UIActions.GetText(OtherCost1GridAmount),
                     "Escrow Other1 Info Amount value does not matches as expected");
             }
         }
@@ -640,33 +640,34 @@ namespace TRID.StepDefinitions
         [When(@"user enters values for Escrow Other2 Calculations Inputs")]
         public void WhenUserEntersValuesForEscrowOther2CalculationsInputs()
         {
-            if (TridVariable.EscrowOther2CalculationsInputsNumber!="0")
+            if (TridVariable.OtherCost2Number!="0")
             {
-                Assert.AreNotEqual(1, EscrowOther2InfoGridRowCount, "Escrow Installment Info Grid is not empty");
+                var otherCost2GridRowCount = UIActions.Count(OtherCost2GridRowCount);
+                Assert.AreNotEqual(1, otherCost2GridRowCount, "Escrow Installment Info Grid is not empty");
 
-                UIActions.Clear(EscrowOther2InputsNumber);
-                UIActions.GiveInput(EscrowOther2InputsNumber, TridVariable.EscrowOther2CalculationsInputsNumber);
+                UIActions.Clear(OtherCost2Number);
+                UIActions.GiveInput(OtherCost2Number, TridVariable.OtherCost2Number);
 
                 var dateForEscrowOther2 =
-                    DateTime.FromOADate(Convert.ToDouble(TridVariable.EscrowOther2CalculationsInputsDate))
+                    DateTime.FromOADate(Convert.ToDouble(TridVariable.OtherCost2Date))
                         .ToString("MM/dd/yyyy");
-                UIActions.Clear(DateForEscrowOther2);
-                UIActions.GiveInput(DateForEscrowOther2, dateForEscrowOther2);
+                UIActions.Clear(OtherCost2Date);
+                UIActions.GiveInput(OtherCost2Date, dateForEscrowOther2);
                 Thread.Sleep(500);
 
-                UIActions.Clear(Other2InstallmentAmount);
-                UIActions.GiveInput(Other2InstallmentAmount, TridVariable.EscrowOther2CalculationsInputsAmount);
+                UIActions.Clear(OtherCost2Amount);
+                UIActions.GiveInput(OtherCost2Amount, TridVariable.OtherCost2Amount);
 
-                UIActions.Click(EscrowOther2InputsAddButton);
-                Thread.Sleep(1000);
+                UIActions.Click(OtherCost2AddButton);
+                Thread.Sleep(500);
 
-                Assert.AreEqual(TridVariable.EscrowOther2CalculationsInputsNumber,
-                    UIActions.GetText(EscrowOther2InfoGridNumber),
+                Assert.AreEqual(TridVariable.OtherCost2Number,
+                    UIActions.GetText(OtherCost2GridNumber),
                     "Escrow Other2 Info Number value does not matches as expected");
-                Assert.AreEqual(dateForEscrowOther2, UIActions.GetText(EscrowOther2InfoGridInstallmentDate),
+                Assert.AreEqual(dateForEscrowOther2, UIActions.GetText(OtherCost2GridDate),
                     "Escrow Other2 Info Date value does not matches as expected");
-                Assert.AreEqual(TridVariable.EscrowOther2CalculationsInputsAmount,
-                    UIActions.GetText(EscrowOther2InfoGridInstallmentAmount),
+                Assert.AreEqual(TridVariable.OtherCost2Amount,
+                    UIActions.GetText(OtherCost2GridAmount),
                     "Escrow Other2 Info Amount value does not matches as expected");
             }
         }
@@ -715,10 +716,16 @@ namespace TRID.StepDefinitions
                 Console.WriteLine("============================================================");
 
                 var actualDValue = ProjActions.GetNumericValueFromString(UIActions.GetText(PiDisclosureValue));
+                var expectedDValue = Math.Round(Convert.ToDouble(TridVariable.MonthlyPrincipalAndInterest), 2);
+
+                Assert.AreEqual(expectedDValue,actualDValue, "Disclosed value does not match as expected");
 
                 Console.WriteLine("===========================================================");
-                Console.WriteLine("DisclosedValue :" + actualDValue);
+                Console.WriteLine("ExpectedDisclosedValue :" + expectedDValue);
+                Console.WriteLine("ActualDisclosedValue :" + actualDValue);
                 Console.WriteLine("============================================================");
+
+                Assert.AreEqual(actualDValue, actualCValue, "Disclosed value does not match with computed value");
 
                 var expectedVValue = Convert.ToDouble(TridVariable.VariancePrincipalAndInt);
                 var actualVValue = ProjActions.GetNumericValueFromString(UIActions.GetText(PiVarianceValue));
@@ -756,10 +763,16 @@ namespace TRID.StepDefinitions
                 Console.WriteLine("============================================================");
 
                 var actualDValue = ProjActions.GetNumericValueFromString(UIActions.GetText(MiDisclosureValue));
+                var expectedDValue = Math.Round(Convert.ToDouble(TridVariable.MonthlyPmi), 2);
+
+                Assert.AreEqual(expectedDValue, actualDValue, "Disclosed value does not match as expected");
 
                 Console.WriteLine("===========================================================");
-                Console.WriteLine("DisclosedValue :" + actualDValue);
+                Console.WriteLine("ExpectedDisclosedValue :" + expectedDValue);
+                Console.WriteLine("ActualDisclosedValue :" + actualDValue);
                 Console.WriteLine("============================================================");
+
+                Assert.AreEqual(actualDValue, actualCValue, "Disclosed value does not match with computed value");
 
                 var expectedVValue = Convert.ToDouble(TridVariable.VarianceMortgageInsurance);
                 var actualVValue = ProjActions.GetNumericValueFromString(UIActions.GetText(MiVarianceValue));
@@ -797,10 +810,16 @@ namespace TRID.StepDefinitions
                 Console.WriteLine("============================================================");
 
                 var actualDValue = ProjActions.GetNumericValueFromString(UIActions.GetText(AprDisclosureValue));
+                var expectedDValue = Math.Round(Convert.ToDouble(TridVariable.DisclosedApr), 3);
+
+                Assert.AreEqual(expectedDValue, actualDValue, "Disclosed value does not match as expected");
 
                 Console.WriteLine("===========================================================");
-                Console.WriteLine("DisclosedValue :" + actualDValue);
+                Console.WriteLine("ExpectedDisclosedValue :" + expectedDValue);
+                Console.WriteLine("ActualDisclosedValue :" + actualDValue);
                 Console.WriteLine("============================================================");
+
+                Assert.AreEqual(actualDValue, actualCValue, "Disclosed value does not match with computed value");
 
                 var expectedVValue = Convert.ToDouble(TridVariable.VarianceApr);
                 var actualVValue = ProjActions.GetNumericValueFromString(UIActions.GetText(AprVarianceValue));
@@ -821,6 +840,27 @@ namespace TRID.StepDefinitions
             }
         }
 
+        [Then(@"APRWIN info value should display on Closing Disclosure")]
+        public void ThenAprwinInfoValueShouldDisplayOnClosingDisclosure()
+        {
+            try
+            {
+                var expectedInfoValue = Math.Round(Convert.ToDouble(TridVariable.AprWin), 4);
+                var actualInfoValue = Math.Round(
+                        ProjActions.GetNumericValueFromString(UIActions.GetText(AprWinInfoValue)), 4);
+
+                Assert.AreEqual(expectedInfoValue, actualInfoValue, "Apr Info value does not match as expected");
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                TestCaseStatus = false;
+                TestFailureCount += 1;
+                CardsFailure += "|| APRWIN ||";
+            }      
+        }
+
+
         [Then(@"updated/computed Scheduled PMI Termination Date value should display on Closing Disclosure")]
         public void ThenUpdatedComputedScheduledPmiTerminationDateValueShouldDisplayOnClosingDisclosure()
         {
@@ -839,10 +879,16 @@ namespace TRID.StepDefinitions
                     Console.WriteLine("============================================================");
 
                     var actualDValue = ProjActions.GetDatePart(SptdDisclosureValue);
+                    var expectedDValue = Convert.ToDateTime(ProjActions.GetDate(TridVariable.PmiTerminationDate));
+
+                    Assert.AreEqual(expectedDValue, actualDValue, "Disclosed value does not match as expected");
 
                     Console.WriteLine("===========================================================");
-                    Console.WriteLine("DisclosedValue :" + actualDValue);
+                    Console.WriteLine("ExpectedDisclosedValue :" + expectedDValue);
+                    Console.WriteLine("ActualDisclosedValue :" + actualDValue);
                     Console.WriteLine("============================================================");
+
+                    Assert.AreEqual(actualDValue, actualCValue, "Disclosed value does not match with computed value");
 
                     var expectedVValue = Convert.ToDouble(TridVariable.VarianceScheduledPmiTerminationDate);
                     var actualVValue = ProjActions.GetNumericValueFromString(UIActions.GetText(SptdVarianceValue));
@@ -877,10 +923,16 @@ namespace TRID.StepDefinitions
                 Console.WriteLine("============================================================");
 
                 var actualDValue = UIActions.GetText(SptdDisclosureValue);
+                var expectedDValue = Math.Round(Convert.ToDouble(TridVariable.PmiTerminationDate), 2);
+
+                Assert.AreEqual(expectedDValue, actualDValue, "Disclosed value does not match as expected");
 
                 Console.WriteLine("===========================================================");
-                Console.WriteLine("DisclosedValue :" + actualDValue);
+                Console.WriteLine("ExpectedDisclosedValue :" + expectedDValue);
+                Console.WriteLine("ActualDisclosedValue :" + actualDValue);
                 Console.WriteLine("============================================================");
+
+                Assert.AreEqual(actualDValue, actualCValue, "Disclosed value does not match with computed value");
 
                 var expectedVValue = "(V): N/A Days";
                 var actualVValue = UIActions.GetText(SptdVarianceValue);
@@ -919,10 +971,16 @@ namespace TRID.StepDefinitions
                 Console.WriteLine("============================================================");
 
                 var actualDValue = ProjActions.GetNumericValueFromString(UIActions.GetText(EtmpDisclosureValue));
+                var expectedDValue = Math.Round(Convert.ToDouble(TridVariable.TotalPeiodicPayment), 2);
+
+                Assert.AreEqual(expectedDValue, actualDValue, "Disclosed value does not match as expected");
 
                 Console.WriteLine("===========================================================");
-                Console.WriteLine("DisclosedValue :" + actualDValue);
+                Console.WriteLine("ExpectedDisclosedValue :" + expectedDValue);
+                Console.WriteLine("ActualDisclosedValue :" + actualDValue);
                 Console.WriteLine("============================================================");
+
+                Assert.AreEqual(actualDValue, actualCValue, "Disclosed value does not match with computed value");
 
                 var expectedVValue = Convert.ToDouble(TridVariable.VarianceEstimatedTotalMonthlyPayment);
                 var actualVValue = ProjActions.GetNumericValueFromString(UIActions.GetText(EtmpVarianceValue));
@@ -960,10 +1018,16 @@ namespace TRID.StepDefinitions
                 Console.WriteLine("============================================================");
 
                 var actualDValue = ProjActions.GetNumericValueFromString(UIActions.GetText(PcDisclosureValue));
+                var expectedDValue = Math.Round(Convert.ToDouble(TridVariable.DisclosedPrepaidCharge), 2);
+
+                Assert.AreEqual(expectedDValue, actualDValue, "Disclosed value does not match as expected");
 
                 Console.WriteLine("===========================================================");
-                Console.WriteLine("DisclosedValue :" + actualDValue);
+                Console.WriteLine("ExpectedDisclosedValue :" + expectedDValue);
+                Console.WriteLine("ActualDisclosedValue :" + actualDValue);
                 Console.WriteLine("============================================================");
+
+                Assert.AreEqual(actualDValue, actualCValue, "Disclosed value does not match with computed value");
 
                 var expectedVValue = Convert.ToDouble(TridVariable.VariancePrepaidCharges);
                 var actualVValue = ProjActions.GetNumericValueFromString(UIActions.GetText(PcVarianceValue));
@@ -1001,10 +1065,16 @@ namespace TRID.StepDefinitions
                 Console.WriteLine("============================================================");
 
                 var actualDValue = ProjActions.GetNumericValueFromString(UIActions.GetText(AfDisclosureValue));
+                var expectedDValue = Math.Round(Convert.ToDouble(TridVariable.DisclosedAmountFinanced), 2);
+
+                Assert.AreEqual(expectedDValue, actualDValue, "Disclosed value does not match as expected");
 
                 Console.WriteLine("===========================================================");
-                Console.WriteLine("DisclosedValue :" + actualDValue);
+                Console.WriteLine("ExpectedDisclosedValue :" + expectedDValue);
+                Console.WriteLine("ActualDisclosedValue :" + actualDValue);
                 Console.WriteLine("============================================================");
+
+                Assert.AreEqual(actualDValue, actualCValue, "Disclosed value does not match with computed value");
 
                 var expectedVValue = Convert.ToDouble(TridVariable.VarianceAmountFinanced);
                 var actualVValue = ProjActions.GetNumericValueFromString(UIActions.GetText(AfVarianceValue));
@@ -1042,10 +1112,16 @@ namespace TRID.StepDefinitions
                 Console.WriteLine("============================================================");
 
                 var actualDValue = ProjActions.GetNumericValueFromString(UIActions.GetText(E1O11DisclosureValue));
+                var expectedDValue = Math.Round(Convert.ToDouble(TridVariable.DisclosedEscrowPropertyOverOneYear11Months), 2);
+
+                Assert.AreEqual(expectedDValue, actualDValue, "Disclosed value does not match as expected");
 
                 Console.WriteLine("===========================================================");
-                Console.WriteLine("DisclosedValue :" + actualDValue);
+                Console.WriteLine("ExpectedDisclosedValue :" + expectedDValue);
+                Console.WriteLine("ActualDisclosedValue :" + actualDValue);
                 Console.WriteLine("============================================================");
+
+                Assert.AreEqual(actualDValue, actualCValue, "Disclosed value does not match with computed value");
 
                 var expectedVValue = Convert.ToDouble(TridVariable.VarianceEscrowPropertyOver1Year11Months);
                 var actualVValue = ProjActions.GetNumericValueFromString(UIActions.GetText(E1O11VarianceValue));
@@ -1083,10 +1159,16 @@ namespace TRID.StepDefinitions
                 Console.WriteLine("============================================================");
 
                 var actualDValue = ProjActions.GetNumericValueFromString(UIActions.GetText(E1O12DisclosureValue));
+                var expectedDValue = Math.Round(Convert.ToDouble(TridVariable.DisclosedEscrowPropertyOverOneYear12Months), 2);
+
+                Assert.AreEqual(expectedDValue, actualDValue, "Disclosed value does not match as expected");
 
                 Console.WriteLine("===========================================================");
-                Console.WriteLine("DisclosedValue :" + actualDValue);
+                Console.WriteLine("ExpectedDisclosedValue :" + expectedDValue);
+                Console.WriteLine("ActualDisclosedValue :" + actualDValue);
                 Console.WriteLine("============================================================");
+
+                Assert.AreEqual(actualDValue, actualCValue, "Disclosed value does not match with computed value");
 
                 var expectedVValue = Convert.ToDouble(TridVariable.VarianceEscrowPropertyOver1Year12Months);
                 var actualVValue = ProjActions.GetNumericValueFromString(UIActions.GetText(E1O12VarianceValue));
@@ -1107,9 +1189,6 @@ namespace TRID.StepDefinitions
             }
         }
 
-
-
-
         [Then(@"updated/computed Balloon Amount value should display on Closing Disclosure")]
         public void ThenUpdatedComputedBalloonAmountValueShouldDisplayOnClosingDisclosure()
         {
@@ -1127,10 +1206,16 @@ namespace TRID.StepDefinitions
                 Console.WriteLine("============================================================");
 
                 var actualDValue = ProjActions.GetNumericValueFromString(UIActions.GetText(BaDisclosureValue));
+                var expectedDValue = Math.Round(Convert.ToDouble(TridVariable.DisclosedFinalBalloonPayment), 2);
+
+                Assert.AreEqual(expectedDValue, actualDValue, "Disclosed value does not match as expected");
 
                 Console.WriteLine("===========================================================");
-                Console.WriteLine("DisclosedValue :" + actualDValue);
+                Console.WriteLine("ExpectedDisclosedValue :" + expectedDValue);
+                Console.WriteLine("ActualDisclosedValue :" + actualDValue);
                 Console.WriteLine("============================================================");
+
+                Assert.AreEqual(actualDValue, actualCValue, "Disclosed value does not match with computed value");
 
                 var expectedVValue = Convert.ToDouble(TridVariable.VarianceBalloonAmount);
                 var actualVValue = ProjActions.GetNumericValueFromString(UIActions.GetText(BaVarianceValue));
@@ -1168,10 +1253,16 @@ namespace TRID.StepDefinitions
                 Console.WriteLine("============================================================");
 
                 var actualDValue = ProjActions.GetNumericValueFromString(UIActions.GetText(TopDisclosureValue));
+                var expectedDValue = Math.Round(Convert.ToDouble(TridVariable.DisclosedTotalOfPayment), 2);
+
+                Assert.AreEqual(expectedDValue, actualDValue, "Disclosed value does not match as expected");
 
                 Console.WriteLine("===========================================================");
-                Console.WriteLine("DisclosedValue :" + actualDValue);
+                Console.WriteLine("ExpectedDisclosedValue :" + expectedDValue);
+                Console.WriteLine("ActualDisclosedValue :" + actualDValue);
                 Console.WriteLine("============================================================");
+
+                Assert.AreEqual(actualDValue, actualCValue, "Disclosed value does not match with computed value");
 
                 var expectedVValue = Convert.ToDouble(TridVariable.VarianceTotalOfPayments);
                 var actualVValue = ProjActions.GetNumericValueFromString(UIActions.GetText(TopVarianceValue));
@@ -1209,10 +1300,16 @@ namespace TRID.StepDefinitions
                 Console.WriteLine("============================================================");
 
                 var actualDValue = ProjActions.GetNumericValueFromString(UIActions.GetText(FcDisclosureValue));
+                var expectedDValue = Math.Round(Convert.ToDouble(TridVariable.DisclosedFinanceCharge), 2);
+
+                Assert.AreEqual(expectedDValue, actualDValue, "Disclosed value does not match as expected");
 
                 Console.WriteLine("===========================================================");
-                Console.WriteLine("DisclosedValue :" + actualDValue);
+                Console.WriteLine("ExpectedDisclosedValue :" + expectedDValue);
+                Console.WriteLine("ActualDisclosedValue :" + actualDValue);
                 Console.WriteLine("============================================================");
+
+                Assert.AreEqual(actualDValue, actualCValue, "Disclosed value does not match with computed value");
 
                 var expectedVValue = Convert.ToDouble(TridVariable.VarianceFinanceCharge);
                 var actualVValue = ProjActions.GetNumericValueFromString(UIActions.GetText(FcVarianceValue));
@@ -1250,10 +1347,16 @@ namespace TRID.StepDefinitions
                 Console.WriteLine("============================================================");
 
                 var actualDValue = ProjActions.GetNumericValueFromString(UIActions.GetText(TipDisclosureValue));
+                var expectedDValue = Math.Round(Convert.ToDouble(TridVariable.DisclosedTip), 2);
+
+                Assert.AreEqual(expectedDValue, actualDValue, "Disclosed value does not match as expected");
 
                 Console.WriteLine("===========================================================");
-                Console.WriteLine("DisclosedValue :" + actualDValue);
+                Console.WriteLine("ExpectedDisclosedValue :" + expectedDValue);
+                Console.WriteLine("ActualDisclosedValue :" + actualDValue);
                 Console.WriteLine("============================================================");
+
+                Assert.AreEqual(actualDValue, actualCValue, "Disclosed value does not match with computed value");
 
                 var expectedVValue = Convert.ToDouble(TridVariable.VarianceTip);
                 var actualVValue = ProjActions.GetNumericValueFromString(UIActions.GetText(TipVarianceValue));
@@ -1291,10 +1394,16 @@ namespace TRID.StepDefinitions
                 Console.WriteLine("============================================================");
 
                 var actualDValue = ProjActions.GetNumericValueFromString(UIActions.GetText(IepDisclosureValue));
+                var expectedDValue = Math.Round(Convert.ToDouble(TridVariable.DisclosedInitialEscrowPayment), 2);
+
+                Assert.AreEqual(expectedDValue, actualDValue, "Disclosed value does not match as expected");
 
                 Console.WriteLine("===========================================================");
-                Console.WriteLine("DisclosedValue :" + actualDValue);
+                Console.WriteLine("ExpectedDisclosedValue :" + expectedDValue);
+                Console.WriteLine("ActualDisclosedValue :" + actualDValue);
                 Console.WriteLine("============================================================");
+
+                Assert.AreEqual(actualDValue, actualCValue, "Disclosed value does not match with computed value");
 
                 var expectedVValue = Convert.ToDouble(TridVariable.VarianceInitialEscrowPayment);
                 var actualVValue = ProjActions.GetNumericValueFromString(UIActions.GetText(IepVarianceValue));
@@ -1333,10 +1442,16 @@ namespace TRID.StepDefinitions
                 Console.WriteLine("============================================================");
 
                 var actualDValue = ProjActions.GetNumericValueFromString(UIActions.GetText(Neo1YDisclosureValue));
+                var expectedDValue = Math.Round(Convert.ToDouble(TridVariable.DisclosedNonEscrowPropertyOverOneYear), 2);
+
+                Assert.AreEqual(expectedDValue, actualDValue, "Disclosed value does not match as expected");
 
                 Console.WriteLine("===========================================================");
-                Console.WriteLine("DisclosedValue :" + actualDValue);
+                Console.WriteLine("ExpectedDisclosedValue :" + expectedDValue);
+                Console.WriteLine("ActualDisclosedValue :" + actualDValue);
                 Console.WriteLine("============================================================");
+
+                Assert.AreEqual(actualDValue, actualCValue, "Disclosed value does not match with computed value");
 
                 var expectedVValue = Convert.ToDouble(TridVariable.VarianceNonEscrowPropertyOverOneYear);
                 var actualVValue = ProjActions.GetNumericValueFromString(UIActions.GetText(Neo1YVarianceValue));
@@ -1374,10 +1489,16 @@ namespace TRID.StepDefinitions
                 Console.WriteLine("============================================================");
 
                 var actualDValue = ProjActions.GetNumericValueFromString(UIActions.GetText(EeDisclosureValue));
+                var expectedDValue = Math.Round(Convert.ToDouble(TridVariable.DisclosedPeriodEscrowPayment), 2);
+
+                Assert.AreEqual(expectedDValue, actualDValue, "Disclosed value does not match as expected");
 
                 Console.WriteLine("===========================================================");
-                Console.WriteLine("DisclosedValue :" + actualDValue);
+                Console.WriteLine("ExpectedDisclosedValue :" + expectedDValue);
+                Console.WriteLine("ActualDisclosedValue :" + actualDValue);
                 Console.WriteLine("============================================================");
+
+                Assert.AreEqual(actualDValue, actualCValue, "Disclosed value does not match with computed value");
 
                 var expectedVValue = Convert.ToDouble(TridVariable.VarianceEstimatedEscrow);
                 var actualVValue = ProjActions.GetNumericValueFromString(UIActions.GetText(EeVarianceValue));
@@ -1415,10 +1536,16 @@ namespace TRID.StepDefinitions
                 Console.WriteLine("============================================================");
 
                 var actualDValue = ProjActions.GetNumericValueFromString(UIActions.GetText(EtiaDisclosureValue));
+                var expectedDValue = Math.Round(Convert.ToDouble(TridVariable.DisclosedEstimatedTaxesInsuranceAssessments), 2);
+
+                Assert.AreEqual(expectedDValue, actualDValue, "Disclosed value does not match as expected");
 
                 Console.WriteLine("===========================================================");
-                Console.WriteLine("DisclosedValue :" + actualDValue);
+                Console.WriteLine("ExpectedDisclosedValue :" + expectedDValue);
+                Console.WriteLine("ActualDisclosedValue :" + actualDValue);
                 Console.WriteLine("============================================================");
+
+                Assert.AreEqual(actualDValue, actualCValue, "Disclosed value does not match with computed value");
 
                 var expectedVValue = Convert.ToDouble(TridVariable.VarianceEstimatedTaxesInsuranceAssessments);
                 var actualVValue = ProjActions.GetNumericValueFromString(UIActions.GetText(EtiaVarianceValue));
@@ -1456,10 +1583,16 @@ namespace TRID.StepDefinitions
                 Console.WriteLine("============================================================");
 
                 var actualDValue = ProjActions.GetNumericValueFromString(UIActions.GetText(I5YDisclosureValue));
+                var expectedDValue = Math.Round(Convert.ToDouble(TridVariable.DiscLosedIn5Years), 2);
+
+                Assert.AreEqual(expectedDValue, actualDValue, "Disclosed value does not match as expected");
 
                 Console.WriteLine("===========================================================");
-                Console.WriteLine("DisclosedValue :" + actualDValue);
+                Console.WriteLine("ExpectedDisclosedValue :" + expectedDValue);
+                Console.WriteLine("ActualDisclosedValue :" + actualDValue);
                 Console.WriteLine("============================================================");
+
+                Assert.AreEqual(actualDValue, actualCValue, "Disclosed value does not match with computed value");
 
                 var expectedVValue = Convert.ToDouble(TridVariable.VarianceIn5Years);
                 var actualVValue = ProjActions.GetNumericValueFromString(UIActions.GetText(I5YVarianceValue));
@@ -1496,10 +1629,16 @@ namespace TRID.StepDefinitions
                 Console.WriteLine("============================================================");
 
                 var actualDValue = ProjActions.GetNumericValueFromString(UIActions.GetText(I5YpDisclosureValue));
+                var expectedDValue = Math.Round(Convert.ToDouble(TridVariable.DiscLosedIn5YearsPrincipal), 2);
+
+                Assert.AreEqual(expectedDValue, actualDValue, "Disclosed value does not match as expected");
 
                 Console.WriteLine("===========================================================");
-                Console.WriteLine("DisclosedValue :" + actualDValue);
+                Console.WriteLine("ExpectedDisclosedValue :" + expectedDValue);
+                Console.WriteLine("ActualDisclosedValue :" + actualDValue);
                 Console.WriteLine("============================================================");
+
+                Assert.AreEqual(actualDValue, actualCValue, "Disclosed value does not match with computed value");
 
                 var expectedVValue = Convert.ToDouble(TridVariable.VarianceIn5YearsPrincipal);
                 var actualVValue = ProjActions.GetNumericValueFromString(UIActions.GetText(I5YpVarianceValue));

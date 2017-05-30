@@ -14,8 +14,6 @@ When user navigate to Loan Inputs Page
 	And user selects Loan Term
 	And user selects Repayment Term Type
     And Enter Loan detail input values for computation 
-    And user navigate to Amortization Page
-    And user navigate to Loan Inputs Page
 	And user enters pmi rate values
 	And user enters other pmi input values
 	And user selects value for Is Ins Escrowed
@@ -23,6 +21,7 @@ When user navigate to Loan Inputs Page
 	And user selects value for Is Other1 Escrowed
 	And user selects value for Is Other2 Escrowed
 	And user enters input values for Cushion Months
+	And user enters input value for Date Of First Monthly PMI Disbursement
 	And user enters values for Escrow insurance Inputs
 	And user enters values for Escrow Tax Calculations Inputs
 	And user enters values for Escrow Other1 Calculations Inputs
@@ -44,6 +43,7 @@ Then updated/computed Principal and Interest value should display on Closing Dis
 	#And updated/computed Escrow Property Costs over one year 11 Months value should display on Closing Disclosure
 	#And updated/computed Escrow Property Costs over one year 12 Months value should display on Closing Disclosure
 	And updated/computed APR value should display on Closing Disclosure
+	And APRWIN info value should display on Closing Disclosure
 	And updated/computed Balloon Amount value should display on Closing Disclosure
 	And updated/computed Total of Payments value should display on Closing Disclosure
 	And updated/computed Finance Charge value should display on Closing Disclosure
@@ -126,8 +126,6 @@ When user navigate to Loan Inputs Page
 	And user selects Loan Term
 	And user selects Repayment Term Type
     And Enter Loan detail input values for computation 
-    And user navigate to Amortization Page
-    And user navigate to Loan Inputs Page
 	And user enters pmi rate values
 	And user enters other pmi input values
 	And user selects value for Is Ins Escrowed
