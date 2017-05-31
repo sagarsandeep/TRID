@@ -80,13 +80,13 @@
     253.86
   ],
   "EscrowPrptOverOneYear": [
-    0
+    3046.32
   ],
   "EscrowPropertyCostOverOneYear12Months": [
-    0
+    3300.18
   ],
   "NonEscrowPrptOverOneYear": [
-    3300.18
+    0
   ],
   "InitialEscrowPayment": [
     0
@@ -590,10 +590,10 @@
     []
   ],
   "IsINSEscrowed": [
-    "No"
+    "Yes"
   ],
   "IsTaxEscrowed": [
-    "No"
+    "Yes"
   ],
   "IsOther1Escrowed": [
     "No"
@@ -642,7 +642,7 @@
     "Yes"
   ],
   "LoanTitle": [
-    "71"
+    "111"
   ],
   "Export": [
     "LoanEstimate"
@@ -708,7 +708,7 @@
     "262.00000"
   ],
   "TotalMonthlyPmt": [
-    321.98
+    448.91
   ],
   "TermDate": [
     "5/7/2015"
@@ -835,13 +835,13 @@
     "06/05/2014"
   ],
   "DsclEscrowPrptOverOneYear": [
-    0
+    3300
   ],
   "DsclEscrowPropertyCostOverOneYear12Months": [
-    "0.00"
+    "0"
   ],
   "DsclNonEscrowPrptOverOneYear": [
-    3300
+    0
   ],
   "DsclInitialEscrowPayment": [
     0
@@ -850,7 +850,7 @@
     50
   ],
   "DsclEstimatedTaxesInsuranceAssessments": [
-    "126.93"
+    "0126.93"
   ],
   "DsclTotalOfPayments": [
     207706.66
@@ -874,7 +874,7 @@
     56.38
   ],
   "DsclMonthlyEscrowPaymentForLoanDisclosures": [
-    "0.00"
+    "0"
   ],
   "VarGetIn5Years": [
     "354.02000"
@@ -898,7 +898,7 @@
     "-153.86000"
   ],
   "VarTotalMonthlyPmt": [
-    "0.00060000000"
+    "-126.92940"
   ],
   "VarTermDate": [
     0
@@ -907,13 +907,13 @@
     " "
   ],
   "VarEscrowPrptOverOneYear": [
-    "0.0000000"
+    "253.68000"
   ],
   "VarEscrowPropertyCostOverOneYear12Months": [
-    "0.0000000"
+    "-3300.1800"
   ],
   "VarNonEscrowPrptOverOneYear": [
-    "-0.18000000"
+    "0.0000000"
   ],
   "VarInitialEscrowPayment": [
     0
