@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Configuration;
 using System.Security.Policy;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
@@ -13,6 +14,7 @@ namespace TRID.CommonUtils
 {
     class DriverSetup
     {
+        public static string DownloadDirectory => ConfigurationManager.AppSettings["DownloadDirectory"];
         private IWebDriver GetFirefoxDriver()
         {
 
@@ -24,7 +26,11 @@ namespace TRID.CommonUtils
         }
         private IWebDriver GetChromeDriver()
         {
-            IWebDriver driver = new ChromeDriver();
+            ChromeOptions chromeOptions = new ChromeOptions();
+            chromeOptions.AddUserProfilePreference("download.default_directory", DownloadDirectory);
+            chromeOptions.AddUserProfilePreference("intl.accept_languages", "nl");
+            chromeOptions.AddUserProfilePreference("disable-popup-blocking", "true");
+            IWebDriver driver = new ChromeDriver(chromeOptions);
             return driver;
         }
 

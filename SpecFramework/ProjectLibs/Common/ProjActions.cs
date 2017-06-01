@@ -1,9 +1,13 @@
 ﻿using System;
+using System.Configuration;
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Threading;
+using System.Windows.Forms;
 using NUnit.Framework;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.Remote;
 using TechTalk.SpecRun.Helper;
 using TRID.ActionClasses;
 using TRID.ProjectLibs.UI;
@@ -12,6 +16,18 @@ namespace TRID.ProjectLibs.Common
 {
     class ProjActions : TridHeaderUiElements
     {
+        private static string UploadFilePath => ConfigurationManager.AppSettings["UploadFilePath"];
+
+        public static void UploadJsonFile()
+        {
+            UIActions.Click(BrowseButton);
+            Thread.Sleep(500);
+            SendKeys.SendWait(UploadFilePath + TridVariable.ScenarioNo +".json");
+            Thread.Sleep(1000);
+            SendKeys.SendWait(@"{Enter}");
+            Thread.Sleep(500);
+            UIActions.Click(UploadButton);
+        }
 
         public static double GetNumericValueFromString(string inputString)
         {
@@ -179,6 +195,15 @@ namespace TRID.ProjectLibs.Common
             if (isRowExists)
                 throw new Exception("Prepaid Charges Grid is not empty");
         }
+
+        //public static void DownloadFileFromChrome()
+        //{
+        //    var chromeOptions = new ChromeOptions();
+        //    chromeOptions.AddUserProfilePreference("download.default_directory", @"F:\Projects\TRID\TestScenarios");
+        //    chromeOptions.AddUserProfilePreference("intl.accept_languages", "nl");
+        //    chromeOptions.AddUserProfilePreference("disable-popup-blocking", "true");
+        //    var driver = new ChromeDriver("Driver_Path", chromeOptions);
+        //}
     }
 }
 

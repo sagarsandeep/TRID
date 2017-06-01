@@ -1,11 +1,10 @@
 ﻿using OpenQA.Selenium;
-using TRID.CommonUtils;
 
 namespace TRID.ProjectLibs.UI
 {
-    public class LoanEstimateCardsUiElements : PageBase
+    public class LoanEstimateCardsUiElements : ExportInputUiElements
     {
-        public static By LoanEstimateIn5YearsText = By.XPath("//div[@id='PrincipalAndInterest']//div");
+        public static By LoanEstimateIn5YearsText = By.XPath("//div[@id='InfoBoxIn5Years']//p[1]");
 
         //In 5 years
         public static By I5YComputedValue = By.XPath("//div[@id='InfoBoxIn5Years']//p[1]");

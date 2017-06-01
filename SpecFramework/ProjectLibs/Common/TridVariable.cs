@@ -7,6 +7,7 @@ namespace TRID.ProjectLibs.Common
     {
         #region Assiging Variables 
 
+        public static string ScenarioNo = "";
         public static string CalculationMethod = "";
         public static string LoanType = "";
         public static string FrequencyOfPayments = "";
@@ -27,11 +28,11 @@ namespace TRID.ProjectLibs.Common
         public static string PeriodPayment = "";
         public static string OddDaysInterestCollected = "";
         public static string LoanDetailsEstimatedEscrow = "";
-        public static string MonthlyPrincipalAndInterest = "";
-        public static string MonthlyPmi = "";
-        public static string TotalPeiodicPayment = "";
-        public static string PmiTerminationDate = "";
-        public static string PmiCancelDate = "";
+        public static string DisclosedMonthlyPrincipalAndInterest = "";
+        public static string DisclosedMonthlyPmi = "";
+        public static string DisclosedTotalPeiodicPayment = "";
+        public static string DisclosedPmiTerminationDate = "";
+        public static string DisclosedPmiCancelDate = "";
         public static string DisclosedEstimatedEscrow = "";
         public static string DisclosedFinalBalloonPayment = "";
         public static string DisclosedTotalOfPayment = "";
@@ -107,6 +108,8 @@ namespace TRID.ProjectLibs.Common
         public static string PreparedBy = "";
         public static string NameOfLender = "";
         public static string OriginalCreditor = "";
+        public static string LoanSecruredBy = "";
+        public static string Export = "";
         public static string IsInsEscrowed = "";
         public static string IsTaxEscrowed = "";
         public static string IsOther1Escrowed = "";
@@ -274,6 +277,8 @@ namespace TRID.ProjectLibs.Common
                 if (col == 4) PreparedBy = stringValue;
                 if (col == 5) NameOfLender = stringValue;
                 if (col == 6) OriginalCreditor = stringValue;
+                if (col == 7) LoanSecruredBy = stringValue;
+                if (col == 8) Export = stringValue;
             }
 
             #endregion
@@ -301,6 +306,7 @@ namespace TRID.ProjectLibs.Common
 
             if (sheetName == "ClosingDisclosure")
             {
+                if (col == 1) ScenarioNo = stringValue;
                 if (col == 4) CalculationMethod = stringValue;
                 if (col == 5) LoanType = stringValue;
                 if (col == 6) FrequencyOfPayments = stringValue;
@@ -320,11 +326,11 @@ namespace TRID.ProjectLibs.Common
                 if (col == 20) DateOfFirstPayment = stringValue;
                 if (col == 21) PeriodPayment = stringValue;
                 if (col == 22) OddDaysInterestCollected = stringValue;
-                if (col == 23) MonthlyPrincipalAndInterest = stringValue;
-                if (col == 24) MonthlyPmi = stringValue;
-                if (col == 26) TotalPeiodicPayment = stringValue;
-                if (col == 27) PmiTerminationDate = stringValue;
-                if (col == 28) PmiCancelDate = stringValue;
+                if (col == 23) DisclosedMonthlyPrincipalAndInterest = stringValue;
+                if (col == 24) DisclosedMonthlyPmi = stringValue;
+                if (col == 26) DisclosedTotalPeiodicPayment = stringValue;
+                if (col == 27) DisclosedPmiTerminationDate = stringValue;
+                if (col == 28) DisclosedPmiCancelDate = stringValue;
                 if (col == 29) DisclosedFinalBalloonPayment = stringValue;
                 if (col == 30) DisclosedTotalOfPayment = stringValue;
                 if (col == 31) DisclosedFinanceCharge = stringValue;

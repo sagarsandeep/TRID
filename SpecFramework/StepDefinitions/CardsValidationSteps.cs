@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Configuration;
+using System.IO;
 using System.Threading;
+using System.Windows.Forms;
 using NUnit.Framework;
+using OpenQA.Selenium;
 using TechTalk.SpecFlow;
 using TRID.ActionClasses;
 using TRID.CommonUtils;
@@ -15,7 +18,6 @@ namespace TRID.StepDefinitions
     public class CardsValidationSteps : TridTest
     {
         private static string Url => ConfigurationManager.AppSettings["url"];
-        private static string Url1 => ConfigurationManager.AppSettings["url1"];
         readonly GetExcelData _getData = new GetExcelData();
         public static bool TestCaseStatus = true;
         public static int TestFailureCount;
@@ -29,10 +31,10 @@ namespace TRID.StepDefinitions
         public void GivenUserIsAtTridApplicationHomepage()
         {
             UIActions.WindowMaximize();
-            UIActions.GoToUrl(Url + "&" + Url1);
-            UIActions.WebDriverWait(SnlStartNewLoanText, 60);
+            UIActions.GoToUrl(Url);
+            UIActions.WebDriverWait(StartNewLoanText, 60);
 
-            UIActions.Click(SnlResetButton);
+            UIActions.Click(ResetButton);
         }           
 
         [Given(@"user have closing disclosure data from excel sheet (.*) for the scenario (.*)")]
@@ -65,17 +67,20 @@ namespace TRID.StepDefinitions
             _getData.GetExcelValues(scenarioNo, sheetName);
         }
 
+        [Given(@"user have Export data from excel sheet (.*) for the scenario (.*)")]
+        public void GivenUserHaveExportDataFromExcelSheetExportForTheScenario(string sheetName, int scenarioNo)
+        {
+            _getData.GetExcelValues(scenarioNo, sheetName);
+        }
+
+        
+
+
         [Given(@"user navigate to Loan Estimate Page")]
         public void GivenUserNavigateToLoanEstimatePage()
         {
             UIActions.Click(LoanEstimateLink);
             UIActions.WebDriverWait(LoanDetailsText, 60);
-        }
-
-        [Given(@"PMI Rates Grid is empty")]
-        public void GivenPmiRatesGridIsEmpty()
-        {
-            ProjActions.PmiRatesGridEmptyValidation();
         }
 
         #endregion
@@ -121,49 +126,38 @@ namespace TRID.StepDefinitions
 
             if (CalculationMethod.Equals("Variable"))
             {
-                var firstTermChange = TridVariable.FirstTermChange;
                 UIActions.Clear(FirstTermChange);
-                UIActions.GiveInput(FirstTermChange, firstTermChange);
+                UIActions.GiveInput(FirstTermChange, TridVariable.FirstTermChange);
 
-                var subsequentTermChange = TridVariable.SubsequentTermChange;
                 UIActions.Clear(SubsequentTermChange);
-                UIActions.GiveInput(SubsequentTermChange, subsequentTermChange);
+                UIActions.GiveInput(SubsequentTermChange, TridVariable.SubsequentTermChange);
 
-                var dnRateCapFirstAdjustment = TridVariable.DnRateCapFirstAdjustment;
                 UIActions.Clear(DnRateCapFirstAdjustment);
-                UIActions.GiveInput(DnRateCapFirstAdjustment, dnRateCapFirstAdjustment);
+                UIActions.GiveInput(DnRateCapFirstAdjustment, TridVariable.DnRateCapFirstAdjustment);
 
-                var dnRateCapsubsequentAdjustment = TridVariable.DnRateCapsubsequentAdjustment;
                 UIActions.Clear(DnRateCapSubseqAdjustment);
-                UIActions.GiveInput(DnRateCapSubseqAdjustment, dnRateCapsubsequentAdjustment);
+                UIActions.GiveInput(DnRateCapSubseqAdjustment, TridVariable.DnRateCapsubsequentAdjustment);
 
-                var upRateCapFirstAdjustment = TridVariable.UpRateCapFirstAdjustment;
                 UIActions.Clear(UpRateCapFirstAdjustment);
-                UIActions.GiveInput(UpRateCapFirstAdjustment, upRateCapFirstAdjustment);
+                UIActions.GiveInput(UpRateCapFirstAdjustment, TridVariable.UpRateCapFirstAdjustment);
 
-                var upRateCapsubsequentAdjustment = TridVariable.UpRateCapsubsequentAdjustment;
                 UIActions.Clear(UpRateCapSubseqAdjustment);
-                UIActions.GiveInput(UpRateCapSubseqAdjustment, upRateCapsubsequentAdjustment);
+                UIActions.GiveInput(UpRateCapSubseqAdjustment, TridVariable.UpRateCapsubsequentAdjustment);
 
-                var floorRate = TridVariable.FloorRate;
                 UIActions.Clear(FloorRate);
-                UIActions.GiveInput(FloorRate, floorRate);
+                UIActions.GiveInput(FloorRate, TridVariable.FloorRate);
 
-                var maxRateEver = TridVariable.MaxRateEver;
                 UIActions.Clear(MaxRateEver);
-                UIActions.GiveInput(MaxRateEver, maxRateEver);
+                UIActions.GiveInput(MaxRateEver, TridVariable.MaxRateEver);
 
-                var index = TridVariable.Index;
                 UIActions.Clear(Index);
-                UIActions.GiveInput(Index, index);
+                UIActions.GiveInput(Index, TridVariable.Index);
 
-                var margin = TridVariable.Margin;
                 UIActions.Clear(Margin);
-                UIActions.GiveInput(Margin, margin);
+                UIActions.GiveInput(Margin, TridVariable.Margin);
 
-                var indexRate = TridVariable.RoundingFactor;
                 UIActions.Clear(Index);
-                UIActions.GiveInput(Index, indexRate);
+                UIActions.GiveInput(Index, TridVariable.RoundingFactor);
             }
         }
 
@@ -188,8 +182,8 @@ namespace TRID.StepDefinitions
             UIActions.Click(RepaymentTermType);
         }
 
-        [When(@"Enter Loan detail input values for computation")]
-        public void WhenEnterLoanDetailInputValuesForComputationforClosingDisclosurepage()
+        [When(@"user enters Loan detail input values for computation")]
+        public void WhenUserEntersLoanDetailInputValuesForComputationforClosingDisclosurepage()
         {
             UIActions.Clear(FreqOfPmtValue);
             UIActions.GiveInput(FreqOfPmtValue, TridVariable.FrequencyOfPmtValue);
@@ -308,47 +302,12 @@ namespace TRID.StepDefinitions
         [When(@"user enters other pmi input values")]
         public void WhenUserEntersOtherPmiInputValues()
         {
-            var numberOfPrdsOfAdvcInsurance = TridVariable.NumberOfPrdsOfAdvcInsurance;
             UIActions.Clear(NumberOfPeriodsofAdvanceInsCollected);
-            UIActions.GiveInput(NumberOfPeriodsofAdvanceInsCollected, numberOfPrdsOfAdvcInsurance);
+            UIActions.GiveInput(NumberOfPeriodsofAdvanceInsCollected, TridVariable.NumberOfPrdsOfAdvcInsurance);
 
-            var lowerOfCostOfAppraisal = TridVariable.LowerOfCostOfAppraisal;
             UIActions.Clear(LowerOfCostOrAppraisal);
-            UIActions.GiveInput(LowerOfCostOrAppraisal, lowerOfCostOfAppraisal);
+            UIActions.GiveInput(LowerOfCostOrAppraisal, TridVariable.LowerOfCostOfAppraisal);
         }
-
-        [When(@"Enter Disclosed input values for Closing Disclosure page")]
-        public void WhenEnterDisclosedInputValuesForClosingDisclosurePage()
-        {
-            var monthlyPrincipalAndInterest = TridVariable.MonthlyPrincipalAndInterest;
-            UIActions.Clear(DisclosedMonthlyPrincipalandInterest);
-            UIActions.GiveInput(DisclosedMonthlyPrincipalandInterest, monthlyPrincipalAndInterest);
-
-            var monthlyPmi = TridVariable.MonthlyPmi;
-            UIActions.Clear(DisclosedMonthlyPmi);
-            UIActions.GiveInput(DisclosedMonthlyPmi, monthlyPmi);
-
-            var totalMonhtlyPayment = TridVariable.TotalPeiodicPayment;
-            UIActions.Clear(DisclosedTotalPeriodicPayment);
-            UIActions.GiveInput(DisclosedTotalPeriodicPayment, totalMonhtlyPayment);
-
-            var pmiTerminationDate = ProjActions.GetDate(TridVariable.PmiTerminationDate);
-            UIActions.Clear(DisclosedPmiTerminalDate);
-            UIActions.GiveInput(DisclosedPmiTerminalDate, pmiTerminationDate);
-
-            var pmiCancelDate = ProjActions.GetDate(TridVariable.PmiCancelDate);
-            UIActions.Clear(DisclosedPmiCancelDate);
-            UIActions.GiveInput(DisclosedPmiCancelDate, pmiCancelDate);
-
-            var disclosedFinalBalloonPayment = TridVariable.DisclosedFinalBalloonPayment;
-            UIActions.Clear(DisclosedFinalBalloonPayment);
-            UIActions.GiveInput(DisclosedFinalBalloonPayment, disclosedFinalBalloonPayment);
-
-            var disclosedTotalOfPayment = TridVariable.DisclosedTotalOfPayment;
-            UIActions.Clear(DisclosedTotalOfPayment);
-            UIActions.GiveInput(DisclosedTotalOfPayment, disclosedTotalOfPayment);
-        }
-
 
         [When(@"user navigates to Disclosure Inputs Page")]
         public void WhenUserNavigatesToDisclosureInputsPage()
@@ -360,53 +319,42 @@ namespace TRID.StepDefinitions
         [When(@"user enters disclosed input values for closing disclousre section")]
         public void WhenUserEntersDisclosedInputValuesForClosingDisclousreSection()
         {
-            var monthlyPrincipalAndInterest = TridVariable.MonthlyPrincipalAndInterest;
             UIActions.Clear(DisclosedMonthlyPrincipalandInterest);
-            UIActions.GiveInput(DisclosedMonthlyPrincipalandInterest, monthlyPrincipalAndInterest);
+            UIActions.GiveInput(DisclosedMonthlyPrincipalandInterest, TridVariable.DisclosedMonthlyPrincipalAndInterest);
 
-            var monthlyPmi = TridVariable.MonthlyPmi;
             UIActions.Clear(DisclosedMonthlyPmi);
-            UIActions.GiveInput(DisclosedMonthlyPmi, monthlyPmi);
+            UIActions.GiveInput(DisclosedMonthlyPmi, TridVariable.DisclosedMonthlyPmi);
 
-            var totalMonhtlyPayment = TridVariable.TotalPeiodicPayment;
             UIActions.Clear(DisclosedTotalPeriodicPayment);
-            UIActions.GiveInput(DisclosedTotalPeriodicPayment, totalMonhtlyPayment);
+            UIActions.GiveInput(DisclosedTotalPeriodicPayment, TridVariable.DisclosedTotalPeiodicPayment);
 
-            var pmiTerminationDate = ProjActions.GetDate(TridVariable.PmiTerminationDate);
             UIActions.Clear(DisclosedPmiTerminalDate);
-            UIActions.GiveInput(DisclosedPmiTerminalDate, pmiTerminationDate);
+            UIActions.GiveInput(DisclosedPmiTerminalDate, ProjActions.GetDate(TridVariable.DisclosedPmiTerminationDate));
 
-            var pmiCancelDate = ProjActions.GetDate(TridVariable.PmiCancelDate);
             UIActions.Clear(DisclosedPmiCancelDate);
-            UIActions.GiveInput(DisclosedPmiCancelDate, pmiCancelDate);
+            UIActions.GiveInput(DisclosedPmiCancelDate, ProjActions.GetDate(TridVariable.DisclosedPmiCancelDate));
 
-            var disclosedFinalBalloonPayment = TridVariable.DisclosedFinalBalloonPayment;
             UIActions.Clear(DisclosedFinalBalloonPayment);
-            UIActions.GiveInput(DisclosedFinalBalloonPayment, disclosedFinalBalloonPayment);
+            UIActions.GiveInput(DisclosedFinalBalloonPayment, TridVariable.DisclosedFinalBalloonPayment);
 
-            var disclosedTotalOfPayment = TridVariable.DisclosedTotalOfPayment;
             UIActions.Clear(DisclosedTotalOfPayment);
-            UIActions.GiveInput(DisclosedTotalOfPayment, disclosedTotalOfPayment);
+            UIActions.GiveInput(DisclosedTotalOfPayment, TridVariable.DisclosedTotalOfPayment);
         }
 
         [When(@"user enters disclsoed input values for Loan Estimate")]
         public void WhenUserEntersDisclsoedInputValuesForLoanEstimate()
         {
-            var in5Years = TridVariable.DiscLosedIn5Years;
             UIActions.Clear(DisclosedIn5Years);
-            UIActions.GiveInput(DisclosedIn5Years, in5Years);
+            UIActions.GiveInput(DisclosedIn5Years, TridVariable.DiscLosedIn5Years);
 
-            var in5YearsPrincipal = TridVariable.DiscLosedIn5YearsPrincipal;
             UIActions.Clear(DisclosedIn5YearsPrincipal);
-            UIActions.GiveInput(DisclosedIn5YearsPrincipal, in5YearsPrincipal);
+            UIActions.GiveInput(DisclosedIn5YearsPrincipal, TridVariable.DiscLosedIn5YearsPrincipal);
 
-            var apr = TridVariable.DisclosedApr;
             UIActions.Clear(DisclosedApr);
-            UIActions.GiveInput(DisclosedApr, apr);
+            UIActions.GiveInput(DisclosedApr, TridVariable.DisclosedApr);
 
-            var tip = TridVariable.DisclosedTip;
             UIActions.Clear(DisclosedTip);
-            UIActions.GiveInput(DisclosedTip, tip);
+            UIActions.GiveInput(DisclosedTip, TridVariable.DisclosedTip);
         }
 
         [When(@"user enters disclosed input values for Prepaid Charges")]
@@ -441,6 +389,7 @@ namespace TRID.StepDefinitions
         {
             EscrowRadioButtonVariable();
             UIActions.WebDriverWait(IsInsEscrowed, 60);
+            UIActions.ScrollUp();
             UIActions.Click(IsInsEscrowed);
         }
 
@@ -487,18 +436,8 @@ namespace TRID.StepDefinitions
         [When(@"user enters input value for Date Of First Monthly PMI Disbursement")]
         public void WhenUserEntersInputValueForDateOfFirstMonthlyPmiDisbursement()
         {
-            if (TridVariable.DateOfFirstMonthlyPmiDisbursement!="")
-            {
-                var dateOfFirstMonthlyPmiDisbursement =
-                    DateTime.FromOADate(Convert.ToDouble(TridVariable.DateOfFirstMonthlyPmiDisbursement))
-                        .ToString("MM/dd/yyyy");
-                UIActions.Clear(DateOfFirstMonthlyPmiDisbursement);
-                UIActions.GiveInput(DateOfFirstMonthlyPmiDisbursement, dateOfFirstMonthlyPmiDisbursement);
-            }
-            else
-            {
-                UIActions.Clear(DateOfFirstMonthlyPmiDisbursement);
-            }
+            UIActions.Clear(DateOfFirstMonthlyPmiDisbursement);
+            UIActions.GiveInput(DateOfFirstMonthlyPmiDisbursement, ProjActions.GetDate(TridVariable.DateOfFirstMonthlyPmiDisbursement));
         }
 
 
@@ -694,6 +633,61 @@ namespace TRID.StepDefinitions
             UIActions.GiveInput(DisclosedPeriodEscrowPayment, TridVariable.DisclosedPeriodEscrowPayment);
         }
 
+        [When(@"user navigates to Export Page")]
+        public void WhenUserNavigatesToExportPage()
+        {
+            UIActions.Click(ExportLink);
+            UIActions.WebDriverWait(ExportLoanInformationText, 60);
+        }
+
+        [When(@"user enters all input values for Export Page")]
+        public void WhenUserEntersAllInputValuesForExportPage()
+        {
+            UIActions.Clear(LoanTitle);
+            UIActions.GiveInput(LoanTitle, TridVariable.ScenarioNo);
+
+            UIActions.Clear(LoanIdNumber);
+            UIActions.GiveInput(LoanIdNumber, TridVariable.LoanIdNumber);
+
+            UIActions.Clear(BorrowersNames);
+            UIActions.GiveInput(BorrowersNames, TridVariable.BorrowersNames);
+
+            UIActions.Clear(NameOfLender);
+            UIActions.GiveInput(NameOfLender, TridVariable.NameOfLender);
+
+            UIActions.Clear(PreparedBy);
+            UIActions.GiveInput(PreparedBy, TridVariable.PreparedBy);
+
+            UIActions.Clear(OriginalCreditor);
+            UIActions.GiveInput(OriginalCreditor, TridVariable.OriginalCreditor);
+
+            ExportRadioButtonVariable();
+            UIActions.Click(LoanSecuredBy);
+
+            ExportRadioButtonVariable();
+            UIActions.Click(Export);
+        }
+
+        [When(@"user clicks on Export button to generate JSON file")]
+        public void WhenUserClicksOnExportButtonToGenerateJsonFile()
+        {
+            var filePath = DriverSetup.DownloadDirectory + @"\" + TridVariable.ScenarioNo + ".json";
+            if (File.Exists(filePath))
+            {
+                File.Delete(filePath);
+            }
+
+            UIActions.WebDriverWait(ExportButton,60);
+            UIActions.Click(ExportButton);
+        }
+
+
+        [When(@"user upload json file for the scenario")]
+        public void WhenUserUploadJsonFileForTheScenario()
+        {
+            ProjActions.UploadJsonFile();
+        }
+
         #endregion
 
 
@@ -716,7 +710,7 @@ namespace TRID.StepDefinitions
                 Console.WriteLine("============================================================");
 
                 var actualDValue = ProjActions.GetNumericValueFromString(UIActions.GetText(PiDisclosureValue));
-                var expectedDValue = Math.Round(Convert.ToDouble(TridVariable.MonthlyPrincipalAndInterest), 2);
+                var expectedDValue = Math.Round(Convert.ToDouble(TridVariable.DisclosedMonthlyPrincipalAndInterest), 2);
 
                 Assert.AreEqual(expectedDValue,actualDValue, "Disclosed value does not match as expected");
 
@@ -763,7 +757,7 @@ namespace TRID.StepDefinitions
                 Console.WriteLine("============================================================");
 
                 var actualDValue = ProjActions.GetNumericValueFromString(UIActions.GetText(MiDisclosureValue));
-                var expectedDValue = Math.Round(Convert.ToDouble(TridVariable.MonthlyPmi), 2);
+                var expectedDValue = Math.Round(Convert.ToDouble(TridVariable.DisclosedMonthlyPmi), 2);
 
                 Assert.AreEqual(expectedDValue, actualDValue, "Disclosed value does not match as expected");
 
@@ -879,7 +873,7 @@ namespace TRID.StepDefinitions
                     Console.WriteLine("============================================================");
 
                     var actualDValue = ProjActions.GetDatePart(SptdDisclosureValue);
-                    var expectedDValue = Convert.ToDateTime(ProjActions.GetDate(TridVariable.PmiTerminationDate));
+                    var expectedDValue = Convert.ToDateTime(ProjActions.GetDate(TridVariable.DisclosedPmiTerminationDate));
 
                     Assert.AreEqual(expectedDValue, actualDValue, "Disclosed value does not match as expected");
 
@@ -923,7 +917,7 @@ namespace TRID.StepDefinitions
                 Console.WriteLine("============================================================");
 
                 var actualDValue = UIActions.GetText(SptdDisclosureValue);
-                var expectedDValue = Math.Round(Convert.ToDouble(TridVariable.PmiTerminationDate), 2);
+                var expectedDValue = "(D): " + TridVariable.DisclosedPmiTerminationDate;
 
                 Assert.AreEqual(expectedDValue, actualDValue, "Disclosed value does not match as expected");
 
@@ -931,8 +925,6 @@ namespace TRID.StepDefinitions
                 Console.WriteLine("ExpectedDisclosedValue :" + expectedDValue);
                 Console.WriteLine("ActualDisclosedValue :" + actualDValue);
                 Console.WriteLine("============================================================");
-
-                Assert.AreEqual(actualDValue, actualCValue, "Disclosed value does not match with computed value");
 
                 var expectedVValue = "(V): N/A Days";
                 var actualVValue = UIActions.GetText(SptdVarianceValue);
@@ -949,7 +941,7 @@ namespace TRID.StepDefinitions
                 Console.WriteLine(e);
                 TestCaseStatus = false;
                 TestFailureCount += 1;
-                CardsFailure += "|| DropOffYearsForPmi ||";
+                CardsFailure += "|| ScheduledPmiTerminationDate ||";
             }
         }
 
@@ -971,7 +963,7 @@ namespace TRID.StepDefinitions
                 Console.WriteLine("============================================================");
 
                 var actualDValue = ProjActions.GetNumericValueFromString(UIActions.GetText(EtmpDisclosureValue));
-                var expectedDValue = Math.Round(Convert.ToDouble(TridVariable.TotalPeiodicPayment), 2);
+                var expectedDValue = Math.Round(Convert.ToDouble(TridVariable.DisclosedTotalPeiodicPayment), 2);
 
                 Assert.AreEqual(expectedDValue, actualDValue, "Disclosed value does not match as expected");
 

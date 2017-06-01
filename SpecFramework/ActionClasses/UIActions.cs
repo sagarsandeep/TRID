@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Windows.Forms;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.UI;
@@ -56,6 +57,16 @@ namespace TRID.ActionClasses
         {
             if (timeoutInSeconds > 0)
                new WebDriverWait(ObjectRepo.Driver, TimeSpan.FromSeconds(timeoutInSeconds)).Until(ExpectedConditions.VisibilityOfAllElementsLocatedBy(element));
+
+            try
+            {
+
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("");
+                throw;
+            }
         }
 
 
@@ -64,6 +75,16 @@ namespace TRID.ActionClasses
         {
             var webElement = ObjectRepo.Driver.FindElement(element);
             Actions.MoveToElement(webElement).Perform();
+        }
+
+        public static void ScrollUp()
+        {
+            ((IJavaScriptExecutor)ObjectRepo.Driver).ExecuteScript("window.scroll(0,0);");
+        }
+
+        public static void ScrollDown()
+        {
+            ((IJavaScriptExecutor)ObjectRepo.Driver).ExecuteScript("window.scroll(0,10000);");
         }
 
         public static void Quit()
