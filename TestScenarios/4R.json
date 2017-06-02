@@ -157,7 +157,7 @@
   ],
   "RateSchedule": [],
   "EscrowCalculationStartPeriodDate": [
-    "6/1/2017"
+    "6/2/2017"
   ],
   "EscrowCushionMonthsForInsurance": [
     2
@@ -226,7 +226,7 @@
     "0"
   ],
   "EscrowOther2GridInputDate": [
-    "6/1/2017"
+    "6/2/2017"
   ],
   "EscrowOther2GridInputInstallmentAmt": [
     0
@@ -821,7 +821,7 @@
     12891.92
   ],
   "DsclAPR": [
-    3.8656
+    3.866
   ],
   "DsclCumulativeInterest": [
     87729.15
@@ -845,10 +845,10 @@
     "1/1/2015"
   ],
   "DsclEscrowPrptOverOneYear": [
-    3162.5
+    3300
   ],
   "DsclEscrowPropertyCostOverOneYear12Months": [
-    "3300"
+    "3900"
   ],
   "DsclNonEscrowPrptOverOneYear": [
     600
@@ -893,7 +893,7 @@
     0
   ],
   "VarAPR": [
-    -0.0004
+    0
   ],
   "VarCumulativeInterest": [
     " "
@@ -917,10 +917,10 @@
     " "
   ],
   "VarEscrowPrptOverOneYear": [
-    275
+    412.5
   ],
   "VarEscrowPropertyCostOverOneYear12Months": [
-    137.5
+    737.5
   ],
   "VarNonEscrowPrptOverOneYear": [
     600
@@ -57366,7 +57366,7 @@
   "sp_doc": [],
   "vp_json": [],
   "today": [
-    "2017-6-1"
+    "2017-6-2"
   ],
   "LoggedInUserId": [
     null

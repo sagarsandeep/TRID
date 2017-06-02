@@ -157,7 +157,7 @@
   ],
   "RateSchedule": [],
   "EscrowCalculationStartPeriodDate": [
-    "6/1/2017"
+    "6/2/2017"
   ],
   "EscrowCushionMonthsForInsurance": [
     2
@@ -207,7 +207,7 @@
     "0"
   ],
   "EscrowOther1GridInputDate": [
-    "6/1/2017"
+    "6/2/2017"
   ],
   "EscrowOther1GridInputInstallmentAmt": [
     0
@@ -219,7 +219,7 @@
     "0"
   ],
   "EscrowOther2GridInputDate": [
-    "6/1/2017"
+    "6/2/2017"
   ],
   "EscrowOther2GridInputInstallmentAmt": [
     0
@@ -814,7 +814,7 @@
     12767.98
   ],
   "DsclAPR": [
-    3.9185
+    3.919
   ],
   "DsclCumulativeInterest": [
     87729.15
@@ -886,7 +886,7 @@
     0
   ],
   "VarAPR": [
-    0.0005
+    0.001
   ],
   "VarCumulativeInterest": [
     " "
@@ -952,15 +952,15 @@
   "MortgageGridData": [
     [
       {
-        "Number": "2",
-        "BeginPeriod": "25",
-        "EndPeriod": "240",
+        "Number": "1",
+        "BeginPeriod": "1",
+        "EndPeriod": "24",
         "PMIRate": "0.37"
       },
       {
-        "Number": "2017-06-01T06:07:45.582Z",
-        "BeginPeriod": "1",
-        "EndPeriod": "24",
+        "Number": "2",
+        "BeginPeriod": "25",
+        "EndPeriod": "240",
         "PMIRate": "0.37"
       },
       {
@@ -57437,7 +57437,7 @@
   "sp_doc": [],
   "vp_json": [],
   "today": [
-    "2017-6-1"
+    "2017-6-2"
   ],
   "LoggedInUserId": [
     null
@@ -57450,6 +57450,9 @@
   ],
   "UpfrontMIPFinanced,UpfrontMIPFinanced": [
     "Yes"
+  ],
+  "mortageNumber": [
+    "3"
   ],
   "mortage_beginmonth": [
     "241"
@@ -57469,9 +57472,6 @@
         "PMIRate": "0.2"
       }
     ]
-  ],
-  "mortageNumber": [
-    "3"
   ],
   "PaymentNumber": [
     721

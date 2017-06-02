@@ -157,7 +157,7 @@
   ],
   "RateSchedule": [],
   "EscrowCalculationStartPeriodDate": [
-    "6/1/2017"
+    "6/2/2017"
   ],
   "EscrowCushionMonthsForInsurance": [
     2
@@ -207,7 +207,7 @@
     "0"
   ],
   "EscrowOther1GridInputDate": [
-    "6/1/2017"
+    "6/2/2017"
   ],
   "EscrowOther1GridInputInstallmentAmt": [
     0
@@ -219,7 +219,7 @@
     "0"
   ],
   "EscrowOther2GridInputDate": [
-    "6/1/2017"
+    "6/2/2017"
   ],
   "EscrowOther2GridInputInstallmentAmt": [
     0
@@ -500,10 +500,10 @@
     0
   ],
   "PrepaidDailyInterest": [
-    0
+    68.25
   ],
   "SectionCOther1": [
-    68.25
+    0
   ],
   "SectionCOther2": [
     0
@@ -527,7 +527,7 @@
     0
   ],
   "SectionBOther1": [
-    68.25
+    0
   ],
   "SectionBOther2": [
     0
@@ -556,10 +556,10 @@
   "PrepaidCustomName": [],
   "PrepaidCustomValue": [],
   "FinanceCharge": [
-    92439.65
+    92371.4
   ],
   "TotalOfPayments": [
-    223303.15
+    223371.4
   ],
   "CalculationMethod": [
     "ActualOver360"
@@ -698,10 +698,10 @@
     12926.22
   ],
   "GetIn5Years": [
-    40025.8
+    40094.05
   ],
   "APR": [
-    4.012
+    4.007
   ],
   "CumulativeInterest": [
     88973.65
@@ -717,10 +717,10 @@
   ],
   "CancelDate": [],
   "PrepaidCharges": [
-    1527.28
+    1459.03
   ],
   "AmountFinanced": [
-    129472.72
+    129540.97
   ],
   "MonthlyPMI": [
     80.78
@@ -729,7 +729,7 @@
     "0.0"
   ],
   "TIP": [
-    67.92
+    67.97
   ],
   "MonthlyEscrowPaymentForLoanDisclosures": [
     0
@@ -879,13 +879,13 @@
     "550"
   ],
   "VarGetIn5Years": [
-    68.25
+    0
   ],
   "VarCumulativePrincipal": [
     0
   ],
   "VarAPR": [
-    -0.005
+    0
   ],
   "VarCumulativeInterest": [
     " "
@@ -927,16 +927,16 @@
     0
   ],
   "VarTotalOfPayments": [
-    68.25
+    0
   ],
   "VarFinanceCharge": [
-    -68.25
+    0
   ],
   "VarPrepaidCharges": [
-    -68.25
+    0
   ],
   "VarAmountFinanced": [
-    68.25
+    0
   ],
   "VarFinalBalloonPmt": [
     0
@@ -945,7 +945,7 @@
     0
   ],
   "VarTIP": [
-    0.051
+    0.001
   ],
   "VarMonthlyEscrowPaymentForLoanDisclosures": [],
   "MortgageGridData": [
@@ -15311,12 +15311,12 @@
     0
   ],
   "APRWIN": [
-    4.0116
+    4.0072
   ],
   "sp_doc": [],
   "vp_json": [],
   "today": [
-    "2017-6-1"
+    "2017-6-2"
   ],
   "LoggedInUserId": [
     null

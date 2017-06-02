@@ -157,7 +157,7 @@
   ],
   "RateSchedule": [],
   "EscrowCalculationStartPeriodDate": [
-    "6/1/2017"
+    "6/2/2017"
   ],
   "EscrowCushionMonthsForInsurance": [
     2
@@ -226,7 +226,7 @@
     "0"
   ],
   "EscrowOther2GridInputDate": [
-    "6/1/2017"
+    "6/2/2017"
   ],
   "EscrowOther2GridInputInstallmentAmt": [
     0
@@ -820,7 +820,7 @@
     13008.15
   ],
   "DsclAPR": [
-    3.8655
+    3.866
   ],
   "DsclCumulativeInterest": [
     87729.15
@@ -892,7 +892,7 @@
     0
   ],
   "VarAPR": [
-    -0.0005
+    0
   ],
   "VarCumulativeInterest": [
     " "
@@ -15323,7 +15323,7 @@
   "sp_doc": [],
   "vp_json": [],
   "today": [
-    "2017-6-1"
+    "2017-6-2"
   ],
   "LoggedInUserId": [
     null

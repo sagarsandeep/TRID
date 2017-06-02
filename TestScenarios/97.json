@@ -1,6 +1,12 @@
 {
   "ThriveTenantId": "EB535076-2140-4106-8CAE-B230F6E2D082",
   "ThriveAppId": "TRID",
+  "PaymentNumberEscrow11MonthsCard": [
+    23
+  ],
+  "PaymentNumberForYears": [
+    23
+  ],
   "LoanSecuredBy": [
     "Yes"
   ],
@@ -77,25 +83,25 @@
     0
   ],
   "EstimatedEscrow": [
-    275
+    137.5
   ],
   "EscrowPrptOverOneYear": [
-    2887.5
+    3162.5
   ],
   "EscrowPropertyCostOverOneYear12Months": [
-    3162.5
+    3300
   ],
   "NonEscrowPrptOverOneYear": [
     0
   ],
   "InitialEscrowPayment": [
-    0
+    1327.08333333
   ],
   "PeriodEscrowPayment": [
     "50.00"
   ],
   "EstimatedTaxesInsuranceAssessments": [
-    137.5
+    143.47826087
   ],
   "EscrowDateForTaxCalc": [
     "0.00"
@@ -112,39 +118,10 @@
   "DateForPMICalc": [
     "1/1/2017"
   ],
-  "PaymentSchedule": [
-    [
-      {
-        "PaymentStream": 1,
-        "PaymentAmount": 303.21,
-        "MonthlyPayment": 303.21,
-        "MonthlyPMI": 0,
-        "InsEscrowedAmt": 37.5,
-        "TaxEscrowedAmt": 100,
-        "Other1EscrowAmt": 0,
-        "Other2EscrowAmt": 0,
-        "NumberOfPayments": 719,
-        "UnitPeriods": 24,
-        "OddDays": 0
-      },
-      {
-        "PaymentStream": 2,
-        "PaymentAmount": 306.76,
-        "NumberOfPayments": 1,
-        "MonthlyPayment": 306.76,
-        "MonthlyPMI": 0,
-        "InsEscrowedAmt": 37.5,
-        "TaxEscrowedAmt": 100,
-        "Other1EscrowAmt": 0,
-        "Other2EscrowAmt": 0,
-        "UnitPeriods": 24,
-        "OddDays": 0
-      }
-    ]
-  ],
+  "PaymentSchedule": [],
   "RateSchedule": [],
   "EscrowCalculationStartPeriodDate": [
-    "6/1/2017"
+    "6/2/2017"
   ],
   "EscrowCushionMonthsForInsurance": [
     2
@@ -194,7 +171,7 @@
     "0"
   ],
   "EscrowOther1GridInputDate": [
-    "6/1/2017"
+    "6/2/2017"
   ],
   "EscrowOther1GridInputInstallmentAmt": [
     0
@@ -206,7 +183,7 @@
     "0"
   ],
   "EscrowOther2GridInputDate": [
-    "6/1/2017"
+    "6/2/2017"
   ],
   "EscrowOther2GridInputInstallmentAmt": [
     0
@@ -225,80 +202,80 @@
     [
       {
         "Number": 1,
-        "EscrowPmiDisbursementDate": "6/1/2017",
+        "EscrowPmiDisbursementDate": "6/2/2017",
         "EscrowPmiDisbursementAmt": 0,
         "PaymentNumber": 24
       },
       {
         "Number": 2,
-        "EscrowPmiDisbursementDate": "7/1/2017",
+        "EscrowPmiDisbursementDate": "7/2/2017",
         "EscrowPmiDisbursementAmt": 0,
         "PaymentNumber": 24
       },
       {
         "Number": 3,
-        "EscrowPmiDisbursementDate": "8/1/2017",
+        "EscrowPmiDisbursementDate": "8/2/2017",
         "EscrowPmiDisbursementAmt": 0,
         "PaymentNumber": 24
       },
       {
         "Number": 4,
-        "EscrowPmiDisbursementDate": "9/1/2017",
+        "EscrowPmiDisbursementDate": "9/2/2017",
         "EscrowPmiDisbursementAmt": 0,
         "PaymentNumber": 24
       },
       {
         "Number": 5,
-        "EscrowPmiDisbursementDate": "10/1/2017",
+        "EscrowPmiDisbursementDate": "10/2/2017",
         "EscrowPmiDisbursementAmt": 0,
         "PaymentNumber": 24
       },
       {
         "Number": 6,
-        "EscrowPmiDisbursementDate": "11/1/2017",
+        "EscrowPmiDisbursementDate": "11/2/2017",
         "EscrowPmiDisbursementAmt": 0,
         "PaymentNumber": 24
       },
       {
         "Number": 7,
-        "EscrowPmiDisbursementDate": "12/1/2017",
+        "EscrowPmiDisbursementDate": "12/2/2017",
         "EscrowPmiDisbursementAmt": 0,
         "PaymentNumber": 24
       },
       {
         "Number": 8,
-        "EscrowPmiDisbursementDate": "1/1/2018",
+        "EscrowPmiDisbursementDate": "1/2/2018",
         "EscrowPmiDisbursementAmt": 0,
         "PaymentNumber": 24
       },
       {
         "Number": 9,
-        "EscrowPmiDisbursementDate": "2/1/2018",
+        "EscrowPmiDisbursementDate": "2/2/2018",
         "EscrowPmiDisbursementAmt": 0,
         "PaymentNumber": 24
       },
       {
         "Number": 10,
-        "EscrowPmiDisbursementDate": "3/1/2018",
+        "EscrowPmiDisbursementDate": "3/2/2018",
         "EscrowPmiDisbursementAmt": 0,
         "PaymentNumber": 24
       },
       {
         "Number": 11,
-        "EscrowPmiDisbursementDate": "4/1/2018",
+        "EscrowPmiDisbursementDate": "4/2/2018",
         "EscrowPmiDisbursementAmt": 0,
         "PaymentNumber": 24
       },
       {
         "Number": 12,
-        "EscrowPmiDisbursementDate": "5/1/2018",
+        "EscrowPmiDisbursementDate": "5/2/2018",
         "EscrowPmiDisbursementAmt": 0,
         "PaymentNumber": 24
       }
     ]
   ],
   "DateOfFirstMonthlyPmiDisbursement": [
-    "6/1/2017"
+    "6/2/2017"
   ],
   "EscrowCushionMonthsForPMI": [
     0
@@ -346,41 +323,59 @@
   "EscrowAggrMinimumAmount": [
     0
   ],
+  "EscrowAggrMinimumAmountBeforeAdjustment": [
+    0
+  ],
   "EscrowInsurancePropertyCosts11Months": [
-    787.5
+    "0.00"
   ],
   "EscrowTaxPropertyCosts11Months": [
-    2100
+    "0.00"
   ],
   "EscrowPmiPropertyCosts11Months": [
     "0.00"
   ],
   "EscrowOther1PropertyCosts11Months": [
-    0
+    "0.00"
   ],
   "EscrowOther2PropertyCosts11Months": [
-    0
+    "0.00"
   ],
   "EscrowInsurancePropertyCosts12Months": [
-    862.5
+    "0.00"
   ],
   "EscrowTaxPropertyCosts12Months": [
-    2300
+    "0.00"
   ],
   "EscrowPmiPropertyCosts12Months": [
     "0.00"
   ],
   "EscrowOther1PropertyCosts12Months": [
-    0
+    "0.00"
   ],
   "EscrowOther2PropertyCosts12Months": [
-    0
+    "0.00"
   ],
   "EscrowPmiAmount12Months": [
     0
   ],
   "EscrowGenericDepositAmount12Months": [
     0
+  ],
+  "EscrowSumOfInsuranceDisbursement": [
+    900
+  ],
+  "EscrowSumOfTaxDisbursement": [
+    2400
+  ],
+  "EscrowSumOfOther1Disbursement": [
+    0
+  ],
+  "EscrowSumOfOther2Disbursement": [
+    0
+  ],
+  "EscrowSumOfDisbursement": [
+    3300
   ],
   "EscrowInsuranceInitialDeposit": [
     143.75
@@ -395,7 +390,7 @@
     143.75
   ],
   "EscrowInsuranceTotalAnnualDisbursed": [
-    0
+    900
   ],
   "EscrowTaxInitialDeposit": [
     1183.3333333333333
@@ -458,7 +453,7 @@
     "0.00"
   ],
   "AggregateAdjustment": [
-    0
+    -527.08
   ],
   "AggregateInitialDeposit": [
     1327.08333333
@@ -488,10 +483,10 @@
     0
   ],
   "PrepaidDailyInterest": [
-    0
+    68.23
   ],
   "SectionCOther1": [
-    68.23
+    0
   ],
   "SectionCOther2": [
     0
@@ -515,7 +510,7 @@
     0
   ],
   "SectionBOther1": [
-    68.23
+    0
   ],
   "SectionBOther2": [
     0
@@ -544,10 +539,10 @@
   "PrepaidCustomName": [],
   "PrepaidCustomValue": [],
   "FinanceCharge": [
-    88761.21
+    88692.98
   ],
   "TotalOfPayments": [
-    219624.75
+    219692.98
   ],
   "CalculationMethod": [
     "30Over360"
@@ -686,10 +681,10 @@
     12873.96
   ],
   "GetIn5Years": [
-    37391.99
+    37460.22
   ],
   "APR": [
-    3.837
+    3.827
   ],
   "CumulativeInterest": [
     87314.75
@@ -705,10 +700,10 @@
   ],
   "CancelDate": [],
   "PrepaidCharges": [
-    1446.46
+    1378.23
   ],
   "AmountFinanced": [
-    129553.54
+    129621.77
   ],
   "MonthlyPMI": [
     0
@@ -717,7 +712,7 @@
     "0.0"
   ],
   "TIP": [
-    66.65
+    66.7
   ],
   "MonthlyEscrowPaymentForLoanDisclosures": [
     0
@@ -801,7 +796,7 @@
     12873.96
   ],
   "DsclAPR": [
-    3.8331
+    3.833
   ],
   "DsclCumulativeInterest": [
     87729.15
@@ -813,7 +808,7 @@
     "483.95"
   ],
   "DsclEstimatedEscrow": [
-    100
+    137.5
   ],
   "DsclTotalMonthlyPmt": [
     440.71
@@ -864,16 +859,16 @@
     66.7046
   ],
   "DsclMonthlyEscrowPaymentForLoanDisclosures": [
-    "137.5"
+    0
   ],
   "VarGetIn5Years": [
-    68.23
+    0
   ],
   "VarCumulativePrincipal": [
     0
   ],
   "VarAPR": [
-    -0.0039
+    0.006
   ],
   "VarCumulativeInterest": [
     " "
@@ -885,7 +880,7 @@
     " "
   ],
   "VarEstimatedEscrow": [
-    -175
+    0
   ],
   "VarTotalMonthlyPmt": [
     0
@@ -897,34 +892,34 @@
     " "
   ],
   "VarEscrowPrptOverOneYear": [
-    275
+    0
   ],
   "VarEscrowPropertyCostOverOneYear12Months": [
-    137.5
+    0
   ],
   "VarNonEscrowPrptOverOneYear": [
     0
   ],
   "VarInitialEscrowPayment": [
-    " "
+    -577.16333333
   ],
   "VarMonthlyEscrowPayment": [
     " "
   ],
   "VarEstimatedTaxesInsuranceAssessments": [
-    0
+    -5.97826087
   ],
   "VarTotalOfPayments": [
-    68.22
+    -0.01
   ],
   "VarFinanceCharge": [
-    -68.24
+    -0.01
   ],
   "VarPrepaidCharges": [
-    -68.23
+    0
   ],
   "VarAmountFinanced": [
-    68.23
+    0
   ],
   "VarFinalBalloonPmt": [
     -0.01
@@ -933,7 +928,7 @@
     0
   ],
   "VarTIP": [
-    0.0546
+    0.0046
   ],
   "VarMonthlyEscrowPaymentForLoanDisclosures": [],
   "MortgageGridData": [
@@ -57241,7 +57236,7 @@
   ],
   "EscrowScheduleCount": [],
   "DaysBetweenDates": [
-    19
+    0
   ],
   "NoOfDaysToDivide": [
     360
@@ -57400,12 +57395,12 @@
     0
   ],
   "APRWIN": [
-    3.8373
+    3.8269
   ],
   "sp_doc": [],
   "vp_json": [],
   "today": [
-    "2017-6-1"
+    "2017-6-2"
   ],
   "LoggedInUserId": [
     null
@@ -57427,9 +57422,6 @@
   ],
   "TotalMonthlyIntPricPMI": [
     303.21
-  ],
-  "PaymentNumberForYears": [
-    23
   ],
   "OfflineEscrowInsuranceCreated": [
     [
