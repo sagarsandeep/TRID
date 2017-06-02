@@ -1,6 +1,12 @@
 {
   "ThriveTenantId": "EB535076-2140-4106-8CAE-B230F6E2D082",
   "ThriveAppId": "TRID",
+  "PaymentNumberEscrow11MonthsCard": [
+    5
+  ],
+  "PaymentNumberForYears": [
+    6
+  ],
   "LoanSecuredBy": [
     "Yes"
   ],
@@ -77,10 +83,10 @@
     0
   ],
   "EstimatedEscrow": [
-    1100
+    550
   ],
   "EscrowPrptOverOneYear": [
-    3300
+    2750
   ],
   "EscrowPropertyCostOverOneYear12Months": [
     3300
@@ -89,7 +95,7 @@
     0
   ],
   "InitialEscrowPayment": [
-    0
+    1350
   ],
   "PeriodEscrowPayment": [
     "50.00"
@@ -112,36 +118,7 @@
   "DateForPMICalc": [
     "1/1/2017"
   ],
-  "PaymentSchedule": [
-    [
-      {
-        "PaymentStream": 1,
-        "PaymentAmount": 1214.39,
-        "MonthlyPayment": 1214.39,
-        "MonthlyPMI": 0,
-        "InsEscrowedAmt": 150,
-        "TaxEscrowedAmt": 400,
-        "Other1EscrowAmt": 0,
-        "Other2EscrowAmt": 0,
-        "NumberOfPayments": 179,
-        "UnitPeriods": 6,
-        "OddDays": 0
-      },
-      {
-        "PaymentStream": 2,
-        "PaymentAmount": 1213.26,
-        "NumberOfPayments": 1,
-        "MonthlyPayment": 1213.26,
-        "MonthlyPMI": 0,
-        "InsEscrowedAmt": 150,
-        "TaxEscrowedAmt": 400,
-        "Other1EscrowAmt": 0,
-        "Other2EscrowAmt": 0,
-        "UnitPeriods": 6,
-        "OddDays": 0
-      }
-    ]
-  ],
+  "PaymentSchedule": [],
   "RateSchedule": [],
   "EscrowCalculationStartPeriodDate": [
     "6/2/2017"
@@ -346,41 +323,59 @@
   "EscrowAggrMinimumAmount": [
     0
   ],
+  "EscrowAggrMinimumAmountBeforeAdjustment": [
+    0
+  ],
   "EscrowInsurancePropertyCosts11Months": [
-    900
+    "0.00"
   ],
   "EscrowTaxPropertyCosts11Months": [
-    2400
+    "0.00"
   ],
   "EscrowPmiPropertyCosts11Months": [
     "0.00"
   ],
   "EscrowOther1PropertyCosts11Months": [
-    0
+    "0.00"
   ],
   "EscrowOther2PropertyCosts11Months": [
-    0
+    "0.00"
   ],
   "EscrowInsurancePropertyCosts12Months": [
-    900
+    "0.00"
   ],
   "EscrowTaxPropertyCosts12Months": [
-    2400
+    "0.00"
   ],
   "EscrowPmiPropertyCosts12Months": [
     "0.00"
   ],
   "EscrowOther1PropertyCosts12Months": [
-    0
+    "0.00"
   ],
   "EscrowOther2PropertyCosts12Months": [
-    0
+    "0.00"
   ],
   "EscrowPmiAmount12Months": [
     0
   ],
   "EscrowGenericDepositAmount12Months": [
     0
+  ],
+  "EscrowSumOfInsuranceDisbursement": [
+    900
+  ],
+  "EscrowSumOfTaxDisbursement": [
+    2400
+  ],
+  "EscrowSumOfOther1Disbursement": [
+    0
+  ],
+  "EscrowSumOfOther2Disbursement": [
+    0
+  ],
+  "EscrowSumOfDisbursement": [
+    3300
   ],
   "EscrowInsuranceInitialDeposit": [
     150
@@ -458,7 +453,7 @@
     "0.00"
   ],
   "AggregateAdjustment": [
-    0
+    -550
   ],
   "AggregateInitialDeposit": [
     1350
@@ -689,7 +684,7 @@
     37809.93
   ],
   "APR": [
-    3.832
+    3.808
   ],
   "CumulativeInterest": [
     87589.07
@@ -813,7 +808,7 @@
     "483.95"
   ],
   "DsclEstimatedEscrow": [
-    100
+    550
   ],
   "DsclTotalMonthlyPmt": [
     1764.39
@@ -864,7 +859,7 @@
     66.914
   ],
   "DsclMonthlyEscrowPaymentForLoanDisclosures": [
-    "550"
+    0
   ],
   "VarGetIn5Years": [
     -68.34
@@ -873,7 +868,7 @@
     -0.11
   ],
   "VarAPR": [
-    0
+    0.024
   ],
   "VarCumulativeInterest": [
     " "
@@ -885,7 +880,7 @@
     " "
   ],
   "VarEstimatedEscrow": [
-    -1000
+    0
   ],
   "VarTotalMonthlyPmt": [
     0
@@ -897,7 +892,7 @@
     " "
   ],
   "VarEscrowPrptOverOneYear": [
-    -550
+    0
   ],
   "VarEscrowPropertyCostOverOneYear12Months": [
     0
@@ -906,7 +901,7 @@
     0
   ],
   "VarInitialEscrowPayment": [
-    " "
+    -559.61
   ],
   "VarMonthlyEscrowPayment": [
     " "
@@ -15121,7 +15116,7 @@
   ],
   "EscrowScheduleCount": [],
   "DaysBetweenDates": [
-    66
+    0
   ],
   "NoOfDaysToDivide": [
     360
@@ -15280,7 +15275,7 @@
     0
   ],
   "APRWIN": [
-    3.8323
+    3.8078
   ],
   "sp_doc": [],
   "vp_json": [],
@@ -15307,9 +15302,6 @@
   ],
   "TotalMonthlyIntPricPMI": [
     1214.39
-  ],
-  "PaymentNumberForYears": [
-    6
   ],
   "OfflineEscrowInsuranceCreated": [
     [

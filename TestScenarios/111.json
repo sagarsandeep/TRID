@@ -934,15 +934,15 @@
   "MortgageGridData": [
     [
       {
-        "Number": "2",
-        "BeginPeriod": "27",
-        "EndPeriod": "260",
+        "Number": "1",
+        "BeginPeriod": "1",
+        "EndPeriod": "26",
         "PMIRate": "0.37"
       },
       {
-        "Number": "2017-06-02T06:52:43.452Z",
-        "BeginPeriod": "1",
-        "EndPeriod": "26",
+        "Number": "2",
+        "BeginPeriod": "27",
+        "EndPeriod": "260",
         "PMIRate": "0.37"
       },
       {
@@ -54001,6 +54001,9 @@
   "UpfrontMIPFinanced,UpfrontMIPFinanced": [
     "Yes"
   ],
+  "mortageNumber": [
+    "3"
+  ],
   "mortage_beginmonth": [
     "261"
   ],
@@ -54019,9 +54022,6 @@
         "PMIRate": "0.2"
       }
     ]
-  ],
-  "mortageNumber": [
-    "3"
   ],
   "PaymentNumber": [
     677

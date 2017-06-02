@@ -1,6 +1,12 @@
 {
   "ThriveTenantId": "EB535076-2140-4106-8CAE-B230F6E2D082",
   "ThriveAppId": "TRID",
+  "PaymentNumberEscrow11MonthsCard": [
+    12
+  ],
+  "PaymentNumberForYears": [
+    12
+  ],
   "LoanSecuredBy": [
     "Yes"
   ],
@@ -77,25 +83,25 @@
     0
   ],
   "EstimatedEscrow": [
-    550
+    275
   ],
   "EscrowPrptOverOneYear": [
-    3025
+    3300
   ],
   "EscrowPropertyCostOverOneYear12Months": [
     3300
   ],
   "NonEscrowPrptOverOneYear": [
-    0
+    600
   ],
   "InitialEscrowPayment": [
-    0
+    1350
   ],
   "PeriodEscrowPayment": [
     "50.00"
   ],
   "EstimatedTaxesInsuranceAssessments": [
-    275
+    325
   ],
   "EscrowDateForTaxCalc": [
     "0.00"
@@ -112,49 +118,7 @@
   "DateForPMICalc": [
     "1/1/2017"
   ],
-  "PaymentSchedule": [
-    [
-      {
-        "PaymentStream": 1,
-        "PaymentAmount": 647.07,
-        "MonthlyPayment": 606.68,
-        "MonthlyPMI": 40.39,
-        "InsEscrowedAmt": 75,
-        "TaxEscrowedAmt": 200,
-        "Other1EscrowAmt": 0,
-        "Other2EscrowAmt": 0,
-        "NumberOfPayments": 48,
-        "UnitPeriods": 12,
-        "OddDays": 0
-      },
-      {
-        "PaymentStream": 2,
-        "PaymentAmount": 606.68,
-        "MonthlyPayment": 606.68,
-        "MonthlyPMI": 0,
-        "InsEscrowedAmt": 75,
-        "TaxEscrowedAmt": 200,
-        "Other1EscrowAmt": 0,
-        "Other2EscrowAmt": 0,
-        "NumberOfPayments": 311,
-        "UnitPeriods": 12,
-        "OddDays": 0
-      },
-      {
-        "PaymentStream": 3,
-        "PaymentAmount": 607.6,
-        "NumberOfPayments": 1,
-        "MonthlyPayment": 607.6,
-        "MonthlyPMI": 0,
-        "InsEscrowedAmt": 75,
-        "TaxEscrowedAmt": 200,
-        "Other1EscrowAmt": 0,
-        "Other2EscrowAmt": 0,
-        "UnitPeriods": 12,
-        "OddDays": 0
-      }
-    ]
-  ],
+  "PaymentSchedule": [],
   "RateSchedule": [],
   "EscrowCalculationStartPeriodDate": [
     "6/2/2017"
@@ -366,41 +330,59 @@
   "EscrowAggrMinimumAmount": [
     0
   ],
+  "EscrowAggrMinimumAmountBeforeAdjustment": [
+    0
+  ],
   "EscrowInsurancePropertyCosts11Months": [
-    825
+    "0.00"
   ],
   "EscrowTaxPropertyCosts11Months": [
-    2200
+    "0.00"
   ],
   "EscrowPmiPropertyCosts11Months": [
     "0.00"
   ],
   "EscrowOther1PropertyCosts11Months": [
-    0
+    "0.00"
   ],
   "EscrowOther2PropertyCosts11Months": [
-    0
+    "0.00"
   ],
   "EscrowInsurancePropertyCosts12Months": [
-    900
+    "0.00"
   ],
   "EscrowTaxPropertyCosts12Months": [
-    2400
+    "0.00"
   ],
   "EscrowPmiPropertyCosts12Months": [
     "0.00"
   ],
   "EscrowOther1PropertyCosts12Months": [
-    0
+    "0.00"
   ],
   "EscrowOther2PropertyCosts12Months": [
-    0
+    "0.00"
   ],
   "EscrowPmiAmount12Months": [
     484.68
   ],
   "EscrowGenericDepositAmount12Months": [
     484.68
+  ],
+  "EscrowSumOfInsuranceDisbursement": [
+    900
+  ],
+  "EscrowSumOfTaxDisbursement": [
+    2400
+  ],
+  "EscrowSumOfOther1Disbursement": [
+    600
+  ],
+  "EscrowSumOfOther2Disbursement": [
+    0
+  ],
+  "EscrowSumOfDisbursement": [
+    3900
   ],
   "EscrowInsuranceInitialDeposit": [
     150
@@ -436,7 +418,7 @@
     0
   ],
   "EscrowPmiPeriodDeposit": [
-    21.83
+    40.39
   ],
   "EscrowPmiLowBalance": [
     "0.0"
@@ -478,7 +460,7 @@
     "0.00"
   ],
   "AggregateAdjustment": [
-    0
+    -550
   ],
   "AggregateInitialDeposit": [
     1350
@@ -709,7 +691,7 @@
     38339.52
   ],
   "APR": [
-    3.863
+    3.738
   ],
   "CumulativeInterest": [
     87405.72
@@ -833,7 +815,7 @@
     "483.95"
   ],
   "DsclEstimatedEscrow": [
-    100
+    275
   ],
   "DsclTotalMonthlyPmt": [
     922.07
@@ -884,7 +866,7 @@
     66.7219
   ],
   "DsclMonthlyEscrowPaymentForLoanDisclosures": [
-    "275"
+    0
   ],
   "VarGetIn5Years": [
     0
@@ -893,7 +875,7 @@
     0
   ],
   "VarAPR": [
-    0
+    0.125
   ],
   "VarCumulativeInterest": [
     " "
@@ -905,7 +887,7 @@
     " "
   ],
   "VarEstimatedEscrow": [
-    -450
+    0
   ],
   "VarTotalMonthlyPmt": [
     0
@@ -917,22 +899,22 @@
     " "
   ],
   "VarEscrowPrptOverOneYear": [
-    0
+    -275
   ],
   "VarEscrowPropertyCostOverOneYear12Months": [
     0
   ],
   "VarNonEscrowPrptOverOneYear": [
-    600
+    0
   ],
   "VarInitialEscrowPayment": [
-    " "
+    -600
   ],
   "VarMonthlyEscrowPayment": [
     " "
   ],
   "VarEstimatedTaxesInsuranceAssessments": [
-    50
+    0
   ],
   "VarTotalOfPayments": [
     0
@@ -29200,7 +29182,7 @@
   ],
   "EscrowScheduleCount": [],
   "DaysBetweenDates": [
-    31
+    0
   ],
   "NoOfDaysToDivide": [
     360
@@ -29359,7 +29341,7 @@
     0
   ],
   "APRWIN": [
-    3.8629
+    3.7377
   ],
   "sp_doc": [],
   "vp_json": [],
@@ -29408,9 +29390,6 @@
   ],
   "TotalMonthlyIntPricPMI": [
     628.51
-  ],
-  "PaymentNumberForYears": [
-    12
   ],
   "OfflineEscrowInsuranceCreated": [
     [
