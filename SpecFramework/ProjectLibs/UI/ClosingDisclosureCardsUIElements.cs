@@ -45,9 +45,9 @@ namespace TRID.ProjectLibs.UI
         public static By AprWinInfoValue = By.XPath("//div[@id='viewCompositionContainer']//button//following-sibling::div//span");
 
         //Estimated Escrow
-        public static By EeComputedValue = By.XPath("//div[@id='MonthlyEscrowPayment']//p[1]");
-        public static By EeDisclosureValue = By.XPath("//div[@id='MonthlyEscrowPayment']//p[2]");
-        public static By EeVarianceValue = By.XPath("//div[@id='MonthlyEscrowPayment']//p[3]");
+        public static By EeComputedValue = By.XPath("//div[@id='EstimatedEscrow']//p[1]");
+        public static By EeDisclosureValue = By.XPath("//div[@id='EstimatedEscrow']//p[2]");
+        public static By EeVarianceValue = By.XPath("//div[@id='EstimatedEscrow']//p[3]");
 
         //Escrow Prop Costs Over 1 Year 12 Months
         public static By E1O12ComputedValue = By.XPath("//div[@id='EscrowPropertyCostOverOneYear12Months']//p[1]");

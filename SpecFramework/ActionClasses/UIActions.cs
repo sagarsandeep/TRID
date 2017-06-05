@@ -53,18 +53,16 @@ namespace TRID.ActionClasses
             ObjectRepo.Driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(timeoutInSeconds));
         }
 
-        public static void WebDriverWait(By element, int timeoutInSeconds)
-        {
-            if (timeoutInSeconds > 0)
-               new WebDriverWait(ObjectRepo.Driver, TimeSpan.FromSeconds(timeoutInSeconds)).Until(ExpectedConditions.VisibilityOfAllElementsLocatedBy(element));
-
+        public static void WebDriverWait(By element, int timeoutInSeconds, string errorMessage)
+        {          
             try
             {
-
+                if (timeoutInSeconds > 0)
+                    new WebDriverWait(ObjectRepo.Driver, TimeSpan.FromSeconds(timeoutInSeconds)).Until(ExpectedConditions.VisibilityOfAllElementsLocatedBy(element));
             }
             catch (Exception e)
             {
-                Console.WriteLine("");
+                Console.WriteLine(e +": Unable to load "+ errorMessage + "element");
                 throw;
             }
         }
