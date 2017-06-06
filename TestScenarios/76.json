@@ -121,7 +121,7 @@
   "PaymentSchedule": [],
   "RateSchedule": [],
   "EscrowCalculationStartPeriodDate": [
-    "6/2/2017"
+    "6/6/2017"
   ],
   "EscrowCushionMonthsForInsurance": [
     0
@@ -171,7 +171,7 @@
     "0"
   ],
   "EscrowOther1GridInputDate": [
-    "6/2/2017"
+    "6/6/2017"
   ],
   "EscrowOther1GridInputInstallmentAmt": [
     0
@@ -183,7 +183,7 @@
     "0"
   ],
   "EscrowOther2GridInputDate": [
-    "6/2/2017"
+    "6/6/2017"
   ],
   "EscrowOther2GridInputInstallmentAmt": [
     0
@@ -320,7 +320,7 @@
     33.65
   ],
   "EscrowAggrMinimumAmount": [
-    0
+    33.65
   ],
   "EscrowAggrMinimumAmountBeforeAdjustment": [
     0
@@ -538,10 +538,10 @@
   "PrepaidCustomName": [],
   "PrepaidCustomValue": [],
   "FinanceCharge": [
-    90986.8
+    90946.41
   ],
   "TotalOfPayments": [
-    221986.8
+    221946.41
   ],
   "CalculationMethod": [
     "30Over360"
@@ -598,7 +598,7 @@
     "0.0"
   ],
   "TotalMIInSectionFPrepaids": [
-    80.78
+    40.39
   ],
   "TotalMIInSectionGEscrow": [
     0
@@ -680,10 +680,10 @@
     13010.29
   ],
   "GetIn5Years": [
-    39829.43
+    39789.04
   ],
   "APR": [
-    3.813
+    3.81
   ],
   "CumulativeInterest": [
     87589.07
@@ -699,10 +699,10 @@
   ],
   "CancelDate": [],
   "PrepaidCharges": [
-    1459.01
+    1418.62
   ],
   "AmountFinanced": [
-    129540.99
+    129581.38
   ],
   "MonthlyPMI": [
     80.78
@@ -789,10 +789,10 @@
     "0.0"
   ],
   "DsclGetIn5Years": [
-    39829.31
+    38829.43
   ],
   "DsclCumulativePrincipal": [
-    13010.18
+    13010.29
   ],
   "DsclAPR": [
     3.951
@@ -861,13 +861,13 @@
     0
   ],
   "VarGetIn5Years": [
-    -0.12
+    -959.61
   ],
   "VarCumulativePrincipal": [
-    -0.11
+    0
   ],
   "VarAPR": [
-    0.138
+    0.141
   ],
   "VarCumulativeInterest": [
     " "
@@ -909,16 +909,16 @@
     0
   ],
   "VarTotalOfPayments": [
-    0
+    40.39
   ],
   "VarFinanceCharge": [
-    0
+    40.39
   ],
   "VarPrepaidCharges": [
-    0
+    40.39
   ],
   "VarAmountFinanced": [
-    0
+    -40.39
   ],
   "VarFinalBalloonPmt": [
     0
@@ -1030,7 +1030,7 @@
       "EscrowPmiPayment": 0,
       "EscrowPmiBalanceAdjusted": 12918.36,
       "AggregateDeposit": 74.05,
-      "AggregateBalance": 0
+      "AggregateBalance": 33.65
     }
   ],
   "JasonObjectPrev": [
@@ -1071,7 +1071,7 @@
       "EscrowPmiPayment": 0,
       "EscrowPmiBalanceAdjusted": 12918.36,
       "AggregateDeposit": 74.05,
-      "AggregateBalance": 0
+      "AggregateBalance": 33.65
     }
   ],
   "AmortizedData": [
@@ -1113,7 +1113,7 @@
         "EscrowPmiPayment": 80.78,
         "EscrowPmiBalanceAdjusted": 26.92,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 2,
@@ -1152,7 +1152,7 @@
         "EscrowPmiPayment": 80.78,
         "EscrowPmiBalanceAdjusted": 20.19,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 3,
@@ -1191,7 +1191,7 @@
         "EscrowPmiPayment": 80.78,
         "EscrowPmiBalanceAdjusted": 13.46,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 4,
@@ -1230,7 +1230,7 @@
         "EscrowPmiPayment": 80.78,
         "EscrowPmiBalanceAdjusted": 6.73,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 5,
@@ -1269,7 +1269,7 @@
         "EscrowPmiPayment": 80.78,
         "EscrowPmiBalanceAdjusted": 0,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 6,
@@ -1308,7 +1308,7 @@
         "EscrowPmiPayment": 40.39,
         "EscrowPmiBalanceAdjusted": 33.66,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 7,
@@ -1347,7 +1347,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 107.71,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 8,
@@ -1386,7 +1386,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 181.76,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 9,
@@ -1425,7 +1425,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 255.81,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 10,
@@ -1464,7 +1464,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 329.86,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 11,
@@ -1503,7 +1503,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 403.91,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 12,
@@ -1542,7 +1542,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 477.96,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 13,
@@ -1581,7 +1581,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 552.01,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 14,
@@ -1620,7 +1620,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 626.06,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 15,
@@ -1659,7 +1659,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 700.11,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 16,
@@ -1698,7 +1698,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 774.16,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 17,
@@ -1737,7 +1737,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 848.21,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 18,
@@ -1776,7 +1776,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 922.26,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 19,
@@ -1815,7 +1815,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 996.31,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 20,
@@ -1854,7 +1854,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 1070.36,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 21,
@@ -1893,7 +1893,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 1144.41,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 22,
@@ -1932,7 +1932,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 1218.46,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 23,
@@ -1971,7 +1971,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 1292.51,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 24,
@@ -2010,7 +2010,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 1366.56,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 25,
@@ -2049,7 +2049,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 1440.61,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 26,
@@ -2088,7 +2088,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 1514.66,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 27,
@@ -2127,7 +2127,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 1588.71,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 28,
@@ -2166,7 +2166,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 1662.76,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 29,
@@ -2205,7 +2205,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 1736.81,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 30,
@@ -2244,7 +2244,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 1810.86,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 31,
@@ -2283,7 +2283,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 1884.91,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 32,
@@ -2322,7 +2322,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 1958.96,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 33,
@@ -2361,7 +2361,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 2033.01,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 34,
@@ -2400,7 +2400,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 2107.06,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 35,
@@ -2439,7 +2439,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 2181.11,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 36,
@@ -2478,7 +2478,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 2255.16,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 37,
@@ -2517,7 +2517,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 2329.21,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 38,
@@ -2556,7 +2556,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 2403.26,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 39,
@@ -2595,7 +2595,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 2477.31,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 40,
@@ -2634,7 +2634,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 2551.36,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 41,
@@ -2673,7 +2673,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 2625.41,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 42,
@@ -2712,7 +2712,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 2699.46,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 43,
@@ -2751,7 +2751,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 2773.51,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 44,
@@ -2790,7 +2790,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 2847.56,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 45,
@@ -2829,7 +2829,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 2921.61,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 46,
@@ -2868,7 +2868,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 2995.66,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 47,
@@ -2907,7 +2907,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 3069.71,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 48,
@@ -2946,7 +2946,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 3143.76,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 49,
@@ -2985,7 +2985,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 3217.81,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 50,
@@ -3024,7 +3024,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 3291.86,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 51,
@@ -3063,7 +3063,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 3365.91,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 52,
@@ -3102,7 +3102,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 3439.96,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 53,
@@ -3141,7 +3141,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 3514.01,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 54,
@@ -3180,7 +3180,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 3588.06,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 55,
@@ -3219,7 +3219,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 3662.11,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 56,
@@ -3258,7 +3258,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 3736.16,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 57,
@@ -3297,7 +3297,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 3810.21,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 58,
@@ -3336,7 +3336,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 3884.26,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 59,
@@ -3375,7 +3375,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 3958.31,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 60,
@@ -3414,7 +3414,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 4032.36,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 61,
@@ -3453,7 +3453,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 4106.41,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 62,
@@ -3492,7 +3492,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 4180.46,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 63,
@@ -3531,7 +3531,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 4254.51,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 64,
@@ -3570,7 +3570,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 4328.56,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 65,
@@ -3609,7 +3609,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 4402.61,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 66,
@@ -3648,7 +3648,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 4476.66,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 67,
@@ -3687,7 +3687,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 4550.71,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 68,
@@ -3726,7 +3726,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 4624.76,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 69,
@@ -3765,7 +3765,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 4698.81,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 70,
@@ -3804,7 +3804,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 4772.86,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 71,
@@ -3843,7 +3843,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 4846.91,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 72,
@@ -3882,7 +3882,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 4920.96,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 73,
@@ -3921,7 +3921,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 4995.01,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 74,
@@ -3960,7 +3960,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 5069.06,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 75,
@@ -3999,7 +3999,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 5143.11,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 76,
@@ -4038,7 +4038,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 5217.16,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 77,
@@ -4077,7 +4077,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 5291.21,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 78,
@@ -4116,7 +4116,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 5365.26,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 79,
@@ -4155,7 +4155,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 5439.31,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 80,
@@ -4194,7 +4194,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 5513.36,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 81,
@@ -4233,7 +4233,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 5587.41,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 82,
@@ -4272,7 +4272,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 5661.46,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 83,
@@ -4311,7 +4311,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 5735.51,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 84,
@@ -4350,7 +4350,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 5809.56,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 85,
@@ -4389,7 +4389,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 5883.61,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 86,
@@ -4428,7 +4428,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 5957.66,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 87,
@@ -4467,7 +4467,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 6031.71,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 88,
@@ -4506,7 +4506,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 6105.76,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 89,
@@ -4545,7 +4545,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 6179.81,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 90,
@@ -4584,7 +4584,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 6253.86,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 91,
@@ -4623,7 +4623,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 6327.91,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 92,
@@ -4662,7 +4662,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 6401.96,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 93,
@@ -4701,7 +4701,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 6476.01,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 94,
@@ -4740,7 +4740,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 6550.06,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 95,
@@ -4779,7 +4779,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 6624.11,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 96,
@@ -4818,7 +4818,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 6698.16,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 97,
@@ -4857,7 +4857,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 6772.21,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 98,
@@ -4896,7 +4896,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 6846.26,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 99,
@@ -4935,7 +4935,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 6920.31,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 100,
@@ -4974,7 +4974,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 6994.36,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 101,
@@ -5013,7 +5013,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 7068.41,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 102,
@@ -5052,7 +5052,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 7142.46,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 103,
@@ -5091,7 +5091,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 7216.51,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 104,
@@ -5130,7 +5130,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 7290.56,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 105,
@@ -5169,7 +5169,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 7364.61,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 106,
@@ -5208,7 +5208,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 7438.66,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 107,
@@ -5247,7 +5247,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 7512.71,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 108,
@@ -5286,7 +5286,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 7586.76,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 109,
@@ -5325,7 +5325,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 7660.81,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 110,
@@ -5364,7 +5364,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 7734.86,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 111,
@@ -5403,7 +5403,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 7808.91,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 112,
@@ -5442,7 +5442,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 7882.96,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 113,
@@ -5481,7 +5481,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 7957.01,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 114,
@@ -5520,7 +5520,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 8031.06,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 115,
@@ -5559,7 +5559,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 8105.11,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 116,
@@ -5598,7 +5598,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 8179.16,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 117,
@@ -5637,7 +5637,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 8253.21,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 118,
@@ -5676,7 +5676,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 8327.26,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 119,
@@ -5715,7 +5715,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 8401.31,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 120,
@@ -5754,7 +5754,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 8475.36,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 121,
@@ -5793,7 +5793,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 8549.41,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 122,
@@ -5832,7 +5832,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 8623.46,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 123,
@@ -5871,7 +5871,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 8697.51,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 124,
@@ -5910,7 +5910,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 8771.56,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 125,
@@ -5949,7 +5949,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 8845.61,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 126,
@@ -5988,7 +5988,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 8919.66,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 127,
@@ -6027,7 +6027,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 8993.71,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 128,
@@ -6066,7 +6066,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 9067.76,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 129,
@@ -6105,7 +6105,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 9141.81,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 130,
@@ -6144,7 +6144,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 9215.86,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 131,
@@ -6183,7 +6183,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 9289.91,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 132,
@@ -6222,7 +6222,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 9363.96,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 133,
@@ -6261,7 +6261,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 9438.01,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 134,
@@ -6300,7 +6300,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 9512.06,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 135,
@@ -6339,7 +6339,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 9586.11,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 136,
@@ -6378,7 +6378,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 9660.16,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 137,
@@ -6417,7 +6417,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 9734.21,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 138,
@@ -6456,7 +6456,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 9808.26,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 139,
@@ -6495,7 +6495,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 9882.31,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 140,
@@ -6534,7 +6534,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 9956.36,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 141,
@@ -6573,7 +6573,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 10030.41,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 142,
@@ -6612,7 +6612,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 10104.46,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 143,
@@ -6651,7 +6651,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 10178.51,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 144,
@@ -6690,7 +6690,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 10252.56,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 145,
@@ -6729,7 +6729,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 10326.61,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 146,
@@ -6768,7 +6768,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 10400.66,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 147,
@@ -6807,7 +6807,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 10474.71,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 148,
@@ -6846,7 +6846,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 10548.76,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 149,
@@ -6885,7 +6885,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 10622.81,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 150,
@@ -6924,7 +6924,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 10696.86,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 151,
@@ -6963,7 +6963,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 10770.91,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 152,
@@ -7002,7 +7002,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 10844.96,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 153,
@@ -7041,7 +7041,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 10919.01,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 154,
@@ -7080,7 +7080,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 10993.06,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 155,
@@ -7119,7 +7119,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 11067.11,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 156,
@@ -7158,7 +7158,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 11141.16,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 157,
@@ -7197,7 +7197,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 11215.21,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 158,
@@ -7236,7 +7236,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 11289.26,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 159,
@@ -7275,7 +7275,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 11363.31,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 160,
@@ -7314,7 +7314,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 11437.36,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 161,
@@ -7353,7 +7353,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 11511.41,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 162,
@@ -7392,7 +7392,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 11585.46,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 163,
@@ -7431,7 +7431,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 11659.51,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 164,
@@ -7470,7 +7470,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 11733.56,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 165,
@@ -7509,7 +7509,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 11807.61,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 166,
@@ -7548,7 +7548,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 11881.66,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 167,
@@ -7587,7 +7587,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 11955.71,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 168,
@@ -7626,7 +7626,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 12029.76,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 169,
@@ -7665,7 +7665,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 12103.81,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 170,
@@ -7704,7 +7704,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 12177.86,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 171,
@@ -7743,7 +7743,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 12251.91,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 172,
@@ -7782,7 +7782,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 12325.96,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 173,
@@ -7821,7 +7821,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 12400.01,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 174,
@@ -7860,7 +7860,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 12474.06,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 175,
@@ -7899,7 +7899,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 12548.11,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 176,
@@ -7938,7 +7938,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 12622.16,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 177,
@@ -7977,7 +7977,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 12696.21,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 178,
@@ -8016,7 +8016,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 12770.26,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 179,
@@ -8055,7 +8055,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 12844.31,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 180,
@@ -8094,7 +8094,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 12918.36,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       }
     ]
   ],
@@ -8137,7 +8137,7 @@
         "EscrowPmiPayment": 80.78,
         "EscrowPmiBalanceAdjusted": 26.92,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 2,
@@ -8176,7 +8176,7 @@
         "EscrowPmiPayment": 80.78,
         "EscrowPmiBalanceAdjusted": 20.19,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 3,
@@ -8215,7 +8215,7 @@
         "EscrowPmiPayment": 80.78,
         "EscrowPmiBalanceAdjusted": 13.46,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 4,
@@ -8254,7 +8254,7 @@
         "EscrowPmiPayment": 80.78,
         "EscrowPmiBalanceAdjusted": 6.73,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 5,
@@ -8293,7 +8293,7 @@
         "EscrowPmiPayment": 80.78,
         "EscrowPmiBalanceAdjusted": 0,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 6,
@@ -8332,7 +8332,7 @@
         "EscrowPmiPayment": 40.39,
         "EscrowPmiBalanceAdjusted": 33.66,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 7,
@@ -8371,7 +8371,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 107.71,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 8,
@@ -8410,7 +8410,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 181.76,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 9,
@@ -8449,7 +8449,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 255.81,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 10,
@@ -8488,7 +8488,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 329.86,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 11,
@@ -8527,7 +8527,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 403.91,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 12,
@@ -8566,7 +8566,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 477.96,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 13,
@@ -8605,7 +8605,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 552.01,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 14,
@@ -8644,7 +8644,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 626.06,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 15,
@@ -8683,7 +8683,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 700.11,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 16,
@@ -8722,7 +8722,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 774.16,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 17,
@@ -8761,7 +8761,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 848.21,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 18,
@@ -8800,7 +8800,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 922.26,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 19,
@@ -8839,7 +8839,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 996.31,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 20,
@@ -8878,7 +8878,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 1070.36,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 21,
@@ -8917,7 +8917,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 1144.41,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 22,
@@ -8956,7 +8956,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 1218.46,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 23,
@@ -8995,7 +8995,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 1292.51,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 24,
@@ -9034,7 +9034,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 1366.56,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 25,
@@ -9073,7 +9073,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 1440.61,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 26,
@@ -9112,7 +9112,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 1514.66,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 27,
@@ -9151,7 +9151,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 1588.71,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 28,
@@ -9190,7 +9190,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 1662.76,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 29,
@@ -9229,7 +9229,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 1736.81,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 30,
@@ -9268,7 +9268,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 1810.86,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 31,
@@ -9307,7 +9307,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 1884.91,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 32,
@@ -9346,7 +9346,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 1958.96,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 33,
@@ -9385,7 +9385,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 2033.01,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 34,
@@ -9424,7 +9424,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 2107.06,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 35,
@@ -9463,7 +9463,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 2181.11,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 36,
@@ -9502,7 +9502,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 2255.16,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 37,
@@ -9541,7 +9541,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 2329.21,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 38,
@@ -9580,7 +9580,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 2403.26,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 39,
@@ -9619,7 +9619,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 2477.31,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 40,
@@ -9658,7 +9658,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 2551.36,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 41,
@@ -9697,7 +9697,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 2625.41,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 42,
@@ -9736,7 +9736,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 2699.46,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 43,
@@ -9775,7 +9775,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 2773.51,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 44,
@@ -9814,7 +9814,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 2847.56,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 45,
@@ -9853,7 +9853,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 2921.61,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 46,
@@ -9892,7 +9892,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 2995.66,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 47,
@@ -9931,7 +9931,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 3069.71,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 48,
@@ -9970,7 +9970,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 3143.76,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 49,
@@ -10009,7 +10009,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 3217.81,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 50,
@@ -10048,7 +10048,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 3291.86,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 51,
@@ -10087,7 +10087,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 3365.91,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 52,
@@ -10126,7 +10126,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 3439.96,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 53,
@@ -10165,7 +10165,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 3514.01,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 54,
@@ -10204,7 +10204,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 3588.06,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 55,
@@ -10243,7 +10243,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 3662.11,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 56,
@@ -10282,7 +10282,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 3736.16,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 57,
@@ -10321,7 +10321,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 3810.21,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 58,
@@ -10360,7 +10360,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 3884.26,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 59,
@@ -10399,7 +10399,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 3958.31,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 60,
@@ -10438,7 +10438,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 4032.36,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 61,
@@ -10477,7 +10477,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 4106.41,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 62,
@@ -10516,7 +10516,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 4180.46,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 63,
@@ -10555,7 +10555,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 4254.51,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 64,
@@ -10594,7 +10594,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 4328.56,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 65,
@@ -10633,7 +10633,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 4402.61,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 66,
@@ -10672,7 +10672,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 4476.66,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 67,
@@ -10711,7 +10711,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 4550.71,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 68,
@@ -10750,7 +10750,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 4624.76,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 69,
@@ -10789,7 +10789,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 4698.81,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 70,
@@ -10828,7 +10828,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 4772.86,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 71,
@@ -10867,7 +10867,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 4846.91,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 72,
@@ -10906,7 +10906,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 4920.96,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 73,
@@ -10945,7 +10945,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 4995.01,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 74,
@@ -10984,7 +10984,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 5069.06,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 75,
@@ -11023,7 +11023,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 5143.11,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 76,
@@ -11062,7 +11062,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 5217.16,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 77,
@@ -11101,7 +11101,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 5291.21,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 78,
@@ -11140,7 +11140,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 5365.26,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 79,
@@ -11179,7 +11179,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 5439.31,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 80,
@@ -11218,7 +11218,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 5513.36,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 81,
@@ -11257,7 +11257,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 5587.41,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 82,
@@ -11296,7 +11296,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 5661.46,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 83,
@@ -11335,7 +11335,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 5735.51,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 84,
@@ -11374,7 +11374,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 5809.56,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 85,
@@ -11413,7 +11413,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 5883.61,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 86,
@@ -11452,7 +11452,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 5957.66,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 87,
@@ -11491,7 +11491,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 6031.71,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 88,
@@ -11530,7 +11530,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 6105.76,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 89,
@@ -11569,7 +11569,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 6179.81,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 90,
@@ -11608,7 +11608,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 6253.86,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 91,
@@ -11647,7 +11647,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 6327.91,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 92,
@@ -11686,7 +11686,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 6401.96,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 93,
@@ -11725,7 +11725,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 6476.01,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 94,
@@ -11764,7 +11764,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 6550.06,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 95,
@@ -11803,7 +11803,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 6624.11,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 96,
@@ -11842,7 +11842,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 6698.16,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 97,
@@ -11881,7 +11881,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 6772.21,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 98,
@@ -11920,7 +11920,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 6846.26,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 99,
@@ -11959,7 +11959,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 6920.31,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 100,
@@ -11998,7 +11998,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 6994.36,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 101,
@@ -12037,7 +12037,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 7068.41,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 102,
@@ -12076,7 +12076,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 7142.46,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 103,
@@ -12115,7 +12115,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 7216.51,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 104,
@@ -12154,7 +12154,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 7290.56,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 105,
@@ -12193,7 +12193,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 7364.61,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 106,
@@ -12232,7 +12232,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 7438.66,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 107,
@@ -12271,7 +12271,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 7512.71,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 108,
@@ -12310,7 +12310,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 7586.76,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 109,
@@ -12349,7 +12349,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 7660.81,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 110,
@@ -12388,7 +12388,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 7734.86,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 111,
@@ -12427,7 +12427,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 7808.91,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 112,
@@ -12466,7 +12466,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 7882.96,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 113,
@@ -12505,7 +12505,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 7957.01,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 114,
@@ -12544,7 +12544,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 8031.06,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 115,
@@ -12583,7 +12583,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 8105.11,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 116,
@@ -12622,7 +12622,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 8179.16,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 117,
@@ -12661,7 +12661,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 8253.21,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 118,
@@ -12700,7 +12700,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 8327.26,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 119,
@@ -12739,7 +12739,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 8401.31,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 120,
@@ -12778,7 +12778,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 8475.36,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 121,
@@ -12817,7 +12817,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 8549.41,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 122,
@@ -12856,7 +12856,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 8623.46,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 123,
@@ -12895,7 +12895,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 8697.51,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 124,
@@ -12934,7 +12934,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 8771.56,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 125,
@@ -12973,7 +12973,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 8845.61,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 126,
@@ -13012,7 +13012,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 8919.66,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 127,
@@ -13051,7 +13051,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 8993.71,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 128,
@@ -13090,7 +13090,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 9067.76,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 129,
@@ -13129,7 +13129,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 9141.81,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 130,
@@ -13168,7 +13168,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 9215.86,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 131,
@@ -13207,7 +13207,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 9289.91,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 132,
@@ -13246,7 +13246,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 9363.96,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 133,
@@ -13285,7 +13285,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 9438.01,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 134,
@@ -13324,7 +13324,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 9512.06,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 135,
@@ -13363,7 +13363,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 9586.11,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 136,
@@ -13402,7 +13402,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 9660.16,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 137,
@@ -13441,7 +13441,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 9734.21,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 138,
@@ -13480,7 +13480,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 9808.26,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 139,
@@ -13519,7 +13519,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 9882.31,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 140,
@@ -13558,7 +13558,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 9956.36,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 141,
@@ -13597,7 +13597,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 10030.41,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 142,
@@ -13636,7 +13636,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 10104.46,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 143,
@@ -13675,7 +13675,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 10178.51,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 144,
@@ -13714,7 +13714,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 10252.56,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 145,
@@ -13753,7 +13753,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 10326.61,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 146,
@@ -13792,7 +13792,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 10400.66,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 147,
@@ -13831,7 +13831,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 10474.71,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 148,
@@ -13870,7 +13870,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 10548.76,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 149,
@@ -13909,7 +13909,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 10622.81,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 150,
@@ -13948,7 +13948,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 10696.86,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 151,
@@ -13987,7 +13987,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 10770.91,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 152,
@@ -14026,7 +14026,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 10844.96,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 153,
@@ -14065,7 +14065,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 10919.01,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 154,
@@ -14104,7 +14104,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 10993.06,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 155,
@@ -14143,7 +14143,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 11067.11,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 156,
@@ -14182,7 +14182,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 11141.16,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 157,
@@ -14221,7 +14221,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 11215.21,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 158,
@@ -14260,7 +14260,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 11289.26,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 159,
@@ -14299,7 +14299,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 11363.31,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 160,
@@ -14338,7 +14338,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 11437.36,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 161,
@@ -14377,7 +14377,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 11511.41,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 162,
@@ -14416,7 +14416,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 11585.46,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 163,
@@ -14455,7 +14455,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 11659.51,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 164,
@@ -14494,7 +14494,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 11733.56,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 165,
@@ -14533,7 +14533,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 11807.61,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 166,
@@ -14572,7 +14572,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 11881.66,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 167,
@@ -14611,7 +14611,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 11955.71,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 168,
@@ -14650,7 +14650,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 12029.76,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 169,
@@ -14689,7 +14689,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 12103.81,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 170,
@@ -14728,7 +14728,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 12177.86,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 171,
@@ -14767,7 +14767,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 12251.91,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 172,
@@ -14806,7 +14806,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 12325.96,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 173,
@@ -14845,7 +14845,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 12400.01,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 174,
@@ -14884,7 +14884,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 12474.06,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 175,
@@ -14923,7 +14923,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 12548.11,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 176,
@@ -14962,7 +14962,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 12622.16,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 177,
@@ -15001,7 +15001,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 12696.21,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 178,
@@ -15040,7 +15040,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 12770.26,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 179,
@@ -15079,7 +15079,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 12844.31,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       },
       {
         "SerialNumber": 180,
@@ -15118,7 +15118,7 @@
         "EscrowPmiPayment": 0,
         "EscrowPmiBalanceAdjusted": 12918.36,
         "AggregateDeposit": 74.05,
-        "AggregateBalance": 0
+        "AggregateBalance": 33.65
       }
     ]
   ],
@@ -15287,18 +15287,18 @@
     74.05
   ],
   "AggregateBalance": [
-    0
+    33.65
   ],
   "AggregatePrevBalance": [
-    0
+    33.65
   ],
   "APRWIN": [
-    3.8129
+    3.8104
   ],
   "sp_doc": [],
   "vp_json": [],
   "today": [
-    "2017-6-2"
+    "2017-6-6"
   ],
   "LoggedInUserId": [
     null
