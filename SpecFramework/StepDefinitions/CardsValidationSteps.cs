@@ -2,9 +2,7 @@
 using System.Configuration;
 using System.IO;
 using System.Threading;
-using System.Windows.Forms;
 using NUnit.Framework;
-using OpenQA.Selenium;
 using TechTalk.SpecFlow;
 using TRID.ActionClasses;
 using TRID.CommonUtils;
@@ -21,6 +19,7 @@ namespace TRID.StepDefinitions
         readonly GetExcelData _getData = new GetExcelData();
         public static bool TestCaseStatus = true;
         public static int TestFailureCount;
+        public static double ValueDifference;
         public static string CardsFailure = "";
 
 
@@ -30,10 +29,10 @@ namespace TRID.StepDefinitions
         [Given(@"user is at TRID application homepage")]
         public void GivenUserIsAtTridApplicationHomepage()
         {
+            //ProjActions.CreateCsvHeaderFile();
             UIActions.WindowMaximize();
             UIActions.GoToUrl(Url);
             UIActions.WebDriverWait(StartNewLoanText, 60, "StartNewLoanText");
-
             UIActions.Click(ResetButton);
         }           
 
@@ -273,6 +272,13 @@ namespace TRID.StepDefinitions
             UIActions.Clear(LoanCostsSumABC);
             UIActions.GiveInput(LoanCostsSumABC, TridVariable.LoanCostsSumABC);
         }
+
+        [When(@"user enters input value for prepaid custom fields")]
+        public void WhenUserEntersInputValueForPrepaidCustomFields()
+        {
+            ProjActions.AddPrepaidCustomValues();
+        }
+
 
         [When(@"user enters pmi rate values")]
         public void WhenUserEntersPmiRateValues()
@@ -653,7 +659,7 @@ namespace TRID.StepDefinitions
         [When(@"user clicks on Export button to generate JSON file")]
         public void WhenUserClicksOnExportButtonToGenerateJsonFile()
         {
-            var filePath = DriverSetup.DownloadDirectory + @"\" + TridVariable.ScenarioNo + ".json";
+            var filePath = DriverSetup.DownloadDirectory + TridVariable.ScenarioNo + ".json";
             if (File.Exists(filePath))
             {
                 File.Delete(filePath);
@@ -682,39 +688,44 @@ namespace TRID.StepDefinitions
             {
                 var actualCValue = Math.Round(ProjActions.GetNumericValueFromString(UIActions.GetText(PiComputedValue)), 2);
                 var expectedCValue = Math.Round(Convert.ToDouble(TridVariable.PrincipalAndInt), 2);
-                Assert.AreEqual(expectedCValue, actualCValue, "Computed value does not match as expected with the difference of " + Math.Abs(expectedCValue - actualCValue));
+                ValueDifference = Math.Abs(expectedCValue - actualCValue);
+                Assert.AreEqual(expectedCValue, actualCValue, "Computed value does not match as expected with the difference of {0}" , ValueDifference);
 
                 Console.WriteLine("===========================================================");
-                Console.WriteLine("ExpectedComputedValue :" + expectedCValue);
-                Console.WriteLine("ActualComputedValue :" + actualCValue);
+                Console.WriteLine("ExpectedComputedValue :{0}" , expectedCValue);
+                Console.WriteLine("ActualComputedValue :{0}" , actualCValue);
                 Console.WriteLine("============================================================");
 
                 var actualDValue = ProjActions.GetNumericValueFromString(UIActions.GetText(PiDisclosureValue));
                 var expectedDValue = Math.Round(Convert.ToDouble(TridVariable.DisclosedMonthlyPrincipalAndInterest), 2);
-                Assert.AreEqual(expectedDValue,actualDValue, "Disclosed value does not match as expected with the difference of " + Math.Abs(expectedDValue - actualDValue));
+                ValueDifference = Math.Abs(expectedDValue - actualDValue);
+                Assert.AreEqual(expectedDValue,actualDValue, "Disclosed value does not match as expected with the difference of {0}" , ValueDifference);
 
                 Console.WriteLine("===========================================================");
-                Console.WriteLine("ExpectedDisclosedValue :" + expectedDValue);
-                Console.WriteLine("ActualDisclosedValue :" + actualDValue);
+                Console.WriteLine("ExpectedDisclosedValue :{0}" , expectedDValue);
+                Console.WriteLine("ActualDisclosedValue :{0}" , actualDValue);
                 Console.WriteLine("============================================================");
-
-                Assert.AreEqual(actualDValue, actualCValue, "Disclosed value does not match with computed value with the difference of " + Math.Abs(actualCValue - actualDValue));
+                ValueDifference = Math.Abs(actualCValue - actualDValue);
+                Assert.AreEqual(actualDValue, actualCValue, "Disclosed value does not match with computed value with the difference of {0}" , ValueDifference);
 
                 var expectedVValue = Convert.ToDouble(TridVariable.VariancePrincipalAndInt);
                 var actualVValue = ProjActions.GetNumericValueFromString(UIActions.GetText(PiVarianceValue));
-                Assert.AreEqual(expectedVValue, actualVValue, "Variance does not match as expected with the difference of " + Math.Abs(actualVValue - expectedVValue));
+                ValueDifference = Math.Abs(actualVValue - expectedVValue);
+                Assert.AreEqual(expectedVValue, actualVValue, "Variance does not match as expected with the difference of {0}" , ValueDifference);
 
                 Console.WriteLine("===========================================================");
-                Console.WriteLine("ExpectedVarianceValue :" + expectedVValue);
-                Console.WriteLine("ActualVarianceValue :" + actualVValue);
+                Console.WriteLine("ExpectedVarianceValue :{0}" , expectedVValue);
+                Console.WriteLine("ActualVarianceValue :{0}" , actualVValue);
                 Console.WriteLine("============================================================");
+                ProjActions.CreateCsvFile(expectedVValue.ToString());
             }
             catch (Exception e)
             {
+                ProjActions.CreateCsvFile(ValueDifference.ToString());
                 Console.WriteLine(e);
                 TestCaseStatus = false;
                 TestFailureCount += 1;
-                CardsFailure += "|| PrincipalAndInt ||";
+                CardsFailure += "|| PrincipalAndInt || : " + e + " \n ====================================================================================\n";
             }
         }
 
@@ -725,103 +736,47 @@ namespace TRID.StepDefinitions
             {
                 var actualCValue = Math.Round(ProjActions.GetNumericValueFromString(UIActions.GetText(MiComputedValue)), 2);
                 var expectedCValue = Math.Round(Convert.ToDouble(TridVariable.MortgageInsurance), 2);
-                Assert.AreEqual(expectedCValue, actualCValue, "Computed value does not match as expected with the difference of " + Math.Abs(expectedCValue - actualCValue));
+                ValueDifference = Math.Abs(expectedCValue - actualCValue);
+                Assert.AreEqual(expectedCValue, actualCValue, "Computed value does not match as expected with the difference of {0}" , ValueDifference);
 
                 Console.WriteLine("===========================================================");
-                Console.WriteLine("ExpectedComputedValue :" + expectedCValue);
-                Console.WriteLine("ActualComputedValue :" + actualCValue);
+                Console.WriteLine("ExpectedComputedValue :{0}" , expectedCValue);
+                Console.WriteLine("ActualComputedValue :{0}" , actualCValue);
                 Console.WriteLine("============================================================");
 
                 var actualDValue = ProjActions.GetNumericValueFromString(UIActions.GetText(MiDisclosureValue));
                 var expectedDValue = Math.Round(Convert.ToDouble(TridVariable.DisclosedMonthlyPmi), 2);
-                Assert.AreEqual(expectedDValue, actualDValue, "Disclosed value does not match as expected with the difference of " + Math.Abs(expectedDValue - actualDValue));
+                ValueDifference = Math.Abs(expectedDValue - actualDValue);
+                Assert.AreEqual(expectedDValue,actualDValue, "Disclosed value does not match as expected with the difference of {0}" , ValueDifference);
 
                 Console.WriteLine("===========================================================");
-                Console.WriteLine("ExpectedDisclosedValue :" + expectedDValue);
-                Console.WriteLine("ActualDisclosedValue :" + actualDValue);
+                Console.WriteLine("ExpectedDisclosedValue :{0}" , expectedDValue);
+                Console.WriteLine("ActualDisclosedValue :{0}" , actualDValue);
                 Console.WriteLine("============================================================");
 
-                Assert.AreEqual(actualDValue, actualCValue, "Disclosed value does not match with computed value with the difference of " + Math.Abs(actualCValue - actualDValue));
+                ValueDifference = Math.Abs(actualCValue - actualDValue);
+                Assert.AreEqual(actualDValue, actualCValue, "Disclosed value does not match with computed value with the difference of {0}" , ValueDifference);
 
                 var expectedVValue = Convert.ToDouble(TridVariable.VarianceMortgageInsurance);
                 var actualVValue = ProjActions.GetNumericValueFromString(UIActions.GetText(MiVarianceValue));
-                Assert.AreEqual(expectedVValue, actualVValue, "Variance does not match as expected with the difference of " + Math.Abs(actualVValue - expectedVValue));
+                ValueDifference = Math.Abs(actualVValue - expectedVValue);
+                Assert.AreEqual(expectedVValue, actualVValue, "Variance does not match as expected with the difference of {0}" , ValueDifference);
 
                 Console.WriteLine("===========================================================");
-                Console.WriteLine("ExpectedVarianceValue :" + expectedVValue);
-                Console.WriteLine("ActualVarianceValue :" + actualVValue);
+                Console.WriteLine("ExpectedVarianceValue :{0}" , expectedVValue);
+                Console.WriteLine("ActualVarianceValue :{0}" , actualVValue);
                 Console.WriteLine("============================================================");
+                ProjActions.CreateCsvFile(expectedVValue.ToString());
             }
             catch (Exception e)
             {
+                ProjActions.CreateCsvFile(ValueDifference.ToString());
                 Console.WriteLine(e);
                 TestCaseStatus = false;
                 TestFailureCount += 1;
-                CardsFailure += "|| MortgageInsurance ||";
+                CardsFailure += "|| MortgageInsurance || : " + e + " \n ====================================================================================\n";
             }
         }
-
-        [Then(@"updated/computed APR value should display on Closing Disclosure")]
-        public void ThenUpdatedComputedAprValueShouldDisplayOnClosingDisclosure()
-        {
-            try
-            {
-                var actualCValue = Math.Round(ProjActions.GetNumericValueFromString(UIActions.GetText(AprComputedValue)), 3);
-                var expectedCValue = Math.Round(Convert.ToDouble(TridVariable.Apr), 3);
-                Assert.AreEqual(expectedCValue, actualCValue, "Computed value does not match as expected with the difference of " + Math.Abs(expectedCValue - actualCValue));
-
-                Console.WriteLine("===========================================================");
-                Console.WriteLine("ExpectedComputedValue :" + expectedCValue);
-                Console.WriteLine("ActualComputedValue :" + actualCValue);
-                Console.WriteLine("============================================================");
-
-                var actualDValue = ProjActions.GetNumericValueFromString(UIActions.GetText(AprDisclosureValue));
-                var expectedDValue = Math.Round(Convert.ToDouble(TridVariable.DisclosedApr), 3);
-                Assert.AreEqual(expectedDValue, actualDValue, "Disclosed value does not match as expected with the difference of " + Math.Abs(expectedDValue - actualDValue));
-
-                Console.WriteLine("===========================================================");
-                Console.WriteLine("ExpectedDisclosedValue :" + expectedDValue);
-                Console.WriteLine("ActualDisclosedValue :" + actualDValue);
-                Console.WriteLine("============================================================");
-
-                Assert.AreEqual(actualDValue, actualCValue, "Disclosed value does not match with computed value with the difference of " + Math.Abs(actualCValue - actualDValue));
-
-                var expectedVValue = Convert.ToDouble(TridVariable.VarianceApr);
-                var actualVValue = ProjActions.GetNumericValueFromString(UIActions.GetText(AprVarianceValue));
-                Assert.AreEqual(expectedVValue, actualVValue, "Variance does not match as expected with the difference of " + Math.Abs(actualVValue - expectedVValue));
-
-                Console.WriteLine("===========================================================");
-                Console.WriteLine("ExpectedVarianceValue :" + expectedVValue);
-                Console.WriteLine("ActualVarianceValue :" + actualVValue);
-                Console.WriteLine("============================================================");
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e);
-                TestCaseStatus = false;
-                TestFailureCount += 1;
-                CardsFailure += "|| APR ||";
-            }
-        }
-
-        [Then(@"APRWIN info value should display on Closing Disclosure")]
-        public void ThenAprwinInfoValueShouldDisplayOnClosingDisclosure()
-        {
-            try
-            {
-                var expectedInfoValue = Math.Round(Convert.ToDouble(TridVariable.AprWin), 4);
-                var actualInfoValue = Math.Round(ProjActions.GetNumericValueFromString(UIActions.GetText(AprWinInfoValue)), 4);
-                Assert.AreEqual(expectedInfoValue, actualInfoValue, "Apr Info value does not match as expected with the difference of " + Math.Abs(expectedInfoValue - actualInfoValue));
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e);
-                TestCaseStatus = false;
-                TestFailureCount += 1;
-                CardsFailure += "|| APRWIN ||";
-            }      
-        }
-
 
         [Then(@"updated/computed Scheduled PMI Termination Date value should display on Closing Disclosure")]
         public void ThenUpdatedComputedScheduledPmiTerminationDateValueShouldDisplayOnClosingDisclosure()
@@ -833,39 +788,45 @@ namespace TRID.StepDefinitions
                 {
                     var actualCValue = ProjActions.GetDatePart(SptdComputedValue);
                     var expectedCValue = Convert.ToDateTime(ProjActions.GetDate(TridVariable.ScheduledPmiTerminationDate));
-                    Assert.AreEqual(expectedCValue, actualCValue, "Computed value does not match as expected with the difference of " + (expectedCValue - actualCValue).TotalDays);
+                    ValueDifference = (expectedCValue - actualCValue).TotalDays;
+                    Assert.AreEqual(expectedCValue, actualCValue, "Computed value does not match as expected with the difference of {0}", ValueDifference);
 
                     Console.WriteLine("===========================================================");
-                    Console.WriteLine("ExpectedComputedValue :" + expectedCValue);
-                    Console.WriteLine("ActualComputedValue :" + actualCValue);
+                    Console.WriteLine("ExpectedComputedValue :{0}", expectedCValue);
+                    Console.WriteLine("ActualComputedValue :{0}", actualCValue);
                     Console.WriteLine("============================================================");
 
                     var actualDValue = ProjActions.GetDatePart(SptdDisclosureValue);
                     var expectedDValue = Convert.ToDateTime(ProjActions.GetDate(TridVariable.DisclosedPmiTerminationDate));
-                    Assert.AreEqual(expectedDValue, actualDValue, "Disclosed value does not match as expected with the difference of " + (expectedDValue - actualDValue).TotalDays);
+                    ValueDifference = (expectedDValue - actualDValue).TotalDays;
+                    Assert.AreEqual(expectedDValue, actualDValue, "Disclosed value does not match as expected with the difference of {0}", ValueDifference);
 
                     Console.WriteLine("===========================================================");
-                    Console.WriteLine("ExpectedDisclosedValue :" + expectedDValue);
-                    Console.WriteLine("ActualDisclosedValue :" + actualDValue);
+                    Console.WriteLine("ExpectedDisclosedValue :{0}", expectedDValue);
+                    Console.WriteLine("ActualDisclosedValue :{0}", actualDValue);
                     Console.WriteLine("============================================================");
 
-                    Assert.AreEqual(actualDValue, actualCValue, "Disclosed value does not match with computed value with the difference of " + (actualDValue - actualCValue).TotalDays);
+                    ValueDifference = (actualDValue - actualCValue).TotalDays;
+                    Assert.AreEqual(actualDValue, actualCValue, "Disclosed value does not match with computed value with the difference of {0}", ValueDifference);
 
                     var expectedVValue = Convert.ToDouble(TridVariable.VarianceScheduledPmiTerminationDate);
                     var actualVValue = ProjActions.GetNumericValueFromString(UIActions.GetText(SptdVarianceValue));
-                    Assert.AreEqual(expectedVValue, actualVValue, "Variance does not match as expected with the difference of " + (expectedVValue - actualVValue));
+                    ValueDifference = expectedVValue - actualVValue;
+                    Assert.AreEqual(expectedVValue, actualVValue, "Variance does not match as expected with the difference of {0}", ValueDifference);
 
                     Console.WriteLine("===========================================================");
-                    Console.WriteLine("ExpectedVarianceValue :" + expectedVValue);
-                    Console.WriteLine("ActualVarianceValue :" + actualVValue);
+                    Console.WriteLine("ExpectedVarianceValue :{0}", expectedVValue);
+                    Console.WriteLine("ActualVarianceValue :{0}", actualVValue);
                     Console.WriteLine("============================================================");
+                    ProjActions.CreateCsvFile(expectedVValue.ToString());
                 }
                 catch (Exception e)
                 {
+                    ProjActions.CreateCsvFile(ValueDifference.ToString());
                     Console.WriteLine(e);
                     TestCaseStatus = false;
                     TestFailureCount += 1;
-                    CardsFailure += "|| ScheduledPMITerminationDate ||";
+                    CardsFailure += "|| ScheduledPMITerminationDate || : " + e + " \n ====================================================================================\n";
                 }
         }
 
@@ -878,8 +839,8 @@ namespace TRID.StepDefinitions
                 Assert.AreEqual(expectedCValue, actualCValue, "Computed value does not match as expected");
 
                 Console.WriteLine("===========================================================");
-                Console.WriteLine("ExpectedComputedValue :" + expectedCValue);
-                Console.WriteLine("ActualComputedValue :" + actualCValue);
+                Console.WriteLine("ExpectedComputedValue :{0}", expectedCValue);
+                Console.WriteLine("ActualComputedValue :{0}", actualCValue);
                 Console.WriteLine("============================================================");
 
                 var actualDValue = UIActions.GetText(SptdDisclosureValue);
@@ -888,8 +849,8 @@ namespace TRID.StepDefinitions
                 Assert.AreEqual(expectedDValue, actualDValue, "Disclosed value does not match as expected");
 
                 Console.WriteLine("===========================================================");
-                Console.WriteLine("ExpectedDisclosedValue :" + expectedDValue);
-                Console.WriteLine("ActualDisclosedValue :" + actualDValue);
+                Console.WriteLine("ExpectedDisclosedValue :{0}", expectedDValue);
+                Console.WriteLine("ActualDisclosedValue :{0}", actualDValue);
                 Console.WriteLine("============================================================");
 
                 var expectedVValue = "(V): N/A Days";
@@ -898,18 +859,21 @@ namespace TRID.StepDefinitions
                 Assert.AreEqual(expectedVValue, actualVValue, "Variance does not match as expected");
 
                 Console.WriteLine("===========================================================");
-                Console.WriteLine("ExpectedVarianceValue :" + expectedVValue);
-                Console.WriteLine("ActualVarianceValue :" + actualVValue);
+                Console.WriteLine("ExpectedVarianceValue :{0}", expectedVValue);
+                Console.WriteLine("ActualVarianceValue :{0}", actualVValue);
                 Console.WriteLine("============================================================");
+                ProjActions.CreateCsvFile(expectedVValue);
             }
             catch (Exception e)
             {
+                ProjActions.CreateCsvFile("Error: not N/A");
                 Console.WriteLine(e);
                 TestCaseStatus = false;
                 TestFailureCount += 1;
-                CardsFailure += "|| ScheduledPmiTerminationDate ||";
+                CardsFailure += "|| ScheduledPmiTerminationDate || : " + e + " \n ====================================================================================\n";
             }
         }
+
 
 
         [Then(@"updated/computed Estimated Total Monthly Payment value should display on Closing Disclosure")]
@@ -919,213 +883,118 @@ namespace TRID.StepDefinitions
             {
                 var actualCValue = Math.Round(ProjActions.GetNumericValueFromString(UIActions.GetText(EtmpComputedValue)), 2);
                 var expectedCValue = Math.Round(Convert.ToDouble(TridVariable.EstimatedTotalMonthlyPayment), 2);
-                Assert.AreEqual(expectedCValue, actualCValue, "Computed value does not match as expected with the difference of " + Math.Abs(expectedCValue - actualCValue));
+                ValueDifference = Math.Abs(expectedCValue - actualCValue);
+                Assert.AreEqual(expectedCValue, actualCValue, "Computed value does not match as expected with the difference of {0}" , ValueDifference);
 
                 Console.WriteLine("===========================================================");
-                Console.WriteLine("ExpectedComputedValue :" + expectedCValue);
-                Console.WriteLine("ActualComputedValue :" + actualCValue);
+                Console.WriteLine("ExpectedComputedValue :{0}", expectedCValue);
+                Console.WriteLine("ActualComputedValue :{0}", actualCValue);
                 Console.WriteLine("============================================================");
 
                 var actualDValue = ProjActions.GetNumericValueFromString(UIActions.GetText(EtmpDisclosureValue));
                 var expectedDValue = Math.Round(Convert.ToDouble(TridVariable.DisclosedTotalPeiodicPayment), 2);
-                Assert.AreEqual(expectedDValue, actualDValue, "Disclosed value does not match as expected with the difference of " + Math.Abs(expectedDValue - actualDValue));
+                ValueDifference = Math.Abs(expectedDValue - actualDValue);
+                Assert.AreEqual(expectedDValue,actualDValue, "Disclosed value does not match as expected with the difference of {0}" , ValueDifference);
 
                 Console.WriteLine("===========================================================");
-                Console.WriteLine("ExpectedDisclosedValue :" + expectedDValue);
-                Console.WriteLine("ActualDisclosedValue :" + actualDValue);
+                Console.WriteLine("ExpectedDisclosedValue :{0}", expectedDValue);
+                Console.WriteLine("ActualDisclosedValue :{0}", actualDValue);
                 Console.WriteLine("============================================================");
 
-                Assert.AreEqual(actualDValue, actualCValue, "Disclosed value does not match with computed value with the difference of " + Math.Abs(actualCValue - actualDValue));
+                ValueDifference = Math.Abs(actualCValue - actualDValue);
+                Assert.AreEqual(actualDValue, actualCValue, "Disclosed value does not match with computed value with the difference of {0}" , ValueDifference);
 
                 var expectedVValue = Convert.ToDouble(TridVariable.VarianceEstimatedTotalMonthlyPayment);
                 var actualVValue = ProjActions.GetNumericValueFromString(UIActions.GetText(EtmpVarianceValue));
-                Assert.AreEqual(expectedVValue, actualVValue, "Variance does not match as expected with the difference of " + Math.Abs(actualVValue - expectedVValue));
+                ValueDifference = Math.Abs(actualVValue - expectedVValue);
+                Assert.AreEqual(expectedVValue, actualVValue, "Variance does not match as expected with the difference of {0}" , ValueDifference);
 
                 Console.WriteLine("===========================================================");
-                Console.WriteLine("ExpectedVarianceValue :" + expectedVValue);
-                Console.WriteLine("ActualVarianceValue :" + actualVValue);
+                Console.WriteLine("ExpectedVarianceValue :{0}", expectedVValue);
+                Console.WriteLine("ActualVarianceValue :{0}", actualVValue);
                 Console.WriteLine("============================================================");
+                ProjActions.CreateCsvFile(expectedVValue.ToString());
             }
             catch (Exception e)
             {
+                ProjActions.CreateCsvFile(ValueDifference.ToString());
                 Console.WriteLine(e);
                 TestCaseStatus = false;
                 TestFailureCount += 1;
-                CardsFailure += "|| EstimatedTotalMonthlyPayment ||";
+                CardsFailure += "|| EstimatedTotalMonthlyPayment || : " + e + " \n ====================================================================================\n";
             }
         }
 
-        [Then(@"updated/computed Prepaid Charges value should display on Closing Disclosure")]
-        public void ThenUpdatedComputedPrepaidChargesValueShouldDisplayOnClosingDisclosure()
+        [Then(@"updated/computed APR value should display on Closing Disclosure")]
+        public void ThenUpdatedComputedAprValueShouldDisplayOnClosingDisclosure()
         {
             try
             {
-                var actualCValue = Math.Round(ProjActions.GetNumericValueFromString(UIActions.GetText(PcComputedValue)), 2);
-                var expectedCValue = Math.Round(Convert.ToDouble(TridVariable.PrepaidCharges), 2);
-                Assert.AreEqual(expectedCValue, actualCValue, "Computed value does not match as expected with the difference of " + Math.Abs(expectedCValue - actualCValue));
+                var actualCValue = Math.Round(ProjActions.GetNumericValueFromString(UIActions.GetText(AprComputedValue)), 3);
+                var expectedCValue = Math.Round(Convert.ToDouble(TridVariable.Apr), 3);
+                ValueDifference = Math.Abs(expectedCValue - actualCValue);
+                Assert.AreEqual(expectedCValue, actualCValue, "Computed value does not match as expected with the difference of {0}" , ValueDifference);
 
                 Console.WriteLine("===========================================================");
-                Console.WriteLine("ExpectedComputedValue :" + expectedCValue);
-                Console.WriteLine("ActualComputedValue :" + actualCValue);
+                Console.WriteLine("ExpectedComputedValue :{0}" , expectedCValue);
+                Console.WriteLine("ActualComputedValue :{0}" , actualCValue);
                 Console.WriteLine("============================================================");
 
-                var actualDValue = ProjActions.GetNumericValueFromString(UIActions.GetText(PcDisclosureValue));
-                var expectedDValue = Math.Round(Convert.ToDouble(TridVariable.DisclosedPrepaidCharge), 2);
-                Assert.AreEqual(expectedDValue, actualDValue, "Disclosed value does not match as expected with the difference of " + Math.Abs(expectedDValue - actualDValue));
+                var actualDValue = ProjActions.GetNumericValueFromString(UIActions.GetText(AprDisclosureValue));
+                var expectedDValue = Math.Round(Convert.ToDouble(TridVariable.DisclosedApr), 3);
+                ValueDifference = Math.Abs(expectedDValue - actualDValue);
+                Assert.AreEqual(expectedDValue,actualDValue, "Disclosed value does not match as expected with the difference of {0}" , ValueDifference);
 
                 Console.WriteLine("===========================================================");
-                Console.WriteLine("ExpectedDisclosedValue :" + expectedDValue);
-                Console.WriteLine("ActualDisclosedValue :" + actualDValue);
+                Console.WriteLine("ExpectedDisclosedValue :{0}" , expectedDValue);
+                Console.WriteLine("ActualDisclosedValue :{0}" , actualDValue);
                 Console.WriteLine("============================================================");
 
-                Assert.AreEqual(actualDValue, actualCValue, "Disclosed value does not match with computed value with the difference of " + Math.Abs(actualCValue - actualDValue));
+                ValueDifference = Math.Abs(actualCValue - actualDValue);
+                Assert.AreEqual(actualDValue, actualCValue, "Disclosed value does not match with computed value with the difference of {0}" , ValueDifference);
 
-                var expectedVValue = Convert.ToDouble(TridVariable.VariancePrepaidCharges);
-                var actualVValue = ProjActions.GetNumericValueFromString(UIActions.GetText(PcVarianceValue));
-                Assert.AreEqual(expectedVValue, actualVValue, "Variance does not match as expected with the difference of " + Math.Abs(actualVValue - expectedVValue));
+                var expectedVValue = Convert.ToDouble(TridVariable.VarianceApr);
+                var actualVValue = ProjActions.GetNumericValueFromString(UIActions.GetText(AprVarianceValue));
+                ValueDifference = Math.Abs(actualVValue - expectedVValue);
+                Assert.AreEqual(expectedVValue, actualVValue, "Variance does not match as expected with the difference of {0}" , ValueDifference);
 
                 Console.WriteLine("===========================================================");
-                Console.WriteLine("ExpectedVarianceValue :" + expectedVValue);
-                Console.WriteLine("ActualVarianceValue :" + actualVValue);
+                Console.WriteLine("ExpectedVarianceValue :{0}" , expectedVValue);
+                Console.WriteLine("ActualVarianceValue :{0}" , actualVValue);
                 Console.WriteLine("============================================================");
+                ProjActions.CreateCsvFile(expectedVValue.ToString());
             }
             catch (Exception e)
             {
+                ProjActions.CreateCsvFile(ValueDifference.ToString());
                 Console.WriteLine(e);
                 TestCaseStatus = false;
                 TestFailureCount += 1;
-                CardsFailure += "|| PrepaidCharges ||";
+                CardsFailure += "|| APR || : " + e + " \n ====================================================================================\n";
             }
         }
 
-        [Then(@"updated/computed Amount Financed value should display on Closing Disclosure")]
-        public void ThenUpdatedComputedAmountFinancedValueShouldDisplayOnClosingDisclosure()
+        [Then(@"APRWIN info value should display on Closing Disclosure")]
+        public void ThenAprwinInfoValueShouldDisplayOnClosingDisclosure()
         {
             try
             {
-                var actualCValue = Math.Round(ProjActions.GetNumericValueFromString(UIActions.GetText(AfComputedValue)), 2);
-                var expectedCValue = Math.Round(Convert.ToDouble(TridVariable.AmountFinanced), 2);
-                Assert.AreEqual(expectedCValue, actualCValue, "Computed value does not match as expected with the difference of " + Math.Abs(expectedCValue - actualCValue));
-
-                Console.WriteLine("===========================================================");
-                Console.WriteLine("ExpectedComputedValue :" + expectedCValue);
-                Console.WriteLine("ActualComputedValue :" + actualCValue);
-                Console.WriteLine("============================================================");
-
-                var actualDValue = ProjActions.GetNumericValueFromString(UIActions.GetText(AfDisclosureValue));
-                var expectedDValue = Math.Round(Convert.ToDouble(TridVariable.DisclosedAmountFinanced), 2);
-                Assert.AreEqual(expectedDValue, actualDValue, "Disclosed value does not match as expected with the difference of " + Math.Abs(expectedDValue - actualDValue));
-
-                Console.WriteLine("===========================================================");
-                Console.WriteLine("ExpectedDisclosedValue :" + expectedDValue);
-                Console.WriteLine("ActualDisclosedValue :" + actualDValue);
-                Console.WriteLine("============================================================");
-
-                Assert.AreEqual(actualDValue, actualCValue, "Disclosed value does not match with computed value with the difference of " + Math.Abs(actualCValue - actualDValue));
-
-                var expectedVValue = Convert.ToDouble(TridVariable.VarianceAmountFinanced);
-                var actualVValue = ProjActions.GetNumericValueFromString(UIActions.GetText(AfVarianceValue));
-                Assert.AreEqual(expectedVValue, actualVValue, "Variance does not match as expected with the difference of " + Math.Abs(actualVValue - expectedVValue));
-
-                Console.WriteLine("===========================================================");
-                Console.WriteLine("ExpectedVarianceValue :" + expectedVValue);
-                Console.WriteLine("ActualVarianceValue :" + actualVValue);
-                Console.WriteLine("============================================================");
+                var expectedInfoValue = Math.Round(Convert.ToDouble(TridVariable.AprWin), 4);
+                var actualInfoValue = Math.Round(ProjActions.GetNumericValueFromString(UIActions.GetText(AprWinInfoValue)), 4);
+                ValueDifference = Math.Abs(expectedInfoValue - actualInfoValue);
+                Assert.AreEqual(expectedInfoValue, actualInfoValue, "Apr Info value does not match as expected with the difference of {0}" , ValueDifference);
+                ProjActions.CreateCsvFile("0");
             }
             catch (Exception e)
             {
+                ProjActions.CreateCsvFile(ValueDifference.ToString());
                 Console.WriteLine(e);
                 TestCaseStatus = false;
                 TestFailureCount += 1;
-                CardsFailure += "|| AmountFinanced ||";
-            }
+                CardsFailure += "|| APRWIN || : " + e + " \n ====================================================================================\n";
+            }      
         }
 
-        [Then(@"updated/computed Escrow Property Costs over one year 11 Months value should display on Closing Disclosure")]
-        public void ThenUpdatedComputedEscrowPropertyCostsOverOneYear11MonthsValueShouldDisplayOnClosingDisclosure()
-        {
-            try
-            {
-                var actualCValue = Math.Round(ProjActions.GetNumericValueFromString(UIActions.GetText(E1O11ComputedValue)), 2);
-                var expectedCValue = Math.Round(Convert.ToDouble(TridVariable.EscrowPropertyOver1Year11Months), 2);
-                Assert.AreEqual(expectedCValue, actualCValue, "Computed value does not match as expected with the difference of " + Math.Abs(expectedCValue - actualCValue));
-
-                Console.WriteLine("===========================================================");
-                Console.WriteLine("ExpectedComputedValue :" + expectedCValue);
-                Console.WriteLine("ActualComputedValue :" + actualCValue);
-                Console.WriteLine("============================================================");
-
-                var actualDValue = ProjActions.GetNumericValueFromString(UIActions.GetText(E1O11DisclosureValue));
-                var expectedDValue = Math.Round(Convert.ToDouble(TridVariable.DisclosedEscrowPropertyOverOneYear11Months), 2);
-                Assert.AreEqual(expectedDValue, actualDValue, "Disclosed value does not match as expected with the difference of " + Math.Abs(expectedDValue - actualDValue));
-
-                Console.WriteLine("===========================================================");
-                Console.WriteLine("ExpectedDisclosedValue :" + expectedDValue);
-                Console.WriteLine("ActualDisclosedValue :" + actualDValue);
-                Console.WriteLine("============================================================");
-
-                Assert.AreEqual(actualDValue, actualCValue, "Disclosed value does not match with computed value with the difference of " + Math.Abs(actualCValue - actualDValue));
-
-                var expectedVValue = Convert.ToDouble(TridVariable.VarianceEscrowPropertyOver1Year11Months);
-                var actualVValue = ProjActions.GetNumericValueFromString(UIActions.GetText(E1O11VarianceValue));
-                Assert.AreEqual(expectedVValue, actualVValue, "Variance does not match as expected with the difference of " + Math.Abs(actualVValue - expectedVValue));
-
-                Console.WriteLine("===========================================================");
-                Console.WriteLine("ExpectedVarianceValue :" + expectedVValue);
-                Console.WriteLine("ActualVarianceValue :" + actualVValue);
-                Console.WriteLine("============================================================");
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e);
-                TestCaseStatus = false;
-                TestFailureCount += 1;
-                CardsFailure += "|| EscrowPropertyOver1Year11Months ||";
-            }
-        }
-
-        [Then(@"updated/computed Escrow Property Costs over one year 12 Months value should display on Closing Disclosure")]
-        public void ThenUpdatedComputedEscrowPropertyCostsOverOneYear12MonthsValueShouldDisplayOnClosingDisclosure()
-        {
-            try
-            {
-                var actualCValue = Math.Round(ProjActions.GetNumericValueFromString(UIActions.GetText(E1O12ComputedValue)), 2);
-                var expectedCValue = Math.Round(Convert.ToDouble(TridVariable.EscrowPropertyOver1Year12Months), 2);
-                Assert.AreEqual(expectedCValue, actualCValue, "Computed value does not match as expected with the difference of " + Math.Abs(expectedCValue - actualCValue));
-
-                Console.WriteLine("===========================================================");
-                Console.WriteLine("ExpectedComputedValue :" + expectedCValue);
-                Console.WriteLine("ActualComputedValue :" + actualCValue);
-                Console.WriteLine("============================================================");
-
-                var actualDValue = ProjActions.GetNumericValueFromString(UIActions.GetText(E1O12DisclosureValue));
-                var expectedDValue = Math.Round(Convert.ToDouble(TridVariable.DisclosedEscrowPropertyOverOneYear12Months), 2);
-                Assert.AreEqual(expectedDValue, actualDValue, "Disclosed value does not match as expected with the difference of " + Math.Abs(expectedDValue - actualDValue));
-
-                Console.WriteLine("===========================================================");
-                Console.WriteLine("ExpectedDisclosedValue :" + expectedDValue);
-                Console.WriteLine("ActualDisclosedValue :" + actualDValue);
-                Console.WriteLine("============================================================");
-
-                Assert.AreEqual(actualDValue, actualCValue, "Disclosed value does not match with computed value with the difference of " + Math.Abs(actualCValue - actualDValue));
-
-                var expectedVValue = Convert.ToDouble(TridVariable.VarianceEscrowPropertyOver1Year12Months);
-                var actualVValue = ProjActions.GetNumericValueFromString(UIActions.GetText(E1O12VarianceValue));
-                Assert.AreEqual(expectedVValue, actualVValue, "Variance does not match as expected with the difference of " + Math.Abs(actualVValue - expectedVValue));
-
-                Console.WriteLine("===========================================================");
-                Console.WriteLine("ExpectedVarianceValue :" + expectedVValue);
-                Console.WriteLine("ActualVarianceValue :" + actualVValue);
-                Console.WriteLine("============================================================");
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e);
-                TestCaseStatus = false;
-                TestFailureCount += 1;
-                CardsFailure += "|| EscrowPropertyOver1Year12Months ||";
-            }
-        }
 
         [Then(@"updated/computed Balloon Amount value should display on Closing Disclosure")]
         public void ThenUpdatedComputedBalloonAmountValueShouldDisplayOnClosingDisclosure()
@@ -1134,39 +1003,45 @@ namespace TRID.StepDefinitions
             {
                 var actualCValue = Math.Round(ProjActions.GetNumericValueFromString(UIActions.GetText(BaComputedValue)), 2);
                 var expectedCValue = Math.Round(Convert.ToDouble(TridVariable.BalloonAmount), 2);
-                Assert.AreEqual(expectedCValue, actualCValue, "Computed value does not match as expected with the difference of " + Math.Abs(expectedCValue - actualCValue));
+                ValueDifference = Math.Abs(expectedCValue - actualCValue);
+                Assert.AreEqual(expectedCValue, actualCValue, "Computed value does not match as expected with the difference of {0}" , ValueDifference);
 
                 Console.WriteLine("===========================================================");
-                Console.WriteLine("ExpectedComputedValue :" + expectedCValue);
-                Console.WriteLine("ActualComputedValue :" + actualCValue);
+                Console.WriteLine("ExpectedComputedValue :{0}", expectedCValue);
+                Console.WriteLine("ActualComputedValue :{0}", actualCValue);
                 Console.WriteLine("============================================================");
 
                 var actualDValue = ProjActions.GetNumericValueFromString(UIActions.GetText(BaDisclosureValue));
                 var expectedDValue = Math.Round(Convert.ToDouble(TridVariable.DisclosedFinalBalloonPayment), 2);
-                Assert.AreEqual(expectedDValue, actualDValue, "Disclosed value does not match as expected with the difference of " + Math.Abs(expectedDValue - actualDValue));
+                ValueDifference = Math.Abs(expectedDValue - actualDValue);
+                Assert.AreEqual(expectedDValue,actualDValue, "Disclosed value does not match as expected with the difference of {0}" , ValueDifference);
 
                 Console.WriteLine("===========================================================");
-                Console.WriteLine("ExpectedDisclosedValue :" + expectedDValue);
-                Console.WriteLine("ActualDisclosedValue :" + actualDValue);
+                Console.WriteLine("ExpectedDisclosedValue :{0}", expectedDValue);
+                Console.WriteLine("ActualDisclosedValue :{0}", actualDValue);
                 Console.WriteLine("============================================================");
 
-                Assert.AreEqual(actualDValue, actualCValue, "Disclosed value does not match with computed value with the difference of " + Math.Abs(actualCValue - actualDValue));
+                ValueDifference = Math.Abs(actualCValue - actualDValue);
+                Assert.AreEqual(actualDValue, actualCValue, "Disclosed value does not match with computed value with the difference of {0}" , ValueDifference);
 
                 var expectedVValue = Convert.ToDouble(TridVariable.VarianceBalloonAmount);
                 var actualVValue = ProjActions.GetNumericValueFromString(UIActions.GetText(BaVarianceValue));
-                Assert.AreEqual(expectedVValue, actualVValue, "Variance does not match as expected with the difference of " + Math.Abs(actualVValue - expectedVValue));
+                ValueDifference = Math.Abs(actualVValue - expectedVValue);
+                Assert.AreEqual(expectedVValue, actualVValue, "Variance does not match as expected with the difference of {0}" , ValueDifference);
 
                 Console.WriteLine("===========================================================");
-                Console.WriteLine("ExpectedVarianceValue :" + expectedVValue);
-                Console.WriteLine("ActualVarianceValue :" + actualVValue);
+                Console.WriteLine("ExpectedVarianceValue :{0}", expectedVValue);
+                Console.WriteLine("ActualVarianceValue :{0}", actualVValue);
                 Console.WriteLine("============================================================");
+                ProjActions.CreateCsvFile(expectedVValue.ToString());
             }
             catch (Exception e)
             {
+                ProjActions.CreateCsvFile(ValueDifference.ToString());
                 Console.WriteLine(e);
                 TestCaseStatus = false;
                 TestFailureCount += 1;
-                CardsFailure += "|| BalloonAmount ||";
+                CardsFailure += "|| BalloonAmount || : " + e + " \n ====================================================================================\n";
             }
         }
 
@@ -1177,39 +1052,45 @@ namespace TRID.StepDefinitions
             {
                 var actualCValue = Math.Round(ProjActions.GetNumericValueFromString(UIActions.GetText(TopComputedValue)), 2);
                 var expectedCValue = Math.Round(Convert.ToDouble(TridVariable.TotalOfPayments), 2);
-                Assert.AreEqual(expectedCValue, actualCValue, "Computed value does not match as expected with the difference of " + Math.Abs(expectedCValue - actualCValue));
+                ValueDifference = Math.Abs(expectedCValue - actualCValue);
+                Assert.AreEqual(expectedCValue, actualCValue, "Computed value does not match as expected with the difference of {0}" , ValueDifference);
 
                 Console.WriteLine("===========================================================");
-                Console.WriteLine("ExpectedComputedValue :" + expectedCValue);
-                Console.WriteLine("ActualComputedValue :" + actualCValue);
+                Console.WriteLine("ExpectedComputedValue :{0}", expectedCValue);
+                Console.WriteLine("ActualComputedValue :{0}", actualCValue);
                 Console.WriteLine("============================================================");
 
                 var actualDValue = ProjActions.GetNumericValueFromString(UIActions.GetText(TopDisclosureValue));
                 var expectedDValue = Math.Round(Convert.ToDouble(TridVariable.DisclosedTotalOfPayment), 2);
-                Assert.AreEqual(expectedDValue, actualDValue, "Disclosed value does not match as expected with the difference of " + Math.Abs(expectedDValue - actualDValue));
+                ValueDifference = Math.Abs(expectedDValue - actualDValue);
+                Assert.AreEqual(expectedDValue,actualDValue, "Disclosed value does not match as expected with the difference of {0}" , ValueDifference);
 
                 Console.WriteLine("===========================================================");
-                Console.WriteLine("ExpectedDisclosedValue :" + expectedDValue);
-                Console.WriteLine("ActualDisclosedValue :" + actualDValue);
+                Console.WriteLine("ExpectedDisclosedValue :{0}", expectedDValue);
+                Console.WriteLine("ActualDisclosedValue :{0}", actualDValue);
                 Console.WriteLine("============================================================");
 
-                Assert.AreEqual(actualDValue, actualCValue, "Disclosed value does not match with computed value with the difference of " + Math.Abs(actualCValue - actualDValue));
+                ValueDifference = Math.Abs(actualCValue - actualDValue);
+                Assert.AreEqual(actualDValue, actualCValue, "Disclosed value does not match with computed value with the difference of {0}" , ValueDifference);
 
                 var expectedVValue = Convert.ToDouble(TridVariable.VarianceTotalOfPayments);
                 var actualVValue = ProjActions.GetNumericValueFromString(UIActions.GetText(TopVarianceValue));
-                Assert.AreEqual(expectedVValue, actualVValue, "Variance does not match as expected with the difference of " + Math.Abs(actualVValue - expectedVValue));
+                ValueDifference = Math.Abs(actualVValue - expectedVValue);
+                Assert.AreEqual(expectedVValue, actualVValue, "Variance does not match as expected with the difference of {0}" , ValueDifference);
 
                 Console.WriteLine("===========================================================");
-                Console.WriteLine("ExpectedVarianceValue :" + expectedVValue);
-                Console.WriteLine("ActualVarianceValue :" + actualVValue);
+                Console.WriteLine("ExpectedVarianceValue :{0}", expectedVValue);
+                Console.WriteLine("ActualVarianceValue :{0}", actualVValue);
                 Console.WriteLine("============================================================");
+                ProjActions.CreateCsvFile(expectedVValue.ToString());
             }
             catch (Exception e)
             {
+                ProjActions.CreateCsvFile(ValueDifference.ToString());
                 Console.WriteLine(e);
                 TestCaseStatus = false;
                 TestFailureCount += 1;
-                CardsFailure += "|| TotalOfPayments ||";
+                CardsFailure += "|| TotalOfPayments || : " + e + " \n ====================================================================================\n";
             }
         }
 
@@ -1220,39 +1101,143 @@ namespace TRID.StepDefinitions
             {
                 var actualCValue = Math.Round(ProjActions.GetNumericValueFromString(UIActions.GetText(FcComputedValue)), 2);
                 var expectedCValue = Math.Round(Convert.ToDouble(TridVariable.FinanceCharge), 2);
-                Assert.AreEqual(expectedCValue, actualCValue, "Computed value does not match as expected with the difference of " + Math.Abs(expectedCValue - actualCValue));
+                ValueDifference = Math.Abs(expectedCValue - actualCValue);
+                Assert.AreEqual(expectedCValue, actualCValue, "Computed value does not match as expected with the difference of {0}" , ValueDifference);
 
                 Console.WriteLine("===========================================================");
-                Console.WriteLine("ExpectedComputedValue :" + expectedCValue);
-                Console.WriteLine("ActualComputedValue :" + actualCValue);
+                Console.WriteLine("ExpectedComputedValue :{0}", expectedCValue);
+                Console.WriteLine("ActualComputedValue :{0}", actualCValue);
                 Console.WriteLine("============================================================");
 
                 var actualDValue = ProjActions.GetNumericValueFromString(UIActions.GetText(FcDisclosureValue));
                 var expectedDValue = Math.Round(Convert.ToDouble(TridVariable.DisclosedFinanceCharge), 2);
-                Assert.AreEqual(expectedDValue, actualDValue, "Disclosed value does not match as expected with the difference of " + Math.Abs(expectedDValue - actualDValue));
+                ValueDifference = Math.Abs(expectedDValue - actualDValue);
+                Assert.AreEqual(expectedDValue,actualDValue, "Disclosed value does not match as expected with the difference of {0}" , ValueDifference);
 
                 Console.WriteLine("===========================================================");
-                Console.WriteLine("ExpectedDisclosedValue :" + expectedDValue);
-                Console.WriteLine("ActualDisclosedValue :" + actualDValue);
+                Console.WriteLine("ExpectedDisclosedValue :{0}", expectedDValue);
+                Console.WriteLine("ActualDisclosedValue :{0}", actualDValue);
                 Console.WriteLine("============================================================");
 
-                Assert.AreEqual(actualDValue, actualCValue, "Disclosed value does not match with computed value with the difference of " + Math.Abs(actualCValue - actualDValue));
+                ValueDifference = Math.Abs(actualCValue - actualDValue);
+                Assert.AreEqual(actualDValue, actualCValue, "Disclosed value does not match with computed value with the difference of {0}" , ValueDifference);
 
                 var expectedVValue = Convert.ToDouble(TridVariable.VarianceFinanceCharge);
                 var actualVValue = ProjActions.GetNumericValueFromString(UIActions.GetText(FcVarianceValue));
-                Assert.AreEqual(expectedVValue, actualVValue, "Variance does not match as expected with the difference of " + Math.Abs(actualVValue - expectedVValue));
+                ValueDifference = Math.Abs(actualVValue - expectedVValue);
+                Assert.AreEqual(expectedVValue, actualVValue, "Variance does not match as expected with the difference of {0}" , ValueDifference);
 
                 Console.WriteLine("===========================================================");
-                Console.WriteLine("ExpectedVarianceValue :" + expectedVValue);
-                Console.WriteLine("ActualVarianceValue :" + actualVValue);
+                Console.WriteLine("ExpectedVarianceValue :{0}", expectedVValue);
+                Console.WriteLine("ActualVarianceValue :{0}", actualVValue);
                 Console.WriteLine("============================================================");
+                ProjActions.CreateCsvFile(expectedVValue.ToString());
             }
             catch (Exception e)
             {
+                ProjActions.CreateCsvFile(ValueDifference.ToString());
                 Console.WriteLine(e);
                 TestCaseStatus = false;
                 TestFailureCount += 1;
-                CardsFailure += "|| FinanceCharge ||";
+                CardsFailure += "|| FinanceCharge || : " + e + " \n ====================================================================================\n";
+            }
+        }
+
+        [Then(@"updated/computed Prepaid Charges value should display on Closing Disclosure")]
+        public void ThenUpdatedComputedPrepaidChargesValueShouldDisplayOnClosingDisclosure()
+        {
+            try
+            {
+                var actualCValue = Math.Round(ProjActions.GetNumericValueFromString(UIActions.GetText(PcComputedValue)), 2);
+                var expectedCValue = Math.Round(Convert.ToDouble(TridVariable.PrepaidCharges), 2);
+                ValueDifference = Math.Abs(expectedCValue - actualCValue);
+                Assert.AreEqual(expectedCValue, actualCValue, "Computed value does not match as expected with the difference of {0}" , ValueDifference);
+
+                Console.WriteLine("===========================================================");
+                Console.WriteLine("ExpectedComputedValue :{0}" , expectedCValue);
+                Console.WriteLine("ActualComputedValue :{0}" , actualCValue);
+                Console.WriteLine("============================================================");
+
+                var actualDValue = ProjActions.GetNumericValueFromString(UIActions.GetText(PcDisclosureValue));
+                var expectedDValue = Math.Round(Convert.ToDouble(TridVariable.DisclosedPrepaidCharge), 2);
+                ValueDifference = Math.Abs(expectedDValue - actualDValue);
+                Assert.AreEqual(expectedDValue,actualDValue, "Disclosed value does not match as expected with the difference of {0}" , ValueDifference);
+
+                Console.WriteLine("===========================================================");
+                Console.WriteLine("ExpectedDisclosedValue :{0}" , expectedDValue);
+                Console.WriteLine("ActualDisclosedValue :{0}" , actualDValue);
+                Console.WriteLine("============================================================");
+
+                ValueDifference = Math.Abs(actualCValue - actualDValue);
+                Assert.AreEqual(actualDValue, actualCValue, "Disclosed value does not match with computed value with the difference of {0}" , ValueDifference);
+
+                var expectedVValue = Convert.ToDouble(TridVariable.VariancePrepaidCharges);
+                var actualVValue = ProjActions.GetNumericValueFromString(UIActions.GetText(PcVarianceValue));
+                ValueDifference = Math.Abs(actualVValue - expectedVValue);
+                Assert.AreEqual(expectedVValue, actualVValue, "Variance does not match as expected with the difference of {0}" , ValueDifference);
+
+                Console.WriteLine("===========================================================");
+                Console.WriteLine("ExpectedVarianceValue :{0}" , expectedVValue);
+                Console.WriteLine("ActualVarianceValue :{0}" , actualVValue);
+                Console.WriteLine("============================================================");
+                ProjActions.CreateCsvFile(expectedVValue.ToString());
+            }
+            catch (Exception e)
+            {
+                ProjActions.CreateCsvFile(ValueDifference.ToString());
+                Console.WriteLine(e);
+                TestCaseStatus = false;
+                TestFailureCount += 1;
+                CardsFailure += "|| PrepaidCharges || : " + e + " \n ====================================================================================\n";
+            }
+        }
+
+        [Then(@"updated/computed Amount Financed value should display on Closing Disclosure")]
+        public void ThenUpdatedComputedAmountFinancedValueShouldDisplayOnClosingDisclosure()
+        {
+            try
+            {
+                var actualCValue = Math.Round(ProjActions.GetNumericValueFromString(UIActions.GetText(AfComputedValue)), 2);
+                var expectedCValue = Math.Round(Convert.ToDouble(TridVariable.AmountFinanced), 2);
+                ValueDifference = Math.Abs(expectedCValue - actualCValue);
+                Assert.AreEqual(expectedCValue, actualCValue, "Computed value does not match as expected with the difference of {0}" , ValueDifference);
+
+                Console.WriteLine("===========================================================");
+                Console.WriteLine("ExpectedComputedValue :{0}" , expectedCValue);
+                Console.WriteLine("ActualComputedValue :{0}" , actualCValue);
+                Console.WriteLine("============================================================");
+
+                var actualDValue = ProjActions.GetNumericValueFromString(UIActions.GetText(AfDisclosureValue));
+                var expectedDValue = Math.Round(Convert.ToDouble(TridVariable.DisclosedAmountFinanced), 2);
+                ValueDifference = Math.Abs(expectedDValue - actualDValue);
+                Assert.AreEqual(expectedDValue,actualDValue, "Disclosed value does not match as expected with the difference of {0}" , ValueDifference);
+
+                Console.WriteLine("===========================================================");
+                Console.WriteLine("ExpectedDisclosedValue :{0}" , expectedDValue);
+                Console.WriteLine("ActualDisclosedValue :{0}" , actualDValue);
+                Console.WriteLine("============================================================");
+
+                ValueDifference = Math.Abs(actualCValue - actualDValue);
+                Assert.AreEqual(actualDValue, actualCValue, "Disclosed value does not match with computed value with the difference of {0}" , ValueDifference);
+
+                var expectedVValue = Convert.ToDouble(TridVariable.VarianceAmountFinanced);
+                var actualVValue = ProjActions.GetNumericValueFromString(UIActions.GetText(AfVarianceValue));
+                ValueDifference = Math.Abs(actualVValue - expectedVValue);
+                Assert.AreEqual(expectedVValue, actualVValue, "Variance does not match as expected with the difference of {0}" , ValueDifference);
+
+                Console.WriteLine("===========================================================");
+                Console.WriteLine("ExpectedVarianceValue :{0}" , expectedVValue);
+                Console.WriteLine("ActualVarianceValue :{0}" , actualVValue);
+                Console.WriteLine("============================================================");
+                ProjActions.CreateCsvFile(expectedVValue.ToString());
+            }
+            catch (Exception e)
+            {
+                ProjActions.CreateCsvFile(ValueDifference.ToString());
+                Console.WriteLine(e);
+                TestCaseStatus = false;
+                TestFailureCount += 1;
+                CardsFailure += "|| AmountFinanced || : " + e + " \n ====================================================================================\n";
             }
         }
 
@@ -1263,41 +1248,146 @@ namespace TRID.StepDefinitions
             {
                 var actualCValue = Math.Round(ProjActions.GetNumericValueFromString(UIActions.GetText(TipComputedValue)), 2);
                 var expectedCValue = Math.Round(Convert.ToDouble(TridVariable.Tip), 2);
-                Assert.AreEqual(expectedCValue, actualCValue, "Computed value does not match as expected with the difference of " + Math.Abs(expectedCValue - actualCValue));
+                ValueDifference = Math.Abs(expectedCValue - actualCValue);
+                Assert.AreEqual(expectedCValue, actualCValue, "Computed value does not match as expected with the difference of {0}" , ValueDifference);
 
                 Console.WriteLine("===========================================================");
-                Console.WriteLine("ExpectedComputedValue :" + expectedCValue);
-                Console.WriteLine("ActualComputedValue :" + actualCValue);
+                Console.WriteLine("ExpectedComputedValue :{0}", expectedCValue);
+                Console.WriteLine("ActualComputedValue :{0}", actualCValue);
                 Console.WriteLine("============================================================");
 
                 var actualDValue = ProjActions.GetNumericValueFromString(UIActions.GetText(TipDisclosureValue));
                 var expectedDValue = Math.Round(Convert.ToDouble(TridVariable.DisclosedTip), 2);
-                Assert.AreEqual(expectedDValue, actualDValue, "Disclosed value does not match as expected with the difference of " + Math.Abs(expectedDValue - actualDValue));
+                ValueDifference = Math.Abs(expectedDValue - actualDValue);
+                Assert.AreEqual(expectedDValue,actualDValue, "Disclosed value does not match as expected with the difference of {0}" , ValueDifference);
 
                 Console.WriteLine("===========================================================");
-                Console.WriteLine("ExpectedDisclosedValue :" + expectedDValue);
-                Console.WriteLine("ActualDisclosedValue :" + actualDValue);
+                Console.WriteLine("ExpectedDisclosedValue :{0}", expectedDValue);
+                Console.WriteLine("ActualDisclosedValue :{0}", actualDValue);
                 Console.WriteLine("============================================================");
 
-                Assert.AreEqual(actualDValue, actualCValue, "Disclosed value does not match with computed value with the difference of " + Math.Abs(actualCValue - actualDValue));
+                ValueDifference = Math.Abs(actualCValue - actualDValue);
+                Assert.AreEqual(actualDValue, actualCValue, "Disclosed value does not match with computed value with the difference of {0}" , ValueDifference);
 
                 var expectedVValue = Convert.ToDouble(TridVariable.VarianceTip);
                 var actualVValue = ProjActions.GetNumericValueFromString(UIActions.GetText(TipVarianceValue));
-                Assert.AreEqual(expectedVValue, actualVValue, "Variance does not match as expected with the difference of " + Math.Abs(actualVValue - expectedVValue));
+                ValueDifference = Math.Abs(actualVValue - expectedVValue);
+                Assert.AreEqual(expectedVValue, actualVValue, "Variance does not match as expected with the difference of {0}" , ValueDifference);
 
                 Console.WriteLine("===========================================================");
-                Console.WriteLine("ExpectedVarianceValue :" + expectedVValue);
-                Console.WriteLine("ActualVarianceValue :" + actualVValue);
+                Console.WriteLine("ExpectedVarianceValue :{0}", expectedVValue);
+                Console.WriteLine("ActualVarianceValue :{0}", actualVValue);
                 Console.WriteLine("============================================================");
+                ProjActions.CreateCsvFile(expectedVValue.ToString());
             }
             catch (Exception e)
             {
+                ProjActions.CreateCsvFile(ValueDifference.ToString());
                 Console.WriteLine(e);
                 TestCaseStatus = false;
                 TestFailureCount += 1;
-                CardsFailure += "|| TIP ||";
+                CardsFailure += "|| TIP || : " + e + " \n ====================================================================================\n";
             }
         }
+
+        [Then(@"updated/computed Escrow Property Costs over one year 11 Months value should display on Closing Disclosure")]
+        public void ThenUpdatedComputedEscrowPropertyCostsOverOneYear11MonthsValueShouldDisplayOnClosingDisclosure()
+        {
+            try
+            {
+                var actualCValue = Math.Round(ProjActions.GetNumericValueFromString(UIActions.GetText(E1O11ComputedValue)), 2);
+                var expectedCValue = Math.Round(Convert.ToDouble(TridVariable.EscrowPropertyOver1Year11Months), 2);
+                ValueDifference = Math.Abs(expectedCValue - actualCValue);
+                Assert.AreEqual(expectedCValue, actualCValue, "Computed value does not match as expected with the difference of {0}" , ValueDifference);
+
+                Console.WriteLine("===========================================================");
+                Console.WriteLine("ExpectedComputedValue :{0}" , expectedCValue);
+                Console.WriteLine("ActualComputedValue :{0}" , actualCValue);
+                Console.WriteLine("============================================================");
+
+                var actualDValue = ProjActions.GetNumericValueFromString(UIActions.GetText(E1O11DisclosureValue));
+                var expectedDValue = Math.Round(Convert.ToDouble(TridVariable.DisclosedEscrowPropertyOverOneYear11Months), 2);
+                ValueDifference = Math.Abs(expectedDValue - actualDValue);
+                Assert.AreEqual(expectedDValue,actualDValue, "Disclosed value does not match as expected with the difference of {0}" , ValueDifference);
+
+                Console.WriteLine("===========================================================");
+                Console.WriteLine("ExpectedDisclosedValue :{0}" , expectedDValue);
+                Console.WriteLine("ActualDisclosedValue :{0}" , actualDValue);
+                Console.WriteLine("============================================================");
+
+                ValueDifference = Math.Abs(actualCValue - actualDValue);
+                Assert.AreEqual(actualDValue, actualCValue, "Disclosed value does not match with computed value with the difference of {0}" , ValueDifference);
+
+                var expectedVValue = Convert.ToDouble(TridVariable.VarianceEscrowPropertyOver1Year11Months);
+                var actualVValue = ProjActions.GetNumericValueFromString(UIActions.GetText(E1O11VarianceValue));
+                ValueDifference = Math.Abs(actualVValue - expectedVValue);
+                Assert.AreEqual(expectedVValue, actualVValue, "Variance does not match as expected with the difference of {0}" , ValueDifference);
+
+                Console.WriteLine("===========================================================");
+                Console.WriteLine("ExpectedVarianceValue :{0}" , expectedVValue);
+                Console.WriteLine("ActualVarianceValue :{0}" , actualVValue);
+                Console.WriteLine("============================================================");
+                ProjActions.CreateCsvFile(expectedVValue.ToString());
+            }
+            catch (Exception e)
+            {
+                ProjActions.CreateCsvFile(ValueDifference.ToString());
+                Console.WriteLine(e);
+                TestCaseStatus = false;
+                TestFailureCount += 1;
+                CardsFailure += "|| EscrowPropertyOver1Year11Months || : " + e + " \n ====================================================================================\n";
+            }
+        }
+
+        [Then(@"updated/computed Escrow Property Costs over one year 12 Months value should display on Closing Disclosure")]
+        public void ThenUpdatedComputedEscrowPropertyCostsOverOneYear12MonthsValueShouldDisplayOnClosingDisclosure()
+        {
+            try
+            {
+                var actualCValue = Math.Round(ProjActions.GetNumericValueFromString(UIActions.GetText(E1O12ComputedValue)), 2);
+                var expectedCValue = Math.Round(Convert.ToDouble(TridVariable.EscrowPropertyOver1Year12Months), 2);
+                ValueDifference = Math.Abs(expectedCValue - actualCValue);
+                Assert.AreEqual(expectedCValue, actualCValue, "Computed value does not match as expected with the difference of {0}" , ValueDifference);
+
+                Console.WriteLine("===========================================================");
+                Console.WriteLine("ExpectedComputedValue :{0}" , expectedCValue);
+                Console.WriteLine("ActualComputedValue :{0}" , actualCValue);
+                Console.WriteLine("============================================================");
+
+                var actualDValue = ProjActions.GetNumericValueFromString(UIActions.GetText(E1O12DisclosureValue));
+                var expectedDValue = Math.Round(Convert.ToDouble(TridVariable.DisclosedEscrowPropertyOverOneYear12Months), 2);
+                ValueDifference = Math.Abs(expectedDValue - actualDValue);
+                Assert.AreEqual(expectedDValue,actualDValue, "Disclosed value does not match as expected with the difference of {0}" , ValueDifference);
+
+                Console.WriteLine("===========================================================");
+                Console.WriteLine("ExpectedDisclosedValue :{0}" , expectedDValue);
+                Console.WriteLine("ActualDisclosedValue :{0}" , actualDValue);
+                Console.WriteLine("============================================================");
+
+                ValueDifference = Math.Abs(actualCValue - actualDValue);
+                Assert.AreEqual(actualDValue, actualCValue, "Disclosed value does not match with computed value with the difference of {0}" , ValueDifference);
+
+                var expectedVValue = Convert.ToDouble(TridVariable.VarianceEscrowPropertyOver1Year12Months);
+                var actualVValue = ProjActions.GetNumericValueFromString(UIActions.GetText(E1O12VarianceValue));
+                ValueDifference = Math.Abs(actualVValue - expectedVValue);
+                Assert.AreEqual(expectedVValue, actualVValue, "Variance does not match as expected with the difference of {0}" , ValueDifference);
+
+                Console.WriteLine("===========================================================");
+                Console.WriteLine("ExpectedVarianceValue :{0}" , expectedVValue);
+                Console.WriteLine("ActualVarianceValue :{0}" , actualVValue);
+                Console.WriteLine("============================================================");
+                ProjActions.CreateCsvFile(expectedVValue.ToString());
+            }
+            catch (Exception e)
+            {
+                ProjActions.CreateCsvFile(ValueDifference.ToString());
+                Console.WriteLine(e);
+                TestCaseStatus = false;
+                TestFailureCount += 1;
+                CardsFailure += "|| EscrowPropertyOver1Year12Months || : " + e + " \n ====================================================================================\n";
+            }
+        }
+ 
 
         [Then(@"updated/computed Initial Escrow Payment value should display on Closing Disclosure")]
         public void ThenUpdatedComputedInitialEscrowPaymentValueShouldDisplayOnClosingDisclosure()
@@ -1306,39 +1396,45 @@ namespace TRID.StepDefinitions
             {
                 var actualCValue = Math.Round(ProjActions.GetNumericValueFromString(UIActions.GetText(IepComputedValue)), 2);
                 var expectedCValue = Math.Round(Convert.ToDouble(TridVariable.InitialEscrowPayment), 2);
-                Assert.AreEqual(expectedCValue, actualCValue, "Computed value does not match as expected with the difference of " + Math.Abs(expectedCValue - actualCValue));
+                ValueDifference = Math.Abs(expectedCValue - actualCValue);
+                Assert.AreEqual(expectedCValue, actualCValue, "Computed value does not match as expected with the difference of {0}" , ValueDifference);
 
                 Console.WriteLine("===========================================================");
-                Console.WriteLine("ExpectedComputedValue :" + expectedCValue);
-                Console.WriteLine("ActualComputedValue :" + actualCValue);
+                Console.WriteLine("ExpectedComputedValue :{0}" , expectedCValue);
+                Console.WriteLine("ActualComputedValue :{0}" , actualCValue);
                 Console.WriteLine("============================================================");
 
                 var actualDValue = ProjActions.GetNumericValueFromString(UIActions.GetText(IepDisclosureValue));
                 var expectedDValue = Math.Round(Convert.ToDouble(TridVariable.DisclosedInitialEscrowPayment), 2);
-                Assert.AreEqual(expectedDValue, actualDValue, "Disclosed value does not match as expected with the difference of " + Math.Abs(expectedDValue - actualDValue));
+                ValueDifference = Math.Abs(expectedDValue - actualDValue);
+                Assert.AreEqual(expectedDValue,actualDValue, "Disclosed value does not match as expected with the difference of {0}" , ValueDifference);
 
                 Console.WriteLine("===========================================================");
-                Console.WriteLine("ExpectedDisclosedValue :" + expectedDValue);
-                Console.WriteLine("ActualDisclosedValue :" + actualDValue);
+                Console.WriteLine("ExpectedDisclosedValue :{0}" , expectedDValue);
+                Console.WriteLine("ActualDisclosedValue :{0}" , actualDValue);
                 Console.WriteLine("============================================================");
 
-                Assert.AreEqual(actualDValue, actualCValue, "Disclosed value does not match with computed value with the difference of " + Math.Abs(actualCValue - actualDValue));
+                ValueDifference = Math.Abs(actualCValue - actualDValue);
+                Assert.AreEqual(actualDValue, actualCValue, "Disclosed value does not match with computed value with the difference of {0}" , ValueDifference);
 
                 var expectedVValue = Convert.ToDouble(TridVariable.VarianceInitialEscrowPayment);
                 var actualVValue = ProjActions.GetNumericValueFromString(UIActions.GetText(IepVarianceValue));
-                Assert.AreEqual(expectedVValue, actualVValue, "Variance does not match as expected with the difference of " + Math.Abs(actualVValue - expectedVValue));
+                ValueDifference = Math.Abs(actualVValue - expectedVValue);
+                Assert.AreEqual(expectedVValue, actualVValue, "Variance does not match as expected with the difference of {0}" , ValueDifference);
 
                 Console.WriteLine("===========================================================");
-                Console.WriteLine("ExpectedVarianceValue :" + expectedVValue);
-                Console.WriteLine("ActualVarianceValue :" + actualVValue);
+                Console.WriteLine("ExpectedVarianceValue :{0}" , expectedVValue);
+                Console.WriteLine("ActualVarianceValue :{0}" , actualVValue);
                 Console.WriteLine("============================================================");
+                ProjActions.CreateCsvFile(expectedVValue.ToString());
             }
             catch (Exception e)
             {
+                ProjActions.CreateCsvFile(ValueDifference.ToString());
                 Console.WriteLine(e);
                 TestCaseStatus = false;
                 TestFailureCount += 1;
-                CardsFailure += "|| InitialEscrowPayment ||";
+                CardsFailure += "|| InitialEscrowPayment || : " + e + " \n ====================================================================================\n";
             }
         }
 
@@ -1350,39 +1446,45 @@ namespace TRID.StepDefinitions
             {
                 var actualCValue = Math.Round(ProjActions.GetNumericValueFromString(UIActions.GetText(Neo1YComputedValue)), 2);
                 var expectedCValue = Math.Round(Convert.ToDouble(TridVariable.NonEscrowPropertyOverOneYear), 2);
-                Assert.AreEqual(expectedCValue, actualCValue, "Computed value does not match as expected with the difference of " + Math.Abs(expectedCValue - actualCValue));
+                ValueDifference = Math.Abs(expectedCValue - actualCValue);
+                Assert.AreEqual(expectedCValue, actualCValue, "Computed value does not match as expected with the difference of {0}" , ValueDifference);
 
                 Console.WriteLine("===========================================================");
-                Console.WriteLine("ExpectedComputedValue :" + expectedCValue);
-                Console.WriteLine("ActualComputedValue :" + actualCValue);
+                Console.WriteLine("ExpectedComputedValue :{0}" , expectedCValue);
+                Console.WriteLine("ActualComputedValue :{0}" , actualCValue);
                 Console.WriteLine("============================================================");
 
                 var actualDValue = ProjActions.GetNumericValueFromString(UIActions.GetText(Neo1YDisclosureValue));
                 var expectedDValue = Math.Round(Convert.ToDouble(TridVariable.DisclosedNonEscrowPropertyOverOneYear), 2);
-                Assert.AreEqual(expectedDValue, actualDValue, "Disclosed value does not match as expected with the difference of " + Math.Abs(expectedDValue - actualDValue));
+                ValueDifference = Math.Abs(expectedDValue - actualDValue);
+                Assert.AreEqual(expectedDValue,actualDValue, "Disclosed value does not match as expected with the difference of {0}" , ValueDifference);
 
                 Console.WriteLine("===========================================================");
-                Console.WriteLine("ExpectedDisclosedValue :" + expectedDValue);
-                Console.WriteLine("ActualDisclosedValue :" + actualDValue);
+                Console.WriteLine("ExpectedDisclosedValue :{0}" , expectedDValue);
+                Console.WriteLine("ActualDisclosedValue :{0}" , actualDValue);
                 Console.WriteLine("============================================================");
 
-                Assert.AreEqual(actualDValue, actualCValue, "Disclosed value does not match with computed value with the difference of " + Math.Abs(actualCValue - actualDValue));
+                ValueDifference = Math.Abs(actualCValue - actualDValue);
+                Assert.AreEqual(actualDValue, actualCValue, "Disclosed value does not match with computed value with the difference of {0}" , ValueDifference);
 
                 var expectedVValue = Convert.ToDouble(TridVariable.VarianceNonEscrowPropertyOverOneYear);
                 var actualVValue = ProjActions.GetNumericValueFromString(UIActions.GetText(Neo1YVarianceValue));
-                Assert.AreEqual(expectedVValue, actualVValue, "Variance does not match as expected with the difference of " + Math.Abs(actualVValue - expectedVValue));
+                ValueDifference = Math.Abs(actualVValue - expectedVValue);
+                Assert.AreEqual(expectedVValue, actualVValue, "Variance does not match as expected with the difference of {0}" , ValueDifference);
 
                 Console.WriteLine("===========================================================");
-                Console.WriteLine("ExpectedVarianceValue :" + expectedVValue);
-                Console.WriteLine("ActualVarianceValue :" + actualVValue);
+                Console.WriteLine("ExpectedVarianceValue :{0}" , expectedVValue);
+                Console.WriteLine("ActualVarianceValue :{0}" , actualVValue);
                 Console.WriteLine("============================================================");
+                ProjActions.CreateCsvFile(expectedVValue.ToString());
             }
             catch (Exception e)
             {
+                ProjActions.CreateCsvFile(ValueDifference.ToString());
                 Console.WriteLine(e);
                 TestCaseStatus = false;
                 TestFailureCount += 1;
-                CardsFailure += "|| NonEscrowPropertyOverOneYear ||";
+                CardsFailure += "|| NonEscrowPropertyOverOneYear || : " + e + " \n ====================================================================================\n";
             }
         }
 
@@ -1393,39 +1495,45 @@ namespace TRID.StepDefinitions
             {
                 var actualCValue = Math.Round(ProjActions.GetNumericValueFromString(UIActions.GetText(EeComputedValue)), 2);
                 var expectedCValue = Math.Round(Convert.ToDouble(TridVariable.EstimatedEscrow), 2);
-                Assert.AreEqual(expectedCValue, actualCValue, "Computed value does not match as expected with the difference of " + Math.Abs(expectedCValue - actualCValue));
+                ValueDifference = Math.Abs(expectedCValue - actualCValue);
+                Assert.AreEqual(expectedCValue, actualCValue, "Computed value does not match as expected with the difference of {0}" , ValueDifference);
 
                 Console.WriteLine("===========================================================");
-                Console.WriteLine("ExpectedComputedValue :" + expectedCValue);
-                Console.WriteLine("ActualComputedValue :" + actualCValue);
+                Console.WriteLine("ExpectedComputedValue :{0}", expectedCValue);
+                Console.WriteLine("ActualComputedValue :{0}", actualCValue);
                 Console.WriteLine("============================================================");
 
                 var actualDValue = ProjActions.GetNumericValueFromString(UIActions.GetText(EeDisclosureValue));
                 var expectedDValue = Math.Round(Convert.ToDouble(TridVariable.DisclosedPeriodEscrowPayment), 2);
-                Assert.AreEqual(expectedDValue, actualDValue, "Disclosed value does not match as expected with the difference of " + Math.Abs(expectedDValue - actualDValue));
+                ValueDifference = Math.Abs(expectedDValue - actualDValue);
+                Assert.AreEqual(expectedDValue,actualDValue, "Disclosed value does not match as expected with the difference of {0}" , ValueDifference);
 
                 Console.WriteLine("===========================================================");
-                Console.WriteLine("ExpectedDisclosedValue :" + expectedDValue);
-                Console.WriteLine("ActualDisclosedValue :" + actualDValue);
+                Console.WriteLine("ExpectedDisclosedValue :{0}" , expectedDValue);
+                Console.WriteLine("ActualDisclosedValue :{0}" , actualDValue);
                 Console.WriteLine("============================================================");
 
-                Assert.AreEqual(actualDValue, actualCValue, "Disclosed value does not match with computed value with the difference of " + Math.Abs(actualCValue - actualDValue));
+                ValueDifference = Math.Abs(actualCValue - actualDValue);
+                Assert.AreEqual(actualDValue, actualCValue, "Disclosed value does not match with computed value with the difference of {0}" , ValueDifference);
 
                 var expectedVValue = Convert.ToDouble(TridVariable.VarianceEstimatedEscrow);
                 var actualVValue = ProjActions.GetNumericValueFromString(UIActions.GetText(EeVarianceValue));
-                Assert.AreEqual(expectedVValue, actualVValue, "Variance does not match as expected with the difference of " + Math.Abs(actualVValue - expectedVValue));
+                ValueDifference = Math.Abs(actualVValue - expectedVValue);
+                Assert.AreEqual(expectedVValue, actualVValue, "Variance does not match as expected with the difference of {0}" , ValueDifference);
 
                 Console.WriteLine("===========================================================");
-                Console.WriteLine("ExpectedVarianceValue :" + expectedVValue);
-                Console.WriteLine("ActualVarianceValue :" + actualVValue);
+                Console.WriteLine("ExpectedVarianceValue :{0}" , expectedVValue);
+                Console.WriteLine("ActualVarianceValue :{0}" , actualVValue);
                 Console.WriteLine("============================================================");
+                ProjActions.CreateCsvFile(expectedVValue.ToString());
             }
             catch (Exception e)
             {
+                ProjActions.CreateCsvFile(ValueDifference.ToString());
                 Console.WriteLine(e);
                 TestCaseStatus = false;
                 TestFailureCount += 1;
-                CardsFailure += "|| EstimatedEscrow ||";
+                CardsFailure += "|| EstimatedEscrow || : " + e + " \n ====================================================================================\n";
             }
         }
 
@@ -1436,39 +1544,45 @@ namespace TRID.StepDefinitions
             {
                 var actualCValue = Math.Round(ProjActions.GetNumericValueFromString(UIActions.GetText(EtiaComputedValue)), 2);
                 var expectedCValue = Math.Round(Convert.ToDouble(TridVariable.EstimatedTaxesInsuranceAssessments), 2);
-                Assert.AreEqual(expectedCValue, actualCValue, "Computed value does not match as expected with the difference of " + Math.Abs(expectedCValue - actualCValue));
+                ValueDifference = Math.Abs(expectedCValue - actualCValue);
+                Assert.AreEqual(expectedCValue, actualCValue, "Computed value does not match as expected with the difference of {0}" , ValueDifference);
 
                 Console.WriteLine("===========================================================");
-                Console.WriteLine("ExpectedComputedValue :" + expectedCValue);
-                Console.WriteLine("ActualComputedValue :" + actualCValue);
+                Console.WriteLine("ExpectedComputedValue :{0}" , expectedCValue);
+                Console.WriteLine("ActualComputedValue :{0}" , actualCValue);
                 Console.WriteLine("============================================================");
 
                 var actualDValue = ProjActions.GetNumericValueFromString(UIActions.GetText(EtiaDisclosureValue));
                 var expectedDValue = Math.Round(Convert.ToDouble(TridVariable.DisclosedEstimatedTaxesInsuranceAssessments), 2);
-                Assert.AreEqual(expectedDValue, actualDValue, "Disclosed value does not match as expected with the difference of " + Math.Abs(expectedDValue - actualDValue));
+                ValueDifference = Math.Abs(expectedDValue - actualDValue);
+                Assert.AreEqual(expectedDValue,actualDValue, "Disclosed value does not match as expected with the difference of {0}" , ValueDifference);
 
                 Console.WriteLine("===========================================================");
-                Console.WriteLine("ExpectedDisclosedValue :" + expectedDValue);
-                Console.WriteLine("ActualDisclosedValue :" + actualDValue);
+                Console.WriteLine("ExpectedDisclosedValue :{0}" , expectedDValue);
+                Console.WriteLine("ActualDisclosedValue :{0}" , actualDValue);
                 Console.WriteLine("============================================================");
 
-                Assert.AreEqual(actualDValue, actualCValue, "Disclosed value does not match with computed value with the difference of " + Math.Abs(actualCValue - actualDValue));
+                ValueDifference = Math.Abs(actualCValue - actualDValue);
+                Assert.AreEqual(actualDValue, actualCValue, "Disclosed value does not match with computed value with the difference of {0}" , ValueDifference);
 
                 var expectedVValue = Convert.ToDouble(TridVariable.VarianceEstimatedTaxesInsuranceAssessments);
                 var actualVValue = ProjActions.GetNumericValueFromString(UIActions.GetText(EtiaVarianceValue));
-                Assert.AreEqual(expectedVValue, actualVValue, "Variance does not match as expected with the difference of " + Math.Abs(actualVValue - expectedVValue));
+                ValueDifference = Math.Abs(actualVValue - expectedVValue);
+                Assert.AreEqual(expectedVValue, actualVValue, "Variance does not match as expected with the difference of {0}" , ValueDifference);
 
                 Console.WriteLine("===========================================================");
-                Console.WriteLine("ExpectedVarianceValue :" + expectedVValue);
-                Console.WriteLine("ActualVarianceValue :" + actualVValue);
+                Console.WriteLine("ExpectedVarianceValue :{0}" , expectedVValue);
+                Console.WriteLine("ActualVarianceValue :{0}" , actualVValue);
                 Console.WriteLine("============================================================");
+                ProjActions.CreateCsvFile(expectedVValue.ToString());
             }
             catch (Exception e)
             {
+                ProjActions.CreateCsvFile(ValueDifference.ToString());
                 Console.WriteLine(e);
                 TestCaseStatus = false;
                 TestFailureCount += 1;
-                CardsFailure += "|| EstimatedTaxesInsuranceAssessments ||";
+                CardsFailure += "|| EstimatedTaxesInsuranceAssessments || : " + e + " \n ====================================================================================\n";
             }
         }
 
@@ -1480,39 +1594,45 @@ namespace TRID.StepDefinitions
             {
                 var actualCValue = ProjActions.GetNumericValueFromString(UIActions.GetText(I5YComputedValue));
                 var expectedCValue = Convert.ToDouble(TridVariable.In5Years);
-                Assert.AreEqual(expectedCValue, actualCValue, "Computed value does not match as expected with the difference of " + Math.Abs(expectedCValue - actualCValue));
+                ValueDifference = Math.Abs(expectedCValue - actualCValue);
+                Assert.AreEqual(expectedCValue, actualCValue, "Computed value does not match as expected with the difference of {0}" , ValueDifference);
 
                 Console.WriteLine("===========================================================");
-                Console.WriteLine("ExpectedComputedValue :" + expectedCValue);
-                Console.WriteLine("ActualComputedValue :" + actualCValue);
+                Console.WriteLine("ExpectedComputedValue :{0}" , expectedCValue);
+                Console.WriteLine("ActualComputedValue :{0}" , actualCValue);
                 Console.WriteLine("============================================================");
 
                 var actualDValue = ProjActions.GetNumericValueFromString(UIActions.GetText(I5YDisclosureValue));
                 var expectedDValue = Math.Round(Convert.ToDouble(TridVariable.DiscLosedIn5Years), 2);
-                Assert.AreEqual(expectedDValue, actualDValue, "Disclosed value does not match as expected with the difference of " + Math.Abs(expectedDValue - actualDValue));
+                ValueDifference = Math.Abs(expectedDValue - actualDValue);
+                Assert.AreEqual(expectedDValue,actualDValue, "Disclosed value does not match as expected with the difference of {0}" , ValueDifference);
 
                 Console.WriteLine("===========================================================");
-                Console.WriteLine("ExpectedDisclosedValue :" + expectedDValue);
-                Console.WriteLine("ActualDisclosedValue :" + actualDValue);
+                Console.WriteLine("ExpectedDisclosedValue :{0}" , expectedDValue);
+                Console.WriteLine("ActualDisclosedValue :{0}" , actualDValue);
                 Console.WriteLine("============================================================");
 
-                Assert.AreEqual(actualDValue, actualCValue, "Disclosed value does not match with computed value with the difference of " + Math.Abs(actualCValue - actualDValue));
+                ValueDifference = Math.Abs(actualCValue - actualDValue);
+                Assert.AreEqual(actualDValue, actualCValue, "Disclosed value does not match with computed value with the difference of {0}" , ValueDifference);
 
                 var expectedVValue = Convert.ToDouble(TridVariable.VarianceIn5Years);
                 var actualVValue = ProjActions.GetNumericValueFromString(UIActions.GetText(I5YVarianceValue));
-                Assert.AreEqual(expectedVValue, actualVValue, "Variance does not match as expected with the difference of " + Math.Abs(actualVValue - expectedVValue));
+                ValueDifference = Math.Abs(actualVValue - expectedVValue);
+                Assert.AreEqual(expectedVValue, actualVValue, "Variance does not match as expected with the difference of {0}" , ValueDifference);
 
                 Console.WriteLine("===========================================================");
-                Console.WriteLine("ExpectedVarianceValue :" + expectedVValue);
-                Console.WriteLine("ActualVarianceValue :" + actualVValue);
+                Console.WriteLine("ExpectedVarianceValue :{0}" , expectedVValue);
+                Console.WriteLine("ActualVarianceValue :{0}" , actualVValue);
                 Console.WriteLine("============================================================");
+                ProjActions.CreateCsvFile(expectedVValue.ToString());
             }
             catch (Exception e)
             {
+                ProjActions.CreateCsvFile(ValueDifference.ToString());
                 Console.WriteLine(e);
                 TestCaseStatus = false;
                 TestFailureCount += 1;
-                CardsFailure += "|| In5Years ||";
+                CardsFailure += "|| In5Years || : " + e + " \n ====================================================================================\n";
             }
         }
 
@@ -1523,39 +1643,45 @@ namespace TRID.StepDefinitions
             {
                 var actualCValue = ProjActions.GetNumericValueFromString(UIActions.GetText(I5YpComputedValue));
                 var expectedCValue = Convert.ToDouble(TridVariable.In5YearsPrincipal);
-                Assert.AreEqual(expectedCValue, actualCValue, "Computed value does not match as expected with the difference of " + Math.Abs(expectedCValue - actualCValue));
+                ValueDifference = Math.Abs(expectedCValue - actualCValue);
+                Assert.AreEqual(expectedCValue, actualCValue, "Computed value does not match as expected with the difference of {0}" , ValueDifference);
 
                 Console.WriteLine("===========================================================");
-                Console.WriteLine("ExpectedComputedValue :" + expectedCValue);
-                Console.WriteLine("ActualComputedValue :" + actualCValue);
+                Console.WriteLine("ExpectedComputedValue :{0}" , expectedCValue);
+                Console.WriteLine("ActualComputedValue :{0}" , actualCValue);
                 Console.WriteLine("============================================================");
 
                 var actualDValue = ProjActions.GetNumericValueFromString(UIActions.GetText(I5YpDisclosureValue));
                 var expectedDValue = Math.Round(Convert.ToDouble(TridVariable.DiscLosedIn5YearsPrincipal), 2);
-                Assert.AreEqual(expectedDValue, actualDValue, "Disclosed value does not match as expected with the difference of " + Math.Abs(expectedDValue - actualDValue));
+                ValueDifference = Math.Abs(expectedDValue - actualDValue);
+                Assert.AreEqual(expectedDValue,actualDValue, "Disclosed value does not match as expected with the difference of {0}" , ValueDifference);
 
                 Console.WriteLine("===========================================================");
-                Console.WriteLine("ExpectedDisclosedValue :" + expectedDValue);
-                Console.WriteLine("ActualDisclosedValue :" + actualDValue);
+                Console.WriteLine("ExpectedDisclosedValue :{0}" , expectedDValue);
+                Console.WriteLine("ActualDisclosedValue :{0}" , actualDValue);
                 Console.WriteLine("============================================================");
 
-                Assert.AreEqual(actualDValue, actualCValue, "Disclosed value does not match with computed value with the difference of " + Math.Abs(actualCValue - actualDValue));
+                ValueDifference = Math.Abs(actualCValue - actualDValue);
+                Assert.AreEqual(actualDValue, actualCValue, "Disclosed value does not match with computed value with the difference of {0}" , ValueDifference);
 
                 var expectedVValue = Convert.ToDouble(TridVariable.VarianceIn5YearsPrincipal);
                 var actualVValue = ProjActions.GetNumericValueFromString(UIActions.GetText(I5YpVarianceValue));
-                Assert.AreEqual(expectedVValue, actualVValue, "Variance does not match as expected with the difference of " + Math.Abs(actualVValue - expectedVValue));
+                ValueDifference = Math.Abs(actualVValue - expectedVValue);
+                Assert.AreEqual(expectedVValue, actualVValue, "Variance does not match as expected with the difference of {0}" , ValueDifference);
 
                 Console.WriteLine("===========================================================");
-                Console.WriteLine("ExpectedVarianceValue :" + expectedVValue);
-                Console.WriteLine("ActualVarianceValue :" + actualVValue);
+                Console.WriteLine("ExpectedVarianceValue :{0}" , expectedVValue);
+                Console.WriteLine("ActualVarianceValue :{0}" , actualVValue);
                 Console.WriteLine("============================================================");
+                ProjActions.CreateCsvFile(expectedVValue.ToString());
             }
             catch (Exception e)
             {
+                ProjActions.CreateCsvFile(ValueDifference.ToString());
                 Console.WriteLine(e);
                 TestCaseStatus = false;
                 TestFailureCount += 1;
-                CardsFailure += "|| In5YearsPrincipal ||";
+                CardsFailure += "|| In5YearsPrincipal || : " + e + " \n ====================================================================================\n";
             }
         }
 
@@ -1568,8 +1694,13 @@ namespace TRID.StepDefinitions
             UIActions.Quit();
             if (!TestCaseStatus)
             {
-                Console.WriteLine("The total number of cards Failue: " +TestFailureCount);
-                Console.WriteLine("Name of cards Failed: " +CardsFailure);
+                Console.WriteLine("####################################################################################");
+                Console.WriteLine("====================================================================================");
+                Console.WriteLine("Scenario Number : {0}", TridVariable.ScenarioNo);
+                Console.WriteLine("The total number of cards Failue: {0}" ,TestFailureCount);
+                Console.WriteLine("Name of cards Failed: {0}" ,CardsFailure);
+                Console.WriteLine("====================================================================================");
+                Console.WriteLine("####################################################################################");
                 throw new Exception("Test Case failed");
             }
         }

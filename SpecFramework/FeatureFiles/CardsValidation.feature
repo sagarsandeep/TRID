@@ -1,7 +1,7 @@
 ﻿Feature: CardsValidation
 
 
-Scenario Outline: Validating cards value on Closing Disclosure page
+Scenario Outline: Giving inputs from Excel file and validating cards value on Closing Disclosure page
 Given user is at TRID application homepage
 	And user have closing disclosure data from excel sheet <cdSheetName> for the scenario <RowNumber>
 	And user have Mortgage Insurance data from excel sheet <miSheetName> for the scenario <RowNumber>
@@ -28,7 +28,7 @@ When user navigate to Loan Inputs Page
 	And user enters values for Escrow Other1 Calculations Inputs
 	And user enters values for Escrow Other2 Calculations Inputs
 	And user enters all input values for Prepaid Charges
-	#And user enters input value for prepaid custom fields
+	And user enters input value for prepaid custom fields
 	And user navigates to Disclosure Inputs Page
 	And user enters disclosed input values for closing disclousre section
 	And user enters disclsoed input values for Loan Estimate
@@ -42,16 +42,16 @@ Then updated/computed Principal and Interest value should display on Closing Dis
 	And updated/computed Mortgage Insurance value should display on Closing Disclosure
 	And updated/computed Scheduled PMI Termination Date value should display on Closing Disclosure
 	And updated/computed Estimated Total Monthly Payment value should display on Closing Disclosure
-	And updated/computed Prepaid Charges value should display on Closing Disclosure
-	And updated/computed Amount Financed value should display on Closing Disclosure
-	And updated/computed Escrow Property Costs over one year 11 Months value should display on Closing Disclosure
-	And updated/computed Escrow Property Costs over one year 12 Months value should display on Closing Disclosure
 	And updated/computed APR value should display on Closing Disclosure
 	And APRWIN info value should display on Closing Disclosure
 	And updated/computed Balloon Amount value should display on Closing Disclosure
 	And updated/computed Total of Payments value should display on Closing Disclosure
 	And updated/computed Finance Charge value should display on Closing Disclosure
+	And updated/computed Prepaid Charges value should display on Closing Disclosure
+	And updated/computed Amount Financed value should display on Closing Disclosure
 	And updated/computed TIP value should display on Closing Disclosure
+	And updated/computed Escrow Property Costs over one year 11 Months value should display on Closing Disclosure
+	And updated/computed Escrow Property Costs over one year 12 Months value should display on Closing Disclosure
 	And updated/computed Initial Escrow Payment value should display on Closing Disclosure
 	And updated/computed Non Escrow Property Costs over one year value should display on Closing Disclosure
 	And updated/computed Estimated Escrow value should display on Closing Disclosure
@@ -117,7 +117,7 @@ Examples:
 
 
 
-Scenario Outline: Validating cards value on Loan Estimate page
+Scenario Outline: Giving inputs from Excel file and validating cards value on Loan Estimate page
 Given user is at TRID application homepage
 	And user have closing disclosure data from excel sheet <cdSheetName> for the scenario <RowNumber>
 	And user have Mortgage Insurance data from excel sheet <miSheetName> for the scenario <RowNumber>
@@ -142,7 +142,7 @@ When user navigate to Loan Inputs Page
 	And user enters values for Escrow Other1 Calculations Inputs
 	And user enters values for Escrow Other2 Calculations Inputs
 	And user enters all input values for Prepaid Charges
-	#And user enters input value for prepaid custom fields
+	And user enters input value for prepaid custom fields
 	And user navigates to Disclosure Inputs Page
 	And user enters disclosed input values for closing disclousre section
 	And user enters disclsoed input values for Loan Estimate
@@ -221,24 +221,24 @@ Given user is at TRID application homepage
 	And user have closing disclosure data from excel sheet <cdSheetName> for the scenario <RowNumber>
 When user upload json file for the scenario
 	And user navigates to Closing Disclosure Cards Page
-#Then updated/computed Principal and Interest value should display on Closing Disclosure
-#	And updated/computed Mortgage Insurance value should display on Closing Disclosure
-#	And updated/computed Scheduled PMI Termination Date value should display on Closing Disclosure
-#	And updated/computed Estimated Total Monthly Payment value should display on Closing Disclosure
-#	And updated/computed Prepaid Charges value should display on Closing Disclosure
-#	And updated/computed Amount Financed value should display on Closing Disclosure
-#	And updated/computed Escrow Property Costs over one year 11 Months value should display on Closing Disclosure
-#	And updated/computed Escrow Property Costs over one year 12 Months value should display on Closing Disclosure
-#	And updated/computed APR value should display on Closing Disclosure
-#	And APRWIN info value should display on Closing Disclosure
-#	And updated/computed Balloon Amount value should display on Closing Disclosure
-#	And updated/computed Total of Payments value should display on Closing Disclosure
-#	And updated/computed Finance Charge value should display on Closing Disclosure
-#	And updated/computed TIP value should display on Closing Disclosure
-#	And updated/computed Initial Escrow Payment value should display on Closing Disclosure
-#	And updated/computed Non Escrow Property Costs over one year value should display on Closing Disclosure
-	Then updated/computed Estimated Escrow value should display on Closing Disclosure
-#	And updated/computed Estimated Taxes, Insurance & Assessments value should display on Closing Disclosure
+Then updated/computed Principal and Interest value should display on Closing Disclosure
+	And updated/computed Mortgage Insurance value should display on Closing Disclosure
+	And updated/computed Scheduled PMI Termination Date value should display on Closing Disclosure
+	And updated/computed Estimated Total Monthly Payment value should display on Closing Disclosure
+	And updated/computed Prepaid Charges value should display on Closing Disclosure
+	And updated/computed Amount Financed value should display on Closing Disclosure
+	And updated/computed Escrow Property Costs over one year 11 Months value should display on Closing Disclosure
+	And updated/computed Escrow Property Costs over one year 12 Months value should display on Closing Disclosure
+	And updated/computed APR value should display on Closing Disclosure
+	And APRWIN info value should display on Closing Disclosure
+	And updated/computed Balloon Amount value should display on Closing Disclosure
+	And updated/computed Total of Payments value should display on Closing Disclosure
+	And updated/computed Finance Charge value should display on Closing Disclosure
+	And updated/computed TIP value should display on Closing Disclosure
+	And updated/computed Initial Escrow Payment value should display on Closing Disclosure
+	And updated/computed Non Escrow Property Costs over one year value should display on Closing Disclosure
+	And updated/computed Estimated Escrow value should display on Closing Disclosure
+	And updated/computed Estimated Taxes, Insurance & Assessments value should display on Closing Disclosure
 Examples:
 	| ScenarioNo | RowNumber | cdSheetName       |
 	| 1R         | 2         | ClosingDisclosure |

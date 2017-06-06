@@ -1,13 +1,14 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Configuration;
+using System.IO;
 using System.Linq;
+using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading;
 using System.Windows.Forms;
 using NUnit.Framework;
 using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
-using OpenQA.Selenium.Remote;
 using TechTalk.SpecRun.Helper;
 using TRID.ActionClasses;
 using TRID.ProjectLibs.UI;
@@ -17,13 +18,48 @@ namespace TRID.ProjectLibs.Common
     class ProjActions : TridHeaderUiElements
     {
         private static string UploadFilePath => ConfigurationManager.AppSettings["UploadFilePath"];
+        public static StringBuilder CsvFile = new StringBuilder();
+        public static string CsvFilePath => ConfigurationManager.AppSettings["CsvFilePath"];
+
+        public static void CreateCsvHeaderFile()
+        {
+            string csvHeaderFilePath = CsvFilePath + "Header.csv";
+            if (File.Exists(csvHeaderFilePath))
+                File.Delete(csvHeaderFilePath);
+
+            CsvFile.AppendLine(
+                    "Scenario#,PrincipalAndInt,MortgageInsurance,ScheduledPMITerminationDate,EstimatedTotalMonthlyPayment," +
+                    "APR,APRWIN,Balloon Amount,TotalOfPayments,FinanceCharge,PrepaidCharges,AmountFinanced,TIP," +
+                    "EscrowPropertyOverOneYear11Months,EscrowPropertyOverOneYear12Months,InitialEscrowPymt," +
+                    "NonEscrowPropertyOverOneYear,EstimatedEscrow,EstimatedTaxesInsuranceAssessments," +
+                    "In 5 years,In 5 Years Principal");
+
+                File.AppendAllText(csvHeaderFilePath, CsvFile.ToString());         
+        }
+
+        public static void CreateCsvFile(string newColumnValue)
+        {
+            string csvScenarioFilePath = CsvFilePath + TridVariable.ScenarioNo + ".csv";
+            if (File.Exists(csvScenarioFilePath))
+            {
+                List<string> lines = File.ReadAllLines(csvScenarioFilePath).ToList();
+                lines[0] += "," + newColumnValue;
+                File.WriteAllLines(csvScenarioFilePath, lines);
+            }
+            else
+            {
+                string firstValues = $"{TridVariable.ScenarioNo},{newColumnValue}";
+                CsvFile.Append(firstValues);
+                File.WriteAllText(csvScenarioFilePath, CsvFile.ToString());
+            }            
+        }
 
         public static void UploadJsonFile()
         {
             UIActions.Click(BrowseButton);
             Thread.Sleep(500);
             SendKeys.SendWait(UploadFilePath + TridVariable.ScenarioNo +".json");
-            Thread.Sleep(1000);
+            Thread.Sleep(500);
             SendKeys.SendWait(@"{Enter}");
             Thread.Sleep(500);
             UIActions.Click(UploadButton);
@@ -160,24 +196,49 @@ namespace TRID.ProjectLibs.Common
                 // ignored
             }
             if (isRowExists)
-                throw new Exception("PMI Grid is not empty");
-            
+                throw new Exception("PMI Grid is not empty");           
+        }
+
+
+        public static void AddPrepaidCustomValues()
+        {
+            if (TridVariable.PrepaidCustomFieldsCustomName != "")
+            {
+                if (TridVariable.PrepaidCustomFieldsCustomName != "0")
+                {
+                    UIActions.Clear(PrepaidChargeGridCustomName);
+                    UIActions.GiveInput(PrepaidChargeGridCustomName, TridVariable.PrepaidCustomFieldsCustomName);
+
+                    UIActions.Clear(PrepaidChargeGridCustomValue);
+                    UIActions.GiveInput(PrepaidChargeGridCustomValue, TridVariable.PrepaidCustomFieldsCustomValue);
+
+                    UIActions.Click(CustomFieldAddButton);
+                }
+            }
+            else
+                PrepaidChargeGridValidation();
         }
 
         public static void PrepaidChargeGridValidation()
         {
-            var prepaidChargeGridRowCount = UIActions.Count(PrepaidChargeGridCount);
-            Assert.AreEqual(1, prepaidChargeGridRowCount, "Prepaid Charge Grid entries are not as expected");
 
-            var prepaidCustomName = TridVariable.PrepaidCustomFieldsCustomName;
-            var actualPrepaidCustomName = UIActions.GetText(PrepaidChargeGridCustomName);
-            Assert.AreEqual(prepaidCustomName, actualPrepaidCustomName, "Prepaid Charge Custom Name is not as expected");
+            if (TridVariable.PrepaidCustomFieldsCustomName != "")
+                if (TridVariable.PrepaidCustomFieldsCustomName != "0")
+                {
+                    var prepaidChargeGridRowCount = UIActions.Count(PrepaidChargeCustomGridCount);
+                    Assert.AreEqual(1, prepaidChargeGridRowCount,
+                        "Prepaid Charge Custom Grid entries are not as expected");
 
+                    var prepaidCustomName = TridVariable.PrepaidCustomFieldsCustomName;
+                    var actualPrepaidCustomName = UIActions.GetText(PrepaidChargeGridCustomName);
+                    Assert.AreEqual(prepaidCustomName, actualPrepaidCustomName,
+                        "Prepaid Charge Custom Name is not as expected");
 
-            var prepaidCustomValue = TridVariable.PrepaidCustomFieldsCustomValue;
-            var actualPrepaidCustomValue = UIActions.GetText(PrepaidChargeGridCustomValue);
-            Assert.AreEqual(prepaidCustomValue, actualPrepaidCustomValue,
-                "Prepaid Charge Custom Value is not as expected");
+                    var prepaidCustomValue = TridVariable.PrepaidCustomFieldsCustomValue;
+                    var actualPrepaidCustomValue = UIActions.GetText(PrepaidChargeGridCustomValue);
+                    Assert.AreEqual(prepaidCustomValue, actualPrepaidCustomValue,
+                        "Prepaid Charge Custom Value is not as expected");
+                }
         }
 
         public static void PrepaidChargesGridEmptyValidation()
@@ -185,7 +246,7 @@ namespace TRID.ProjectLibs.Common
             var isRowExists = false;
             try
             {
-                UIActions.GetText(PrepaidChargeGridCount);
+                UIActions.GetText(PrepaidChargeCustomGridCount);
                 isRowExists = true;
             }
             catch (Exception)
@@ -193,17 +254,8 @@ namespace TRID.ProjectLibs.Common
                 // ignored
             }
             if (isRowExists)
-                throw new Exception("Prepaid Charges Grid is not empty");
+                throw new Exception("Prepaid Charges Custom Grid is not empty");
         }
-
-        //public static void DownloadFileFromChrome()
-        //{
-        //    var chromeOptions = new ChromeOptions();
-        //    chromeOptions.AddUserProfilePreference("download.default_directory", @"F:\Projects\TRID\TestScenarios");
-        //    chromeOptions.AddUserProfilePreference("intl.accept_languages", "nl");
-        //    chromeOptions.AddUserProfilePreference("disable-popup-blocking", "true");
-        //    var driver = new ChromeDriver("Driver_Path", chromeOptions);
-        //}
     }
 }
 

@@ -140,10 +140,10 @@ namespace TRID.ProjectLibs.UI
         public static By TotalMiInSectionFPrepaids = By.XPath("//div[@title='Total MI In Section F (Prepaids)']//input");
         public static By TotalMiInSectionGEscrow = By.XPath("//div[@title='Total MI In Section G (Escrow)']//input");
         public static By LoanCostsSumABC = By.XPath("//div[@title='Loan Costs (Section A+B+C)']//input");
-        public static By CustomName = By.XPath("//div[@title='Number']//input");
-        public static By CustomValue = By.XPath("//div[@title='Number']//input");
+        public static By CustomName = By.XPath("//div[@title='Custom Name']//input");
+        public static By CustomValue = By.XPath("//div[@title='Custom Value']//input");
         public static By CustomFieldAddButton = By.XPath("//div[@id='PrepaidChargeGridInput']//button");
-        public static By PrepaidChargeGridCount = By.XPath("//section[@id='PrepaidChargeGrid']//tbody/tr");
+        public static By PrepaidChargeCustomGridCount = By.XPath("//section[@id='PrepaidChargeGrid']//tbody/tr");
         public static By PrepaidChargeGridCustomName = By.XPath("//section[@id='PrepaidChargeGrid']//tbody/tr/td[1]//span");
         public static By PrepaidChargeGridCustomValue = By.XPath("//section[@id='PrepaidChargeGrid']//tbody/tr/td[2]//span");
 
