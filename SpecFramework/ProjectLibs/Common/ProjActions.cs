@@ -21,9 +21,9 @@ namespace TRID.ProjectLibs.Common
         public static StringBuilder CsvFile = new StringBuilder();
         public static string CsvFilePath => ConfigurationManager.AppSettings["CsvFilePath"];
 
-        public static void CreateCsvHeaderFile()
+        public static void CreateCsvCardsHeaderFile()
         {
-            string csvHeaderFilePath = CsvFilePath + "Header.csv";
+            string csvHeaderFilePath = CsvFilePath + "CardsHeader.csv";
             if (File.Exists(csvHeaderFilePath))
                 File.Delete(csvHeaderFilePath);
 

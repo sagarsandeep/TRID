@@ -4,7 +4,7 @@ using TRID.ProjectLibs.Common;
 
 namespace TRID.ProjectLibs.UI
 {
-    public class ExportInputUiElements : PageBase
+    public class ExportInputUiElements : AmortizationUiElements
     {
         #region Export
    

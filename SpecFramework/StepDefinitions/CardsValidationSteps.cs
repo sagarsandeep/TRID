@@ -29,7 +29,7 @@ namespace TRID.StepDefinitions
         [Given(@"user is at TRID application homepage")]
         public void GivenUserIsAtTridApplicationHomepage()
         {
-            //ProjActions.CreateCsvHeaderFile();
+            //ProjActions.CreateCsvCardsHeaderFile();
             UIActions.WindowMaximize();
             UIActions.GoToUrl(Url);
             UIActions.WebDriverWait(StartNewLoanText, 60, "StartNewLoanText");

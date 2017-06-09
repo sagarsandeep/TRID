@@ -1,4 +1,6 @@
-﻿using TechTalk.SpecRun.Helper;
+﻿using System.Collections.Generic;
+using TechTalk.SpecRun.Helper;
+using TRID.ActionClasses;
 using TRID.CommonUtils;
 
 namespace TRID.ProjectLibs.Common
@@ -194,6 +196,17 @@ namespace TRID.ProjectLibs.Common
         public static string VarianceEstimatedTaxesInsuranceAssessments = "";
         public static string VarianceTotalOfPayments = "";
 
+        //public static string FirstColumn = "";
+        //public static string SecondColumn = "";
+        //public static string ThirdColumn = "";
+        public static List<string> PaymentStreamNo = new List<string>();
+        public static List<string> PaymentScheduleNumberOfPayments = new List<string>();
+        public static List<string> PaymentAmount = new List<string>();
+        public static List<string> MonthlyPayment = new List<string>();
+        public static List<string> MonthlyPmi = new List<string>();
+        public static List<string> InsEscrowedAmount = new List<string>();
+        public static List<string> TaxEscrowedAmount = new List<string>();
+
         #endregion
 
         public void GetVariableNameAndSetValues(int row, int col, string stringValue, string sheetName)
@@ -298,6 +311,57 @@ namespace TRID.ProjectLibs.Common
                 if (col == 11) Index = stringValue;
                 if (col == 12) Margin = stringValue;
                 if (col == 13) RoundingFactor = stringValue;
+            }
+
+            #endregion
+
+            #region Escrow
+
+            if (sheetName == "PaymentSchedule")
+            {
+                if (col == 2)
+                {
+                    var splitString = stringValue.Split(',');
+                    foreach (string rowValue in splitString)
+                        PaymentStreamNo.Add(rowValue);
+                }
+
+                if (col == 3)
+                {
+                    var splitString = stringValue.Split(',');
+                    foreach (string rowValue in splitString)
+                        PaymentScheduleNumberOfPayments.Add(rowValue);
+                }
+                if (col == 4)
+                {
+                    var splitString = stringValue.Split(',');
+                    foreach (string rowValue in splitString)
+                        PaymentAmount.Add(rowValue);
+                }
+                if (col == 5)
+                {
+                    var splitString = stringValue.Split(',');
+                    foreach (string rowValue in splitString)
+                        MonthlyPayment.Add(rowValue);
+                }
+                if (col == 6)
+                {
+                    var splitString = stringValue.Split(',');
+                    foreach (string rowValue in splitString)
+                        MonthlyPmi.Add(rowValue);
+                }
+                if (col == 7)
+                {
+                    var splitString = stringValue.Split(',');
+                    foreach (string rowValue in splitString)
+                        InsEscrowedAmount.Add(rowValue);
+                }
+                if (col == 8)
+                {
+                    var splitString = stringValue.Split(',');
+                    foreach (string rowValue in splitString)
+                        TaxEscrowedAmount.Add(rowValue);
+                }
             }
 
             #endregion
