@@ -16,6 +16,7 @@ namespace TRID.ProjectLibs.UI
         public static By ClosingDisclosureLink = By.LinkText("Closing Disclosure");
         public static By EscrowLink = By.LinkText("Escrow");
         public static By AmortizationLink = By.LinkText("Amortization");
+        public static By EscrowInfoLink = By.LinkText("Escrow Info");
         public static By VariableAmortizationLink = By.LinkText("Variable Amortization");
         public static By ExportLink = By.LinkText("Export");
         public static By EscrowGrid = By.LinkText("EscrowGrid");

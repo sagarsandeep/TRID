@@ -195,10 +195,6 @@ namespace TRID.ProjectLibs.Common
         public static string VarianceEstimatedEscrow = "";
         public static string VarianceEstimatedTaxesInsuranceAssessments = "";
         public static string VarianceTotalOfPayments = "";
-
-        //public static string FirstColumn = "";
-        //public static string SecondColumn = "";
-        //public static string ThirdColumn = "";
         public static List<string> PaymentStreamNo = new List<string>();
         public static List<string> PaymentScheduleNumberOfPayments = new List<string>();
         public static List<string> PaymentAmount = new List<string>();
@@ -206,6 +202,37 @@ namespace TRID.ProjectLibs.Common
         public static List<string> MonthlyPmi = new List<string>();
         public static List<string> InsEscrowedAmount = new List<string>();
         public static List<string> TaxEscrowedAmount = new List<string>();
+        public static string InsInitialDeposit = "";
+        public static string InsPeriodDeposit = "";
+        public static string InsLowBalance = "";
+        public static string InsCushion = "";
+        public static string InsTotalAnnualDisbursed = "";
+        public static string TaxInitialDeposit = "";
+        public static string TaxPeriodDeposit = "";
+        public static string TaxLowBalance = "";
+        public static string TaxCushion = "";
+        public static string TaxTotalAnnualDisbursed = "";
+        public static string PmiInitialDeposit = "";
+        public static string PmiPeriodDeposit = "";
+        public static string PmiLowBalance = "";
+        public static string PmiCushion = "";
+        public static string PmiTotalAnnualDisbursed = "";
+        public static string Other1InitialDeposit = "";
+        public static string Other1PeriodDeposit = "";
+        public static string Other1LowBalance = "";
+        public static string Other1Cushion = "";
+        public static string Other1TotalAnnualDisbursed = "";
+        public static string Other2InitialDeposit = "";
+        public static string Other2PeriodDeposit = "";
+        public static string Other2LowBalance = "";
+        public static string Other2Cushion = "";
+        public static string Other2TotalAnnualDisbursed = "";
+        public static string AggregateInitialDeposit = "";
+        public static string AggregatePeriodDeposit = "";
+        public static string AggregateLowBalance = "";
+        public static string AggregateCushion = "";
+        public static string AggregateTotalAnnualDisbursed = "";
+
 
         #endregion
 
@@ -473,10 +500,49 @@ namespace TRID.ProjectLibs.Common
                 if (col == 104) VarianceEstimatedTaxesInsuranceAssessments = stringValue;
                 if (col == 105) VarianceIn5Years = stringValue;
                 if (col == 106) VarianceIn5YearsPrincipal = stringValue;
-
-                #endregion            
-             
-                }
             }
+
+            #endregion
+
+            #region Escrow Info
+
+            if (sheetName == "EscrowInfo")
+            {
+                if (col == 2) InsInitialDeposit = stringValue;
+                if (col == 3) InsPeriodDeposit = stringValue;
+                if (col == 4) InsLowBalance = stringValue;
+                if (col == 5) InsCushion = stringValue;
+                if (col == 6) InsTotalAnnualDisbursed = stringValue;
+                if (col == 7) TaxInitialDeposit = stringValue;
+                if (col == 8) TaxPeriodDeposit = stringValue;
+                if (col == 9) TaxLowBalance = stringValue;
+                if (col == 10) TaxCushion = stringValue;
+                if (col == 11) TaxTotalAnnualDisbursed = stringValue;
+                if (col == 12) PmiInitialDeposit = stringValue;
+                if (col == 13) PmiPeriodDeposit = stringValue;
+                if (col == 14) PmiLowBalance = stringValue;
+                if (col == 15) PmiCushion = stringValue;
+                if (col == 16) PmiTotalAnnualDisbursed = stringValue;
+                if (col == 17) Other1InitialDeposit = stringValue;
+                if (col == 18) Other1PeriodDeposit = stringValue;
+                if (col == 19) Other1LowBalance = stringValue;
+                if (col == 20) Other1Cushion = stringValue;
+                if (col == 21) Other1TotalAnnualDisbursed = stringValue;
+                if (col == 22) Other2InitialDeposit = stringValue;
+                if (col == 23) Other2PeriodDeposit = stringValue;
+                if (col == 24) Other2LowBalance = stringValue;
+                if (col == 25) Other2Cushion = stringValue;
+                if (col == 26) Other2TotalAnnualDisbursed = stringValue;
+                if (col == 27) AggregateInitialDeposit = stringValue;
+                if (col == 28) AggregatePeriodDeposit = stringValue;
+                if (col == 29) AggregateLowBalance = stringValue;
+                if (col == 30) AggregateCushion = stringValue;
+                if (col == 31) AggregateTotalAnnualDisbursed = stringValue;
+            }
+
+            #endregion
+
+
+        }
     }
 }

@@ -42,7 +42,7 @@ namespace TRID.ProjectLibs.UI
         public static By TopVarianceValue = By.XPath("//div[@id='TotalOfPayments']//p[3]");
 
         //APR WIN
-        public static By AprWinInfoValue = By.XPath("//div[@id='viewCompositionContainer']//button//following-sibling::div//span");
+        public static By AprWinInfoValue = By.XPath("//div[@id='APRWIN']//span");
 
         //Estimated Escrow
         public static By EeComputedValue = By.XPath("//div[@id='EstimatedEscrow']//p[1]");

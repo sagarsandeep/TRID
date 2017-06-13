@@ -983,7 +983,13 @@ namespace TRID.StepDefinitions
                 var actualInfoValue = Math.Round(ProjActions.GetNumericValueFromString(UIActions.GetText(AprWinInfoValue)), 4);
                 ValueDifference = Math.Abs(expectedInfoValue - actualInfoValue);
                 Assert.AreEqual(expectedInfoValue, actualInfoValue, "Apr Info value does not match as expected with the difference of {0}" , ValueDifference);
-                ProjActions.CreateCsvFile("0");
+
+                Console.WriteLine("===========================================================");
+                Console.WriteLine("ExpectedInfoValue :{0}", expectedInfoValue);
+                Console.WriteLine("ActualInfoValue :{0}", actualInfoValue);
+                Console.WriteLine("============================================================");
+
+                ProjActions.CreateCsvFile(ValueDifference.ToString());
             }
             catch (Exception e)
             {

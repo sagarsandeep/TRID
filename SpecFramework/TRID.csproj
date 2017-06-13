@@ -113,6 +113,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CardsValidation.feature</DependentUpon>
     </Compile>
+    <Compile Include="FeatureFiles\EscrowInfoCardsValidation.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EscrowInfoCardsValidation.feature</DependentUpon>
+    </Compile>
     <Compile Include="GlobalParam\ObjectRepo.cs" />
     <Compile Include="HookFiles\General.cs" />
     <Compile Include="Jira\JiraApi\fields.cs" />
@@ -134,6 +139,7 @@
     <Compile Include="ProjectLibs\UI\AmortizationUiElements.cs" />
     <Compile Include="ProjectLibs\UI\ClosingDisclosureCardsUIElements.cs" />
     <Compile Include="ProjectLibs\UI\DisclosureInputsUiElements.cs" />
+    <Compile Include="ProjectLibs\UI\EscrowInfoCardsUiElements.cs" />
     <Compile Include="ProjectLibs\UI\ExportInputUiElements.cs" />
     <Compile Include="ProjectLibs\UI\LoanEstimateCardsUiElements.cs" />
     <Compile Include="ProjectLibs\UI\LoanInputsUiElements.cs" />
@@ -141,6 +147,7 @@
     <Compile Include="ProjectLibs\UI\TridHeaderUIElements.cs" />
     <Compile Include="ProjectLibs\UI\UIElements.cs" />
     <Compile Include="StepDefinitions\AmortizationValidationSteps.cs" />
+    <Compile Include="StepDefinitions\EscrowInfoCardsValidationSteps.cs" />
     <Compile Include="TestClasses\LaunchTridApplication.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StepDefinitions\CardsValidationSteps.cs" />
@@ -165,6 +172,10 @@
     <None Include="FeatureFiles\DataResources\TridTestData.xlsx" />
     <None Include="FeatureFiles\DataResources\TridTestDataWithAllScenarios.xlsx" />
     <None Include="FeatureFiles\DataResources\TridTestScenarios.xlsx" />
+    <None Include="FeatureFiles\EscrowInfoCardsValidation.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>EscrowInfoCardsValidation.feature.cs</LastGenOutput>
+    </None>
     <None Include="packages.config" />
     <None Include="RunTests.bat" />
     <None Include="runtests.cmd" />

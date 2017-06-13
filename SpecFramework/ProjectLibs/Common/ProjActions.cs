@@ -95,6 +95,7 @@ namespace TRID.ProjectLibs.Common
             {
                 if (pmiRatesGridRowsCount == 0)
                 {
+                    Thread.Sleep(250);
                     var firstAddNumber = TridVariable.FirstAddNumber;
                     UIActions.Clear(AddNumber);
                     UIActions.GiveInput(AddNumber, firstAddNumber);
@@ -112,7 +113,7 @@ namespace TRID.ProjectLibs.Common
                     UIActions.GiveInput(AddPmiRate, firstAddPmiRate);
 
                     UIActions.Click(AddButton);
-                    Thread.Sleep(1000);
+                    Thread.Sleep(500);
 
                     var secondAddNumber = TridVariable.SecondAddNumber;
                     UIActions.Clear(AddNumber);
@@ -131,7 +132,7 @@ namespace TRID.ProjectLibs.Common
                     UIActions.GiveInput(AddPmiRate, secondAddPmiRate);
 
                     UIActions.Click(AddButton);
-                    Thread.Sleep(1000);
+                    Thread.Sleep(500);
 
                     var thirdAddNumber = TridVariable.ThirdAddNumber;
                     UIActions.Clear(AddNumber);
@@ -150,7 +151,7 @@ namespace TRID.ProjectLibs.Common
                     UIActions.GiveInput(AddPmiRate, thirdAddPmiRate);
 
                     UIActions.Click(AddButton);
-                    Thread.Sleep(1000);
+                    Thread.Sleep(500);
                 }
                 else
                 {

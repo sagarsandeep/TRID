@@ -1,9 +1,8 @@
 ﻿using OpenQA.Selenium;
-using TRID.CommonUtils;
 
 namespace TRID.ProjectLibs.UI
 {
-    public class AmortizationUiElements : PageBase
+    public class AmortizationUiElements : EscrowInfoCardsUiElements
     {
         public static By PaymentScheduleLabelText = By.XPath("//section[@id='PaymentScheduleOutput']//md-toolbar/div");
         public static By PaymentStreamNumber;
