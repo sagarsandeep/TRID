@@ -123,7 +123,7 @@
   "PaymentScheduleBest": [],
   "PaymentSchdeuleWorst": [],
   "EscrowCalculationStartPeriodDate": [
-    "6/9/2017"
+    "6/12/2017"
   ],
   "EscrowCushionMonthsForInsurance": [
     0
@@ -173,7 +173,7 @@
     "0"
   ],
   "EscrowOther1GridInputDate": [
-    "6/9/2017"
+    "6/12/2017"
   ],
   "EscrowOther1GridInputInstallmentAmt": [
     0
@@ -185,7 +185,7 @@
     "0"
   ],
   "EscrowOther2GridInputDate": [
-    "6/9/2017"
+    "6/12/2017"
   ],
   "EscrowOther2GridInputInstallmentAmt": [
     0
@@ -455,7 +455,7 @@
     "0.00"
   ],
   "AggregateAdjustment": [
-    0
+    -0.01
   ],
   "AggregateInitialDeposit": [
     0.00333333
@@ -57424,7 +57424,7 @@
   "sp_doc": [],
   "vp_json": [],
   "today": [
-    "2017-6-9"
+    "2017-6-12"
   ],
   "LoggedInUserId": [
     null

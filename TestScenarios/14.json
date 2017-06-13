@@ -2,7 +2,7 @@
   "ThriveTenantId": "EB535076-2140-4106-8CAE-B230F6E2D082",
   "ThriveAppId": "TRID",
   "PaymentNumberEscrow11MonthsCard": [
-    151
+    25
   ],
   "PaymentNumberForYears": [
     23
@@ -32,7 +32,7 @@
     "Yes"
   ],
   "DateOfLoan": [
-    "6/9/2017"
+    "03/01/2012"
   ],
   "DateUponWhichIntBeginsToAccrue": [
     "03/01/2012"
@@ -86,7 +86,7 @@
     137.5
   ],
   "EscrowPrptOverOneYear": [
-    20762.5
+    3437.5
   ],
   "EscrowPropertyCostOverOneYear12Months": [
     3300
@@ -123,7 +123,7 @@
   "PaymentScheduleBest": [],
   "PaymentSchdeuleWorst": [],
   "EscrowCalculationStartPeriodDate": [
-    "6/9/2017"
+    "6/12/2017"
   ],
   "EscrowCushionMonthsForInsurance": [
     2
@@ -173,7 +173,7 @@
     "0"
   ],
   "EscrowOther1GridInputDate": [
-    "6/9/2017"
+    "6/12/2017"
   ],
   "EscrowOther1GridInputInstallmentAmt": [
     0
@@ -185,7 +185,7 @@
     "0"
   ],
   "EscrowOther2GridInputDate": [
-    "6/9/2017"
+    "6/12/2017"
   ],
   "EscrowOther2GridInputInstallmentAmt": [
     0
@@ -455,7 +455,7 @@
     "0.00"
   ],
   "AggregateAdjustment": [
-    0
+    -600.03
   ],
   "AggregateInitialDeposit": [
     1327.08666666
@@ -894,7 +894,7 @@
     " "
   ],
   "VarEscrowPrptOverOneYear": [
-    -17600
+    -275
   ],
   "VarEscrowPropertyCostOverOneYear12Months": [
     0
@@ -57424,7 +57424,7 @@
   "sp_doc": [],
   "vp_json": [],
   "today": [
-    "2017-6-9"
+    "2017-6-12"
   ],
   "LoggedInUserId": [
     null
