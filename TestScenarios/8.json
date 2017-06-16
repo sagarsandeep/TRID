@@ -123,7 +123,7 @@
   "PaymentScheduleBest": [],
   "PaymentSchdeuleWorst": [],
   "EscrowCalculationStartPeriodDate": [
-    "6/12/2017"
+    "6/15/2017"
   ],
   "EscrowCushionMonthsForInsurance": [
     2
@@ -173,7 +173,7 @@
     "0"
   ],
   "EscrowOther1GridInputDate": [
-    "6/12/2017"
+    "6/15/2017"
   ],
   "EscrowOther1GridInputInstallmentAmt": [
     0
@@ -185,7 +185,7 @@
     "0"
   ],
   "EscrowOther2GridInputDate": [
-    "6/12/2017"
+    "6/15/2017"
   ],
   "EscrowOther2GridInputInstallmentAmt": [
     0
@@ -27409,6 +27409,7 @@
   "AmortizedDataWorst": [],
   "AmortizedDataBest": [],
   "AmortizedDataAbridged": [],
+  "TridTrialBalance": [],
   "AmortizedDataNew": [
     [
       {
@@ -53812,6 +53813,7 @@
   "PaymentDate": [
     "1/14/2038"
   ],
+  "EntryType": [],
   "PeriodPaymentDeduced": [
     303.34
   ],
@@ -53914,7 +53916,7 @@
   "sp_doc": [],
   "vp_json": [],
   "today": [
-    "2017-6-12"
+    "2017-6-15"
   ],
   "LoggedInUserId": [
     null
