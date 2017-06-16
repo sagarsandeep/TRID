@@ -16,6 +16,7 @@ namespace TRID.StepDefinitions
         public static bool TestCaseStatus = true;
         public static int TestFailureCount;
         public static double ValueDifference;
+        public static double TotalValueDifference;
         public static string CardsFailure = "";
 
         #region Given
@@ -24,6 +25,7 @@ namespace TRID.StepDefinitions
         public void GivenUserHavePaymentScheduleDataFromExcelSheetForTheScenario(string sheetName, int scenarioNo)
         {
             _getData.GetExcelValues(scenarioNo, sheetName);
+            ProjActions.GetSheetName(sheetName);
         }
 
         #endregion
@@ -34,7 +36,7 @@ namespace TRID.StepDefinitions
         public void WhenUserNavigatesToAmortizationPage()
         {
             UIActions.Click(AmortizationLink);
-            UIActions.WebDriverWait(PaymentScheduleLabelText, 60, "PaymentScheduleLabelText");
+            UIActions.WebDriverWait(PaymentScheduleAprLabelText, 60, "PaymentScheduleLabelText");
         }
 
         #endregion
@@ -59,16 +61,21 @@ namespace TRID.StepDefinitions
                     Console.WriteLine("ExpectedValue Row {0} :{1}", rowIndex + 1, expectedValue);
                     Console.WriteLine("ActualValue Row {0} :{1}", rowIndex + 1, actualValue);
                     Console.WriteLine("============================================================");
+                    TotalValueDifference += ValueDifference;
                 }
                 catch (Exception e)
                 {
-                    ProjActions.CreateCsvFile(ValueDifference.ToString());
+                    TotalValueDifference += ValueDifference;
                     Console.WriteLine(e);
                     TestCaseStatus = false;
                     TestFailureCount += 1;
                     CardsFailure += "|| PaymentStreamNo["+ (rowIndex+1) +"] || : " + e + " \n ====================================================================================\n";
                 }
             }
+            if (TotalValueDifference == 0)
+                ProjActions.CreateCsvFile("Matched");
+            else
+                ProjActions.CreateCsvFile("Not Matched");
         }
         
         [Then(@"updated/computed Number of Payments value should display on Payment Schedule Grid")]
@@ -88,16 +95,21 @@ namespace TRID.StepDefinitions
                     Console.WriteLine("ExpectedValue Row {0} :{1}", rowIndex + 1, expectedValue);
                     Console.WriteLine("ActualValue Row {0} :{1}", rowIndex + 1, actualValue);
                     Console.WriteLine("============================================================");
+                    TotalValueDifference += ValueDifference;
                 }
                 catch (Exception e)
                 {
-                    ProjActions.CreateCsvFile(ValueDifference.ToString());
+                    TotalValueDifference += ValueDifference;
                     Console.WriteLine(e);
                     TestCaseStatus = false;
                     TestFailureCount += 1;
                     CardsFailure += "|| PaymentScheduleNumberOfPayments[" + rowIndex + "] || : " + e + " \n ====================================================================================\n";
                 }
             }
+            if (TotalValueDifference == 0)
+                ProjActions.CreateCsvFile("Matched");
+            else
+                ProjActions.CreateCsvFile("Not Matched");
         }
         
         [Then(@"updated/computed Payment Amount value should display on Payment Schedule Grid")]
@@ -117,16 +129,21 @@ namespace TRID.StepDefinitions
                     Console.WriteLine("ExpectedValue Row {0} :{1}", rowIndex + 1, expectedValue);
                     Console.WriteLine("ActualValue Row {0} :{1}", rowIndex + 1, actualValue);
                     Console.WriteLine("============================================================");
+                    TotalValueDifference += ValueDifference;
                 }
                 catch (Exception e)
                 {
-                    ProjActions.CreateCsvFile(ValueDifference.ToString());
+                    TotalValueDifference += ValueDifference;
                     Console.WriteLine(e);
                     TestCaseStatus = false;
                     TestFailureCount += 1;
                     CardsFailure += "|| PaymentAmount[" + rowIndex + "] || : " + e + " \n ====================================================================================\n";
                 }
             }
+            if (TotalValueDifference == 0)
+                ProjActions.CreateCsvFile("Matched");
+            else
+                ProjActions.CreateCsvFile("Not Matched");
         }
         
         [Then(@"updated/computed Monthly Payment value should display on Payment Schedule Grid")]
@@ -146,16 +163,21 @@ namespace TRID.StepDefinitions
                     Console.WriteLine("ExpectedValue Row {0} :{1}", rowIndex + 1, expectedValue);
                     Console.WriteLine("ActualValue Row {0} :{1}", rowIndex + 1, actualValue);
                     Console.WriteLine("============================================================");
+                    TotalValueDifference += ValueDifference;
                 }
                 catch (Exception e)
                 {
-                    ProjActions.CreateCsvFile(ValueDifference.ToString());
+                    TotalValueDifference += ValueDifference;
                     Console.WriteLine(e);
                     TestCaseStatus = false;
                     TestFailureCount += 1;
                     CardsFailure += "|| MonthlyPayment[" + rowIndex + "] || : " + e + " \n ====================================================================================\n";
                 }
             }
+            if (TotalValueDifference == 0)
+                ProjActions.CreateCsvFile("Matched");
+            else
+                ProjActions.CreateCsvFile("Not Matched");
         }
 
         [Then(@"updated/computed Monthly PMI value should display on Payment Schedule Grid")]
@@ -175,16 +197,21 @@ namespace TRID.StepDefinitions
                     Console.WriteLine("ExpectedValue Row {0} :{1}", rowIndex + 1, expectedValue);
                     Console.WriteLine("ActualValue Row {0} :{1}", rowIndex + 1, actualValue);
                     Console.WriteLine("============================================================");
+                    TotalValueDifference += ValueDifference;
                 }
                 catch (Exception e)
                 {
-                    ProjActions.CreateCsvFile(ValueDifference.ToString());
+                    TotalValueDifference += ValueDifference;
                     Console.WriteLine(e);
                     TestCaseStatus = false;
                     TestFailureCount += 1;
                     CardsFailure += "|| MonthlyPmi[" + rowIndex + "] || : " + e + " \n ====================================================================================\n";
                 }
             }
+            if (TotalValueDifference == 0)
+                ProjActions.CreateCsvFile("Matched");
+            else
+                ProjActions.CreateCsvFile("Not Matched");
         }
 
         [Then(@"updated/computed Ins Escrowed Amount value should display on Payment Schedule Grid")]
@@ -204,16 +231,21 @@ namespace TRID.StepDefinitions
                     Console.WriteLine("ExpectedValue Row {0} :{1}", rowIndex + 1, expectedValue);
                     Console.WriteLine("ActualValue Row {0} :{1}", rowIndex + 1, actualValue);
                     Console.WriteLine("============================================================");
+                    TotalValueDifference += ValueDifference;
                 }
                 catch (Exception e)
                 {
-                    ProjActions.CreateCsvFile(ValueDifference.ToString());
+                    TotalValueDifference += ValueDifference;
                     Console.WriteLine(e);
                     TestCaseStatus = false;
                     TestFailureCount += 1;
                     CardsFailure += "|| InsEscrowedAmount[" + rowIndex + "] || : " + e + " \n ====================================================================================\n";
                 }
             }
+            if (TotalValueDifference == 0)
+                ProjActions.CreateCsvFile("Matched");
+            else
+                ProjActions.CreateCsvFile("Not Matched");
         }
 
         [Then(@"updated/computed Tax Escrowed Amount value should display on Payment Schedule Grid")]
@@ -233,15 +265,21 @@ namespace TRID.StepDefinitions
                     Console.WriteLine("ExpectedValue Row {0} :{1}", rowIndex + 1, expectedValue);
                     Console.WriteLine("ActualValue Row {0} :{1}", rowIndex + 1, actualValue);
                     Console.WriteLine("============================================================");
+                    TotalValueDifference += ValueDifference;
                 }
                 catch (Exception e)
                 {
+                    TotalValueDifference += ValueDifference;
                     Console.WriteLine(e);
                     TestCaseStatus = false;
                     TestFailureCount += 1;
                     CardsFailure += "|| TaxEscrowedAmount[" + rowIndex + "] || : " + e + " \n ====================================================================================\n";
                 }
             }
+            if (TotalValueDifference == 0)
+                ProjActions.CreateCsvFile("Matched");
+            else
+                ProjActions.CreateCsvFile("Not Matched");
         }
 
         #endregion

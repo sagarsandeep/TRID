@@ -23,23 +23,41 @@ namespace TRID.ProjectLibs.Common
 
         public static void CreateCsvCardsHeaderFile()
         {
-            string csvHeaderFilePath = CsvFilePath + "CardsHeader.csv";
+            string csvHeaderFilePath = CsvFilePath + _getSheetName + "CardsHeader.csv";
+
             if (File.Exists(csvHeaderFilePath))
                 File.Delete(csvHeaderFilePath);
 
-            CsvFile.AppendLine(
-                    "Scenario#,PrincipalAndInt,MortgageInsurance,ScheduledPMITerminationDate,EstimatedTotalMonthlyPayment," +
-                    "APR,APRWIN,Balloon Amount,TotalOfPayments,FinanceCharge,PrepaidCharges,AmountFinanced,TIP," +
-                    "EscrowPropertyOverOneYear11Months,EscrowPropertyOverOneYear12Months,InitialEscrowPymt," +
-                    "NonEscrowPropertyOverOneYear,EstimatedEscrow,EstimatedTaxesInsuranceAssessments," +
-                    "In 5 years,In 5 Years Principal");
+            if (_getSheetName == "ClosingDisclosure")
+            {              
+                CsvFile.AppendLine(
+                        "Scenario#,PrincipalAndInt,MortgageInsurance,ScheduledPMITerminationDate,EstimatedTotalMonthlyPayment," +
+                        "APR,APRWIN,Balloon Amount,TotalOfPayments,FinanceCharge,PrepaidCharges,AmountFinanced,TIP," +
+                        "EscrowPropertyOverOneYear11Months,EscrowPropertyOverOneYear12Months,InitialEscrowPymt," +
+                        "NonEscrowPropertyOverOneYear,EstimatedEscrow,EstimatedTaxesInsuranceAssessments," +
+                        "In 5 years,In 5 Years Principal");
+            }
 
-                File.AppendAllText(csvHeaderFilePath, CsvFile.ToString());         
+            if (_getSheetName == "PaymentSchedule")
+            {
+                CsvFile.AppendLine(
+                        "Scenario#,PaymentStreamNo,NumberOfPayments,PaymentAmount,MonthlyPayment,MonthlyPMI,InsEscrowedAmount,TaxEscrowedAmt,EscrowOther1,EscrowOther2");
+            }
+
+            if (_getSheetName == "EscrowInfo")
+            {
+                CsvFile.AppendLine(
+                        "Scenario#,InsPeriodDeposit,TaxPeriodDeposit,PmiPeriodDeposit,PmiLowBalance,PmiCushion,PmiTotalAnnualDisbursed,Other1InitialDeposit" +
+                        ",Other1PeriodDeposit, Other1LowBalance, Other1Cushion, Other1TotalAnnualDisbursed, Other2InitialDeposit, Other2PeriodDeposit, " +
+                        "Other2LowBalance, Other2Cushion, Other2TotalAnnualDisbursed, AggregateInitialDeposit, AggregatePeriodDeposit, AggregateLowBalance, AggregateCushion, AggregateTotalAnnualDisbursed");
+            }
+
+            File.AppendAllText(csvHeaderFilePath, CsvFile.ToString());         
         }
 
         public static void CreateCsvFile(string newColumnValue)
         {
-            string csvScenarioFilePath = CsvFilePath + TridVariable.ScenarioNo + ".csv";
+            string csvScenarioFilePath = CsvFilePath + _getSheetName + "_"+ TridVariable.ScenarioNo + ".csv";
             if (File.Exists(csvScenarioFilePath))
             {
                 List<string> lines = File.ReadAllLines(csvScenarioFilePath).ToList();
@@ -51,7 +69,7 @@ namespace TRID.ProjectLibs.Common
                 string firstValues = $"{TridVariable.ScenarioNo},{newColumnValue}";
                 CsvFile.Append(firstValues);
                 File.WriteAllText(csvScenarioFilePath, CsvFile.ToString());
-            }            
+            }
         }
 
         public static void UploadJsonFile()
@@ -256,6 +274,16 @@ namespace TRID.ProjectLibs.Common
             }
             if (isRowExists)
                 throw new Exception("Prepaid Charges Custom Grid is not empty");
+        }
+
+        private static string _getSheetName;
+        public static void GetSheetName(string sheetName)
+        {
+            //if (sheetName == "ClosingDisclosure") { var closingDisclosureSheetName = sheetName;}
+            //if (sheetName == "PaymentSchedule") { var paymentScheduleeSheetName = sheetName;}
+            //if (sheetName == "EscrowInfo") { var escrowInfoSheetName = sheetName;}
+
+            _getSheetName = sheetName;
         }
     }
 }

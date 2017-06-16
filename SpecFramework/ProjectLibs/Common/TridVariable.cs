@@ -342,7 +342,7 @@ namespace TRID.ProjectLibs.Common
 
             #endregion
 
-            #region Escrow
+            #region Payment Schedule
 
             if (sheetName == "PaymentSchedule")
             {

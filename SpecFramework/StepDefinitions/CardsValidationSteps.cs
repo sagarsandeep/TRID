@@ -40,6 +40,7 @@ namespace TRID.StepDefinitions
         public void GivenUserHaveClosingDisclosureDataFromExcelSheetForTheScenario(string sheetName, int scenarioNo)
         {
             _getData.GetExcelValues(scenarioNo, sheetName);
+            ProjActions.GetSheetName(sheetName);
         }
 
         [Given(@"user have Mortgage Insurance data from excel sheet (.*) for the scenario (.*)")]
@@ -64,6 +65,7 @@ namespace TRID.StepDefinitions
         public void GivenUserHaveEscrowDataFromExcelSheetForTheScenario(string sheetName, int scenarioNo)
         {
             _getData.GetExcelValues(scenarioNo, sheetName);
+            ProjActions.GetSheetName(sheetName);
         }
 
         [Given(@"user have Export data from excel sheet (.*) for the scenario (.*)")]
@@ -986,7 +988,7 @@ namespace TRID.StepDefinitions
 
                 Console.WriteLine("===========================================================");
                 Console.WriteLine("ExpectedInfoValue :{0}", expectedInfoValue);
-                Console.WriteLine("ActualInfoValue :{0}", actualInfoValue);
+                Console.WriteLine("ActualIfoValue :{0}", actualInfoValue);
                 Console.WriteLine("============================================================");
 
                 ProjActions.CreateCsvFile(ValueDifference.ToString());
